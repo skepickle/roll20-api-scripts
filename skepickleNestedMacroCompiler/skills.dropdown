@@ -1,0 +1,149 @@
+Appraise
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Appraise](http://www.dandwiki.com/wiki/SRD:Appraise_Skill ) check:}} {{checkroll=[[1d20 + [[@{appraise}]] ]] }} {{notes=@{appraisenote} }}
+---
+Balance
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Balance](http://www.dandwiki.com/wiki/SRD:Balance_Skill ) check:}} {{checkroll= [[ 1d20 + [[ @{balance} ]] ]] }} {{notes=@{balancenote} }}
+---
+Bluff
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Bluff](http://www.dandwiki.com/wiki/SRD:Bluff_Skill ) check:}} {{checkroll=[[1d20 + [[@{bluff}]] ]] }} {{notes=@{bluffnote} }}
+---
+Climb
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Climb](http://www.dandwiki.com/wiki/SRD:Climb_Skill ) check:}} {{checkroll= [[ 1d20 + [[ @{climb} ]] ]] }} {{notes=@{climbnote} }}
+---
+Concentration
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Concentration](http://www.dandwiki.com/wiki/SRD:Concentration_Skill ) check:}} {{checkroll= [[ 1d20 + [[ @{concentration} ]] ]] }} {{notes=@{concentrationnote} }}
+---
+Craft(@{craft1name})
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Craft](http://www.dandwiki.com/wiki/SRD:Craft_Skill ) (@{craft1name}) check:}} {{checkroll= [[ 1d20 + [[ @{craft1} ]] +(?{Artisan's Tools? |None, -2|Normal, 0|Masterwork, 2})[Tool Circumstance Bonus] ]] }} {{notes=@{craft1note} }}
+---
+Craft(@{craft2name})
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Craft](http://www.dandwiki.com/wiki/SRD:Craft_Skill ) (@{craft2name}) check:}} {{checkroll= [[ 1d20 + [[ @{craft2} ]] +(?{Artisan's Tools? |None, -2|Normal, 0|Masterwork, 2})[Tool Circumstance Bonus] ]] }} {{notes=@{craft2note} }}
+---
+Craft(@{craft3name})
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Craft](http://www.dandwiki.com/wiki/SRD:Craft_Skill ) (@{craft3name}) check:}} {{checkroll= [[ 1d20 + [[ @{craft3} ]] +(?{Artisan's Tools? |None, -2|Normal, 0|Masterwork, 2})[Tool Circumstance Bonus] ]] }} {{notes=@{craft3note} }}
+---
+Decipher Script†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Decipher Script](http://www.dandwiki.com/wiki/SRD:Decipher_Script_Skill ) check:}} {{checkroll=[[1d20 + @{decipherscript} ]]}} {{notes=If fail, [[1d20 + @{wis-mod} ]] vs dc5 to avoid drawing a false conclusion.}} {{notes=@{decipherscriptnote} }}
+---
+Diplomacy
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Diplomacy](http://www.dandwiki.com/wiki/SRD:Diplomacy_Skill ) check:}} {{checkroll=[[1d20 + [[@{diplomacy}]] ]] }} {{notes=@{diplomacynote} }}
+---
+Disable Device†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Disable Device](http://www.dandwiki.com/wiki/SRD:Disable_Device_Skill ) check:}} {{checkroll=[[1d20 + [[@{disabledevice}]] ]] }} {{notes=@{disabledevicenote} }}
+---
+Disguise
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Disguise](http://www.dandwiki.com/wiki/SRD:Disguise_Skill ) check:}} {{checkroll=[[1d20 + [[@{disguise}]] ]] }} {{notes=@{disguisenote} }}
+---
+Escape Artist
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Escape Artist](http://www.dandwiki.com/wiki/SRD:Escape_Artist_Skill ) check:}} {{checkroll= [[ 1d20 + [[ @{escapeartist} ]] ]] }} {{notes=@{escapeartistnote} }}
+---
+Forgery
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Forgery](http://www.dandwiki.com/wiki/SRD:Forgery_Skill ) check:}} {{checkroll=[[1d20 + [[@{forgery}]] ]] }} {{notes=@{forgerynote} }}
+---
+Gather Information
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Gather Information](http://www.dandwiki.com/wiki/SRD:Gather_Information_Skill ) check:}} {{checkroll=[[1d20 + [[@{gatherinformation}]] ]] }} {{notes=@{gatherinformationnote} }}
+---
+Handle Animal†
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Handle Animal](http://www.dandwiki.com/wiki/SRD:Handle_Animal_Skill ) check:}} {{checkroll= [[ 1d20 + [[ @{handleanimal} ]] ]] }} {{notes=@{handleanimalnote} }}
+---
+Heal
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Heal](http://www.dandwiki.com/wiki/SRD:Heal_Skill ) check:}} {{checkroll=[[1d20 + [[@{heal}]] +(?{Healer's Kit? |No, 0|Yes, 2})[Healer's Kit Circumstance Bonus] ]] }} {{notes=@{healnote} }}
+---
+Hide
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Hide](http://www.dandwiki.com/wiki/SRD:Hide_Skill ) check:}} {{checkroll=[[1d20 + [[@{hide}]] ]] }} {{notes=@{hidenote} }}
+---
+Intimidate
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Intimidate](http://www.dandwiki.com/wiki/SRD:Intimidate_Skill ) check:}} {{checkroll=[[1d20 + [[@{intimidate}]] ]] }} {{notes=@{intimidatenote} }}
+---
+Jump
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Jump](http://www.dandwiki.com/wiki/SRD:Jump_Skill ) check:}} {{checkroll= [[ 1d20 + [[ @{jump} ]] ]] }} {{notes=@{jumpnote} }}
+---
+Knowledge(Arcana)†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Knowledge](http://www.dandwiki.com/wiki/SRD:Knowledge_Skill ) (Arcana) check:}} {{checkroll=[[1d20 + [[@{knowarcana}]] ]] }} {{notes=@{knowarcananote} }}
+---
+Knowledge(Engineer)†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Knowledge](http://www.dandwiki.com/wiki/SRD:Knowledge_Skill ) (Engineering) check:}} {{checkroll=[[1d20 + [[@{knowengineer}]] ]] }} {{notes=@{knowengineernote} }}
+---
+Knowledge(Dungeon)†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Knowledge](http://www.dandwiki.com/wiki/SRD:Knowledge_Skill ) (Dungeoneering) check:}} {{checkroll=[[1d20 + [[@{knowdungeon}]] ]] }} {{notes=@{knowdungeonnote} }}
+---
+Knowledge(Geography)†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Knowledge](http://www.dandwiki.com/wiki/SRD:Knowledge_Skill ) (Geography) check:}} {{checkroll=[[1d20 + [[@{knowgeography}]] ]] }} {{notes=@{knowgeographynote} }}
+---
+Knowledge(History)†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Knowledge](http://www.dandwiki.com/wiki/SRD:Knowledge_Skill ) (History) check:}} {{checkroll=[[1d20 + [[@{knowhistory}]] ]] }} {{notes=@{knowhistorynote} }}
+---
+Knowledge(Local)†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Knowledge](http://www.dandwiki.com/wiki/SRD:Knowledge_Skill ) (Local) check:}} {{checkroll=[[1d20 + [[@{knowlocal}]] ]] }} {{notes=@{knowlocalnote} }}
+---
+Knowledge(Nature)†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Knowledge](http://www.dandwiki.com/wiki/SRD:Knowledge_Skill ) (Nature) check:}} {{checkroll=[[1d20 + [[@{knownature}]] ]] }} {{notes=@{knownaturenote} }}
+---
+Knowledge(Nobility)†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Knowledge](http://www.dandwiki.com/wiki/SRD:Knowledge_Skill ) (Nobility) check:}} {{checkroll=[[1d20 + [[@{knownobility}]] ]] }} {{notes=@{knownobilitynote} }}
+---
+Knowledge(Religion)†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Knowledge](http://www.dandwiki.com/wiki/SRD:Knowledge_Skill ) (Religion) check:}} {{checkroll=[[1d20 + [[@{knowreligion}]] ]] }} {{notes=@{knowreligionnote} }}
+---
+Knowledge(The Planes)†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Knowledge](http://www.dandwiki.com/wiki/SRD:Knowledge_Skill ) (The Planes) check:}} {{checkroll=[[1d20 + [[@{knowplanes}]] ]] }} {{notes=@{knowplanesnote} }}
+---
+Listen
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Listen](http://www.dandwiki.com/wiki/SRD:Listen_Skill ) check:}} {{checkroll=[[ 1d20 + [[ @{listen} ]] ]] }} {{notes=@{listennote} }}
+---
+Move Silently
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Move Silently](http://www.dandwiki.com/wiki/SRD:Move_Silently_Skill ) check:}} {{checkroll=[[1d20 + [[@{movesilent}]] ]] }} {{notes=@{movesilentnote} }}
+---
+Open Lock†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Open Lock](http://www.dandwiki.com/wiki/SRD:Open_Lock_Skill ) check:}} {{checkroll=[[1d20 + [[@{openlock}]] +(?{Thieves' Tools? |None, -2|Normal, 0|Masterwork, 2})[Tool Circumstance Bonus] ]] }} {{notes=@{openlocknote} }}
+---
+Perform(@{perform1name})
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Perform](http://www.dandwiki.com/wiki/SRD:Perform_Skill ) (@{perform1name}) check:}} {{checkroll= [[ 1d20 + [[ @{perform1} ]] +(?{Masterwork Instrument?|No, 0|Yes,2})[Instrument Circumstance Bonus] ]] }} {{notes=@{perform1note} }}
+---
+Perform(@{perform2name})
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Perform](http://www.dandwiki.com/wiki/SRD:Perform_Skill ) (@{perform2name}) check:}} {{checkroll= [[ 1d20 + [[ @{perform2} ]] +(?{Masterwork Instrument?|No, 0|Yes,2})[Instrument Circumstance Bonus] ]] }} {{notes=@{perform2note} }}
+---
+Perform(@{perform3name})
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Perform](http://www.dandwiki.com/wiki/SRD:Perform_Skill ) (@{perform2name}) check:}} {{checkroll= [[ 1d20 + [[ @{perform3} ]] +(?{Masterwork Instrument?|No, 0|Yes,2})[Instrument Circumstance Bonus] ]] }} {{notes=@{perform3note} }}
+---
+Profession(@{profession1name})
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Profession](http://www.dandwiki.com/wiki/SRD:Profession_Skill ) (@{profession1name}) check:}} {{checkroll= [[ 1d20 + [[ @{profession1} ]] ]] }} {{notes=@{profession1note} }}
+---
+Profession(@{profession2name})
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Profession](http://www.dandwiki.com/wiki/SRD:Profession_Skill ) (@{profession2name}) check:}} {{checkroll= [[ 1d20 + [[ @{profession2} ]] ]] }} {{notes=@{profession2note} }}
+---
+Profession(@{profession3name})
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Profession](http://www.dandwiki.com/wiki/SRD:Profession_Skill ) (@{profession3name}) check:}} {{checkroll= [[ 1d20 + [[ @{profession3} ]] ]] }} {{notes=@{profession3note} }}
+---
+Ride
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Ride](http://www.dandwiki.com/wiki/SRD:Ride_Skill ) check:}} {{checkroll= [[ 1d20 + [[ @{ride} ]] ]] }} {{notes=@{ridenote} }}
+---
+Search
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Search](http://www.dandwiki.com/wiki/SRD:Search_Skill ) check:}} {{checkroll=[[1d20 + [[@{search}]] ]] }} {{notes=@{searchnote} }}
+---
+Sense Motive
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Sense Motive](http://www.dandwiki.com/wiki/SRD:Sense_Motive_Skill ) check:}} {{checkroll=[[1d20 + [[@{sensemotive}]] ]] }} {{notes=@{sensemotivenote} }}
+---
+Sleight of Hand†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Sleight of Hand](http://www.dandwiki.com/wiki/SRD:Sleight_of_Hand_Skill ) check:}} {{checkroll=[[1d20 + [[@{sleightofhand}]] ]] }} {{notes=@{sleightofhandnote} }}
+---
+Spellcraft†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Spellcraft](http://www.dandwiki.com/wiki/SRD:Spellcraft_Skill ) check:}} {{checkroll= [[ 1d20 + [[ @{spellcraft} ]] ]] }} {{notes=@{spellcraftnote} }}
+---
+Spot
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Spot](http://www.dandwiki.com/wiki/SRD:Spot_Skill ) check:}} {{checkroll=[[1d20 + [[@{spot}]] ]] }} {{notes=@{spotnote} }}
+---
+Survival
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Survival](http://www.dandwiki.com/wiki/SRD:Survival_Skill ) check:}} {{checkroll= [[ 1d20 + [[ @{survival} ]] ]] }} {{notes=@{survivalnote} }}
+---
+Swim
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Swim](http://www.dandwiki.com/wiki/SRD:Swim_Skill ) check:}} {{checkroll= [[ 1d20 + [[ @{swim} ]] ]] }} {{notes=@{swimnote} }}
+---
+Tumble†
+&{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Tumble](http://www.dandwiki.com/wiki/SRD:Tumble_Skill ) check:}} {{checkroll= [[ 1d20 + [[ @{tumble} ]] ]] }} {{notes=@{tumblenote} }}
+---
+Use Magic Device†
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Use Magic Device](http://www.dandwiki.com/wiki/SRD:Use_Magic_Device_Skill ) check:}} {{checkroll=[[1d20 + [[@{usemagicdevice}]] ]] }} {{notes=@{usemagicdevicenote} }}
+---
+Use Rope
+/w gm &{template:DnD35StdRoll} {{skillflag=true}} {{name=@{character_name} }} {{check=[Use Rope](http://www.dandwiki.com/wiki/SRD:Use_Rope_Skill ) check:}} {{checkroll=[[1d20 + [[@{userope}]] ]] }} {{notes=@{useropenote} }}

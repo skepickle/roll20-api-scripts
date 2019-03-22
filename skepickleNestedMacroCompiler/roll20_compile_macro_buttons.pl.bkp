@@ -1,0 +1,39 @@
+#!/bin/perl -w
+use strict;
+
+my %buttons;
+
+print '/w GM &{template:DnD35StdRoll} {{pcflag=true}} {{name=@{selected|character_name}\'s
+Special Attacks}} {{notes=';
+
+while (<>) {
+  my ($key, $val) = split(/:/, $_, 2);
+  $key =~ s/^ +//;
+  $val =~ s/^ +//;
+  $key =~ s/ +$//;
+  $val =~ s/ +$//;
+  $val =~ s/\r\n\z//;
+  $val =~ s/&/&amp;/g;
+  my $esc = "";
+  my $sq_brak_depth = 0;
+  for my $i (0..length($val)-1) {
+  	my $input_char = substr($val, $i, 1);
+  	my $append_chars = $input_char;
+  	if    ($input_char eq "\@") { if ($sq_brak_depth >= 4) { $append_chars = "&#64;"; }  }
+  	elsif ($input_char eq "\[") { $sq_brak_depth++; }
+  	elsif ($input_char eq "\]") { $sq_brak_depth--; }
+  	else                        {  }
+  	$esc .= $append_chars;
+  };
+  $esc =~ s/\)/&#41;/g;
+  $esc =~ s/}}/}&#125;/g;
+  $esc =~ s/]]/]&#93;/g;
+  $esc =~ s/\*/&#42;/g;
+  $esc =~ s/\?\{/&#63;{/g;
+  $esc =~ s/^\@/&#64;/;
+  $esc =~ s/\\n/\n/g;
+#  $esc =~ s/\@/&#64;{/g;
+  print "[".$key."](!&#13;\n" . $esc . " )\n";
+};
+
+print "}}";

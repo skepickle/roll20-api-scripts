@@ -1,0 +1,12 @@
+Aid Others                               : &{template:DnD35StdRoll} {{pcflag=true}} {{name=@{selected|character_name} }} {{check=[Aid Another](https://www.dandwiki.com/wiki/SRD:Aid_Another) check:}} {{checkroll= [[ 1d20 + @{selected|BAB} ]] > 10 }} {{notes=Successfully aid ally on their attack +2 for 1 round}}
+Bull Rush                                : &{template:DnD35StdRoll} {{pcflag=true}} {{name=@{selected|character_name} }} {{check=[Bull Rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) check:}} {{checkroll= [[ 1d20 + @{selected|str-mod} + [[@{selected|specialattacksizemod}]][Size] + [[ ?{Charging? (Yes = 1)|0}*2 ]][Charging] + [[ ?{Defending and > 2 legs or exceptionally stable (Yes = 1)|0}*4 ]][Defense Bonus] ]] }} {{notes=You provoke an attack of opportunity from each opponent that threatens you. Any attack of opportunity made by anyone other than the defender against you has a 25% chance of accidentally targeting the defender instead, and any attack of opportunity by anyone other than you against the defender likewise has a 25% chance of accidentally targeting you.\n  If you succeed you push him back 5 feet. If you wish to move with the defender, you can push him back an additional 5 feet for each 5 points by which your check > defender’s check. You can’t, however, exceed your normal movement limit.\n  If you fail to beat the defender’s Strength check result, you move 5 feet straight back to where you were before you moved into his space. If that space is occupied, you fall prone in that space.}} {{Opposing check=Bull Rush}} {{Duration=1 Std Action}}
+Charge                                   : blah
+Disarm                                   : blah
+Feint                                    : blah
+Grapple                                  : &{template:DnD35StdRoll} {{pcflag=true}} {{name=@{selected|character_name} }} {{check=[Grapple](https://www.dandwiki.com/wiki/SRD:Grapple) check:}} {{checkroll= [[ 1d20 + [[@{selected|grapple}]] ]] }} {{Opposing check=Grapple}}
+Manufactured and Natural Weapon Fighting : blah
+Mounted Combat                           : blah
+Natural Weapons                          : blah
+Overrun                                  : blah
+Sunder                                   : blah
+Natural Weapons                          : blah
