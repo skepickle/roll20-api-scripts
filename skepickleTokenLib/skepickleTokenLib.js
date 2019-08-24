@@ -47,8 +47,13 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
   // D&D 3.5e Tables
 
   var dnd35 = {
-    sources: ["srd","faerun"],
-    srd: {
+    all_source_texts: {
+      srd: "System Reference Document",
+      faerun: "Forgotten Realms",
+      unknown: "Unknown Text"
+    },
+    enabled_source_texts: ["srd","faerun"],
+    source_text_srd: {
       movement_modes: ["burrow","climb","fly","swim"],
       fly_maneuverability: ["perfect","good","average","poor","clumsy"],
       size_categories: ["fine","diminutive","tiny","small","medium","large","huge","gargantuan","colossal"],
@@ -56,62 +61,62 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       creature_subtypes: ["air","angel","aquatic","archon","augmented","chaotic","cold","demon","devil","earth","evil","extraplanar","fire","good","incorporeal","lawful","native","psionic","shapeshifter","swarm","water"],
       humanoid_subtypes: ["aquatic","dwarf","elf","gnoll","gnome","goblinoid","halfling","human","orc","reptilian"]
     },
-    faerun: {
+    source_text_faerun: {
       types: ["deathless"]
     },
-    unknown: {
+    source_text_unknown: {
       movement_modes: ["glide"]
     },
     movement_modes: function() {
       var result = [];
-      this.sources.forEach(function(source) {
-        if (dnd35[source].movement_modes !== undefined) {
-          result = [...new Set([...result ,...dnd35[source].movement_modes])];
+      this.enabled_source_texts.forEach(function(source) {
+        if (dnd35['source_text_'.concat(source)].movement_modes !== undefined) {
+          result = [...new Set([...result ,...dnd35['source_text_'.concat(source)].movement_modes])];
         };
       });
       return result;
     },
     fly_maneuverability: function() {
       var result = [];
-      this.sources.forEach(function(source) {
-        if (dnd35[source].fly_maneuverability !== undefined) {
-          result = [...new Set([...result ,...dnd35[source].fly_maneuverability])];
+      this.enabled_source_texts.forEach(function(source) {
+        if (dnd35['source_text_'.concat(source)].fly_maneuverability !== undefined) {
+          result = [...new Set([...result ,...dnd35['source_text_'.concat(source)].fly_maneuverability])];
         };
       });
       return result;
     },
     size_categories: function() {
       var result = [];
-      this.sources.forEach(function(source) {
-        if (dnd35[source].size_categories !== undefined) {
-          result = [...new Set([...result ,...dnd35[source].size_categories])];
+      this.enabled_source_texts.forEach(function(source) {
+        if (dnd35['source_text_'.concat(source)].size_categories !== undefined) {
+          result = [...new Set([...result ,...dnd35['source_text_'.concat(source)].size_categories])];
         };
       });
       return result;
     },
     types: function() {
       var result = [];
-      this.sources.forEach(function(source) {
-        if (dnd35[source].types !== undefined) {
-          result = [...new Set([...result ,...dnd35[source].types])];
+      this.enabled_source_texts.forEach(function(source) {
+        if (dnd35['source_text_'.concat(source)].types !== undefined) {
+          result = [...new Set([...result ,...dnd35['source_text_'.concat(source)].types])];
         };
       });
       return result;
     },
     creature_subtypes: function() {
       var result = [];
-      this.sources.forEach(function(source) {
-        if (dnd35[source].creature_subtypes !== undefined) {
-          result = [...new Set([...result ,...dnd35[source].creature_subtypes])];
+      this.enabled_source_texts.forEach(function(source) {
+        if (dnd35['source_text_'.concat(source)].creature_subtypes !== undefined) {
+          result = [...new Set([...result ,...dnd35['source_text_'.concat(source)].creature_subtypes])];
         };
       });
       return result;
     },
     humanoid_subtypes: function() {
       var result = [];
-      this.sources.forEach(function(source) {
-        if (dnd35[source].humanoid_subtypes !== undefined) {
-          result = [...new Set([...result ,...dnd35[source].humanoid_subtypes])];
+      this.enabled_source_texts.forEach(function(source) {
+        if (dnd35['source_text_'.concat(source)].humanoid_subtypes !== undefined) {
+          result = [...new Set([...result ,...dnd35['source_text_'.concat(source)].humanoid_subtypes])];
         };
       });
       return result;
@@ -336,14 +341,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     return true;
   };
 
-  var checkSheetMacros = function(id) {
-    for (var i=1; i<=10; i++) {
-      var weaponNname = getAttrByName(id, "weapon"+i+"name");
-      log(weaponNname);
-    };
-  };
-
-  var fixMookSheet = function(id) {
+  var fixMookPCSheet = function(id) {
     setAttrByName(id, "npc-show", 2);
     ["str", "dex", "con", "int", "wis", "cha"].forEach(function(ability) {
       var score    = parseFloat(getAttrByName(id, "npc"+ability));
@@ -511,6 +509,13 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     };
   };
 
+  var checkSheetMacros = function(id) {
+    for (var i=1; i<=10; i++) {
+      var weaponNname = getAttrByName(id, "weapon"+i+"name");
+      log(weaponNname);
+    };
+  };
+
   var mookTokenFixer = function(obj) {
     var objLayer = obj.get("layer");
     var pageId   = obj.get("_pageid");
@@ -629,6 +634,22 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     };
 
     switch(userCommand) {
+      case '--list-source-texts':
+        var message_to_send = '';
+        Object.keys(dnd35.all_source_texts).forEach(function(k,i) {
+          log(k+' '+dnd35.all_source_texts[k]);
+          if (dnd35.enabled_source_texts.includes(k)) {
+            message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= enabled}}');
+          } else {
+            message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= disabled}}');
+          };
+        });
+        sendChat("skepickleTokenLib", '/w "'+playerName+'" &{template:default} {{name=ERROR}} '+message_to_send, null, {noarchive:true});
+        break;
+      case '--enable-source-text':
+        break;
+      case '--disable-source-text':
+        break;
       case '--audit-mook-sheet':
         selected_creatures.forEach(function(selected) {
           try {
@@ -679,7 +700,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             if (!character) { return; };
             character.get("_defaulttoken", function(token) {
               if (token !== "null") { return; };
-              fixMookSheet(character.id);
+              fixMookPCSheet(character.id);
             });
         });
         break;
