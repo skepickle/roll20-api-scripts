@@ -30,22 +30,53 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     return str.replace(/ +/g, " ").replace(/^ /, "").replace(/ $/, "").replace(/ *, */g, ",");
   };
 
+  var escapeRoll20Macro = function(str) {
+    return str.replace(/\&/g,  "&amp;")
+              .replace(/\#/g,  "&#35;")
+              .replace(/\@{/g, "&#64;{")
+              .replace(/\%{/g, "&#37;{")
+              .replace(/\?{/g, "&#63;{")
+              .replace(/\[\[/g,"&#91;&#91;")
+              .replace(/\{\{/g,"&#123;&#123;")
+              .replace(/\]\]/g,"&#93;&#93;")
+              .replace(/\}\}/g,"&#125;&#125;");
+  };
+
   // D&D 3.5e Tables
 
   var dnd35 = {
     sources: ["srd","faerun"],
     srd: {
+      movement_modes: ["burrow","climb","fly","swim"],
+      fly_maneuverability: ["perfect","good","average","poor","clumsy"],
       size_categories: ["fine","diminutive","tiny","small","medium","large","huge","gargantuan","colossal"],
       types: ["aberration","animal","celestial","construct","dragon","elemental","fey","fiend","giant","humanoid","magical beast","monstrous humanoid","ooze","outsider","plant","undead","vermin"],
       creature_subtypes: ["air","angel","aquatic","archon","augmented","chaotic","cold","demon","devil","earth","evil","extraplanar","fire","good","incorporeal","lawful","native","psionic","shapeshifter","swarm","water"],
-      humanoid_subtypes: ["aquatic","dwarf","elf","gnoll","gnome","goblinoid","halfling","human","orc","reptilian"],
-      ///////////
-      movement_modes: ["burrow","climb","fly","swim"],
-      fly_maneuverability: ["perfect","good","average","poor","clumsy"]
+      humanoid_subtypes: ["aquatic","dwarf","elf","gnoll","gnome","goblinoid","halfling","human","orc","reptilian"]
     },
     faerun: {
       types: ["deathless"]
-      //?more stuff?
+    },
+    unknown: {
+      movement_modes: ["glide"]
+    },
+    movement_modes: function() {
+      var result = [];
+      this.sources.forEach(function(source) {
+        if (dnd35[source].movement_modes !== undefined) {
+          result = [...new Set([...result ,...dnd35[source].movement_modes])];
+        };
+      });
+      return result;
+    },
+    fly_maneuverability: function() {
+      var result = [];
+      this.sources.forEach(function(source) {
+        if (dnd35[source].fly_maneuverability !== undefined) {
+          result = [...new Set([...result ,...dnd35[source].fly_maneuverability])];
+        };
+      });
+      return result;
     },
     size_categories: function() {
       var result = [];
@@ -138,9 +169,10 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
   var isAttrByNameNaN = function(id, attrib, value_type) {
     value_type = value_type || 'current';
     var val = getAttrByName(id, attrib, value_type);
-    if (val !== undefined) {
+    if (val === undefined) {
       //TODO throw ERROR: Attribute does not exist
-      return false;
+      throw "isAttrByNameNaN() called with undefined attribute"
+      return true;
     };
     return isNaN(val);
   };
@@ -152,51 +184,126 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     return true;
   };
 
-  var auditMookNPCSheet = function(id) {
+  var auditMookNPCSheet = function(id, nothrow=false) {
+
+    var maybeThrow = function(str) {
+      if (nothrow) {
+        return false;
+      } else {
+        throw escapeRoll20Macro(str);
+      };
+    };
+
+    // Check all purely numeric fields
+
+    ["npcinit","npcarmorclass","npctoucharmorclass","npcflatfootarmorclass","npcbaseatt","npcgrapple","npcfortsave","npcrefsave","npcwillsave","npcstr-mod","npcdex-mod","npccon-mod","npcint-mod","npcwis-mod","npccha-mod"].forEach(function(a) {
+      if (isAttrByNameNaN(id, a)) {
+        maybeThrow("Invalid "+a+"= '"+getAttrByName(id, a)+"'");
+      };
+    });
+
+    ["npcstr","npcdex","npccon","npcint","npcwis","npccha"].forEach(function(a) {
+      if (isAttrByNameNaN(id, a)) {
+        if (![""," ","-","֊","־","᠆","‐","‑","‒","–","—","―","⁻","₋","−","⸺","⸻","﹘","﹣","－"].includes(getAttrByName(id, a))) {
+          maybeThrow("Invalid "+a+"= '"+getAttrByName(id, a)+"'");
+        } else {
+          if (getAttrByName(id, ''.concat(a,'-mod')) != 0) {
+            maybeThrow("Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' ability score '"+getAttrByName(id, a)+"'");
+          };
+        };
+      } else {
+        if (getAttrByName(id, ''.concat(a,'-mod')) != abilityScoreToMod(getAttrByName(id, a))) {
+          maybeThrow("Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' nonability score");
+        };
+      };
+    });
+
     // npcname
     if (getAttrByName(id, "npcname") == "") {
-      throw "Undefined name";
+      maybeThrow("Undefined name");
     };
+
     // npcsize
     if (!dnd35.size_categories().includes(getAttrByName(id, "npcsize").toLowerCase())) {
-      throw "Invalid size= '"+getAttrByName(id, "npcsize")+"'";
+      maybeThrow("Invalid size= '"+getAttrByName(id, "npcsize")+"'");
     };
+
     // npctype
     {
       var npctype = getAttrByName(id, "npctype");
       let result = npctype.match(/^([a-z ]+)(\([a-z ,]+\)){0,1}$/i)
-      //throw "Invalid type= '"+result[1]+','+result[2]+'.'+"'"
+      //maybeThrow("Invalid type= '"+result[1]+','+result[2]+'.'+"'");
       if (result[1] === undefined) {
-        throw "Invalid type= '"+npctype+"'";
+        maybeThrow("Invalid type= '"+npctype+"'");
       };
       var type = trimWhitespace(result[1]);
       if (!dnd35.types().includes(type.toLowerCase())) {
-        throw "Invalid type= '"+type+"'";
+        maybeThrow("Invalid type= '"+type+"'");
       };
       if (result[2] !== undefined) {
         trimWhitespace(result[2]).replace(/^\(/, "").replace(/\)$/, "").split(",").forEach(function(subtype) {
           if (!dnd35.subtypes().includes(subtype.toLowerCase())) {
-            throw "Invalid subtype= '"+subtype+"'";
+            maybeThrow("Invalid subtype= '"+subtype+"'");
           };
         });
       };
     };
+
     // npchitdie
     {
       var npchitdie = getAttrByName(id, "npchitdie");
       if (!trimWhitespace(npchitdie).replace(/ plus /gi, "+").replace(/ +/g, "").match(/^([+-]{0,1}([0-9]+[-+*/])*[0-9]*d[0-9]+([+-][0-9]+)*)+$/i)) {
-        throw "Invalid hitdie= '"+npchitdie+"'";
+        maybeThrow("Invalid hitdie= '"+npchitdie+"'");
       };
     };
-    //TODO npcinit
-    //TODO npcinitmacro
-    //TODO npcspeed
-    //TODO npcarmorclass
+
+    // npcinitmacro
+    {
+      var npcinitmacro = getAttrByName(id, "npcinitmacro");
+      if (npcinitmacro !== '&{template:DnD35Initiative} {{name=@{selected|token_name}}} {{check=checks for initiative:\n}} {{checkroll=[[(1d20cs>21cf<0 + (@{npcinit})) + ((1d20cs>21cf<0 + (@{npcinit}))/100) + ((1d20cs>21cf<0 + (@{npcinit}))/10000) &{tracker}]]}}') {
+        maybeThrow(''.concat("Invalid npcinitmacro= '",npcinitmacro,"'"));
+      };
+    };
+
+    // npcspeed
+    {
+      var npcspeed = getAttrByName(id, "npcspeed");
+      var npcspeeds = trimWhitespace(npcspeed.toLowerCase()
+                                       .replace(/([0-9]+) *(feet|foot|ft)/g, "$1"))
+                        .split(",");
+      var mode_hash = {};
+      npcspeeds.forEach(function(e) {
+        let result = e.match(/^(([a-z]+) *){0,1}([0-9]+)( *\(([a-z]+)\)){0,1}$/);
+        if (result == null) {
+          maybeThrow("Unknown problem with npcspeed= '"+npcspeed+"'");
+        };
+        var mode = "";
+        if (result[2] == null) {
+          mode = "land";
+        } else {
+          mode = result[2];
+          if (!dnd35.movement_modes().includes(mode)) {
+            maybeThrow("Invalid mode '"+mode+"' in npcspeed= '"+npcspeed+"'");
+          };
+        };
+        if (mode_hash[mode] !== undefined) {
+          maybeThrow("Multiple definitions for same mode in npcspeed= '"+npcspeed+"'");
+        } else {
+          mode_hash[mode] = result[3];
+        };
+        if (mode=="fly") {
+          if (result[5] == null) {
+            maybeThrow("Fly maneuverability not defined for npcspeed= '"+npcspeed+"'");
+          } else {
+            if (!dnd35.fly_maneuverability().includes(result[5])) {
+              maybeThrow("Invalid fly maneuverability for npcspeed= '"+npcspeed+"'");
+            };
+          };
+        };
+      });
+    };
+
     //TODO npcarmorclassinfo
-    //TODO npctoucharmorclass
-    //TODO npcflatfootarmorclass
-    //TODO npcbaseatt
-    //TODO npcgrapple
     //SKIP npcattack
     //SKIP npcattackmacro
     //SKIP npcfullattack
@@ -205,21 +312,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     //TODO npcreach
     //SKIP npcspecialattacks
     //SKIP npcspecialqualities
-    //TODO npcfortsave
-    //TODO npcrefsave
-    //TODO npcwillsave
-    //TODO npcstr
-    //TODO npcstr-mod
-    //TODO npcdex
-    //TODO npcdex-mod
-    //TODO npccon
-    //TODO npccon-mod
-    //TODO npcint
-    //TODO npcint-mod
-    //TODO npcwis
-    //TODO npcwis-mod
-    //TODO npccha
-    //TODO npccha-mod
+
     //TODO npcskills
     //TODO npcfeats
     //TODO npcenv
@@ -231,6 +324,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     //TODO npclvladj
     //SKIP npcdescr
     //SKIP npccombatdescr
+    return true;
   };
 
   var checkSheetMacros = function(id) {
