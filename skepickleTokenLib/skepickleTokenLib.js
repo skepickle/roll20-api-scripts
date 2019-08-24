@@ -18,6 +18,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
 
   // String Utility Functions
 
+  var nonvalue_characters = [""," ","-","֊","־","᠆","‐","‑","‒","–","—","―","⁻","₋","−","⸺","⸻","﹘","﹣","－"];
+
   var toTitleCase = function(str) {
     str = str.toLowerCase().split(' ');
     for (var i = 0; i < str.length; i++) {
@@ -186,64 +188,71 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
 
   var auditMookNPCSheet = function(id, nothrow=false) {
 
-    var maybeThrow = function(str) {
+    var maybeThrow = function(id, str) {
       if (nothrow) {
         return false;
       } else {
-        throw escapeRoll20Macro(str);
+        throw ''.concat('Name= ',getAttrByName(id, "npcname"),'\n',escapeRoll20Macro(str));
       };
     };
 
     // Check all purely numeric fields
 
-    ["npcinit","npcarmorclass","npctoucharmorclass","npcflatfootarmorclass","npcbaseatt","npcgrapple","npcfortsave","npcrefsave","npcwillsave","npcstr-mod","npcdex-mod","npccon-mod","npcint-mod","npcwis-mod","npccha-mod"].forEach(function(a) {
+    ["npcinit","npcarmorclass","npctoucharmorclass","npcflatfootarmorclass","npcbaseatt","npcfortsave","npcrefsave","npcwillsave","npcstr-mod","npcdex-mod","npccon-mod","npcint-mod","npcwis-mod","npccha-mod"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
-        maybeThrow("Invalid "+a+"= '"+getAttrByName(id, a)+"'");
+        maybeThrow(id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
       };
     });
 
     ["npcstr","npcdex","npccon","npcint","npcwis","npccha"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
-        if (![""," ","-","֊","־","᠆","‐","‑","‒","–","—","―","⁻","₋","−","⸺","⸻","﹘","﹣","－"].includes(getAttrByName(id, a))) {
-          maybeThrow("Invalid "+a+"= '"+getAttrByName(id, a)+"'");
+        if (!nonvalue_characters.includes(getAttrByName(id, a))) {
+          maybeThrow(id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
         } else {
           if (getAttrByName(id, ''.concat(a,'-mod')) != 0) {
-            maybeThrow("Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' ability score '"+getAttrByName(id, a)+"'");
+            maybeThrow(id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' ability score '"+getAttrByName(id, a)+"'");
           };
         };
       } else {
         if (getAttrByName(id, ''.concat(a,'-mod')) != abilityScoreToMod(getAttrByName(id, a))) {
-          maybeThrow("Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' nonability score");
+          maybeThrow(id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' nonability score");
+        };
+      };
+    });
+
+    ["npcgrapple"].forEach(function(a) {
+      if (isAttrByNameNaN(id, a)) {
+        if (!nonvalue_characters.includes(getAttrByName(id, a))) {
+          maybeThrow(id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
         };
       };
     });
 
     // npcname
     if (getAttrByName(id, "npcname") == "") {
-      maybeThrow("Undefined name");
+      maybeThrow(id,"Undefined name");
     };
 
     // npcsize
     if (!dnd35.size_categories().includes(getAttrByName(id, "npcsize").toLowerCase())) {
-      maybeThrow("Invalid size= '"+getAttrByName(id, "npcsize")+"'");
+      maybeThrow(id,"Invalid size= '"+getAttrByName(id, "npcsize")+"'");
     };
 
     // npctype
     {
       var npctype = getAttrByName(id, "npctype");
       let result = npctype.match(/^([a-z ]+)(\([a-z ,]+\)){0,1}$/i)
-      //maybeThrow("Invalid type= '"+result[1]+','+result[2]+'.'+"'");
       if (result[1] === undefined) {
-        maybeThrow("Invalid type= '"+npctype+"'");
+        maybeThrow(id,"Invalid type= '"+npctype+"'");
       };
       var type = trimWhitespace(result[1]);
       if (!dnd35.types().includes(type.toLowerCase())) {
-        maybeThrow("Invalid type= '"+type+"'");
+        maybeThrow(id,"Invalid type= '"+type+"'");
       };
       if (result[2] !== undefined) {
         trimWhitespace(result[2]).replace(/^\(/, "").replace(/\)$/, "").split(",").forEach(function(subtype) {
           if (!dnd35.subtypes().includes(subtype.toLowerCase())) {
-            maybeThrow("Invalid subtype= '"+subtype+"'");
+            maybeThrow(id,"Invalid subtype= '"+subtype+"'");
           };
         });
       };
@@ -253,7 +262,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     {
       var npchitdie = getAttrByName(id, "npchitdie");
       if (!trimWhitespace(npchitdie).replace(/ plus /gi, "+").replace(/ +/g, "").match(/^([+-]{0,1}([0-9]+[-+*/])*[0-9]*d[0-9]+([+-][0-9]+)*)+$/i)) {
-        maybeThrow("Invalid hitdie= '"+npchitdie+"'");
+        maybeThrow(id,"Invalid hitdie= '"+npchitdie+"'");
       };
     };
 
@@ -261,7 +270,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     {
       var npcinitmacro = getAttrByName(id, "npcinitmacro");
       if (npcinitmacro !== '&{template:DnD35Initiative} {{name=@{selected|token_name}}} {{check=checks for initiative:\n}} {{checkroll=[[(1d20cs>21cf<0 + (@{npcinit})) + ((1d20cs>21cf<0 + (@{npcinit}))/100) + ((1d20cs>21cf<0 + (@{npcinit}))/10000) &{tracker}]]}}') {
-        maybeThrow(''.concat("Invalid npcinitmacro= '",npcinitmacro,"'"));
+        maybeThrow(id,''.concat("Invalid npcinitmacro= '",npcinitmacro,"'"));
       };
     };
 
@@ -275,7 +284,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       npcspeeds.forEach(function(e) {
         let result = e.match(/^(([a-z]+) *){0,1}([0-9]+)( *\(([a-z]+)\)){0,1}$/);
         if (result == null) {
-          maybeThrow("Unknown problem with npcspeed= '"+npcspeed+"'");
+          maybeThrow(id,"Unknown problem with npcspeed= '"+npcspeed+"'");
         };
         var mode = "";
         if (result[2] == null) {
@@ -283,20 +292,20 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         } else {
           mode = result[2];
           if (!dnd35.movement_modes().includes(mode)) {
-            maybeThrow("Invalid mode '"+mode+"' in npcspeed= '"+npcspeed+"'");
+            maybeThrow(id,"Invalid mode '"+mode+"' in npcspeed= '"+npcspeed+"'");
           };
         };
         if (mode_hash[mode] !== undefined) {
-          maybeThrow("Multiple definitions for same mode in npcspeed= '"+npcspeed+"'");
+          maybeThrow(id,"Multiple definitions for same mode in npcspeed= '"+npcspeed+"'");
         } else {
           mode_hash[mode] = result[3];
         };
         if (mode=="fly") {
           if (result[5] == null) {
-            maybeThrow("Fly maneuverability not defined for npcspeed= '"+npcspeed+"'");
+            maybeThrow(id,"Fly maneuverability not defined for npcspeed= '"+npcspeed+"'");
           } else {
             if (!dnd35.fly_maneuverability().includes(result[5])) {
-              maybeThrow("Invalid fly maneuverability for npcspeed= '"+npcspeed+"'");
+              maybeThrow(id,"Invalid fly maneuverability for npcspeed= '"+npcspeed+"'");
             };
           };
         };
@@ -452,11 +461,11 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
           case 'SIZE':
           case 'DEX':
             return;
-          case 'NATURAL':
-            setAttrByName(id, "naturalarmor1bonus", parseFloat(tokens[0]));
-            return;
           case 'DODGE':
             setAttrByName(id, "dodgebonus1bonus", parseFloat(tokens[0]));
+            return;
+          case 'NATURAL':
+            setAttrByName(id, "naturalarmor1bonus", parseFloat(tokens[0]));
             return;
           case 'DEFLECTION':
             setAttrByName(id, "deflection1bonus", parseFloat(tokens[0]));
