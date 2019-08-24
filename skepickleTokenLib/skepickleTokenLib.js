@@ -197,7 +197,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       if (nothrow) {
         return false;
       } else {
-        throw ''.concat('Name= ',getAttrByName(id, "npcname"),'}} {{',escapeRoll20Macro(str));
+        throw ''.concat('{{Name= ',getAttrByName(id, "npcname"),'}} {{',escapeRoll20Macro(str),'}}');
       };
     };
 
@@ -285,7 +285,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       var npcspeeds = trimWhitespace(npcspeed.toLowerCase()
                                        .replace(/([0-9]+) *(feet|foot|ft\.*|')/g, "$1"))
                         .split(",");
-      var mode_hash = {};
+      var mode_type_map = {};
       npcspeeds.forEach(function(e) {
         let result = e.match(/^(([a-z]+) *){0,1}([0-9]+)( *\(([a-z]+)\)){0,1}$/);
         if (result == null) {
@@ -300,10 +300,10 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             maybeThrow(id,"Invalid mode '"+mode+"' in npcspeed= '"+npcspeed+"'");
           };
         };
-        if (mode_hash[mode] !== undefined) {
+        if (mode_type_map[mode] !== undefined) {
           maybeThrow(id,"Multiple definitions for same mode in npcspeed= '"+npcspeed+"'");
         } else {
-          mode_hash[mode] = result[3];
+          mode_type_map[mode] = result[3];
         };
         if (mode=="fly") {
           if (result[5] == null) {
@@ -317,7 +317,26 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       });
     };
 
-    //TODO npcarmorclassinfo
+    //npcarmorclassinfo
+    {
+      var npcarmorclassinfo = getAttrByName(id, "npcarmorclassinfo");
+      var npcarmorclassinfos = trimWhitespace(npcarmorclassinfo.toLowerCase())
+                                 .split(",");
+      var bonus_type_map = {};
+      npcarmorclassinfos.forEach(function(e) {
+        let result = e.match(/^([-+][0-9]+) +(.*)+$/);
+        if (result == null) {
+          maybeThrow(id,"Invalid npcarmorclassinfo= '"+npcarmorclassinfo+"'");
+        };
+        if (['str','dex','con','int','wis','cha'].includes(result[2])) {
+          //TODO compare to npc<result[2]>-mod!
+        };
+        if (result[2] == "size") {
+          //TODO compare to npcsize
+        };
+      });
+    };
+
     //TODO npcspace
     //TODO npcreach
 
@@ -612,7 +631,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     playerID = msg.playerid;
 
     var sendErrorChat = function(str) {
-      sendChat("skepickleTokenLib", '/w "'+playerName+'" &{template:default} {{name=ERROR}} {{'+str+'}}', null, {noarchive:true});
+      sendChat("skepickleTokenLib", '/w "'+playerName+'" &{template:default} {{name=ERROR}} '+str, null, {noarchive:true});
     };
 
     argsFromUser = msg.content.split(/ +/);
