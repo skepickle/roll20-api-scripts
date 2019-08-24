@@ -197,7 +197,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       if (nothrow) {
         return false;
       } else {
-        throw ''.concat('Name= ',getAttrByName(id, "npcname"),'\n',escapeRoll20Macro(str));
+        throw ''.concat('Name= ',getAttrByName(id, "npcname"),'}} {{',escapeRoll20Macro(str));
       };
     };
 
@@ -283,7 +283,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     {
       var npcspeed = getAttrByName(id, "npcspeed");
       var npcspeeds = trimWhitespace(npcspeed.toLowerCase()
-                                       .replace(/([0-9]+) *(feet|foot|ft)/g, "$1"))
+                                       .replace(/([0-9]+) *(feet|foot|ft\.*|')/g, "$1"))
                         .split(",");
       var mode_hash = {};
       npcspeeds.forEach(function(e) {
@@ -318,12 +318,13 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     };
 
     //TODO npcarmorclassinfo
+    //TODO npcspace
+    //TODO npcreach
+
     //SKIP npcattack
     //SKIP npcattackmacro
     //SKIP npcfullattack
     //SKIP npcfullattackmacro
-    //TODO npcspace
-    //TODO npcreach
     //SKIP npcspecialattacks
     //SKIP npcspecialqualities
 
