@@ -789,7 +789,11 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         });
         break;
       case '--roll-initiative':
-        //sendWhisperChat('Group Initiative:');
+        var msg_to_send = "&{template:default} {{name=Group Initiative}} ";
+        var selected_creatures_left = selected_creatures.length;
+        if (first_arg == "clear") {
+          Campaign().set("turnorder", JSON.stringify([]));
+        };
         selected_creatures.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
@@ -800,8 +804,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             var init_attrib_name = (attrib_value_initmacro === "@{npcinitmacro}")?("npcinit"):("init");
             sendChat(playerName, "[[(1d20 + (@{"+char_name+"|"+init_attrib_name+"})) + ((1d20 + (@{"+char_name+"|"+init_attrib_name+"}))/100) + ((1d20 + (@{"+char_name+"|"+init_attrib_name+"}))/10000) ]]",function(msg) {
               var turnorder;
-              if (Campaign().get("turnorder") == "") turnorder = []; //NOTE: We check to make sure that the turnorder isn't just an empty string first. If it is treat it like an empty array.
-              else turnorder = JSON.parse(Campaign().get("turnorder"));
+              if (Campaign().get("turnorder") == "") { turnorder = []; }
+              else { turnorder = JSON.parse(Campaign().get("turnorder")); };
               //log(msg[0].inlinerolls[0]["results"]["total"]);
               var token_in_turnorder = false;
               for (var i=0; i<turnorder.length; i++) {
@@ -818,7 +822,11 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                 });
               };
               Campaign().set("turnorder", JSON.stringify(turnorder));
-              //sendWhisperChat(char_name+"->"+(msg[0].inlinerolls[0]["results"]["total"].toFixed(4)));
+              msg_to_send += "{{" + char_name+"= "+(msg[0].inlinerolls[0]["results"]["total"].toFixed(4))+"}} ";
+              selected_creatures_left--;
+              if (selected_creatures_left==0) {
+                sendWhisperChat(msg_to_send);
+              };
             });
         });
         break;
