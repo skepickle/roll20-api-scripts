@@ -147,6 +147,21 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     return Math.floor((mod*classlevel)/2.0);
   };
 
+  var sizeToMod = function(size) {
+    if (!dnd35.size_categories().includes(size)) { log("error"); throw "{{error}}"; };
+    switch(size) {
+      case "fine":       return 4;
+      case "diminutive": return 3;
+      case "tiny":       return 2;
+      case "small":      return 1;
+      case "medium":     return 0;
+      case "large":      return -1;
+      case "huge":       return -2;
+      case "gargantuan": return -3;
+      case "colossal":   return -4;
+    };
+  };
+
   // Roll20 Attribute Utility Functions
 
   // Implemented internally in Roll20
@@ -194,11 +209,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
   var auditMookNPCSheet = function(id, nothrow=false) {
 
     var maybeThrow = function(id, str) {
-      if (nothrow) {
-        return false;
-      } else {
-        throw ''.concat('{{Name= ',getAttrByName(id, "npcname"),'}} {{',escapeRoll20Macro(str),'}}');
-      };
+      var character = getObj("character", id);
+      throw ''.concat("{{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "npcname"),"}} {{",escapeRoll20Macro(str),"}}");
     };
 
     // Check all purely numeric fields
@@ -208,6 +220,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         maybeThrow(id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
       };
     });
+
+    // Check ability & modifiers, which can be a nonabilities
 
     ["npcstr","npcdex","npccon","npcint","npcwis","npccha"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
@@ -224,6 +238,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         };
       };
     });
+
+    // Check grapple bonus, which can be a nonability
 
     ["npcgrapple"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
@@ -324,15 +340,24 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                                  .split(",");
       var bonus_type_map = {};
       npcarmorclassinfos.forEach(function(e) {
-        let result = e.match(/^([-+][0-9]+) +(.*)+$/);
+        let result = e.match(/^([-+]{0,1}[0-9]+) +(.*)+$/);
         if (result == null) {
           maybeThrow(id,"Invalid npcarmorclassinfo= '"+npcarmorclassinfo+"'");
         };
+        if (isNaN(result[1])) { //TODO This is impossible...?
+          maybeThrow(id, "Invalid npcarmorclassinfo modifier value= '"+result[1]+"'");
+        };
         if (['str','dex','con','int','wis','cha'].includes(result[2])) {
-          //TODO compare to npc<result[2]>-mod!
+          var ability_mod = getAttrByName(id, ''.concat('npc',result[2],'-mod'));
+          if (result[1] != ability_mod) {
+            maybeThrow(id, "Invalid npcarmorclassinfo "+result[2]+" modifier value= '"+result[1]+"'");
+          };
         };
         if (result[2] == "size") {
-          //TODO compare to npcsize
+          var size_mod = sizeToMod(getAttrByName(id, "npcsize").toLowerCase());
+          if (result[1] != size_mod) {
+            maybeThrow(id, "Invalid npcarmorclassinfo size modifier value= '"+result[1]+"'");
+          };
         };
       });
     };
@@ -347,15 +372,15 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     //SKIP npcspecialattacks
     //SKIP npcspecialqualities
 
-    //TODO npcskills
-    //TODO npcfeats
-    //TODO npcenv
-    //TODO npcorg
-    //TODO npccr
+    //SKIP npcskills
+    //SKIP npcfeats
+    //SKIP npcenv
+    //SKIP npcorg
+    //SKIP npccr
     //SKIP npctreasure
     //SKIP npcalignment
     //SKIP npcadv
-    //TODO npclvladj
+    //SKIP npclvladj
     //SKIP npcdescr
     //SKIP npccombatdescr
     return true;
@@ -644,8 +669,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         try {
           if (selected["_type"] != "graphic") { continue; }; // Silently skip over selected non-graphics
           var obj = getObj("graphic", selected["_id"]);
-          if (obj.get("_subtype") != "token") { sendErrorChat("Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")"); continue; };
-          if (obj.get("represents") == "") { sendErrorChat("Not a character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")"); continue; };
+          if (obj.get("_subtype") != "token") { sendErrorChat("{{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
+          if (obj.get("represents") == "") { sendErrorChat("{{Not a character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
           selected_creatures.push(selected["_id"]);
         } catch(e) {
             sendErrorChat(e);
