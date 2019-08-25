@@ -48,12 +48,12 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
 
   var dnd35 = {
     all_source_texts: {
-      srd: "System Reference Document",
-      faerun: "Forgotten Realms",
+      SRD: "System Reference Document",
+      BoED: "Book of Exalted Deeds",
       unknown: "Unknown Text"
     },
-    enabled_source_texts: ["srd","faerun"],
-    source_text_srd: {
+    enabled_source_texts: ["SRD","BoED"],
+    source_text_SRD: {
       movement_modes: ["burrow","climb","fly","swim"],
       fly_maneuverability: ["perfect","good","average","poor","clumsy"],
       size_categories: ["fine","diminutive","tiny","small","medium","large","huge","gargantuan","colossal"],
@@ -61,7 +61,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       creature_subtypes: ["air","angel","aquatic","archon","augmented","chaotic","cold","demon","devil","earth","evil","extraplanar","fire","good","incorporeal","lawful","native","psionic","shapeshifter","swarm","water"],
       humanoid_subtypes: ["aquatic","dwarf","elf","gnoll","gnome","goblinoid","halfling","human","orc","reptilian"]
     },
-    source_text_faerun: {
+    source_text_BoED: {
       types: ["deathless"]
     },
     source_text_unknown: {
@@ -162,6 +162,21 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     };
   };
 
+  var sizeToArmorClassMod = function(size) {
+    if (!dnd35.size_categories().includes(size)) { log("error"); throw "{{error}}"; };
+    switch(size) {
+      case "fine":       return 8;
+      case "diminutive": return 4;
+      case "tiny":       return 2;
+      case "small":      return 1;
+      case "medium":     return 0;
+      case "large":      return -1;
+      case "huge":       return -2;
+      case "gargantuan": return -4;
+      case "colossal":   return -8;
+    };
+  };
+
   // Roll20 Attribute Utility Functions
 
   // Implemented internally in Roll20
@@ -206,57 +221,54 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     return true;
   };
 
-  var auditMookNPCSheet = function(id, nothrow=false) {
+  var throwDefaultTemplate = function(scope, id, str) {
+    var character = getObj("character", id);
+    throw ''.concat("&{template:default} {{name="+scope+"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "npcname"),"}} {{",escapeRoll20Macro(str),"}}");
+  };
 
-    var maybeThrow = function(id, str) {
-      var character = getObj("character", id);
-      throw ''.concat("{{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "npcname"),"}} {{",escapeRoll20Macro(str),"}}");
-    };
+  var auditMookNPCSheet = function(id) {
 
     // Check all purely numeric fields
-
     ["npcinit","npcarmorclass","npctoucharmorclass","npcflatfootarmorclass","npcbaseatt","npcfortsave","npcrefsave","npcwillsave","npcstr-mod","npcdex-mod","npccon-mod","npcint-mod","npcwis-mod","npccha-mod"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
-        maybeThrow(id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
+        throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
       };
     });
 
     // Check ability & modifiers, which can be a nonabilities
-
     ["npcstr","npcdex","npccon","npcint","npcwis","npccha"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
         if (!nonvalue_characters.includes(getAttrByName(id, a))) {
-          maybeThrow(id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
+          throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
         } else {
           if (getAttrByName(id, ''.concat(a,'-mod')) != 0) {
-            maybeThrow(id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' ability score '"+getAttrByName(id, a)+"'");
+            throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' ability score '"+getAttrByName(id, a)+"'");
           };
         };
       } else {
         if (getAttrByName(id, ''.concat(a,'-mod')) != abilityScoreToMod(getAttrByName(id, a))) {
-          maybeThrow(id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' nonability score");
+          throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' nonability score");
         };
       };
     });
 
     // Check grapple bonus, which can be a nonability
-
     ["npcgrapple"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
         if (!nonvalue_characters.includes(getAttrByName(id, a))) {
-          maybeThrow(id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
+          throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
         };
       };
     });
 
     // npcname
     if (getAttrByName(id, "npcname") == "") {
-      maybeThrow(id,"Undefined name");
+      throwDefaultTemplate("auditMookNPCSheet()",id,"Undefined name");
     };
 
     // npcsize
     if (!dnd35.size_categories().includes(getAttrByName(id, "npcsize").toLowerCase())) {
-      maybeThrow(id,"Invalid size= '"+getAttrByName(id, "npcsize")+"'");
+      throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid size= '"+getAttrByName(id, "npcsize")+"'");
     };
 
     // npctype
@@ -264,16 +276,16 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       var npctype = getAttrByName(id, "npctype");
       let result = npctype.match(/^([a-z ]+)(\([a-z ,]+\)){0,1}$/i)
       if (result[1] === undefined) {
-        maybeThrow(id,"Invalid type= '"+npctype+"'");
+        throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid type= '"+npctype+"'");
       };
       var type = trimWhitespace(result[1]);
       if (!dnd35.types().includes(type.toLowerCase())) {
-        maybeThrow(id,"Invalid type= '"+type+"'");
+        throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid type= '"+type+"'");
       };
       if (result[2] !== undefined) {
         trimWhitespace(result[2]).replace(/^\(/, "").replace(/\)$/, "").split(",").forEach(function(subtype) {
           if (!dnd35.subtypes().includes(subtype.toLowerCase())) {
-            maybeThrow(id,"Invalid subtype= '"+subtype+"'");
+            throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid subtype= '"+subtype+"'");
           };
         });
       };
@@ -283,7 +295,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     {
       var npchitdie = getAttrByName(id, "npchitdie");
       if (!trimWhitespace(npchitdie).replace(/ plus /gi, "+").replace(/ +/g, "").match(/^([+-]{0,1}([0-9]+[-+*/])*[0-9]*d[0-9]+([+-][0-9]+)*)+$/i)) {
-        maybeThrow(id,"Invalid hitdie= '"+npchitdie+"'");
+        throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid hitdie= '"+npchitdie+"'");
       };
     };
 
@@ -291,7 +303,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     {
       var npcinitmacro = getAttrByName(id, "npcinitmacro");
       if (npcinitmacro !== '&{template:DnD35Initiative} {{name=@{selected|token_name}}} {{check=checks for initiative:\n}} {{checkroll=[[(1d20cs>21cf<0 + (@{npcinit})) + ((1d20cs>21cf<0 + (@{npcinit}))/100) + ((1d20cs>21cf<0 + (@{npcinit}))/10000) &{tracker}]]}}') {
-        maybeThrow(id,''.concat("Invalid npcinitmacro= '",npcinitmacro,"'"));
+        throwDefaultTemplate("auditMookNPCSheet()",id,''.concat("Invalid npcinitmacro= '",npcinitmacro,"'"));
       };
     };
 
@@ -305,7 +317,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       npcspeeds.forEach(function(e) {
         let result = e.match(/^(([a-z]+) *){0,1}([0-9]+)( *\(([a-z]+)\)){0,1}$/);
         if (result == null) {
-          maybeThrow(id,"Unknown problem with npcspeed= '"+npcspeed+"'");
+          throwDefaultTemplate("auditMookNPCSheet()",id,"Unknown problem with npcspeed= '"+npcspeed+"'");
         };
         var mode = "";
         if (result[2] == null) {
@@ -313,20 +325,20 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         } else {
           mode = result[2];
           if (!dnd35.movement_modes().includes(mode)) {
-            maybeThrow(id,"Invalid mode '"+mode+"' in npcspeed= '"+npcspeed+"'");
+            throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid mode '"+mode+"' in npcspeed= '"+npcspeed+"'");
           };
         };
         if (mode_type_map[mode] !== undefined) {
-          maybeThrow(id,"Multiple definitions for same mode in npcspeed= '"+npcspeed+"'");
+          throwDefaultTemplate("auditMookNPCSheet()",id,"Multiple definitions for same mode in npcspeed= '"+npcspeed+"'");
         } else {
           mode_type_map[mode] = result[3];
         };
         if (mode=="fly") {
           if (result[5] == null) {
-            maybeThrow(id,"Fly maneuverability not defined for npcspeed= '"+npcspeed+"'");
+            throwDefaultTemplate("auditMookNPCSheet()",id,"Fly maneuverability not defined for npcspeed= '"+npcspeed+"'");
           } else {
             if (!dnd35.fly_maneuverability().includes(result[5])) {
-              maybeThrow(id,"Invalid fly maneuverability for npcspeed= '"+npcspeed+"'");
+              throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid fly maneuverability for npcspeed= '"+npcspeed+"'");
             };
           };
         };
@@ -342,28 +354,43 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       npcarmorclassinfos.forEach(function(e) {
         let result = e.match(/^([-+]{0,1}[0-9]+) +(.*)+$/);
         if (result == null) {
-          maybeThrow(id,"Invalid npcarmorclassinfo= '"+npcarmorclassinfo+"'");
+          throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid npcarmorclassinfo= '"+npcarmorclassinfo+"'");
         };
         if (isNaN(result[1])) { //TODO This is impossible...?
-          maybeThrow(id, "Invalid npcarmorclassinfo modifier value= '"+result[1]+"'");
+          throwDefaultTemplate("auditMookNPCSheet()",id, "Invalid npcarmorclassinfo modifier value= '"+result[1]+"'");
         };
         if (['str','dex','con','int','wis','cha'].includes(result[2])) {
           var ability_mod = getAttrByName(id, ''.concat('npc',result[2],'-mod'));
           if (result[1] != ability_mod) {
-            maybeThrow(id, "Invalid npcarmorclassinfo "+result[2]+" modifier value= '"+result[1]+"'");
+            throwDefaultTemplate("auditMookNPCSheet()",id, "Invalid npcarmorclassinfo "+result[2]+" modifier value= '"+result[1]+"'");
           };
         };
         if (result[2] == "size") {
-          var size_mod = sizeToMod(getAttrByName(id, "npcsize").toLowerCase());
+          var size_mod = sizeToArmorClassMod(getAttrByName(id, "npcsize").toLowerCase());
           if (result[1] != size_mod) {
-            maybeThrow(id, "Invalid npcarmorclassinfo size modifier value= '"+result[1]+"'");
+            throwDefaultTemplate("auditMookNPCSheet()",id, "Invalid npcarmorclassinfo size modifier value= '"+result[1]+"'");
           };
         };
       });
     };
 
-    //TODO npcspace
-    //TODO npcreach
+    // npcspace
+    {
+      var npcspace = trimWhitespace(getAttrByName(id, "npcspace").toLowerCase()
+                                       .replace(/^([0-9]+) *(feet|foot|ft\.*|')$/g, "$1"));
+      if (isNaN(npcspace)) {
+        throwDefaultTemplate("auditMookNPCSheet()",id, "Invalid npcspace value= '"+getAttrByName(id, "npcspace")+"'");
+      };
+    };
+
+    // npcreach
+    {
+      var npcreach = trimWhitespace(getAttrByName(id, "npcreach").toLowerCase()
+                                       .replace(/^([0-9]+) *(feet|foot|ft\.*|')$/g, "$1"));
+      if (isNaN(npcreach)) {
+        throwDefaultTemplate("auditMookNPCSheet()",id, "Invalid npcreach value= '"+getAttrByName(id, "npcreach")+"'");
+      };
+    };
 
     //SKIP npcattack
     //SKIP npcattackmacro
@@ -371,7 +398,6 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     //SKIP npcfullattackmacro
     //SKIP npcspecialattacks
     //SKIP npcspecialqualities
-
     //SKIP npcskills
     //SKIP npcfeats
     //SKIP npcenv
@@ -383,7 +409,6 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     //SKIP npclvladj
     //SKIP npcdescr
     //SKIP npccombatdescr
-    return true;
   };
 
   var fixMookPCSheet = function(id) {
@@ -655,8 +680,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     playerName = msg.who.replace(new RegExp(" \\(GM\\)$"), "");
     playerID = msg.playerid;
 
-    var sendErrorChat = function(str) {
-      sendChat("skepickleTokenLib", '/w "'+playerName+'" &{template:default} {{name=ERROR}} '+str, null, {noarchive:true});
+    var sendWhisperChat = function(str) {
+      sendChat("skepickleTokenLib", '/w "'+playerName+'" '+str, null, {noarchive:true});
     };
 
     argsFromUser = msg.content.split(/ +/);
@@ -669,11 +694,11 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         try {
           if (selected["_type"] != "graphic") { continue; }; // Silently skip over selected non-graphics
           var obj = getObj("graphic", selected["_id"]);
-          if (obj.get("_subtype") != "token") { sendErrorChat("{{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
-          if (obj.get("represents") == "") { sendErrorChat("{{Not a character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
+          if (obj.get("_subtype") != "token") { sendWhisperChat("&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
+          if (obj.get("represents") == "") { sendWhisperChat("&{template:default} {{name=ERROR}} {{Not a character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
           selected_creatures.push(selected["_id"]);
         } catch(e) {
-            sendErrorChat(e);
+          sendWhisperChat(e);
         };
       };
     };
@@ -689,7 +714,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= disabled}}');
           };
         });
-        sendChat("skepickleTokenLib", '/w "'+playerName+'" &{template:default} {{name=ERROR}} '+message_to_send, null, {noarchive:true});
+        sendWhisperChat('&{template:default} {{name=Source Texts}} '+message_to_send, null, {noarchive:true});
         break;
       case '--enable-source-text':
         break;
@@ -707,12 +732,36 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
               try {
                 auditMookNPCSheet(character.id);
               } catch(e) {
-                sendErrorChat(e);
+                sendWhisperChat(e);
               };
             });
           } catch(e) {
-            sendErrorChat(e);
+            sendWhisperChat(e);
           };
+        });
+        break;
+      case '--fix-mook-sheet':
+        selected_creatures.forEach(function(selected) {
+            var obj = getObj("graphic", selected);
+            var character = getObj("character", obj.get("represents"));
+            if (!character) { return; };
+            character.get("_defaulttoken", function(token) {
+              if (token !== "null") { return; };
+              try {
+                auditMookNPCSheet(character.id);
+                fixMookPCSheet(character.id);
+              } catch(e) {
+                sendWhisperChat(e);
+              };
+            });
+        });
+        break;
+      case '--check-sheet-macros':
+        selected_creatures.forEach(function(selected) {
+            var obj = getObj("graphic", selected);
+            var character = getObj("character", obj.get("represents"));
+            if (!character) { return; };
+            checkSheetMacros(character.id);
         });
         break;
       case '--toggle-reach-auras':
@@ -738,36 +787,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             };
         });
         break;
-      case '--fix-mook-sheet':
-        selected_creatures.forEach(function(selected) {
-            var obj = getObj("graphic", selected);
-            var character = getObj("character", obj.get("represents"));
-            if (!character) { return; };
-            character.get("_defaulttoken", function(token) {
-              if (token !== "null") { return; };
-              fixMookPCSheet(character.id);
-            });
-        });
-        break;
-      case '--check-sheet-macros':
-        selected_creatures.forEach(function(selected) {
-            var obj = getObj("graphic", selected);
-            var character = getObj("character", obj.get("represents"));
-            if (!character) { return; };
-            checkSheetMacros(character.id);
-        });
-        break;
-      case '--debug-attribute':
-        selected_creatures.forEach(function(selected) {
-            var obj = getObj("graphic", selected);
-            var character = getObj("character", obj.get("represents"));
-            if (!character) { return; };
-            var attrib_val = getAttrByName(character.id, first_arg);
-            log(first_arg+' attribute for '+character.get("name")+' is = '+attrib_val);
-        });
-        break;
       case '--roll-initiative':
-        //sendChat(playerName, '/w "'+playerName+'" Group Initiative:');
+        //sendWhisperChat('Group Initiative:');
         selected_creatures.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
@@ -796,18 +817,26 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                 });
               };
               Campaign().set("turnorder", JSON.stringify(turnorder));
-              //sendChat(playerName, '/w "'+playerName+'"'+char_name+"->"+(msg[0].inlinerolls[0]["results"]["total"].toFixed(4)));
+              //sendWhisperChat(char_name+"->"+(msg[0].inlinerolls[0]["results"]["total"].toFixed(4)));
             });
         });
         break;
+      case '--debug-attribute':
+        selected_creatures.forEach(function(selected) {
+            var obj = getObj("graphic", selected);
+            var character = getObj("character", obj.get("represents"));
+            if (!character) { return; };
+            var attrib_val = getAttrByName(character.id, first_arg);
+            log(first_arg+' attribute for '+character.get("name")+' is = '+attrib_val);
+        });
+        break;
       case '--help':
-      //  getHelp();
-          sendChat(playerName, '/w "'+playerName+'" Test 1 2 3 '+playerName);
-          break;
-      break;
+      //getHelp();
+        sendChat(playerName, '/w "'+playerName+'" Test 1 2 3 '+playerName);
+        break;
       case undefined:
-      //  getHelp();
-      break;
+      //getHelp();
+        break;
     };
     //getHelp();
   };
