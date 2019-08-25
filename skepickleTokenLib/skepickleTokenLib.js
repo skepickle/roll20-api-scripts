@@ -797,12 +797,26 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         selected_creatures.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
-            var npcinitmacro = getAttrByName(character.id, "npcinitmacro");
-            var character = getObj("character", obj.get("represents"));
             var char_name = character.get("name");
-            var attrib_value_initmacro = character.get("initmacro");
-            var init_attrib_name = (attrib_value_initmacro === "@{npcinitmacro}")?("npcinit"):("init");
-            sendChat(playerName, "[[(1d20 + (@{"+char_name+"|"+init_attrib_name+"})) + ((1d20 + (@{"+char_name+"|"+init_attrib_name+"}))/100) + ((1d20 + (@{"+char_name+"|"+init_attrib_name+"}))/10000) ]]",function(msg) {
+            var correct_initmacro;
+            if (getAttrByName(character.id, "npcname")==="") {
+              correct_initmacro = getAttrByName(character.id,"initmacro");
+            } else {
+              correct_initmacro = getAttrByName(character.id,"npcinitmacro");
+            };
+            correct_initmacro = correct_initmacro
+                                  .replace(/(\r\n|\n|\r)/gm,"")
+                                  .replace(/^.*\{\{checkroll\=/m, "")
+                                  .replace(/\}\}.*$/m, "")
+                                  .replace(/\&\{tracker\}/m, "")
+                                  .replace(/\@\{selected\|/mg, '@{')
+                                  .replace(/\@\{/mg, '@{'+char_name+'|')
+                                  .replace(/^ +/g, '')
+                                  .replace(/ +$/g, '');
+            if (!correct_initmacro.match(/^\[\[.*\]\]$/)) {
+              correct_initmacro = '[[ '+correct_initmacro+' ]]';
+            };
+            sendChat(playerName,correct_initmacro,function(msg) {
               var turnorder;
               if (Campaign().get("turnorder") == "") { turnorder = []; }
               else { turnorder = JSON.parse(Campaign().get("turnorder")); };
