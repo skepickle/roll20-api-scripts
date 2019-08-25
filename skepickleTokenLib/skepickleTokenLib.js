@@ -26,11 +26,11 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
     };
     return str.join(' ');
-  };
+  }; // toTitleCase
 
   var trimWhitespace = function(str) {
     return str.replace(/ +/g, " ").replace(/^ /, "").replace(/ $/, "").replace(/ *, */g, ",");
-  };
+  }; // trimWhitespace
 
   var escapeRoll20Macro = function(str) {
     return str.replace(/\&/g,  "&amp;")
@@ -42,7 +42,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
               .replace(/\{\{/g,"&#123;&#123;")
               .replace(/\]\]/g,"&#93;&#93;")
               .replace(/\}\}/g,"&#125;&#125;");
-  };
+  }; // escapeRoll20Macro
 
   // D&D 3.5e Tables
 
@@ -134,18 +134,20 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       return 0;
     };
     return Math.floor((score-10.0)/2.0);
-  };
+  }; // abilityScoreToMod
 
   var abilityScoreToBonusSpells = function(score, spelllevel) {
+    if (isNaN(score)) { return 0; };
     if (spelllevel==0) { return 0; };
     mod = abilityScoreToMod(score);
     return Math.max(0,Math.ceil((1.0+mod-spelllevel/4.0)));
-  };
+  }; // abilityScoreToBonusSpells
 
   var abilityScoreToBonusPowers = function(score, classlevel) {
+    if (isNaN(score)) { return 0; };
     mod = abilityScoreToMod(score);
     return Math.floor((mod*classlevel)/2.0);
-  };
+  }; // abilityScoreToBonusPowers
 
   var sizeToMod = function(size) {
     if (!dnd35.size_categories().includes(size)) { log("error"); throw "{{error}}"; };
@@ -160,7 +162,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       case "gargantuan": return -3;
       case "colossal":   return -4;
     };
-  };
+  }; // sizeToMod
 
   var sizeToArmorClassMod = function(size) {
     if (!dnd35.size_categories().includes(size)) { log("error"); throw "{{error}}"; };
@@ -175,7 +177,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       case "gargantuan": return -4;
       case "colossal":   return -8;
     };
-  };
+  }; // sizeToArmorClassMod
 
   // Roll20 Attribute Utility Functions
 
@@ -201,7 +203,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     };
     obj.setWithWorker("current", value);
     if (max) { obj.setWithWorker("max", max); };
-  };
+  }; // setAttrByName
 
   var isAttrByNameNaN = function(id, attrib, value_type) {
     value_type = value_type || 'current';
@@ -212,7 +214,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       return true;
     };
     return isNaN(val);
-  };
+  }; // isAttrByNameNaN
 
   // Roll20 Character Sheet Utility Functions
 
@@ -224,10 +226,9 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
   var throwDefaultTemplate = function(scope, id, str) {
     var character = getObj("character", id);
     throw ''.concat("&{template:default} {{name="+scope+"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "npcname"),"}} {{",escapeRoll20Macro(str),"}}");
-  };
+  }; // throwDefaultTemplate
 
   var auditMookNPCSheet = function(id) {
-
     // Check all purely numeric fields
     ["npcinit","npcarmorclass","npctoucharmorclass","npcflatfootarmorclass","npcbaseatt","npcfortsave","npcrefsave","npcwillsave","npcstr-mod","npcdex-mod","npccon-mod","npcint-mod","npcwis-mod","npccha-mod"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
@@ -409,7 +410,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     //SKIP npclvladj
     //SKIP npcdescr
     //SKIP npccombatdescr
-  };
+  }; // auditMookNPCSheet
 
   var fixMookPCSheet = function(id) {
     setAttrByName(id, "npc-show", 2);
@@ -577,14 +578,14 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         ));
       };
     };
-  };
+  }; // fixMookPCSheet
 
   var checkSheetMacros = function(id) {
     for (var i=1; i<=10; i++) {
       var weaponNname = getAttrByName(id, "weapon"+i+"name");
       log(weaponNname);
     };
-  };
+  }; // checkSheetMacros
 
   var mookTokenFixer = function(obj) {
     var objLayer = obj.get("layer");
@@ -661,7 +662,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         };
       };
     });
-  };
+  }; // mookTokenFixer
 
   var handleInput = function inputHandler(msg) {
     if (msg.type !== "api" || msg.content.indexOf("!stl") === -1 ) { return; };
@@ -831,20 +832,17 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         });
         break;
       case '--help':
+      case undefined:
       //getHelp();
         sendChat(playerName, '/w "'+playerName+'" Test 1 2 3 '+playerName);
         break;
-      case undefined:
-      //getHelp();
-        break;
     };
-    //getHelp();
-  };
+  }; // handleInput
 
   var registerEventHandlers = function() {
     on('add:graphic',  mookTokenFixer);
     on('chat:message', handleInput);
-  };
+  }; // registerEventHandlers
 
   var checkInstall = function() {
     if ( Boolean(state.skepickleTokenLibImp) === false ) {
@@ -853,11 +851,11 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         config: config
       };
     };
-  };
+  }; // checkInstall
 
   var initialize = function() {
     temp.campaignLoaded = true;
-  };
+  }; // initialize
 
   return {
     // Make the following functions available outside the local namespace
