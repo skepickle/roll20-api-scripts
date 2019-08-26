@@ -209,9 +209,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     value_type = value_type || 'current';
     var val = getAttrByName(id, attrib, value_type);
     if (val === undefined) {
-      //TODO throw ERROR: Attribute does not exist
       throw "isAttrByNameNaN() called with undefined attribute"
-      return true;
     };
     return isNaN(val);
   }; // isAttrByNameNaN
@@ -676,7 +674,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         first_arg,
         second_arg,
         userCommand,
-        selected_creatures=[];
+        selected_tokens=[];
 
     playerName = msg.who.replace(new RegExp(" \\(GM\\)$"), "");
     playerID = msg.playerid;
@@ -697,7 +695,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
           var obj = getObj("graphic", selected["_id"]);
           if (obj.get("_subtype") != "token") { sendWhisperChat("&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
           if (obj.get("represents") == "") { sendWhisperChat("&{template:default} {{name=ERROR}} {{Not a character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
-          selected_creatures.push(selected["_id"]);
+          selected_tokens.push(selected["_id"]);
         } catch(e) {
           sendWhisperChat(e);
         };
@@ -722,7 +720,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       case '--disable-source-text':
         break;
       case '--audit-mook-sheet':
-        selected_creatures.forEach(function(selected) {
+        selected_tokens.forEach(function(selected) {
           try {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
@@ -742,7 +740,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         });
         break;
       case '--fix-mook-sheet':
-        selected_creatures.forEach(function(selected) {
+        selected_tokens.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
             if (!character) { return; };
@@ -758,7 +756,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         });
         break;
       case '--check-sheet-macros':
-        selected_creatures.forEach(function(selected) {
+        selected_tokens.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
             if (!character) { return; };
@@ -766,7 +764,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         });
         break;
       case '--toggle-reach-auras':
-        selected_creatures.forEach(function(selected) {
+        selected_tokens.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
             var npcreach = getAttrByName(character.id, "npcreach").replace(new RegExp("[^\.0-9].*$"), "");
@@ -788,13 +786,14 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             };
         });
         break;
+      case '--group-initiative-check':
       case '--roll-initiative':
-        var msg_to_send = "&{template:default} {{name=Group Initiative}} ";
-        var selected_creatures_left = selected_creatures.length;
+        var roll_initiative_map = {};
+        var selected_tokens_remaining = selected_tokens.length;
         if (first_arg == "clear") {
           Campaign().set("turnorder", JSON.stringify([]));
         };
-        selected_creatures.forEach(function(selected) {
+        selected_tokens.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
             var char_name = character.get("name");
@@ -836,16 +835,32 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                 });
               };
               Campaign().set("turnorder", JSON.stringify(turnorder));
-              msg_to_send += "{{" + char_name+"= "+(msg[0].inlinerolls[0]["results"]["total"].toFixed(4))+"}} ";
-              selected_creatures_left--;
-              if (selected_creatures_left==0) {
-                sendWhisperChat(msg_to_send);
+              {
+                var char_name_unique = char_name;
+                if(roll_initiative_map[char_name] !== undefined) {
+                  var n = 2;
+                  while (roll_initiative_map[char_name.concat(" ("+n+")")] !== undefined) {
+                    n++;
+                  };
+                  char_name_unique = char_name.concat(" ("+n+")");
+                };
+                roll_initiative_map[char_name_unique] = msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
+              };
+              selected_tokens_remaining--;
+              if (selected_tokens_remaining==0) {
+                var chat_msg = "&{template:default} {{name=Group Initiative}} ";
+                Object.keys(roll_initiative_map).forEach(function(k){
+                  chat_msg += "{{" + k + "= "+ roll_initiative_map[k] +"}} ";
+                });
+                sendWhisperChat(chat_msg);
               };
             });
         });
         break;
+      case '--group-skill-check':
+        break;
       case '--debug-attribute':
-        selected_creatures.forEach(function(selected) {
+        selected_tokens.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
             if (!character) { return; };
