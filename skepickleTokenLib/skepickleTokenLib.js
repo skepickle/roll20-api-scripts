@@ -794,70 +794,95 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
           Campaign().set("turnorder", JSON.stringify([]));
         };
         selected_tokens.forEach(function(selected) {
-            var obj = getObj("graphic", selected);
-            var character = getObj("character", obj.get("represents"));
-            var char_name = character.get("name");
-            var correct_initmacro;
-            if (getAttrByName(character.id, "npcname")==="") {
-              correct_initmacro = getAttrByName(character.id,"initmacro");
-            } else {
-              correct_initmacro = getAttrByName(character.id,"npcinitmacro");
+          var obj = getObj("graphic", selected);
+          var character = getObj("character", obj.get("represents"));
+          var char_name = character.get("name");
+          var correct_initmacro;
+          if (getAttrByName(character.id, "npcname")==="") {
+            correct_initmacro = getAttrByName(character.id,"initmacro");
+          } else {
+            correct_initmacro = getAttrByName(character.id,"npcinitmacro");
+          };
+          correct_initmacro = correct_initmacro
+                                .replace(/(\r\n|\n|\r)/gm,"")
+                                .replace(/^.*\{\{checkroll\=/m, "")
+                                .replace(/\}\}.*$/m, "")
+                                .replace(/\&\{tracker\}/m, "")
+                                .replace(/\@\{selected\|/mg, '@{')
+                                .replace(/\@\{/mg, '@{'+char_name+'|')
+                                .replace(/^ +/g, '')
+                                .replace(/ +$/g, '');
+          if (!correct_initmacro.match(/^\[\[.*\]\]$/)) {
+            correct_initmacro = '[[ '+correct_initmacro+' ]]';
+          };
+          sendChat(playerName,correct_initmacro,function(msg) {
+            var turnorder;
+            if (Campaign().get("turnorder") == "") { turnorder = []; }
+            else { turnorder = JSON.parse(Campaign().get("turnorder")); };
+            //log(msg[0].inlinerolls[0]["results"]["total"]);
+            var token_in_turnorder = false;
+            for (var i=0; i<turnorder.length; i++) {
+              if (turnorder[i]["id"] === selected) {
+                token_in_turnorder = true;
+                turnorder[i]["pr"] = msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
+                break;
+              };
             };
-            correct_initmacro = correct_initmacro
-                                  .replace(/(\r\n|\n|\r)/gm,"")
-                                  .replace(/^.*\{\{checkroll\=/m, "")
-                                  .replace(/\}\}.*$/m, "")
-                                  .replace(/\&\{tracker\}/m, "")
-                                  .replace(/\@\{selected\|/mg, '@{')
-                                  .replace(/\@\{/mg, '@{'+char_name+'|')
-                                  .replace(/^ +/g, '')
-                                  .replace(/ +$/g, '');
-            if (!correct_initmacro.match(/^\[\[.*\]\]$/)) {
-              correct_initmacro = '[[ '+correct_initmacro+' ]]';
+            if (!token_in_turnorder) {
+              turnorder.push({
+                id: selected,
+                pr: msg[0].inlinerolls[0]["results"]["total"].toFixed(4)
+              });
             };
-            sendChat(playerName,correct_initmacro,function(msg) {
-              var turnorder;
-              if (Campaign().get("turnorder") == "") { turnorder = []; }
-              else { turnorder = JSON.parse(Campaign().get("turnorder")); };
-              //log(msg[0].inlinerolls[0]["results"]["total"]);
-              var token_in_turnorder = false;
-              for (var i=0; i<turnorder.length; i++) {
-                if (turnorder[i]["id"] === selected) {
-                  token_in_turnorder = true;
-                  turnorder[i]["pr"] = msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
-                  break;
+            Campaign().set("turnorder", JSON.stringify(turnorder));
+            {
+              var char_name_unique = char_name;
+              if(roll_initiative_map[char_name] !== undefined) {
+                var n = 2;
+                while (roll_initiative_map[char_name.concat(" ("+n+")")] !== undefined) {
+                  n++;
                 };
+                char_name_unique = char_name.concat(" ("+n+")");
               };
-              if (!token_in_turnorder) {
-                turnorder.push({
-                  id: selected,
-                  pr: msg[0].inlinerolls[0]["results"]["total"].toFixed(4)
-                });
-              };
-              Campaign().set("turnorder", JSON.stringify(turnorder));
-              {
-                var char_name_unique = char_name;
-                if(roll_initiative_map[char_name] !== undefined) {
-                  var n = 2;
-                  while (roll_initiative_map[char_name.concat(" ("+n+")")] !== undefined) {
-                    n++;
-                  };
-                  char_name_unique = char_name.concat(" ("+n+")");
-                };
-                roll_initiative_map[char_name_unique] = msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
-              };
-              selected_tokens_remaining--;
-              if (selected_tokens_remaining==0) {
-                var chat_msg = "&{template:default} {{name=Group Initiative}} ";
-                Object.keys(roll_initiative_map).forEach(function(k){
-                  chat_msg += "{{" + k + "= "+ roll_initiative_map[k] +"}} ";
-                });
-                sendWhisperChat(chat_msg);
-              };
-            });
+              roll_initiative_map[char_name_unique] = msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
+            };
+            selected_tokens_remaining--;
+            if (selected_tokens_remaining==0) {
+              var chat_msg = "&{template:default} {{name=Group Initiative}} ";
+              Object.keys(roll_initiative_map).forEach(function(k){
+                chat_msg += "{{" + k + "= "+ roll_initiative_map[k] +"}} ";
+              });
+              sendWhisperChat(chat_msg);
+            };
+          });
         });
         break;
       case '--group-skill-check':
+        var roll_initiative_map = {};
+        var selected_tokens_remaining = selected_tokens.length;
+        var skill_attrib = first_arg;
+        var highest_char_name = ""
+        var highest_bonus = -100000;
+        selected_tokens.forEach(function(selected) {
+          var obj = getObj("graphic", selected);
+          var character = getObj("character", obj.get("represents"));
+          var char_name = character.get("name");
+          log(char_name);
+          log(skill_attrib);
+          sendChat(playerName,''.concat('[[@{',char_name,'|',skill_attrib,'}]]'),function(msg) {
+            var bonus = msg[0].inlinerolls[0]["results"]["total"];
+            if (bonus > highest_bonus) {
+              highest_bonus = bonus;
+              highest_char_name = char_name;
+            };
+            selected_tokens_remaining--;
+            if (selected_tokens_remaining==0) {
+              sendChat(playerName,''.concat('[[1d20 + @{',highest_char_name,'|',skill_attrib,'}]]'),function(msg) {
+                log((msg[0].inlinerolls[0]["results"]["total"])+((selected_tokens.length-1)*2));
+              });
+            };
+          });
+        });
         break;
       case '--debug-attribute':
         selected_tokens.forEach(function(selected) {
