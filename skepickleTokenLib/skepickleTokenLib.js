@@ -862,6 +862,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       case '--group-skill-check':
         // --group-skill-check <SKILLNAME> <aid|individual>
         //   Both arguments are required
+        //TODO Add unique skill check rolls for multiple instances of the same mook...
         if ((first_arg == null) || (second_arg == null)) {
           sendWhisperChat('&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Required arguments missing}}');
         };
