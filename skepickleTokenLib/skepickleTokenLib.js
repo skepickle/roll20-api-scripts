@@ -130,7 +130,6 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
 
   var abilityScoreToMod = function(score) {
     if (isNaN(score)) {
-      //TODO check to see if it's empty / - / etc and not just NaN.
       return 0;
     };
     return Math.floor((score-10.0)/2.0);
@@ -355,8 +354,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         if (result == null) {
           throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid npcarmorclassinfo= '"+npcarmorclassinfo+"'");
         };
-        if (isNaN(result[1])) { //TODO This is impossible...?
-          throwDefaultTemplate("auditMookNPCSheet()",id, "Invalid npcarmorclassinfo modifier value= '"+result[1]+"'");
+        if (isNaN(result[1])) {
+          throwDefaultTemplate("auditMookNPCSheet()",id, "Impossible Condition: Invalid npcarmorclassinfo modifier value= '"+result[1]+"'");
         };
         if (['str','dex','con','int','wis','cha'].includes(result[2])) {
           var ability_mod = getAttrByName(id, ''.concat('npc',result[2],'-mod'));
