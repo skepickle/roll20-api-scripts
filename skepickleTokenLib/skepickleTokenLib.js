@@ -705,7 +705,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       case '--list-source-texts':
         var message_to_send = '';
         Object.keys(dnd35.all_source_texts).forEach(function(k,i) {
-          log(k+' '+dnd35.all_source_texts[k]);
+          //log(k+' '+dnd35.all_source_texts[k]);
           if (dnd35.enabled_source_texts.includes(k)) {
             message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= enabled}}');
           } else {
@@ -838,7 +838,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             Campaign().set("turnorder", JSON.stringify(turnorder));
             {
               var char_name_unique = char_name;
-              if(roll_initiative_map[char_name] !== undefined) {
+              if (roll_initiative_map[char_name] !== undefined) {
                 var n = 2;
                 while (roll_initiative_map[char_name.concat(" ("+n+")")] !== undefined) {
                   n++;
@@ -861,7 +861,6 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       case '--group-skill-check':
         // --group-skill-check <SKILLNAME> <aid|individual>
         //   Both arguments are required
-        //TODO Add unique skill check rolls for multiple instances of the same mook...
         if ((first_arg == null) || (second_arg == null)) {
           sendWhisperChat('&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Required arguments missing}}');
         };
@@ -870,52 +869,66 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         };
         var skill_attrib = first_arg;
         var help_type    = second_arg;
-        var roll_skill_map = {};
+
+        var roll_skill_map            = {}; // key=uniquified char_name, val=skill check
         var selected_tokens_remaining = selected_tokens.length;
-        var highest_char_name = ""
-        var highest_bonus = -100000;
-        if (help_type == "aid") {
-          selected_tokens.forEach(function(selected) {
-            var obj = getObj("graphic", selected);
-            var character = getObj("character", obj.get("represents"));
-            var char_name = character.get("name");
-            sendChat(playerName,''.concat('[[@{',char_name,'|',skill_attrib,'}]]'),function(msg) {
-              var bonus = msg[0].inlinerolls[0]["results"]["total"];
-              if (bonus > highest_bonus) {
-                highest_bonus = bonus;
-                highest_char_name = char_name;
+        var highest_char_name         = "";
+        var highest_bonus             = -100000;
+        // Loop through each selected character...
+        selected_tokens.forEach(function(selected) {
+          var obj       = getObj("graphic", selected);
+          var character = getObj("character", obj.get("represents"));
+          var char_name = character.get("name");
+          // ...retrieve each selected character's skill bonus...
+          sendChat(playerName,''.concat('[[@{',char_name,'|',skill_attrib,'}]]'),function(msg) {
+            var bonus = msg[0].inlinerolls[0]["results"]["total"];
+            // ...generate a unique char_name, in case of multiple instances...
+            var char_name_unique = char_name;
+            //log("before uniquify! "+char_name+"   "+roll_skill_map[char_name]);
+            if (roll_skill_map[char_name] !== undefined) {
+              //log("uniquify");
+              var n = 2;
+              while (roll_skill_map[char_name.concat(" ("+n+")")] !== undefined) {
+                n++;
               };
-              roll_skill_map[char_name] = "+2";
+              //log("  :::"+n);
+              char_name_unique = char_name.concat(" ("+n+")");
+            };
+            // ...record watermark of highest skill bonus...
+            if (bonus > highest_bonus) {
+              highest_bonus     = bonus;
+              highest_char_name = char_name_unique;
+            };
+            // ...roll the skill check...
+            roll_skill_map[char_name_unique] = "UNROLLED";
+            sendChat(playerName,''.concat('[[1d20 + ', bonus, ']]'),function(msg) {
+              var check = msg[0].inlinerolls[0]["results"]["total"];
+              //log("assign "+char_name_unique+"->"+check);
+              roll_skill_map[char_name_unique] = check;
               selected_tokens_remaining--;
+              // ...then on the last selected character generate and send chat message
               if (selected_tokens_remaining==0) {
-                sendChat(playerName,''.concat('[[1d20 + @{',highest_char_name,'|',skill_attrib,'}]]'),function(msg) {
-                  roll_skill_map[highest_char_name] = msg[0].inlinerolls[0]["results"]["total"];
-                  var chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+skill_attrib+"}} {{Check Type= "+help_type+"}} ";
-                  Object.keys(roll_skill_map).forEach(function(k){
+                var aid_total = 0;
+                var chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+skill_attrib+"}} {{Check Type= "+help_type+"}} ";
+                Object.keys(roll_skill_map).forEach(function(k){
+                  if ((help_type == "aid") && (k !== highest_char_name)) {
+                    var aid_inc = 0;
+                    if (roll_skill_map[k] >= 10) { aid_inc = 2; };
+                    aid_total += aid_inc;
+                    chat_msg += "{{" + k + "= +" + aid_inc + "(" + roll_skill_map[k] + ")}} ";
+                  } else {
+                    aid_total += roll_skill_map[k];
                     chat_msg += "{{" + k + "= " + roll_skill_map[k] + "}} ";
-                  });
-                  chat_msg += "{{*Total*= "+ ((msg[0].inlinerolls[0]["results"]["total"])+((selected_tokens.length-1)*2)) +"}} ";
-                  sendWhisperChat(chat_msg);
+                  };
                 });
-              };
-            });
-          });
-        } else {
-          var chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+skill_attrib+"}} {{Check Type= "+help_type+"}} ";
-          selected_tokens.forEach(function(selected) {
-            var obj = getObj("graphic", selected);
-            var character = getObj("character", obj.get("represents"));
-            var char_name = character.get("name");
-            sendChat(playerName,''.concat('[[1d20 + @{',char_name,'|',skill_attrib,'}]]'),function(msg) {
-              var check_val = msg[0].inlinerolls[0]["results"]["total"];
-              chat_msg += "{{" + char_name + "= " + check_val + "}} ";
-              selected_tokens_remaining--
-              if (selected_tokens_remaining==0) {
+                if (help_type == "aid") {
+                  chat_msg += "{{*Total*= ***"+ aid_total +"***}} ";
+                };
                 sendWhisperChat(chat_msg);
               };
             });
           });
-        };
+        });
         break;
       case '--debug-attribute':
         selected_tokens.forEach(function(selected) {
