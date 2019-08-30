@@ -817,6 +817,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             correct_initmacro = '[[ '+correct_initmacro+' ]]';
           };
           //log(correct_initmacro);
+          //TODO maybe try/catch the following macro call?
           sendChat(playerName,correct_initmacro,function(msg) {
             var turnorder;
             if (Campaign().get("turnorder") == "") { turnorder = []; }
@@ -840,10 +841,10 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             {
               var char_name_unique = char_name;
               if (roll_initiative_map[char_name] !== undefined) {
-                if (roll_initiative_map[char_name] != "DO_NOT_ROLL_THIS") {
+                if (roll_initiative_map[char_name] != "EXCLUDE") {
                   char_name_unique = char_name.concat(" (1)");
                   roll_initiative_map[char_name_unique] = roll_initiative_map[char_name];
-                  roll_initiative_map[char_name]        = "DO_NOT_ROLL_THIS";
+                  roll_initiative_map[char_name]        = "EXCLUDE";
                   char_name_unique = char_name.concat(" (2)");
                 } else {
                   var n = 3;
@@ -859,7 +860,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             if (selected_tokens_remaining==0) {
               var chat_msg = "&{template:default} {{name=Group Initiative}} ";
               Object.keys(roll_initiative_map).forEach(function(k){
-                if (roll_initiative_map[k] == "DO_NOT_ROLL_THIS") {
+                if (roll_initiative_map[k] == "EXCLUDE") {
                   return;
                 };
                 chat_msg += "{{" + k + "= "+ roll_initiative_map[k] +"}} ";
