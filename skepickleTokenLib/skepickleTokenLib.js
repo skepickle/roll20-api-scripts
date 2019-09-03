@@ -54,12 +54,12 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     },
     enabled_source_texts: ["SRD","BoED"],
     source_text_SRD: {
-      movement_modes: ["burrow","climb","fly","swim"],
+      movement_modes:      ["burrow","climb","fly","swim"],
       fly_maneuverability: ["perfect","good","average","poor","clumsy"],
-      size_categories: ["fine","diminutive","tiny","small","medium","large","huge","gargantuan","colossal"],
-      types: ["aberration","animal","celestial","construct","dragon","elemental","fey","fiend","giant","humanoid","magical beast","monstrous humanoid","ooze","outsider","plant","undead","vermin"],
-      creature_subtypes: ["air","angel","aquatic","archon","augmented","chaotic","cold","demon","devil","earth","evil","extraplanar","fire","good","incorporeal","lawful","native","psionic","shapeshifter","swarm","water"],
-      humanoid_subtypes: ["aquatic","dwarf","elf","gnoll","gnome","goblinoid","halfling","human","orc","reptilian"]
+      size_categories:     ["fine","diminutive","tiny","small","medium","large","huge","gargantuan","colossal"],
+      types:               ["aberration","animal","celestial","construct","dragon","elemental","fey","fiend","giant","humanoid","magical beast","monstrous humanoid","ooze","outsider","plant","undead","vermin"],
+      creature_subtypes:   ["air","angel","aquatic","archon","augmented","chaotic","cold","demon","devil","earth","evil","extraplanar","fire","good","incorporeal","lawful","native","psionic","shapeshifter","swarm","water"],
+      humanoid_subtypes:   ["aquatic","dwarf","elf","gnoll","gnome","goblinoid","halfling","human","orc","reptilian"]
     },
     source_text_BoED: {
       types: ["deathless"]
@@ -67,63 +67,23 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     source_text_unknown: {
       movement_modes: ["glide"]
     },
-    movement_modes: function() {
+    merge_tables: function(property_name) {
       var result = [];
+      var myself = this;
       this.enabled_source_texts.forEach(function(source) {
-        if (dnd35['source_text_'.concat(source)].movement_modes !== undefined) {
-          result = [...new Set([...result ,...dnd35['source_text_'.concat(source)].movement_modes])];
+        if (myself['source_text_'.concat(source)][property_name] !== undefined) {
+          result = [...new Set([...result ,...myself['source_text_'.concat(source)][property_name]])];
         };
       });
       return result;
     },
-    fly_maneuverability: function() {
-      var result = [];
-      this.enabled_source_texts.forEach(function(source) {
-        if (dnd35['source_text_'.concat(source)].fly_maneuverability !== undefined) {
-          result = [...new Set([...result ,...dnd35['source_text_'.concat(source)].fly_maneuverability])];
-        };
-      });
-      return result;
-    },
-    size_categories: function() {
-      var result = [];
-      this.enabled_source_texts.forEach(function(source) {
-        if (dnd35['source_text_'.concat(source)].size_categories !== undefined) {
-          result = [...new Set([...result ,...dnd35['source_text_'.concat(source)].size_categories])];
-        };
-      });
-      return result;
-    },
-    types: function() {
-      var result = [];
-      this.enabled_source_texts.forEach(function(source) {
-        if (dnd35['source_text_'.concat(source)].types !== undefined) {
-          result = [...new Set([...result ,...dnd35['source_text_'.concat(source)].types])];
-        };
-      });
-      return result;
-    },
-    creature_subtypes: function() {
-      var result = [];
-      this.enabled_source_texts.forEach(function(source) {
-        if (dnd35['source_text_'.concat(source)].creature_subtypes !== undefined) {
-          result = [...new Set([...result ,...dnd35['source_text_'.concat(source)].creature_subtypes])];
-        };
-      });
-      return result;
-    },
-    humanoid_subtypes: function() {
-      var result = [];
-      this.enabled_source_texts.forEach(function(source) {
-        if (dnd35['source_text_'.concat(source)].humanoid_subtypes !== undefined) {
-          result = [...new Set([...result ,...dnd35['source_text_'.concat(source)].humanoid_subtypes])];
-        };
-      });
-      return result;
-    },
-    subtypes: function() {
-      return [...new Set([...dnd35.creature_subtypes() ,...dnd35.humanoid_subtypes()])];
-    }
+    movement_modes:      function() { return this.merge_tables("movement_modes"); },
+    fly_maneuverability: function() { return this.merge_tables("fly_maneuverability"); },
+    size_categories:     function() { return this.merge_tables("size_categories"); },
+    types:               function() { return this.merge_tables("types"); },
+    creature_subtypes:   function() { return this.merge_tables("creature_subtypes"); },
+    humanoid_subtypes:   function() { return this.merge_tables("humanoid_subtypes"); },
+    subtypes:            function() { return [...new Set([...this.creature_subtypes() ,...this.humanoid_subtypes()])]; }
   };
 
   // D&D 3.5e Utility Functions
