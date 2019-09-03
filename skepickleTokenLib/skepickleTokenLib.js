@@ -955,10 +955,14 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                       if (get_checks_remaining==0) {
                         //log(roll_skill_map);
                         var aid_total = 0;
+                        var checks_total = 0;
+                        var checks_num   = 0;
                         var chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+skill_attrib+"}} {{Check Type= "+help_type+"}} ";
                         var prints_remaining = Object.keys(roll_skill_map).length;
                         Object.keys(roll_skill_map).forEach(function(char_name_unique) {
                           if (roll_skill_map[char_name_unique].state != "EXCLUDE") {
+                            checks_total += roll_skill_map[char_name_unique].check;
+                            checks_num++;
                             if ((help_type == "aid") && (char_name_unique !== highest_char_name)) {
                               var aid_inc = 0;
                               if (roll_skill_map[char_name_unique].check >= 10) { aid_inc = 2; };
@@ -973,6 +977,9 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                           if (prints_remaining==0) {
                             if (help_type == "aid") {
                               chat_msg += "{{*Total*= ***"+ aid_total +"***}} ";
+                            } else {
+                              var avg_check = checks_total / checks_num;
+                              chat_msg += "{{*Average*= ***"+avg_check+"***}}";
                             };
                             sendWhisperChat(chat_msg);
                           };
