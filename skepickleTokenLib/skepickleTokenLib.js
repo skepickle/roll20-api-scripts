@@ -798,76 +798,71 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
           var obj = getObj("graphic", selected);
           var character = getObj("character", obj.get("represents"));
           var char_name = character.get("name");
-          var correct_initmacro;
-          if (getAttrByName(character.id, "npcname")==="") {
-            correct_initmacro = getAttrByName(character.id,"initmacro");
-          } else {
-            correct_initmacro = getAttrByName(character.id,"npcinitmacro");
+          var init_macro;
+          {
+            var init_attrib_name;
+            if (getAttrByName(character.id, "npcname")==="") {
+              init_attrib_name = "init";
+            } else {
+              init_attrib_name = "npcinit";
+            };
+            init_macro = "[[(1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"})) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/100) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/10000)]]";
           };
-          correct_initmacro = correct_initmacro
-                                .replace(/(\r\n|\n|\r)/gm,"")
-                                .replace(/^.*\{\{checkroll\=/m, "")
-                                .replace(/\}\}.*$/m, "")
-                                .replace(/\&\{tracker\}/m, "")
-                                .replace(/\@\{selected\|/mg, '@{')
-                                .replace(/\@\{/mg, '@{'+char_name+'|')
-                                .replace(/^ +/g, '')
-                                .replace(/ +$/g, '');
-          if (!correct_initmacro.match(/^\[\[.*\]\]$/)) {
-            correct_initmacro = '[[ '+correct_initmacro+' ]]';
-          };
-          //log(correct_initmacro);
-          //TODO maybe try/catch the following macro call?
-          sendChat(playerName,correct_initmacro,function(msg) {
-            var turnorder;
-            if (Campaign().get("turnorder") == "") { turnorder = []; }
-            else { turnorder = JSON.parse(Campaign().get("turnorder")); };
-            //log(msg[0].inlinerolls[0]["results"]["total"]);
-            var token_in_turnorder = false;
-            for (var i=0; i<turnorder.length; i++) {
-              if (turnorder[i]["id"] === selected) {
-                token_in_turnorder = true;
-                turnorder[i]["pr"] = msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
-                break;
+          try {
+            sendChat(playerName,init_macro,function(msg) {
+              var turnorder;
+              if (Campaign().get("turnorder") == "") { turnorder = []; }
+              else { turnorder = JSON.parse(Campaign().get("turnorder")); };
+              //log(msg[0].inlinerolls[0]["results"]["total"]);
+              var token_in_turnorder = false;
+              for (var i=0; i<turnorder.length; i++) {
+                if (turnorder[i]["id"] === selected) {
+                  token_in_turnorder = true;
+                  turnorder[i]["pr"] = msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
+                  break;
+                };
               };
-            };
-            if (!token_in_turnorder) {
-              turnorder.push({
-                id: selected,
-                pr: msg[0].inlinerolls[0]["results"]["total"].toFixed(4)
-              });
-            };
-            Campaign().set("turnorder", JSON.stringify(turnorder));
-            {
-              var char_name_unique = char_name;
-              if (roll_initiative_map[char_name] !== undefined) {
-                if (roll_initiative_map[char_name] != "EXCLUDE") {
-                  char_name_unique = char_name.concat(" (1)");
-                  roll_initiative_map[char_name_unique] = roll_initiative_map[char_name];
-                  roll_initiative_map[char_name]        = "EXCLUDE";
-                  char_name_unique = char_name.concat(" (2)");
-                } else {
-                  var n = 3;
-                  while (roll_initiative_map[char_name.concat(" ("+n+")")] !== undefined) {
-                    n++;
+              if (!token_in_turnorder) {
+                turnorder.push({
+                  id: selected,
+                  pr: msg[0].inlinerolls[0]["results"]["total"].toFixed(4)
+                });
+              };
+              Campaign().set("turnorder", JSON.stringify(turnorder));
+              {
+                var char_name_unique = char_name;
+                if (roll_initiative_map[char_name] !== undefined) {
+                  if (roll_initiative_map[char_name] != "EXCLUDE") {
+                    char_name_unique = char_name.concat(" (1)");
+                    roll_initiative_map[char_name_unique] = roll_initiative_map[char_name];
+                    roll_initiative_map[char_name]        = "EXCLUDE";
+                    char_name_unique = char_name.concat(" (2)");
+                  } else {
+                    var n = 3;
+                    while (roll_initiative_map[char_name.concat(" ("+n+")")] !== undefined) {
+                      n++;
+                    };
+                    char_name_unique = char_name.concat(" ("+n+")");
                   };
-                  char_name_unique = char_name.concat(" ("+n+")");
                 };
+                roll_initiative_map[char_name_unique] = msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
               };
-              roll_initiative_map[char_name_unique] = msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
-            };
-            selected_tokens_remaining--;
-            if (selected_tokens_remaining==0) {
-              var chat_msg = "&{template:default} {{name=Group Initiative}} ";
-              Object.keys(roll_initiative_map).forEach(function(k){
-                if (roll_initiative_map[k] == "EXCLUDE") {
-                  return;
-                };
-                chat_msg += "{{" + k + "= "+ roll_initiative_map[k] +"}} ";
-              });
-              sendWhisperChat(chat_msg);
-            };
-          });
+              selected_tokens_remaining--;
+              if (selected_tokens_remaining==0) {
+                var chat_msg = "&{template:default} {{name=Group Initiative}} ";
+                Object.keys(roll_initiative_map).forEach(function(k){
+                  if (roll_initiative_map[k] == "EXCLUDE") {
+                    return;
+                  };
+                  chat_msg += "{{" + k + "= "+ roll_initiative_map[k] +"}} ";
+                });
+                sendWhisperChat(chat_msg);
+              };
+            });
+          } catch (e) {
+            log("Encountered a problem while rolling group initiative: "+e);
+            log("  Macro = "+init_macro);
+          };
         });
         break;
       case '--group-skill-check':
