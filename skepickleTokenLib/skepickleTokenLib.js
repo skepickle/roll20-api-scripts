@@ -143,6 +143,15 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
   // Implemented internally in Roll20
   //var getAttrByName = function(id, attrib, value_type) { return <a string>; }
 
+  var isAttrByNameNaN = function(id, attrib, value_type) {
+    value_type = value_type || 'current';
+    var val = getAttrByName(id, attrib, value_type);
+    if (val === undefined) {
+      throw "isAttrByNameNaN() called with undefined attribute"
+    };
+    return isNaN(val);
+  }; // isAttrByNameNaN
+
   var setAttrByName = function(id, attrib, value, max=null) {
     //log("setAttrByName("+id+","+attrib+","+value+","+max+")");
     if (value==null) { log("ERROR: setAttrByName called with undefined value = '"+value+"'"); return; };
@@ -163,15 +172,6 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     obj.setWithWorker("current", value);
     if (max) { obj.setWithWorker("max", max); };
   }; // setAttrByName
-
-  var isAttrByNameNaN = function(id, attrib, value_type) {
-    value_type = value_type || 'current';
-    var val = getAttrByName(id, attrib, value_type);
-    if (val === undefined) {
-      throw "isAttrByNameNaN() called with undefined attribute"
-    };
-    return isNaN(val);
-  }; // isAttrByNameNaN
 
   // Roll20 Character Sheet Utility Functions
 
