@@ -160,6 +160,15 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
 
   // Roll20 Attribute Utility Functions
 
+  var isAttrByNameDefined = function(id, attrib) {
+    var attribute = findObjs({
+        type: 'attribute',
+        characterid: id,
+        name: attrib
+    }, {caseInsensitive: true})[0];
+    return !attribute;
+  };
+
   // Implemented internally in Roll20
   //var getAttrByName = function(id, attrib, value_type) { return <a string>; }
 
