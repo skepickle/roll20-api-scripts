@@ -166,7 +166,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         characterid: id,
         name: attrib
     }, {caseInsensitive: true})[0];
-    return !attribute;
+    return !!attribute;
   };
 
   // Implemented internally in Roll20
