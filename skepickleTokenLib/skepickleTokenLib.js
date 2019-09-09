@@ -200,12 +200,12 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
           throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
         } else {
           if (getAttrByName(id, ''.concat(a,'-mod')) != 0) {
-            throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' ability score '"+getAttrByName(id, a)+"'");
+            throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' nonability score. Should be set to:= 0");
           };
         };
       } else {
         if (getAttrByName(id, ''.concat(a,'-mod')) != abilityScoreToMod(getAttrByName(id, a))) {
-          throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' nonability score");
+          throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' ability score '"+getAttrByName(id, a)+"'. Should be set to:= "+abilityScoreToMod(getAttrByName(id, a)));
         };
       };
     });
@@ -310,7 +310,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                                  .split(",");
       var bonus_type_map = {};
       npcarmorclassinfos.forEach(function(e) {
-        let result = e.match(/^([-+]{0,1}[0-9]+) +(.*)+$/);
+        let result = e.match(/^[+]{0,1}([-]{0,1}[0-9]+) +(.*)+$/);
         if (result == null) {
           throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid npcarmorclassinfo= '"+npcarmorclassinfo+"'");
         };
@@ -319,7 +319,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         };
         if (['str','dex','con','int','wis','cha'].includes(result[2])) {
           var ability_mod = getAttrByName(id, ''.concat('npc',result[2],'-mod'));
-          if (result[1] != ability_mod) {
+          if (result[1] != ability_mod.replace(/^\+/, "")) {
             throwDefaultTemplate("auditMookNPCSheet()",id, "Invalid npcarmorclassinfo "+result[2]+" modifier value= '"+result[1]+"'");
           };
         };
@@ -621,6 +621,30 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     });
   }; // mookTokenFixer
 
+  var sendWhisperChat = function(msg,str) {
+    var playerName = msg.who;
+    if (playerIsGM(msg.playerid)) { playerName = playerName.replace(new RegExp(" \\(GM\\)$"), "") };
+    sendChat("skepickleTokenLib", '/w "'+playerName+'" '+str, null, {noarchive:true});
+  };
+
+  var messageSelectedCharacters = function(msg) {
+    var selected_tokens=[];
+    if (msg.selected) {
+      for (var selected of msg.selected) {
+        try {
+          if (selected["_type"] != "graphic") { continue; }; // Silently skip over selected non-graphics
+          var obj = getObj("graphic", selected["_id"]);
+          if (obj.get("_subtype") != "token") { sendWhisperChat(msg,"&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");     continue; };
+          if (obj.get("represents") == "")    { sendWhisperChat(msg,"&{template:default} {{name=ERROR}} {{Not a character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
+          selected_tokens.push(selected["_id"]);
+        } catch(e) {
+          sendWhisperChat(msg,e);
+        };
+      };
+    };
+    return selected_tokens;
+  };
+
   var handleInput = function inputHandler(msg) {
     if (msg.type !== "api" || msg.content.indexOf("!stl") === -1 ) { return; };
 
@@ -630,33 +654,11 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     playerID   = msg.playerid;
     playerName = msg.who.replace(new RegExp(" \\(GM\\)$"), "");
 
-    var sendWhisperChat = function(str) {
-      sendChat("skepickleTokenLib", '/w "'+playerName+'" '+str, null, {noarchive:true});
-    };
-
-    var filterSelectedTokens = function(msg) {
-      var selected_tokens=[];
-      if (msg.selected) {
-        for (var selected of msg.selected) {
-          try {
-            if (selected["_type"] != "graphic") { continue; }; // Silently skip over selected non-graphics
-            var obj = getObj("graphic", selected["_id"]);
-            if (obj.get("_subtype") != "token") { sendWhisperChat("&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
-            if (obj.get("represents") == "") { sendWhisperChat("&{template:default} {{name=ERROR}} {{Not a character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
-            selected_tokens.push(selected["_id"]);
-          } catch(e) {
-            sendWhisperChat(e);
-          };
-        };
-      };
-      return selected_tokens;
-    };
-
-    var selected_tokens = filterSelectedTokens(msg);
-    var argsFromUser = msg.content.split(/ +/);
-    var userCommand = argsFromUser[1];
-    var first_arg = argsFromUser[2];
-    var second_arg = argsFromUser[3];
+    var selected_tokens = messageSelectedCharacters(msg);
+    var argsFromUser    = msg.content.split(/ +/);
+    var userCommand     = argsFromUser[1];
+    var first_arg       = argsFromUser[2];
+    var second_arg      = argsFromUser[3];
 
     switch(userCommand) {
       case '--list-source-texts':
@@ -669,7 +671,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= disabled}}');
           };
         });
-        sendWhisperChat('&{template:default} {{name=Source Texts}} '+message_to_send, null, {noarchive:true});
+        sendWhisperChat(msg,'&{template:default} {{name=Source Texts}} '+message_to_send, null, {noarchive:true});
         break;
       case '--enable-source-text':
         break;
@@ -687,11 +689,11 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
               try {
                 auditMookNPCSheet(character.id);
               } catch(e) {
-                sendWhisperChat(e);
+                sendWhisperChat(msg,e);
               };
             });
           } catch(e) {
-            sendWhisperChat(e);
+            sendWhisperChat(msg,e);
           };
         });
         break;
@@ -706,7 +708,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                 auditMookNPCSheet(character.id);
                 fixMookPCSheet(character.id);
               } catch(e) {
-                sendWhisperChat(e);
+                sendWhisperChat(msg,e);
               };
             });
         });
@@ -815,7 +817,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                   };
                   chat_msg += "{{" + k + "= "+ roll_initiative_map[k] +"}} ";
                 });
-                sendWhisperChat(chat_msg);
+                sendWhisperChat(msg,chat_msg);
               };
             });
           } catch (e) {
@@ -828,10 +830,10 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         // --group-skill-check <SKILLNAME> <aid|individual>
         //   Both arguments are required
         if ((first_arg == null) || (second_arg == null)) {
-          sendWhisperChat('&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Required arguments missing}}');
+          sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Required arguments missing}}');
         };
         if ((second_arg != "aid") && (second_arg != "individual")) {
-          sendWhisperChat('&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Invalid value for skill help type}}');
+          sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Invalid value for skill help type}}');
         };
         var skill_attrib = first_arg;
         var help_type    = second_arg;
@@ -940,7 +942,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                               var avg_check = checks_total / checks_num;
                               chat_msg += "{{*Average*= ***"+avg_check+"***}}";
                             };
-                            sendWhisperChat(chat_msg);
+                            sendWhisperChat(msg,chat_msg);
                           };
                         });
                       };
