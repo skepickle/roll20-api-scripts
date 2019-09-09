@@ -715,14 +715,16 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         });
         break;
       case '--check-sheet-macros':
-        selected_tokens.forEach(function(selected) {
-            var obj = getObj("graphic", selected);
-            var character = getObj("character", obj.get("represents"));
-            if (!character) { return; };
-            checkSheetMacros(character.id);
-        });
+        //TODO Implement this?
+        //selected_tokens.forEach(function(selected) {
+        //    var obj = getObj("graphic", selected);
+        //    var character = getObj("character", obj.get("represents"));
+        //    if (!character) { return; };
+        //    checkSheetMacros(character.id);
+        //});
         break;
       case '--toggle-reach-auras':
+        //TODO Make this store original aura values in GM notes of token....
         selected_tokens.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
@@ -745,8 +747,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             };
         });
         break;
-      case '--group-initiative-check':
       case '--roll-initiative':
+      case '--group-initiative-check':
         // --group-initiative-check [clear]
         //   The optional "clear" argument indicates that the turn order should be cleared before adding new entries
         var roll_initiative_map = {};
