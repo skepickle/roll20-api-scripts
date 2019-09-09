@@ -624,42 +624,39 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
   var handleInput = function inputHandler(msg) {
     if (msg.type !== "api" || msg.content.indexOf("!stl") === -1 ) { return; };
 
-    var argsFromUser,
-        who,
-        errors=[],
-        playerID,
-        playerName,
-        pageID,
-        first_arg,
-        second_arg,
-        userCommand,
-        selected_tokens=[];
+    var playerID,
+        playerName;
 
+    playerID   = msg.playerid;
     playerName = msg.who.replace(new RegExp(" \\(GM\\)$"), "");
-    playerID = msg.playerid;
 
     var sendWhisperChat = function(str) {
       sendChat("skepickleTokenLib", '/w "'+playerName+'" '+str, null, {noarchive:true});
     };
 
-    argsFromUser = msg.content.split(/ +/);
-    userCommand = argsFromUser[1];
-    first_arg = argsFromUser[2];
-    second_arg = argsFromUser[3];
-
-    if (msg.selected) {
-      for (var selected of msg.selected) {
-        try {
-          if (selected["_type"] != "graphic") { continue; }; // Silently skip over selected non-graphics
-          var obj = getObj("graphic", selected["_id"]);
-          if (obj.get("_subtype") != "token") { sendWhisperChat("&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
-          if (obj.get("represents") == "") { sendWhisperChat("&{template:default} {{name=ERROR}} {{Not a character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
-          selected_tokens.push(selected["_id"]);
-        } catch(e) {
-          sendWhisperChat(e);
+    var filterSelectedTokens = function(msg) {
+      var selected_tokens=[];
+      if (msg.selected) {
+        for (var selected of msg.selected) {
+          try {
+            if (selected["_type"] != "graphic") { continue; }; // Silently skip over selected non-graphics
+            var obj = getObj("graphic", selected["_id"]);
+            if (obj.get("_subtype") != "token") { sendWhisperChat("&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
+            if (obj.get("represents") == "") { sendWhisperChat("&{template:default} {{name=ERROR}} {{Not a character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
+            selected_tokens.push(selected["_id"]);
+          } catch(e) {
+            sendWhisperChat(e);
+          };
         };
       };
+      return selected_tokens;
     };
+
+    var selected_tokens = filterSelectedTokens(msg);
+    var argsFromUser = msg.content.split(/ +/);
+    var userCommand = argsFromUser[1];
+    var first_arg = argsFromUser[2];
+    var second_arg = argsFromUser[3];
 
     switch(userCommand) {
       case '--list-source-texts':
