@@ -78,8 +78,10 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       fly_maneuverability: ["perfect","good","average","poor","clumsy"],
       size_categories:     ["fine","diminutive","tiny","small","medium","large","huge","gargantuan","colossal"],
       types:               ["aberration","animal","celestial","construct","dragon","elemental","fey","fiend","giant","humanoid","magical beast","monstrous humanoid","ooze","outsider","plant","undead","vermin"],
-      creature_subtypes:   ["air","angel","aquatic","archon","augmented","chaotic","cold","demon","devil","earth","evil","extraplanar","fire","good","incorporeal","lawful","native","psionic","shapeshifter","swarm","water"],
-      humanoid_subtypes:   ["aquatic","dwarf","elf","gnoll","gnome","goblinoid","halfling","human","orc","reptilian"]
+      subtypes: {
+        creature: ["air","angel","aquatic","archon","augmented","chaotic","cold","demon","devil","earth","evil","extraplanar","fire","good","incorporeal","lawful","native","psionic","shapeshifter","swarm","water"],
+        humanoid: ["aquatic","dwarf","elf","gnoll","gnome","goblinoid","halfling","human","orc","reptilian"]
+      }
     },
     source_text_BoED: {
       types: ["deathless"]
@@ -90,9 +92,18 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     merge_tables: function(property_name) {
       var result = [];
       var myself = this;
+      var property_heirarchy = property_name.split('.');
       this.enabled_source_texts.forEach(function(source) {
-        if (myself['source_text_'.concat(source)][property_name] !== undefined) {
-          result = [...new Set([...result ,...myself['source_text_'.concat(source)][property_name]])];
+        if (myself['source_text_'.concat(source)] !== undefined) {
+          var i = 0;
+          var property_p = myself['source_text_'.concat(source)];
+          do {
+            property_p = property_p[property_heirarchy[i]];
+            i++;
+          } while ((i < property_heirarchy.length) && (property_p !== undefined));
+          if (property_p !== undefined) {
+            result = [...new Set([...result ,...property_p])];
+          };
         };
       });
       return result;
@@ -101,8 +112,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     fly_maneuverability: function() { return this.merge_tables("fly_maneuverability"); },
     size_categories:     function() { return this.merge_tables("size_categories"); },
     types:               function() { return this.merge_tables("types"); },
-    creature_subtypes:   function() { return this.merge_tables("creature_subtypes"); },
-    humanoid_subtypes:   function() { return this.merge_tables("humanoid_subtypes"); },
+    creature_subtypes:   function() { return this.merge_tables("subtypes.creature"); },
+    humanoid_subtypes:   function() { return this.merge_tables("subtypes.humanoid"); },
     subtypes:            function() { return [...new Set([...this.creature_subtypes() ,...this.humanoid_subtypes()])]; }
   };
 
