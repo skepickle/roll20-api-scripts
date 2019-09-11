@@ -894,23 +894,23 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             init_macro = "[[(1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"})) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/100) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/10000)]]";
           };
           try {
-            sendChat(playerName,init_macro,function(msg) {
+            sendChat(playerName,init_macro,function(macro_msg) {
               var turnorder;
               if (Campaign().get("turnorder") == "") { turnorder = []; }
               else { turnorder = JSON.parse(Campaign().get("turnorder")); };
-              //log(msg[0].inlinerolls[0]["results"]["total"]);
+              //log(macro_msg[0].inlinerolls[0]["results"]["total"]);
               var token_in_turnorder = false;
               for (var i=0; i<turnorder.length; i++) {
                 if (turnorder[i]["id"] === selected) {
                   token_in_turnorder = true;
-                  turnorder[i]["pr"] = msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
+                  turnorder[i]["pr"] = macro_msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
                   break;
                 };
               };
               if (!token_in_turnorder) {
                 turnorder.push({
                   id: selected,
-                  pr: msg[0].inlinerolls[0]["results"]["total"].toFixed(4)
+                  pr: macro_msg[0].inlinerolls[0]["results"]["total"].toFixed(4)
                 });
               };
               Campaign().set("turnorder", JSON.stringify(turnorder));
@@ -930,7 +930,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                     char_name_unique = char_name.concat(" ("+n+")");
                   };
                 };
-                roll_initiative_map[char_name_unique] = msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
+                roll_initiative_map[char_name_unique] = macro_msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
               };
               selected_tokens_remaining--;
               if (selected_tokens_remaining==0) {
@@ -1000,11 +1000,11 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
               } else {
                 char_name = roll_skill_map[char_name_unique].name;
               };
-              sendChat(char_name_unique,''.concat('[[@{',char_name,'|',skill_attrib,'}]]'),function(msg) {
+              sendChat(char_name_unique,''.concat('[[@{',char_name,'|',skill_attrib,'}]]'),function(attrib_msg) {
                 var bonus = 0;
-                char_name_unique = msg[0].who;
+                char_name_unique = attrib_msg[0].who;
                 if (roll_skill_map[char_name_unique].state != "EXCLUDE") {
-                  bonus = msg[0].inlinerolls[0]["results"]["total"];
+                  bonus = attrib_msg[0].inlinerolls[0]["results"]["total"];
                   //log("    gotBonus("+char_name_unique+") => "+bonus);
                   roll_skill_map[char_name_unique]["bonus"] = bonus;
                   roll_skill_map[char_name_unique]["state"] = "GET_CHECK";
@@ -1025,11 +1025,11 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                     } else {
                       char_name = roll_skill_map[char_name_unique].name;
                     };
-                    sendChat(char_name_unique,''.concat('[[1d20 + ', roll_skill_map[char_name_unique].bonus, ']]'),function(msg) {
+                    sendChat(char_name_unique,''.concat('[[1d20 + ', roll_skill_map[char_name_unique].bonus, ']]'),function(check_msg) {
                       var check = 0;
-                      char_name_unique = msg[0].who;
+                      char_name_unique = check_msg[0].who;
                       if (roll_skill_map[char_name_unique].state != "EXCLUDE") {
-                        check = msg[0].inlinerolls[0]["results"]["total"];
+                        check = check_msg[0].inlinerolls[0]["results"]["total"];
                         //log("    gotCheck("+char_name_unique+") => "+check);
                         roll_skill_map[char_name_unique]["check"] = check;
                         roll_skill_map[char_name_unique]["state"] = "PRINT";
