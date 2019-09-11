@@ -32,6 +32,51 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     return str.replace(/ +/g, " ").replace(/^ /, "").replace(/ $/, "").replace(/ *, */g, ",");
   }; // trimWhitespace
 
+  function decodeRoll20String(str) {
+    str = decodeURI(str);
+    str = str.replace(/%3A/g, ':');
+    str = str.replace(/%23/g, '#');
+    str = str.replace(/%3F/g, '?');
+    return str;
+  };
+
+  function getStringRegister(str,register) {
+    // {register}2|efftype:e|damtype:k|end3|norange|pe|str13|wo1{/register}
+    var startPos = str.indexOf("{"  + register + "}");
+    var endPos   = str.indexOf("{/" + register + "}");
+    if ((startPos == -1) || (endPos == -1)) { return null; };
+    return str.substr(startPos+register.length+2, (endPos-startPos)-(register.length+2)).split('|');
+  };
+
+  function setStringRegister(str,register,values=null) {
+    // {register}2|efftype:e|damtype:k|end3|norange|pe|str13|wo1{/register}
+    var startPos = str.indexOf("{"  + register + "}");
+    var endPos   = str.indexOf("{/" + register + "}");
+    var reg_exp;
+    var replacement  = '';
+    if (values !== null) {
+      replacement = ''.concat("{",register,"}",values.join("|"),"{/",register,"}");
+    };
+    if (startPos == -1) {
+      if (endPos == -1) {
+        // register not present
+        return str.concat(replacement);
+      } else {
+        // only register closing tag present: CLEAN UP!
+        reg_exp = new RegExp("{/" + register + "}");
+      };
+    } else {
+      if (endPos == -1) {
+        // only register opening tag present: CLEAN UP!
+        reg_exp = new RegExp("{" + register + "}");
+      } else {
+        // register present
+        reg_exp = new RegExp("{" + register + "}[^{]*{/" + register + "}");
+      };
+    };
+    return str.replace(reg_exp, replacement);
+  };
+
   var escapeRoll20Macro = function(str) {
     return str.replace(/\&/g,  "&amp;")
               .replace(/\#/g,  "&#35;")
@@ -43,26 +88,6 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
               .replace(/\]\]/g,"&#93;&#93;")
               .replace(/\}\}/g,"&#125;&#125;");
   }; // escapeRoll20Macro
-
-  function unescapeString(dirtystring) {
-    dirtystring = dirtystring.replace(/%3A/g, ':');
-    dirtystring = dirtystring.replace(/%23/g, '#');
-    dirtystring = dirtystring.replace(/%3F/g, '?');
-    return dirtystring;
-  };
-
-  function unwrapTokenGMNotes(stringname,separator,obj) {
-    // {icesword}2|efftype:e|damtype:k|end3|norange|pe|str13|wo1{/icesword}
-    var uArray  = new Array();
-    var uString = "";
-    var gmnotes = decodeURI(obj.get('gmnotes'));
-    gmnotes = unescapeString(gmnotes);
-    var startPos = gmnotes.indexOf("{" + stringname + "}");
-    if (startPos == -1)
-      return { uString: "", uArray: uArray };
-    var endPos = gmnotes.indexOf("{/" + stringname + "}");
-      return { uString: gmnotes.substr(startPos+stringname.length+2, (endPos-startPos)-(stringname.length+2)), uArray: gmnotes.substr(startPos+stringname.length+2, (endPos-startPos)-(stringname.length+2)).split(separator) };
-  };
 
   // D&D 3.5e Tables
 
@@ -768,19 +793,16 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
           var character = getObj("character", obj.get("represents"));
           var npcreach = getAttrByName(character.id, "npcreach").replace(new RegExp("[^\.0-9].*$"), "");
           if (isNaN(npcreach)) { return; };
-          var parsed_aura_info = unwrapTokenGMNotes("aura-data-backup", "|", obj);
-          var gmnotes = unescapeString(decodeURI(obj.get('gmnotes')));
-          if (parsed_aura_info.uString == "") {
+          var gmnotes = decodeRoll20String(obj.get('gmnotes'));
+          var aura_info = getStringRegister(gmnotes, "aura-data-backup");
+          if (aura_info === null) {
             // no backup present, so take backup and overwrite attributes
-            //TODO Implement utility function for the following:
-            gmnotes = gmnotes + ''.concat("{aura-data-backup}",
-                                          obj.get("aura1_radius"),'|',
-                                          obj.get("aura1_color"),'|',
-                                          obj.get("aura1_square"),'|',
-                                          obj.get("aura2_radius"),'|',
-                                          obj.get("aura2_color"),'|',
-                                          obj.get("aura2_square"),
-                                          "{/aura-data-backup}");
+            gmnotes = setStringRegister(gmnotes, "aura-data-backup", [obj.get("aura1_radius"),
+                                                                      obj.get("aura1_color"),
+                                                                      obj.get("aura1_square"),
+                                                                      obj.get("aura2_radius"),
+                                                                      obj.get("aura2_color"),
+                                                                      obj.get("aura2_square")]);
             obj.set("gmnotes",gmnotes);
             obj.set("aura1_radius", npcreach*2);
             obj.set("aura1_color", "#FFFF00");
@@ -789,15 +811,15 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
             obj.set("aura2_color", "#00FF00");
             obj.set("aura2_square", false);
           } else {
-            //TODO Implement utility function for the following:
+            gmnotes = setStringRegister(gmnotes, "aura-data-backup");
             gmnotes = gmnotes.replace(/{aura-data-backup}.*{\/aura-data-backup}/g, "");
             obj.set("gmnotes",gmnotes);
-            obj.set("aura1_radius", parsed_aura_info.uArray[0]);
-            obj.set("aura1_color",  parsed_aura_info.uArray[1]);
-            obj.set("aura1_square", (parsed_aura_info.uArray[2]=="true"));
-            obj.set("aura2_radius", parsed_aura_info.uArray[3]);
-            obj.set("aura2_color",  parsed_aura_info.uArray[4]);
-            obj.set("aura2_square", (parsed_aura_info.uArray[5]=="true"));
+            obj.set("aura1_radius", aura_info[0]);
+            obj.set("aura1_color",  aura_info[1]);
+            obj.set("aura1_square", (aura_info[2]=="true"));
+            obj.set("aura2_radius", aura_info[3]);
+            obj.set("aura2_color",  aura_info[4]);
+            obj.set("aura2_square", (aura_info[5]=="true"));
           };
         });
         break;
