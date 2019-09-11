@@ -194,6 +194,47 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     };
   }; // sizeToArmorClassMod
 
+  var sizeModToTallReach = function(size) {
+    log("sizeModToTallReach('"+size+"')");
+    if (isNaN(size)) {
+      log("   isNaN");
+      if (!dnd35.size_categories().includes(size)) { log("error"); throw "{{error}}"; };
+      size = sizeToMod(size);
+    };
+    size = parseFloat(size);
+    log(size);
+    log('=====');
+    switch(size) {
+      case  4: return 0;
+      case  3: return 0;
+      case  2: return 0;
+      case  1: return 5;
+      case  0: return 5;
+      case -1: return 10;
+      case -2: return 15;
+      case -3: return 20;
+      case -4: return 30;
+    };
+  }; // sizeModToTallReach
+
+  var sizeModToLongReach = function(size) {
+    if (isNaN(size)) {
+      if (!dnd35.size_categories().includes(size)) { log("error"); throw "{{error}}"; };
+      size = sizeToMod(size);
+    };
+    switch(size) {
+      case  4: return 0;
+      case  3: return 0;
+      case  2: return 0;
+      case  1: return 5;
+      case  0: return 5;
+      case -1: return 5;
+      case -2: return 10;
+      case -3: return 15;
+      case -4: return 20;
+    };
+  }; // sizeModToLongReach
+
   // Roll20 Attribute Utility Functions
 
   var isAttrByNameDefined = function(id, attrib) {
@@ -791,35 +832,41 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         selected_tokens.forEach(function(selected) {
           var obj = getObj("graphic", selected);
           var character = getObj("character", obj.get("represents"));
-          var npcreach = getAttrByName(character.id, "npcreach").replace(new RegExp("[^\.0-9].*$"), "");
-          if (isNaN(npcreach)) { return; };
+          var reach = getAttrByName(character.id, "npcreach").replace(new RegExp("[^\.0-9].*$"), "");
+          if ((!isAttrByNameDefined(character.id, "npcname")) || (getAttrByName(character.id, "npcname") == "")) {
+            log("test");
+            log(getAttrByName(character.id, "size"));
+            reach = sizeModToTallReach(getAttrByName(character.id, "size"));
+            log(reach);
+          };
+          if (isNaN(reach)) { return; }; //TODO maybe log error for weird reach specifier?
           var gmnotes = decodeRoll20String(obj.get('gmnotes'));
           var aura_info = getStringRegister(gmnotes, "aura-data-backup");
           if (aura_info === null) {
             // no backup present, so take backup and overwrite attributes
-            gmnotes = setStringRegister(gmnotes, "aura-data-backup", [obj.get("aura1_radius"),
-                                                                      obj.get("aura1_color"),
-                                                                      obj.get("aura1_square"),
-                                                                      obj.get("aura2_radius"),
-                                                                      obj.get("aura2_color"),
-                                                                      obj.get("aura2_square")]);
-            obj.set("gmnotes",gmnotes);
-            obj.set("aura1_radius", npcreach*2);
+            obj.set("gmnotes",setStringRegister(gmnotes,
+                                                "aura-data-backup",
+                                                [obj.get("aura1_radius"),
+                                                 obj.get("aura1_color"),
+                                                 obj.get("aura1_square"),
+                                                 obj.get("aura2_radius"),
+                                                 obj.get("aura2_color"),
+                                                 obj.get("aura2_square")]));
+            obj.set("aura1_radius", reach*2);
             obj.set("aura1_color", "#FFFF00");
             obj.set("aura1_square", false);
-            obj.set("aura2_radius", npcreach);
+            obj.set("aura2_radius", reach);
             obj.set("aura2_color", "#00FF00");
             obj.set("aura2_square", false);
           } else {
-            gmnotes = setStringRegister(gmnotes, "aura-data-backup");
-            gmnotes = gmnotes.replace(/{aura-data-backup}.*{\/aura-data-backup}/g, "");
-            obj.set("gmnotes",gmnotes);
+            // backup present, remove register and restore attributes
             obj.set("aura1_radius", aura_info[0]);
             obj.set("aura1_color",  aura_info[1]);
             obj.set("aura1_square", (aura_info[2]=="true"));
             obj.set("aura2_radius", aura_info[3]);
             obj.set("aura2_color",  aura_info[4]);
             obj.set("aura2_square", (aura_info[5]=="true"));
+            obj.set("gmnotes",setStringRegister(gmnotes, "aura-data-backup"));
           };
         });
         break;
