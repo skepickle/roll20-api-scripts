@@ -93,8 +93,9 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
 
   var dnd35 = {
     all_source_texts: {
-      SRD: "System Reference Document",
-      BoED: "Book of Exalted Deeds",
+      SRD:     "System Reference Document",
+      UA:      "Unearthed Arcana",
+      BoED:    "Book of Exalted Deeds",
       unknown: "Unknown Text"
     },
     enabled_source_texts: ["SRD","BoED"],
