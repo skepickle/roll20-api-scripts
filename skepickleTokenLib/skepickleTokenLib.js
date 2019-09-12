@@ -106,7 +106,61 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       subtypes: {
         creature: ["air","angel","aquatic","archon","augmented","chaotic","cold","demon","devil","earth","evil","extraplanar","fire","good","incorporeal","lawful","native","psionic","shapeshifter","swarm","water"],
         humanoid: ["aquatic","dwarf","elf","gnoll","gnome","goblinoid","halfling","human","orc","reptilian"]
-      }
+      },
+      skills: { "Ability:Strength":         {base: "Strength",                 attrib: "str-mod"                               },
+                "Ability:Dexterity":        {base: "Dexterity",                attrib: "dex-mod"                               },
+                "Ability:Constitution":     {base: "Constitution",             attrib: "con-mod"                               },
+                "Ability:Intelligence":     {base: "Intelligence",             attrib: "int-mod"                               },
+                "Ability:Wisdom":           {base: "Wisdom",                   attrib: "wis-mod"                               },
+                "Ability:Charisma":         {base: "Charisma",                 attrib: "cha-mod"                               },
+                "Appraise":                 {base: "Appraise",                 attrib: "appraise",          trained_only:false },
+                "Balance":                  {base: "Balance",                  attrib: "balance",           trained_only:false },
+                "Bluff":                    {base: "Bluff",                    attrib: "bluff",             trained_only:false },
+                "Climb":                    {base: "Climb",                    attrib: "climb",             trained_only:false },
+                "Concentration":            {base: "Concentration",            attrib: "concentration",     trained_only:false },
+                "Craft()":                  {base: "Craft",                    attrib: "craft#",            trained_only:false },
+                "Decipher Script":          {base: "Decipher Script",          attrib: "decipherscript",    trained_only:true  },
+                "Diplomacy":                {base: "Diplomacy",                attrib: "diplomacy",         trained_only:false },
+                "Disable Device":           {base: "Disable Device",           attrib: "disabledevice",     trained_only:true  },
+                "Disguise":                 {base: "Disguise",                 attrib: "disguise",          trained_only:false },
+                "Escape Artist":            {base: "Escape Artist",            attrib: "escapeartist",      trained_only:false },
+                "Forgery":                  {base: "Forgery",                  attrib: "forgery",           trained_only:false },
+                "Gather Information":       {base: "Gather Information",       attrib: "gatherinformation", trained_only:false },
+                "Handle Animal":            {base: "Handle Animal",            attrib: "handleanimal",      trained_only:true  },
+                "Heal":                     {base: "Heal",                     attrib: "heal",              trained_only:false },
+                "Hide":                     {base: "Hide",                     attrib: "hide",              trained_only:false },
+                "Intimidate":               {base: "Intimidate",               attrib: "intimidate",        trained_only:false },
+                "Jump":                     {base: "Jump",                     attrib: "jump",              trained_only:false },
+                "Knowledge(Arcana)":        {base: "Knowledge(Arcana)",        attrib: "knowarcana",        trained_only:true  },
+                "Knowledge(Engineering)":   {base: "Knowledge(Engineering)",   attrib: "knowengineer",      trained_only:true  },
+                "Knowledge(Dungeoneering)": {base: "Knowledge(Dungeoneering)", attrib: "knowdungeon",       trained_only:true  },
+                "Knowledge(Geography)":     {base: "Knowledge(Geography)",     attrib: "knowgeography",     trained_only:true  },
+                "Knowledge(History)":       {base: "Knowledge(History)",       attrib: "knowhistory",       trained_only:true  },
+                "Knowledge(Local)":         {base: "Knowledge(Local)",         attrib: "knowlocal",         trained_only:true  },
+                "Knowledge(Nature)":        {base: "Knowledge(Nature)",        attrib: "knownature",        trained_only:true  },
+                "Knowledge(Nobility)":      {base: "Knowledge(Nobility)",      attrib: "knownobility",      trained_only:true  },
+                "Knowledge(Religion)":      {base: "Knowledge(Religion)",      attrib: "knowreligion",      trained_only:true  },
+                "Knowledge(The Planes)":    {base: "Knowledge(The Planes)",    attrib: "knowplanes",        trained_only:true  },
+                "Listen":                   {base: "Listen",                   attrib: "listen",            trained_only:false },
+                "Move Silently":            {base: "Move Silently",            attrib: "movesilent",        trained_only:false },
+                "Open Lock":                {base: "Open Lock",                attrib: "openlock",          trained_only:true  },
+                "Perform()":                {base: "Perform",                  attrib: "perform#",          trained_only:false },
+                "Profession()":             {base: "Profession",               attrib: "profession#",       trained_only:true  },
+                "Ride":                     {base: "Ride",                     attrib: "ride",              trained_only:false },
+                "Search":                   {base: "Search",                   attrib: "search",            trained_only:false },
+                "Sense Motive":             {base: "Sense Motive",             attrib: "sensemotive",       trained_only:false },
+                "Sleight of Hand":          {base: "Sleight of Hand",          attrib: "sleightofhand",     trained_only:true  },
+                "Spellcraft":               {base: "Spellcraft",               attrib: "spellcraft",        trained_only:true  },
+                "Spot":                     {base: "Spot",                     attrib: "spot",              trained_only:false },
+                "Survival":                 {base: "Survival",                 attrib: "survival",          trained_only:false },
+                "Swim":                     {base: "Swim",                     attrib: "swim",              trained_only:false },
+                "Tumble":                   {base: "Tumble",                   attrib: "tumble",            trained_only:true  },
+                "Use Magic Device":         {base: "Use Magic Device",         attrib: "usemagicdevice",    trained_only:true  },
+                "Use Rope":                 {base: "Use Rope",                 attrib: "userope",           trained_only:false },
+                "Autohypnosis":             {base: "Autohypnosis",             attrib: "",                  trained_only:true  },
+                "Knowledge()":              {base: "Knowledge",                attrib: "",                  trained_only:true  },
+                "Psicraft":                 {base: "Psicraft",                 attrib: "",                  trained_only:true  },
+                "Use Psionic Device":       {base: "Use Psionic Device",       attrib: "",                  trained_only:true  } }
     },
     source_text_BoED: {
       types: ["deathless"]
@@ -114,7 +168,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     source_text_unknown: {
       movement_modes: ["glide"]
     },
-    merge_tables: function(property_name) {
+    merge_arrays: function(property_name) {
       var result = [];
       var myself = this;
       var property_heirarchy = property_name.split('.');
@@ -133,13 +187,33 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       });
       return result;
     },
-    movement_modes:      function() { return this.merge_tables("movement_modes"); },
-    fly_maneuverability: function() { return this.merge_tables("fly_maneuverability"); },
-    size_categories:     function() { return this.merge_tables("size_categories"); },
-    types:               function() { return this.merge_tables("types"); },
-    creature_subtypes:   function() { return this.merge_tables("subtypes.creature"); },
-    humanoid_subtypes:   function() { return this.merge_tables("subtypes.humanoid"); },
-    subtypes:            function() { return [...new Set([...this.creature_subtypes() ,...this.humanoid_subtypes()])]; }
+    merge_maps: function(property_name) {
+      var result = {};
+      var myself = this;
+      var property_heirarchy = property_name.split('.');
+      this.enabled_source_texts.forEach(function(source) {
+        if (myself['source_text_'.concat(source)] !== undefined) {
+          var i = 0;
+          var property_p = myself['source_text_'.concat(source)];
+          do {
+            property_p = property_p[property_heirarchy[i]];
+            i++;
+          } while ((i < property_heirarchy.length) && (property_p !== undefined));
+          if (property_p !== undefined) {
+            result = Object.assign({}, result, property_p);
+          };
+        };
+      });
+      return result;
+    },
+    movement_modes:      function() { return this.merge_arrays("movement_modes"); },
+    fly_maneuverability: function() { return this.merge_arrays("fly_maneuverability"); },
+    size_categories:     function() { return this.merge_arrays("size_categories"); },
+    types:               function() { return this.merge_arrays("types"); },
+    creature_subtypes:   function() { return this.merge_arrays("subtypes.creature"); },
+    humanoid_subtypes:   function() { return this.merge_arrays("subtypes.humanoid"); },
+    subtypes:            function() { return [...new Set([...this.creature_subtypes() ,...this.humanoid_subtypes()])]; },
+    skills:              function() { return this.merge_maps("skills"); }
   };
 
   // D&D 3.5e Utility Functions
@@ -195,15 +269,15 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
   }; // sizeToArmorClassMod
 
   var sizeModToTallReach = function(size) {
-    log("sizeModToTallReach('"+size+"')");
+    //log("sizeModToTallReach('"+size+"')");
     if (isNaN(size)) {
       log("   isNaN");
       if (!dnd35.size_categories().includes(size)) { log("error"); throw "{{error}}"; };
       size = sizeToMod(size);
     };
     size = parseFloat(size);
-    log(size);
-    log('=====');
+    //log(size);
+    //log('=====');
     switch(size) {
       case  4: return 0;
       case  3: return 0;
@@ -235,6 +309,24 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     };
   }; // sizeModToLongReach
 
+  var getSkillSpecification = function(attrib) {
+    attrib = attrib.replace(/ +\(/g, "(");
+    var skills = dnd35.skills();
+    if (skills[attrib] !== undefined) {
+      return skills[attrib];
+    };
+    var match_result = attrib.match(/^([^(]+)(\(.+\)){0,1}$/i);
+    if (match_result[1] === undefined) { return null; };
+    var skill_name = trimWhitespace(match_result[1]);
+    if (skill_name == "") { return null; }
+    if (match_result[2] === undefined) {
+      return skills[skill_name];
+    } else {
+      skill_name = skill_name+'()';
+      return Object.assign({}, skills[skill_name], { sub: trimWhitespace(match_result[2].replace(/^\(/, "").replace(/\)$/, "")) });
+    };
+  }; // getSkillSpecification
+
   // Roll20 Attribute Utility Functions
 
   var isAttrByNameDefined = function(id, attrib) {
@@ -246,9 +338,6 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     return !!attribute;
   };
 
-  // Implemented internally in Roll20
-  //var getAttrByName = function(id, attrib, value_type) { return <a string>; }
-
   var isAttrByNameNaN = function(id, attrib, value_type) {
     value_type = value_type || 'current';
     var val = getAttrByName(id, attrib, value_type);
@@ -257,6 +346,39 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     };
     return isNaN(val);
   }; // isAttrByNameNaN
+
+  // Implemented internally in Roll20
+  //var getAttrByName = function(id, attrib, value_type) { return <a string>; }
+
+  const getRepeatingSectionRowIDs = function (charid, prefix) {
+    // Input
+    //  charid: character id
+    //  prefix: repeating section name, e.g. 'repeating_weapons'
+    // Output
+    //  repRowIds: array containing all repeating section IDs for the given prefix, ordered in the same way that the rows appear on the sheet
+    //  repeatingAttrs: object containing all repeating attributes that exist for this section, indexed by their name
+    const repeatingAttrs = {},
+      regExp = new RegExp(`^${prefix}_(-[-A-Za-z0-9]+?|\\d+)_`);
+    let repOrder;
+    // Get attributes
+    findObjs({
+      _type: 'attribute',
+      _characterid: charid
+    }).forEach(o => {
+      const attrName = o.get('name');
+      if (attrName.search(regExp) === 0) repeatingAttrs[attrName] = o;
+      else if (attrName === `_reporder_${prefix}`) repOrder = o.get('current').split(',');
+    });
+    if (!repOrder) repOrder = [];
+    // Get list of repeating row ids by prefix from repeatingAttrs
+    const unorderedIds = [...new Set(Object.keys(repeatingAttrs)
+      .map(n => n.match(regExp))
+      .filter(x => !!x)
+      .map(a => a[1]))];
+    const repRowIds = [...new Set(repOrder.filter(x => unorderedIds.includes(x)).concat(unorderedIds))];
+    //log(repeatingAttrs);
+    return repRowIds;
+  };
 
   var setAttrByName = function(id, attrib, value, max=null) {
     //log("setAttrByName("+id+","+attrib+","+value+","+max+")");
@@ -425,7 +547,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         };
         if (['str','dex','con','int','wis','cha'].includes(result[2])) {
           var ability_mod = getAttrByName(id, ''.concat('npc',result[2],'-mod'));
-          if (result[1] != ability_mod.replace(/^\+/, "")) {
+          if (isNaN(ability_mod) && (result[1] != ability_mod.replace(/^\+/, ""))) {
             throwDefaultTemplate("auditMookNPCSheet()",id, "Invalid npcarmorclassinfo "+result[2]+" modifier value= '"+result[1]+"'");
           };
         };
@@ -763,8 +885,10 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     var selected_tokens = messageSelectedCharacters(msg);
     var argsFromUser    = msg.content.split(/ +/);
     var userCommand     = argsFromUser[1];
-    var first_arg       = argsFromUser[2];
-    var second_arg      = argsFromUser[3];
+    var first_arg;
+    var second_arg;
+    if (argsFromUser[2] != null) first_arg  = argsFromUser[2].replace(/_/g, " ");
+    if (argsFromUser[3] != null) second_arg = argsFromUser[3].replace(/_/g, " ");
 
     switch(userCommand) {
       case '--list-source-texts':
@@ -834,10 +958,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
           var character = getObj("character", obj.get("represents"));
           var reach = getAttrByName(character.id, "npcreach").replace(new RegExp("[^\.0-9].*$"), "");
           if ((!isAttrByNameDefined(character.id, "npcname")) || (getAttrByName(character.id, "npcname") == "")) {
-            log("test");
-            log(getAttrByName(character.id, "size"));
+            //log(getAttrByName(character.id, "size"));
             reach = sizeModToTallReach(getAttrByName(character.id, "size"));
-            log(reach);
           };
           if (isNaN(reach)) { return; }; //TODO maybe log error for weird reach specifier?
           var gmnotes = decodeRoll20String(obj.get('gmnotes'));
@@ -951,24 +1073,91 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         });
         break;
       case '--group-skill-check':
-        // --group-skill-check <SKILLNAME> <aid|individual>
+        // --group-skill-check <SKILLNAME> <Aid Another|Individual>
         //   Both arguments are required
         if ((first_arg == null) || (second_arg == null)) {
           sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Required arguments missing}}');
         };
-        if ((second_arg != "aid") && (second_arg != "individual")) {
+        if ((second_arg != "Aid Another") && (second_arg != "Individual")) {
           sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Invalid value for skill help type}}');
         };
-        var skill_attrib = first_arg;
-        var help_type    = second_arg;
+        var skill_spec         = getSkillSpecification(first_arg);
+        var skill_trained_only = skill_spec.trained_only || '';
+        var help_type          = second_arg;
+
+        //log(skill_spec);
 
         var roll_skill_map            = {}; // key=uniquified char_name, val=skill check
         var selected_tokens_remaining = selected_tokens.length;
         // Loop through each selected character...
         selected_tokens.forEach(function(selected) {
-          var obj       = getObj("graphic", selected);
-          var character = getObj("character", obj.get("represents"));
-          var char_name = character.get("name");
+          var obj          = getObj("graphic", selected);
+          var character    = getObj("character", obj.get("represents"));
+          var char_name    = character.get("name");
+          var skill_attrib = skill_spec.attrib;
+
+          if (skill_spec.attrib.match(/\#/)) {
+            var found_skill = false;
+            for (var skillindex=1; skillindex<4; skillindex++) {
+              if (getAttrByName(character.id,
+                                skill_spec.attrib.replace(/\#/, ''.concat(skillindex,"name"))).toLowerCase() == skill_spec.sub.toLowerCase()) {
+                skill_attrib = skill_spec.attrib.replace(/\#/, ''.concat(skillindex));
+                found_skill = true;
+                break;
+              };
+            };
+            if (!found_skill) {
+              const otherskill_rowids = getRepeatingSectionRowIDs(character.id, 'repeating_skills');
+              found_skill = false;
+              otherskill_rowids.forEach( id => {
+                if (!found_skill) {
+                  var otherskillname = trimWhitespace(getAttrByName(character.id, ''.concat("repeating_skills_",id,"_otherskillname")).
+                                                        replace(/\* *$/,"").
+                                                        replace(/ +\(/g,"("));
+                  //log(otherskillname.toLowerCase() + " vs " + ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase());
+                  if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase()) {
+                    skill_attrib = ''.concat('repeating_skills_',id,"_otherskill");
+                    found_skill = true;
+                  };
+                };
+              });
+            };
+            if (!found_skill) {
+              switch(skill_spec.base) {
+                case "Craft":      skill_attrib="int-mod"; break;
+                case "Perform":    skill_attrib="cha-mod"; break;
+                case "Profession": skill_attrib="wis-mod"; break;
+                default:           log("NOT FOUND"); return;
+              }
+            };
+          } else if (skill_spec.attrib == "") {
+            const otherskill_rowids = getRepeatingSectionRowIDs(character.id, 'repeating_skills');
+            var found_skill = false;
+            otherskill_rowids.forEach( id => {
+              if (!found_skill) {
+                var otherskillname = trimWhitespace(getAttrByName(character.id, ''.concat("repeating_skills_",id,"_otherskillname")).
+                                                      replace(/\* *$/,"").
+                                                      replace(/ +\(/g,"("));
+                //log(otherskillname.toLowerCase() + " vs " + ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase());
+                if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase()) {
+                  skill_attrib = ''.concat('repeating_skills_',id,"_otherskill");
+                  found_skill = true;
+                };
+              };
+            });
+            if (!found_skill) {
+              switch(skill_spec.base) {
+                case "Knowledge":
+                case "Craft":      skill_attrib="int-mod"; break;
+                case "Perform":    skill_attrib="cha-mod"; break;
+                case "Profession": skill_attrib="wis-mod"; break;
+                default:           log("NOT FOUND"); return;
+              }
+            };
+          };
+          // at this point! "skill_attrib" __should__ be correct for this character
+          //log(skill_attrib);
+
           // ...generate a unique char_name, in case of multiple instances...
           var char_name_unique = char_name;
           if (roll_skill_map[char_name] !== undefined) {
@@ -987,14 +1176,24 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
           };
           // ...adding each token to the roll_skill_map for further processing to get bonus value...
           roll_skill_map[char_name_unique] = { id: character.id, name: char_name, state: "GET_BONUS" };
+          if (skill_spec.trained_only) {
+            if (["str-mod","dex-mod","con-mod","int-mod","wis-mod","cha-mod"].includes(skill_attrib)) {
+              roll_skill_map[char_name_unique].state = "UNTRAINED";
+            } else {
+              var ranks = getAttrByName(character.id, skill_attrib.concat("ranks"));
+              if (isNaN(ranks) || (ranks < 1)) {
+                roll_skill_map[char_name_unique].state = "UNTRAINED";
+              };
+            };
+          };
           selected_tokens_remaining--;
           if (selected_tokens_remaining==0) {
             //log(roll_skill_map);
             var get_bonuses_remaining = Object.keys(roll_skill_map).length;
+            var highest_bonus     = -10000;
+            var highest_char_name = "";
             // ...retrieve each selected token's skill bonus...
             Object.keys(roll_skill_map).forEach(function(char_name_unique) {
-              var highest_bonus     = -10000;
-              var highest_char_name = "";
               if (roll_skill_map[char_name_unique].state == "EXCLUDE") {
                 char_name = char_name_unique;
               } else {
@@ -1003,14 +1202,16 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
               sendChat(char_name_unique,''.concat('[[@{',char_name,'|',skill_attrib,'}]]'),function(attrib_msg) {
                 var bonus = 0;
                 char_name_unique = attrib_msg[0].who;
-                if (roll_skill_map[char_name_unique].state != "EXCLUDE") {
+                if (!(["EXCLUDE","UNTRAINED"].includes(roll_skill_map[char_name_unique].state))) {
                   bonus = attrib_msg[0].inlinerolls[0]["results"]["total"];
                   //log("    gotBonus("+char_name_unique+") => "+bonus);
                   roll_skill_map[char_name_unique]["bonus"] = bonus;
                   roll_skill_map[char_name_unique]["state"] = "GET_CHECK";
                   if (bonus > highest_bonus) {
+                    //log("== Highest bonus is "+highest_char_name+" with "+highest_bonus);
                     highest_bonus     = bonus;
                     highest_char_name = char_name_unique;
+                    //log("=> Highest bonus is "+highest_char_name+" with "+highest_bonus);
                   };
                 } else {
                   roll_skill_map[char_name_unique]["bonus"] = 0;
@@ -1028,7 +1229,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                     sendChat(char_name_unique,''.concat('[[1d20 + ', roll_skill_map[char_name_unique].bonus, ']]'),function(check_msg) {
                       var check = 0;
                       char_name_unique = check_msg[0].who;
-                      if (roll_skill_map[char_name_unique].state != "EXCLUDE") {
+                      if (!(["EXCLUDE","UNTRAINED"].includes(roll_skill_map[char_name_unique].state))) {
                         check = check_msg[0].inlinerolls[0]["results"]["total"];
                         //log("    gotCheck("+char_name_unique+") => "+check);
                         roll_skill_map[char_name_unique]["check"] = check;
@@ -1042,25 +1243,30 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                         var aid_total = 0;
                         var checks_total = 0;
                         var checks_num   = 0;
-                        var chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+skill_attrib+"}} {{Check Type= "+help_type+"}} ";
+                        var chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+first_arg.replace(/\(/,"\n(")+"}} {{Check Type= "+help_type+"}} ";
                         var prints_remaining = Object.keys(roll_skill_map).length;
-                        Object.keys(roll_skill_map).forEach(function(char_name_unique) {
+                        //Object.keys(roll_skill_map).forEach(function(char_name_unique) {
+                        Object.keys(roll_skill_map).forEach(char_name_unique => {
                           if (roll_skill_map[char_name_unique].state != "EXCLUDE") {
-                            checks_total += roll_skill_map[char_name_unique].check;
-                            checks_num++;
-                            if ((help_type == "aid") && (char_name_unique !== highest_char_name)) {
-                              var aid_inc = 0;
-                              if (roll_skill_map[char_name_unique].check >= 10) { aid_inc = 2; };
-                              aid_total += aid_inc;
-                              chat_msg += "{{" + char_name_unique + "= +" + aid_inc + "(" + roll_skill_map[char_name_unique].check + ")}} ";
+                            if (roll_skill_map[char_name_unique].state != "UNTRAINED") {
+                              checks_total += roll_skill_map[char_name_unique].check;
+                              checks_num++;
+                              if ((help_type == "Aid Another") && (char_name_unique !== highest_char_name)) {
+                                var aid_inc = 0;
+                                if (roll_skill_map[char_name_unique].check >= 10) { aid_inc = 2; };
+                                aid_total += aid_inc;
+                                chat_msg += "{{" + char_name_unique + "= +" + aid_inc + "(" + roll_skill_map[char_name_unique].check + ")}} ";
+                              } else {
+                                aid_total += roll_skill_map[char_name_unique].check;
+                                chat_msg += "{{" + char_name_unique + "= " + roll_skill_map[char_name_unique].check + "}} ";
+                              };
                             } else {
-                              aid_total += roll_skill_map[char_name_unique].check;
-                              chat_msg += "{{" + char_name_unique + "= " + roll_skill_map[char_name_unique].check + "}} ";
+                              chat_msg += "{{" + char_name_unique + "= *Untrained* }} ";
                             };
                           };
                           prints_remaining--;
                           if (prints_remaining==0) {
-                            if (help_type == "aid") {
+                            if (help_type == "Aid Another") {
                               chat_msg += "{{*Total*= ***"+ aid_total +"***}} ";
                             } else {
                               var avg_check = checks_total / checks_num;
