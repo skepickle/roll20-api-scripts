@@ -1,0 +1,83 @@
+?{Skills|Aid Others,&{template:DnD35StdRoll&#125; {{pcflag=true&#125;&#125; {{name=**[Aid Another](https://www.dandwiki.com/wiki/SRD:Aid_Another)**&#125;&#125; {{subtags=@{character_name} &#125;&#125; {{check=**Aid Another check:**&#125;&#125; {{Opposing check= ≥ AC 10&#125;&#125; {{Duration=1 Std Action&#125;&#125; {{Provoke Attack of Opp=No&#125;&#125; {{checkroll=[[ 1d20 + [[@{meleeattackbonus}]] ]]&#125;&#125; {{notes=
+Successfully aid ally on their attack +2 for 1 round&#125;&#125;|Bull Rush,&{template:DnD35StdRoll&#125; {{pcflag=true&#125;&#125; {{name=**[Bull Rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush)**&#125;&#125; {{subtags=@{character_name} &#125;&#125; {{check=**Bull Rush check:**&#125;&#125; {{Opposing check=[[ 1d20 + [[?{Target Type (Ask GM)&#124;PC&#44;@{target|str-mod}&#124;NPC&#44;@{target|npcstr-mod}&#125;]] + [[?{Target Size Category Variance from Medium: +1 for each size above Medium&#44; -1 for each size below Medium (Ask GM)&#124;0&#125;*4]][Size] + [[?{Target has > 2 legs or is exceptionally stable? (Ask GM) (Yes = 1)&#124;0&#125;*4]][Defense Bonus] ]]&#125;&#125; {{Duration=1 Std Action&#125;&#125; {{Provoke Attack of Opp=Yes&#125;&#125; {{checkroll=[[ 1d20 + @{str-mod} + [[@{specialattacksizemod}]][Size] + [[ ?{Charging? (Yes = 1)&#124;0&#125;*2]][Charging] ]]&#125;&#125; {{notes=
+Any attack of opportunity made by anyone other than the defender against you has a 25% chance of accidentally targeting the defender instead&#44; and any attack of opportunity by anyone other than you against the defender likewise has a 25% chance of accidentally targeting you.
+&nbsp;&nbsp;If you succeed you push him back 5 feet. If you wish to move with the defender&#44; you can push him back an additional 5 feet for each 5 points by which your check > defender’s check. You can’t&#44; however&#44; exceed your normal movement limit.
+&nbsp;&nbsp;If you fail to beat the defender’s Strength check result&#44; you move 5 feet straight back to where you were before you moved into his space. If that space is occupied&#44; you fall prone in that space.&#125;&#125;|Charge,&{template:DnD35StdRoll&#125; {{pcflag=true&#125;&#125; {{name=**[Charge](https://www.dandwiki.com/wiki/SRD:Charge)**&#125;&#125; {{subtags=@{character_name} &#125;&#125; {{check=**Charge check:**&#125;&#125; {{Opposing check=≥ [[ ?{Target Type (Ask GM)&#124;PC&#44;@{target|armorclass}&#124;NPC&#44;@{target|npcarmorclass}&#125; ]]&#125;&#125; {{Duration=Full Round Action&#125;&#125; {{Provoke Attack of Opp=No&#125;&#125; {{checkroll=``@{character_name}'s Melee Weapon Attack``&#125;&#125; {{notes=
+Restrictions:
+• Must move before attack&#44; not after.
+• Must move at least 10 feet.
+• May move up to 2× speed directly towards opponent.
+• Must have a clear path to opponent.
+• Must have line of sight to opponent.
+• Cannot take a 5 foot step in the same round.
+
+Results:
+• Move twice your speed and attack during the action.
+• Gain ``+2`` bonus on single melee attack roll.
+• Take a ``-2`` penalty to AC until start of next turn.
+• No extra attacks&#44; even if normally allows.
+• Lances deal ``2× damage`` if used by charging mounted character.
+• Spears&#44; tridents&#44; and certain other piercing weapons deal ``2× damage`` when readied against a charging character.&#125;&#125;|Disarm,&{template:DnD35StdRoll&#125; {{pcflag=true&#125;&#125; {{name=**[Disarm](https://www.dandwiki.com/wiki/SRD:Disarm)**&#125;&#125; {{subtags=@{character_name}&#125;&#125; {{check=**Disarm check:**&#125;&#125; {{Opposing check=``Target's Melee Attack Roll``&#125;&#125; {{Duration=1 Std Action&#125;&#125; {{Provoke Attack of Opp=Yes&#125;&#125; {{checkroll=``@{character_name}'s Melee Attack Roll``&#125;&#125; {{notes=
+Step One: (Provoke Attack of Opportunity)
+
+Step Two:
+• You and the defender make opposed attack rolls.
+• Two-handed weapons gain ``+4`` bonus on this roll.
+• Light weapons take a ``-4`` penalty on this roll.
+• If the target item isn't a melee weapon&#44; defender takes a ``-4`` penalty on the roll.
+• For unarmed strike use the basic Melee Attack Check and subtract 4&#44; since unarmed counds as a light weapon for this.
+
+Step Three:
+• If you beat the defender&#44; the defender is disarmed.
+• If you attempted the disarm unarmed&#44; you now have the weapon.
+• If you were armed&#44; the defender's weapon is on the ground in the defender's square.
+• If you failed the disarm&#44; defender may react and attempt to disarm you with opposed melee attack rolls&#44; and does not provoke an attack of opportunity.
+&#125;&#125;|Feint,&{template:DnD35StdRoll&#125; {{pcflag=true&#125;&#125; {{name=**[Feint](https://www.dandwiki.com/wiki/SRD:Feint)**&#125;&#125; {{subtags=@{character_name}&#125;&#125; {{check=**Feint check:**&#125;&#125; {{Opposing check=``Target's Sense Motive``&#125;&#125; {{Duration=1 Std Action&#125;&#125; {{Provoke Attack of Opp=No&#125;&#125; {{checkroll=[[ 1d20 + [[ @{bluff} ]] - [[?{Target Type (Ask GM)?&#124;Normal&#44;0&#124;Non-Humanoid&#44;4&#124;Animal Intelligence&#44;8&#124;Nonintelligent&#44;1000000&#125;]][Target Type] ]]&#125;&#125; {{notes=
+The target may add his base attack bonus to this Sense Motive check.
+&nbsp;&nbsp;If successful the next melee attack you make against the target does not allow him to use his Dexterity bonus to AC. This attack must be made on or before your next turn.
+&nbsp;&nbsp;Feinting is not possible against nonintelligent creatures. Feinting in combat does not provoke attacks of opportunity.&#125;&#125;|Grapple,&{template:DnD35StdRoll&#125; {{pcflag=true&#125;&#125; {{name=**[Grapple](https://www.dandwiki.com/wiki/SRD:Grapple)**&#125;&#125; {{subtags=@{character_name}&#125;&#125; {{check=**Grapple check:**&#125;&#125; {{Opposing check=**See text**&#125;&#125; {{Duration=See text&#125;&#125; {{Provoke Attack of Opp=Yes&#125;&#125; {{checkroll=**See text**&#125;&#125; {{notes=
+Step One: (Attack of Opportunity)
+
+Step Two: (Grab)
+• Make a melee touch attack to grab the target:
+&nbsp;&nbsp;Attack [[ 1d20 + [[@{meleeattackbonus}]][Melee Attack Bonus] ]] ≥ AC [[ [[1-?{Target Type (Ask GM)&#124;PC&#44;0&#124;NPC&#44;1&#125;]]*[[@{target|armorclass}]] + ?{Target Type (Ask GM)&#124;PC&#44;0&#124;NPC&#44;1&#125;*[[@{target|npcarmorclass}]] ]]
+• If you fail to hit the target&#44; the grapple attempt fails.
+
+Step Three: (Hold)
+• Make an opposed grapple check as a free action:
+&nbsp;&nbsp;Attacker [[ 1d20 + [[@{grapple}]][Grapple Check Modifier] ]] > [[ 1d20 + [[ [[1-?{Target Type (Ask GM)&#124;PC&#44;0&#124;NPC&#44;1&#125;]]*[[@{target|grapple}]] + ?{Target Type (Ask GM)&#124;PC&#44;0&#124;NPC&#44;1&#125;*[[@{target|npcgrapple}]] ]][Grapple Check Modifier] ]] Defender
+• If you succeed&#44; you are now grappling and deal damage to target as if with an unarmed strike.
+• If you lose&#44; you fail to start the grapple.
+• In case of tie&#44; higher Grapple Check Modifier wins. If also tie&#44; roll again.
+
+Step Four: (Maintain Grapple)
+• To maintain the grapple for later rounds&#44; you must move into the target's space.
+
+To see more information on consequences&#44; actions that can be taken while grappling&#44; actions you can take while pinning or being pinned&#44; or joining a grapple follow [**this link**](https://www.dandwiki.com/wiki/SRD:Grapple&amp;num;Grappling_Consequences)&#125;&#125;|Overrun,&{template:DnD35StdRoll&#125; {{pcflag=true&#125;&#125; {{name=**[Overrun](https://www.dandwiki.com/wiki/SRD:Overrun)**&#125;&#125; {{subtags=@{character_name}&#125;&#125; {{check=**Overrun check:**&#125;&#125; {{Opposing check=**See text**&#125;&#125; {{Duration=1 Std Action&#125;&#125; {{Provoke Attack of Opp=Yes&#125;&#125; {{checkroll=**See text**&#125;&#125; {{notes=
+Step One: (Attack of Opportunity)
+
+Step Two: (Opponent Avoids?)
+• The defender has the option to simply avoid you. If he avoids you&#44; he doesn't suffer any ill effect and you may keep moving (You can always move through a square occupied by someone who lets you by.) The overrun attempt doesn't count against your actions this round (except for any movement required to enter the opponent's square).
+
+Step Three: (Opponent Blocks?)
+• If your opponent blocks you&#44; make a Strength check&#44; opposed by the defender's Dexterity or Strength check (whichever is higher):
+&nbsp;&nbsp;Attacker [[ 1d20 + [[@{str-mod}]][Strength Modifier] ]] > [[ 1d20 + [[1-?{Target Type (Ask GM)&#124;PC&#44;0&#124;NPC&#44;1&#125;]]*[[ { @{target|str-mod}&#44;@{target|dex-mod} &#125;kh1]] + ?{Target Type (Ask GM)&#124;PC&#44;0&#124;NPC&#44;1&#125;*[[ { @{target|npcstr-mod}&#44;@{target|npcdex-mod} &#125;kh1]] ]] Defender
+&#125;&#125;|Sunder,&{template:DnD35StdRoll&#125; {{pcflag=true&#125;&#125; {{name=**[Sunder](https://www.dandwiki.com/wiki/SRD:Sunder)**&#125;&#125; {{subtags=@{character_name}&#125;&#125; {{check=**Sunder check:**&#125;&#125; {{Opposing check=``Target's Melee Weapon Attack``&#125;&#125; {{Duration=1 Std Action&#125;&#125; {{Provoke Attack of Opp=Yes&#125;&#125; {{checkroll=``@{character_name}'s Melee Weapon Attack``&#125;&#125; {{notes=
+Step One: (Attack of Opportunity)
+
+Step Two: (Opposed Rolls)
+• Two-Handed weapons gain ``+4`` bonus.
+• Light weapons take a ``-4`` penalty.
+• If combatants differ in sizes&#44; larger gains ``+4`` per size category.
+
+Step Three: (Consequences)
+• If you beat the defender&#44; roll damage and deal it using information from [this table](https://www.dandwiki.com/wiki/SRD:Sunder).&#125;&#125;|Trip,&{template:DnD35StdRoll&#125; {{pcflag=true&#125;&#125; {{name=**[Trip](https://www.dandwiki.com/wiki/SRD:Trip)**&#125;&#125; {{subtags=@{character_name}&#125;&#125; {{check=**Trip check:**&#125;&#125; {{Opposing check=**See text**&#125;&#125; {{Duration=1 Std Action&#125;&#125; {{Provoke Attack of Opp=Yes&#125;&#125; {{checkroll=**See text**&#125;&#125; {{notes=
+Step One: (Melee Attack)
+• For normal trips&#44; make an unarmed melee touch attack:
+&nbsp;&nbsp;Attack [[ 1d20 + [[@{meleeattackbonus}]] ]] ≥ AC [[ [[ [[1-?{Target Type (Ask GM)&#124;PC&#44;0&#124;NPC&#44;1&#125;]]*[[@{target|touchac}]] ]] + ?{Target Type (Ask GM)&#124;PC&#44;0&#124;NPC&#44;1&#125;*[[@{target|npctoucharmorclass}]] ]]
+• If tripping with a weapon&#44; roll that as a melee touch attack.
+
+Step Two: (Opposed Checks)
+• Attacker makes a Strength check&#44; opposed by the defender's Dexterity or Strength check (whichever is higher):
+&nbsp;&nbsp;Attacker [[ 1d20 + [[@{str-mod}]][Strength Modifier] ]] > [[ 1d20 + [[1-?{Target Type (Ask GM)&#124;PC&#44;0&#124;NPC&#44;1&#125;]]*[[ { @{target|str-mod}&#44;@{target|dex-mod} &#125;kh1]] + ?{Target Type (Ask GM)&#124;PC&#44;0&#124;NPC&#44;1&#125;*[[ { @{target|npcstr-mod}&#44;@{target|npcdex-mod} &#125;kh1]] ]] Defender
+&#125;&#125;}
