@@ -997,81 +997,90 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       case '--group-initiative-check':
         // --group-initiative-check [clear]
         //   The optional "clear" argument indicates that the turn order should be cleared before adding new entries
-        var roll_initiative_map = {};
-        var selected_tokens_remaining = selected_tokens.length;
-        if (first_arg.toLowerCase() == "clear") {
-          Campaign().set("turnorder", JSON.stringify([]));
-        };
-        selected_tokens.forEach(function(selected) {
-          var obj = getObj("graphic", selected);
-          var character = getObj("character", obj.get("represents"));
-          var char_name = character.get("name");
-          var init_macro;
-          {
-            var init_attrib_name;
-            if (getAttrByName(character.id, "npcname")==="") {
-              init_attrib_name = "init";
-            } else {
-              init_attrib_name = "npcinit";
+        try {
+          var roll_initiative_map = {};
+          var selected_tokens_remaining = selected_tokens.length;
+          if ((first_arg != null) && (first_arg.toLowerCase() == "clear")) {
+            Campaign().set("turnorder", JSON.stringify([]));
+          };
+          selected_tokens.forEach( selected_token => {
+            var obj = getObj("graphic", selected_token);
+            var character = getObj("character", obj.get("represents"));
+            var char_name = character.get("name");
+            var init_macro;
+            {
+              var init_attrib_name;
+              if (getAttrByName(character.id, "npcname")==="") {
+                init_attrib_name = "init";
+              } else {
+                init_attrib_name = "npcinit";
+              };
+              init_macro = "[[(1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"})) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/100) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/10000)]]";
             };
-            init_macro = "[[(1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"})) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/100) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/10000)]]";
-          };
-          try {
-            sendChat(playerName,init_macro,function(macro_msg) {
-              var turnorder;
-              if (Campaign().get("turnorder") == "") { turnorder = []; }
-              else { turnorder = JSON.parse(Campaign().get("turnorder")); };
-              //log(macro_msg[0].inlinerolls[0]["results"]["total"]);
-              var token_in_turnorder = false;
-              for (var i=0; i<turnorder.length; i++) {
-                if (turnorder[i]["id"] === selected) {
-                  token_in_turnorder = true;
-                  turnorder[i]["pr"] = macro_msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
-                  break;
+            try {
+              sendChat(playerName,init_macro, init_macro_rsp => {
+                var turnorder = Campaign().get("turnorder");
+                if (turnorder == "") {
+                  turnorder = [];
+                } else {
+                  turnorder = JSON.parse(turnorder);
                 };
-              };
-              if (!token_in_turnorder) {
-                turnorder.push({
-                  id: selected,
-                  pr: macro_msg[0].inlinerolls[0]["results"]["total"].toFixed(4)
-                });
-              };
-              Campaign().set("turnorder", JSON.stringify(turnorder));
-              {
-                var char_name_unique = char_name;
-                if (roll_initiative_map[char_name] !== undefined) {
-                  if (roll_initiative_map[char_name] != "EXCLUDE") {
-                    char_name_unique = char_name.concat(" (1)");
-                    roll_initiative_map[char_name_unique] = roll_initiative_map[char_name];
-                    roll_initiative_map[char_name]        = "EXCLUDE";
-                    char_name_unique = char_name.concat(" (2)");
-                  } else {
-                    var n = 3;
-                    while (roll_initiative_map[char_name.concat(" ("+n+")")] !== undefined) {
-                      n++;
+                //log(init_macro_rsp[0].inlinerolls[0]["results"]["total"]);
+                {
+                  var token_in_turnorder = false;
+                  for (var i=0; i<turnorder.length; i++) {
+                    if (turnorder[i]["id"] === selected_token) {
+                      token_in_turnorder = true;
+                      turnorder[i]["pr"] = init_macro_rsp[0].inlinerolls[0]["results"]["total"].toFixed(4);
+                      break;
                     };
-                    char_name_unique = char_name.concat(" ("+n+")");
+                  };
+                  if (!token_in_turnorder) {
+                    turnorder.push({
+                      id: selected_token,
+                      pr: init_macro_rsp[0].inlinerolls[0]["results"]["total"].toFixed(4)
+                    });
                   };
                 };
-                roll_initiative_map[char_name_unique] = macro_msg[0].inlinerolls[0]["results"]["total"].toFixed(4);
-              };
-              selected_tokens_remaining--;
-              if (selected_tokens_remaining==0) {
-                var chat_msg = "&{template:default} {{name=Group Initiative}} ";
-                Object.keys(roll_initiative_map).forEach(function(k){
-                  if (roll_initiative_map[k] == "EXCLUDE") {
-                    return;
+                Campaign().set("turnorder", JSON.stringify(turnorder));
+                {
+                  var char_name_unique = char_name;
+                  if (roll_initiative_map[char_name] !== undefined) {
+                    if (roll_initiative_map[char_name] != "EXCLUDE") {
+                      char_name_unique = char_name.concat(" (1)");
+                      roll_initiative_map[char_name_unique] = roll_initiative_map[char_name];
+                      roll_initiative_map[char_name]        = "EXCLUDE";
+                      char_name_unique = char_name.concat(" (2)");
+                    } else {
+                      var n = 3;
+                      while (roll_initiative_map[char_name.concat(" ("+n+")")] !== undefined) {
+                        n++;
+                      };
+                      char_name_unique = char_name.concat(" ("+n+")");
+                    };
                   };
-                  chat_msg += "{{" + k + "= "+ roll_initiative_map[k] +"}} ";
-                });
-                sendWhisperChat(msg,chat_msg);
-              };
-            });
-          } catch (e) {
-            log("Encountered a problem while rolling group initiative: "+e);
-            log("  Macro = "+init_macro);
-          };
-        });
+                  roll_initiative_map[char_name_unique] = init_macro_rsp[0].inlinerolls[0]["results"]["total"].toFixed(4);
+                };
+                selected_tokens_remaining--;
+                if (selected_tokens_remaining==0) {
+                  var chat_msg = "&{template:default} {{name=Group Initiative}} ";
+                  Object.keys(roll_initiative_map).forEach(function(k){
+                    if (roll_initiative_map[k] == "EXCLUDE") {
+                      return;
+                    };
+                    chat_msg += "{{" + k + "= "+ roll_initiative_map[k] +"}} ";
+                  });
+                  sendWhisperChat(msg,chat_msg);
+                };
+              });
+            } catch (e) {
+              log("Encountered a problem while rolling group initiative: "+e);
+              log("  Macro = "+init_macro);
+            };
+          });
+        } catch (e) {
+          log("Encountered a problem while rolling group initiative: \n"+e);
+        };
         break;
       case '--group-skill-check':
         // --group-skill-check <SKILLNAME> <Aid Another|Individual>
@@ -1083,6 +1092,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
           sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Invalid value for skill help type}}');
         };
         var skill_spec         = getSkillSpecification(first_arg);
+        if (skill_spec == null) { log("ERROR skill spec"); return; };
         var skill_trained_only = skill_spec.trained_only || '';
         var help_type          = second_arg;
 
