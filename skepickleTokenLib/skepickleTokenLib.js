@@ -954,44 +954,60 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         //});
         break;
       case '--toggle-reach-auras':
-        selected_tokens.forEach(function(selected) {
-          var obj = getObj("graphic", selected);
-          var character = getObj("character", obj.get("represents"));
-          var reach = getAttrByName(character.id, "npcreach").replace(new RegExp("[^\.0-9].*$"), "");
-          if ((!isAttrByNameDefined(character.id, "npcname")) || (getAttrByName(character.id, "npcname") == "")) {
-            //log(getAttrByName(character.id, "size"));
-            reach = sizeModToTallReach(getAttrByName(character.id, "size"));
-          };
-          if (isNaN(reach)) { return; }; //TODO maybe log error for weird reach specifier?
-          var gmnotes = decodeRoll20String(obj.get('gmnotes'));
-          var aura_info = getStringRegister(gmnotes, "aura-data-backup");
-          if (aura_info === null) {
-            // no backup present, so take backup and overwrite attributes
-            obj.set("gmnotes",setStringRegister(gmnotes,
-                                                "aura-data-backup",
-                                                [obj.get("aura1_radius"),
-                                                 obj.get("aura1_color"),
-                                                 obj.get("aura1_square"),
-                                                 obj.get("aura2_radius"),
-                                                 obj.get("aura2_color"),
-                                                 obj.get("aura2_square")]));
-            obj.set("aura1_radius", reach*2);
-            obj.set("aura1_color", "#FFFF00");
-            obj.set("aura1_square", false);
-            obj.set("aura2_radius", reach);
-            obj.set("aura2_color", "#00FF00");
-            obj.set("aura2_square", false);
-          } else {
-            // backup present, remove register and restore attributes
-            obj.set("aura1_radius", aura_info[0]);
-            obj.set("aura1_color",  aura_info[1]);
-            obj.set("aura1_square", (aura_info[2]=="true"));
-            obj.set("aura2_radius", aura_info[3]);
-            obj.set("aura2_color",  aura_info[4]);
-            obj.set("aura2_square", (aura_info[5]=="true"));
-            obj.set("gmnotes",setStringRegister(gmnotes, "aura-data-backup"));
-          };
-        });
+        try {
+          selected_tokens.forEach(function(selected) {
+            var obj = getObj("graphic", selected);
+            var character = getObj("character", obj.get("represents"));
+            var reach = getAttrByName(character.id, "npcreach").replace(new RegExp("[^\.0-9].*$"), "");
+            if ((!isAttrByNameDefined(character.id, "npcname")) || (getAttrByName(character.id, "npcname") == "")) {
+              //log(getAttrByName(character.id, "size"));
+              reach = sizeModToTallReach(getAttrByName(character.id, "size"));
+            };
+            if (isNaN(reach)) { return; }; //TODO maybe log error for weird reach specifier?
+            var gmnotes = decodeRoll20String(obj.get('gmnotes'));
+            var aura_info = getStringRegister(gmnotes, "aura-data-backup");
+            if (aura_info === null) {
+              // no backup present, so take backup and overwrite attributes
+              obj.set("gmnotes",setStringRegister(gmnotes,
+                                                  "aura-data-backup",
+                                                  [obj.get("aura1_radius"),
+                                                   obj.get("aura1_color"),
+                                                   obj.get("aura1_square"),
+                                                   obj.get("aura2_radius"),
+                                                   obj.get("aura2_color"),
+                                                   obj.get("aura2_square"),
+                                                   obj.get("showplayers_aura1"),
+                                                   obj.get("showplayers_aura2"),
+                                                   obj.get("playersedit_aura1"),
+                                                   obj.get("playersedit_aura2")]));
+              obj.set("aura1_radius", reach*2);
+              obj.set("aura1_color", "#00FF00");
+              obj.set("aura1_square", false);
+              obj.set("aura2_radius", reach);
+              obj.set("aura2_color", "#0000FF");
+              obj.set("aura2_square", false);
+              obj.set("showplayers_aura1", false);
+              obj.set("showplayers_aura2", false);
+              obj.set("playersedit_aura1", false);
+              obj.set("playersedit_aura2", false);
+            } else {
+              // backup present, remove register and restore attributes
+              obj.set("aura1_radius", aura_info[0]);
+              obj.set("aura1_color",  aura_info[1]);
+              obj.set("aura1_square", (aura_info[2]=="true"));
+              obj.set("aura2_radius", aura_info[3]);
+              obj.set("aura2_color",  aura_info[4]);
+              obj.set("aura2_square", (aura_info[5]=="true"));
+              obj.set("showplayers_aura1", (aura_info[6]=="true"));
+              obj.set("showplayers_aura2", (aura_info[7]=="true"));
+              obj.set("playersedit_aura1", (aura_info[8]=="true"));
+              obj.set("playersedit_aura2", (aura_info[9]=="true"));
+              obj.set("gmnotes",setStringRegister(gmnotes, "aura-data-backup"));
+            };
+          });
+        } catch (e) {
+          log("Encountered a problem while rolling group initiative: \n"+e);
+        };
         break;
       case '--roll-initiative':
       case '--group-initiative-check':
