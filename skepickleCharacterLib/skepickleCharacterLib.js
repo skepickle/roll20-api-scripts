@@ -894,45 +894,46 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
     if (first_arg  != null) { first_arg  = first_arg.replace(/_/g, " ");  };
     if (second_arg != null) { second_arg = second_arg.replace(/_/g, " "); };
 
-    switch(userCommand) {
-      case '--list-source-texts':
-        var message_to_send = '';
-        Object.keys(dnd35.all_source_texts).forEach(function(k,i) {
-          //log(k+' '+dnd35.all_source_texts[k]);
-          if (dnd35.enabled_source_texts.includes(k)) {
-            message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= enabled}}');
-          } else {
-            message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= disabled}}');
-          };
-        });
-        sendWhisperChat(msg,'&{template:default} {{name=Source Texts}} '+message_to_send, null, {noarchive:true});
-        break;
-      case '--enable-source-text':
-        break;
-      case '--disable-source-text':
-        break;
-      case '--audit-mook-sheet':
-        selected_token_ids.forEach(function(selected) {
-          try {
-            var obj = getObj("graphic", selected);
-            var character = getObj("character", obj.get("represents"));
-            if (!character) { throw "Token does not represent a character." };
-            character.get("_defaulttoken", function(token) {
-              // Make sure this is a Mook token
-              if (token !== "null") { return; };
-              try {
-                auditMookNPCSheet(character.id);
-              } catch(e) {
-                sendWhisperChat(msg,e);
-              };
-            });
-          } catch(e) {
-            sendWhisperChat(msg,e);
-          };
-        });
-        break;
-      case '--fix-mook-sheet':
-        selected_token_ids.forEach(function(selected) {
+    try {
+      switch(userCommand) {
+        case '--list-source-texts':
+          var message_to_send = '';
+          Object.keys(dnd35.all_source_texts).forEach(function(k,i) {
+            //log(k+' '+dnd35.all_source_texts[k]);
+            if (dnd35.enabled_source_texts.includes(k)) {
+              message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= enabled}}');
+            } else {
+              message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= disabled}}');
+            };
+          });
+          sendWhisperChat(msg,'&{template:default} {{name=Source Texts}} '+message_to_send, null, {noarchive:true});
+          break;
+        case '--enable-source-text':
+          break;
+        case '--disable-source-text':
+          break;
+        case '--audit-mook-sheet':
+          selected_token_ids.forEach(function(selected) {
+            try {
+              var obj = getObj("graphic", selected);
+              var character = getObj("character", obj.get("represents"));
+              if (!character) { throw "Token does not represent a character." };
+              character.get("_defaulttoken", function(token) {
+                // Make sure this is a Mook token
+                if (token !== "null") { return; };
+                try {
+                  auditMookNPCSheet(character.id);
+                } catch(e) {
+                  sendWhisperChat(msg,e);
+                };
+              });
+            } catch(e) {
+              sendWhisperChat(msg,e);
+            };
+          });
+          break;
+        case '--fix-mook-sheet':
+          selected_token_ids.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
             if (!character) { return; };
@@ -945,19 +946,18 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
                 sendWhisperChat(msg,e);
               };
             });
-        });
-        break;
-      case '--check-sheet-macros':
-        //TODO Implement this?
-        //selected_token_ids.forEach(function(selected) {
-        //    var obj = getObj("graphic", selected);
-        //    var character = getObj("character", obj.get("represents"));
-        //    if (!character) { return; };
-        //    checkSheetMacros(character.id);
-        //});
-        break;
-      case '--toggle-reach-auras':
-        try {
+          });
+          break;
+        case '--check-sheet-macros':
+          //TODO Implement this?
+          //selected_token_ids.forEach(function(selected) {
+          //    var obj = getObj("graphic", selected);
+          //    var character = getObj("character", obj.get("represents"));
+          //    if (!character) { return; };
+          //    checkSheetMacros(character.id);
+          //});
+          break;
+        case '--toggle-reach-auras':
           selected_token_ids.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
@@ -1008,15 +1008,11 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
               obj.set("gmnotes",setStringRegister(gmnotes, "aura-data-backup"));
             };
           });
-        } catch (e) {
-          log("Encountered a problem while rolling group initiative: \n"+e);
-        };
-        break;
-      case '--roll-initiative':
-      case '--group-initiative-check':
-        // --group-initiative-check [clear]
-        //   The optional "clear" argument indicates that the turn order should be cleared before adding new entries
-        try {
+          break;
+        case '--roll-initiative':
+        case '--group-initiative-check':
+          // --group-initiative-check [clear]
+          //   The optional "clear" argument indicates that the turn order should be cleared before adding new entries
           var roll_initiative_map = {};
           var selected_tokens_remainin_ids = selected_token_ids.length;
           if ((first_arg != null) && (first_arg.toLowerCase() == "clear")) {
@@ -1097,51 +1093,64 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
               log("  Macro = "+init_macro);
             };
           });
-        } catch (e) {
-          log("Encountered a problem while rolling group initiative: \n"+e);
-        };
-        break;
-      case '--group-skill-check':
-        // --group-skill-check <SKILLNAME> <Aid Another|Individual>
-        //   Both arguments are required
-        if ((first_arg == null) || (second_arg == null)) {
-          sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Required arguments missing}}');
-        };
-        if ((second_arg != "Aid Another") && (second_arg != "Individual")) {
-          sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Invalid value for skill help type}}');
-        };
-        var skill_spec = getSkillSpecification(first_arg);
-        if ((skill_spec == null) || (skill_spec.base === undefined)) {
-          sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Unknown skill '+first_arg+'}}');
-          return;
-        };
-        var skill_trained_only = skill_spec.trained_only || '';
-        var help_type          = second_arg;
-
-        //log(skill_spec);
-
-        var roll_skill_map            = {}; // key=uniquified char_name, val=skill check
-        var selected_tokens_remainin_ids = selected_token_ids.length;
-        // Loop through each selected character...
-        selected_token_ids.forEach(function(selected) {
-          var obj          = getObj("graphic", selected);
-          var character    = getObj("character", obj.get("represents"));
-          var char_name    = character.get("name");
-          var skill_attrib = skill_spec.attrib;
-
-          if (skill_spec.attrib.match(/\#/)) {
-            var found_skill = false;
-            for (var skillindex=1; skillindex<4; skillindex++) {
-              if (getAttrByName(character.id,
-                                skill_spec.attrib.replace(/\#/, ''.concat(skillindex,"name"))).toLowerCase() == skill_spec.sub.toLowerCase()) {
-                skill_attrib = skill_spec.attrib.replace(/\#/, ''.concat(skillindex));
-                found_skill = true;
-                break;
+          break;
+        case '--group-skill-check':
+          // --group-skill-check <SKILLNAME> <Aid Another|Individual>
+          //   Both arguments are required
+          if ((first_arg == null) || (second_arg == null)) {
+            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Required arguments missing}}');
+          };
+          if ((second_arg != "Aid Another") && (second_arg != "Individual")) {
+            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Invalid value for skill help type}}');
+          };
+          var skill_spec = getSkillSpecification(first_arg);
+          if ((skill_spec == null) || (skill_spec.base === undefined)) {
+            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Unknown skill '+first_arg+'}}');
+            return;
+          };
+          var skill_trained_only = skill_spec.trained_only || '';
+          var help_type          = second_arg;
+          //log(skill_spec);
+          var roll_skill_map            = {}; // key=uniquified char_name, val=skill check
+          var selected_tokens_remainin_ids = selected_token_ids.length;
+          // Loop through each selected character...
+          selected_token_ids.forEach(function(selected) {
+            var obj          = getObj("graphic", selected);
+            var character    = getObj("character", obj.get("represents"));
+            var char_name    = character.get("name");
+            var skill_attrib = skill_spec.attrib;
+            if (skill_spec.attrib.match(/\#/)) {
+              var found_skill = false;
+              for (var skillindex=1; skillindex<4; skillindex++) {
+                if (getAttrByName(character.id,
+                                  skill_spec.attrib.replace(/\#/, ''.concat(skillindex,"name"))).toLowerCase() == skill_spec.sub.toLowerCase()) {
+                  skill_attrib = skill_spec.attrib.replace(/\#/, ''.concat(skillindex));
+                  found_skill = true;
+                  break;
+                };
               };
-            };
-            if (!found_skill) {
+              if (!found_skill) {
+                const otherskill_rowids = getRepeatingSectionRowIDs(character.id, 'repeating_skills');
+                found_skill = false;
+                otherskill_rowids.forEach( id => {
+                  if (!found_skill) {
+                    var otherskillname = trimWhitespace(getAttrByName(character.id, ''.concat("repeating_skills_",id,"_otherskillname")).
+                                                          replace(/\* *$/,"").
+                                                          replace(/ +\(/g,"("));
+                    //log(otherskillname.toLowerCase() + " vs " + ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase());
+                    if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase()) {
+                      skill_attrib = ''.concat('repeating_skills_',id,"_otherskill");
+                      found_skill = true;
+                    };
+                  };
+                });
+              };
+              if (!found_skill) {
+                skill_attrib=dnd35.skills()[skill_spec.base+"()"].default_ability_mod;
+              };
+            } else if (skill_spec.attrib == "") {
               const otherskill_rowids = getRepeatingSectionRowIDs(character.id, 'repeating_skills');
-              found_skill = false;
+              var found_skill = false;
               otherskill_rowids.forEach( id => {
                 if (!found_skill) {
                   var otherskillname = trimWhitespace(getAttrByName(character.id, ''.concat("repeating_skills_",id,"_otherskillname")).
@@ -1151,188 +1160,171 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
                   if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase()) {
                     skill_attrib = ''.concat('repeating_skills_',id,"_otherskill");
                     found_skill = true;
+                  } else if (otherskillname.toLowerCase() == ''.concat(skill_spec.base).toLowerCase()) {
+                    skill_attrib = ''.concat('repeating_skills_',id,"_otherskill");
+                    found_skill = true;
                   };
                 };
               });
-            };
-            if (!found_skill) {
-              skill_attrib=dnd35.skills()[skill_spec.base+"()"].default_ability_mod;
-            };
-          } else if (skill_spec.attrib == "") {
-            const otherskill_rowids = getRepeatingSectionRowIDs(character.id, 'repeating_skills');
-            var found_skill = false;
-            otherskill_rowids.forEach( id => {
               if (!found_skill) {
-                var otherskillname = trimWhitespace(getAttrByName(character.id, ''.concat("repeating_skills_",id,"_otherskillname")).
-                                                      replace(/\* *$/,"").
-                                                      replace(/ +\(/g,"("));
-                //log(otherskillname.toLowerCase() + " vs " + ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase());
-                if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase()) {
-                  skill_attrib = ''.concat('repeating_skills_',id,"_otherskill");
-                  found_skill = true;
-                } else if (otherskillname.toLowerCase() == ''.concat(skill_spec.base).toLowerCase()) {
-                  skill_attrib = ''.concat('repeating_skills_',id,"_otherskill");
-                  found_skill = true;
+                switch(skill_spec.base) {
+                  case "Knowledge":
+                  case "Craft":
+                  case "Perform":
+                  case "Profession":
+                    skill_attrib=dnd35.skills()[skill_spec.base+"()"].default_ability_mod;
+                    break;
+                  default:
+                    skill_attrib=dnd35.skills()[skill_spec.base].default_ability_mod;
+                    break;
                 };
               };
-            });
-            if (!found_skill) {
-              switch(skill_spec.base) {
-                case "Knowledge":
-                case "Craft":
-                case "Perform":
-                case "Profession":
-                  skill_attrib=dnd35.skills()[skill_spec.base+"()"].default_ability_mod;
-                  break;
-                default:
-                  skill_attrib=dnd35.skills()[skill_spec.base].default_ability_mod;
-                  break;
-              };
             };
-          };
-          // at this point! "skill_attrib" __should__ be correct for this character
-          //log(skill_attrib);
-
-          // ...generate a unique char_name, in case of multiple instances...
-          var char_name_unique = char_name;
-          if (roll_skill_map[char_name] !== undefined) {
-            if (roll_skill_map[char_name].state == "EXCLUDE") {
-              var n = 3;
-              while (roll_skill_map[char_name.concat(" ("+n+")")] !== undefined) {
-                n++;
-              };
-              char_name_unique = char_name.concat(" ("+n+")");
-            } else {
-              char_name_unique                 = char_name.concat(" (1)");
-              roll_skill_map[char_name_unique] = roll_skill_map[char_name];
-              roll_skill_map[char_name]        = { id: character.id, name: char_name, state: "EXCLUDE" };
-              char_name_unique                 = char_name.concat(" (2)");
-            };
-          };
-          // ...adding each token to the roll_skill_map for further processing to get bonus value...
-          roll_skill_map[char_name_unique] = { id: character.id, name: char_name, state: "GET_BONUS" };
-          if (skill_spec.trained_only) {
-            if (["str-mod","dex-mod","con-mod","int-mod","wis-mod","cha-mod"].includes(skill_attrib)) {
-              roll_skill_map[char_name_unique].state = "UNTRAINED";
-            } else {
-              var ranks = getAttrByName(character.id, skill_attrib.concat("ranks"));
-              if (isNaN(ranks) || (ranks < 1)) {
-                roll_skill_map[char_name_unique].state = "UNTRAINED";
-              };
-            };
-          };
-          selected_tokens_remainin_ids--;
-          if (selected_tokens_remainin_ids==0) {
-            //log(roll_skill_map);
-            var get_bonuses_remaining = Object.keys(roll_skill_map).length;
-            var highest_bonus     = -10000;
-            var highest_char_name = "";
-            // ...retrieve each selected token's skill bonus...
-            Object.keys(roll_skill_map).forEach(function(char_name_unique) {
-              if (roll_skill_map[char_name_unique].state == "EXCLUDE") {
-                char_name = char_name_unique;
+            // at this point! "skill_attrib" __should__ be correct for this character
+            //log(skill_attrib);
+            // ...generate a unique char_name, in case of multiple instances...
+            var char_name_unique = char_name;
+            if (roll_skill_map[char_name] !== undefined) {
+              if (roll_skill_map[char_name].state == "EXCLUDE") {
+                var n = 3;
+                while (roll_skill_map[char_name.concat(" ("+n+")")] !== undefined) {
+                  n++;
+                };
+                char_name_unique = char_name.concat(" ("+n+")");
               } else {
-                char_name = roll_skill_map[char_name_unique].name;
+                char_name_unique                 = char_name.concat(" (1)");
+                roll_skill_map[char_name_unique] = roll_skill_map[char_name];
+                roll_skill_map[char_name]        = { id: character.id, name: char_name, state: "EXCLUDE" };
+                char_name_unique                 = char_name.concat(" (2)");
               };
-              sendChat(char_name_unique,''.concat('[[@{',char_name,'|',skill_attrib,'}]]'),function(attrib_msg) {
-                var bonus = 0;
-                char_name_unique = attrib_msg[0].who;
-                if (!(["EXCLUDE","UNTRAINED"].includes(roll_skill_map[char_name_unique].state))) {
-                  bonus = attrib_msg[0].inlinerolls[0]["results"]["total"];
-                  //log("    gotBonus("+char_name_unique+") => "+bonus);
-                  roll_skill_map[char_name_unique]["bonus"] = bonus;
-                  roll_skill_map[char_name_unique]["state"] = "GET_CHECK";
-                  if (bonus > highest_bonus) {
-                    //log("== Highest bonus is "+highest_char_name+" with "+highest_bonus);
-                    highest_bonus     = bonus;
-                    highest_char_name = char_name_unique;
-                    //log("=> Highest bonus is "+highest_char_name+" with "+highest_bonus);
-                  };
+            };
+            // ...adding each token to the roll_skill_map for further processing to get bonus value...
+            roll_skill_map[char_name_unique] = { id: character.id, name: char_name, state: "GET_BONUS" };
+            if (skill_spec.trained_only) {
+              if (["str-mod","dex-mod","con-mod","int-mod","wis-mod","cha-mod"].includes(skill_attrib)) {
+                roll_skill_map[char_name_unique].state = "UNTRAINED";
+              } else {
+                var ranks = getAttrByName(character.id, skill_attrib.concat("ranks"));
+                if (isNaN(ranks) || (ranks < 1)) {
+                  roll_skill_map[char_name_unique].state = "UNTRAINED";
+                };
+              };
+            };
+            selected_tokens_remainin_ids--;
+            if (selected_tokens_remainin_ids==0) {
+              //log(roll_skill_map);
+              var get_bonuses_remaining = Object.keys(roll_skill_map).length;
+              var highest_bonus     = -10000;
+              var highest_char_name = "";
+              // ...retrieve each selected token's skill bonus...
+              Object.keys(roll_skill_map).forEach(function(char_name_unique) {
+                if (roll_skill_map[char_name_unique].state == "EXCLUDE") {
+                  char_name = char_name_unique;
                 } else {
-                  roll_skill_map[char_name_unique]["bonus"] = 0;
+                  char_name = roll_skill_map[char_name_unique].name;
                 };
-                get_bonuses_remaining--;
-                if (get_bonuses_remaining==0) {
-                  //log(roll_skill_map);
-                  var get_checks_remaining = Object.keys(roll_skill_map).length;
-                  Object.keys(roll_skill_map).forEach(function(char_name_unique) {
-                    if (roll_skill_map[char_name_unique].state == "EXCLUDE") {
-                      char_name = char_name_unique;
-                    } else {
-                      char_name = roll_skill_map[char_name_unique].name;
+                sendChat(char_name_unique,''.concat('[[@{',char_name,'|',skill_attrib,'}]]'),function(attrib_msg) {
+                  var bonus = 0;
+                  char_name_unique = attrib_msg[0].who;
+                  if (!(["EXCLUDE","UNTRAINED"].includes(roll_skill_map[char_name_unique].state))) {
+                    bonus = attrib_msg[0].inlinerolls[0]["results"]["total"];
+                    //log("    gotBonus("+char_name_unique+") => "+bonus);
+                    roll_skill_map[char_name_unique]["bonus"] = bonus;
+                    roll_skill_map[char_name_unique]["state"] = "GET_CHECK";
+                    if (bonus > highest_bonus) {
+                      //log("== Highest bonus is "+highest_char_name+" with "+highest_bonus);
+                      highest_bonus     = bonus;
+                      highest_char_name = char_name_unique;
+                      //log("=> Highest bonus is "+highest_char_name+" with "+highest_bonus);
                     };
-                    sendChat(char_name_unique,''.concat('[[1d20 + ', roll_skill_map[char_name_unique].bonus, ']]'),function(check_msg) {
-                      var check = 0;
-                      char_name_unique = check_msg[0].who;
-                      if (!(["EXCLUDE","UNTRAINED"].includes(roll_skill_map[char_name_unique].state))) {
-                        check = check_msg[0].inlinerolls[0]["results"]["total"];
-                        //log("    gotCheck("+char_name_unique+") => "+check);
-                        roll_skill_map[char_name_unique]["check"] = check;
-                        roll_skill_map[char_name_unique]["state"] = "PRINT";
+                  } else {
+                    roll_skill_map[char_name_unique]["bonus"] = 0;
+                  };
+                  get_bonuses_remaining--;
+                  if (get_bonuses_remaining==0) {
+                    //log(roll_skill_map);
+                    var get_checks_remaining = Object.keys(roll_skill_map).length;
+                    Object.keys(roll_skill_map).forEach(function(char_name_unique) {
+                      if (roll_skill_map[char_name_unique].state == "EXCLUDE") {
+                        char_name = char_name_unique;
                       } else {
-                        roll_skill_map[char_name_unique]["check"] = 0;
+                        char_name = roll_skill_map[char_name_unique].name;
                       };
-                      get_checks_remaining--;
-                      if (get_checks_remaining==0) {
-                        //log(roll_skill_map);
-                        var aid_total = 0/0;
-                        var checks_total = 0;
-                        var checks_num   = 0;
-                        var chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+first_arg.replace(/\(/,"\n(")+"}} {{Check Type= "+help_type+"}} ";
-                        var prints_remaining = Object.keys(roll_skill_map).length;
-                        //Object.keys(roll_skill_map).forEach(function(char_name_unique) {
-                        Object.keys(roll_skill_map).forEach(char_name_unique => {
-                          if (roll_skill_map[char_name_unique].state != "EXCLUDE") {
-                            if (roll_skill_map[char_name_unique].state != "UNTRAINED") {
-                              checks_total += roll_skill_map[char_name_unique].check;
-                              checks_num++;
-                              if ((help_type == "Aid Another") && (char_name_unique !== highest_char_name)) {
-                                var aid_inc = 0;
-                                if (roll_skill_map[char_name_unique].check >= 10) { aid_inc = 2; };
-                                if (isNaN(aid_total)) { aid_total = aid_inc; } else { aid_total += aid_inc; };
-                                chat_msg += "{{" + char_name_unique + "= +" + aid_inc + "(" + roll_skill_map[char_name_unique].check + ")}} ";
+                      sendChat(char_name_unique,''.concat('[[1d20 + ', roll_skill_map[char_name_unique].bonus, ']]'),function(check_msg) {
+                        var check = 0;
+                        char_name_unique = check_msg[0].who;
+                        if (!(["EXCLUDE","UNTRAINED"].includes(roll_skill_map[char_name_unique].state))) {
+                          check = check_msg[0].inlinerolls[0]["results"]["total"];
+                          //log("    gotCheck("+char_name_unique+") => "+check);
+                          roll_skill_map[char_name_unique]["check"] = check;
+                          roll_skill_map[char_name_unique]["state"] = "PRINT";
+                        } else {
+                          roll_skill_map[char_name_unique]["check"] = 0;
+                        };
+                        get_checks_remaining--;
+                        if (get_checks_remaining==0) {
+                          //log(roll_skill_map);
+                          var aid_total = 0/0;
+                          var checks_total = 0;
+                          var checks_num   = 0;
+                          var chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+first_arg.replace(/\(/,"\n(")+"}} {{Check Type= "+help_type+"}} ";
+                          var prints_remaining = Object.keys(roll_skill_map).length;
+                          //Object.keys(roll_skill_map).forEach(function(char_name_unique) {
+                          Object.keys(roll_skill_map).forEach(char_name_unique => {
+                            if (roll_skill_map[char_name_unique].state != "EXCLUDE") {
+                              if (roll_skill_map[char_name_unique].state != "UNTRAINED") {
+                                checks_total += roll_skill_map[char_name_unique].check;
+                                checks_num++;
+                                if ((help_type == "Aid Another") && (char_name_unique !== highest_char_name)) {
+                                  var aid_inc = 0;
+                                  if (roll_skill_map[char_name_unique].check >= 10) { aid_inc = 2; };
+                                  if (isNaN(aid_total)) { aid_total = aid_inc; } else { aid_total += aid_inc; };
+                                  chat_msg += "{{" + char_name_unique + "= +" + aid_inc + "(" + roll_skill_map[char_name_unique].check + ")}} ";
+                                } else {
+                                  if (isNaN(aid_total)) { aid_total = aid_inc; } else { aid_total += roll_skill_map[char_name_unique].check; };
+                                  chat_msg += "{{" + char_name_unique + "= " + roll_skill_map[char_name_unique].check + "}} ";
+                                };
                               } else {
-                                if (isNaN(aid_total)) { aid_total = aid_inc; } else { aid_total += roll_skill_map[char_name_unique].check; };
-                                chat_msg += "{{" + char_name_unique + "= " + roll_skill_map[char_name_unique].check + "}} ";
+                                chat_msg += "{{" + char_name_unique + "= *Untrained* }} ";
                               };
-                            } else {
-                              chat_msg += "{{" + char_name_unique + "= *Untrained* }} ";
                             };
-                          };
-                          prints_remaining--;
-                          if (prints_remaining==0) {
-                            if (help_type == "Aid Another") {
-                              chat_msg += "{{*Total*= ***"+ aid_total +"***}} ";
-                            } else {
-                              var avg_check = checks_total / checks_num;
-                              chat_msg += "{{*Average*= ***"+avg_check+"***}}";
+                            prints_remaining--;
+                            if (prints_remaining==0) {
+                              if (help_type == "Aid Another") {
+                                chat_msg += "{{*Total*= ***"+ aid_total +"***}} ";
+                              } else {
+                                var avg_check = checks_total / checks_num;
+                                chat_msg += "{{*Average*= ***"+avg_check+"***}}";
+                              };
+                              sendWhisperChat(msg,chat_msg);
                             };
-                            sendWhisperChat(msg,chat_msg);
-                          };
-                        });
-                      };
+                          });
+                        };
+                      });
                     });
-                  });
-                };
+                  };
+                });
               });
-            });
-          };
-        });
-        break;
-      case '--debug-attribute':
-        selected_token_ids.forEach(function(selected) {
-            var obj = getObj("graphic", selected);
-            var character = getObj("character", obj.get("represents"));
-            if (!character) { return; };
-            var attrib_val = getAttrByName(character.id, first_arg);
-            log(first_arg+' attribute for '+character.get("name")+' is = '+attrib_val);
-        });
-        break;
-      case '--help':
-      case undefined:
-      //getHelp();
-        sendChat(playerName, '/w "'+playerName+'" Test 1 2 3 '+playerName);
-        break;
+            };
+          });
+          break;
+        case '--debug-attribute':
+          selected_token_ids.forEach(function(selected) {
+              var obj = getObj("graphic", selected);
+              var character = getObj("character", obj.get("represents"));
+              if (!character) { return; };
+              var attrib_val = getAttrByName(character.id, first_arg);
+              log(first_arg+' attribute for '+character.get("name")+' is = '+attrib_val);
+          });
+          break;
+        case '--help':
+        case undefined:
+        //getHelp();
+          sendChat(playerName, '/w "'+playerName+'" Test 1 2 3 '+playerName);
+          break;
+      };
+    } catch (e) {
+      log("Encountered a problem on "+userCommand+" operation:\n"+e);
     };
   }; // handleInput
 
