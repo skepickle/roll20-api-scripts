@@ -126,7 +126,7 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
                 "Bluff":                    {base: "Bluff",                    attrib: "bluff",                                             trained_only:false },
                 "Climb":                    {base: "Climb",                    attrib: "climb",                                             trained_only:false },
                 "Concentration":            {base: "Concentration",            attrib: "concentration",                                     trained_only:false },
-                "Craft()":                  {base: "Craft",                    attrib: "craft#",                                            trained_only:false },
+                "Craft()":                  {base: "Craft",                    attrib: "craft#",            default_ability_mod: "int-mod", trained_only:false },
                 "Decipher Script":          {base: "Decipher Script",          attrib: "decipherscript",                                    trained_only:true  },
                 "Diplomacy":                {base: "Diplomacy",                attrib: "diplomacy",                                         trained_only:false },
                 "Disable Device":           {base: "Disable Device",           attrib: "disabledevice",                                     trained_only:true  },
@@ -153,8 +153,8 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
                 "Listen":                   {base: "Listen",                   attrib: "listen",                                            trained_only:false },
                 "Move Silently":            {base: "Move Silently",            attrib: "movesilent",                                        trained_only:false },
                 "Open Lock":                {base: "Open Lock",                attrib: "openlock",                                          trained_only:true  },
-                "Perform()":                {base: "Perform",                  attrib: "perform#",                                          trained_only:false },
-                "Profession()":             {base: "Profession",               attrib: "profession#",                                       trained_only:true  },
+                "Perform()":                {base: "Perform",                  attrib: "perform#",          default_ability_mod: "cha-mod", trained_only:false },
+                "Profession()":             {base: "Profession",               attrib: "profession#",       default_ability_mod: "wis-mod", trained_only:true  },
                 "Ride":                     {base: "Ride",                     attrib: "ride",                                              trained_only:false },
                 "Search":                   {base: "Search",                   attrib: "search",                                            trained_only:false },
                 "Sense Motive":             {base: "Sense Motive",             attrib: "sensemotive",                                       trained_only:false },
@@ -1186,12 +1186,7 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
               });
             };
             if (!found_skill) {
-              switch(skill_spec.base) {
-                case "Craft":      skill_attrib="int-mod"; break;
-                case "Perform":    skill_attrib="cha-mod"; break;
-                case "Profession": skill_attrib="wis-mod"; break;
-                default:           log("NOT FOUND"); break;
-              }
+              skill_attrib=dnd35.skills()[skill_spec.base+"()"].default_ability_mod;
             };
           } else if (skill_spec.attrib == "") {
             const otherskill_rowids = getRepeatingSectionRowIDs(character.id, 'repeating_skills');
