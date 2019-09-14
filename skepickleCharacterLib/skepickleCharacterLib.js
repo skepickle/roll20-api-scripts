@@ -1244,7 +1244,7 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
           if (skill_spec.trained_only) {
             if (["str-mod","dex-mod","con-mod","int-mod","wis-mod","cha-mod"].includes(skill_attrib)) {
               roll_skill_map[char_name_unique].state = "UNTRAINED";
-            } else if (skill_attrib != "") {
+            } else {
               var ranks = getAttrByName(character.id, skill_attrib.concat("ranks"));
               if (isNaN(ranks) || (ranks < 1)) {
                 roll_skill_map[char_name_unique].state = "UNTRAINED";
