@@ -1,4 +1,8 @@
-var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
+// skepickleCharacterLib
+
+// Purpose: Provide a library of functionality to improve player and GM experience when using Diana P's D&D 3.5 character sheet.
+
+var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacterLibImp() {
   "use strict";
 
   var info = {
@@ -38,7 +42,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     str = str.replace(/%23/g, '#');
     str = str.replace(/%3F/g, '?');
     return str;
-  };
+  }; // decodeRoll20String
 
   function getStringRegister(str,register) {
     // {register}2|efftype:e|damtype:k|end3|norange|pe|str13|wo1{/register}
@@ -46,7 +50,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     var endPos   = str.indexOf("{/" + register + "}");
     if ((startPos == -1) || (endPos == -1)) { return null; };
     return str.substr(startPos+register.length+2, (endPos-startPos)-(register.length+2)).split('|');
-  };
+  }; // getStringRegister
 
   function setStringRegister(str,register,values=null) {
     // {register}2|efftype:e|damtype:k|end3|norange|pe|str13|wo1{/register}
@@ -75,7 +79,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       };
     };
     return str.replace(reg_exp, replacement);
-  };
+  }; // setStringRegister
 
   var escapeRoll20Macro = function(str) {
     return str.replace(/\&/g,  "&amp;")
@@ -337,7 +341,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         name: attrib
     }, {caseInsensitive: true})[0];
     return !!attribute;
-  };
+  }; // isAttrByNameDefined
 
   var isAttrByNameNaN = function(id, attrib, value_type) {
     value_type = value_type || 'current';
@@ -379,7 +383,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
     const repRowIds = [...new Set(repOrder.filter(x => unorderedIds.includes(x)).concat(unorderedIds))];
     //log(repeatingAttrs);
     return repRowIds;
-  };
+  }; // getRepeatingSectionRowIDs
 
   var setAttrByName = function(id, attrib, value, max=null) {
     //log("setAttrByName("+id+","+attrib+","+value+","+max+")");
@@ -407,7 +411,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
   var characterIsMook = function(id) {
     //TODO implement!
     return true;
-  };
+  }; // characterIsMook
 
   var throwDefaultTemplate = function(scope, id, str) {
     var character = getObj("character", id);
@@ -853,43 +857,58 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
   var sendWhisperChat = function(msg,str) {
     var playerName = msg.who;
     if (playerIsGM(msg.playerid)) { playerName = playerName.replace(new RegExp(" \\(GM\\)$"), "") };
-    sendChat("skepickleTokenLib", '/w "'+playerName+'" '+str, null, {noarchive:true});
-  };
+    sendChat("skepickleCharacterLib", '/w "'+playerName+'" '+str, null, {noarchive:true});
+  }; // sendWhisperChat
 
-  var messageSelectedCharacters = function(msg) {
-    var selected_tokens=[];
+  var getSelectedCharacterIDs = function(msg) {
+    var ids=[];
     if (msg.selected) {
       for (var selected of msg.selected) {
         try {
           if (selected["_type"] != "graphic") { continue; }; // Silently skip over selected non-graphics
           var obj = getObj("graphic", selected["_id"]);
-          if (obj.get("_subtype") != "token") { sendWhisperChat(msg,"&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");     continue; };
-          if (obj.get("represents") == "")    { sendWhisperChat(msg,"&{template:default} {{name=ERROR}} {{Not a character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}"); continue; };
-          selected_tokens.push(selected["_id"]);
+          if (obj.get("_subtype") != "token") {
+            sendWhisperChat(msg,"&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
+            continue;
+          };
+          if (obj.get("represents") == "") {
+            sendWhisperChat(msg,"&{template:default} {{name=ERROR}} {{Not a character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
+            continue;
+          };
+          var character = getObj("character", obj.get("represents"));
+          if (!getAttrByName(character.id, "character_sheet").match(/D&D3.5 v[\.0-9]*/)) {
+            sendWhisperChat(msg,"&{template:default} {{name=ERROR}} {{Not a D&D3.5 character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
+            continue;
+          };
+          ids.push(selected["_id"]);
         } catch(e) {
           sendWhisperChat(msg,e);
         };
       };
     };
-    return selected_tokens;
-  };
+    return ids;
+  }; // getSelectedCharacterIDs
 
   var handleInput = function inputHandler(msg) {
-    if (msg.type !== "api" || msg.content.indexOf("!stl") === -1 ) { return; };
+    //TODO remove !stl
+    if (msg.type !== "api" || (msg.content.indexOf("!stl") === -1 && msg.content.indexOf("!scl") === -1) ) { return; };
 
-    var playerID,
-        playerName;
+    var playerID           = msg.playerid;
+    var playerName         = msg.who.replace(new RegExp(" \\(GM\\)$"), "");
 
-    playerID   = msg.playerid;
-    playerName = msg.who.replace(new RegExp(" \\(GM\\)$"), "");
+    var selected_token_ids = getSelectedCharacterIDs(msg);
+    var argsFromUser       = msg.content.split(/ +/);
+    var userCommand        = argsFromUser[1];
+    var first_arg          = argsFromUser[2];
+    var second_arg         = argsFromUser[3];
 
-    var selected_tokens = messageSelectedCharacters(msg);
-    var argsFromUser    = msg.content.split(/ +/);
-    var userCommand     = argsFromUser[1];
-    var first_arg;
-    var second_arg;
-    if (argsFromUser[2] != null) first_arg  = argsFromUser[2].replace(/_/g, " ");
-    if (argsFromUser[3] != null) second_arg = argsFromUser[3].replace(/_/g, " ");
+    if (userCommand == null) {
+      sendWhisperChat(msg,artsFromUser[0]+" requires arguments");
+      //TODO send usage info?
+      return;
+    };
+    if (first_arg  != null) { first_arg  = first_arg.replace(/_/g, " ");  };
+    if (second_arg != null) { second_arg = second_arg.replace(/_/g, " "); };
 
     switch(userCommand) {
       case '--list-source-texts':
@@ -909,7 +928,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
       case '--disable-source-text':
         break;
       case '--audit-mook-sheet':
-        selected_tokens.forEach(function(selected) {
+        selected_token_ids.forEach(function(selected) {
           try {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
@@ -929,7 +948,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         });
         break;
       case '--fix-mook-sheet':
-        selected_tokens.forEach(function(selected) {
+        selected_token_ids.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
             if (!character) { return; };
@@ -946,7 +965,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         break;
       case '--check-sheet-macros':
         //TODO Implement this?
-        //selected_tokens.forEach(function(selected) {
+        //selected_token_ids.forEach(function(selected) {
         //    var obj = getObj("graphic", selected);
         //    var character = getObj("character", obj.get("represents"));
         //    if (!character) { return; };
@@ -955,7 +974,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         break;
       case '--toggle-reach-auras':
         try {
-          selected_tokens.forEach(function(selected) {
+          selected_token_ids.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
             var reach = getAttrByName(character.id, "npcreach").replace(new RegExp("[^\.0-9].*$"), "");
@@ -1015,11 +1034,11 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         //   The optional "clear" argument indicates that the turn order should be cleared before adding new entries
         try {
           var roll_initiative_map = {};
-          var selected_tokens_remaining = selected_tokens.length;
+          var selected_tokens_remainin_ids = selected_token_ids.length;
           if ((first_arg != null) && (first_arg.toLowerCase() == "clear")) {
             Campaign().set("turnorder", JSON.stringify([]));
           };
-          selected_tokens.forEach( selected_token => {
+          selected_token_ids.forEach( selected_token => {
             var obj = getObj("graphic", selected_token);
             var character = getObj("character", obj.get("represents"));
             var char_name = character.get("name");
@@ -1077,8 +1096,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
                   };
                   roll_initiative_map[char_name_unique] = init_macro_rsp[0].inlinerolls[0]["results"]["total"].toFixed(4);
                 };
-                selected_tokens_remaining--;
-                if (selected_tokens_remaining==0) {
+                selected_tokens_remainin_ids--;
+                if (selected_tokens_remainin_ids==0) {
                   var chat_msg = "&{template:default} {{name=Group Initiative}} ";
                   Object.keys(roll_initiative_map).forEach(function(k){
                     if (roll_initiative_map[k] == "EXCLUDE") {
@@ -1115,9 +1134,9 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         //log(skill_spec);
 
         var roll_skill_map            = {}; // key=uniquified char_name, val=skill check
-        var selected_tokens_remaining = selected_tokens.length;
+        var selected_tokens_remainin_ids = selected_token_ids.length;
         // Loop through each selected character...
-        selected_tokens.forEach(function(selected) {
+        selected_token_ids.forEach(function(selected) {
           var obj          = getObj("graphic", selected);
           var character    = getObj("character", obj.get("represents"));
           var char_name    = character.get("name");
@@ -1213,8 +1232,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
               };
             };
           };
-          selected_tokens_remaining--;
-          if (selected_tokens_remaining==0) {
+          selected_tokens_remainin_ids--;
+          if (selected_tokens_remainin_ids==0) {
             //log(roll_skill_map);
             var get_bonuses_remaining = Object.keys(roll_skill_map).length;
             var highest_bonus     = -10000;
@@ -1312,7 +1331,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
         });
         break;
       case '--debug-attribute':
-        selected_tokens.forEach(function(selected) {
+        selected_token_ids.forEach(function(selected) {
             var obj = getObj("graphic", selected);
             var character = getObj("character", obj.get("represents"));
             if (!character) { return; };
@@ -1334,8 +1353,8 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
   }; // registerEventHandlers
 
   var checkInstall = function() {
-    if ( Boolean(state.skepickleTokenLibImp) === false ) {
-      state.skepickleTokenLibImp = {
+    if ( Boolean(state.skepickleCharacterLibImp) === false ) {
+      state.skepickleCharacterLibImp = {
         info: info,
         config: config
       };
@@ -1356,7 +1375,7 @@ var skepickleTokenLib = skepickleTokenLib || (function skepickleTokenLibImp() {
 }());
 
 on("ready", function() {
-  skepickleTokenLib.CheckInstall();
-  skepickleTokenLib.Initialize();
-  skepickleTokenLib.RegisterEventHandlers();
+  skepickleCharacterLib.CheckInstall();
+  skepickleCharacterLib.Initialize();
+  skepickleCharacterLib.RegisterEventHandlers();
 });
