@@ -617,12 +617,11 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
   }; // auditMookNPCSheet
 
   var fixMookPCSheet = function(id) {
+    auditMookNPCSheet(id);
     setAttrByName(id, "npc-show", 2);
     ["str", "dex", "con", "int", "wis", "cha"].forEach(function(ability) {
       var score    = parseFloat(getAttrByName(id, "npc"+ability));
       var modifier = Math.floor(score/2-5);
-      // Fix NPC page Ability Modifiers
-      setAttrByName(id, "npc"+ability+"-mod", modifier);
       // Fix PC page Ability Scores
       setAttrByName(id, ability+"-base", score);
     });
@@ -940,7 +939,6 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
             character.get("_defaulttoken", function(token) {
               if (token !== "null") { return; };
               try {
-                auditMookNPCSheet(character.id);
                 fixMookPCSheet(character.id);
               } catch(e) {
                 sendWhisperChat(msg,e);
@@ -985,10 +983,10 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
                                                    obj.get("playersedit_aura2")]));
               obj.set("aura1_radius", reach*2);
               obj.set("aura1_color", "#00FF00");
-              obj.set("aura1_square", false);
+              obj.set("aura1_square", (reach*2<=10));
               obj.set("aura2_radius", reach);
               obj.set("aura2_color", "#0000FF");
-              obj.set("aura2_square", false);
+              obj.set("aura2_square", (reach<=10));
               obj.set("showplayers_aura1", false);
               obj.set("showplayers_aura2", false);
               obj.set("playersedit_aura1", false);
