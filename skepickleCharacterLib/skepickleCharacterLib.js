@@ -258,8 +258,8 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
   }; // abilityScoreToBonusPowers
 
   var sizeToMod = function(size) {
-    if (!dnd35.size_categories().includes(size)) { log("error"); throw "{{error}}"; };
-    switch(size) {
+    if (!dnd35.size_categories().includes(size.toLowerCase())) { log("error"); throw "{{error}}"; };
+    switch(size.toLowerCase()) {
       case "fine":       return 4;
       case "diminutive": return 3;
       case "tiny":       return 2;
@@ -273,8 +273,8 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
   }; // sizeToMod
 
   var sizeToArmorClassMod = function(size) {
-    if (!dnd35.size_categories().includes(size)) { log("error"); throw "{{error}}"; };
-    switch(size) {
+    if (!dnd35.size_categories().includes(size.toLowerCase())) { log("error"); throw "{{error}}"; };
+    switch(size.toLowerCase()) {
       case "fine":       return 8;
       case "diminutive": return 4;
       case "tiny":       return 2;
@@ -291,8 +291,8 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
     //log("sizeModToTallReach('"+size+"')");
     if (isNaN(size)) {
       log("   isNaN");
-      if (!dnd35.size_categories().includes(size)) { log("error"); throw "{{error}}"; };
-      size = sizeToMod(size);
+      if (!dnd35.size_categories().includes(size.toLowerCase())) { log("error"); throw "{{error}}"; };
+      size = sizeToMod(size.toLowerCase());
     };
     size = parseFloat(size);
     //log(size);
@@ -632,37 +632,7 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
     };
     {
       // Fix PC page size
-      var npcsize = getAttrByName(id, "npcsize");
-      var npcsize_num = null;
-      switch(npcsize) {
-        case "Fine":
-            npcsize_num = 4;
-            break;
-        case "Diminutive":
-            npcsize_num = 3;
-            break;
-        case "Tiny":
-            npcsize_num = 2;
-            break;
-        case "Small":
-            npcsize_num = 1;
-            break;
-        case "Medium":
-            npcsize_num = 0;
-            break;
-        case "Large":
-            npcsize_num = -1;
-            break;
-        case "Huge":
-            npcsize_num = -2;
-            break;
-        case "Gargantuan":
-            npcsize_num = -3;
-            break;
-        case "Colossal":
-            npcsize_num = -4;
-            break;
-      };
+      var npcsize_num = sizeToMod(getAttrByName(id, "npcsize"));
       if (npcsize_num !== null) {
         setAttrByName(id, "size", npcsize_num);
       };
