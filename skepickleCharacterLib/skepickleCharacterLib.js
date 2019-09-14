@@ -97,13 +97,16 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
 
   var dnd35 = {
     all_source_texts: {
-      SRD:     "System Reference Document",
-      UA:      "Unearthed Arcana",
+      PHB:     "Player's Handbook",
+      MM:      "Monster Manual",
+      XPH:     "Expanded Psionics Handbook",
+      OA:      "Oriental Adventures",
+      ToB:     "Tome of Battle",
       BoED:    "Book of Exalted Deeds",
       unknown: "Unknown Text"
     },
-    enabled_source_texts: ["SRD","BoED"],
-    source_text_SRD: {
+    enabled_source_texts: ["PHB","MM","XPH"],
+    source_text_PHB: {
       movement_modes:      ["burrow","climb","fly","swim"],
       fly_maneuverability: ["perfect","good","average","poor","clumsy"],
       size_categories:     ["fine","diminutive","tiny","small","medium","large","huge","gargantuan","colossal"],
@@ -112,60 +115,71 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
         creature: ["air","angel","aquatic","archon","augmented","chaotic","cold","demon","devil","earth","evil","extraplanar","fire","good","incorporeal","lawful","native","psionic","shapeshifter","swarm","water"],
         humanoid: ["aquatic","dwarf","elf","gnoll","gnome","goblinoid","halfling","human","orc","reptilian"]
       },
-      skills: { "Ability:Strength":         {base: "Strength",                 attrib: "str-mod"                               },
-                "Ability:Dexterity":        {base: "Dexterity",                attrib: "dex-mod"                               },
-                "Ability:Constitution":     {base: "Constitution",             attrib: "con-mod"                               },
-                "Ability:Intelligence":     {base: "Intelligence",             attrib: "int-mod"                               },
-                "Ability:Wisdom":           {base: "Wisdom",                   attrib: "wis-mod"                               },
-                "Ability:Charisma":         {base: "Charisma",                 attrib: "cha-mod"                               },
-                "Appraise":                 {base: "Appraise",                 attrib: "appraise",          trained_only:false },
-                "Balance":                  {base: "Balance",                  attrib: "balance",           trained_only:false },
-                "Bluff":                    {base: "Bluff",                    attrib: "bluff",             trained_only:false },
-                "Climb":                    {base: "Climb",                    attrib: "climb",             trained_only:false },
-                "Concentration":            {base: "Concentration",            attrib: "concentration",     trained_only:false },
-                "Craft()":                  {base: "Craft",                    attrib: "craft#",            trained_only:false },
-                "Decipher Script":          {base: "Decipher Script",          attrib: "decipherscript",    trained_only:true  },
-                "Diplomacy":                {base: "Diplomacy",                attrib: "diplomacy",         trained_only:false },
-                "Disable Device":           {base: "Disable Device",           attrib: "disabledevice",     trained_only:true  },
-                "Disguise":                 {base: "Disguise",                 attrib: "disguise",          trained_only:false },
-                "Escape Artist":            {base: "Escape Artist",            attrib: "escapeartist",      trained_only:false },
-                "Forgery":                  {base: "Forgery",                  attrib: "forgery",           trained_only:false },
-                "Gather Information":       {base: "Gather Information",       attrib: "gatherinformation", trained_only:false },
-                "Handle Animal":            {base: "Handle Animal",            attrib: "handleanimal",      trained_only:true  },
-                "Heal":                     {base: "Heal",                     attrib: "heal",              trained_only:false },
-                "Hide":                     {base: "Hide",                     attrib: "hide",              trained_only:false },
-                "Intimidate":               {base: "Intimidate",               attrib: "intimidate",        trained_only:false },
-                "Jump":                     {base: "Jump",                     attrib: "jump",              trained_only:false },
-                "Knowledge(Arcana)":        {base: "Knowledge(Arcana)",        attrib: "knowarcana",        trained_only:true  },
-                "Knowledge(Engineering)":   {base: "Knowledge(Engineering)",   attrib: "knowengineer",      trained_only:true  },
-                "Knowledge(Dungeoneering)": {base: "Knowledge(Dungeoneering)", attrib: "knowdungeon",       trained_only:true  },
-                "Knowledge(Geography)":     {base: "Knowledge(Geography)",     attrib: "knowgeography",     trained_only:true  },
-                "Knowledge(History)":       {base: "Knowledge(History)",       attrib: "knowhistory",       trained_only:true  },
-                "Knowledge(Local)":         {base: "Knowledge(Local)",         attrib: "knowlocal",         trained_only:true  },
-                "Knowledge(Nature)":        {base: "Knowledge(Nature)",        attrib: "knownature",        trained_only:true  },
-                "Knowledge(Nobility)":      {base: "Knowledge(Nobility)",      attrib: "knownobility",      trained_only:true  },
-                "Knowledge(Religion)":      {base: "Knowledge(Religion)",      attrib: "knowreligion",      trained_only:true  },
-                "Knowledge(The Planes)":    {base: "Knowledge(The Planes)",    attrib: "knowplanes",        trained_only:true  },
-                "Listen":                   {base: "Listen",                   attrib: "listen",            trained_only:false },
-                "Move Silently":            {base: "Move Silently",            attrib: "movesilent",        trained_only:false },
-                "Open Lock":                {base: "Open Lock",                attrib: "openlock",          trained_only:true  },
-                "Perform()":                {base: "Perform",                  attrib: "perform#",          trained_only:false },
-                "Profession()":             {base: "Profession",               attrib: "profession#",       trained_only:true  },
-                "Ride":                     {base: "Ride",                     attrib: "ride",              trained_only:false },
-                "Search":                   {base: "Search",                   attrib: "search",            trained_only:false },
-                "Sense Motive":             {base: "Sense Motive",             attrib: "sensemotive",       trained_only:false },
-                "Sleight of Hand":          {base: "Sleight of Hand",          attrib: "sleightofhand",     trained_only:true  },
-                "Spellcraft":               {base: "Spellcraft",               attrib: "spellcraft",        trained_only:true  },
-                "Spot":                     {base: "Spot",                     attrib: "spot",              trained_only:false },
-                "Survival":                 {base: "Survival",                 attrib: "survival",          trained_only:false },
-                "Swim":                     {base: "Swim",                     attrib: "swim",              trained_only:false },
-                "Tumble":                   {base: "Tumble",                   attrib: "tumble",            trained_only:true  },
-                "Use Magic Device":         {base: "Use Magic Device",         attrib: "usemagicdevice",    trained_only:true  },
-                "Use Rope":                 {base: "Use Rope",                 attrib: "userope",           trained_only:false },
-                "Autohypnosis":             {base: "Autohypnosis",             attrib: "",                  trained_only:true  },
-                "Knowledge()":              {base: "Knowledge",                attrib: "",                  trained_only:true  },
-                "Psicraft":                 {base: "Psicraft",                 attrib: "",                  trained_only:true  },
-                "Use Psionic Device":       {base: "Use Psionic Device",       attrib: "",                  trained_only:true  } }
+      skills: { "Ability:Strength":         {base: "Strength",                 attrib: "str-mod",                                           trained_only:false },
+                "Ability:Dexterity":        {base: "Dexterity",                attrib: "dex-mod",                                           trained_only:false },
+                "Ability:Constitution":     {base: "Constitution",             attrib: "con-mod",                                           trained_only:false },
+                "Ability:Intelligence":     {base: "Intelligence",             attrib: "int-mod",                                           trained_only:false },
+                "Ability:Wisdom":           {base: "Wisdom",                   attrib: "wis-mod",                                           trained_only:false },
+                "Ability:Charisma":         {base: "Charisma",                 attrib: "cha-mod",                                           trained_only:false },
+                "Appraise":                 {base: "Appraise",                 attrib: "appraise",                                          trained_only:false },
+                "Balance":                  {base: "Balance",                  attrib: "balance",                                           trained_only:false },
+                "Bluff":                    {base: "Bluff",                    attrib: "bluff",                                             trained_only:false },
+                "Climb":                    {base: "Climb",                    attrib: "climb",                                             trained_only:false },
+                "Concentration":            {base: "Concentration",            attrib: "concentration",                                     trained_only:false },
+                "Craft()":                  {base: "Craft",                    attrib: "craft#",                                            trained_only:false },
+                "Decipher Script":          {base: "Decipher Script",          attrib: "decipherscript",                                    trained_only:true  },
+                "Diplomacy":                {base: "Diplomacy",                attrib: "diplomacy",                                         trained_only:false },
+                "Disable Device":           {base: "Disable Device",           attrib: "disabledevice",                                     trained_only:true  },
+                "Disguise":                 {base: "Disguise",                 attrib: "disguise",                                          trained_only:false },
+                "Escape Artist":            {base: "Escape Artist",            attrib: "escapeartist",                                      trained_only:false },
+                "Forgery":                  {base: "Forgery",                  attrib: "forgery",                                           trained_only:false },
+                "Gather Information":       {base: "Gather Information",       attrib: "gatherinformation",                                 trained_only:false },
+                "Handle Animal":            {base: "Handle Animal",            attrib: "handleanimal",                                      trained_only:true  },
+                "Heal":                     {base: "Heal",                     attrib: "heal",                                              trained_only:false },
+                "Hide":                     {base: "Hide",                     attrib: "hide",                                              trained_only:false },
+                "Intimidate":               {base: "Intimidate",               attrib: "intimidate",                                        trained_only:false },
+                "Jump":                     {base: "Jump",                     attrib: "jump",                                              trained_only:false },
+                "Knowledge(Arcana)":        {base: "Knowledge(Arcana)",        attrib: "knowarcana",                                        trained_only:true  },
+                "Knowledge(Engineering)":   {base: "Knowledge(Engineering)",   attrib: "knowengineer",                                      trained_only:true  },
+                "Knowledge(Dungeoneering)": {base: "Knowledge(Dungeoneering)", attrib: "knowdungeon",                                       trained_only:true  },
+                "Knowledge(Geography)":     {base: "Knowledge(Geography)",     attrib: "knowgeography",                                     trained_only:true  },
+                "Knowledge(History)":       {base: "Knowledge(History)",       attrib: "knowhistory",                                       trained_only:true  },
+                "Knowledge(Local)":         {base: "Knowledge(Local)",         attrib: "knowlocal",                                         trained_only:true  },
+                "Knowledge(Nature)":        {base: "Knowledge(Nature)",        attrib: "knownature",                                        trained_only:true  },
+                "Knowledge(Nobility)":      {base: "Knowledge(Nobility)",      attrib: "knownobility",                                      trained_only:true  },
+                "Knowledge(Religion)":      {base: "Knowledge(Religion)",      attrib: "knowreligion",                                      trained_only:true  },
+                "Knowledge(The Planes)":    {base: "Knowledge(The Planes)",    attrib: "knowplanes",                                        trained_only:true  },
+                "Knowledge()":              {base: "Knowledge",                attrib: "",                  default_ability_mod: "int-mod", trained_only:true  },
+                "Listen":                   {base: "Listen",                   attrib: "listen",                                            trained_only:false },
+                "Move Silently":            {base: "Move Silently",            attrib: "movesilent",                                        trained_only:false },
+                "Open Lock":                {base: "Open Lock",                attrib: "openlock",                                          trained_only:true  },
+                "Perform()":                {base: "Perform",                  attrib: "perform#",                                          trained_only:false },
+                "Profession()":             {base: "Profession",               attrib: "profession#",                                       trained_only:true  },
+                "Ride":                     {base: "Ride",                     attrib: "ride",                                              trained_only:false },
+                "Search":                   {base: "Search",                   attrib: "search",                                            trained_only:false },
+                "Sense Motive":             {base: "Sense Motive",             attrib: "sensemotive",                                       trained_only:false },
+                "Sleight of Hand":          {base: "Sleight of Hand",          attrib: "sleightofhand",                                     trained_only:true  },
+                "Spellcraft":               {base: "Spellcraft",               attrib: "spellcraft",                                        trained_only:true  },
+                "Spot":                     {base: "Spot",                     attrib: "spot",                                              trained_only:false },
+                "Survival":                 {base: "Survival",                 attrib: "survival",                                          trained_only:false },
+                "Swim":                     {base: "Swim",                     attrib: "swim",                                              trained_only:false },
+                "Tumble":                   {base: "Tumble",                   attrib: "tumble",                                            trained_only:true  },
+                "Use Magic Device":         {base: "Use Magic Device",         attrib: "usemagicdevice",                                    trained_only:true  },
+                "Use Rope":                 {base: "Use Rope",                 attrib: "userope",                                           trained_only:false } }
+    },
+    source_text_MM: {
+      skills: { "Control Shape":            {base: "Control Shape",            attrib: "",                  default_ability_mod: "wis-mod", trained_only:false } }
+    },
+    source_text_XPH: {
+      skills: { "Autohypnosis":             {base: "Autohypnosis",             attrib: "",                  default_ability_mod: "wis-mod", trained_only:true  },
+                "Psicraft":                 {base: "Psicraft",                 attrib: "",                  default_ability_mod: "int-mod", trained_only:true  },
+                "Use Psionic Device":       {base: "Use Psionic Device",       attrib: "",                  default_ability_mod: "cha-mod", trained_only:true  } }
+    },
+    source_text_OA: {
+      skills: { "Iaijutsu Focus":           {base: "Iaijutsu Focus",           attrib: "",                  default_ability_mod: "cha-mod", trained_only:false } }
+    },
+    source_text_ToB: {
+      skills: { "Martial Lore":             {base: "Martial Lore",             attrib: "",                  default_ability_mod: "int-mod", trained_only:true  } }
     },
     source_text_BoED: {
       types: ["deathless"]
@@ -1126,8 +1140,11 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
         if ((second_arg != "Aid Another") && (second_arg != "Individual")) {
           sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Invalid value for skill help type}}');
         };
-        var skill_spec         = getSkillSpecification(first_arg);
-        if (skill_spec == null) { log("ERROR skill spec"); return; };
+        var skill_spec = getSkillSpecification(first_arg);
+        if ((skill_spec == null) || (skill_spec.base === undefined)) {
+          sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Unknown skill '+first_arg+'}}');
+          return;
+        };
         var skill_trained_only = skill_spec.trained_only || '';
         var help_type          = second_arg;
 
@@ -1173,7 +1190,7 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
                 case "Craft":      skill_attrib="int-mod"; break;
                 case "Perform":    skill_attrib="cha-mod"; break;
                 case "Profession": skill_attrib="wis-mod"; break;
-                default:           log("NOT FOUND"); return;
+                default:           log("NOT FOUND"); break;
               }
             };
           } else if (skill_spec.attrib == "") {
@@ -1188,17 +1205,24 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
                 if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase()) {
                   skill_attrib = ''.concat('repeating_skills_',id,"_otherskill");
                   found_skill = true;
+                } else if (otherskillname.toLowerCase() == ''.concat(skill_spec.base).toLowerCase()) {
+                  skill_attrib = ''.concat('repeating_skills_',id,"_otherskill");
+                  found_skill = true;
                 };
               };
             });
             if (!found_skill) {
               switch(skill_spec.base) {
                 case "Knowledge":
-                case "Craft":      skill_attrib="int-mod"; break;
-                case "Perform":    skill_attrib="cha-mod"; break;
-                case "Profession": skill_attrib="wis-mod"; break;
-                default:           log("NOT FOUND"); return;
-              }
+                case "Craft":
+                case "Perform":
+                case "Profession":
+                  skill_attrib=dnd35.skills()[skill_spec.base+"()"].default_ability_mod;
+                  break;
+                default:
+                  skill_attrib=dnd35.skills()[skill_spec.base].default_ability_mod;
+                  break;
+              };
             };
           };
           // at this point! "skill_attrib" __should__ be correct for this character
@@ -1225,7 +1249,7 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
           if (skill_spec.trained_only) {
             if (["str-mod","dex-mod","con-mod","int-mod","wis-mod","cha-mod"].includes(skill_attrib)) {
               roll_skill_map[char_name_unique].state = "UNTRAINED";
-            } else {
+            } else if (skill_attrib != "") {
               var ranks = getAttrByName(character.id, skill_attrib.concat("ranks"));
               if (isNaN(ranks) || (ranks < 1)) {
                 roll_skill_map[char_name_unique].state = "UNTRAINED";
@@ -1286,7 +1310,7 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
                       get_checks_remaining--;
                       if (get_checks_remaining==0) {
                         //log(roll_skill_map);
-                        var aid_total = 0;
+                        var aid_total = 0/0;
                         var checks_total = 0;
                         var checks_num   = 0;
                         var chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+first_arg.replace(/\(/,"\n(")+"}} {{Check Type= "+help_type+"}} ";
@@ -1300,10 +1324,10 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
                               if ((help_type == "Aid Another") && (char_name_unique !== highest_char_name)) {
                                 var aid_inc = 0;
                                 if (roll_skill_map[char_name_unique].check >= 10) { aid_inc = 2; };
-                                aid_total += aid_inc;
+                                if (isNaN(aid_total)) { aid_total = aid_inc; } else { aid_total += aid_inc; };
                                 chat_msg += "{{" + char_name_unique + "= +" + aid_inc + "(" + roll_skill_map[char_name_unique].check + ")}} ";
                               } else {
-                                aid_total += roll_skill_map[char_name_unique].check;
+                                if (isNaN(aid_total)) { aid_total = aid_inc; } else { aid_total += roll_skill_map[char_name_unique].check; };
                                 chat_msg += "{{" + char_name_unique + "= " + roll_skill_map[char_name_unique].check + "}} ";
                               };
                             } else {
