@@ -1,8 +1,8 @@
-// skepickleCharacterLib
+// skepickleCharacterSuite
 
-// Purpose: Provide a library of functionality to improve player and GM experience when using Diana P's D&D 3.5 character sheet.
+// Purpose: Provide a suite of functionality to improve player and GM experience when using Diana P's D&D 3.5 character sheet.
 
-var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacterLibImp() {
+var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleCharacterSuiteImp() {
   "use strict";
 
   var info = {
@@ -840,7 +840,7 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
   var sendWhisperChat = function(msg,str) {
     var playerName = msg.who;
     if (playerIsGM(msg.playerid)) { playerName = playerName.replace(new RegExp(" \\(GM\\)$"), "") };
-    sendChat("skepickleCharacterLib", '/w "'+playerName+'" '+str, null, {noarchive:true});
+    sendChat("skepickleCharacterSuite", '/w "'+playerName+'" '+str, null, {noarchive:true});
   }; // sendWhisperChat
 
   var getSelectedCharacterIDs = function(msg) {
@@ -874,7 +874,7 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
 
   var handleInput = function inputHandler(msg) {
     //TODO remove !stl
-    if (msg.type !== "api" || (msg.content.indexOf("!stl") === -1 && msg.content.indexOf("!scl") === -1) ) { return; };
+    if (msg.type !== "api" || (msg.content.indexOf("!stl") === -1 && msg.content.indexOf("!scs") === -1) ) { return; };
 
     var playerID           = msg.playerid;
     var playerName         = msg.who.replace(new RegExp(" \\(GM\\)$"), "");
@@ -1332,8 +1332,8 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
   }; // registerEventHandlers
 
   var checkInstall = function() {
-    if ( Boolean(state.skepickleCharacterLibImp) === false ) {
-      state.skepickleCharacterLibImp = {
+    if ( Boolean(state.skepickleCharacterSuiteImp) === false ) {
+      state.skepickleCharacterSuiteImp = {
         info: info,
         config: config
       };
@@ -1354,7 +1354,7 @@ var skepickleCharacterLib = skepickleCharacterLib || (function skepickleCharacte
 }());
 
 on("ready", function() {
-  skepickleCharacterLib.CheckInstall();
-  skepickleCharacterLib.Initialize();
-  skepickleCharacterLib.RegisterEventHandlers();
+  skepickleCharacterSuite.CheckInstall();
+  skepickleCharacterSuite.Initialize();
+  skepickleCharacterSuite.RegisterEventHandlers();
 });
