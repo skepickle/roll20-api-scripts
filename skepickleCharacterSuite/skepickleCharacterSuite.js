@@ -422,21 +422,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
   // Roll20 Character Sheet Utility Functions
 
-  var characterIsMook = function(id) {
-    //TODO implement!
-    return true;
-  }; // characterIsMook
-
   var throwDefaultTemplate = function(scope, id, str) {
     var character = getObj("character", id);
     throw ''.concat("&{template:default} {{name="+scope+"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "npcname"),"}} {{",escapeRoll20Macro(str),"}}");
   }; // throwDefaultTemplate
 
-  var auditMookNPCSheet = function(id) {
+  var mookAuditNPCSheet = function(id) {
     // Check all purely numeric fields
     ["npcinit","npcarmorclass","npctoucharmorclass","npcflatfootarmorclass","npcbaseatt","npcfortsave","npcrefsave","npcwillsave","npcstr-mod","npcdex-mod","npccon-mod","npcint-mod","npcwis-mod","npccha-mod"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
-        throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
+        throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
       };
     });
 
@@ -444,15 +439,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     ["npcstr","npcdex","npccon","npcint","npcwis","npccha"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
         if (!nonvalue_characters.includes(getAttrByName(id, a))) {
-          throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
+          throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
         } else {
           if (getAttrByName(id, ''.concat(a,'-mod')) != 0) {
-            throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' nonability score. Should be set to:= 0");
+            throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' nonability score. Should be set to:= 0");
           };
         };
       } else {
         if (getAttrByName(id, ''.concat(a,'-mod')) != abilityScoreToMod(getAttrByName(id, a))) {
-          throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' ability score '"+getAttrByName(id, a)+"'. Should be set to:= "+abilityScoreToMod(getAttrByName(id, a)));
+          throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' ability score '"+getAttrByName(id, a)+"'. Should be set to:= "+abilityScoreToMod(getAttrByName(id, a)));
         };
       };
     });
@@ -461,19 +456,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     ["npcgrapple"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
         if (!nonvalue_characters.includes(getAttrByName(id, a))) {
-          throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
+          throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
         };
       };
     });
 
     // npcname
     if (getAttrByName(id, "npcname") == "") {
-      throwDefaultTemplate("auditMookNPCSheet()",id,"Undefined name");
+      throwDefaultTemplate("mookAuditNPCSheet()",id,"Undefined name");
     };
 
     // npcsize
     if (!dnd35.size_categories().includes(getAttrByName(id, "npcsize").toLowerCase())) {
-      throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid size= '"+getAttrByName(id, "npcsize")+"'");
+      throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid size= '"+getAttrByName(id, "npcsize")+"'");
     };
 
     // npctype
@@ -481,16 +476,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       var npctype = getAttrByName(id, "npctype");
       let result = npctype.match(/^([a-z ]+)(\([a-z ,]+\)){0,1}$/i)
       if (result[1] === undefined) {
-        throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid type= '"+npctype+"'");
+        throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid type= '"+npctype+"'");
       };
       var type = trimWhitespace(result[1]);
       if (!dnd35.types().includes(type.toLowerCase())) {
-        throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid type= '"+type+"'");
+        throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid type= '"+type+"'");
       };
       if (result[2] !== undefined) {
         trimWhitespace(result[2]).replace(/^\(/, "").replace(/\)$/, "").split(",").forEach(function(subtype) {
           if (!dnd35.subtypes().includes(subtype.toLowerCase())) {
-            throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid subtype= '"+subtype+"'");
+            throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid subtype= '"+subtype+"'");
           };
         });
       };
@@ -500,7 +495,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     {
       var npchitdie = getAttrByName(id, "npchitdie");
       if (!trimWhitespace(npchitdie).replace(/ plus /gi, "+").replace(/ +/g, "").match(/^([+-]{0,1}([0-9]+[-+*/])*[0-9]*d[0-9]+([+-][0-9]+)*)+$/i)) {
-        throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid hitdie= '"+npchitdie+"'");
+        throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid hitdie= '"+npchitdie+"'");
       };
     };
 
@@ -508,7 +503,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     {
       var npcinitmacro = getAttrByName(id, "npcinitmacro");
       if (npcinitmacro !== '&{template:DnD35Initiative} {{name=@{selected|token_name}}} {{check=checks for initiative:\n}} {{checkroll=[[(1d20cs>21cf<0 + (@{npcinit})) + ((1d20cs>21cf<0 + (@{npcinit}))/100) + ((1d20cs>21cf<0 + (@{npcinit}))/10000) &{tracker}]]}}') {
-        throwDefaultTemplate("auditMookNPCSheet()",id,''.concat("Invalid npcinitmacro= '",npcinitmacro,"'"));
+        throwDefaultTemplate("mookAuditNPCSheet()",id,''.concat("Invalid npcinitmacro= '",npcinitmacro,"'"));
       };
     };
 
@@ -522,7 +517,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       npcspeeds.forEach(function(e) {
         let result = e.match(/^(([a-z]+) *){0,1}([0-9]+)( *\(([a-z]+)\)){0,1}$/);
         if (result == null) {
-          throwDefaultTemplate("auditMookNPCSheet()",id,"Unknown problem with npcspeed= '"+npcspeed+"'");
+          throwDefaultTemplate("mookAuditNPCSheet()",id,"Unknown problem with npcspeed= '"+npcspeed+"'");
         };
         var mode = "";
         if (result[2] == null) {
@@ -530,20 +525,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         } else {
           mode = result[2];
           if (!dnd35.movement_modes().includes(mode)) {
-            throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid mode '"+mode+"' in npcspeed= '"+npcspeed+"'");
+            throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid mode '"+mode+"' in npcspeed= '"+npcspeed+"'");
           };
         };
         if (mode_type_map[mode] !== undefined) {
-          throwDefaultTemplate("auditMookNPCSheet()",id,"Multiple definitions for same mode in npcspeed= '"+npcspeed+"'");
+          throwDefaultTemplate("mookAuditNPCSheet()",id,"Multiple definitions for same mode in npcspeed= '"+npcspeed+"'");
         } else {
           mode_type_map[mode] = result[3];
         };
         if (mode=="fly") {
           if (result[5] == null) {
-            throwDefaultTemplate("auditMookNPCSheet()",id,"Fly maneuverability not defined for npcspeed= '"+npcspeed+"'");
+            throwDefaultTemplate("mookAuditNPCSheet()",id,"Fly maneuverability not defined for npcspeed= '"+npcspeed+"'");
           } else {
             if (!dnd35.fly_maneuverability().includes(result[5])) {
-              throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid fly maneuverability for npcspeed= '"+npcspeed+"'");
+              throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid fly maneuverability for npcspeed= '"+npcspeed+"'");
             };
           };
         };
@@ -559,21 +554,21 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       npcarmorclassinfos.forEach(function(e) {
         let result = e.match(/^[+]{0,1}([-]{0,1}[0-9]+) +(.*)+$/);
         if (result == null) {
-          throwDefaultTemplate("auditMookNPCSheet()",id,"Invalid npcarmorclassinfo= '"+npcarmorclassinfo+"'");
+          throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid npcarmorclassinfo= '"+npcarmorclassinfo+"'");
         };
         if (isNaN(result[1])) {
-          throwDefaultTemplate("auditMookNPCSheet()",id, "Impossible Condition: Invalid npcarmorclassinfo modifier value= '"+result[1]+"'");
+          throwDefaultTemplate("mookAuditNPCSheet()",id, "Impossible Condition: Invalid npcarmorclassinfo modifier value= '"+result[1]+"'");
         };
         if (['str','dex','con','int','wis','cha'].includes(result[2])) {
           var ability_mod = getAttrByName(id, ''.concat('npc',result[2],'-mod'));
           if (isNaN(ability_mod) && (result[1] != ability_mod.replace(/^\+/, ""))) {
-            throwDefaultTemplate("auditMookNPCSheet()",id, "Invalid npcarmorclassinfo "+result[2]+" modifier value= '"+result[1]+"'");
+            throwDefaultTemplate("mookAuditNPCSheet()",id, "Invalid npcarmorclassinfo "+result[2]+" modifier value= '"+result[1]+"'");
           };
         };
         if (result[2] == "size") {
           var size_mod = sizeToArmorClassMod(getAttrByName(id, "npcsize").toLowerCase());
           if (result[1] != size_mod) {
-            throwDefaultTemplate("auditMookNPCSheet()",id, "Invalid npcarmorclassinfo size modifier value= '"+result[1]+"'");
+            throwDefaultTemplate("mookAuditNPCSheet()",id, "Invalid npcarmorclassinfo size modifier value= '"+result[1]+"'");
           };
         };
       });
@@ -584,7 +579,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       var npcspace = trimWhitespace(getAttrByName(id, "npcspace").toLowerCase()
                                        .replace(/^([0-9]+) *(feet|foot|ft\.*|')$/g, "$1"));
       if (isNaN(npcspace)) {
-        throwDefaultTemplate("auditMookNPCSheet()",id, "Invalid npcspace value= '"+getAttrByName(id, "npcspace")+"'");
+        throwDefaultTemplate("mookAuditNPCSheet()",id, "Invalid npcspace value= '"+getAttrByName(id, "npcspace")+"'");
       };
     };
 
@@ -593,7 +588,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       var npcreach = trimWhitespace(getAttrByName(id, "npcreach").toLowerCase()
                                        .replace(/^([0-9]+) *(feet|foot|ft\.*|')$/g, "$1"));
       if (isNaN(npcreach)) {
-        throwDefaultTemplate("auditMookNPCSheet()",id, "Invalid npcreach value= '"+getAttrByName(id, "npcreach")+"'");
+        throwDefaultTemplate("mookAuditNPCSheet()",id, "Invalid npcreach value= '"+getAttrByName(id, "npcreach")+"'");
       };
     };
 
@@ -614,10 +609,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //SKIP npclvladj
     //SKIP npcdescr
     //SKIP npccombatdescr
-  }; // auditMookNPCSheet
+  }; // mookAuditNPCSheet
 
-  var fixMookPCSheet = function(id) {
-    auditMookNPCSheet(id);
+  var mookFixPCSheet = function(id) {
+    mookAuditNPCSheet(id);
     setAttrByName(id, "npc-show", 2);
     ["str", "dex", "con", "int", "wis", "cha"].forEach(function(ability) {
       var score    = parseFloat(getAttrByName(id, "npc"+ability));
@@ -751,7 +746,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         ));
       };
     };
-  }; // fixMookPCSheet
+  }; // mookFixPCSheet
 
   var checkSheetMacros = function(id) {
     for (var i=1; i<=10; i++) {
@@ -760,7 +755,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     };
   }; // checkSheetMacros
 
-  var mookTokenFixer = function(obj) {
+  var handleAddGraphic = function(obj) {
     var objLayer = obj.get("layer");
     var pageId   = obj.get("_pageid");
     var pageName = getObj("page", pageId).get("name");
@@ -835,7 +830,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         };
       };
     });
-  }; // mookTokenFixer
+  }; // handleAddGraphic
 
   var sendWhisperChat = function(msg,str) {
     var playerName = msg.who;
@@ -872,7 +867,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     return ids;
   }; // getSelectedCharacterIDs
 
-  var handleInput = function inputHandler(msg) {
+  var handleChatMessage = function(msg) {
     //TODO remove !stl
     if (msg.type !== "api" || (msg.content.indexOf("!stl") === -1 && msg.content.indexOf("!scs") === -1) ) { return; };
 
@@ -895,56 +890,60 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
     try {
       switch(userCommand) {
-        case '--list-source-texts':
-          var message_to_send = '';
-          Object.keys(dnd35.all_source_texts).forEach(function(k,i) {
-            //log(k+' '+dnd35.all_source_texts[k]);
-            if (dnd35.enabled_source_texts.includes(k)) {
-              message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= enabled}}');
-            } else {
-              message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= disabled}}');
-            };
-          });
-          sendWhisperChat(msg,'&{template:default} {{name=Source Texts}} '+message_to_send, null, {noarchive:true});
+        case '--source-texts':
+          if (first_arg == null) {
+            //TODO Error / Usage message here
+            break;
+          };
+          switch(first_arg) {
+            case 'list':
+              var message_to_send = '';
+              Object.keys(dnd35.all_source_texts).forEach(function(k,i) {
+                //log(k+' '+dnd35.all_source_texts[k]);
+                if (dnd35.enabled_source_texts.includes(k)) {
+                  message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= enabled}}');
+                } else {
+                  message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= disabled}}');
+                };
+              });
+              sendWhisperChat(msg,'&{template:default} {{name=Source Texts}} '+message_to_send, null, {noarchive:true});
+              break;
+            case 'enable':
+              break;
+            case 'disable':
+              break;
+          };
           break;
-        case '--enable-source-text':
-          break;
-        case '--disable-source-text':
-          break;
-        case '--audit-mook-sheet':
-          selected_token_ids.forEach(function(selected) {
-            try {
+        case '--mook':
+          if (first_arg == null) {
+            //TODO Error / Usage message here
+            break;
+          };
+          try {
+            selected_token_ids.forEach(function(selected) {
               var obj = getObj("graphic", selected);
               var character = getObj("character", obj.get("represents"));
               if (!character) { throw "Token does not represent a character." };
+              //TODO Make sure it's an NPC
               character.get("_defaulttoken", function(token) {
-                // Make sure this is a Mook token
                 if (token !== "null") { return; };
-                try {
-                  auditMookNPCSheet(character.id);
-                } catch(e) {
-                  sendWhisperChat(msg,e);
+                // At this point, we are sure that the selected token is a mook.
+                switch(first_arg) {
+                  case 'audit-npc-sheet':
+                    mookAuditNPCSheet(character.id);
+                    break;
+                  case 'fix-pc-sheet':
+                    mookFixPCSheet(character.id);
+                    break;
+                  case 'convert-to-npc':
+                    //TODO Implement this?
+                    break;
                 };
               });
-            } catch(e) {
-              sendWhisperChat(msg,e);
-            };
-          });
-          break;
-        case '--fix-mook-sheet':
-          selected_token_ids.forEach(function(selected) {
-            var obj = getObj("graphic", selected);
-            var character = getObj("character", obj.get("represents"));
-            if (!character) { return; };
-            character.get("_defaulttoken", function(token) {
-              if (token !== "null") { return; };
-              try {
-                fixMookPCSheet(character.id);
-              } catch(e) {
-                sendWhisperChat(msg,e);
-              };
             });
-          });
+          } catch(e) {
+            sendWhisperChat(msg,e);
+          };
           break;
         case '--check-sheet-macros':
           //TODO Implement this?
@@ -1307,6 +1306,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           });
           break;
         case '--debug-attribute':
+          //TODO Delete this
           selected_token_ids.forEach(function(selected) {
               var obj = getObj("graphic", selected);
               var character = getObj("character", obj.get("represents"));
@@ -1324,11 +1324,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     } catch (e) {
       log("Encountered a problem on "+userCommand+" operation:\n"+e);
     };
-  }; // handleInput
+  }; // handleChatMessage
 
   var registerEventHandlers = function() {
-    on('add:graphic',  mookTokenFixer);
-    on('chat:message', handleInput);
+    on('add:graphic',  handleAddGraphic);
+    on('chat:message', handleChatMessage);
   }; // registerEventHandlers
 
   var checkInstall = function() {
