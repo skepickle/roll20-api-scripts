@@ -422,6 +422,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
   // Roll20 Character Sheet Utility Functions
 
+  var throwDefaultTemplate_new = function(scope, id, fields) {
+    var character = getObj("character", id);
+    var str = ''.concat("&{template:default} {{name="+scope+"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "npcname"),"}}");
+    for (var k in fields) {
+      str = str.concat(" {{"+k+"= "+escapeRoll20Macro(fields[k])+"}}");
+    };
+    throw str;
+  }; // throwDefaultTemplate_new
+
   var throwDefaultTemplate = function(scope, id, str) {
     var character = getObj("character", id);
     throw ''.concat("&{template:default} {{name="+scope+"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "npcname"),"}} {{",escapeRoll20Macro(str),"}}");
@@ -431,7 +440,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     // Check all purely numeric fields
     ["npcinit","npcarmorclass","npctoucharmorclass","npcflatfootarmorclass","npcbaseatt","npcfortsave","npcrefsave","npcwillsave","npcstr-mod","npcdex-mod","npccon-mod","npcint-mod","npcwis-mod","npccha-mod"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
-        throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
+        throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': a, 'Invalid Value': getAttrByName(id, a)});
       };
     });
 
@@ -439,15 +448,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     ["npcstr","npcdex","npccon","npcint","npcwis","npccha"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
         if (!nonvalue_characters.includes(getAttrByName(id, a))) {
-          throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
+          throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': a, 'Invalid Value': getAttrByName(id, a)});
         } else {
           if (getAttrByName(id, ''.concat(a,'-mod')) != 0) {
-            throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' nonability score. Should be set to:= 0");
+            throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': ''.concat(a,'-mod'), 'Invalid Value': getAttrByName(id, ''.concat(a,'-mod')), 'Correct Value': 0});
           };
         };
       } else {
         if (getAttrByName(id, ''.concat(a,'-mod')) != abilityScoreToMod(getAttrByName(id, a))) {
-          throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid mod value '"+getAttrByName(id, ''.concat(a,'-mod'))+"' for '"+a+"' ability score '"+getAttrByName(id, a)+"'. Should be set to:= "+abilityScoreToMod(getAttrByName(id, a)));
+          throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': ''.concat(a,'-mod'), 'Invalid Value': getAttrByName(id, ''.concat(a,'-mod')), 'Correct Value': abilityScoreToMod(getAttrByName(id, a))});
         };
       };
     });
@@ -456,19 +465,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     ["npcgrapple"].forEach(function(a) {
       if (isAttrByNameNaN(id, a)) {
         if (!nonvalue_characters.includes(getAttrByName(id, a))) {
-          throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid "+a+"= '"+getAttrByName(id, a)+"'");
+          throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': a, 'Invalid Value': getAttrByName(id, a)});
         };
       };
     });
 
     // npcname
     if (getAttrByName(id, "npcname") == "") {
-      throwDefaultTemplate("mookAuditNPCSheet()",id,"Undefined name");
+      throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': 'npcname', 'Current Value': '**empty**', 'Correct Value': 'Should not be empty'});
     };
 
     // npcsize
     if (!dnd35.size_categories().includes(getAttrByName(id, "npcsize").toLowerCase())) {
-      throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid size= '"+getAttrByName(id, "npcsize")+"'");
+      throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': 'npcsize', 'Invalid Value': getAttrByName(id, "npcsize")});
     };
 
     // npctype
@@ -476,16 +485,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       var npctype = getAttrByName(id, "npctype");
       let result = npctype.match(/^([a-z ]+)(\([a-z ,]+\)){0,1}$/i)
       if (result[1] === undefined) {
-        throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid type= '"+npctype+"'");
+        throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': 'npctype', 'Invalid Type Value': npctype});
       };
       var type = trimWhitespace(result[1]);
       if (!dnd35.types().includes(type.toLowerCase())) {
-        throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid type= '"+type+"'");
+        throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': 'npctype', 'Invalid Type Value': type});
       };
       if (result[2] !== undefined) {
         trimWhitespace(result[2]).replace(/^\(/, "").replace(/\)$/, "").split(",").forEach(function(subtype) {
           if (!dnd35.subtypes().includes(subtype.toLowerCase())) {
-            throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid subtype= '"+subtype+"'");
+            throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': 'npctype', 'Invalid Subtype Value': subtype});
           };
         });
       };
@@ -495,7 +504,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     {
       var npchitdie = getAttrByName(id, "npchitdie");
       if (!trimWhitespace(npchitdie).replace(/ plus /gi, "+").replace(/ +/g, "").match(/^([+-]{0,1}([0-9]+[-+*/])*[0-9]*d[0-9]+([+-][0-9]+)*)+$/i)) {
-        throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid hitdie= '"+npchitdie+"'");
+        throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': 'npchitdie', 'Invalid Value': npchitdie});
       };
     };
 
@@ -503,7 +512,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     {
       var npcinitmacro = getAttrByName(id, "npcinitmacro");
       if (npcinitmacro !== '&{template:DnD35Initiative} {{name=@{selected|token_name}}} {{check=checks for initiative:\n}} {{checkroll=[[(1d20cs>21cf<0 + (@{npcinit})) + ((1d20cs>21cf<0 + (@{npcinit}))/100) + ((1d20cs>21cf<0 + (@{npcinit}))/10000) &{tracker}]]}}') {
-        throwDefaultTemplate("mookAuditNPCSheet()",id,''.concat("Invalid npcinitmacro= '",npcinitmacro,"'"));
+        throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': 'npcinitmacro', 'Invalid Value': npcinitmacro, 'Correct Value': '&{template:DnD35Initiative} {{name=@{selected|token_name}}} {{check=checks for initiative:\n}} {{checkroll=[[(1d20cs>21cf<0 + (@{npcinit})) + ((1d20cs>21cf<0 + (@{npcinit}))/100) + ((1d20cs>21cf<0 + (@{npcinit}))/10000) &{tracker}]]}}'});
       };
     };
 
@@ -517,7 +526,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       npcspeeds.forEach(function(e) {
         let result = e.match(/^(([a-z]+) *){0,1}([0-9]+)( *\(([a-z]+)\)){0,1}$/);
         if (result == null) {
-          throwDefaultTemplate("mookAuditNPCSheet()",id,"Unknown problem with npcspeed= '"+npcspeed+"'");
+          throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': 'npcspeed', 'Invalid Value': npcspeed});
         };
         var mode = "";
         if (result[2] == null) {
@@ -525,20 +534,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         } else {
           mode = result[2];
           if (!dnd35.movement_modes().includes(mode)) {
-            throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid mode '"+mode+"' in npcspeed= '"+npcspeed+"'");
+            throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': 'npcspeed', 'Invalid Movement Mode': mode});
           };
         };
         if (mode_type_map[mode] !== undefined) {
-          throwDefaultTemplate("mookAuditNPCSheet()",id,"Multiple definitions for same mode in npcspeed= '"+npcspeed+"'");
+          throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': 'npcspeed', 'Invalid Movement Mode': mode, '': 'This mode was defined multiple times.'});
         } else {
           mode_type_map[mode] = result[3];
         };
         if (mode=="fly") {
           if (result[5] == null) {
-            throwDefaultTemplate("mookAuditNPCSheet()",id,"Fly maneuverability not defined for npcspeed= '"+npcspeed+"'");
+            throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': 'npcspeed', 'Invalid fly maneuverability': '**Undefined**'});
           } else {
             if (!dnd35.fly_maneuverability().includes(result[5])) {
-              throwDefaultTemplate("mookAuditNPCSheet()",id,"Invalid fly maneuverability for npcspeed= '"+npcspeed+"'");
+              throwDefaultTemplate_new("mookAuditNPCSheet()",id,{'Attribute Name': 'npcspeed', 'Invalid fly maneuverability': result[5]});
             };
           };
         };
@@ -919,31 +928,35 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             //TODO Error / Usage message here
             break;
           };
-          try {
-            selected_token_ids.forEach(function(selected) {
+          selected_token_ids.forEach(function(selected) {
+            try {
               var obj = getObj("graphic", selected);
               var character = getObj("character", obj.get("represents"));
               if (!character) { throw "Token does not represent a character." };
               //TODO Make sure it's an NPC
               character.get("_defaulttoken", function(token) {
-                if (token !== "null") { return; };
-                // At this point, we are sure that the selected token is a mook.
-                switch(first_arg) {
-                  case 'audit-npc-sheet':
-                    mookAuditNPCSheet(character.id);
-                    break;
-                  case 'fix-pc-sheet':
-                    mookFixPCSheet(character.id);
-                    break;
-                  case 'convert-to-npc':
-                    //TODO Implement this?
-                    break;
+                try {
+                  if (token !== "null") { return; };
+                  // At this point, we are sure that the selected token is a mook.
+                  switch(first_arg) {
+                    case 'audit-npc-sheet':
+                      mookAuditNPCSheet(character.id);
+                      break;
+                    case 'fix-pc-sheet':
+                      mookFixPCSheet(character.id);
+                      break;
+                    case 'convert-to-npc':
+                      //TODO Implement this?
+                      break;
+                  };
+                } catch(e) {
+                  sendWhisperChat(msg,e);
                 };
               });
-            });
-          } catch(e) {
-            sendWhisperChat(msg,e);
-          };
+            } catch(e) {
+              sendWhisperChat(msg,e);
+            };
+          });
           break;
         case '--check-sheet-macros':
           //TODO Implement this?
