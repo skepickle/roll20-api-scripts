@@ -942,10 +942,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                     case 'audit-npc-sheet':
                       mookAuditNPCSheet(character.id);
                       break;
-                    case 'fix-pc-sheet':
+                    case 'infer-pc-sheet':
                       mookFixPCSheet(character.id);
                       break;
-                    case 'convert-to-npc':
+                    case 'promote-to-skookum':
+                      //remaining arguments = new NPC's name
                       //TODO Implement this?
                       break;
                   };
