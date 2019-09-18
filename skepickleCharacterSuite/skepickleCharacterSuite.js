@@ -897,21 +897,21 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     var userCommand = unprocessedFragments.shift();
     processedFragments.push(userCommand);
 
-    var first_arg = null;
+    var firstFragment = null;
     if (unprocessedFragments.length > 0) {
-      first_arg = unprocessedFragments.shift();
-      processedFragments.push(first_arg);
-      first_arg = first_arg.replace(/_/g, " ");
+      firstFragment = unprocessedFragments.shift();
+      processedFragments.push(firstFragment);
+      firstFragment = firstFragment.replace(/_/g, " ");
     };
 
     try {
       switch(userCommand) {
         case '--source-texts':
-          if (first_arg == null) {
+          if (firstFragment == null) {
             //TODO Error / Usage message here
             break;
           };
-          switch(first_arg) {
+          switch(firstFragment) {
             case 'list':
               var message_to_send = '';
               Object.keys(dnd35.all_source_texts).forEach(function(k,i) {
@@ -931,7 +931,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           };
           break;
         case '--mook':
-          if (first_arg == null) {
+          if (firstFragment == null) {
             //TODO Error / Usage message here
             break;
           };
@@ -945,7 +945,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                 try {
                   if (defaultToken !== "null") { return; };
                   // At this point, we are sure that the selected token is a mook.
-                  switch(first_arg) {
+                  switch(firstFragment) {
                     case 'audit-npc-sheet':
                       mookAuditNPCSheet(character.id);
                       break;
@@ -1033,7 +1033,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           //   The optional "clear" argument indicates that the turn order should be cleared before adding new entries
           var roll_initiative_map = {};
           var remainingTokenIDs = tokenIDs.length;
-          if ((first_arg != null) && (first_arg.toLowerCase() == "clear")) {
+          if ((firstFragment != null) && (firstFragment.toLowerCase() == "clear")) {
             Campaign().set("turnorder", JSON.stringify([]));
           };
           tokenIDs.forEach( idOfToken => {
@@ -1113,19 +1113,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           });
           break;
         case '--group-skill-check':
-          // --group-skill-check <SKILLNAME> <Aid Another|Individual>
+          // --group-skill-check (Aid Another|Individual) (<Skill Name>)
           //   Both arguments are required
-          if (first_arg == null) {
+          if (firstFragment == null) {
             sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
             return;
           };
-          if ((first_arg.toLowerCase() != "individual") &&
-              ((first_arg.toLowerCase() != "aid") || (unprocessedFragments.length < 1) || (unprocessedFragments[0].toLowerCase() != "another"))) {
+          if ((firstFragment.toLowerCase() != "individual") &&
+              ((firstFragment.toLowerCase() != "aid") || (unprocessedFragments.length < 1) || (unprocessedFragments[0].toLowerCase() != "another"))) {
             sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= First argument must be the a skill help type: "Individual" or "Aid Another"}}');
             return;
           };
-          if (first_arg.toLowerCase() != "individual") {
-            first_arg = first_arg.concat(" ", unprocessedFragments[0]);
+          if (firstFragment.toLowerCase() != "individual") {
+            firstFragment = firstFragment.concat(" ", unprocessedFragments[0]);
             processedFragments.push(unprocessedFragments.shift());
           };
 
@@ -1133,17 +1133,17 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Second argument (skill name) missing}}');
             return;
           };
-          var second_arg = unprocessedFragments.join(" ");
+          var secondFragment = unprocessedFragments.join(" ");
           processedFragments.concat(unprocessedFragments);
           unprocessedFragments = [];
-          //second_arg = second_arg.toLowerCase();
-          var skill_spec = getSkillSpecification(second_arg);
+          //secondFragment = secondFragment.toLowerCase();
+          var skill_spec = getSkillSpecification(secondFragment);
           if ((skill_spec == null) || (skill_spec.base === undefined)) {
-            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Unknown skill '+second_arg+'}}');
+            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Unknown skill '+secondFragment+'}}');
             return;
           };
           var skill_trained_only = skill_spec.trained_only || '';
-          var help_type          = first_arg;
+          var help_type          = firstFragment;
           //log(skill_spec);
           var roll_skill_map            = {}; // key=uniquified char_name, val=skill check
           var remainingTokenIDs = tokenIDs.length;
@@ -1301,7 +1301,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                           var aid_total = 0/0;
                           var checks_total = 0;
                           var checks_num   = 0;
-                          var chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+second_arg.replace(/\(/,"\n(")+"}} {{Check Type= "+help_type+"}} ";
+                          var chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+secondFragment.replace(/\(/,"\n(")+"}} {{Check Type= "+help_type+"}} ";
                           var prints_remaining = Object.keys(roll_skill_map).length;
                           //Object.keys(roll_skill_map).forEach(function(char_name_unique) {
                           Object.keys(roll_skill_map).forEach(char_name_unique => {
@@ -1348,8 +1348,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               var obj = getObj("graphic", idOfToken);
               var character = getObj("character", obj.get("represents"));
               if (!character) { return; };
-              var attrib_val = getAttrByName(character.id, first_arg);
-              log(first_arg+' attribute for '+character.get("name")+' is = '+attrib_val);
+              var attrib_val = getAttrByName(character.id, firstFragment);
+              log(firstFragment+' attribute for '+character.get("name")+' is = '+attrib_val);
           });
           break;
         case '--help':
