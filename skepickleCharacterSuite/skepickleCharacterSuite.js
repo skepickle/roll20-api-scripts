@@ -426,7 +426,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
   var throwDefaultTemplate = function(scope, id, fields) {
     var character = getObj("character", id);
-    var str = ''.concat("&{template:default} {{name="+scope+"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "npcname"),"}}");
+    var str = ''.concat("&{template:default} {{name="+scope+"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "character_name"),"}}");
     for (var k in fields) {
       str = str.concat(" {{"+k+"= "+escapeRoll20Macro(fields[k])+"}}");
     };
@@ -470,6 +470,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     // npcname
     if (getAttrByName(id, "npcname") == "") {
       throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcname', 'Current Value': '**empty**', 'Correct Value': 'Should not be empty'});
+    };
+    if (getAttrByName(id, "npcname") != getAttrByName(id, "character_name")) {
+      throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcname', 'Error': '**npcname** does not match **character_name**', 'Current Value': getAttrByName(id, "npcname"), 'Should Match': getAttrByName(id, "character_name")});
     };
 
     // npcsize
@@ -603,7 +606,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       var npcskills = getAttrByName(id, "npcskills");
       npcskills = trimWhitespace(npcskills).split(",");
       npcskills.forEach(function(npcSkillsEntry) {
-        if (npcSkillsEntry == "") { return; };
+        if (npcSkillsEntry == "") { return; }; // Not an error, just an empty skills field!
         let match_result = npcSkillsEntry.match(/([a-z() ]+)([+]{0,1}([-]{0,1}[0-9]+))/i);
         if (match_result[1] === undefined) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Invalid Entry': npcSkillsEntry}); };
         var skill_name = trimWhitespace(match_result[1]);
@@ -956,11 +959,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             try {
               var obj = getObj("graphic", idOfToken);
               var character = getObj("character", obj.get("represents"));
-              if (!character) { throw "Token does not represent a character." };
+              if (!character) { throw "Token does not represent a character."; };
               //TODO Make sure it's an NPC
               character.get("_defaulttoken", function(defaultToken) {
                 try {
-                  if (defaultToken !== "null") { return; };
+                  if (defaultToken !== "null") { throwDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Not a mook'}); };
                   // At this point, we are sure that the selected token is a mook.
                   switch(firstFragment) {
                     case 'audit-npc-sheet':
@@ -1001,7 +1004,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               //log(getAttrByName(character.id, "size"));
               reach = sizeModToTallReach(getAttrByName(character.id, "size"));
             };
-            if (isNaN(reach)) { return; }; //TODO maybe log error for weird reach specifier?
+            if (isNaN(reach)) { throwDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Reach distance is not a number'}); };
             var gmnotes = decodeRoll20String(obj.get('gmnotes'));
             var aura_info = getStringRegister(gmnotes, "aura-data-backup");
             if (aura_info === null) {
