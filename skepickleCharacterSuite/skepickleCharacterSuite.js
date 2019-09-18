@@ -847,7 +847,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     sendChat("skepickleCharacterSuite", '/w "'+playerName+'" '+str, null, {noarchive:true});
   }; // sendWhisperChat
 
-  var getSelectedCharacterIDs = function(msg) {
+  var getSelectedTokenIDs = function(msg) {
     var ids=[];
     if (msg.selected) {
       for (var selected of msg.selected) {
@@ -874,28 +874,35 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       };
     };
     return ids;
-  }; // getSelectedCharacterIDs
+  }; // getSelectedTokenIDs
 
   var handleChatMessage = function(msg) {
     //TODO remove !stl
-    if (msg.type !== "api" || (msg.content.indexOf("!stl") === -1 && msg.content.indexOf("!scs") === -1) ) { return; };
+    if (msg.type !== "api" || (msg.content.indexOf("!stl ") === -1 && msg.content.indexOf("!scs ") === -1) ) { return; };
 
     var playerID           = msg.playerid;
     var playerName         = msg.who.replace(new RegExp(" \\(GM\\)$"), "");
 
-    var selected_token_ids = getSelectedCharacterIDs(msg);
-    var argsFromUser       = msg.content.split(/ +/);
-    var userCommand        = argsFromUser[1];
-    var first_arg          = argsFromUser[2];
-    var second_arg         = argsFromUser[3];
+    var tokenIDs             = getSelectedTokenIDs(msg);
+    var unprocessedFragments = msg.content.split(/ +/);
+    var processedFragments   = [];
 
-    if (userCommand == null) {
-      sendWhisperChat(msg,artsFromUser[0]+" requires arguments");
+    processedFragments.push(unprocessedFragments.shift()); // Drop the "!scs" entry, since we already checked that
+
+    if (unprocessedFragments.length < 1) {
+      sendWhisperChat(msg,processedFragments.join(" ")+" a command");
       //TODO send usage info?
       return;
     };
-    if (first_arg  != null) { first_arg  = first_arg.replace(/_/g, " ");  };
-    if (second_arg != null) { second_arg = second_arg.replace(/_/g, " "); };
+    var userCommand = unprocessedFragments.shift();
+    processedFragments.push(userCommand);
+
+    var first_arg = null;
+    if (unprocessedFragments.length > 0) {
+      first_arg = unprocessedFragments.shift();
+      processedFragments.push(first_arg);
+      first_arg = first_arg.replace(/_/g, " ");
+    };
 
     try {
       switch(userCommand) {
@@ -928,15 +935,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             //TODO Error / Usage message here
             break;
           };
-          selected_token_ids.forEach(function(selected) {
+          tokenIDs.forEach(function(idOfToken) {
             try {
-              var obj = getObj("graphic", selected);
+              var obj = getObj("graphic", idOfToken);
               var character = getObj("character", obj.get("represents"));
               if (!character) { throw "Token does not represent a character." };
               //TODO Make sure it's an NPC
-              character.get("_defaulttoken", function(token) {
+              character.get("_defaulttoken", function(defaultToken) {
                 try {
-                  if (token !== "null") { return; };
+                  if (defaultToken !== "null") { return; };
                   // At this point, we are sure that the selected token is a mook.
                   switch(first_arg) {
                     case 'audit-npc-sheet':
@@ -961,16 +968,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           break;
         case '--check-sheet-macros':
           //TODO Implement this?
-          //selected_token_ids.forEach(function(selected) {
-          //    var obj = getObj("graphic", selected);
+          //tokenIDs.forEach(function(idOfToken) {
+          //    var obj = getObj("graphic", idOfToken);
           //    var character = getObj("character", obj.get("represents"));
           //    if (!character) { return; };
           //    checkSheetMacros(character.id);
           //});
           break;
         case '--toggle-reach-auras':
-          selected_token_ids.forEach(function(selected) {
-            var obj = getObj("graphic", selected);
+          tokenIDs.forEach(function(idOfToken) {
+            var obj = getObj("graphic", idOfToken);
             var character = getObj("character", obj.get("represents"));
             var reach = getAttrByName(character.id, "npcreach").replace(new RegExp("[^\.0-9].*$"), "");
             if ((!isAttrByNameDefined(character.id, "npcname")) || (getAttrByName(character.id, "npcname") == "")) {
@@ -1025,12 +1032,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           // --group-initiative-check [clear]
           //   The optional "clear" argument indicates that the turn order should be cleared before adding new entries
           var roll_initiative_map = {};
-          var selected_tokens_remainin_ids = selected_token_ids.length;
+          var remainingTokenIDs = tokenIDs.length;
           if ((first_arg != null) && (first_arg.toLowerCase() == "clear")) {
             Campaign().set("turnorder", JSON.stringify([]));
           };
-          selected_token_ids.forEach( selected_token => {
-            var obj = getObj("graphic", selected_token);
+          tokenIDs.forEach( idOfToken => {
+            var obj = getObj("graphic", idOfToken);
             var character = getObj("character", obj.get("represents"));
             var char_name = character.get("name");
             var init_macro;
@@ -1055,7 +1062,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                 {
                   var token_in_turnorder = false;
                   for (var i=0; i<turnorder.length; i++) {
-                    if (turnorder[i]["id"] === selected_token) {
+                    if (turnorder[i]["id"] === idOfToken) {
                       token_in_turnorder = true;
                       turnorder[i]["pr"] = init_macro_rsp[0].inlinerolls[0]["results"]["total"].toFixed(4);
                       break;
@@ -1063,7 +1070,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                   };
                   if (!token_in_turnorder) {
                     turnorder.push({
-                      id: selected_token,
+                      id: idOfToken,
                       pr: init_macro_rsp[0].inlinerolls[0]["results"]["total"].toFixed(4)
                     });
                   };
@@ -1087,8 +1094,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                   };
                   roll_initiative_map[char_name_unique] = init_macro_rsp[0].inlinerolls[0]["results"]["total"].toFixed(4);
                 };
-                selected_tokens_remainin_ids--;
-                if (selected_tokens_remainin_ids==0) {
+                remainingTokenIDs--;
+                if (remainingTokenIDs==0) {
                   var chat_msg = "&{template:default} {{name=Group Initiative}} ";
                   Object.keys(roll_initiative_map).forEach(function(k){
                     if (roll_initiative_map[k] == "EXCLUDE") {
@@ -1108,25 +1115,41 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         case '--group-skill-check':
           // --group-skill-check <SKILLNAME> <Aid Another|Individual>
           //   Both arguments are required
-          if ((first_arg == null) || (second_arg == null)) {
-            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Required arguments missing}}');
+          if (first_arg == null) {
+            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
+            return;
           };
-          if ((second_arg != "Aid Another") && (second_arg != "Individual")) {
-            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Invalid value for skill help type}}');
+          if ((first_arg.toLowerCase() != "individual") &&
+              ((first_arg.toLowerCase() != "aid") || (unprocessedFragments.length < 1) || (unprocessedFragments[0].toLowerCase() != "another"))) {
+            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= First argument must be the a skill help type: "Individual" or "Aid Another"}}');
+            return;
           };
-          var skill_spec = getSkillSpecification(first_arg);
+          if (first_arg.toLowerCase() != "individual") {
+            first_arg = first_arg.concat(" ", unprocessedFragments[0]);
+            processedFragments.push(unprocessedFragments.shift());
+          };
+
+          if (unprocessedFragments.length < 1) {
+            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Second argument (skill name) missing}}');
+            return;
+          };
+          var second_arg = unprocessedFragments.join(" ");
+          processedFragments.concat(unprocessedFragments);
+          unprocessedFragments = [];
+          //second_arg = second_arg.toLowerCase();
+          var skill_spec = getSkillSpecification(second_arg);
           if ((skill_spec == null) || (skill_spec.base === undefined)) {
-            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= Group Skill Check}} {{Message= Unknown skill '+first_arg+'}}');
+            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Unknown skill '+second_arg+'}}');
             return;
           };
           var skill_trained_only = skill_spec.trained_only || '';
-          var help_type          = second_arg;
+          var help_type          = first_arg;
           //log(skill_spec);
           var roll_skill_map            = {}; // key=uniquified char_name, val=skill check
-          var selected_tokens_remainin_ids = selected_token_ids.length;
+          var remainingTokenIDs = tokenIDs.length;
           // Loop through each selected character...
-          selected_token_ids.forEach(function(selected) {
-            var obj          = getObj("graphic", selected);
+          tokenIDs.forEach(function(idOfToken) {
+            var obj          = getObj("graphic", idOfToken);
             var character    = getObj("character", obj.get("represents"));
             var char_name    = character.get("name");
             var skill_attrib = skill_spec.attrib;
@@ -1221,8 +1244,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                 };
               };
             };
-            selected_tokens_remainin_ids--;
-            if (selected_tokens_remainin_ids==0) {
+            remainingTokenIDs--;
+            if (remainingTokenIDs==0) {
               //log(roll_skill_map);
               var get_bonuses_remaining = Object.keys(roll_skill_map).length;
               var highest_bonus     = -10000;
@@ -1278,7 +1301,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                           var aid_total = 0/0;
                           var checks_total = 0;
                           var checks_num   = 0;
-                          var chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+first_arg.replace(/\(/,"\n(")+"}} {{Check Type= "+help_type+"}} ";
+                          var chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+second_arg.replace(/\(/,"\n(")+"}} {{Check Type= "+help_type+"}} ";
                           var prints_remaining = Object.keys(roll_skill_map).length;
                           //Object.keys(roll_skill_map).forEach(function(char_name_unique) {
                           Object.keys(roll_skill_map).forEach(char_name_unique => {
@@ -1286,13 +1309,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               if (roll_skill_map[char_name_unique].state != "UNTRAINED") {
                                 checks_total += roll_skill_map[char_name_unique].check;
                                 checks_num++;
-                                if ((help_type == "Aid Another") && (char_name_unique !== highest_char_name)) {
+                                if ((help_type.toLowerCase() == "aid another") && (char_name_unique !== highest_char_name)) {
                                   var aid_inc = 0;
                                   if (roll_skill_map[char_name_unique].check >= 10) { aid_inc = 2; };
                                   if (isNaN(aid_total)) { aid_total = aid_inc; } else { aid_total += aid_inc; };
                                   chat_msg += "{{" + char_name_unique + "= +" + aid_inc + "(" + roll_skill_map[char_name_unique].check + ")}} ";
                                 } else {
-                                  if (isNaN(aid_total)) { aid_total = aid_inc; } else { aid_total += roll_skill_map[char_name_unique].check; };
+                                  if (isNaN(aid_total)) { aid_total = roll_skill_map[char_name_unique].check; } else { aid_total += roll_skill_map[char_name_unique].check; };
                                   chat_msg += "{{" + char_name_unique + "= " + roll_skill_map[char_name_unique].check + "}} ";
                                 };
                               } else {
@@ -1301,11 +1324,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             };
                             prints_remaining--;
                             if (prints_remaining==0) {
-                              if (help_type == "Aid Another") {
+                              if (help_type.toLowerCase() == "aid another") {
                                 chat_msg += "{{*Total*= ***"+ aid_total +"***}} ";
                               } else {
                                 var avg_check = checks_total / checks_num;
-                                chat_msg += "{{*Average*= ***"+avg_check+"***}}";
+                                chat_msg += "{{*Average*= ***"+avg_check.toFixed(2)+"***}}";
                               };
                               sendWhisperChat(msg,chat_msg);
                             };
@@ -1321,8 +1344,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           break;
         case '--debug-attribute':
           //TODO Delete this
-          selected_token_ids.forEach(function(selected) {
-              var obj = getObj("graphic", selected);
+          tokenIDs.forEach(function(idOfToken) {
+              var obj = getObj("graphic", idOfToken);
               var character = getObj("character", obj.get("represents"));
               if (!character) { return; };
               var attrib_val = getAttrByName(character.id, first_arg);
