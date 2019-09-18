@@ -342,7 +342,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       return skills[skill_name.toLowerCase()];
     } else {
       skill_name = skill_name+'()';
-      return Object.assign({}, skills[skill_name.toLowerCase()], { sub: trimWhitespace(match_result[2].replace(/^\(/, "").replace(/\)$/, "")) });
+      return Object.assign({}, skills[skill_name.toLowerCase()], { sub: trimWhitespace(match_result[2].replace(/^\(/, "").replace(/\)$/, "").toLowerCase()) });
     };
   }; // getSkillSpecification
 
@@ -1149,7 +1149,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                                           replace(/\* *$/,"").
                                                           replace(/ +\(/g,"("));
                     //log(otherskillname.toLowerCase() + " vs " + ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase());
-                    if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase()) {
+                    if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")")) {
                       skill_attrib = ''.concat('repeating_skills_',id,"_otherskill");
                       found_skill = true;
                     };
