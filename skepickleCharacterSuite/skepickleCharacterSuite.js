@@ -105,87 +105,96 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       BoED:    "Book of Exalted Deeds",
       unknown: "Unknown Text"
     },
-    enabled_source_texts: ["PHB","MM","XPH"],
+    enabled_source_texts: ['PHB','MM','XPH'],
     source_text_PHB: {
-      movement_modes:      ["burrow","climb","fly","swim"],
-      fly_maneuverability: ["perfect","good","average","poor","clumsy"],
-      size_categories:     ["fine","diminutive","tiny","small","medium","large","huge","gargantuan","colossal"],
-      types:               ["aberration","animal","celestial","construct","dragon","elemental","fey","fiend","giant","humanoid","magical beast","monstrous humanoid","ooze","outsider","plant","undead","vermin"],
+      movement_modes:      ['burrow','climb','fly','swim'],
+      fly_maneuverability: ['perfect','good','average','poor','clumsy'],
+      size_categories:     ['fine','diminutive','tiny','small','medium','large','huge','gargantuan','colossal'],
+      types:               ['aberration','animal','celestial','construct','dragon','elemental','fey','fiend','giant','humanoid','magical beast','monstrous humanoid','ooze','outsider','plant','undead','vermin'],
       subtypes: {
-        creature: ["air","angel","aquatic","archon","augmented","chaotic","cold","demon","devil","earth","evil","extraplanar","fire","good","incorporeal","lawful","native","psionic","shapeshifter","swarm","water"],
-        humanoid: ["aquatic","dwarf","elf","gnoll","gnome","goblinoid","halfling","human","orc","reptilian"]
+        creature: ['air','angel','aquatic','archon','augmented','chaotic','cold','demon','devil','earth','evil','extraplanar','fire','good','incorporeal','lawful','native','psionic','shapeshifter','swarm','water'],
+        humanoid: ['aquatic','dwarf','elf','gnoll','gnome','goblinoid','halfling','human','orc','reptilian']
       },
-      skills: { "ability:strength":         {base: "strength",                 attrib: "str-mod",                                           trained_only:false },
-                "ability:dexterity":        {base: "dexterity",                attrib: "dex-mod",                                           trained_only:false },
-                "ability:constitution":     {base: "constitution",             attrib: "con-mod",                                           trained_only:false },
-                "ability:intelligence":     {base: "intelligence",             attrib: "int-mod",                                           trained_only:false },
-                "ability:wisdom":           {base: "wisdom",                   attrib: "wis-mod",                                           trained_only:false },
-                "ability:charisma":         {base: "charisma",                 attrib: "cha-mod",                                           trained_only:false },
-                "appraise":                 {base: "appraise",                 attrib: "appraise",                                          trained_only:false },
-                "balance":                  {base: "balance",                  attrib: "balance",                                           trained_only:false },
-                "bluff":                    {base: "bluff",                    attrib: "bluff",                                             trained_only:false },
-                "climb":                    {base: "climb",                    attrib: "climb",                                             trained_only:false },
-                "concentration":            {base: "concentration",            attrib: "concentration",                                     trained_only:false },
-                "craft()":                  {base: "craft",                    attrib: "craft#",            default_ability_mod: "int-mod", trained_only:false },
-                "decipher script":          {base: "decipher script",          attrib: "decipherscript",                                    trained_only:true  },
-                "diplomacy":                {base: "diplomacy",                attrib: "diplomacy",                                         trained_only:false },
-                "disable device":           {base: "disable device",           attrib: "disabledevice",                                     trained_only:true  },
-                "disguise":                 {base: "disguise",                 attrib: "disguise",                                          trained_only:false },
-                "escape artist":            {base: "escape artist",            attrib: "escapeartist",                                      trained_only:false },
-                "forgery":                  {base: "forgery",                  attrib: "forgery",                                           trained_only:false },
-                "gather information":       {base: "gather information",       attrib: "gatherinformation",                                 trained_only:false },
-                "handle animal":            {base: "handle animal",            attrib: "handleanimal",                                      trained_only:true  },
-                "heal":                     {base: "heal",                     attrib: "heal",                                              trained_only:false },
-                "hide":                     {base: "hide",                     attrib: "hide",                                              trained_only:false },
-                "intimidate":               {base: "intimidate",               attrib: "intimidate",                                        trained_only:false },
-                "jump":                     {base: "jump",                     attrib: "jump",                                              trained_only:false },
-                "knowledge(arcana)":        {base: "knowledge(arcana)",        attrib: "knowarcana",                                        trained_only:true  },
-                "knowledge(engineering)":   {base: "knowledge(engineering)",   attrib: "knowengineer",                                      trained_only:true  },
-                "knowledge(dungeoneering)": {base: "knowledge(dungeoneering)", attrib: "knowdungeon",                                       trained_only:true  },
-                "knowledge(geography)":     {base: "knowledge(geography)",     attrib: "knowgeography",                                     trained_only:true  },
-                "knowledge(history)":       {base: "knowledge(history)",       attrib: "knowhistory",                                       trained_only:true  },
-                "knowledge(local)":         {base: "knowledge(local)",         attrib: "knowlocal",                                         trained_only:true  },
-                "knowledge(nature)":        {base: "knowledge(nature)",        attrib: "knownature",                                        trained_only:true  },
-                "knowledge(nobility)":      {base: "knowledge(nobility)",      attrib: "knownobility",                                      trained_only:true  },
-                "knowledge(religion)":      {base: "knowledge(religion)",      attrib: "knowreligion",                                      trained_only:true  },
-                "knowledge(the planes)":    {base: "knowledge(the planes)",    attrib: "knowplanes",                                        trained_only:true  },
-                "knowledge()":              {base: "knowledge",                attrib: "",                  default_ability_mod: "int-mod", trained_only:true  },
-                "listen":                   {base: "listen",                   attrib: "listen",                                            trained_only:false },
-                "move silently":            {base: "move silently",            attrib: "movesilent",                                        trained_only:false },
-                "open lock":                {base: "open lock",                attrib: "openlock",                                          trained_only:true  },
-                "perform()":                {base: "perform",                  attrib: "perform#",          default_ability_mod: "cha-mod", trained_only:false },
-                "profession()":             {base: "profession",               attrib: "profession#",       default_ability_mod: "wis-mod", trained_only:true  },
-                "ride":                     {base: "ride",                     attrib: "ride",                                              trained_only:false },
-                "search":                   {base: "search",                   attrib: "search",                                            trained_only:false },
-                "sense motive":             {base: "sense motive",             attrib: "sensemotive",                                       trained_only:false },
-                "sleight of hand":          {base: "sleight of hand",          attrib: "sleightofhand",                                     trained_only:true  },
-                "spellcraft":               {base: "spellcraft",               attrib: "spellcraft",                                        trained_only:true  },
-                "spot":                     {base: "spot",                     attrib: "spot",                                              trained_only:false },
-                "survival":                 {base: "survival",                 attrib: "survival",                                          trained_only:false },
-                "swim":                     {base: "swim",                     attrib: "swim",                                              trained_only:false },
-                "tumble":                   {base: "tumble",                   attrib: "tumble",                                            trained_only:true  },
-                "use magic device":         {base: "use magic device",         attrib: "usemagicdevice",                                    trained_only:true  },
-                "use rope":                 {base: "use rope",                 attrib: "userope",                                           trained_only:false } }
+      skills: { 'ability:strength':         {base: 'strength',                 attrib: 'str-mod',                                           trained_only:false },
+                'ability:dexterity':        {base: 'dexterity',                attrib: 'dex-mod',                                           trained_only:false },
+                'ability:constitution':     {base: 'constitution',             attrib: 'con-mod',                                           trained_only:false },
+                'ability:intelligence':     {base: 'intelligence',             attrib: 'int-mod',                                           trained_only:false },
+                'ability:wisdom':           {base: 'wisdom',                   attrib: 'wis-mod',                                           trained_only:false },
+                'ability:charisma':         {base: 'charisma',                 attrib: 'cha-mod',                                           trained_only:false },
+                'appraise':                 {base: 'appraise',                 attrib: 'appraise',                                          trained_only:false },
+                'balance':                  {base: 'balance',                  attrib: 'balance',                                           trained_only:false },
+                'bluff':                    {base: 'bluff',                    attrib: 'bluff',                                             trained_only:false },
+                'climb':                    {base: 'climb',                    attrib: 'climb',                                             trained_only:false },
+                'concentration':            {base: 'concentration',            attrib: 'concentration',                                     trained_only:false },
+                'craft()':                  {base: 'craft',                    attrib: 'craft#',            default_ability_mod: 'int-mod', trained_only:false },
+                'decipher script':          {base: 'decipher script',          attrib: 'decipherscript',                                    trained_only:true  },
+                'diplomacy':                {base: 'diplomacy',                attrib: 'diplomacy',                                         trained_only:false },
+                'disable device':           {base: 'disable device',           attrib: 'disabledevice',                                     trained_only:true  },
+                'disguise':                 {base: 'disguise',                 attrib: 'disguise',                                          trained_only:false },
+                'escape artist':            {base: 'escape artist',            attrib: 'escapeartist',                                      trained_only:false },
+                'forgery':                  {base: 'forgery',                  attrib: 'forgery',                                           trained_only:false },
+                'gather information':       {base: 'gather information',       attrib: 'gatherinformation',                                 trained_only:false },
+                'handle animal':            {base: 'handle animal',            attrib: 'handleanimal',                                      trained_only:true  },
+                'heal':                     {base: 'heal',                     attrib: 'heal',                                              trained_only:false },
+                'hide':                     {base: 'hide',                     attrib: 'hide',                                              trained_only:false },
+                'intimidate':               {base: 'intimidate',               attrib: 'intimidate',                                        trained_only:false },
+                'jump':                     {base: 'jump',                     attrib: 'jump',                                              trained_only:false },
+                'knowledge(arcana)':        {base: 'knowledge(arcana)',        attrib: 'knowarcana',                                        trained_only:true  },
+                'knowledge(engineering)':   {base: 'knowledge(engineering)',   attrib: 'knowengineer',                                      trained_only:true  },
+                'knowledge(dungeoneering)': {base: 'knowledge(dungeoneering)', attrib: 'knowdungeon',                                       trained_only:true  },
+                'knowledge(geography)':     {base: 'knowledge(geography)',     attrib: 'knowgeography',                                     trained_only:true  },
+                'knowledge(history)':       {base: 'knowledge(history)',       attrib: 'knowhistory',                                       trained_only:true  },
+                'knowledge(local)':         {base: 'knowledge(local)',         attrib: 'knowlocal',                                         trained_only:true  },
+                'knowledge(nature)':        {base: 'knowledge(nature)',        attrib: 'knownature',                                        trained_only:true  },
+                'knowledge(nobility)':      {base: 'knowledge(nobility)',      attrib: 'knownobility',                                      trained_only:true  },
+                'knowledge(religion)':      {base: 'knowledge(religion)',      attrib: 'knowreligion',                                      trained_only:true  },
+                'knowledge(the planes)':    {base: 'knowledge(the planes)',    attrib: 'knowplanes',                                        trained_only:true  },
+                'knowledge()':              {base: 'knowledge',                attrib: '',                  default_ability_mod: 'int-mod', trained_only:true  },
+                'listen':                   {base: 'listen',                   attrib: 'listen',                                            trained_only:false },
+                'move silently':            {base: 'move silently',            attrib: 'movesilent',                                        trained_only:false },
+                'open lock':                {base: 'open lock',                attrib: 'openlock',                                          trained_only:true  },
+                'perform()':                {base: 'perform',                  attrib: 'perform#',          default_ability_mod: 'cha-mod', trained_only:false },
+                'profession()':             {base: 'profession',               attrib: 'profession#',       default_ability_mod: 'wis-mod', trained_only:true  },
+                'ride':                     {base: 'ride',                     attrib: 'ride',                                              trained_only:false },
+                'search':                   {base: 'search',                   attrib: 'search',                                            trained_only:false },
+                'sense motive':             {base: 'sense motive',             attrib: 'sensemotive',                                       trained_only:false },
+                'sleight of hand':          {base: 'sleight of hand',          attrib: 'sleightofhand',                                     trained_only:true  },
+                'spellcraft':               {base: 'spellcraft',               attrib: 'spellcraft',                                        trained_only:true  },
+                'spot':                     {base: 'spot',                     attrib: 'spot',                                              trained_only:false },
+                'survival':                 {base: 'survival',                 attrib: 'survival',                                          trained_only:false },
+                'swim':                     {base: 'swim',                     attrib: 'swim',                                              trained_only:false },
+                'tumble':                   {base: 'tumble',                   attrib: 'tumble',                                            trained_only:true  },
+                'use magic device':         {base: 'use magic device',         attrib: 'usemagicdevice',                                    trained_only:true  },
+                'use rope':                 {base: 'use rope',                 attrib: 'userope',                                           trained_only:false } },
+      light_sources: { 'none':              { radius: '',   dim: '',   angle: '' },
+                       'candle':            { radius: 5,    dim: 5,    angle: '' },
+                       'everburning torch': { radius: 40,   dim: 20,   angle: '' },
+                       'common lamp':       { radius: 30,   dim: 15,   angle: '' },
+                       'bullseye lantern':  { radius: 120,  dim: 60,   angle: 60 },
+                       'hooded lantern':    { radius: 60,   dim: 30,   angle: '' },
+                       'sunrod':            { radius: 60,   dim: 30,   angle: '' },
+                       'torch':             { radius: 40,   dim: 20,   angle: '' },
+                       'daylight (spell)':  { radius: 120,  dim: 60,   angle: '' } }
     },
     source_text_MM: {
-      skills: { "control shape":            {base: "control shape",            attrib: "",                  default_ability_mod: "wis-mod", trained_only:false } }
+      skills: { 'control shape':            {base: 'control shape',            attrib: '',                  default_ability_mod: 'wis-mod', trained_only:false } }
     },
     source_text_XPH: {
-      skills: { "autohypnosis":             {base: "autohypnosis",             attrib: "",                  default_ability_mod: "wis-mod", trained_only:true  },
-                "psicraft":                 {base: "psicraft",                 attrib: "",                  default_ability_mod: "int-mod", trained_only:true  },
-                "use psionic device":       {base: "use psionic device",       attrib: "",                  default_ability_mod: "cha-mod", trained_only:true  } }
+      skills: { 'autohypnosis':             {base: 'autohypnosis',             attrib: '',                  default_ability_mod: 'wis-mod', trained_only:true  },
+                'psicraft':                 {base: 'psicraft',                 attrib: '',                  default_ability_mod: 'int-mod', trained_only:true  },
+                'use psionic device':       {base: 'use psionic device',       attrib: '',                  default_ability_mod: 'cha-mod', trained_only:true  } }
     },
     source_text_OA: {
-      skills: { "iaijutsu focus":           {base: "iaijutsu focus",           attrib: "",                  default_ability_mod: "cha-mod", trained_only:false } }
+      skills: { 'iaijutsu focus':           {base: 'iaijutsu focus',           attrib: '',                  default_ability_mod: 'cha-mod', trained_only:false } }
     },
     source_text_ToB: {
-      skills: { "martial lore":             {base: "martial lore",             attrib: "",                  default_ability_mod: "int-mod", trained_only:true  } }
+      skills: { 'martial lore':             {base: 'martial lore',             attrib: '',                  default_ability_mod: 'int-mod', trained_only:true  } }
     },
     source_text_BoED: {
-      types: ["deathless"]
+      types: ['deathless']
     },
     source_text_unknown: {
-      movement_modes: ["glide"]
+      movement_modes: ['glide']
     },
     merge_arrays: function(property_name) {
       var result = [];
@@ -232,7 +241,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     creature_subtypes:   function() { return this.merge_arrays("subtypes.creature"); },
     humanoid_subtypes:   function() { return this.merge_arrays("subtypes.humanoid"); },
     subtypes:            function() { return [...new Set([...this.creature_subtypes() ,...this.humanoid_subtypes()])]; },
-    skills:              function() { return this.merge_maps("skills"); }
+    skills:              function() { return this.merge_maps("skills"); },
+    light_sources:       function() { return this.merge_maps("light_sources"); }
   };
 
   // D&D 3.5e Utility Functions
@@ -426,7 +436,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
   var throwDefaultTemplate = function(scope, id, fields) {
     var character = getObj("character", id);
-    var str = ''.concat("&{template:default} {{name="+scope+"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "character_name"),"}}");
+    var str = ''.concat("&{template:default} {{name=",scope,"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "character_name"),"}}");
     for (var k in fields) {
       str = str.concat(" {{"+k+"= "+escapeRoll20Macro(fields[k])+"}}");
     };
@@ -623,12 +633,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     {
     };
 
+    //TODO npcfeats
+
     //SKIP npcattack
     //SKIP npcattackmacro
     //SKIP npcfullattack
     //SKIP npcfullattackmacro
     //SKIP npcspecialattacks
-    //SKIP npcfeats
     //SKIP npcenv
     //SKIP npcorg
     //SKIP npccr
@@ -775,6 +786,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         ));
       };
     };
+    {
+      //TODO npcskills
+      // Fix PC page skills
+      //TODO Create a map of all current PC-page skill: name -> { bonus: num, ranks: num }
+      //TODO Iterate through entries in npcskills field to adjust the map
+      //TODO Apply the map to PC-page
+    };
+    //TODO npcspecialqualities
+    //TODO npcfeats
   }; // mookFixPCSheet
 
   var checkSheetMacros = function(id) {
@@ -878,14 +898,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             sendWhisperChat(msg,"&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
             continue;
           };
-          if (obj.get("represents") == "") {
-            sendWhisperChat(msg,"&{template:default} {{name=ERROR}} {{Not a character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
-            continue;
-          };
-          var character = getObj("character", obj.get("represents"));
-          if (!getAttrByName(character.id, "character_sheet").match(/D&D3.5 v[\.0-9]*/)) {
-            sendWhisperChat(msg,"&{template:default} {{name=ERROR}} {{Not a D&D3.5 character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
-            continue;
+          if (obj.get("represents") != "") {
+            var character = getObj("character", obj.get("represents"));
+            if (!getAttrByName(character.id, "character_sheet").match(/D&D3.5 v[\.0-9]*/)) {
+              sendWhisperChat(msg,"&{template:default} {{name=ERROR}} {{Not a D&D3.5 character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
+              continue;
+            };
           };
           ids.push(selected["_id"]);
         } catch(e) {
@@ -897,8 +915,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   }; // getSelectedTokenIDs
 
   var handleChatMessage = function(msg) {
-    //TODO remove !stl
-    if (msg.type !== "api" || (msg.content.indexOf("!stl ") === -1 && msg.content.indexOf("!scs ") === -1) ) { return; };
+    if (msg.type !== "api" || msg.content.indexOf("!scs ") === -1) { return; };
 
     var playerID           = msg.playerid;
     var playerName         = msg.who.replace(new RegExp(" \\(GM\\)$"), "");
@@ -959,8 +976,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             try {
               var obj = getObj("graphic", idOfToken);
               var character = getObj("character", obj.get("represents"));
-              if (!character) { throw "Token does not represent a character."; };
-              //TODO Make sure it's an NPC
+              if (!character) {
+                sendWhisperChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+                return;
+              };
               character.get("_defaulttoken", function(defaultToken) {
                 try {
                   if (defaultToken !== "null") { throwDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Not a mook'}); };
@@ -999,6 +1018,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           tokenIDs.forEach(function(idOfToken) {
             var obj = getObj("graphic", idOfToken);
             var character = getObj("character", obj.get("represents"));
+            if (!character) { return; };
             var reach = getAttrByName(character.id, "npcreach").replace(new RegExp("[^\.0-9].*$"), "");
             if ((!isAttrByNameDefined(character.id, "npcname")) || (getAttrByName(character.id, "npcname") == "")) {
               //log(getAttrByName(character.id, "size"));
@@ -1047,11 +1067,86 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             };
           });
           break;
+        case '--set-light-source':
+          if (firstFragment == null) {
+            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
+            return;
+          };
+          firstFragment = trimWhitespace(firstFragment.concat(" ", unprocessedFragments.join(" ")));
+          //log(firstFragment);
+          processedFragments.concat(unprocessedFragments);
+          unprocessedFragments = [];
+          var light_source_spec = dnd35.light_sources()[firstFragment.toLowerCase()];
+          if (!light_source_spec) {
+            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Unknown light source}}');
+            return;
+          };
+          tokenIDs.forEach(function(idOfToken) {
+            var obj = getObj("graphic", idOfToken);
+
+            var light_radius       = light_source_spec.radius;
+            var light_dimradius    = light_source_spec.dim;
+            var light_angle        = light_source_spec.angle;
+            var light_otherplayers = (light_source_spec.radius != '');
+            var light_multiplier   = 1;
+
+            var character = getObj("character", obj.get("represents"));
+            if (character) {
+              var npcspecialqualities = getAttrByName(character.id, "npcspecialqualities").toLowerCase();
+              var npcfeats            = getAttrByName(character.id, "npcfeats").toLowerCase();
+              var racialabilities     = getAttrByName(character.id, "racialabilities").toLowerCase();
+              var classabilities      = getAttrByName(character.id, "classabilities").toLowerCase();
+              var feats               = getAttrByName(character.id, "feats").toLowerCase();
+              if (npcspecialqualities.match(/low-light vision/) ||
+                  racialabilities.match(/low-light vision/) ||
+                  classabilities.match(/low-light vision/)) {
+                light_multiplier = 2;
+                if (npcfeats.match(/improved low-light vision/) ||
+                    feats.match(/improved low-light vision/)) {
+                  light_multiplier = 4;
+                };
+              };
+
+              var match_result = npcspecialqualities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);
+              if (match_result == null) { match_result = racialabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/); };
+              if (match_result == null) { match_result = classabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);  };
+              if ((match_result != null) && (match_result[1] != null)) {
+                // match_result[1] is the darkvision distance in feet...
+                var distance = parseFloat(match_result[1]);
+                if (npcfeats.match(/improved darkvision/) ||
+                    feats.match(/improved darkvision/)) {
+                  distance = distance * 2;
+                };
+                if ((!light_otherplayers) || (light_radius < distance)) {
+                  light_radius    = distance;
+                  light_dimradius = distance+1;
+                };
+              };
+            };
+            obj.set("light_radius",       light_radius);
+            obj.set("light_dimradius",    light_dimradius);
+            obj.set("light_angle",        light_angle);
+            obj.set("light_otherplayers", light_otherplayers);
+            obj.set("light_multiplier",   light_multiplier);
+
+          });
+          break
         case '--roll-initiative':
         case '--group-initiative-check':
           // --group-initiative-check [clear]
           //   The optional "clear" argument indicates that the turn order should be cleared before adding new entries
           var roll_initiative_map = {};
+          {
+            var filteredTokenIDs = [];
+            for (var i=0; i<tokenIDs.length; i++) {
+              var obj = getObj("graphic", tokenIDs[i]);
+              var character = getObj("character", obj.get("represents"));
+              if (character) {
+                filteredTokenIDs.push(tokenIDs[i]);
+              };
+            };
+            tokenIDs = filteredTokenIDs;
+          };
           var remainingTokenIDs = tokenIDs.length;
           if ((firstFragment != null) && (firstFragment.toLowerCase() == "clear")) {
             Campaign().set("turnorder", JSON.stringify([]));
@@ -1164,9 +1259,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           };
           var skill_trained_only = skill_spec.trained_only || '';
           var help_type          = firstFragment;
+          var roll_skill_map     = {}; // key=uniquified char_name, val=skill check
+          {
+            var filteredTokenIDs = [];
+            for (var i=0; i<tokenIDs.length; i++) {
+              var obj = getObj("graphic", tokenIDs[i]);
+              var character = getObj("character", obj.get("represents"));
+              if (character) {
+                filteredTokenIDs.push(tokenIDs[i]);
+              };
+            };
+            tokenIDs = filteredTokenIDs;
+          };
+          var remainingTokenIDs  = tokenIDs.length;
           log(skill_spec);
-          var roll_skill_map            = {}; // key=uniquified char_name, val=skill check
-          var remainingTokenIDs = tokenIDs.length;
           // Loop through each selected character...
           tokenIDs.forEach(function(idOfToken) {
             var obj          = getObj("graphic", idOfToken);
