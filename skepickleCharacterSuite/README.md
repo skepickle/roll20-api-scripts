@@ -13,8 +13,8 @@ skepickleCharacterSuite implements a set of commands that operate on Diana P's D
   * enable <_sourceID_>
   * disable <_sourceID_>
 * **--mook**
-  * audit-npc-sheet
-    _Note: Operates on any number of selected tokens on the map._
+  * audit-npc-sheet  
+    _Note: Operates on any number of selected tokens on the map._  
     This function audits the NPC section contents of a [mook's](https://www.dandwiki.com/wiki/Help:Glossary_of_Jargon#Mook) character sheet.
   * infer-pc-sheet
     _Note: Operates on any number of selected tokens on the map._
@@ -30,6 +30,6 @@ skepickleCharacterSuite implements a set of commands that operate on Diana P's D
     This function will roll a skill check for all the selected characters. If a token does not represent a character, then it is skipped.
 * **--toggle-reach-auras**
     _Note: Operates on any number of selected tokens on the map._
-    This function toggles the display of auras that represent the <style>natural reach range{color:blue;}</style>, and <style>appropriately sized reach-weapon ranges{color:blue;}</style> for the selected characters.
+    This function toggles the display of auras that represent the natural reach range, and appropriately sized reach-weapon ranges for the selected characters.
 * **--set-light-source** <_lightType_>
     _Note: Operates on any number of selected tokens on the map._
