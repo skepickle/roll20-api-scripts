@@ -717,7 +717,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //SKIP npccombatdescr
   }; // mookAuditNPCSheet
 
-  var mookFixPCSheet = function(id) {
+  var mookInferPCSheet = function(id) {
     mookAuditNPCSheet(id);
     setAttrByName(id, "npc-show", 2);
     ["str", "dex", "con", "int", "wis", "cha"].forEach(function(ability) {
@@ -891,31 +891,36 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           var npc_skill_bonus = parseFloat(trimWhitespace(match_result[3]));
           var skill_spec = getSkillSpecification(skill_name);
           if ((skill_spec == null) || (skill_spec.base === undefined)) {
-            sendWhisperChat(msg,'&{template:default} {{name=mookFixPCSheat()}} {{Message= Unknown skill '+skill_name+'}}');
+            throwDefaultTemplate("mookInferPCSheet()",id,{'Error': 'Unknown skill', 'Skill Name': skill_name});
             return;
           };
           //log(skill_spec);
           var skill_attrib = getSkillAttrName(id, skill_spec);
-          //log("test1");
-          sendChat('GM',''.concat('[[@{',getAttrByName(id, "character_name"),'|',skill_attrib,'}]]'),function(attrib_msg) {
-            // Apply the map to PC-page
-            var skill_bonus = attrib_msg[0].inlinerolls[0]["results"]["total"];
-            var c_id = attrib_msg[0].who;
-            //log("test2");
-            setAttrByName(id, ''.concat(skill_attrib,"ranks"), npc_skill_bonus - skill_bonus);
-            if (skill_attrib.match(/^repeating_skills_/)) {
-              setAttrByName(id, ''.concat(skill_attrib,"skill"), 1);
-            } else {
-              setAttrByName(id, ''.concat(skill_attrib,"classskill"), 1);
-            };
-          });
+          //log("---> "+skill_attrib);
+          if (["str-mod","dex-mod","con-mod","int-mod","wis-mod","cha-mod"].includes(skill_attrib)) {
+            // A skill that's not defined yet on this character!
+            throwDefaultTemplate("mookInferPCSheet()",id,{'Error': 'Custom skill missing', 'Skill Name': skill_name});
+          } else {
+            sendChat('GM',''.concat('[[@{',getAttrByName(id, "character_name"),'|',skill_attrib,'}]]'),function(attrib_msg) {
+              // Apply the map to PC-page
+              var skill_bonus = attrib_msg[0].inlinerolls[0]["results"]["total"];
+              var c_id = attrib_msg[0].who;
+              //log("test2");
+              setAttrByName(id, ''.concat(skill_attrib,"ranks"), npc_skill_bonus - skill_bonus);
+              if (skill_attrib.match(/^repeating_skills_/)) {
+                setAttrByName(id, ''.concat(skill_attrib,"skill"), 1);
+              } else {
+                setAttrByName(id, ''.concat(skill_attrib,"classskill"), 1);
+              };
+            });
+          };
         });
       };
     };
     //SKIP npcspecialattacks
     //SKIP npcspecialqualities
     //SKIP npcfeats
-  }; // mookFixPCSheet
+  }; // mookInferPCSheet
 
   var checkSheetMacros = function(id) {
     for (var i=1; i<=10; i++) {
@@ -1063,7 +1068,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
     try {
       switch(userCommand) {
-        case '--source-texts':
+        case '--source-text':
           if (firstFragment == null) {
             //TODO Error / Usage message here
             break;
@@ -1109,7 +1114,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       mookAuditNPCSheet(character.id);
                       break;
                     case 'infer-pc-sheet':
-                      mookFixPCSheet(character.id);
+                      mookInferPCSheet(character.id);
                       break;
                     case 'promote-to-skookum':
                       //remaining arguments = new NPC's name
