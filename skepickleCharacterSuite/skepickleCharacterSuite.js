@@ -167,10 +167,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                 'use magic device':         {base: 'use magic device',         attrib: 'usemagicdevice',                                    trained_only:true  },
                 'use rope':                 {base: 'use rope',                 attrib: 'userope',                                           trained_only:false } },
       light_sources: { 'none':              { radius: '',   dim: '',   angle: '' },
-                       'candle':            { radius: 5,    dim: 5,    angle: '' },
+                       'candle':            { radius: 5,    dim: 0,    angle: '' },
                        'everburning torch': { radius: 40,   dim: 20,   angle: '' },
                        'common lamp':       { radius: 30,   dim: 15,   angle: '' },
-                       'bullseye lantern':  { radius: 120,  dim: 60,   angle: 60 },
+                       'bullseye lantern':  { radius: 120,  dim: 60,   angle: 90 },
                        'hooded lantern':    { radius: 60,   dim: 30,   angle: '' },
                        'sunrod':            { radius: 60,   dim: 30,   angle: '' },
                        'torch':             { radius: 40,   dim: 20,   angle: '' },
@@ -1117,8 +1117,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                     feats.match(/improved darkvision/)) {
                   distance = distance * 2;
                 };
-                if ((!light_otherplayers) || (light_radius < distance)) {
+                if ((!light_otherplayers) || (light_radius == '') || (light_radius < distance)) {
                   light_radius    = distance;
+                  //light_dimradius = (distance*5)/6; // For THAC0* Thursdays
                   light_dimradius = distance+1;
                 };
               };
