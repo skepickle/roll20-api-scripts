@@ -389,7 +389,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //  repRowIds: array containing all repeating section IDs for the given prefix, ordered in the same way that the rows appear on the sheet
     //  repeatingAttrs: object containing all repeating attributes that exist for this section, indexed by their name
     const repeatingAttrs = {},
-      regExp = new RegExp(`^${prefix}_(-[-A-Za-z0-9]+?|\\d+)_`);
+          regExp = new RegExp(`^${prefix}_(-[-A-Za-z0-9]+?|\\d+)_`);
     let repOrder;
     // Get attributes
     findObjs({
@@ -402,10 +402,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     });
     if (!repOrder) repOrder = [];
     // Get list of repeating row ids by prefix from repeatingAttrs
-    const unorderedIds = [...new Set(Object.keys(repeatingAttrs)
-      .map(n => n.match(regExp))
-      .filter(x => !!x)
-      .map(a => a[1]))];
+    const unorderedIds = [...new Set(Object.keys(repeatingAttrs).map(n => n.match(regExp))
+                                                                .filter(x => !!x)
+                                                                .map(a => a[1]))];
     const repRowIds = [...new Set(repOrder.filter(x => unorderedIds.includes(x)).concat(unorderedIds))];
     //log(repeatingAttrs);
     return repRowIds;
@@ -433,6 +432,72 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   }; // setAttrByName
 
   // Roll20 Character Sheet Utility Functions
+
+  var getSkillAttrName = function(id, skill_spec) {
+    var skill_attrib = skill_spec.attrib;
+    if (skill_spec.attrib.match(/\#/)) {
+      var found_skill = false;
+      for (var skillindex=1; skillindex<4; skillindex++) {
+        if (getAttrByName(id,
+                          skill_spec.attrib.replace(/\#/, ''.concat(skillindex,"name"))).toLowerCase() == skill_spec.sub.toLowerCase()) {
+          skill_attrib = skill_spec.attrib.replace(/\#/, ''.concat(skillindex));
+          found_skill = true;
+          break;
+        };
+      };
+      if (!found_skill) {
+        const otherskill_rowids = getRepeatingSectionRowIDs(id, 'repeating_skills');
+        found_skill = false;
+        otherskill_rowids.forEach( id => {
+          if (!found_skill) {
+            var otherskillname = trimWhitespace(getAttrByName(id, ''.concat("repeating_skills_",id,"_otherskillname")).
+                                                  replace(/\* *$/,"").
+                                                  replace(/ +\(/g,"("));
+            //log(otherskillname.toLowerCase() + " vs " + ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase());
+            if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")")) {
+              skill_attrib = ''.concat('repeating_skills_',id,"_otherskill");
+              found_skill = true;
+            };
+          };
+        });
+      };
+      if (!found_skill) {
+        skill_attrib=dnd35.skills()[skill_spec.base+"()"].default_ability_mod;
+      };
+    } else if (skill_spec.attrib == "") {
+      const otherskill_rowids = getRepeatingSectionRowIDs(id, 'repeating_skills');
+      var found_skill = false;
+      otherskill_rowids.forEach( id => {
+        if (!found_skill) {
+          var otherskillname = trimWhitespace(getAttrByName(id, ''.concat("repeating_skills_",id,"_otherskillname")).
+                                                replace(/\* *$/,"").
+                                                replace(/ +\(/g,"("));
+          //log(otherskillname.toLowerCase() + " vs " + ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase());
+          if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase()) {
+            skill_attrib = ''.concat('repeating_skills_',id,"_otherskill");
+            found_skill = true;
+          } else if (otherskillname.toLowerCase() == ''.concat(skill_spec.base).toLowerCase()) {
+            skill_attrib = ''.concat('repeating_skills_',id,"_otherskill");
+            found_skill = true;
+          };
+        };
+      });
+      if (!found_skill) {
+        switch(skill_spec.base) {
+          case "knowledge":
+          case "craft":
+          case "perform":
+          case "profession":
+            skill_attrib=dnd35.skills()[skill_spec.base+"()"].default_ability_mod;
+            break;
+          default:
+            skill_attrib=dnd35.skills()[skill_spec.base].default_ability_mod;
+            break;
+        };
+      };
+    };
+    return skill_attrib;
+  };
 
   var throwDefaultTemplate = function(scope, id, fields) {
     var character = getObj("character", id);
@@ -629,12 +694,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       });
     };
 
-    //TODO npcspecialqualities
-    {
-    };
-
-    //TODO npcfeats
-
+    //SKIP npcspecialqualities
+    //SKIP npcfeats
     //SKIP npcattack
     //SKIP npcattackmacro
     //SKIP npcfullattack
@@ -787,14 +848,61 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       };
     };
     {
-      //TODO npcskills
-      // Fix PC page skills
-      //TODO Create a map of all current PC-page skill: name -> { bonus: num, ranks: num }
+      // Fix PC page Skills
+      // Clear out all the skill settings on PC tab.
+      for (var k in dnd35.skills()) {
+        //log(dnd35.skills()[k]);
+        if (dnd35.skills()[k].attrib != "") {
+          if (dnd35.skills()[k].attrib.match(/\#/)) {
+            for (var skillindex=1; skillindex<4; skillindex++) {
+              setAttrByName(id, dnd35.skills()[k].attrib.replace(/\#/, ''.concat(skillindex,"ranks")), 0);
+              setAttrByName(id, dnd35.skills()[k].attrib.replace(/\#/, ''.concat(skillindex,"classskill")), 0);
+              setAttrByName(id, dnd35.skills()[k].attrib.replace(/\#/, ''.concat(skillindex,"miscmod")), 0);
+            };
+          } else {
+            setAttrByName(id, dnd35.skills()[k].attrib.concat("ranks"), 0);
+            setAttrByName(id, dnd35.skills()[k].attrib.concat("classskill"), 0);
+            setAttrByName(id, dnd35.skills()[k].attrib.concat("miscmod"), 0);
+          };
+        };
+        {
+          const otherskill_rowids = getRepeatingSectionRowIDs(id, 'repeating_skills');
+          otherskill_rowids.forEach( rowID => {
+            setAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillranks"), 0);
+            setAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillskill"), 0);
+            setAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillmiscmod"), 0);
+            setAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillarmorcheckpen"), 0);
+          });
+        };
+      };
       //TODO Iterate through entries in npcskills field to adjust the map
-      //TODO Apply the map to PC-page
+      {
+        var npcskills = getAttrByName(id, "npcskills");
+        npcskills = trimWhitespace(npcskills).split(",");
+        npcskills.forEach(function(npcSkillsEntry) {
+          if (npcSkillsEntry == "") { return; }; // Not an error, just an empty skills field!
+          let match_result = npcSkillsEntry.match(/([a-z() ]+)([+]{0,1}([-]{0,1}[0-9]+))/i);
+          //if (match_result[1] === undefined) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Invalid Entry': npcSkillsEntry}); };
+          var skill_name = trimWhitespace(match_result[1]);
+          //if (skill_name == "") { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Empty Skill Entry': npcSkillsEntry}); };
+          //if (match_result[3] === undefined) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Skill Bonus Missing': npcSkillsEntry}); };
+          //if (isNaN(match_result[3])) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Skill Bonus Not a Number': npcSkillsEntry}); };
+          var skill_bonus = parseFloat(trimWhitespace(match_result[3]));
+          var skill_spec = getSkillSpecification(skill_name);
+          if ((skill_spec == null) || (skill_spec.base === undefined)) {
+            sendWhisperChat(msg,'&{template:default} {{name=mookFixPCSheat()}} {{Message= Unknown skill '+skill_name+'}}');
+            return;
+          };
+          log(skill_spec);
+          var skill_attrib = getSkillAttrName(id, skill_spec);
+          //if (skill_spec == null) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Unknown Skill': npcSkillsEntry}); };
+          //TODO Apply the map to PC-page
+        });
+      };
     };
-    //TODO npcspecialqualities
-    //TODO npcfeats
+    //SKIP npcspecialattacks
+    //SKIP npcspecialqualities
+    //SKIP npcfeats
   }; // mookFixPCSheet
 
   var checkSheetMacros = function(id) {
@@ -1132,7 +1240,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
           });
           break
-        case '--roll-initiative':
         case '--group-initiative-check':
           // --group-initiative-check [clear]
           //   The optional "clear" argument indicates that the turn order should be cleared before adding new entries
