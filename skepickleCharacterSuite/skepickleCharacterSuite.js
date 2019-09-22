@@ -36,7 +36,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     return str.replace(/ +/g, " ").replace(/^ /, "").replace(/ $/, "").replace(/ *, */g, ",");
   }; // trimWhitespace
 
-  function decodeRoll20String(str) {
+  var decodeRoll20String = function(str) {
     str = decodeURI(str);
     str = str.replace(/%3A/g, ':');
     str = str.replace(/%23/g, '#');
@@ -44,7 +44,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     return str;
   }; // decodeRoll20String
 
-  function getStringRegister(str,register) {
+  var getStringRegister = function(str,register) {
     // {register}2|efftype:e|damtype:k|end3|norange|pe|str13|wo1{/register}
     var startPos = str.indexOf("{"  + register + "}");
     var endPos   = str.indexOf("{/" + register + "}");
@@ -52,7 +52,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     return str.substr(startPos+register.length+2, (endPos-startPos)-(register.length+2)).split('|');
   }; // getStringRegister
 
-  function setStringRegister(str,register,values=null) {
+  var setStringRegister = function(str,register,values=null) {
     // {register}2|efftype:e|damtype:k|end3|norange|pe|str13|wo1{/register}
     var startPos = str.indexOf("{"  + register + "}");
     var endPos   = str.indexOf("{/" + register + "}");
@@ -80,6 +80,39 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     };
     return str.replace(reg_exp, replacement);
   }; // setStringRegister
+
+  var generateUUID = (function() {
+    "use strict";
+    var a = 0, b = [];
+    return function() {
+      var c = (new Date()).getTime() + 0, d = c === a;
+      a = c;
+      for (var e = new Array(8), f = 7; 0 <= f; f--) {
+        e[f] = "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz".charAt(c % 64);
+        c = Math.floor(c / 64);
+      }
+      c = e.join("");
+      if (d) {
+        for (f = 11; 0 <= f && 63 === b[f]; f--) {
+          b[f] = 0;
+        }
+        b[f]++;
+      } else {
+        for (f = 0; 12 > f; f++) {
+          b[f] = Math.floor(64 * Math.random());
+        }
+      }
+      for (f = 0; 12 > f; f++){
+        c += "-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz".charAt(b[f]);
+      }
+      return c;
+    };
+  }());
+
+  var generateRowID = function() {
+    "use strict";
+    return generateUUID().replace(/_/g, "Z");
+  };
 
   var escapeRoll20Macro = function(str) {
     return str.replace(/\&/g,  "&amp;")
@@ -369,9 +402,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     return !!attribute;
   }; // isAttrByNameDefined
 
-  var isAttrByNameNaN = function(id, attrib, value_type) {
-    value_type = value_type || 'current';
-    var val = getAttrByName(id, attrib, value_type);
+  var isAttrByNameNaN = function(charID, attrib, valueType) {
+    valueType = valueType || 'current';
+    var val = getAttrByName(charID, attrib, valueType);
     if (val === undefined) {
       throw "isAttrByNameNaN() called with undefined attribute"
     };
@@ -381,7 +414,25 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   // Implemented internally in Roll20
   //var getAttrByName = function(id, attrib, value_type) { return <a string>; }
 
-  const getRepeatingSectionRowIDs = function (charid, prefix) {
+  var generateUniqueRowID = function(charid) {
+    var rowID;
+    var char_attribs = findObjs({
+      _type: 'attributes',
+      _characterid: charid
+    });
+    var loop_count = 0;
+    while (true) {
+      rowID = generateRowID();
+      var re = new RegExp(`^repeating_.*_${rowID}_.*$`);
+      if (char_attribs.filter(attribute => attribute.get('name').match(re).length == 0)) { break; };
+      loop_count++;
+      log(loop_count);
+      if (loop_count > 10) { break; };
+    };
+    return rowID;
+  };
+
+  const getRepeatingSectionRowIDs = function(charid, prefix) {
     // Input
     //  charid: character id
     //  prefix: repeating section name, e.g. 'repeating_weapons'
@@ -430,6 +481,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     obj.setWithWorker("current", value);
     if (max) { obj.setWithWorker("max", max); };
   }; // setAttrByName
+
+
+
+
+
+
+
+
+
 
   // Roll20 Character Sheet Utility Functions
 
@@ -870,16 +930,23 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             setAttrByName(id, dnd35.skills()[k].attrib.concat("miscmod"), 0);
           };
         };
-        {
-          const otherskill_rowids = getRepeatingSectionRowIDs(id, 'repeating_skills');
-          otherskill_rowids.forEach( rowID => {
-            setAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillranks"), 0);
-            setAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillskill"), 0);
-            setAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillmiscmod"), 0);
-            setAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillarmorcheckpen"), 0);
-          });
-        };
       };
+      //log('START');
+      findObjs({
+        _type: "attribute",
+        _characterid: id
+      }).filter(attribute => attribute.get('name').match(/^repeating_skills_.*_.*$/)).forEach(function(attr_obj) {
+        //log("I deleting attribute: " + attr_obj.get('name'));
+        attr_obj.remove();
+      });
+      findObjs({
+        _type: "attribute",
+        _name: "_reporder_repeating_skills",
+        _characterid: id
+      }).forEach(function(attr_obj) {
+        //log("I deleting attribute: " + attr_obj.get('name'));
+        attr_obj.remove();
+      });
       {
         // Iterate through entries in npcskills field to adjust the map
         var npcskills = getAttrByName(id, "npcskills");
@@ -898,22 +965,30 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           var skill_attrib = getSkillAttrName(id, skill_spec);
           //log("---> "+skill_attrib);
           if (["str-mod","dex-mod","con-mod","int-mod","wis-mod","cha-mod"].includes(skill_attrib)) {
-            // A skill that's not defined yet on this character!
-            throwDefaultTemplate("mookInferPCSheet()",id,{'Error': 'Custom skill missing', 'Skill Name': skill_name});
-          } else {
-            sendChat('GM',''.concat('[[@{',getAttrByName(id, "character_name"),'|',skill_attrib,'}]]'),function(attrib_msg) {
-              // Apply the map to PC-page
-              var skill_bonus = attrib_msg[0].inlinerolls[0]["results"]["total"];
-              var c_id = attrib_msg[0].who;
-              //log("test2");
-              setAttrByName(id, ''.concat(skill_attrib,"ranks"), npc_skill_bonus - skill_bonus);
-              if (skill_attrib.match(/^repeating_skills_/)) {
-                setAttrByName(id, ''.concat(skill_attrib,"skill"), 1);
-              } else {
-                setAttrByName(id, ''.concat(skill_attrib,"classskill"), 1);
-              };
-            });
+            // A skill that's not defined YET on this character... so create it!
+            var newRowID = generateUniqueRowID(id);
+            log("generateUniqueRowID("+id+") => "+newRowID);
+            setAttrByName(id, "repeating_skills_"+newRowID+"_otherskillname", skill_name);
+            setAttrByName(id, "repeating_skills_"+newRowID+"_otherskillstat", '@{'+skill_spec.default_ability_mod+'} ');
+            skill_attrib = getSkillAttrName(id, skill_spec);
+            //log(skill_attrib);
           };
+          if (["str-mod","dex-mod","con-mod","int-mod","wis-mod","cha-mod"].includes(skill_attrib)) {
+            // A skill that's STILL not defined on this character!
+            throwDefaultTemplate("mookInferPCSheet()",id,{'Error': 'Custom skill missing', 'Skill Name': skill_name});
+          };
+          sendChat('GM',''.concat('[[@{',getAttrByName(id, "character_name"),'|',skill_attrib,'}]]'),function(attrib_msg) {
+            // Apply the map to PC-page
+            var skill_bonus = attrib_msg[0].inlinerolls[0]["results"]["total"];
+            var c_id = attrib_msg[0].who;
+            //log("test2");
+            setAttrByName(id, ''.concat(skill_attrib,"ranks"), npc_skill_bonus - skill_bonus);
+            if (skill_attrib.match(/^repeating_skills_/)) {
+              setAttrByName(id, ''.concat(skill_attrib,"skill"), 1);
+            } else {
+              setAttrByName(id, ''.concat(skill_attrib,"classskill"), 1);
+            };
+          });
         });
       };
     };
@@ -1063,7 +1138,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     if (unprocessedFragments.length > 0) {
       firstFragment = unprocessedFragments.shift();
       processedFragments.push(firstFragment);
-      firstFragment = firstFragment.replace(/_/g, " ");
+      //firstFragment = firstFragment.replace(/_/g, " ");
     };
 
     try {
@@ -1540,6 +1615,22 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               if (!character) { return; };
               var attrib_val = getAttrByName(character.id, firstFragment);
               log(firstFragment+' attribute for '+character.get("name")+' is = '+attrib_val);
+          });
+          break;
+        case '--debug-attribute-regex':
+          log("--debug-attribute-regex "+firstFragment);
+          tokenIDs.forEach(function(idOfToken) {
+              var token_obj = getObj("graphic", idOfToken);
+              var character = getObj("character", token_obj.get("represents"));
+              if (!character) { return; };
+              findObjs({
+                _type: "attribute",
+                _characterid: character.id
+              }).filter(attribute => attribute.get('name').match(new RegExp(firstFragment))).forEach(function(attr_obj) {
+                log(attr_obj);
+              });
+              //var attrib_val = getAttrByName(character.id, firstFragment);
+              //log(firstFragment+' attribute for '+character.get("name")+' is = '+attrib_val);
           });
           break;
         case '--help':
