@@ -997,12 +997,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //SKIP npcfeats
   }; // mookInferPCSheet
 
-  var checkSheetMacros = function(id) {
-    for (var i=1; i<=10; i++) {
-      var weaponNname = getAttrByName(id, "weapon"+i+"name");
-      log(weaponNname);
-    };
-  }; // checkSheetMacros
+  //var checkSheetMacros = function(id) {
+  //  for (var i=1; i<=10; i++) {
+  //    var weaponNname = getAttrByName(id, "weapon"+i+"name");
+  //    log(weaponNname);
+  //  };
+  //}; // checkSheetMacros
 
   var handleAddGraphic = function(obj) {
     var objLayer = obj.get("layer");
@@ -1042,6 +1042,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           //obj.set("light_dimradius",    (distance*5)/6); // For THAC0* Thursdays
           obj.set("light_dimradius",    distance+1);
         };
+        obj.set("light_hassight", true); //TODO set to false if some sort of blind effect on the character...
       };
       if (token !== "null") { return; };
       var npcspeed       = parseFloat(getAttrByName(character.id, "npcspeed").replace(new RegExp("[^\.0-9].*$"), ""));
