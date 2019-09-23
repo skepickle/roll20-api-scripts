@@ -805,12 +805,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     };
     {
       // Fix PC page speeds
-      var npcspeeds = getAttrByName(id, "npcspeed").toUpperCase()
+      var npcspeeds = getAttrByName(id, "npcspeed").toLowerCase()
          .replace(/^ +/, "").replace(/ +$/, "").replace(/ +/g, " ")             // cleanup whitespace
          .replace(/ *, */g, ",")
-         .replace(/([0-9])FT/g, "$1")
-         .replace(/ FT /g, " ").replace(/ FT,/g, ",").replace(/ FT$/, "")       // remove units
-         .split(",");
+         .replace(/([0-9])ft/g, "$1")
+         .replace(/ ft /g, " ").replace(/ ft,/g, ",").replace(/ ft$/, "")       // remove units
+         .split(",");  //TODO change this to support alternate formats for "ft"
       npcspeeds.forEach(function(e) {
         if (!isNaN(e)) {
           // Main speed value
@@ -819,28 +819,28 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         };
         var tokens = e.split(" ");
         switch(tokens[0]) {
-          case 'FLY':
+          case 'fly':
             setAttrByName(id, "fly-speed", tokens[1]);
-            var maneuver = tokens[2].toLowerCase().replace(/[^a-z]/g, "").replace(/^\w/, c => c.toUpperCase());
-            if (maneuver == "Perfect" ||
-                maneuver == "Good"    ||
-                maneuver == "Average" ||
-                maneuver == "Poor"    ||
-                maneuver == "Clumsy"  ||
-                maneuver == "None") {
-              setAttrByName(id, "fly-maneuver", maneuver);
+            var maneuver = tokens[2].toLowerCase().replace(/[^a-z]/g, "");
+            if (maneuver == "perfect" ||
+                maneuver == "good"    ||
+                maneuver == "average" ||
+                maneuver == "poor"    ||
+                maneuver == "clumsy"  ||
+                maneuver == "none") {
+              setAttrByName(id, "fly-maneuver", toTitleCase(maneuver));
             };
             break;
-          case 'GLIDE':
+          case 'glide':
             setAttrByName(id, "glide-speed", tokens[1]);
             break;
-          case 'CLIMB':
+          case 'climb':
             setAttrByName(id, "climb-speed", tokens[1]);
             break;
-          case 'BURROW':
+          case 'burrow':
             setAttrByName(id, "burrow-speed", tokens[1]);
             break;
-          case 'SWIM':
+          case 'swim':
             setAttrByName(id, "swim-speed", tokens[1]);
             break;
         };
@@ -854,31 +854,31 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       setAttrByName(id, "shieldworn", 0);
       setAttrByName(id, "shield", "");
       setAttrByName(id, "shieldbonus", "");
-      var npcaclist = getAttrByName(id, "npcarmorclassinfo").toUpperCase()
+      var npcaclist = getAttrByName(id, "npcarmorclassinfo").toLowerCase()
          .replace(/^ +/, "").replace(/ +$/, "").replace(/ +/g, " ")             // cleanup whitespace
          .replace(/ *, */g, ",")
          .split(",");
       npcaclist.forEach(function(e) {
         var tokens = e.split(" ");
         switch(tokens[1]) {
-          case 'SIZE':
-          case 'DEX':
+          case 'size':
+          case 'dex':
             return;
-          case 'DODGE':
+          case 'dodge':
             setAttrByName(id, "dodgebonus1bonus", parseFloat(tokens[0]));
             return;
-          case 'NATURAL':
+          case 'natural':
             setAttrByName(id, "naturalarmor1bonus", parseFloat(tokens[0]));
             return;
-          case 'DEFLECTION':
+          case 'deflection':
             setAttrByName(id, "deflection1bonus", parseFloat(tokens[0]));
             return;
-          case 'MISC':
+          case 'misc':
             setAttrByName(id, "miscac1bonus", parseFloat(tokens[0]));
             return;
         };
         var k = e.split(/ (.+)/)[1];
-        if (k.match(/(SHIELD|BUCKLER)/)) {
+        if (k.match(/(shield|buckler)/)) {
           setAttrByName(id, "shieldworn", 1);
           setAttrByName(id, "shield", toTitleCase(k));
           setAttrByName(id, "shieldbonus", parseFloat(tokens[0]));
@@ -1052,11 +1052,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       obj.set("showplayers_bar1", true);
       var npcspace = getAttrByName(character.id, "npcspace");
       if (npcspace) {
-        npcspace = npcspace.toUpperCase();
-        if (npcspace.match(/ BY /)) {
+        npcspace = npcspace.toLowerCase();
+        if (npcspace.match(/ by /)) {
           npcspace = npcspace
              .replace(/^ +/, "").replace(/ +$/, "").replace(/ +/g, " ");             // cleanup whitespace
-          var dimensions = npcspace.split(" BY ");
+          var dimensions = npcspace.split(" by ");
           dimensions[0] = dimensions[0].replace(new RegExp("[^\.0-9].*$"), "");
           dimensions[1] = dimensions[1].replace(new RegExp("[^\.0-9].*$"), "");
           if (!isNaN(dimensions[0]) && !isNaN(dimensions[1])) {
