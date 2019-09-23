@@ -1198,7 +1198,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           };
           break;
         case '--mook':
-          if (playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { return; /* TODO */ };
           if (firstFragment == null) {
             //TODO Error / Usage message here
             break;
@@ -1275,7 +1275,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           });
           break;
         case '--toggle-reach-auras':
-          if (playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { return; /* TODO */ };
           tokenIDs.forEach(function(idOfToken) {
             var obj = getObj("graphic", idOfToken);
             var character = getObj("character", obj.get("represents"));
@@ -1329,7 +1329,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           });
           break;
         case '--set-light-source':
-          if (playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { return; /* TODO */ };
           if (firstFragment == null) {
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
             return;
@@ -1397,7 +1397,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         case '--group-initiative-check':
           // --group-initiative-check [clear]
           //   The optional "clear" argument indicates that the turn order should be cleared before adding new entries
-          if (playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { return; /* TODO */ };
           var roll_initiative_map = {};
           {
             var filteredTokenIDs = [];
@@ -1493,7 +1493,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         case '--group-skill-check':
           // --group-skill-check (Aid Another|Individual) (<Skill Name>)
           //   Both arguments are required
-          if (playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { return; /* TODO */ };
           if (firstFragment == null) {
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
             return;
@@ -1672,7 +1672,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           });
           break;
         case '--debug-attribute':
-          if (playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { return; /* TODO */ };
           tokenIDs.forEach(function(idOfToken) {
               var obj = getObj("graphic", idOfToken);
               var character = getObj("character", obj.get("represents"));
@@ -1682,7 +1682,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           });
           break;
         case '--debug-attribute-regex':
-          if (playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { return; /* TODO */ };
           log("--debug-attribute-regex "+firstFragment);
           tokenIDs.forEach(function(idOfToken) {
               var token_obj = getObj("graphic", idOfToken);
