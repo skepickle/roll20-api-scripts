@@ -1011,7 +1011,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     if (!obj.get("represents")) { return; }
     var character = getObj("character", obj.get("represents"));
     if (!character) { return; }
-    character.get("_defaulttoken", function(token) {
+    character.get("_defaulttoken", function(defaultToken) {
       {
         var npcspecialqualities = getAttrByName(character.id, "npcspecialqualities").toLowerCase();
         var npcfeats            = getAttrByName(character.id, "npcfeats").toLowerCase();
@@ -1044,7 +1044,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         };
         obj.set("light_hassight", true); //TODO set to false if some sort of blind effect on the character...
       };
-      if (token !== "null") { return; };
+      if (defaultToken !== "null") { return; };
       var npcspeed       = parseFloat(getAttrByName(character.id, "npcspeed").replace(new RegExp("[^\.0-9].*$"), ""));
       var armorworn      = parseFloat(getAttrByName(character.id, "armorworn"));
       var acitemspeed    = parseFloat(getAttrByName(character.id, "acitemspeed").replace(new RegExp("[^\.0-9].*$"), ""));
