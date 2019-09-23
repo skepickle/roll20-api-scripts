@@ -562,15 +562,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     };
     //log("}");
     return skill_attrib;
-  };
+  }; // getSkillAttrName
 
-  var throwDefaultTemplate = function(scope, id, fields) {
+  var renderDefaultTemplate = function(scope, id, fields) {
     var character = getObj("character", id);
     var str = ''.concat("&{template:default} {{name=",scope,"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "character_name"),"}}");
     for (var k in fields) {
       str = str.concat(" {{"+k+"= "+escapeRoll20Macro(fields[k])+"}}");
     };
-    throw str;
+    return str;
+  }; // renderDefaultTemplate
+
+  var throwDefaultTemplate = function(scope, id, fields) {
+    throw renderDefaultTemplate(scope, id, fields);
   }; // throwDefaultTemplate
 
   var mookAuditNPCSheet = function(id) {
