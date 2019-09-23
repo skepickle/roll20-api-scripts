@@ -16,8 +16,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   };
 
   var temp = {
-    //campaignLoaded: false,
-    GMPlayer: Campaign
+    campaignLoaded: false,
+    //GMPlayer: Campaign
   };
 
   // String Utility Functions
@@ -430,7 +430,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       if (loop_count > 10) { break; };
     };
     return rowID;
-  };
+  }; // generateUniqueRowID
 
   const getRepeatingSectionRowIDs = function(charid, prefix) {
     // Input
@@ -1012,6 +1012,37 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     var character = getObj("character", obj.get("represents"));
     if (!character) { return; }
     character.get("_defaulttoken", function(token) {
+      {
+        var npcspecialqualities = getAttrByName(character.id, "npcspecialqualities").toLowerCase();
+        var npcfeats            = getAttrByName(character.id, "npcfeats").toLowerCase();
+        var racialabilities     = getAttrByName(character.id, "racialabilities").toLowerCase();
+        var classabilities      = getAttrByName(character.id, "classabilities").toLowerCase();
+        var feats               = getAttrByName(character.id, "feats").toLowerCase();
+        if (npcspecialqualities.match(/low-light vision/) ||
+            racialabilities.match(/low-light vision/) ||
+            classabilities.match(/low-light vision/)) {
+          var multiplier = 2;
+          if (npcfeats.match(/improved low-light vision/) ||
+              feats.match(/improved low-light vision/)) {
+            multiplier = 4;
+          };
+          obj.set("light_multiplier", multiplier);
+        };
+        var match_result = npcspecialqualities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);
+        if (match_result == null) { match_result = racialabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/); };
+        if (match_result == null) { match_result = classabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);  };
+        if ((match_result != null) && (match_result[1] != null)) {
+          // match_result[1] is the darkvision distance in feet...
+          var distance = parseFloat(match_result[1]);
+          if (npcfeats.match(/improved darkvision/) ||
+              feats.match(/improved darkvision/)) {
+            distance = distance * 2;
+          };
+          obj.set("light_radius",       distance);
+          //obj.set("light_dimradius",    (distance*5)/6); // For THAC0* Thursdays
+          obj.set("light_dimradius",    distance+1);
+        };
+      };
       if (token !== "null") { return; };
       var npcspeed       = parseFloat(getAttrByName(character.id, "npcspeed").replace(new RegExp("[^\.0-9].*$"), ""));
       var armorworn      = parseFloat(getAttrByName(character.id, "armorworn"));
@@ -1081,11 +1112,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     });
   }; // handleAddGraphic
 
-  var sendWhisperChat = function(msg,str) {
+  var respondToChat = function(msg,str,noArchive=true) {
     var playerName = msg.who;
     if (playerIsGM(msg.playerid)) { playerName = playerName.replace(new RegExp(" \\(GM\\)$"), "") };
-    sendChat("skepickleCharacterSuite", '/w "'+playerName+'" '+str, null, {noarchive:true});
-  }; // sendWhisperChat
+    sendChat("skepickleCharacterSuite", '/w "'+playerName+'" '+str, null, {noarchive:noArchive});
+  }; // respondToChat
 
   var getSelectedTokenIDs = function(msg) {
     var ids=[];
@@ -1095,19 +1126,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           if (selected["_type"] != "graphic") { continue; }; // Silently skip over selected non-graphics
           var obj = getObj("graphic", selected["_id"]);
           if (obj.get("_subtype") != "token") {
-            sendWhisperChat(msg,"&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
+            respondToChat(msg,"&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
             continue;
           };
           if (obj.get("represents") != "") {
             var character = getObj("character", obj.get("represents"));
             if (!getAttrByName(character.id, "character_sheet").match(/D&D3.5 v[\.0-9]*/)) {
-              sendWhisperChat(msg,"&{template:default} {{name=ERROR}} {{Not a D&D3.5 character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
+              respondToChat(msg,"&{template:default} {{name=ERROR}} {{Not a D&D3.5 character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
               continue;
             };
           };
           ids.push(selected["_id"]);
         } catch(e) {
-          sendWhisperChat(msg,e);
+          respondToChat(msg,e);
         };
       };
     };
@@ -1127,7 +1158,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     processedFragments.push(unprocessedFragments.shift()); // Drop the "!scs" entry, since we already checked that
 
     if (unprocessedFragments.length < 1) {
-      sendWhisperChat(msg,processedFragments.join(" ")+" a command");
+      respondToChat(msg,processedFragments.join(" ")+" a command");
       //TODO send usage info?
       return;
     };
@@ -1138,7 +1169,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     if (unprocessedFragments.length > 0) {
       firstFragment = unprocessedFragments.shift();
       processedFragments.push(firstFragment);
-      //firstFragment = firstFragment.replace(/_/g, " ");
     };
 
     try {
@@ -1159,7 +1189,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                   message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= disabled}}');
                 };
               });
-              sendWhisperChat(msg,'&{template:default} {{name=Source Texts}} '+message_to_send, null, {noarchive:true});
+              respondToChat(msg,'&{template:default} {{name=Source Texts}} '+message_to_send, null, {noarchive:true});
               break;
             case 'enable':
               break;
@@ -1168,6 +1198,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           };
           break;
         case '--mook':
+          if (playerIsGM(playerID)) { return; /* TODO */ };
           if (firstFragment == null) {
             //TODO Error / Usage message here
             break;
@@ -1177,7 +1208,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               var obj = getObj("graphic", idOfToken);
               var character = getObj("character", obj.get("represents"));
               if (!character) {
-                sendWhisperChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+                respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
                 return;
               };
               character.get("_defaulttoken", function(defaultToken) {
@@ -1197,24 +1228,54 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       break;
                   };
                 } catch(e) {
-                  sendWhisperChat(msg,e);
+                  respondToChat(msg,e);
                 };
               });
             } catch(e) {
-              sendWhisperChat(msg,e);
+              respondToChat(msg,e);
             };
           });
           break;
-        case '--check-sheet-macros':
-          //TODO Implement this?
-          //tokenIDs.forEach(function(idOfToken) {
-          //    var obj = getObj("graphic", idOfToken);
-          //    var character = getObj("character", obj.get("represents"));
-          //    if (!character) { return; };
-          //    checkSheetMacros(character.id);
-          //});
+        case '--skookum':
+          if (firstFragment == null) {
+            //TODO Error / Usage message here
+            break;
+          };
+          tokenIDs.forEach(function(idOfToken) {
+            try {
+              var obj = getObj("graphic", idOfToken);
+              var character = getObj("character", obj.get("represents"));
+              if (!character) {
+                respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+                return;
+              };
+              //TODO Check that msg.who can edit character!!
+              character.get("_defaulttoken", function(defaultToken) {
+                try {
+                  if (defaultToken !== "null") { throwDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Not a mook'}); };
+                  // At this point, we are sure that the selected token is a mook.
+                  switch(firstFragment) {
+                    case 'audit-weapon-macros':
+                      //TODO
+                      break;
+                    case 'audit-spell-macros':
+                      //TODO
+                      break;
+                    case 'create-spell-macros':
+                      //TODO
+                      break;
+                  };
+                } catch(e) {
+                  respondToChat(msg,e);
+                };
+              });
+            } catch(e) {
+              respondToChat(msg,e);
+            };
+          });
           break;
         case '--toggle-reach-auras':
+          if (playerIsGM(playerID)) { return; /* TODO */ };
           tokenIDs.forEach(function(idOfToken) {
             var obj = getObj("graphic", idOfToken);
             var character = getObj("character", obj.get("represents"));
@@ -1268,8 +1329,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           });
           break;
         case '--set-light-source':
+          if (playerIsGM(playerID)) { return; /* TODO */ };
           if (firstFragment == null) {
-            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
+            respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
             return;
           };
           firstFragment = trimWhitespace(firstFragment.concat(" ", unprocessedFragments.join(" ")));
@@ -1278,7 +1340,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           unprocessedFragments = [];
           var light_source_spec = dnd35.light_sources()[firstFragment.toLowerCase()];
           if (!light_source_spec) {
-            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Unknown light source}}');
+            respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Unknown light source}}');
             return;
           };
           tokenIDs.forEach(function(idOfToken) {
@@ -1335,6 +1397,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         case '--group-initiative-check':
           // --group-initiative-check [clear]
           //   The optional "clear" argument indicates that the turn order should be cleared before adding new entries
+          if (playerIsGM(playerID)) { return; /* TODO */ };
           var roll_initiative_map = {};
           {
             var filteredTokenIDs = [];
@@ -1418,7 +1481,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                     };
                     chat_msg += "{{" + k + "= "+ roll_initiative_map[k] +"}} ";
                   });
-                  sendWhisperChat(msg,chat_msg);
+                  respondToChat(msg,chat_msg);
                 };
               });
             } catch (e) {
@@ -1430,13 +1493,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         case '--group-skill-check':
           // --group-skill-check (Aid Another|Individual) (<Skill Name>)
           //   Both arguments are required
+          if (playerIsGM(playerID)) { return; /* TODO */ };
           if (firstFragment == null) {
-            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
+            respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
             return;
           };
           if ((firstFragment.toLowerCase() != "individual") &&
               ((firstFragment.toLowerCase() != "aid") || (unprocessedFragments.length < 1) || (unprocessedFragments[0].toLowerCase() != "another"))) {
-            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= First argument must be the a skill help type: "Individual" or "Aid Another"}}');
+            respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= First argument must be the a skill help type: "Individual" or "Aid Another"}}');
             return;
           };
           if (firstFragment.toLowerCase() != "individual") {
@@ -1445,7 +1509,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           };
 
           if (unprocessedFragments.length < 1) {
-            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Second argument (skill name) missing}}');
+            respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Second argument (skill name) missing}}');
             return;
           };
           var secondFragment = unprocessedFragments.join(" ");
@@ -1454,7 +1518,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           //secondFragment = secondFragment.toLowerCase();
           var skill_spec = getSkillSpecification(secondFragment);
           if ((skill_spec == null) || (skill_spec.base === undefined)) {
-            sendWhisperChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Unknown skill '+secondFragment+'}}');
+            respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Unknown skill '+secondFragment+'}}');
             return;
           };
           var skill_trained_only = skill_spec.trained_only || '';
@@ -1595,7 +1659,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                 var avg_check = checks_total / checks_num;
                                 chat_msg += "{{*Average*= ***"+avg_check.toFixed(2)+"***}}";
                               };
-                              sendWhisperChat(msg,chat_msg);
+                              respondToChat(msg,chat_msg);
                             };
                           });
                         };
@@ -1608,7 +1672,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           });
           break;
         case '--debug-attribute':
-          //TODO Delete this
+          if (playerIsGM(playerID)) { return; /* TODO */ };
           tokenIDs.forEach(function(idOfToken) {
               var obj = getObj("graphic", idOfToken);
               var character = getObj("character", obj.get("represents"));
@@ -1618,6 +1682,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           });
           break;
         case '--debug-attribute-regex':
+          if (playerIsGM(playerID)) { return; /* TODO */ };
           log("--debug-attribute-regex "+firstFragment);
           tokenIDs.forEach(function(idOfToken) {
               var token_obj = getObj("graphic", idOfToken);
@@ -1635,8 +1700,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           break;
         case '--help':
         case undefined:
+        default:
         //getHelp();
-          sendChat(playerName, '/w "'+playerName+'" Test 1 2 3 '+playerName);
+          sendChat("GM", '/w "'+playerName+'" Test 1 2 3 '+playerName);
           break;
       };
     } catch (e) {
