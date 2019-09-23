@@ -1,6 +1,7 @@
 // skepickleCharacterSuite
 
 // Purpose: Provide a suite of functionality to improve player and GM experience when using Diana P's D&D 3.5 character sheet.
+// ANSI Text Generator: http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow
 
 var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleCharacterSuiteImp() {
   "use strict";
@@ -884,11 +885,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     {
       // Fix PC page speeds
       var npcspeeds = getAttrByName(id, "npcspeed").toLowerCase()
-         .replace(/^ +/, "").replace(/ +$/, "").replace(/ +/g, " ")             // cleanup whitespace
+         .replace(/^ +/, "").replace(/ +$/, "").replace(/ +/g, " ") // cleanup whitespace
          .replace(/ *, */g, ",")
-         .replace(/([0-9])ft/g, "$1")
-         .replace(/ ft /g, " ").replace(/ ft,/g, ",").replace(/ ft$/, "")       // remove units
-         .split(",");  //TODO change this to support alternate formats for "ft"
+         .replace(/([0-9])(feet|foot|ft\.*|')/g, "$1")              // remove units
+         .replace(/ (feet|foot|ft\.*|') /g, " ").replace(/ (feet|foot|ft\.*|'),/g, ",").replace(/ (feet|foot|ft\.*|')$/, "")
+         .split(",");
       npcspeeds.forEach(function(e) {
         if (!isNaN(e)) {
           // Main speed value
@@ -1447,13 +1448,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           };
           tokenIDs.forEach(function(idOfToken) {
             var obj = getObj("graphic", idOfToken);
-
             var light_radius       = light_source_spec.radius;
             var light_dimradius    = light_source_spec.dim;
             var light_angle        = light_source_spec.angle;
             var light_otherplayers = (light_source_spec.radius != '');
             var light_multiplier   = 1;
-
             var character = getObj("character", obj.get("represents"));
             if (character) {
               var npcspecialqualities = getAttrByName(character.id, "npcspecialqualities").toLowerCase();
@@ -1470,7 +1469,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                   light_multiplier = 4;
                 };
               };
-
               var match_result = npcspecialqualities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);
               if (match_result == null) { match_result = racialabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/); };
               if (match_result == null) { match_result = classabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);  };
@@ -1493,7 +1491,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             obj.set("light_angle",        light_angle);
             obj.set("light_otherplayers", light_otherplayers);
             obj.set("light_multiplier",   light_multiplier);
-
           });
           break
         //              ██████╗ ██████╗  ██████╗ ██╗   ██╗██████╗       ██╗███╗   ██╗██╗████████╗██╗ █████╗ ████████╗██╗██╗   ██╗███████╗     ██████╗██╗  ██╗███████╗ ██████╗██╗  ██╗
