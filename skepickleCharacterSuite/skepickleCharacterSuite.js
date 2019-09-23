@@ -20,29 +20,26 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //GMPlayer: Campaign
   };
 
-  // String Utility Functions
+  // ███████╗████████╗██████╗ ██╗███╗   ██╗ ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
+  // ██╔════╝╚══██╔══╝██╔══██╗██║████╗  ██║██╔════╝     ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
+  // ███████╗   ██║   ██████╔╝██║██╔██╗ ██║██║  ███╗    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
+  // ╚════██║   ██║   ██╔══██╗██║██║╚██╗██║██║   ██║    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║██╔══╝  ╚════██║
+  // ███████║   ██║   ██║  ██║██║██║ ╚████║╚██████╔╝    ╚██████╔╝   ██║   ██║███████╗██║   ██║   ██║███████╗███████║
+  // ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝      ╚═════╝    ╚═╝   ╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝
 
   var nonvalue_characters = [""," ","-","֊","־","᠆","‐","‑","‒","–","—","―","⁻","₋","−","⸺","⸻","﹘","﹣","－"];
 
-  var toTitleCase = function(str) {
+  var stringToTitleCase = function(str) {
     str = str.toLowerCase().split(' ');
     for (var i = 0; i < str.length; i++) {
       str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
     };
     return str.join(' ');
-  }; // toTitleCase
+  }; // stringToTitleCase
 
-  var trimWhitespace = function(str) {
+  var stringTrimWhitespace = function(str) {
     return str.replace(/ +/g, " ").replace(/^ /, "").replace(/ $/, "").replace(/ *, */g, ",");
-  }; // trimWhitespace
-
-  var decodeRoll20String = function(str) {
-    str = decodeURI(str);
-    str = str.replace(/%3A/g, ':');
-    str = str.replace(/%23/g, '#');
-    str = str.replace(/%3F/g, '?');
-    return str;
-  }; // decodeRoll20String
+  }; // stringTrimWhitespace
 
   var getStringRegister = function(str,register) {
     // {register}2|efftype:e|damtype:k|end3|norange|pe|str13|wo1{/register}
@@ -114,19 +111,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     return generateUUID().replace(/_/g, "Z");
   };
 
-  var escapeRoll20Macro = function(str) {
-    return str.replace(/\&/g,  "&amp;")
-              .replace(/\#/g,  "&#35;")
-              .replace(/\@{/g, "&#64;{")
-              .replace(/\%{/g, "&#37;{")
-              .replace(/\?{/g, "&#63;{")
-              .replace(/\[\[/g,"&#91;&#91;")
-              .replace(/\{\{/g,"&#123;&#123;")
-              .replace(/\]\]/g,"&#93;&#93;")
-              .replace(/\}\}/g,"&#125;&#125;");
-  }; // escapeRoll20Macro
-
-  // D&D 3.5e Tables
+  // ██████╗    ██╗   ██████╗     ██████╗    ███████╗    ████████╗ █████╗ ██████╗ ██╗     ███████╗███████╗
+  // ██╔══██╗   ██║   ██╔══██╗    ╚════██╗   ██╔════╝    ╚══██╔══╝██╔══██╗██╔══██╗██║     ██╔════╝██╔════╝
+  // ██║  ██║████████╗██║  ██║     █████╔╝   ███████╗       ██║   ███████║██████╔╝██║     █████╗  ███████╗
+  // ██║  ██║██╔═██╔═╝██║  ██║     ╚═══██╗   ╚════██║       ██║   ██╔══██║██╔══██╗██║     ██╔══╝  ╚════██║
+  // ██████╔╝██████║  ██████╔╝    ██████╔╝██╗███████║       ██║   ██║  ██║██████╔╝███████╗███████╗███████║
+  // ╚═════╝ ╚═════╝  ╚═════╝     ╚═════╝ ╚═╝╚══════╝       ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝╚══════╝
 
   var dnd35 = {
     all_source_texts: {
@@ -278,7 +268,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     light_sources:       function() { return this.merge_maps("light_sources"); }
   };
 
-  // D&D 3.5e Utility Functions
+  // ██████╗    ██╗   ██████╗     ██████╗    ███████╗    ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
+  // ██╔══██╗   ██║   ██╔══██╗    ╚════██╗   ██╔════╝    ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
+  // ██║  ██║████████╗██║  ██║     █████╔╝   ███████╗    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
+  // ██║  ██║██╔═██╔═╝██║  ██║     ╚═══██╗   ╚════██║    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║██╔══╝  ╚════██║
+  // ██████╔╝██████║  ██████╔╝    ██████╔╝██╗███████║    ╚██████╔╝   ██║   ██║███████╗██║   ██║   ██║███████╗███████║
+  // ╚═════╝ ╚═════╝  ╚═════╝     ╚═════╝ ╚═╝╚══════╝     ╚═════╝    ╚═╝   ╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝
 
   var abilityScoreToMod = function(score) {
     if (isNaN(score)) {
@@ -379,7 +374,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     };
     var match_result = skillString.match(/^([^(]+)(\(.+\)){0,1}$/i);
     if (match_result[1] === undefined) { return null; };
-    var skill_name = trimWhitespace(match_result[1]);
+    var skill_name = stringTrimWhitespace(match_result[1]);
     if (skill_name == "") { return null; }
     if (match_result[2] === undefined) {
       if (skills[skill_name.toLowerCase()] === undefined) { return null; };
@@ -387,11 +382,101 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     } else {
       skill_name = skill_name+'()';
       if (skills[skill_name.toLowerCase()] === undefined) { return null; };
-      return Object.assign({}, skills[skill_name.toLowerCase()], { sub: trimWhitespace(match_result[2].replace(/^\(/, "").replace(/\)$/, "").toLowerCase()) });
+      return Object.assign({}, skills[skill_name.toLowerCase()], { sub: stringTrimWhitespace(match_result[2].replace(/^\(/, "").replace(/\)$/, "").toLowerCase()) });
     };
   }; // getSkillSpecification
 
-  // Roll20 Attribute Utility Functions
+  // ██████╗  ██████╗ ██╗     ██╗     ██████╗  ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
+  // ██╔══██╗██╔═══██╗██║     ██║     ╚════██╗██╔═████╗    ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
+  // ██████╔╝██║   ██║██║     ██║      █████╔╝██║██╔██║    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
+  // ██╔══██╗██║   ██║██║     ██║     ██╔═══╝ ████╔╝██║    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║██╔══╝  ╚════██║
+  // ██║  ██║╚██████╔╝███████╗███████╗███████╗╚██████╔╝    ╚██████╔╝   ██║   ██║███████╗██║   ██║   ██║███████╗███████║
+  // ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝ ╚═════╝      ╚═════╝    ╚═╝   ╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝
+  //  ██████╗ ███████╗███╗   ██╗███████╗██████╗  █████╗ ██╗
+  // ██╔════╝ ██╔════╝████╗  ██║██╔════╝██╔══██╗██╔══██╗██║
+  // ██║  ███╗█████╗  ██╔██╗ ██║█████╗  ██████╔╝███████║██║
+  // ██║   ██║██╔══╝  ██║╚██╗██║██╔══╝  ██╔══██╗██╔══██║██║
+  // ╚██████╔╝███████╗██║ ╚████║███████╗██║  ██║██║  ██║███████╗
+  //  ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+
+  var escapeRoll20Macro = function(str) {
+    return str.replace(/\&/g,  "&amp;")
+              .replace(/\#/g,  "&#35;")
+              .replace(/\@{/g, "&#64;{")
+              .replace(/\%{/g, "&#37;{")
+              .replace(/\?{/g, "&#63;{")
+              .replace(/\[\[/g,"&#91;&#91;")
+              .replace(/\{\{/g,"&#123;&#123;")
+              .replace(/\]\]/g,"&#93;&#93;")
+              .replace(/\}\}/g,"&#125;&#125;");
+  }; // escapeRoll20Macro
+
+  var decodeRoll20String = function(str) {
+    str = decodeURI(str);
+    str = str.replace(/%3A/g, ':');
+    str = str.replace(/%23/g, '#');
+    str = str.replace(/%3F/g, '?');
+    return str;
+  }; // decodeRoll20String
+
+  var renderDefaultTemplate = function(scope, id, fields) {
+    var character = getObj("character", id);
+    var str = ''.concat("&{template:default} {{name=",scope,"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "character_name"),"}}");
+    for (var k in fields) {
+      str = str.concat(" {{"+k+"= "+escapeRoll20Macro(fields[k])+"}}");
+    };
+    return str;
+  }; // renderDefaultTemplate
+
+  var throwDefaultTemplate = function(scope, id, fields) {
+    throw renderDefaultTemplate(scope, id, fields);
+  }; // throwDefaultTemplate
+
+  var respondToChat = function(msg,str,noArchive=true) {
+    var playerName = msg.who;
+    if (playerIsGM(msg.playerid)) { playerName = playerName.replace(new RegExp(" \\(GM\\)$"), "") };
+    sendChat("skepickleCharacterSuite", '/w "'+playerName+'" '+str, null, {noarchive:noArchive});
+  }; // respondToChat
+
+  var getSelectedTokenIDs = function(msg) {
+    var ids=[];
+    if (msg.selected) {
+      for (var selected of msg.selected) {
+        try {
+          if (selected["_type"] != "graphic") { continue; }; // Silently skip over selected non-graphics
+          var obj = getObj("graphic", selected["_id"]);
+          if (obj.get("_subtype") != "token") {
+            respondToChat(msg,"&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
+            continue;
+          };
+          if (obj.get("represents") != "") {
+            var character = getObj("character", obj.get("represents"));
+            if (!getAttrByName(character.id, "character_sheet").match(/D&D3.5 v[\.0-9]*/)) {
+              respondToChat(msg,"&{template:default} {{name=ERROR}} {{Not a D&D3.5 character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
+              continue;
+            };
+          };
+          ids.push(selected["_id"]);
+        } catch(e) {
+          respondToChat(msg,e);
+        };
+      };
+    };
+    return ids;
+  }; // getSelectedTokenIDs
+
+  // ██████╗  ██████╗ ██╗     ██╗     ██████╗  ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
+  // ██╔══██╗██╔═══██╗██║     ██║     ╚════██╗██╔═████╗    ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
+  // ██████╔╝██║   ██║██║     ██║      █████╔╝██║██╔██║    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
+  // ██╔══██╗██║   ██║██║     ██║     ██╔═══╝ ████╔╝██║    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║██╔══╝  ╚════██║
+  // ██║  ██║╚██████╔╝███████╗███████╗███████╗╚██████╔╝    ╚██████╔╝   ██║   ██║███████╗██║   ██║   ██║███████╗███████║
+  // ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝ ╚═════╝      ╚═════╝    ╚═╝   ╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝
+  //  █████╗ ████████╗████████╗██████╗ ██╗██████╗ ██╗   ██╗████████╗███████╗
+  // ██╔══██╗╚══██╔══╝╚══██╔══╝██╔══██╗██║██╔══██╗██║   ██║╚══██╔══╝██╔════╝
+  // ███████║   ██║      ██║   ██████╔╝██║██████╔╝██║   ██║   ██║   █████╗
+  // ██╔══██║   ██║      ██║   ██╔══██╗██║██╔══██╗██║   ██║   ██║   ██╔══╝
+  // ██║  ██║   ██║      ██║   ██║  ██║██║██████╔╝╚██████╔╝   ██║   ███████╗
+  // ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚═╝  ╚═╝╚═╝╚═════╝  ╚═════╝    ╚═╝   ╚══════╝
 
   var isAttrByNameDefined = function(id, attrib) {
     var attribute = findObjs({
@@ -482,16 +567,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     if (max) { obj.setWithWorker("max", max); };
   }; // setAttrByName
 
-
-
-
-
-
-
-
-
-
-  // Roll20 Character Sheet Utility Functions
+  // ██████╗  ██████╗ ██╗     ██╗     ██████╗  ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
+  // ██╔══██╗██╔═══██╗██║     ██║     ╚════██╗██╔═████╗    ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
+  // ██████╔╝██║   ██║██║     ██║      █████╔╝██║██╔██║    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
+  // ██╔══██╗██║   ██║██║     ██║     ██╔═══╝ ████╔╝██║    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║██╔══╝  ╚════██║
+  // ██║  ██║╚██████╔╝███████╗███████╗███████╗╚██████╔╝    ╚██████╔╝   ██║   ██║███████╗██║   ██║   ██║███████╗███████║
+  // ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝ ╚═════╝      ╚═════╝    ╚═╝   ╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝
+  //  ██████╗██╗  ██╗ █████╗ ██████╗  █████╗  ██████╗████████╗███████╗██████╗     ███████╗██╗  ██╗███████╗███████╗████████╗
+  // ██╔════╝██║  ██║██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗    ██╔════╝██║  ██║██╔════╝██╔════╝╚══██╔══╝
+  // ██║     ███████║███████║██████╔╝███████║██║        ██║   █████╗  ██████╔╝    ███████╗███████║█████╗  █████╗     ██║
+  // ██║     ██╔══██║██╔══██║██╔══██╗██╔══██║██║        ██║   ██╔══╝  ██╔══██╗    ╚════██║██╔══██║██╔══╝  ██╔══╝     ██║
+  // ╚██████╗██║  ██║██║  ██║██║  ██║██║  ██║╚██████╗   ██║   ███████╗██║  ██║    ███████║██║  ██║███████╗███████╗   ██║
+  //  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝    ╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝   ╚═╝
 
   var getSkillAttrName = function(id, skill_spec) {
     var skill_attrib = skill_spec.attrib;
@@ -514,9 +601,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         otherskill_rowids.forEach( rowID => {
           if (!found_skill) {
             //log("repeating row "+rowID+"...");
-            var otherskillname = trimWhitespace(getAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillname")).
-                                                  replace(/\* *$/,"").
-                                                  replace(/ +\(/g,"("));
+            var otherskillname = stringTrimWhitespace(getAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillname")).
+                                                      replace(/\* *$/,"").
+                                                      replace(/ +\(/g,"("));
             //log(otherskillname.toLowerCase() + " vs " + ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase());
             if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")")) {
               skill_attrib = ''.concat('repeating_skills_',rowID,"_otherskill");
@@ -533,9 +620,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       var found_skill = false;
       otherskill_rowids.forEach( rowID => {
         if (!found_skill) {
-          var otherskillname = trimWhitespace(getAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillname")).
-                                                replace(/\* *$/,"").
-                                                replace(/ +\(/g,"("));
+          var otherskillname = stringTrimWhitespace(getAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillname")).
+                                                    replace(/\* *$/,"").
+                                                    replace(/ +\(/g,"("));
           //log(otherskillname.toLowerCase() + " vs " + ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase());
           if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase()) {
             skill_attrib = ''.concat('repeating_skills_',rowID,"_otherskill");
@@ -563,19 +650,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //log("}");
     return skill_attrib;
   }; // getSkillAttrName
-
-  var renderDefaultTemplate = function(scope, id, fields) {
-    var character = getObj("character", id);
-    var str = ''.concat("&{template:default} {{name=",scope,"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "character_name"),"}}");
-    for (var k in fields) {
-      str = str.concat(" {{"+k+"= "+escapeRoll20Macro(fields[k])+"}}");
-    };
-    return str;
-  }; // renderDefaultTemplate
-
-  var throwDefaultTemplate = function(scope, id, fields) {
-    throw renderDefaultTemplate(scope, id, fields);
-  }; // throwDefaultTemplate
 
   var mookAuditNPCSheet = function(id) {
     // Check all purely numeric fields
@@ -631,12 +705,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       if (result[1] === undefined) {
         throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npctype', 'Invalid Type Value': npctype});
       };
-      var type = trimWhitespace(result[1]);
+      var type = stringTrimWhitespace(result[1]);
       if (!dnd35.types().includes(type.toLowerCase())) {
         throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npctype', 'Invalid Type Value': type});
       };
       if (result[2] !== undefined) {
-        trimWhitespace(result[2]).replace(/^\(/, "").replace(/\)$/, "").split(",").forEach(function(subtype) {
+        stringTrimWhitespace(result[2]).replace(/^\(/, "").replace(/\)$/, "").split(",").forEach(function(subtype) {
           if (!dnd35.subtypes().includes(subtype.toLowerCase())) {
             throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npctype', 'Invalid Subtype Value': subtype});
           };
@@ -647,7 +721,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     // npchitdie
     {
       var npchitdie = getAttrByName(id, "npchitdie");
-      if (!trimWhitespace(npchitdie).replace(/ plus /gi, "+").replace(/ +/g, "").match(/^([+-]{0,1}([0-9]+[-+*/])*[0-9]*d[0-9]+([+-][0-9]+)*)+$/i)) {
+      if (!stringTrimWhitespace(npchitdie).replace(/ plus /gi, "+").replace(/ +/g, "").match(/^([+-]{0,1}([0-9]+[-+*/])*[0-9]*d[0-9]+([+-][0-9]+)*)+$/i)) {
         throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npchitdie', 'Invalid Value': npchitdie});
       };
     };
@@ -663,8 +737,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     // npcspeed
     {
       var npcspeed = getAttrByName(id, "npcspeed");
-      var npcspeeds = trimWhitespace(npcspeed.toLowerCase()
-                                       .replace(/([0-9]+) *(feet|foot|ft\.*|')/g, "$1"))
+      var npcspeeds = stringTrimWhitespace(npcspeed.toLowerCase()
+                                           .replace(/([0-9]+) *(feet|foot|ft\.*|')/g, "$1"))
                         .split(",");
       var mode_type_map = {};
       npcspeeds.forEach(function(e) {
@@ -701,8 +775,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //npcarmorclassinfo
     {
       var npcarmorclassinfo = getAttrByName(id, "npcarmorclassinfo");
-      var npcarmorclassinfos = trimWhitespace(npcarmorclassinfo.toLowerCase())
-                                 .split(",");
+      var npcarmorclassinfos = stringTrimWhitespace(npcarmorclassinfo.toLowerCase())
+                                                    .split(",");
       var bonus_type_map = {};
       npcarmorclassinfos.forEach(function(e) {
         let result = e.match(/^[+]{0,1}([-]{0,1}[0-9]+) +(.*)+$/);
@@ -729,8 +803,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
     // npcspace
     {
-      var npcspace = trimWhitespace(getAttrByName(id, "npcspace").toLowerCase()
-                                       .replace(/^([0-9]+) *(feet|foot|ft\.*|')$/g, "$1"));
+      var npcspace = stringTrimWhitespace(getAttrByName(id, "npcspace").toLowerCase()
+                                          .replace(/^([0-9]+) *(feet|foot|ft\.*|')$/g, "$1"));
       if (isNaN(npcspace)) {
         throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcspace', 'Invalid value': getAttrByName(id, "npcspace")});
       };
@@ -738,8 +812,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
     // npcreach
     {
-      var npcreach = trimWhitespace(getAttrByName(id, "npcreach").toLowerCase()
-                                       .replace(/^([0-9]+) *(feet|foot|ft\.*|')$/g, "$1"));
+      var npcreach = stringTrimWhitespace(getAttrByName(id, "npcreach").toLowerCase()
+                                          .replace(/^([0-9]+) *(feet|foot|ft\.*|')$/g, "$1"));
       if (isNaN(npcreach)) {
         throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcreach', 'Invalid value': getAttrByName(id, "npcreach")});
       };
@@ -748,16 +822,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     // npcskills
     {
       var npcskills = getAttrByName(id, "npcskills");
-      npcskills = trimWhitespace(npcskills).split(",");
+      npcskills = stringTrimWhitespace(npcskills).split(",");
       npcskills.forEach(function(npcSkillsEntry) {
         if (npcSkillsEntry == "") { return; }; // Not an error, just an empty skills field!
         let match_result = npcSkillsEntry.match(/([a-z() ]+)([+]{0,1}([-]{0,1}[0-9]+))/i);
         if (match_result[1] === undefined) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Invalid Entry': npcSkillsEntry}); };
-        var skill_name = trimWhitespace(match_result[1]);
+        var skill_name = stringTrimWhitespace(match_result[1]);
         if (skill_name == "") { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Empty Skill Entry': npcSkillsEntry}); };
         if (match_result[3] === undefined) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Skill Bonus Missing': npcSkillsEntry}); };
         if (isNaN(match_result[3])) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Skill Bonus Not a Number': npcSkillsEntry}); };
-        var skill_bonus = parseFloat(trimWhitespace(match_result[3]));
+        var skill_bonus = parseFloat(stringTrimWhitespace(match_result[3]));
         var skill_spec = getSkillSpecification(skill_name);
         if (skill_spec == null) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Unknown Skill': npcSkillsEntry}); };
       });
@@ -832,7 +906,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                 maneuver == "poor"    ||
                 maneuver == "clumsy"  ||
                 maneuver == "none") {
-              setAttrByName(id, "fly-maneuver", toTitleCase(maneuver));
+              setAttrByName(id, "fly-maneuver", stringToTitleCase(maneuver));
             };
             break;
           case 'glide':
@@ -884,12 +958,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         var k = e.split(/ (.+)/)[1];
         if (k.match(/(shield|buckler)/)) {
           setAttrByName(id, "shieldworn", 1);
-          setAttrByName(id, "shield", toTitleCase(k));
+          setAttrByName(id, "shield", stringToTitleCase(k));
           setAttrByName(id, "shieldbonus", parseFloat(tokens[0]));
           return;
         } else {
           setAttrByName(id, "armorworn", 1);
-          setAttrByName(id, "acitem", toTitleCase(k));
+          setAttrByName(id, "acitem", stringToTitleCase(k));
           setAttrByName(id, "acitembonus", parseFloat(tokens[0]));
           return;
         };
@@ -954,12 +1028,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       {
         // Iterate through entries in npcskills field to adjust the map
         var npcskills = getAttrByName(id, "npcskills");
-        npcskills = trimWhitespace(npcskills).split(",");
+        npcskills = stringTrimWhitespace(npcskills).split(",");
         npcskills.forEach(function(npcSkillsEntry) {
           if (npcSkillsEntry == "") { return; }; // Not an error, just an empty skills field!
           let match_result = npcSkillsEntry.match(/([a-z() ]+)([+]{0,1}([-]{0,1}[0-9]+))/i);
-          var skill_name = trimWhitespace(match_result[1]);
-          var npc_skill_bonus = parseFloat(trimWhitespace(match_result[3]));
+          var skill_name = stringTrimWhitespace(match_result[1]);
+          var npc_skill_bonus = parseFloat(stringTrimWhitespace(match_result[3]));
           var skill_spec = getSkillSpecification(skill_name);
           if ((skill_spec == null) || (skill_spec.base === undefined)) {
             throwDefaultTemplate("mookInferPCSheet()",id,{'Error': 'Unknown skill', 'Skill Name': skill_name});
@@ -1007,6 +1081,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   //    log(weaponNname);
   //  };
   //}; // checkSheetMacros
+
+  // ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██╗     ███████╗██████╗
+  // ██║  ██║██╔══██╗████╗  ██║██╔══██╗██║     ██╔════╝██╔══██╗
+  // ███████║███████║██╔██╗ ██║██║  ██║██║     █████╗  ██████╔╝
+  // ██╔══██║██╔══██║██║╚██╗██║██║  ██║██║     ██╔══╝  ██╔══██╗
+  // ██║  ██║██║  ██║██║ ╚████║██████╔╝███████╗███████╗██║  ██║
+  // ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝
+  //  █████╗ ██████╗ ██████╗      ██████╗ ██████╗  █████╗ ██████╗ ██╗  ██╗██╗ ██████╗
+  // ██╔══██╗██╔══██╗██╔══██╗    ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║  ██║██║██╔════╝
+  // ███████║██║  ██║██║  ██║    ██║  ███╗██████╔╝███████║██████╔╝███████║██║██║
+  // ██╔══██║██║  ██║██║  ██║    ██║   ██║██╔══██╗██╔══██║██╔═══╝ ██╔══██║██║██║
+  // ██║  ██║██████╔╝██████╔╝    ╚██████╔╝██║  ██║██║  ██║██║     ██║  ██║██║╚██████╗
+  // ╚═╝  ╚═╝╚═════╝ ╚═════╝      ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝ ╚═════╝
 
   var handleAddGraphic = function(obj) {
     var objLayer = obj.get("layer");
@@ -1117,38 +1204,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     });
   }; // handleAddGraphic
 
-  var respondToChat = function(msg,str,noArchive=true) {
-    var playerName = msg.who;
-    if (playerIsGM(msg.playerid)) { playerName = playerName.replace(new RegExp(" \\(GM\\)$"), "") };
-    sendChat("skepickleCharacterSuite", '/w "'+playerName+'" '+str, null, {noarchive:noArchive});
-  }; // respondToChat
-
-  var getSelectedTokenIDs = function(msg) {
-    var ids=[];
-    if (msg.selected) {
-      for (var selected of msg.selected) {
-        try {
-          if (selected["_type"] != "graphic") { continue; }; // Silently skip over selected non-graphics
-          var obj = getObj("graphic", selected["_id"]);
-          if (obj.get("_subtype") != "token") {
-            respondToChat(msg,"&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
-            continue;
-          };
-          if (obj.get("represents") != "") {
-            var character = getObj("character", obj.get("represents"));
-            if (!getAttrByName(character.id, "character_sheet").match(/D&D3.5 v[\.0-9]*/)) {
-              respondToChat(msg,"&{template:default} {{name=ERROR}} {{Not a D&D3.5 character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
-              continue;
-            };
-          };
-          ids.push(selected["_id"]);
-        } catch(e) {
-          respondToChat(msg,e);
-        };
-      };
-    };
-    return ids;
-  }; // getSelectedTokenIDs
+  // ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██╗     ███████╗██████╗
+  // ██║  ██║██╔══██╗████╗  ██║██╔══██╗██║     ██╔════╝██╔══██╗
+  // ███████║███████║██╔██╗ ██║██║  ██║██║     █████╗  ██████╔╝
+  // ██╔══██║██╔══██║██║╚██╗██║██║  ██║██║     ██╔══╝  ██╔══██╗
+  // ██║  ██║██║  ██║██║ ╚████║██████╔╝███████╗███████╗██║  ██║
+  // ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝
+  //  ██████╗██╗  ██╗ █████╗ ████████╗    ███╗   ███╗███████╗███████╗███████╗ █████╗  ██████╗ ███████╗
+  // ██╔════╝██║  ██║██╔══██╗╚══██╔══╝    ████╗ ████║██╔════╝██╔════╝██╔════╝██╔══██╗██╔════╝ ██╔════╝
+  // ██║     ███████║███████║   ██║       ██╔████╔██║█████╗  ███████╗███████╗███████║██║  ███╗█████╗
+  // ██║     ██╔══██║██╔══██║   ██║       ██║╚██╔╝██║██╔══╝  ╚════██║╚════██║██╔══██║██║   ██║██╔══╝
+  // ╚██████╗██║  ██║██║  ██║   ██║       ██║ ╚═╝ ██║███████╗███████║███████║██║  ██║╚██████╔╝███████╗
+  //  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝       ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
 
   var handleChatMessage = function(msg) {
     if (msg.type !== "api" || msg.content.indexOf("!scs ") === -1) { return; };
@@ -1339,7 +1406,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
             return;
           };
-          firstFragment = trimWhitespace(firstFragment.concat(" ", unprocessedFragments.join(" ")));
+          firstFragment = stringTrimWhitespace(firstFragment.concat(" ", unprocessedFragments.join(" ")));
           //log(firstFragment);
           processedFragments.concat(unprocessedFragments);
           unprocessedFragments = [];
@@ -1716,6 +1783,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       log("Encountered a problem on "+userCommand+" operation:\n"+e);
     };
   }; // handleChatMessage
+
+  // ███████╗ ██████╗██████╗ ██╗██████╗ ████████╗    ██╗███╗   ██╗██╗████████╗
+  // ██╔════╝██╔════╝██╔══██╗██║██╔══██╗╚══██╔══╝    ██║████╗  ██║██║╚══██╔══╝
+  // ███████╗██║     ██████╔╝██║██████╔╝   ██║       ██║██╔██╗ ██║██║   ██║
+  // ╚════██║██║     ██╔══██╗██║██╔═══╝    ██║       ██║██║╚██╗██║██║   ██║
+  // ███████║╚██████╗██║  ██║██║██║        ██║       ██║██║ ╚████║██║   ██║
+  // ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝       ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝
 
   var registerEventHandlers = function() {
     on('add:graphic',  handleAddGraphic);
