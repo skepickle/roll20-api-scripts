@@ -1428,6 +1428,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                 init_attrib_name = "npcinit";
               };
               init_macro = "[[(1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"})) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/100) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/10000)]]";
+              //TODO Consider javascript built-in random function for rolling...
             };
             try {
               sendChat(playerName,init_macro, init_macro_rsp => {
@@ -1614,6 +1615,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       } else {
                         char_name = roll_skill_map[char_name_unique].name;
                       };
+                      //TODO Consider javascript built-in random function for rolling...
                       sendChat(char_name_unique,''.concat('[[1d20 + ', roll_skill_map[char_name_unique].bonus, ']]'),function(check_msg) {
                         var check = 0;
                         char_name_unique = check_msg[0].who;
