@@ -174,6 +174,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                 'knowledge(religion)':      {base: 'knowledge(religion)',      attrib: 'knowreligion',                                      trained_only:true  },
                 'knowledge(the planes)':    {base: 'knowledge(the planes)',    attrib: 'knowplanes',                                        trained_only:true  },
                 'knowledge()':              {base: 'knowledge',                attrib: '',                  default_ability_mod: 'int-mod', trained_only:true  },
+                'speak language()':         {base: 'speak language',           attrib: '',                  default_ability_mod: '',        trained_only:true  },
                 'listen':                   {base: 'listen',                   attrib: 'listen',                                            trained_only:false },
                 'move silently':            {base: 'move silently',            attrib: 'movesilent',                                        trained_only:false },
                 'open lock':                {base: 'open lock',                attrib: 'openlock',                                          trained_only:true  },
