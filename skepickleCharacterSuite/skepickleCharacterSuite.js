@@ -298,7 +298,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
   var sizeToMod = function(size) {
     if (!dnd35.size_categories().includes(size.toLowerCase())) { log("error"); throw "{{error}}"; };
-    switch(size.toLowerCase()) {
+    switch (size.toLowerCase()) {
       case "fine":       return 4;
       case "diminutive": return 3;
       case "tiny":       return 2;
@@ -313,7 +313,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
   var sizeToArmorClassMod = function(size) {
     if (!dnd35.size_categories().includes(size.toLowerCase())) { log("error"); throw "{{error}}"; };
-    switch(size.toLowerCase()) {
+    switch (size.toLowerCase()) {
       case "fine":       return 8;
       case "diminutive": return 4;
       case "tiny":       return 2;
@@ -336,7 +336,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     size = parseFloat(size);
     //log(size);
     //log('=====');
-    switch(size) {
+    switch (size) {
       case  4: return 0;
       case  3: return 0;
       case  2: return 0;
@@ -354,7 +354,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       if (!dnd35.size_categories().includes(size)) { log("error"); throw "{{error}}"; };
       size = sizeToMod(size);
     };
-    switch(size) {
+    switch (size) {
       case  4: return 0;
       case  3: return 0;
       case  2: return 0;
@@ -376,14 +376,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     var match_result = skillString.match(/^([^(]+)(\(.+\)){0,1}$/i);
     if (match_result[1] === undefined) { return null; };
     var skill_name = stringTrimWhitespace(match_result[1]);
-    if (skill_name == "") { return null; }
+    if (skill_name == '') { return null; }
     if (match_result[2] === undefined) {
       if (skills[skill_name.toLowerCase()] === undefined) { return null; };
       return skills[skill_name.toLowerCase()];
     } else {
       skill_name = skill_name+'()';
       if (skills[skill_name.toLowerCase()] === undefined) { return null; };
-      return Object.assign({}, skills[skill_name.toLowerCase()], { sub: stringTrimWhitespace(match_result[2].replace(/^\(/, "").replace(/\)$/, "").toLowerCase()) });
+      return Object.assign({}, skills[skill_name.toLowerCase()], { sub: stringTrimWhitespace(match_result[2].replace(/^\(/, '').replace(/\)$/, '').toLowerCase()) });
     };
   }; // getSkillSpecification
 
@@ -589,8 +589,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       var found_skill = false;
       for (var skillindex=1; skillindex<4; skillindex++) {
         //log("match #: "+skillindex);
-        if (getAttrByName(id,
-                          skill_spec.attrib.replace(/\#/, ''.concat(skillindex,"name"))).toLowerCase() == skill_spec.sub.toLowerCase()) {
+        if (getAttrByName(id, skill_spec.attrib.replace(/\#/, ''.concat(skillindex,'name'))).toLowerCase() == skill_spec.sub.toLowerCase()) {
           skill_attrib = skill_spec.attrib.replace(/\#/, ''.concat(skillindex));
           found_skill = true;
           break;
@@ -602,45 +601,48 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         otherskill_rowids.forEach( rowID => {
           if (!found_skill) {
             //log("repeating row "+rowID+"...");
-            var otherskillname = stringTrimWhitespace(getAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillname")).
-                                                      replace(/\* *$/,"").
-                                                      replace(/ +\(/g,"("));
+            var otherskillname = stringTrimWhitespace(getAttrByName(id, ''.concat('repeating_skills_',rowID,'_otherskillname')).
+                                                      replace(/\* *$/,'').
+                                                      replace(/ +\(/g,'('));
             //log(otherskillname.toLowerCase() + " vs " + ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase());
             if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")")) {
-              skill_attrib = ''.concat('repeating_skills_',rowID,"_otherskill");
+              skill_attrib = ''.concat('repeating_skills_',rowID,'_otherskill');
               found_skill = true;
             };
           };
         });
       };
       if (!found_skill) {
-        skill_attrib=dnd35.skills()[skill_spec.base+"()"].default_ability_mod;
+        skill_attrib=dnd35.skills()[skill_spec.base+'()'].default_ability_mod;
       };
-    } else if (skill_spec.attrib == "") {
+    } else if (skill_spec.attrib == '') {
       const otherskill_rowids = getRepeatingSectionRowIDs(id, 'repeating_skills');
       var found_skill = false;
       otherskill_rowids.forEach( rowID => {
         if (!found_skill) {
-          var otherskillname = stringTrimWhitespace(getAttrByName(id, ''.concat("repeating_skills_",rowID,"_otherskillname")).
-                                                    replace(/\* *$/,"").
-                                                    replace(/ +\(/g,"("));
+          var otherskillname = stringTrimWhitespace(getAttrByName(id, ''.concat('repeating_skills_',rowID,'_otherskillname')).
+                                                    replace(/\* *$/,'').
+                                                    replace(/ +\(/g,'('));
           //log(otherskillname.toLowerCase() + " vs " + ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase());
-          if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,"(",skill_spec.sub,")").toLowerCase()) {
-            skill_attrib = ''.concat('repeating_skills_',rowID,"_otherskill");
+          if (otherskillname.toLowerCase() == ''.concat(skill_spec.base,'(',skill_spec.sub,')').toLowerCase()) {
+            skill_attrib = ''.concat('repeating_skills_',rowID,'_otherskill');
             found_skill = true;
           } else if (otherskillname.toLowerCase() == ''.concat(skill_spec.base).toLowerCase()) {
-            skill_attrib = ''.concat('repeating_skills_',rowID,"_otherskill");
+            skill_attrib = ''.concat('repeating_skills_',rowID,'_otherskill');
             found_skill = true;
           };
         };
       });
       if (!found_skill) {
-        switch(skill_spec.base) {
-          case "knowledge":
-          case "craft":
-          case "perform":
-          case "profession":
-            skill_attrib=dnd35.skills()[skill_spec.base+"()"].default_ability_mod;
+        switch (skill_spec.base) {
+          case 'knowledge':
+          case 'craft':
+          case 'perform':
+          case 'profession':
+            skill_attrib=dnd35.skills()[skill_spec.base+'()'].default_ability_mod;
+            break;
+          case 'speak language':
+            skill_attrib=null;
             break;
           default:
             skill_attrib=dnd35.skills()[skill_spec.base].default_ability_mod;
@@ -826,13 +828,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       npcskills = stringTrimWhitespace(npcskills).split(",");
       npcskills.forEach(function(npcSkillsEntry) {
         if (npcSkillsEntry == "") { return; }; // Not an error, just an empty skills field!
-        let match_result = npcSkillsEntry.match(/([a-z() ]+)([+]{0,1}([-]{0,1}[0-9]+))/i);
+        let match_result = npcSkillsEntry.match(/([a-z() ]+)([+]{0,1}([-]{0,1}[0-9]+)){0,1}/i);
+        if (match_result == null) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Invalid Entry': npcSkillsEntry}); };
         if (match_result[1] === undefined) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Invalid Entry': npcSkillsEntry}); };
         var skill_name = stringTrimWhitespace(match_result[1]);
         if (skill_name == "") { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Empty Skill Entry': npcSkillsEntry}); };
-        if (match_result[3] === undefined) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Skill Bonus Missing': npcSkillsEntry}); };
-        if (isNaN(match_result[3])) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Skill Bonus Not a Number': npcSkillsEntry}); };
-        var skill_bonus = parseFloat(stringTrimWhitespace(match_result[3]));
+        if (match_result[3] !== undefined) {
+          if (isNaN(match_result[3])) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Skill Bonus Not a Number': npcSkillsEntry}); };
+        } else {
+          if (!skill_name.toLowerCase().match(/Speak Language\([a-z ]+\)/i)) {
+            throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Skill Bonus Missing': npcSkillsEntry});
+          };
+        };
         var skill_spec = getSkillSpecification(skill_name);
         if (skill_spec == null) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Unknown Skill': npcSkillsEntry}); };
       });
@@ -897,7 +904,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           return;
         };
         var tokens = e.split(" ");
-        switch(tokens[0]) {
+        switch (tokens[0]) {
           case 'fly':
             setAttrByName(id, "fly-speed", tokens[1]);
             var maneuver = tokens[2].toLowerCase().replace(/[^a-z]/g, "");
@@ -939,7 +946,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
          .split(",");
       npcaclist.forEach(function(e) {
         var tokens = e.split(" ");
-        switch(tokens[1]) {
+        switch (tokens[1]) {
           case 'size':
           case 'dex':
             return;
@@ -1019,8 +1026,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         attr_obj.remove();
       });
       findObjs({
-        _type: "attribute",
-        _name: "_reporder_repeating_skills",
+        _type: 'attribute',
+        _name: '_reporder_repeating_skills',
         _characterid: id
       }).forEach(function(attr_obj) {
         //log("I deleting attribute: " + attr_obj.get('name'));
@@ -1028,52 +1035,61 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       });
       {
         // Iterate through entries in npcskills field to adjust the map
-        var npcskills = getAttrByName(id, "npcskills");
-        npcskills = stringTrimWhitespace(npcskills).split(",");
+        var npcskills = getAttrByName(id, 'npcskills');
+        var speakLanguage = [];
+        npcskills = stringTrimWhitespace(npcskills).split(',');
         npcskills.forEach(function(npcSkillsEntry) {
-          if (npcSkillsEntry == "") { return; }; // Not an error, just an empty skills field!
-          let match_result = npcSkillsEntry.match(/([a-z() ]+)([+]{0,1}([-]{0,1}[0-9]+))/i);
+          if (npcSkillsEntry == '') { return; }; // Not an error, just an empty skills field!
+          let match_result = npcSkillsEntry.match(/([a-z() ]+)([+]{0,1}([-]{0,1}[0-9]+)){0,1}/i);
           var skill_name = stringTrimWhitespace(match_result[1]);
-          var npc_skill_bonus = parseFloat(stringTrimWhitespace(match_result[3]));
+          var npc_skill_bonus;
+          if (match_result[3] !== undefined) {
+            npc_skill_bonus = parseFloat(stringTrimWhitespace(match_result[3]));
+          };
           var skill_spec = getSkillSpecification(skill_name);
           if ((skill_spec == null) || (skill_spec.base === undefined)) {
-            throwDefaultTemplate("mookInferPCSheet()",id,{'Error': 'Unknown skill', 'Skill Name': skill_name});
+            throwDefaultTemplate('mookInferPCSheet()',id,{'Error': 'Unknown skill', 'Skill Name': skill_name});
             return;
           };
           //log(skill_spec);
           var skill_attrib = getSkillAttrName(id, skill_spec);
           //log("---> "+skill_attrib);
-          if (["str-mod","dex-mod","con-mod","int-mod","wis-mod","cha-mod"].includes(skill_attrib)) {
+          if (['str-mod','dex-mod','con-mod','int-mod','wis-mod','cha-mod'].includes(skill_attrib)) {
             // A skill that's not defined YET on this character... so create it!
             var newRowID = generateUniqueRowID(id);
-            log("generateUniqueRowID("+id+") => "+newRowID);
-            setAttrByName(id, "repeating_skills_"+newRowID+"_otherskillname", skill_name);
-            setAttrByName(id, "repeating_skills_"+newRowID+"_otherskillstat", '@{'+skill_spec.default_ability_mod+'} ');
+            log('generateUniqueRowID('+id+') => '+newRowID);
+            setAttrByName(id, 'repeating_skills_'+newRowID+'_otherskillname', skill_name);
+            setAttrByName(id, 'repeating_skills_'+newRowID+'_otherskillstat', '@{'+skill_spec.default_ability_mod+'} ');
             skill_attrib = getSkillAttrName(id, skill_spec);
             //log(skill_attrib);
           };
-          if (["str-mod","dex-mod","con-mod","int-mod","wis-mod","cha-mod"].includes(skill_attrib)) {
+          if (['str-mod','dex-mod','con-mod','int-mod','wis-mod','cha-mod'].includes(skill_attrib)) {
             // A skill that's STILL not defined on this character!
-            throwDefaultTemplate("mookInferPCSheet()",id,{'Error': 'Custom skill missing', 'Skill Name': skill_name});
+            throwDefaultTemplate('mookInferPCSheet()',id,{'Error': 'Custom skill missing', 'Skill Name': skill_name});
           };
-          sendChat('GM',''.concat('[[@{',getAttrByName(id, "character_name"),'|',skill_attrib,'}]]'),function(attrib_msg) {
-            // Apply the map to PC-page
-            var skill_bonus = attrib_msg[0].inlinerolls[0]["results"]["total"];
-            var c_id = attrib_msg[0].who;
-            //log("test2");
-            setAttrByName(id, ''.concat(skill_attrib,"ranks"), npc_skill_bonus - skill_bonus);
-            if (skill_attrib.match(/^repeating_skills_/)) {
-              setAttrByName(id, ''.concat(skill_attrib,"skill"), 1);
-            } else {
-              setAttrByName(id, ''.concat(skill_attrib,"classskill"), 1);
-            };
-          });
+          if (skill_spec.base == 'speak language') {
+            speakLanguage.push(stringToTitleCase(skill_spec.sub));
+          } else {
+            sendChat('GM',''.concat('[[@{',getAttrByName(id, "character_name"),'|',skill_attrib,'}]]'),function(attrib_msg) {
+              // Apply the map to PC-page
+              var skill_bonus = attrib_msg[0].inlinerolls[0]['results']['total'];
+              var c_id = attrib_msg[0].who;
+              //log("test2");
+              setAttrByName(id, ''.concat(skill_attrib,'ranks'), npc_skill_bonus - skill_bonus);
+              if (skill_attrib.match(/^repeating_skills_/)) {
+                setAttrByName(id, ''.concat(skill_attrib,'skill'), 1);
+              } else {
+                setAttrByName(id, ''.concat(skill_attrib,'classskill'), 1);
+              };
+            });
+          };
         });
+        setAttrByName(id, 'languages', speakLanguage.join(','));
       };
     };
+    //TODO npcspecialqualities -> racialabilities
+    //TODO npcfeats -> feats
     //SKIP npcspecialattacks
-    //SKIP npcspecialqualities
-    //SKIP npcfeats
   }; // mookInferPCSheet
 
   //var checkSheetMacros = function(id) {
@@ -1147,7 +1163,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       if (isNaN(npcspeed))                 { log("INVALID npcspeed = "+npcspeed); speed = 0; } else { speed = npcspeed; };
       if (armorworn && isNaN(acitemspeed)) { log("INVALID acitemspeed = "+acitemspeed); acitemspeed = 1000; };
       if (encumbrload < 0) {
-        switch(npcspeed) {
+        switch (npcspeed) {
           case  20: speed = 15; break;
           case  30: speed = 20; break;
           case  40: speed = 30; break;
@@ -1245,7 +1261,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     };
 
     try {
-      switch(userCommand) {
+      switch (userCommand) {
         //             ███████╗ ██████╗ ██╗   ██╗██████╗  ██████╗███████╗ ████████╗███████╗██╗  ██╗████████╗
         //             ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔════╝ ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝
         // █████╗█████╗███████╗██║   ██║██║   ██║██████╔╝██║     █████╗█████╗██║   █████╗   ╚███╔╝    ██║
@@ -1257,7 +1273,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             //TODO Error / Usage message here
             break;
           };
-          switch(firstFragment) {
+          switch (firstFragment) {
             case 'list':
               var message_to_send = '';
               Object.keys(dnd35.all_source_texts).forEach(function(k,i) {
@@ -1283,42 +1299,41 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //             ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝██║  ██╗
         //             ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
         case '--mook':
-          if (!playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { /*TODO error message! */ return; };
           if (firstFragment == null) {
             //TODO Error / Usage message here
             break;
           };
           tokenIDs.forEach(function(idOfToken) {
-            try {
-              var obj = getObj("graphic", idOfToken);
-              var character = getObj("character", obj.get("represents"));
-              if (!character) {
-                respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+            var obj = getObj("graphic", idOfToken);
+            var character = getObj("character", obj.get("represents"));
+            if (!character) {
+              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+              return;
+            };
+            character.get("_defaulttoken", function(defaultToken) {
+              if (defaultToken !== "null") {
+                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Not a mook'}));
                 return;
               };
-              character.get("_defaulttoken", function(defaultToken) {
-                try {
-                  if (defaultToken !== "null") { throwDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Not a mook'}); };
-                  // At this point, we are sure that the selected token is a mook.
-                  switch(firstFragment) {
-                    case 'audit-npc-sheet':
-                      mookAuditNPCSheet(character.id);
-                      break;
-                    case 'infer-pc-sheet':
-                      mookInferPCSheet(character.id);
-                      break;
-                    case 'promote-to-skookum':
-                      //remaining arguments = new NPC's name
-                      //TODO Implement this?
-                      break;
-                  };
-                } catch(e) {
-                  respondToChat(msg,e);
+              try {
+                // At this point, we are sure that the selected token is a mook.
+                switch (firstFragment) {
+                  case 'audit-npc-sheet':
+                    mookAuditNPCSheet(character.id);
+                    break;
+                  case 'infer-pc-sheet':
+                    mookInferPCSheet(character.id);
+                    break;
+                  case 'promote-to-skookum':
+                    //remaining arguments = new NPC's name
+                    //TODO Implement this?
+                    break;
                 };
-              });
-            } catch(e) {
-              respondToChat(msg,e);
-            };
+              } catch(e) {
+                respondToChat(msg,e);
+              };
+            });
           });
           break;
         //             ███████╗██╗  ██╗ ██████╗  ██████╗ ██╗  ██╗██╗   ██╗███╗   ███╗
@@ -1333,36 +1348,35 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             break;
           };
           tokenIDs.forEach(function(idOfToken) {
-            try {
-              var obj = getObj("graphic", idOfToken);
-              var character = getObj("character", obj.get("represents"));
-              if (!character) {
-                respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+            var obj = getObj("graphic", idOfToken);
+            var character = getObj("character", obj.get("represents"));
+            if (!character) {
+              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+              return;
+            };
+            //TODO Check that msg.who can edit character!!
+            character.get("_defaulttoken", function(defaultToken) {
+              if (defaultToken !== "null") {
+                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Not a mook'}));
                 return;
               };
-              //TODO Check that msg.who can edit character!!
-              character.get("_defaulttoken", function(defaultToken) {
-                try {
-                  if (defaultToken !== "null") { throwDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Not a mook'}); };
-                  // At this point, we are sure that the selected token is a mook.
-                  switch(firstFragment) {
-                    case 'audit-weapon-macros':
-                      //TODO
-                      break;
-                    case 'audit-spell-macros':
-                      //TODO
-                      break;
-                    case 'create-spell-macros':
-                      //TODO
-                      break;
-                  };
-                } catch(e) {
-                  respondToChat(msg,e);
+              try {
+                // At this point, we are sure that the selected token is a mook.
+                switch (firstFragment) {
+                  case 'audit-weapon-macros':
+                    //TODO
+                    break;
+                  case 'audit-spell-macros':
+                    //TODO
+                    break;
+                  case 'fill-spell-macros':
+                    //TODO
+                    break;
                 };
-              });
-            } catch(e) {
-              respondToChat(msg,e);
-            };
+              } catch(e) {
+                respondToChat(msg,e);
+              };
+            });
           });
           break;
         //          ████████╗ ██████╗  ██████╗  ██████╗ ██╗     ███████╗    ██████╗ ███████╗ █████╗  ██████╗██╗  ██╗       █████╗ ██╗   ██╗██████╗  █████╗ ███████╗
@@ -1532,7 +1546,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                 init_attrib_name = "npcinit";
               };
               init_macro = "[[(1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"})) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/100) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/10000)]]";
-              //TODO Consider javascript built-in random function for rolling...
             };
             try {
               sendChat(playerName,init_macro, init_macro_rsp => {
@@ -1725,7 +1738,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       } else {
                         char_name = roll_skill_map[char_name_unique].name;
                       };
-                      //TODO Consider javascript built-in random function for rolling...
                       sendChat(char_name_unique,''.concat('[[1d20 + ', roll_skill_map[char_name_unique].bonus, ']]'),function(check_msg) {
                         var check = 0;
                         char_name_unique = check_msg[0].who;
