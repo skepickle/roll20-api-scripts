@@ -203,11 +203,23 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'torch':             { radius: 40,   dim: 20,   angle: '' },
         'daylight (spell)':  { radius: 120,  dim: 60,   angle: '' } },
       spells: {
-        // NOTE: Use '␍' character to indicate a carriage return
-        // ␍␍␍␍␍␍␍␍␍␍
-        // 01234567890
-        'acid arrow':   { ref: 'https://www.dandwiki.com/wiki/SRD:Acid_Arrow',   school: 'Conjuration␍(Creation) [Acid]', level: 'Sorcerer/Wizard 2',                  components: 'V, S, M, F', castingtime: '1 standard action', range: 'Long ([[400+(40*[[?{Casting Level}]])]] ft.)',   target_type: 'Effect', target: 'One arrow of acid',                                                                                                                                                    duration: '[[1+floor([[?{Casting Level}/3]])]] round(s)', saving_throw: 'None', spell_resistance: 'No',  text: 'A magical arrow of acid springs from your hand and speeds to its target. You must succeed on a ranged touch attack to hit your target. The arrow deals [2d4](!&#13;&#91;&#91;2d4&#93;&#93;) points of acid damage with no splash damage. The acid, unless somehow neutralized, lasts for another [[floor([[{?{Casting Level},18}kl1/3&]])]] round(s), dealing another [2d4](!&#13;&#91;&#91;2d4&#93;&#93;) points of damage in that round.',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    material: 'Material Component: Powdered rhubarb leaf and an adder\'s stomach.␍Focus: A dart.'},
-        'wall of fire': { ref: 'https://www.dandwiki.com/wiki/SRD:Wall_of_Fire', school: 'Evocation␍[Fire]',              level: 'Druid 5, Fire 4, Sorcerer/Wizard 4', components: 'V, S, M/DF', castingtime: '1 standard action', range: 'Medium ([[100+(10*[[?{Casting Level}]])]] ft.)', target_type: 'Effect', target: 'Opaque sheet of flame up to [[20*?{Casting Level}]] ft. long or a ring of fire with radius of up to [[5*floor([[?{Casting Level}/2]])]] ft.; either form 20 ft. high', duration: 'Concentration + [[?{Casting Level}]] rounds',  saving_throw: 'None', spell_resistance: 'Yes', text: 'An immobile, blazing curtain of shimmering violet fire springs into existence. One side of the wall, selected by you, sends forth waves of heat, dealing [2d4](!&#13;&#91;&#91;2d4&#93;&#93;) points of fire damage to creatures within 10 feet and [1d4](!&#13;&#91;&#91;1d4&#93;&#93;) points of fire damage to those past 10 feet but within 20 feet. The wall deals this damage when it appears and on your turn each round to all creatures in the area. In addition, the wall deals [2d6+1/lvl(max20)](!&#13;&#91;&#91;2d6+&#91;&#91;{?{Casting Level},20}kl1&#93;&#93;&#93;&#93;) points of fire damage to any creature passing through it. The wall deals double damage to undead creatures.␍If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that length goes out. (Do not divide cold damage by 4, as normal for objects.)␍*Wall of fire* can be made permanent with a *permanency* spell. A permanent *wall of fire* that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.', material: 'Arcane Material Component: A small piece of phosphorus.' }
+        // NOTE: Use '↲' character to indicate a carriage return
+        // NOTE: Use '’' character for appostrophes...
+        // NOTE: Use ‹ and › characters to delimiter ... a chat button
+        // NOTE: Use « and » characters to delimiter ... a chat button with escaped attributes/abilities
+        //TODO Add characters that are used to delimiter macro-buttons that need to be escaped.
+        // 0123456789
+        'acid arrow':   { ref: 'https://www.dandwiki.com/wiki/SRD:Acid_Arrow',   school: 'Conjuration↲(Creation) [Acid]', level: 'Sor/Wiz 2',                  components: 'V, S, M, F', castingtime: '1 standard action', range: 'long',   target_type: 'Effect', target: 'One arrow of acid',                                                                                                                                                    duration: '[[1+floor([[?{Casting Level}/3]])]] round(s)',   saving_throw: 'None', spell_resistance: 'No',  text: 'A magical arrow of acid springs from your hand and speeds to its target. You must succeed on a ranged touch attack to hit your target. The arrow deals ‹2d4› points of acid damage with no splash damage. The acid, unless somehow neutralized, lasts for another [[floor([[{?{Casting Level},18}kl1/3&]])]] round(s), dealing another ‹2d4› points of damage in that round.',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             material: 'Material Component: Powdered rhubarb leaf and an adder’s stomach.↲Focus: A dart.'},
+        'acid fog':     { ref: 'https://www.dandwiki.com/wiki/SRD:Acid_Fog',     school: 'Conjuration↲(Creation) [Acid]', level: 'Sor/Wiz 6, Water 7',         components: 'V, S, M/DF', castingtime: '1 standard action', range: 'medium', target_type: 'Effect', target: 'Fog spreads in 20-ft. radius, 20 ft. high',                                                                                                                            duration: '[[?{Casting Level}]] round(s)',                  saving_throw: 'None', spell_resistance: 'No',  text: '*Acid fog* creates a billowing mass of misty vapors similar to that produced by a [*solid fog*](https://www.dandwiki.com/wiki/SRD:Solid_Fog) spell. In addition to slowing creatures down and obscuring sight, this spell’s vapors are highly acidic. Each round on your turn, starting when you cast the spell, the fog deals ‹2d6› points of acid damage to each creature and object within it.',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        material: 'Arcane Material Component: A pinch of dried, powdered peas combined with powdered animal hoof.' },
+        'acid splash':  { ref: 'https://www.dandwiki.com/wiki/SRD:Acid_Splash',  school: 'Conjuration↲(Creation) [Acid]', level: 'Sor/Wiz 0',                  components: 'V, S',       castingtime: '1 standard action', range: 'close',  target_type: 'Effect', target: 'One missile of acid',                                                                                                                                                  duration: 'Instantaneous',                                  saving_throw: 'None', spell_resistance: 'No',  text: 'You fire a small orb of acid at the target. You must succeed on a ranged touch attack to hit your target. The orb deals ‹1d3› points of acid damage.',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     material: '' },
+        'wall of fire': { ref: 'https://www.dandwiki.com/wiki/SRD:Wall_of_Fire', school: 'Evocation↲[Fire]',              level: 'Druid 5, Fire 4, Sor/Wiz 4', components: 'V, S, M/DF', castingtime: '1 standard action', range: 'medium', target_type: 'Effect', target: 'Opaque sheet of flame up to [[20*?{Casting Level}]] ft. long or a ring of fire with radius of up to [[5*floor([[?{Casting Level}/2]])]] ft.; either form 20 ft. high', duration: 'Concentration + [[?{Casting Level}]] round(s)',  saving_throw: 'None', spell_resistance: 'Yes', text: 'An immobile, blazing curtain of shimmering violet fire springs into existence. One side of the wall, selected by you, sends forth waves of heat, dealing ‹2d4› points of fire damage to creatures within 10 feet and ‹1d4› points of fire damage to those past 10 feet but within 20 feet. The wall deals this damage when it appears and on your turn each round to all creatures in the area. In addition, the wall deals ‹2d6+1/lvl(max20)|[[2d6+[[{?{Casting Level},20}kl1]]]]› points of fire damage to any creature passing through it. The wall deals double damage to undead creatures.↲If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that length goes out. (Do not divide cold damage by 4, as normal for objects.)↲*Wall of fire* can be made permanent with a *permanency* spell. A permanent *wall of fire* that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.', material: 'Arcane Material Component: A small piece of phosphorus.' }
+      },
+      spell_ranges: {
+        'personal': 'Personal',
+        'touch':    'Touch',
+        'close':    'Close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.)',
+        'medium':   'Medium ([[100+(10*[[?{Casting Level}]])]] ft.)',
+        'long':     'Long ([[400+(40*[[?{Casting Level}]])]] ft.)',
       }
     },
     source_text_MM: {
@@ -277,7 +289,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     subtypes:            function() { return [...new Set([...this.creature_subtypes() ,...this.humanoid_subtypes()])]; },
     skills:              function() { return this.merge_maps("skills"); },
     light_sources:       function() { return this.merge_maps("light_sources"); },
-    spells:              function() { return this.merge_maps("spells"); }
+    spells:              function() { return this.merge_maps("spells"); },
+    spell_ranges:        function() { return this.merge_maps("spell_ranges"); }
   };
 
   // ██████╗    ██╗   ██████╗     ██████╗    ███████╗    ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
@@ -422,6 +435,30 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               .replace(/\]\]/g,"&#93;&#93;")
               .replace(/\}\}/g,"&#125;&#125;");
   }; // escapeRoll20Macro
+
+  var createChatButton = function(label, content) {
+    var escaped_content = content.replace(/\&/g, '&amp;')
+                                 .replace(/\)/g, '&#41;')
+                                 .replace(/\[\[/g,"&#91;&#91;")
+                                 .replace(/\{\{/g,"&#123;&#123;")
+                                 .replace(/\]\]/g,"&#93;&#93;")
+                                 .replace(/\}\}/g,"&#125;&#125;");
+    return ''.concat('[',label,'](!&#13;',escaped_content,')');
+  }; // createChatButton
+
+  var createEscapedChatButton = function(label, content) {
+    var escaped_content = content.replace(/\&/g, '&amp;')
+                                 .replace(/\)/g, '&#41;')
+                                 .replace(/\#/g,  "&#35;")
+                                 .replace(/\@{/g, "&#64;{")
+                                 .replace(/\%{/g, "&#37;{")
+                                 .replace(/\?{/g, "&#63;{")
+                                 .replace(/\[\[/g,"&#91;&#91;")
+                                 .replace(/\{\{/g,"&#123;&#123;")
+                                 .replace(/\]\]/g,"&#93;&#93;")
+                                 .replace(/\}\}/g,"&#125;&#125;");
+    return ''.concat('[',label,'](!&#13;',escaped_content,')');
+  }; // createEscapedChatButton
 
   var decodeRoll20String = function(str) {
     str = decodeURI(str);
@@ -1404,7 +1441,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                           if (dnd35.spells()[spell_name].ref.match(/^https{0,1}:\/\//)) {
                             spellmacro = spellmacro.concat(' {{subtags=casts [',spellname_attr.get('current'), '](', dnd35.spells()[spell_name].ref, ')}}');
                           } else {
-                            spellmacro = spellmacro.concat(' {{subtags=casts ',spellname_attr.get('current'),'␍',dnd35.spells()[spell_name].ref,'}}');
+                            spellmacro = spellmacro.concat(' {{subtags=casts ',spellname_attr.get('current'),'↲',dnd35.spells()[spell_name].ref,'}}');
                           };
                           spellmacro = spellmacro.concat(' {{School:=',dnd35.spells()[spell_name].school,'}}');
                           spellmacro = spellmacro.concat(' {{Level:=',dnd35.spells()[spell_name].level,'}}');
@@ -1414,18 +1451,38 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                           spellmacro = spellmacro.concat(' {{Casting level:=?{Casting Level|@{',default_casterlevel,'}}}}');
                           spellmacro = spellmacro.concat(' {{Components:=',dnd35.spells()[spell_name].components,'}}');
                           spellmacro = spellmacro.concat(' {{Casting Time:=',dnd35.spells()[spell_name].castingtime,'}}');
-                          spellmacro = spellmacro.concat(' {{Range:=',dnd35.spells()[spell_name].range,'}}');
+                          if (dnd35.spell_ranges()[dnd35.spells()[spell_name].range] === undefined) {
+                            spellmacro = spellmacro.concat(' {{Range:=',dnd35.spells()[spell_name].range,'}}');
+                          } else {
+                            spellmacro = spellmacro.concat(' {{Range:=',dnd35.spell_ranges()[dnd35.spells()[spell_name].range],'}}');
+                          };
                           spellmacro = spellmacro.concat(' {{',dnd35.spells()[spell_name].target_type,':=',dnd35.spells()[spell_name].target,'}}');
                           spellmacro = spellmacro.concat(' {{Duration:=',dnd35.spells()[spell_name].duration,'}}');
                           spellmacro = spellmacro.concat(' {{Saving Throw:=',dnd35.spells()[spell_name].saving_throw,'}}');
                           spellmacro = spellmacro.concat(' {{Spell Resist.:=',dnd35.spells()[spell_name].spell_resistance,'}}');
                           spellmacro = spellmacro.concat(' {{Caster level check:=[[1d20+?{Casting Level}+@{spellpen}]] vs spell resist.}}');
-                          spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]␍Result: }}');
+                          spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
                           spellmacro = spellmacro.concat(' {{succeedcheck=',dnd35.spells()[spell_name].text,'}}');
                           spellmacro = spellmacro.concat(' {{failcheck=**@{character_name} fails.**}}');
                           spellmacro = spellmacro.concat(' {{notes=',dnd35.spells()[spell_name].material,'}}');
-                          spellmacro = spellmacro.replace(/␍/g, "\n");
-                          //OMID
+                          log(spellmacro);
+                          while (spellmacro.match(/^.*‹[^›|]+›.*$/)) {
+                            var match_results = spellmacro.match(/^(.*)‹([^›|]+)›(.*)$/);
+                            spellmacro = ''.concat(match_results[1],createChatButton(match_results[2],''.concat('[[',match_results[2],']]')),match_results[3]);
+                            log(spellmacro);
+                          };
+                          while (spellmacro.match(/^.*‹[^›|]+\|[^›]+›.*$/)) {
+                            var match_results = spellmacro.match(/^(.*)‹([^›|]+)\|([^›]+)›(.*)$/);
+                            spellmacro = ''.concat(match_results[1],createChatButton(match_results[2],match_results[3]),match_results[4]);
+                            log(spellmacro);
+                          };
+                          //« and »
+                          while (spellmacro.match(/^.*«[^»|]+\|[^»]+».*$/)) {
+                            var match_results = spellmacro.match(/^(.*)«([^»|]+)\|([^»]+)»(.*)$/);
+                            spellmacro = ''.concat(match_results[1],createEscapedChatButton(match_results[2],match_results[3]),match_results[4]);
+                            log(spellmacro);
+                          };
+                          spellmacro = spellmacro.replace(/↲/g, "\n");
                           log("FOUND!");
                           //log(dnd35.spells()[spell_name]);
                           setAttrByName(character.id, ''.concat('repeating_spells',spell_section,spell_column,'_',rowID,'_spellmacro',spell_section,spell_column), spellmacro);
