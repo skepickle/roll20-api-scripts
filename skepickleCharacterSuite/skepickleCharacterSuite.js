@@ -213,13 +213,247 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // NOTE: Use « and » characters to delimiter ... a chat button with escaped attributes/abilities
         //TODO Add characters that are used to delimiter macro-buttons that need to be escaped.
         // 0123456789
-        'acid arrow':   { ref: 'https://www.dandwiki.com/wiki/SRD:Acid_Arrow',   school: 'Conjuration↲(Creation) [Acid]',             level: 'Sor/Wiz 2',                  components: 'V, S, M, F', casting_time: '1 standard action', range: 'long',   target_type: 'Effect', target: 'One arrow of acid',                                                                                                                                                    duration: '[[1+floor([[?{Casting Level}/3]])]] round(s)',   saving_throw: 'None', spell_resistance: 'No',             text: 'A magical arrow of acid springs from your hand and speeds to its target. You must succeed on a ranged touch attack to hit your target. The arrow deals [[2d4]] points of acid damage with no splash damage. The acid, unless somehow neutralized, lasts for another [[floor({?{Casting Level},18}kl1/3)]] round(s), dealing another ‹2d4|Delayed *Acid Arrow* Damage: [[2d4]] acid› points of damage each round.',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      material: '**Material Component:** Powdered rhubarb leaf and an adder’s stomach.↲**Focus:** A dart.' },
-        'acid fog':     { ref: 'https://www.dandwiki.com/wiki/SRD:Acid_Fog',     school: 'Conjuration↲(Creation) [Acid]',             level: 'Sor/Wiz 6, Water 7',         components: 'V, S, M/DF', casting_time: '1 standard action', range: 'medium', target_type: 'Effect', target: 'Fog spreads in 20-ft. radius, 20 ft. high',                                                                                                                            duration: '[[?{Casting Level}]] round(s)',                  saving_throw: 'None', spell_resistance: 'No',             text: '*Acid fog* creates a billowing mass of misty vapors similar to that produced by a [*solid fog*](https://www.dandwiki.com/wiki/SRD:Solid_Fog) spell. In addition to slowing creatures down and obscuring sight, this spell’s vapors are highly acidic. Each round on your turn, starting when you cast the spell, the fog deals ‹2d6› points of acid damage to each creature and object within it.',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     material: '**Arcane Material Component:** A pinch of dried, powdered peas combined with powdered animal hoof.' },
-        'acid splash':  { ref: 'https://www.dandwiki.com/wiki/SRD:Acid_Splash',  school: 'Conjuration↲(Creation) [Acid]',             level: 'Sor/Wiz 0',                  components: 'V, S',       casting_time: '1 standard action', range: 'close',  target_type: 'Effect', target: 'One missile of acid',                                                                                                                                                  duration: 'Instantaneous',                                  saving_throw: 'None', spell_resistance: 'No',             text: 'You fire a small orb of acid at the target. You must succeed on a ranged touch attack to hit your target. The orb deals [[1d3]] points of acid damage.',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                material: null },
-        'aid':          { ref: 'https://www.dandwiki.com/wiki/SRD:Aid',          school: 'Enchantment↲(Compulsion) [Mind-Affecting]', level: 'Clr 2, Good 2, Luck 2',      components: 'V, S, DF',   casting_time: '1 standard action', range: 'touch',  targer_type: 'Target', target: 'Living creature touched',                                                                                                                                              duration: '[[?{Casting Level}]] minute(s)',                 saving_throw: 'None', spell_resistance: 'Yes (harmless)', text: '*Aid* grants the target a +1 morale bonus on attack rolls and saves against fear effects, plus ‹temporary hit points|[[1d8+[[{?{Casting Level},10}kl1]]]]› equal to 1d8 + caster level (to a maximum of 1d8+10 temporary hit points at caster level 10th).',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            material: null },
-        'air walk':     { ref: 'https://www.dandwiki.com/wiki/SRD:Air_Walk',     school: 'Transmutation↲[Air]',                       level: 'Air 4, Clr 4, Drd 4',        components: 'V, S, DF',   casting_time: '1 standard action', range: 'touch',  target_type: 'Target', target: 'Creature (Gargantuan or smaller) touched',                                                                                                                             duration: '[[10*?{Casting Level}]] minute(s)',              saving_throw: 'None', spell_resistance: 'Yes (harmless)', text: 'The subject can tread on air as if walking on solid ground. Moving upward is similar to walking up a hill. The maximum upward or downward angle possible is 45 degrees, at a rate equal to one-half the air walker’s normal speed.↲A strong wind (21+ mph) can push the subject along or hold it back. At the end of its turn each round, the wind blows the air walker 5 feet for each 5 miles per hour of wind speed. The creature may be subject to additional penalties in exceptionally strong or turbulent winds, such as loss of control over movement or physical damage from being buffeted about.↲Should the spell duration expire while the subject is still aloft, the magic fails slowly. The subject floats downward 60 feet per round for ‹1d6› rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking ‹1d6› points of damage per 10 feet of fall. Since dispelling a spell effectively ends it, the subject also descends in this way if the *air walk* spell is dispelled, but not if it is negated by an *antimagic* field.↲You can cast *air walk* on a specially trained mount so it can be ridden through the air. You can train a mount to move with the aid of *air walk* (counts as a trick; see Handle Animal skill) with one week of work and a DC 25 Handle Animal check.', material: null },
-        'alarm':        { ref: 'https://www.dandwiki.com/wiki/SRD:Alarm',        school: 'Abjuration',                                level: 'Brd 1, Rgr 1, Sor/Wiz 1',    components: 'V, S, F/DF', casting_time: '1 standard action', range: 'close',  target_type: 'Area',   target: '20-ft.-radius emanation centered on a point in space',                                                                                                                 duration: '[[2*?{Casting Level}]] hour(s) (D)',             saving_throw: 'None', spell_resistance: 'No',             text: '*Alarm* sounds a mental or audible alarm each time a creature of Tiny or larger size enters the warded area or touches it. A creature that speaks the password (determined by you at the time of casting) does not set off the *alarm*. You decide at the time of casting whether the *alarm* will be mental or audible.↲*Mental Alarm:* A mental *alarm* alerts you (and only you) so long as you remain within 1 mile of the warded area. You note a single mental “ping” that awakens you from normal sleep but does not otherwise disturb concentration. A *silence* spell has no effect on a mental *alarm*.↲*Audible Alarm:* An audible *alarm* produces the sound of a hand bell, and anyone within 60 feet of the warded area can hear it clearly. Reduce the distance by 10 feet for each interposing closed door and by 20 feet for each substantial interposing wall.↲In quiet conditions, the ringing can be heard faintly as far as 180 feet away. The sound lasts for 1 round. Creatures within a *silence* spell cannot hear the ringing.↲Ethereal or astral creatures do not trigger the *alarm*.↲*Alarm* can be made permanent with a *permanency* spell.',                                                                                                                                                                                            material: '**Arcane Focus:** A tiny bell and a piece of very fine silver wire.'},
-        'wall of fire': { ref: 'https://www.dandwiki.com/wiki/SRD:Wall_of_Fire', school: 'Evocation↲[Fire]',                          level: 'Druid 5, Fire 4, Sor/Wiz 4', components: 'V, S, M/DF', casting_time: '1 standard action', range: 'medium', target_type: 'Effect', target: 'Opaque sheet of flame up to [[20*?{Casting Level}]] ft. long or a ring of fire with radius of up to [[5*floor([[?{Casting Level}/2]])]] ft.; either form 20 ft. high', duration: 'Concentration + [[?{Casting Level}]] round(s)',  saving_throw: 'None', spell_resistance: 'Yes',            text: 'An immobile, blazing curtain of shimmering violet fire springs into existence. One side of the wall, selected by you, sends forth waves of heat, dealing ‹2d4› points of fire damage to creatures within 10 feet and ‹1d4› points of fire damage to those past 10 feet but within 20 feet. The wall deals this damage when it appears and on your turn each round to all creatures in the area. In addition, the wall deals 2d6 points of fire damage +1 point of fire damage per caster level (maximum +20) to any creature ‹passing through|[[2d6+[[{?{Casting Level},20}kl1]]]]› it. The wall deals double damage to undead creatures.↲If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that length goes out. (Do not divide cold damage by 4, as normal for objects.)↲*Wall of fire* can be made permanent with a *permanency* spell. A permanent *wall of fire* that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.',                                                                                                                                                                                                                                    material: '**Arcane Material Component:** A small piece of phosphorus.' }
+        //'acid arrow':   { ref: 'https://www.dandwiki.com/wiki/SRD:Acid_Arrow',   school: 'Conjuration↲(Creation) [Acid]',             level: 'Sor/Wiz 2',                  components: 'V, S, M, F', casting_time: '1 standard action', range: 'long',   target_type: 'Effect', target: 'One arrow of acid',                                                                                                                                                    duration: '[[1+floor([[?{Casting Level}/3]])]] round(s)',   saving_throw: 'None',                            spell_resistance: 'No',                     text: 'A magical arrow of acid springs from your hand and speeds to its target. You must succeed on a ranged touch attack to hit your target. The arrow deals [[2d4]] points of acid damage with no splash damage. The acid, unless somehow neutralized, lasts for another [[floor({?{Casting Level},18}kl1/3)]] round(s), dealing another ‹2d4|Delayed *Acid Arrow* Damage: [[2d4]] acid› points of damage each round.',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          material: '**Material Component:** Powdered rhubarb leaf and an adder’s stomach.↲**Focus:** A dart.' },
+        'acid arrow': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Acid_Arrow',
+          school:           'Conjuration↲(Creation) [Acid]',
+          level:            'Sor/Wiz 2',
+          components:       'V, S, M, F',
+          casting_time:     '1 standard action',
+          range:            'long',
+          target_type:      'Effect',
+          target:           'One arrow of acid',
+          duration:         '[[1+floor([[?{Casting Level}/3]])]] round(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             'A magical arrow of acid springs from your hand and speeds to its target. You must succeed on a ranged touch attack to hit your target. The arrow deals [[2d4]] points of acid damage with no splash damage. The acid, unless somehow neutralized, lasts for another [[floor({?{Casting Level},18}kl1/3)]] round(s), dealing another ‹2d4|Delayed *Acid Arrow* Damage: [[2d4]] acid› points of damage each round.',
+          material:         '**Material Component:** Powdered rhubarb leaf and an adder’s stomach.↲**Focus:** A dart.'
+        },
+        'acid fog': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Acid_Fog',
+          school:           'Conjuration↲(Creation) [Acid]',
+          level:            'Sor/Wiz 6, Water 7',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Effect',
+          target:           'Fog spreads in 20-ft. radius, 20 ft. high',
+          duration:         '[[?{Casting Level}]] round(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             '*Acid fog* creates a billowing mass of misty vapors similar to that produced by a [*solid fog*](https://www.dandwiki.com/wiki/SRD:Solid_Fog) spell. In addition to slowing creatures down and obscuring sight, this spell’s vapors are highly acidic. Each round on your turn, starting when you cast the spell, the fog deals ‹2d6› points of acid damage to each creature and object within it.',
+          material:         '**Arcane Material Component:** A pinch of dried, powdered peas combined with powdered animal hoof.' },
+        'acid splash': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Acid_Splash',
+          school:           'Conjuration↲(Creation) [Acid]',
+          level:            'Sor/Wiz 0',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Effect',
+          target:           'One missile of acid',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             'You fire a small orb of acid at the target. You must succeed on a ranged touch attack to hit your target. The orb deals [[1d3]] points of acid damage.',
+          material: null
+        },
+        'aid': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Aid',
+          school:           'Enchantment↲(Compulsion) [Mind-Affecting]',
+          level:            'Clr 2, Good 2, Luck 2',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'touch',
+          targer_type:      'Target',
+          target:           'Living creature touched',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes (harmless)',
+          text:             '*Aid* grants the target a \`\`+1\`\` morale bonus on attack rolls and saves against fear effects, plus ‹temporary hit points|[[1d8+[[{?{Casting Level},10}kl1]]]]› equal to 1d8 + caster level (to a maximum of 1d8+10 temporary hit points at caster level 10th).',
+          material:         null
+        },
+        'air walk': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Air_Walk',
+          school:           'Transmutation↲[Air]',
+          level:            'Air 4, Clr 4, Drd 4',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'touch',
+          target_type:      'Target',
+          target:           'Creature (Gargantuan or smaller) touched',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The subject can tread on air as if walking on solid ground. Moving upward is similar to walking up a hill. The maximum upward or downward angle possible is 45 degrees, at a rate equal to one-half the air walker’s normal speed.
+                             A strong wind (21+ mph) can push the subject along or hold it back. At the end of its turn each round, the wind blows the air walker 5 feet for each 5 miles per hour of wind speed. The creature may be subject to additional penalties in exceptionally strong or turbulent winds, such as loss of control over movement or physical damage from being buffeted about.
+                             Should the spell duration expire while the subject is still aloft, the magic fails slowly. The subject floats downward 60 feet per round for ‹1d6› rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking ‹1d6› points of damage per 10 feet of fall. Since dispelling a spell effectively ends it, the subject also descends in this way if the *air walk* spell is dispelled, but not if it is negated by an *antimagic* field.
+                             You can cast *air walk* on a specially trained mount so it can be ridden through the air. You can train a mount to move with the aid of *air walk* (counts as a trick; see Handle Animal skill) with one week of work and a DC 25 Handle Animal check.`,
+          material:         null
+        },
+        'alarm': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Alarm',
+          school:           'Abjuration',
+          level:            'Brd 1, Rgr 1, Sor/Wiz 1',
+          components:       'V, S, F/DF',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Area',
+          target:           '20-ft.-radius emanation centered on a point in space',
+          duration:         '[[2*?{Casting Level}]] hour(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `*Alarm* sounds a mental or audible alarm each time a creature of Tiny or larger size enters the warded area or touches it. A creature that speaks the password (determined by you at the time of casting) does not set off the *alarm*. You decide at the time of casting whether the *alarm* will be mental or audible.
+                             *Mental Alarm:* A mental *alarm* alerts you (and only you) so long as you remain within 1 mile of the warded area. You note a single mental “ping” that awakens you from normal sleep but does not otherwise disturb concentration. A *silence* spell has no effect on a mental *alarm*.
+                             *Audible Alarm:* An audible *alarm* produces the sound of a hand bell, and anyone within 60 feet of the warded area can hear it clearly. Reduce the distance by 10 feet for each interposing closed door and by 20 feet for each substantial interposing wall.
+                             In quiet conditions, the ringing can be heard faintly as far as 180 feet away. The sound lasts for 1 round. Creatures within a *silence* spell cannot hear the ringing.
+                             Ethereal or astral creatures do not trigger the *alarm*.
+                             *Alarm* can be made permanent with a *permanency* spell.`,
+          material:         '**Arcane Focus:** A tiny bell and a piece of very fine silver wire.'
+        },
+        'align weapon': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Align_Weapon',
+          school:           'Transmutation↲[see text]',
+          level:            'Clr 2',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'touch',
+          target_type:      'Target',
+          target:           'Weapon touched or fifty projectiles (all of which must be in contact with each other at the time of casting)',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless, object)',
+          spell_resistance: 'Yes (harmless, object)',
+          text:             `*Align weapon* makes a weapon good, evil, lawful, or chaotic, as you choose. A weapon that is aligned can bypass the damage reduction of certain creatures. This spell has no effect on a weapon that already has an alignment.
+                             You can’t cast this spell on a natural weapon, such as an unarmed strike.
+                             When you make a weapon good, evil, lawful, or chaotic, *align weapon* is a good, evil, lawful, or chaotic spell, respectively.`,
+          material:         null
+        },
+        'alter self': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Alter_Self',
+          school:           'Transmutation',
+          level:            'Asn 2, Brd 2, Sor/Wiz 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `You assume the form of a creature of the same type as your normal form. The new form must be within one size category of your normal size. The maximum HD of an assumed form is equal to your caster level, to a maximum of 5 HD at 5th level. You can change into a member of your own kind or even into yourself.
+                             You retain your own ability scores. Your class and level, hit points, alignment, base attack bonus, and base save bonuses all remain the same. You retain all supernatural and spell-like special attacks and qualities of your normal form, except for those requiring a body part that the new form does not have (such as a mouth for a breath weapon or eyes for a gaze attack).
+                             You keep all extraordinary special attacks and qualities derived from class levels, but you lose any from your normal form that are not derived from class levels.
+                             If the new form is capable of speech, you can communicate normally. You retain any spellcasting ability you had in your original form, but the new form must be able to speak intelligibly (that is, speak a language) to use verbal components and must have limbs capable of fine manipulation to use somatic or material components.
+                             You acquire the physical qualities of the new form while retaining your own mind. Physical qualities include natural size, mundane movement capabilities (such as burrowing, climbing, walking, swimming, and flight with wings, to a maximum speed of 120 feet for flying or 60 feet for nonflying movement), natural armor bonus, natural weapons (such as claws, bite, and so on), racial skill bonuses, racial bonus feats, and any gross physical qualities (presence or absence of wings, number of extremities, and so forth). A body with extra limbs does not allow you to make more attacks (or more advantageous two-weapon attacks) than normal.
+                             You do not gain any extraordinary special attacks or special qualities not noted above under physical qualities, such as darkvision, low-light vision, blindsense, blindsight, fast healing, regeneration, scent, and so forth.
+                             You do not gain any supernatural special attacks, special qualities, or spell-like abilities of the new form. Your creature type and subtype (if any) remain the same regardless of your new form. You cannot take the form of any creature with a template, even if that template doesn’t change the creature type or subtype.
+                             You can freely designate the new form’s minor physical qualities (such as hair color, hair texture, and skin color) within the normal ranges for a creature of that kind. The new form’s significant physical qualities (such as height, weight, and gender) are also under your control, but they must fall within the norms for the new form’s kind. You are effectively disguised as an average member of the new form’s race. If you use this spell to create a disguise, you get a \`\`+10\`\` bonus on your Disguise check.
+                             When the change occurs, your equipment, if any, either remains worn or held by the new form (if it is capable of wearing or holding the item), or melds into the new form and becomes nonfunctional. When you revert to your true form, any objects previously melded into the new form reappear in the same location on your body they previously occupied and are once again functional. Any new items you wore in the assumed form and can’t wear in your normal form fall off and land at your feet; any that you could wear in either form or carry in a body part common to both forms at the time of reversion are still held in the same way. Any part of the body or piece of equipment that is separated from the whole reverts to its true form.`,
+          material:         null
+        },
+        'analyze dweomer': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Analyze_Dweomer',
+          school:           'Divination',
+          level:            'Brd 6, Sor/Wiz 6',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] object(s) or creature(s)',
+          duration:         '[[?{Casting Level}]] round(s) (D)',
+          saving_throw:     'None or Will negates; see text',
+          spell_resistance: 'No',
+          text:             `You discern all spells and magical properties present in a number of creatures or objects. Each round, you may examine a single creature or object that you can see as a free action. In the case of a magic item, you learn its functions, how to activate its functions (if appropriate), and how many charges are left (if it uses charges). In the case of an object or creature with active spells cast upon it, you learn each spell, its effect, and its caster level.
+                             An attended object may attempt a Will save to resist this effect if its holder so desires. If the save succeeds, you learn nothing about the object except what you can discern by looking at it. An object that makes its save cannot be affected by any other *analyze dweomer* spells for 24 hours.
+                             *Analyze dweomer* does not function when used on an artifact.`,
+          material:         '**Focus:** A tiny lens of ruby or sapphire set in a small golden loop. The gemstone must be worth at least 1,500 gp.'
+        },
+        'animal growth': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Animal_Growth',
+          school:           'Transmutation',
+          level:            'Drd 5, Rgr 4, Scalykind 5, Sor/Wiz 5',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Targets',
+          target:           'Up to [[floor(?{Casting Level}/2)]] animal(s) (Gargantuan or smaller), no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Fortitude negates',
+          spell_resistance: 'Yes',
+          text:             `A number of animals grow to twice their normal size and eight times their normal weight. This alteration changes each animal’s size category to the next largest, grants it a \`\`+8\`\` size bonus to Strength and a \`\`+4\`\` size bonus to Constitution (and thus an extra 2 hit points per HD), and imposes a \`\`-2\`\` size penalty to Dexterity. The creature’s existing natural armor bonus increases by 2. The size change also affects the animal’s modifier to AC and attack rolls and its base damage. The animal’s space and reach change as appropriate to the new size, but its speed does not change.
+                             The spell also grants each subject damage reduction 10/magic and a \`\`+4\`\` resistance bonus on saving throws. If insufficient room is available for the desired growth, the creature attains the maximum possible size and may make a Strength check (using its increased Strength) to burst any enclosures in the process. If it fails, it is constrained without harm by the materials enclosing it— the spell cannot be used to crush a creature by increasing its size.
+                             All equipment worn or carried by an animal is similarly enlarged by the spell, though this change has no effect on the magical properties of any such equipment.
+                             Any enlarged item that leaves the enlarged creature’s possession instantly returns to its normal size.
+                             The spell gives no means of command or influence over the enlarged animals.
+                             Multiple magical effects that increase size do not stack.`,
+          material:         null
+        },
+        'animal messenger': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Animal_Messenger',
+          school:           'Enchantment↲(Compulsion) [Mind-Affecting]',
+          level:            'Brd 2, Drd 2, Rgr 1',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One Tiny animal',
+          duration:         '[[?{Casting Level}]] day(s)',
+          saving_throw:     'None; see text',
+          spell_resistance: 'Yes',
+          text:             `You compel a Tiny animal to go to a spot you designate. The most common use for this spell is to get an animal to carry a message to your allies. The animal cannot be one tamed or trained by someone else, including such creatures as familiars and animal companions.
+                             Using some type of food desirable to the animal as a lure, you call the animal to you. It advances and awaits your bidding. You can mentally impress on the animal a certain place well known to you or an obvious landmark. The directions must be simple, because the animal depends on your knowledge and can’t find a destination on its own. You can attach some small item or note to the messenger. The animal then goes to the designated location and waits there until the duration of the spell expires, whereupon it resumes its normal activities.
+                             During this period of waiting, the messenger allows others to approach it and remove any scroll or token it carries. The intended recipient gains no special ability to communicate with the animal or read any attached message (if it’s written in a language he or she doesn’t know, for example).`,
+          material:         '**Material Component:** A morsel of food the animal likes.'
+        },
+        'animal shapes': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Animal_Shapes',
+          school:           'Transmutation',
+          level:            'Animal 7, Drd 8, Scalykind 8',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Targets',
+          target:           'Up to [[?{Casting Level}]] willing creature(s), all within 30 ft. of each other',
+          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          saving_throw:     'None; see text',
+          spell_resistance: 'Yes (harmless)',
+          text:             'You transform up to one willing creature per caster level into an animal of your choice; the spell has no effect on unwilling creatures. Use the alternate form special ability to determine each target’s new abilities. All creatures must take the same kind of animal form. Recipients remain in the animal form until the spell expires or until you dismiss it for all recipients. In addition, an individual subject may choose to resume its normal form as a full-round action; doing so ends the spell for that subject alone. The maximum HD of an assumed form is equal to the subject’s HD or your caster level, whichever is lower, to a maximum of 20 HD at 20th level.',
+          material:         null
+        },
+        'animal trance': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Animal_Trance',
+          school:           'Enchantment↲(Compulsion) [Mind-Affecting, Sonic]',
+          level:            'Brd 2, Drd 2, Scalykind 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Targets',
+          target:           'Animals or magical beasts with Intelligence 1 or 2',
+          duration:         'Concentration',
+          saving_throw:     'Will negates; see text',
+          spell_resistance: 'Yes',
+          text:             `Your swaying motions and music (or singing, or chanting) compel animals and magical beasts to do nothing but watch you. Only a creature with an Intelligence score of 1 or 2 can be fascinated by this spell. Roll ‹2d6› to determine the total number of HD worth of creatures that you fascinate. The closest targets are selected first until no more targets within range can be affected.
+                             A magical beast, a dire animal, or an animal trained to attack or guard is allowed a saving throw; an animal not trained to attack or guard is not.`,
+          material:         null
+        },
+        /////////////////////////////////////
+        'wall of fire': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Wall_of_Fire',
+          school:           'Evocation↲[Fire]',
+          level:            'Druid 5, Fire 4, Sor/Wiz 4',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Effect',
+          target:           'Opaque sheet of flame up to [[20*?{Casting Level}]] ft. long or a ring of fire with radius of up to [[5*floor([[?{Casting Level}/2]])]] ft.; either form 20 ft. high',
+          duration:         'Concentration + [[?{Casting Level}]] round(s)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `An immobile, blazing curtain of shimmering violet fire springs into existence. One side of the wall, selected by you, sends forth waves of heat, dealing ‹2d4› points of fire damage to creatures within 10 feet and ‹1d4› points of fire damage to those past 10 feet but within 20 feet. The wall deals this damage when it appears and on your turn each round to all creatures in the area. In addition, the wall deals 2d6 points of fire damage +1 point of fire damage per caster level (maximum +20) to any creature ‹passing through|[[2d6+[[{?{Casting Level},20}kl1]]]]› it. The wall deals double damage to undead creatures.
+                             If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that length goes out. (Do not divide cold damage by 4, as normal for objects.)
+                             *Wall of fire* can be made permanent with a *permanency* spell. A permanent *wall of fire* that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.`,
+          material:         '**Arcane Material Component:** A small piece of phosphorus.'
+        }
       },
       spell_ranges: {
         'personal': 'Personal',
@@ -1444,7 +1678,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                         if (Object.keys(dnd35.spells()).includes(spell_name)) {
                           var new_spell_name = spellname_attr.get('current').replace(/[^A-Za-z ]/g, '');
                           if (dnd35.spells()[spell_name].material &&
-                              dnd35.spells()[spell_name].material.toLowerCase().match(/[0-9]+ *(cp|sp|gp|pp)/)) {
+                              dnd35.spells()[spell_name].material.toLowerCase().match(/[0-9,]+ *(cp|sp|gp|pp)/)) {
                             new_spell_name = new_spell_name.concat('ᴹ');
                           };
                           setAttrByName(character.id,spellname_attr.get('name'),new_spell_name);
@@ -1469,15 +1703,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                           };
                           spellmacro = spellmacro.concat(' {{',dnd35.spells()[spell_name].target_type,':=',dnd35.spells()[spell_name].target,'}}');
                           spellmacro = spellmacro.concat(' {{Duration:=',dnd35.spells()[spell_name].duration,'}}');
-                          spellmacro = spellmacro.concat(' {{Saving Throw:=',dnd35.spells()[spell_name].saving_throw,'}}');
-                          spellmacro = spellmacro.concat(' {{Spell Resist.:=',dnd35.spells()[spell_name].spell_resistance,'}}');
-                          spellmacro = spellmacro.concat(' {{Caster level check:=[[1d20+?{Casting Level}+@{spellpen}]] vs spell resist.}}');
+                          if (dnd35.spells()[spell_name].saving_throw) {
+                            spellmacro = spellmacro.concat(' {{Saving Throw:=',dnd35.spells()[spell_name].saving_throw,'}}');
+                          };
+                          if (dnd35.spells()[spell_name].spell_resistance) {
+                            spellmacro = spellmacro.concat(' {{Spell Resist.:=',dnd35.spells()[spell_name].spell_resistance,'}}');
+                            spellmacro = spellmacro.concat(' {{Caster level check:=[[1d20+?{Casting Level}+@{spellpen}]] vs spell resist.}}');
+                          };
                           spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
                           spellmacro = spellmacro.concat(' {{succeedcheck=',dnd35.spells()[spell_name].text,'}}');
                           spellmacro = spellmacro.concat(' {{failcheck=**@{character_name} fails.**}}');
                           if (dnd35.spells()[spell_name].material) {
                             spellmacro = spellmacro.concat(' {{notes=',dnd35.spells()[spell_name].material,'}}');
                           };
+                          spellmacro = spellmacro.replace(/(\r\n|\n|\r)/gm, "↲");
                           log(spellmacro);
                           //TODO combine the following 3 loops into a single loop
                           // Create a chat button in output ‹ and ›
@@ -1504,6 +1743,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             };
                             log(spellmacro);
                           };
+                          spellmacro = spellmacro.replace(/↲ +/g, "\n&nbsp;&nbsp;&nbsp;"); // INDENT!
                           spellmacro = spellmacro.replace(/↲/g, "\n");
                           log("FOUND!");
                           //log(dnd35.spells()[spell_name]);
