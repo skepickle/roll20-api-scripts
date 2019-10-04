@@ -122,6 +122,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   var dnd35 = {
     all_source_texts: {
       SRD:     "System Reference Document",
+      UA:      "Unearthed Arcana",
       PHB:     "Player's Handbook",
       MM:      "Monster Manual",
       XPH:     "Expanded Psionics Handbook",
@@ -130,7 +131,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       BoED:    "Book of Exalted Deeds",
       unknown: "Unknown Text"
     },
-    enabled_source_texts: ['SRD','MM','XPH'],
+    enabled_source_texts: ['SRD','UA','MM','XPH'],
     source_text_SRD: {
       movement_modes:      ['burrow','climb','fly','swim'],
       fly_maneuverability: ['perfect','good','average','poor','clumsy'],
@@ -211,8 +212,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // NOTE: Use '’' character for appostrophes...
         // NOTE: Use ‹ and › characters to delimiter ... a chat button
         // NOTE: Use « and » characters to delimiter ... a chat button with escaped attributes/abilities
-        //TODO Add characters that are used to delimiter macro-buttons that need to be escaped.
-        // 0123456789
         //'acid arrow':   { ref: 'https://www.dandwiki.com/wiki/SRD:Acid_Arrow',   school: 'Conjuration↲(Creation) [Acid]',             level: 'Sor/Wiz 2',                  components: 'V, S, M, F', casting_time: '1 standard action', range: 'long',   target_type: 'Effect', target: 'One arrow of acid',                                                                                                                                                    duration: '[[1+floor([[?{Casting Level}/3]])]] round(s)',   saving_throw: 'None',                            spell_resistance: 'No',                     text: 'A magical arrow of acid springs from your hand and speeds to its target. You must succeed on a ranged touch attack to hit your target. The arrow deals [[2d4]] points of acid damage with no splash damage. The acid, unless somehow neutralized, lasts for another [[floor({?{Casting Level},18}kl1/3)]] round(s), dealing another ‹2d4|Delayed *Acid Arrow* Damage: [[2d4]] acid› points of damage each round.',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          material: '**Material Component:** Powdered rhubarb leaf and an adder’s stomach.↲**Focus:** A dart.' },
         'acid arrow': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Acid_Arrow',
@@ -264,7 +263,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Clr 2, Good 2, Luck 2',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
-          range:            'touch',
+          range:            'Touch',
           targer_type:      'Target',
           target:           'Living creature touched',
           duration:         '[[?{Casting Level}]] minute(s)',
@@ -279,7 +278,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Air 4, Clr 4, Drd 4',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
-          range:            'touch',
+          range:            'Touch',
           target_type:      'Target',
           target:           'Creature (Gargantuan or smaller) touched',
           duration:         '[[10*?{Casting Level}]] minute(s)',
@@ -317,7 +316,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Clr 2',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
-          range:            'touch',
+          range:            'Touch',
           target_type:      'Target',
           target:           'Weapon touched or fifty projectiles (all of which must be in contact with each other at the time of casting)',
           duration:         '[[?{Casting Level}]] minute(s)',
@@ -334,7 +333,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Asn 2, Brd 2, Sor/Wiz 2',
           components:       'V, S',
           casting_time:     '1 standard action',
-          range:            'personal',
+          range:            'Personal',
           target_type:      'Target',
           target:           'You',
           duration:         '[[10*?{Casting Level}]] minute(s)',
@@ -442,7 +441,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Clr 3, Death 3, Sor/Wiz 4',
           components:       'V, S, M',
           casting_time:     '1 standard action',
-          range:            'touch',
+          range:            'Touch',
           target_type:      'Targets',
           target:           'One or more corpses touched',
           duration:         'Instantaneous',
@@ -513,6 +512,384 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              The spell cannot animate objects carried or worn by a creature.`,
           material:         null
         },
+        'antilife shell': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Antilife_Shell',
+          school:           'Abjuration',
+          level:            'Animal 6, Clr 6, Drd 6',
+          components:       'V, S, DF',
+          casting_time:     '1 round',
+          range:            '10 ft.',
+          target_type:      'Area',
+          target:           '10-ft.-radius emanation, centered on you',
+          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `You bring into being a mobile, hemispherical energy field that prevents the entrance of most types of living creatures.
+                             The effect hedges out animals, aberrations, dragons, fey, giants, humanoids, magical beasts, monstrous humanoids, oozes, plants, and vermin, but not constructs, elementals, outsiders, or undead.
+                             This spell may be used only defensively, not aggressively. Forcing an abjuration barrier against creatures that the spell keeps at bay collapses the barrier.`,
+          material:         null
+        },
+        'antimagic field': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Antimagic_Field',
+          school:           'Abjuration',
+          level:            'Clr 8, Magic 6, Protection 6, Sor/Wiz 6',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            '10 ft.',
+          target_type:      'Area',
+          target:           '10-ft.-radius emanation, centered on you',
+          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'See text',
+          text:             `An invisible barrier surrounds you and moves with you. The space within this barrier is impervious to most magical effects, including spells, spell-like abilities, and supernatural abilities. Likewise, it prevents the functioning of any magic items or spells within its confines.
+                             An *antimagic field* suppresses any spell or magical effect used within, brought into, or cast into the area, but does not dispel it. Time spent within an *antimagic field* counts against the suppressed spell’s duration.
+                             Summoned creatures of any type and incorporeal undead wink out if they enter an *antimagic field*. They reappear in the same spot once the field goes away. Time spent winked out counts normally against the duration of the conjuration that is maintaining the creature. If you cast *antimagic field* in an area occupied by a summoned creature that has spell resistance, you must make a caster level check (1d20 + caster level) against the creature’s spell resistance to make it wink out. (The effects of instantaneous conjurations are not affected by an *antimagic field* because the conjuration itself is no longer in effect, only its result.)
+                             A normal creature can enter the area, as can normal missiles. Furthermore, while a magic sword does not function magically within the area, it is still a sword (and a masterwork sword at that). The spell has no effect on golems and other constructs that are imbued with magic during their creation process and are thereafter self-supporting (unless they have been summoned, in which case they are treated like any other summoned creatures). Elementals, corporeal undead, and outsiders are likewise unaffected unless summoned. These creatures’ spell-like or supernatural abilities, however, may be temporarily nullified by the field. *Dispel magic* does not remove the field.
+                             Two or more *antimagic fields* sharing any of the same space have no effect on each other. Certain spells, such as *wall of force*, *prismatic sphere*, and *prismatic wall*, remain unaffected by antimagic field (see the individual spell descriptions). Artifacts and deities are unaffected by mortal magic such as this.
+                             Should a creature be larger than the area enclosed by the barrier, any part of it that lies outside the barrier is unaffected by the field.`,
+          material:         '**Arcane Material Component:** A pinch of powdered iron or iron filings.'
+        },
+        'antipathy': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Antipathy',
+          school:           'Enchantment↲(Compulsion) [Mind-Affecting]',
+          level:            'Drd 9, Sor/Wiz 8',
+          components:       'V, S, M/DF',
+          casting_time:     '1 hour',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One location (up to [[?{Casting Level}]] 10-ft. cubes) or one object',
+          duration:         '[[2*?{Casting Level}]] hour(s) (D)',
+          saving_throw:     'Will partial',
+          spell_resistance: 'Yes',
+          text:             `You cause an object or location to emanate magical vibrations that repel either a specific kind of intelligent creature or creatures of a particular alignment, as defined by you. The kind of creature to be affected must be named specifically. A creature subtype is not specific enough. Likewise, the specific alignment to be repelled must be named.
+                             Creatures of the designated kind or alignment feel an overpowering urge to leave the area or to avoid the affected item.
+                             A compulsion forces them to abandon the area or item, shunning it and never willingly returning to it while the spell is in effect. A creature that makes a successful saving throw can stay in the area or touch the item but feels uncomfortable doing so. This distracting discomfort reduces the creature’s Dexterity score by 4 points.
+                             *Antipathy* counters and dispels *sympathy*.`,
+          material:         '**Arcane Material Component:** A lump of alum soaked in vinegar.'
+        },
+        'antiplant shell': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Antiplant_Shell',
+          school:           'Abjuration',
+          level:            'Drd 4',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '10 ft.',
+          target_type:      'Area',
+          target:           '10-ft.-radius emanation, centered on you',
+          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `The *antiplant shell* spell creates an invisible, mobile barrier that keeps all creatures within the shell protected from attacks by plant creatures or animated plants. As with many abjuration spells, forcing the barrier against creatures that the spell keeps at bay strains and collapses the field.`,
+          material:         null
+        },
+        'arcane eye': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Arcane_Eye',
+          school:           'Divination↲(Scrying)',
+          level:            'Sor/Wiz 4',
+          components:       'V, S, M',
+          casting_time:     '10 minutes',
+          range:            'Unlimited',
+          target_type:      'Effect',
+          target:           'Magical sensor',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You create an invisible magical sensor that sends you visual information. You can create the *arcane eye* at any point you can see, but it can then travel outside your line of sight without hindrance. An *arcane eye* travels at 30 feet per round (300 feet per minute) if viewing an area ahead as a human would (primarily looking at the floor) or 10 feet per round (100 feet per minute) if examining the ceiling and walls as well as the floor ahead. It sees exactly as you would see if you were there.
+                             The eye can travel in any direction as long as the spell lasts. Solid barriers block its passage, but it can pass through a hole or space as small as 1 inch in diameter. The eye can’t enter another plane of existence, even through a *gate* or similar magical portal.
+                             You must concentrate to use an *arcane eye*. If you do not concentrate, the eye is inert until you again concentrate.`,
+          material:         '**Material Component:** A bit of bat fur.'
+        },
+        'arcane lock': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Arcane_Lock',
+          school:           'Abjuration',
+          level:            'Sor/Wiz 2',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'The door, chest, or portal touched, up to [[30*?{Casting Level}]] sq. ft. in size',
+          duration:         'Permanent',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `An *arcane lock* spell cast upon a door, chest, or portal magically locks it. You can freely pass your own *arcane lock* without affecting it; otherwise, a door or object secured with this spell can be opened only by breaking in or with a successful *dispel magic* or *knock* spell. Add 10 to the normal DC to break open a door or portal affected by this spell. (A *knock* spell does not remove an *arcane lock*; it only suppresses the effect for 10 minutes.)`,
+          material:         '**Material Component:** Gold dust worth 25 gp.'
+        },
+        'arcane mark': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Arcane_Mark',
+          school:           'Universal',
+          level:            'Sor/Wiz 0',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '0 ft.',
+          target_type:      'Effect',
+          target:           'One personal rune or mark, all of which must fit within 1 sq. ft.',
+          duration:         'Permanent',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell allows you to inscribe your personal rune or mark, which can consist of no more than six characters. The writing can be visible or invisible. An *arcane mark* spell enables you to etch the rune upon any substance without harm to the material upon which it is placed. If an invisible mark is made, a *detect magic* spell causes it to glow and be visible, though not necessarily understandable.
+                             *See invisibility*, *true seeing*, a *gem of seeing*, or a *robe of eyes* likewise allows the user to see an invisible *arcane mark*. A *read magic* spell reveals the words, if any. The mark cannot be dispelled, but it can be removed by the caster or by an *erase* spell.
+                             If an *arcane mark* is placed on a living being, normal wear gradually causes the effect to fade in about a month.
+                             *Arcane mark* must be cast on an object prior to casting *instant summons* on the same object (see that spell description for details).`,
+          material:         null
+        },
+        'arcane sight': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Arcane_Sight',
+          school:           'Divination',
+          level:            'Sor/Wiz 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          text:             `This spell makes your eyes glow blue and allows you to see magical auras within 120 feet of you. The effect is similar to that of a *detect magic* spell, but *arcane sight* does not require concentration and discerns aura location and power more quickly.
+                             You know the location and power of all magical auras within your sight. An aura’s power depends on a spell’s functioning level or an item’s caster level, as noted in the description of the *detect magic* spell. If the items or creatures bearing the auras are in line of sight, you can make Spellcraft skill checks to determine the school of magic involved in each. (Make one check per aura; DC 15 + spell level, or 15 + one-half caster level for a nonspell effect.)
+                             If you concentrate on a specific creature within 120 feet of you as a standard action, you can determine whether it has any spellcasting or spell-like abilities, whether these are arcane or divine (spell-like abilities register as arcane), and the strength of the most powerful spell or spell-like ability the creature currently has available for use.
+                             *Arcane sight* can be made permanent with a *permanency* spell.`,
+          material:         null
+        },
+        'armor of darkness': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Armor_of_Darkness',
+          school:           'Abjuration↲[Darkness]',
+          level:            'Darkness 4',
+          components:       'V, S, D F',
+          casting_time:     '1 action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The spell envelops the warded creature in a shroud of shadows. The shroud can, if the caster desires, conceal the wearer’s features. In any case, it grants the recipient a \`\`+3\`\` deflection bonus to Armor Class plus an additional \`\`+1\`\` for every four caster levels (maximum bonus +8). The subject can see through the armor as if it did not exist and is also afforded darkvision with a range of 60 feet. Finally, the subject gains a \`\`+2\`\` bonus on saving throws against any holy, good, or light spells or effects. Undead creatures that are subjects of *armor of darkness* also gain \`\`+4\`\` turn resistance.`,
+          material:         null
+        },
+        'astral projection': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Astral_Projection',
+          school:           'Necromancy',
+          level:            'Clr 9, Sor/Wiz 9, Travel 9',
+          components:       'V, S, M',
+          casting_time:     '30 minutes',
+          range:            'Touch',
+          target_type:      'Targets',
+          target:           'You plus [[floor(?{Casting Level}/2)]] additional willing creature(s) touched',
+          duration:         'See text',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `By freeing your spirit from your physical body, this spell allows you to project an astral body onto another plane altogether.
+                             You can bring the astral forms of other willing creatures with you, provided that these subjects are linked in a circle with you at the time of the casting. These fellow travelers are dependent upon you and must accompany you at all times. If something happens to you during the journey, your companions are stranded wherever you left them.
+                             You project your astral self onto the Astral Plane, leaving your physical body behind on the Material Plane in a state of suspended animation. The spell projects an astral copy of you and all you wear or carry onto the Astral Plane. Since the Astral Plane touches upon other planes, you can travel astrally to any of these other planes as you will. To enter one, you leave the Astral Plane, forming a new physical body (and equipment) on the plane of existence you have chosen to enter.
+                             While you are on the Astral Plane, your astral body is connected at all times to your physical body by a silvery cord. If the cord is broken, you are killed, astrally and physically. Luckily, very few things can destroy a silver cord. When a second body is formed on a different plane, the incorporeal silvery cord remains invisibly attached to the new body. If the second body or the astral form is slain, the cord simply returns to your body where it rests on the Material Plane, thereby reviving it from its state of suspended animation. Although astral projections are able to function on the Astral Plane, their actions affect only creatures existing on the Astral Plane; a physical body must be materialized on other planes.
+                             You and your companions may travel through the Astral Plane indefinitely. Your bodies simply wait behind in a state of suspended animation until you choose to return your spirits to them. The spell lasts until you desire to end it, or until it is terminated by some outside means, such as *dispel magic* cast upon either the physical body or the astral form, the breaking of the silver cord, or the destruction of your body back on the Material Plane (which kills you).`,
+          material:         '**Material Component:** A jacinth worth at least 1,000 gp, plus a silver bar worth 5 gp for each person to be affected.'
+        },
+        'atonement': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Atonement',
+          school:           'Abjuration',
+          level:            'Clr 5, Drd 5',
+          components:       'V, S, M, F, DF, XP',
+          casting_time:     '1 hour',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Living creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `This spell removes the burden of evil acts or misdeeds from the subject. The creature seeking *atonement* must be truly repentant and desirous of setting right its misdeeds. If the atoning creature committed the evil act unwittingly or under some form of compulsion, *atonement* operates normally at no cost to you. However, in the case of a creature atoning for deliberate misdeeds and acts of a knowing and willful nature, you must intercede with your deity (requiring you to expend 500 XP) in order to expunge the subject’s burden. Many casters first assign a subject of this sort a quest (see *geas/quest*) or similar penance to determine whether the creature is truly contrite before casting the *atonement* spell on its behalf.
+                             *Atonement* may be cast for one of several purposes, depending on the version selected.
+                             *Reverse Magical Alignment Change:* If a creature has had its alignment magically changed, *atonement* returns its alignment to its original status at no cost in experience points.
+                             *Restore Class:* A paladin who has lost her class features due to committing an evil act may have her paladinhood restored to her by this spell.
+                             *Restore Cleric or Druid Spell Powers:* A cleric or druid who has lost the ability to cast spells by incurring the anger of his or her deity may regain that ability by seeking *atonement* from another cleric of the same deity or another druid. If the transgression was intentional, the casting cleric loses 500 XP for his intercession. If the transgression was unintentional, he does not lose XP.
+                             *Redemption or Temptation:* You may cast this spell upon a creature of an opposing alignment in order to offer it a chance to change its alignment to match yours. The prospective subject must be present for the entire casting process. Upon completion of the spell, the subject freely chooses whether it retains its original alignment or acquiesces to your offer and changes to your alignment. No duress, compulsion, or magical influence can force the subject to take advantage of the opportunity offered if it is unwilling to abandon its old alignment. This use of the spell does not work on outsiders or any creature incapable of changing its alignment naturally.
+                             Though the spell description refers to evil acts, *atonement* can also be used on any creature that has performed acts against its alignment, whether those acts are evil, good, chaotic, or lawful.`,
+          material:         `**Note:** Normally, changing alignment is up to the player. This use of *atonement* simply offers a believable way for a character to change his or her alignment drastically, suddenly, and definitively.
+                             **Material Component:** Burning incense.
+                             **Focus:** In addition to your holy symbol or normal divine focus, you need a set of prayer beads (or other prayer device, such as a prayer wheel or prayer book) worth at least 500 gp.
+                             **XP Cost:** When cast for the benefit of a creature whose guilt was the result of deliberate acts, the cost to you is 500 XP per casting (see above).`
+        },
+        'augury': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Augury',
+          school:           'Divination',
+          level:            'Clr 2',
+          components:       'V, S, M, F',
+          casting_time:     '1 minute',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Instantaneous',
+          text:             `An *augury* can tell you whether a particular action will bring good or bad results for you in the immediate future.
+                             The base chance for receiving a meaningful reply is 70% + 1% per caster level, to a maximum of 90%; this roll is made secretly. A question may be so straightforward that a successful result is automatic, or so vague as to have no chance of success. If the *augury* succeeds, you get one of four results:
+                             • Weal (if the action will probably bring good results).
+                             • Woe (for bad results).
+                             • Weal and woe (for both).
+                             • Nothing (for actions that don’t have especially good or bad results).
+                             If the spell fails, you get the “nothing” result. A cleric who gets the “nothing” result has no way to tell whether it was the consequence of a failed or successful *augury*.
+                             The *augury* can see into the future only about half an hour, so anything that might happen after that does not affect the result. Thus, the result might not take into account the long-term consequences of a contemplated action. All *auguries* cast by the same person about the same topic use the same dice result as the first casting.`,
+          material:         `**Material Component:** Incense worth at least 25 gp.
+                             **Focus:** A set of marked sticks, bones, or similar tokens of at least 25 gp value.`
+        },
+        'awaken': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Awaken',
+          school:           'Transmutation',
+          level:            'Drd 5',
+          components:       'V, S, DF, XP',
+          casting_time:     '24 hours',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Animal or tree touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `You awaken a tree or animal to humanlike sentience. To succeed, you must make a Will save (DC 10 + the animal’s current HD, or the HD the tree will have once awakened).
+                             The *awakened* animal or tree is friendly toward you. You have no special empathy or connection with a creature you awaken, although it serves you in specific tasks or endeavors if you communicate your desires to it.
+                             An *awakened* tree has characteristics as if it were an animated object, except that it gains the plant type and gets [[3d6]] Intelligence, [[3d6]] Wisdom, and [[3d6]] Charisma scores. An *awakened* plant gains the ability to move its limbs, roots, vines, creepers, and so forth, and it has senses similar to a human’s.
+                             An *awakened* animal gets [[3d6]] Intelligence, +[[1d3]] Charisma, and +[[2]] HD. Its type becomes magical beast (augmented animal). An awakened animal can’t serve as an animal companion, familiar, or special mount.
+                             An *awakened* tree or animal can speak one language that you know, plus one additional language that you know per point of Intelligence bonus (if any).`,
+          material:         `**XP Cost:** 250 XP.`
+        },
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
         /////////////////////////////////////
         'wall of fire': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Wall_of_Fire',
@@ -533,11 +910,44 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         }
       },
       spell_ranges: {
-        'personal': 'Personal',
-        'touch':    'Touch',
         'close':    'Close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.)',
         'medium':   'Medium ([[100+(10*[[?{Casting Level}]])]] ft.)',
         'long':     'Long ([[400+(40*[[?{Casting Level}]])]] ft.)',
+      }
+    },
+    source_text_UA: {
+      spells: {
+        'acid arrow':        { recharge: 'General' },
+        'acid fog':          { recharge: 'General' },
+        'acid splash':       { recharge: 'General' },
+        'aid':               { recharge: '5 minutes' },
+        'air walk':          { recharge: '1 hour' },
+        'alarm':             { recharge: '4 hours' },
+        'align weapon':      { recharge: '5 minutes' },
+        'alter self':        { recharge: '4 hours' },
+        'analyze dweomer':   { recharge: 'General' },
+        'animal growth':     { recharge: 'General' },
+        'animal messenger':  { recharge: '6 hours' },
+        'animal shapes':     { recharge: '24 hours' },
+        'animal trance':     { recharge: 'General' },
+        'animate dead':      { recharge: 'General' },
+        'animate objects':   { recharge: 'General' },
+        'animate plants':    { recharge: 'General' },
+        'animate rope':      { recharge: 'General' },
+        'antilife shell':    { recharge: 'General' },
+        'antimagic field':   { recharge: 'General' },
+        'antipathy':         { recharge: 'General' },
+        'antiplant shell':   { recharge: 'General' },
+        'arcane eye':        { recharge: 'General' },
+        'arcane lock':       { recharge: '1 hour' },
+        'arcane mark':       { recharge: 'General' },
+        'arcane sight':      { recharge: '30 minutes' },
+        'armor of darkness': { recharge: 'General' },
+        'astral projection': { recharge: 'General' },
+        'atonement':         { recharge: 'General' },
+        'augury':            { recharge: '6 hours' },
+        'awaken':            { recharge: 'General' }
+        //'': { recharge: 'General' },
       }
     },
     source_text_PHB: {
@@ -607,7 +1017,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     skills:              function() { return this.merge_maps("skills"); },
     light_sources:       function() { return this.merge_maps("light_sources"); },
     spells:              function() { return this.merge_maps("spells"); },
-    spell_ranges:        function() { return this.merge_maps("spell_ranges"); }
+    spell_ranges:        function() { return this.merge_maps("spell_ranges"); },
+    spell:               function(name) { return this.merge_maps("spells.".concat(name)); }
   };
 
   // ██████╗    ██╗   ██████╗     ██████╗    ███████╗    ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
@@ -1753,50 +2164,76 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       if (spellmacro == "FILL") {
                         var spell_name = stringTrimWhitespace(spellname_attr.get('current').toLowerCase()).replace(/[^a-z ]/g, '');
                         if (Object.keys(dnd35.spells()).includes(spell_name)) {
+                          var spell_spec = dnd35.spell(spell_name);
+                          //log(spell_spec);
+                          //log("^^^^^^^^^^^^^^");
                           var new_spell_name = spellname_attr.get('current').replace(/[^A-Za-z ]/g, '');
-                          if (dnd35.spells()[spell_name].material &&
-                              dnd35.spells()[spell_name].material.toLowerCase().match(/[0-9,]+ *(cp|sp|gp|pp)/)) {
-                            new_spell_name = new_spell_name.concat('ᴹ');
+                          if (spell_spec.material) {
+                            if (spell_spec.material.toLowerCase().match(/material component\:.*[0-9,]+ *(cp|sp|gp|pp)/)) {
+                              new_spell_name = new_spell_name.concat('ᴹ');
+                            };
+                            if (spell_spec.material.toLowerCase().match(/focus\:.*[0-9,]+ *(cp|sp|gp|pp)/)) {
+                              new_spell_name = new_spell_name.concat('ᶠ');
+                            };
+                            if (spell_spec.material.toLowerCase().match(/xp cost\:/)) {
+                              new_spell_name = new_spell_name.concat('ˣ');
+                            };
                           };
                           setAttrByName(character.id,spellname_attr.get('name'),new_spell_name);
                           spellmacro = '&{template:DnD35StdRoll} {{spellflag=true}} {{name=@{character_name}}}';
-                          if (dnd35.spells()[spell_name].ref.match(/^https{0,1}:\/\//)) {
-                            spellmacro = spellmacro.concat(' {{subtags=casts [',spellname_attr.get('current'), '](', dnd35.spells()[spell_name].ref, ')}}');
+                          if (spell_spec.ref.match(/^https{0,1}:\/\//)) {
+                            spellmacro = spellmacro.concat(' {{subtags=casts [',spellname_attr.get('current'), '](', spell_spec.ref, ')}}');
                           } else {
-                            spellmacro = spellmacro.concat(' {{subtags=casts ',spellname_attr.get('current'),'↲',dnd35.spells()[spell_name].ref,'}}');
+                            spellmacro = spellmacro.concat(' {{subtags=casts ',spellname_attr.get('current'),'↲',spell_spec.ref,'}}');
                           };
-                          spellmacro = spellmacro.concat(' {{School:=',dnd35.spells()[spell_name].school,'}}');
-                          spellmacro = spellmacro.concat(' {{Level:=',dnd35.spells()[spell_name].level,'}}');
-                          spellmacro = spellmacro.concat(' {{Spell DC:=[[@{spelldc', spell_section, '}]]}}');
-                          var default_casterlevel = 'casterlevel';
-                          if (spell_column == '2') { default_casterlevel = default_casterlevel.concat('2'); };
-                          spellmacro = spellmacro.concat(' {{Casting level:=?{Casting Level|@{',default_casterlevel,'}}}}');
-                          spellmacro = spellmacro.concat(' {{Components:=',dnd35.spells()[spell_name].components,'}}');
-                          spellmacro = spellmacro.concat(' {{Casting Time:=',dnd35.spells()[spell_name].casting_time,'}}');
-                          if (dnd35.spell_ranges()[dnd35.spells()[spell_name].range] === undefined) {
-                            spellmacro = spellmacro.concat(' {{Range:=',dnd35.spells()[spell_name].range,'}}');
+                          spellmacro = spellmacro.concat(' {{School:=',spell_spec.school,'}}');
+                          spellmacro = spellmacro.concat(' {{Level:=',spell_spec.level,'}}');
+                          //spellmacro = spellmacro.concat(' {{Spell DC:=[[@{spelldc', spell_section, '}]]}}');
+                          {
+                            var spellcastingstat = 'spellcastingstat';
+                            if (spell_column == '2') {
+                              if (isAttrByNameDefined(character.id, 'spellcastingstat2')) {
+                                spellcastingstat = spellcastingstat.concat('2');
+                              } else {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Character does not have spellcastingstat2 attribute defined.'}));
+                              };
+                            };
+                            spellmacro = spellmacro.concat(' {{Spell DC:=[[10+', spell_section, '+@{', spellcastingstat, '}]]}}');
+                          }
+                          {
+                            var default_casterlevel = 'casterlevel';
+                            if (spell_column == '2') { default_casterlevel = default_casterlevel.concat('2'); };
+                            spellmacro = spellmacro.concat(' {{Casting level:=?{Casting Level|@{',default_casterlevel,'}}}}');
+                          }
+                          spellmacro = spellmacro.concat(' {{Components:=',spell_spec.components,'}}');
+                          spellmacro = spellmacro.concat(' {{Casting Time:=',spell_spec.casting_time,'}}');
+                          if (spell_spec.recharge) {
+                            spellmacro = spellmacro.concat(' {{Recharge:=',spell_spec.recharge,'}}');
+                          };
+                          if (dnd35.spell_ranges()[spell_spec.range] === undefined) {
+                            spellmacro = spellmacro.concat(' {{Range:=',spell_spec.range,'}}');
                           } else {
-                            spellmacro = spellmacro.concat(' {{Range:=',dnd35.spell_ranges()[dnd35.spells()[spell_name].range],'}}');
+                            spellmacro = spellmacro.concat(' {{Range:=',dnd35.spell_ranges()[spell_spec.range],'}}');
                           };
-                          spellmacro = spellmacro.concat(' {{',dnd35.spells()[spell_name].target_type,':=',dnd35.spells()[spell_name].target,'}}');
-                          spellmacro = spellmacro.concat(' {{Duration:=',dnd35.spells()[spell_name].duration,'}}');
-                          if (dnd35.spells()[spell_name].saving_throw) {
-                            spellmacro = spellmacro.concat(' {{Saving Throw:=',dnd35.spells()[spell_name].saving_throw,'}}');
+                          spellmacro = spellmacro.concat(' {{',spell_spec.target_type,':=',spell_spec.target,'}}');
+                          spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration,'}}');
+                          if (spell_spec.saving_throw) {
+                            spellmacro = spellmacro.concat(' {{Saving Throw:=',spell_spec.saving_throw,'}}');
                           };
-                          if (dnd35.spells()[spell_name].spell_resistance) {
-                            spellmacro = spellmacro.concat(' {{Spell Resist.:=',dnd35.spells()[spell_name].spell_resistance,'}}');
-                            if (dnd35.spells()[spell_name].spell_resistance != 'No') {
+                          if (spell_spec.spell_resistance) {
+                            spellmacro = spellmacro.concat(' {{Spell Resist.:=',spell_spec.spell_resistance,'}}');
+                            if (spell_spec.spell_resistance != 'No') {
                               spellmacro = spellmacro.concat(' {{Caster level check:=[[1d20+?{Casting Level}+@{spellpen}]] vs spell resist.}}');
                             };
                           };
                           spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
-                          spellmacro = spellmacro.concat(' {{succeedcheck=',dnd35.spells()[spell_name].text,'}}');
-                          spellmacro = spellmacro.concat(' {{failcheck=**@{character_name} fails.**}}');
-                          if (dnd35.spells()[spell_name].material) {
-                            spellmacro = spellmacro.concat(' {{notes=',dnd35.spells()[spell_name].material,'}}');
+                          spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲',spell_spec.text,'}}');
+                          spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲',spell_spec.text,'}}');
+                          if (spell_spec.material) {
+                            spellmacro = spellmacro.concat(' {{notes=',spell_spec.material,'}}');
                           };
                           spellmacro = spellmacro.replace(/(\r\n|\n|\r)/gm, "↲");
-                          log(spellmacro);
+                          //log(spellmacro);
                           //TODO combine the following 3 loops into a single loop
                           // Create a chat button in output ‹ and ›
                           while (spellmacro.match(/^.*‹[^›«»|]+›.*$/) ||
@@ -1820,12 +2257,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             if (match_results) {
                               spellmacro = ''.concat(match_results[1],createEscapedChatButton(match_results[2],match_results[3]),match_results[4]);
                             };
-                            log(spellmacro);
+                            //log(spellmacro);
                           };
                           spellmacro = spellmacro.replace(/↲ +/g, "\n&nbsp;&nbsp;&nbsp;"); // INDENT!
                           spellmacro = spellmacro.replace(/↲/g, "\n");
-                          log("FOUND!");
-                          //log(dnd35.spells()[spell_name]);
+                          //log("FOUND!");
+                          //log(spell_spec);
                           setAttrByName(character.id, ''.concat('repeating_spells',spell_section,spell_column,'_',rowID,'_spellmacro',spell_section,spell_column), spellmacro);
                         };
                       };
