@@ -225,7 +225,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[1+floor([[?{Casting Level}/3]])]] round(s)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             'A magical arrow of acid springs from your hand and speeds to its target. You must succeed on a ranged touch attack to hit your target. The arrow deals [[2d4]] points of acid damage with no splash damage. The acid, unless somehow neutralized, lasts for another [[floor({?{Casting Level},18}kl1/3)]] round(s), dealing another ‹2d4|Delayed *Acid Arrow* Damage: [[2d4]] acid› points of damage each round.',
+          text:             'A magical arrow of acid springs from your hand and speeds to its target. You must succeed on a ranged touch attack to hit your target. The arrow deals [[2d4]] points of acid damage with no splash damage. The acid, unless somehow neutralized, lasts for another [[floor({?{Casting Level},18}kl1/3)]] round(s), dealing another ‹2d4|***Acid Arrow***: [[2d4]] delayed acid damage› points of damage each round.',
           material:         '**Material Component:** Powdered rhubarb leaf and an adder’s stomach.↲**Focus:** A dart.'
         },
         'acid fog': {
@@ -746,6 +746,474 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              An *awakened* tree or animal can speak one language that you know, plus one additional language that you know per point of Intelligence bonus (if any).`,
           material:         `**XP Cost:** 250 XP.`
         },
+        'baleful polymorph': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Baleful_Polymorph',
+          school:           'Transmutation',
+          level:            'Drd 5, Sor/Wiz 5',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Permanent',
+          saving_throw:     'Fortitude negates, Will partial; see text',
+          spell_resistance: 'Yes',
+          text:             `You change the subject into a Small or smaller animal of no more than 1 HD (such as a dog, lizard, monkey, or toad). The subject takes on all the statistics and special abilities of an average member of the new form in place of its own except as follows:
+                             • The target retains its own alignment (and personality, within the limits of the new form’s ability scores).
+                             • If the target has the shapechanger subtype, it retains that subtype.
+                             • The target retains its own hit points.
+                             • The target is treated has having its normal Hit Dice for purpose of adjudicating effects based on HD, such as the sleep spell, though it uses the new form’s base attack bonus, base save bonuses, and all other statistics derived from Hit Dice.
+                             • The target also retains the ability to understand (but not to speak) the languages it understood in its original form. It can write in the languages it understands, but only the form is capable of writing in some manner (such as drawing in the dirt with a paw).
+                             With those exceptions, the target’s normal game statistics are replaced by those of the new form. The target loses all the special abilities it has in its normal form, including its class features.
+                             All items worn or carried by the subject fall to the ground at its feet, even if they could be worn or carried by the new form.
+                             If the new form would prove fatal to the creature (for example, if you polymorphed a landbound target into a fish, or an airborne target into a toad), the subject gets a \`\`+4\`\` bonus on the save.
+                             If the subject remains in the new form for 24 consecutive hours, it must attempt a Will save.
+                             If this save fails, it loses its ability to understand language, as well as all other memories of its previous form, and its Hit Dice and hit points change to match an average creature of its new form. These abilities and statistics return to normal if the effect is later ended.
+                             Incorporeal or gaseous creatures are immune to *baleful polymorph*, and a creature with the shapechanger subtype (such as a lycanthrope or a doppelganger) can revert to its natural form as a standard action (which ends the spell’s effect).`,
+          material:         null
+        },
+        'baleful transposition': {
+          //TODO
+        },
+        'bane': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Bane',
+          school:           'Enchantment↲(Compulsion) [Fear, Mind-Affecting]',
+          level:            'Clr 1',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '50 ft.',
+          target_type:      'Area',
+          target:           'All enemies within 50 ft.',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `*Bane* fills your enemies with fear and doubt. Each affected creature takes a \`\`-1\`\` penalty on attack rolls and a \`\`-1\`\` penalty on saving throws against fear effects.
+                             *Bane* counters and dispels *bless*.`,
+          material:         null
+        },
+        'banishment': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Banishment',
+          school:           'Abjuration',
+          level:            'Clr 6, Sor/Wiz 7',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Targets',
+          target:           'One or more extraplanar creatures, no two of which can be more than 30 ft. apart',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `A *banishment* spell is a more powerful version of the *dismissal* spell. It enables you to force extraplanar creatures out of your home plane. As many as 2 Hit Dice of creatures per caster level can be banished.
+                             You can improve the spell’s chance of success by presenting at least one object or substance that the target hates, fears, or otherwise opposes. For each such object or substance, you gain a \`\`+1\`\` bonus on your caster level check to overcome the target’s spell resistance (if any), the saving throw DC increases by \`\`2\`\`.
+                             Certain rare items might work twice as well as a normal item for the purpose of the bonuses (each providing a \`\`+2\`\` bonus on the caster level check against spell resistance and increasing the save DC by \`\`4\`\`).`,
+          material:         '**Arcane Focus:** Any item that is distasteful to the subject (optional, see above).'
+        },
+        'barkskin': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Barkskin',
+          school:           'Transmutation',
+          level:            'Drd 2, Rgr 2, Plant 2',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Living creature touched',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes (harmless)',
+          text:             `*Barkskin* toughens a creature’s skin. The effect grants a \`\`+2\`\` enhancement bonus to the creature’s existing natural armor bonus. This enhancement bonus increases by \`\`1\`\` for every three caster levels above 3rd, to a maximum of \`\`+5\`\` at caster level 12th.
+                             The enhancement bonus provided by *barkskin* stacks with the target’s natural armor bonus, but not with other enhancement bonuses to natural armor. A creature without natural armor has an effective natural armor bonus of \`\`+0\`\`.`,
+          material:         null
+        },
+        'bear\'s endurance': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Bear%27s_Endurance',
+          school:           'Transmutation',
+          level:            'Clr 2, Drd 2, Rgr 2, Sor/Wiz 2',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes',
+          text:             `The affected creature gains greater vitality and stamina. The spell grants the subject a \`\`+4\`\` enhancement bonus to Constitution, which adds the usual benefits to hit points, Fortitude saves, Constitution checks, and so forth.
+                             Hit points gained by a temporary increase in Constitution score are not temporary hit points. They go away when the subject’s Constitution drops back to normal. They are not lost first as temporary hit points are.`,
+          material:         null
+        },
+        'bestow curse': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Bestow_Curse',
+          school:           'Necromancy',
+          level:            'Clr 3, Sor/Wiz 4',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         'Permanent',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `You place a curse on the subject. Choose one of the following three effects.
+                             • \`\`-6\`\` decrease to an ability score (minimum 1).
+                             • \`\`-4\`\` penalty on attack rolls, saves, ability checks, and skill checks.
+                             • Each turn, the target has a 50% chance to act normally; otherwise, it takes no action.
+                             You may also invent your own curse, but it should be no more powerful than those described above.
+                             The *curse* bestowed by this spell cannot be dispelled, but it can be removed with a *break enchantment*, *limited wish*, *miracle*, *remove curse*, or *wish* spell.
+                             *Bestow curse* counters *remove curse*.`,
+          material:         null
+        },
+        'binding': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Binding',
+          school:           'Enchantment↲(Compulsion) [Mind-Affecting]',
+          level:            'Sor/Wiz 8',
+          components:       'V, S, M',
+          casting_time:     'One minute',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One living creature',
+          duration:         'See text (D)',
+          saving_throw:     'Will negates; see text',
+          spell_resistance: 'Yes',
+          text:             `A *binding* spell creates a magical restraint to hold a creature. The target gets an initial saving throw only if its Hit Dice equal at least one-half your caster level.
+                             You may have as many as six assistants help you with the spell. For each assistant who casts *suggestion*, your caster level for this casting of *binding* increases by 1. For each assistant who casts *dominate animal*, *dominate person*, or *dominate monster*, your caster level for this casting of *binding* increases by a number equal to one-third of that assistant’s level, provided that the spell’s target is appropriate for a *binding* spell. Since the assistants’ spells are cast simply to improve your caster level for the purpose of the *binding* spell, saving throws and spell resistance against the assistants’ spells are irrelevant. Your caster level determines whether the target gets an initial Will saving throw and how long the *binding* lasts. All *binding* spells are dismissible.
+                             Regardless of the version of *binding* you cast, you can specify triggering conditions that end the spell and release the creature whenever they occur. These triggers can be as simple or elaborate as you desire, but the condition must be reasonable and have a likelihood of coming to pass. The conditions can be based on a creature’s name, identity, or alignment but otherwise must be based on observable actions or qualities. Intangibles such as level, class, Hit Dice, or hit points don’t qualify. Once the spell is cast, its triggering conditions cannot be changed. Setting a release condition increases the save DC (assuming a saving throw is allowed) by 2.
+                             If you are casting any of the first three versions of *binding* (those with limited durations), you may cast additional *binding* spells to prolong the effect, since the durations overlap. If you do so, the target gets a saving throw at the end of the first spell’s duration, even if your caster level was high enough to disallow an initial saving throw. If the creature succeeds on this save, all the *binding* spells it has received are broken.
+                             The *binding* spell has six versions. Choose one of the following versions when you cast the spell.
+                             *Chaining:* The subject is confined by restraints that generate an *antipathy* spell affecting all creatures who approach the subject, except you. The duration is one year per caster level. The subject of this form of *binding* is confined to the spot it occupied when it received the spell.
+                             *Slumber:* This version causes the subject to become comatose for as long as one year per caster level. The subject does not need to eat or drink while *slumbering*, nor does it age. This form of *binding* is more difficult to cast than *chaining*, making it slightly easier to resist. Reduce the spell’s save DC by 1.
+                             *Bound Slumber:* This combination of *chaining* and *slumber* lasts for as long as one month per caster level. Reduce the save DC by 2.
+                             *Hedged Prison:* The subject is transported to or otherwise brought within a confined area from which it cannot wander by any means. The effect is permanent. Reduce the save DC by 3.
+                             *Metamorphosis:* The subject assumes gaseous form, except for its head or face. It is held harmless in a jar or other container, which may be transparent if you so choose. The creature remains aware of its surroundings and can speak, but it cannot leave the container, attack, or use any of its powers or abilities. The *binding* is permanent. The subject does not need to breathe, eat, or drink while *metamorphosed*, nor does it age. Reduce the save DC by 4.
+                             *Minimus Containment:* The subject is shrunk to a height of 1 inch or even less and held within some gem, jar, or similar object. The *binding* is permanent. The subject does not need to breathe, eat, or drink while *contained*, nor does it age. Reduce the save DC by 4.
+                             You can’t dispel a *binding* spell with *dispel magic* or a similar effect, though an *antimagic field* or *Mage’s disjunction* affects it normally. A bound extraplanar creature cannot be sent back to its home plane due to *dismissal*, *banishment*, *or a similar effect*.`,
+          material:         `**Components:** The components for a binding spell vary according to the version of the spell, but they always include a continuous chanting utterance read from the scroll or spellbook page containing the spell, somatic gestures, and materials appropriate to the form of binding used. These components can include such items as miniature chains of special metals, soporific herbs of the rarest sort (for slumber bindings), a bell jar of the finest crystal, and the like.
+                             In addition to the specially made props suited to the specific type of binding (cost 500 gp), the spell requires opals worth at least 500 gp for each HD of the target and a vellum depiction or carved statuette of the subject to be captured.`
+        },
+        'black tentacles': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Black_Tentacles',
+          school:           'Conjuration↲(Creation)',
+          level:            'Sor/Wiz 4',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Area',
+          target:           '20-ft.-radius spread',
+          duration:         '[[?{Casting Level}]] round(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell conjures a field of rubbery black tentacles, each 10 feet long. These waving members seem to spring forth from the earth, floor, or whatever surface is underfoot—including water. They grasp and entwine around creatures that enter the area, holding them fast and crushing them with great strength.
+                             Every creature within the area of the spell must make a grapple check, opposed by the grapple check of the tentacles. Treat the tentacles attacking a particular target as a Large creature with a base attack bonus equal to your caster level and a Strength score of 19. Thus, its grapple check modifier is equal to your caster level +8. The tentacles are immune to all types of damage.
+                             Once the tentacles grapple an opponent, they may make a grapple check each round on your turn to deal 1d6+4 points of bludgeoning damage. The tentacles continue to crush the opponent until the spell ends or the opponent escapes.
+                             Any creature that enters the area of the spell is immediately attacked by the tentacles. Even creatures who aren’t grappling with the tentacles may move through the area at only half normal speed.`,
+          material:         '**Material Component:** A piece of tentacle from a giant octopus or a giant squid.'
+        },
+        'blade barrier': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Blade_Barrier',
+          school:           'Evocation↲[Force]',
+          level:            'Clr 6, Good 6, War 6',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Effect',
+          target:           'Wall of whirling blades up to [[20*?{Casting Level}]] ft. long, or a ringed wall of whirling blades with a radius of up to [[5*floor(?{Casting Level}/2)]] ft.; either form 20 ft. high',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Reflex half or Reflex negates; see text',
+          spell_resistance: 'Yes',
+          text:             `An immobile, vertical curtain of whirling blades shaped of pure force springs into existence. Any creature passing through the wall takes 1d6 points of ‹damage|[[[[{?{Casting Level},15}kl1]]d6]]› per caster level (maximum 15d6), with a Reflex save for half damage.
+                             If you evoke the barrier so that it appears where creatures are, each creature takes damage as if passing through the wall. Each such creature can avoid the wall (ending up on the side of its choice) and thus take no damage by making a successful Reflex save.
+                             A *blade barrier* provides cover (\`\`+4\`\` bonus to AC, \`\`+2\`\` bonus on Reflex saves) against attacks made through it.`,
+          material:         null
+        },
+        'blasphemy': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Blasphemy',
+          school:           'Evocation↲[Evil, Sonic]',
+          level:            'Clr 7, Evil 7',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            '40 ft.',
+          target_type:      'Area',
+          target:           'Nonevil creatures in a 40-ft.-radius spread centered on you',
+          duration:         'Instantaneous',
+          saving_throw:     'None or Will negates; see text',
+          spell_resistance: 'Yes',
+          text:             `Any nonevil creature within the area of a *blasphemy* spell suffers the following ill effects.
+
+                             **[[?{Casting Level}]] HD**
+                             • Dazed
+                             **Up to [[?{Casting Level}-1]] HD**
+                             • Weakened, dazed
+                             **Up to <= [[?{Casting Level}-5]] HD**
+                             • Paralyzed, weakened, dazed
+                             **Up to <= [[?{Casting Level}-10]] HD**
+                             • Killed, paralyzed, weakened, dazed
+
+                             The effects are cumulative and concurrent.
+                             No saving throw is allowed against these effects.
+                             *Dazed:* The creature can take no actions for 1 round, though it defends itself normally.
+                             *Weakened:* The creature’s Strength score decreases by [[2d6]] points for [[2d4]] rounds.
+                             *Paralyzed:* The creature is paralyzed and helpless for [[1d10]] minutes.
+                             *Killed*: Living creatures die. Undead creatures are destroyed.
+                             Furthermore, if you are on your home plane when you cast this spell, nonevil extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *blasphemy*. The banishment effect allows a Will save (at a \`\`-4\`\` penalty) to negate.
+                             Creatures whose Hit Dice exceed your caster level are unaffected by *blasphemy*.`,
+          material:         null
+        },
+        'bless': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Bless',
+          school:           'Enchantment↲(Compulsion) [Mind-Affecting]',
+          level:            'Clr 1, Community 1, Pal 1',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '50 ft.',
+          target_type:      'Area',
+          target:           'The caster and all allies within a 50-ft. burst, centered on the caster',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes (harmless)',
+          text:             `*Bless* fills your allies with courage. Each ally gains a \`\`+1\`\` morale bonus on attack rolls and on saving throws against fear effects.
+                             *Bless* counters and dispels *bane*.`,
+          material:         null
+        },
+        'bless water': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Bless_Water',
+          school:           'Transmutation↲[Good]',
+          level:            'Clr 1, Pal 1',
+          components:       'V, S, M',
+          casting_time:     '1 minute',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Flask of water touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates (object)',
+          spell_resistance: 'Yes (Object)',
+          text:             `This transmutation imbues a flask (1 pint) of water with positive energy, turning it into holy water.`,
+          material:         '**Material Component:** 5 pounds of powdered silver (worth 25 gp).'
+        },
+        'bless weapon': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Bless_Weapon',
+          school:           'Transmutation',
+          level:            'Glory 2, Pal 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Weapon touched',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This transmutation makes a weapon strike true against evil foes. The weapon is treated as having a \`\`+1\`\` enhancement bonus for the purpose of bypassing the damage reduction of evil creatures or striking evil incorporeal creatures (though the spell doesn’t grant an actual enhancement bonus). The weapon also becomes good, which means it can bypass the damage reduction of certain creatures. (This effect overrides and suppresses any other alignment the weapon might have.) Individual arrows or bolts can be transmuted, but affected projectile weapons (such as bows) don’t confer the benefit to the projectiles they shoot.
+                             In addition, all critical hit rolls against evil foes are automatically successful, so every threat is a critical hit. This last effect does not apply to any weapon that already has a magical effect related to critical hits, such as a keen weapon or a vorpal sword.`,
+          material:         null
+        },
+        'blight': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Blight',
+          school:           'Necromancy',
+          level:            'Drd 4, Sor/Wiz 5',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Plant touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude half; see text',
+          spell_resistance: 'Yes',
+          text:             `This spell withers a single plant of any size. An affected plant creature takes 1d6 points of ‹damage|[[[[{?{Casting Level},15}kl1]]d6]]› per level (maximum 15d6) and may attempt a Fortitude saving throw for half damage. A plant that isn’t a creature doesn’t receive a save and immediately withers and dies.
+                             This spell has no effect on the soil or surrounding plant life.`,
+          material:         null
+        },
+        'blindness/deafness': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Blindness/Deafness',
+          school:           'Necromancy',
+          level:            'Brd 2, Clr 3, Darkness 2, Sor/Wiz 2',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Target',
+          target:           'One living creature',
+          duration:         'Permanent (D)',
+          saving_throw:     'Fortitude negates',
+          spell_resistance: 'Yes',
+          text:             `You call upon the powers of unlife to render the subject blinded or deafened, as you choose.`,
+          material:         null
+        },
+        'blink': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Blink',
+          school:           'Transmutation',
+          level:            'Brd 3, Sor/Wiz 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] round(s) (D)',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `You “blink” back and forth between the Material Plane and the Ethereal Plane. You look as though you’re winking in and out of reality very quickly and at random.
+                             *Blinking* has several effects, as follows.
+                             Physical attacks against you have a 50% miss chance, and the Blind-Fight feat doesn’t help opponents, since you’re ethereal and not merely invisible. If the attack is capable of striking ethereal creatures, the miss chance is only 20% (for concealment).
+                             If the attacker can see invisible creatures, the miss chance is also only 20%. (For an attacker who can both see and strike ethereal creatures, there is no miss chance.) Likewise, your own attacks have a 20% miss chance, since you sometimes go ethereal just as you are about to strike.
+                             Any individually targeted spell has a 50% chance to fail against you while you’re *blinking* unless your attacker can target invisible, ethereal creatures. Your own spells have a 20% chance to activate just as you go ethereal, in which case they typically do not affect the Material Plane.
+                             While *blinking*, you take only half damage from area attacks (but full damage from those that extend onto the Ethereal Plane). You strike as an invisible creature (with a \`\`+2\`\` bonus on attack rolls), denying your target any Dexterity bonus to AC.
+                             You take only half damage from falling, since you fall only while you are material.
+                             While *blinking*, you can step through (but not see through) solid objects. For each 5 feet of solid material you walk through, there is a 50% chance that you become material. If this occurs, you are shunted off to the nearest open space and take 1d6 points of damage per 5 feet so traveled. You can move at only three-quarters speed (because movement on the Ethereal Plane is at half speed, and you spend about half your time there and half your time material.)
+                             Since you spend about half your time on the Ethereal Plane, you can see and even attack ethereal creatures. You interact with ethereal creatures roughly the same way you interact with material ones.
+                             An ethereal creature is invisible, incorporeal, and capable of moving in any direction, even up or down. As an incorporeal creature, you can move through solid objects, including living creatures.
+                             An ethereal creature can see and hear the Material Plane, but everything looks gray and insubstantial. Sight and hearing on the Material Plane are limited to 60 feet.
+                             Force effects and abjurations affect you normally. Their effects extend onto the Ethereal Plane from the Material Plane, but not vice versa. An ethereal creature can’t attack material creatures, and spells you cast while ethereal affect only other ethereal things. Certain material creatures or objects have attacks or effects that work on the Ethereal Plane. Treat other ethereal creatures and objects as material.`,
+          material:         null
+        },
+        'blur': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Blur',
+          school:           'Illusion↲(Glamer)',
+          level:            'Brd 2, Sor/Wiz 2',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The subject’s outline appears blurred, shifting and wavering. This distortion grants the subject concealment (20% miss chance).
+                             A *see invisibility* spell does not counteract the *blur* effect, but a *true seeing* spell does.
+                             Opponents that cannot see the subject ignore the spell’s effect (though fighting an unseen opponent carries penalties of its own).`,
+          material:         null
+        },
+        'bolt of glory': {
+          //TODO
+        },
+        'bolts of bedevilment': {
+          //TODO
+        },
+        'brain spider': {
+          //TODO
+        },
+        'break enchantment': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Break_Enchantment',
+          school:           'Abjuration',
+          level:            'Brd 4, Clr 5, Liberation 5, Luck 5, Pal 4, Sor/Wiz 5',
+          components:       'V, S',
+          casting_time:     '1 minute',
+          range:            'close',
+          target_type:      'Targets',
+          target:           'Up to [[?{Casting Level}]] creature(s), all within 30 ft. of each other',
+          duration:         'Instantaneous',
+          saving_throw:     'See text',
+          spell_resistance: 'No',
+          text:             `This spell frees victims from enchantments, transmutations, and curses. *Break enchantment* can reverse even an instantaneous effect. For each such effect, you make a ‹caster level check|[[1d20+[[{?{Casting Level},15}kl1]]]]› (1d20 + caster level, maximum +15) against a «DC|[[11+?{Casting Level of the Effect}]]» of 11 + caster level of the effect. Success means that the creature is free of the spell, curse, or effect. For a cursed magic item, the DC is 25.
+                             If the spell is one that cannot be dispelled by *dispel magic*, *break enchantment* works only if that spell is 5th level or lower.
+                             If the effect comes from some permanent magic item *break enchantment* does not remove the curse from the item, but it does frees the victim from the item’s effects.`,
+          material:         null
+        },
+        'bull\'s strength': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Bull%27s_Strength',
+          school:           'Transmutation',
+          level:            'Blg 2, Clr 2, Drd 2, Pal 2, Sor/Wiz 2, Strength 2',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The subject becomes stronger. The spell grants a \`\`+4\`\` enhancement bonus to Strength, adding the usual benefits to melee attack rolls, melee damage rolls, and other uses of the Strength modifier.`,
+          material:         '**Arcane Material Component:** A few hairs, or a pinch of dung, from a bull.'
+        },
+        'burning hands': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Burning_Hands',
+          school:           'Evocation↲[Fire]',
+          level:            'Fire 1, Sor/Wiz 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '15 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped burst',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half',
+          spell_resistance: 'Yes',
+          text:             `A cone of searing flame shoots from your fingertips. Any creature in the area of the flames takes 1d4 points of ‹fire damage|[[[[{?{Casting Level},5}kl1]]d4]]› per caster level (maximum 5d4). Flammable materials burn if the flames touch them. A character can extinguish burning items as a full-round action.`,
+          material:         null
+        },
+
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '↲',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
         //'': {
         //// ↲’‹›«»
         //  ref:              '',
@@ -917,36 +1385,59 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     },
     source_text_UA: {
       spells: {
-        'acid arrow':        { recharge: 'General' },
-        'acid fog':          { recharge: 'General' },
-        'acid splash':       { recharge: 'General' },
-        'aid':               { recharge: '5 minutes' },
-        'air walk':          { recharge: '1 hour' },
-        'alarm':             { recharge: '4 hours' },
-        'align weapon':      { recharge: '5 minutes' },
-        'alter self':        { recharge: '4 hours' },
-        'analyze dweomer':   { recharge: 'General' },
-        'animal growth':     { recharge: 'General' },
-        'animal messenger':  { recharge: '6 hours' },
-        'animal shapes':     { recharge: '24 hours' },
-        'animal trance':     { recharge: 'General' },
-        'animate dead':      { recharge: 'General' },
-        'animate objects':   { recharge: 'General' },
-        'animate plants':    { recharge: 'General' },
-        'animate rope':      { recharge: 'General' },
-        'antilife shell':    { recharge: 'General' },
-        'antimagic field':   { recharge: 'General' },
-        'antipathy':         { recharge: 'General' },
-        'antiplant shell':   { recharge: 'General' },
-        'arcane eye':        { recharge: 'General' },
-        'arcane lock':       { recharge: '1 hour' },
-        'arcane mark':       { recharge: 'General' },
-        'arcane sight':      { recharge: '30 minutes' },
-        'armor of darkness': { recharge: 'General' },
-        'astral projection': { recharge: 'General' },
-        'atonement':         { recharge: 'General' },
-        'augury':            { recharge: '6 hours' },
-        'awaken':            { recharge: 'General' }
+        'acid arrow':           { recharge: 'General' },
+        'acid fog':             { recharge: 'General' },
+        'acid splash':          { recharge: 'General' },
+        'aid':                  { recharge: '5 minutes' },
+        'air walk':             { recharge: '1 hour' },
+        'alarm':                { recharge: '4 hours' },
+        'align weapon':         { recharge: '5 minutes' },
+        'alter self':           { recharge: '4 hours' },
+        'analyze dweomer':      { recharge: 'General' },
+        'animal growth':        { recharge: 'General' },
+        'animal messenger':     { recharge: '6 hours' },
+        'animal shapes':        { recharge: '24 hours' },
+        'animal trance':        { recharge: 'General' },
+        'animate dead':         { recharge: 'General' },
+        'animate objects':      { recharge: 'General' },
+        'animate plants':       { recharge: 'General' },
+        'animate rope':         { recharge: 'General' },
+        'antilife shell':       { recharge: 'General' },
+        'antimagic field':      { recharge: 'General' },
+        'antipathy':            { recharge: 'General' },
+        'antiplant shell':      { recharge: 'General' },
+        'arcane eye':           { recharge: 'General' },
+        'arcane lock':          { recharge: '1 hour' },
+        'arcane mark':          { recharge: 'General' },
+        'arcane sight':         { recharge: '30 minutes' },
+        'armor of darkness':    { recharge: 'General' },
+        'astral projection':    { recharge: 'General' },
+        'atonement':            { recharge: 'General' },
+        'augury':               { recharge: '6 hours' },
+        'awaken':               { recharge: 'General' },
+        'baleful polymorph':    { recharge: 'General' },
+        'bane':                 { recharge: 'General' },
+        'banishment':           { recharge: 'General' },
+        'barkskin':             { recharge: '1 hour' },
+        'bear\'s endurance':    { recharge: '5 minutes' },
+        'bestow curse':         { recharge: 'General' },
+        'binding':              { recharge: 'General' },
+        'black tentacles':      { recharge: 'General' },
+        'blade barrier':        { recharge: 'General' },
+        'blasphemy':            { recharge: 'General' },
+        'bless':                { recharge: '30 minutes' },
+        'bless water':          { recharge: 'General' },
+        'bless weapon':         { recharge: '5 minutes' },
+        'blight':               { recharge: 'General' },
+        'blindness/deafness':   { recharge: 'General' },
+        'blink':                { recharge: 'General' },
+        'blur':                 { recharge: '5 minutes' },
+        'bolt of glory':        { recharge: 'General' },
+        'bolts of bedevilment': { recharge: 'General' },
+        'brain spider':         { recharge: '1 hour' },
+        'break enchantment':    { recharge: '1 hour' },
+        'bull\'s strength':     { recharge: '5 minutes' },
+        'burning hands':        { recharge: 'General' }
         //'': { recharge: 'General' },
       }
     },
@@ -2188,7 +2679,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                           };
                           spellmacro = spellmacro.concat(' {{School:=',spell_spec.school,'}}');
                           spellmacro = spellmacro.concat(' {{Level:=',spell_spec.level,'}}');
-                          //spellmacro = spellmacro.concat(' {{Spell DC:=[[@{spelldc', spell_section, '}]]}}');
                           {
                             var spellcastingstat = 'spellcastingstat';
                             if (spell_column == '2') {
@@ -2198,7 +2688,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                 respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Character does not have spellcastingstat2 attribute defined.'}));
                               };
                             };
-                            spellmacro = spellmacro.concat(' {{Spell DC:=[[10+', spell_section, '+@{', spellcastingstat, '}]]}}');
+                            spellmacro = spellmacro.concat(' {{Spell DC:=[[10+', spell_section, '[Spell Level]+@{', spellcastingstat, '}[Ability Mod]]]}}');
                           }
                           {
                             var default_casterlevel = 'casterlevel';
@@ -2223,7 +2713,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                           if (spell_spec.spell_resistance) {
                             spellmacro = spellmacro.concat(' {{Spell Resist.:=',spell_spec.spell_resistance,'}}');
                             if (spell_spec.spell_resistance != 'No') {
-                              spellmacro = spellmacro.concat(' {{Caster level check:=[[1d20+?{Casting Level}+@{spellpen}]] vs spell resist.}}');
+                              spellmacro = spellmacro.concat(' {{Caster level check:=[[1d20+?{Casting Level}[Casting Level]+@{spellpen}[Spell Penalty]]] vs spell resist.}}');
                             };
                           };
                           spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
@@ -2234,8 +2724,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                           };
                           spellmacro = spellmacro.replace(/(\r\n|\n|\r)/gm, "↲");
                           //log(spellmacro);
-                          //TODO combine the following 3 loops into a single loop
-                          // Create a chat button in output ‹ and ›
+                          // Create a chat button in output ‹ and ›, or « and » for indirect buttons
                           while (spellmacro.match(/^.*‹[^›«»|]+›.*$/) ||
                                  spellmacro.match(/^.*‹[^›«»|]+\|[^›«»]+›.*$/) ||
                                  spellmacro.match(/^.*«[^‹›»|]+».*$/) ||
