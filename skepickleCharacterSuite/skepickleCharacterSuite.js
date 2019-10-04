@@ -436,6 +436,83 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              A magical beast, a dire animal, or an animal trained to attack or guard is allowed a saving throw; an animal not trained to attack or guard is not.`,
           material:         null
         },
+        'animate dead': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Animate_Dead',
+          school:           'Necromancy↲[Evil]',
+          level:            'Clr 3, Death 3, Sor/Wiz 4',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'touch',
+          target_type:      'Targets',
+          target:           'One or more corpses touched',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell turns the bones or bodies of dead creatures into undead skeletons or zombies that follow your spoken commands.
+                             The undead can follow you, or they can remain in an area and attack any creature (or just a specific kind of creature) entering the place. They remain animated until they are destroyed. (A destroyed skeleton or zombie can’t be animated again.)
+                             Regardless of the type of undead you create with this spell, you can’t create more HD of undead than twice your caster level with a single casting of *animate dead*. (The *desecrate* spell doubles this limit)
+                             The undead you create remain under your control indefinitely. No matter how many times you use this spell, however, you can control only 4 HD worth of undead creatures per caster level. If you exceed this number, all the newly created creatures fall under your control, and any excess undead from previous castings become uncontrolled. (You choose which creatures are released.) If you are a cleric, any undead you might command by virtue of your power to command or rebuke undead do not count toward the limit.
+                             *Skeletons:* A skeleton can be created only from a mostly intact corpse or skeleton. The corpse must have bones. If a skeleton is made from a corpse, the flesh falls off the bones.
+                             *Zombies:* A zombie can be created only from a mostly intact corpse. The corpse must be that of a creature with a true anatomy.`,
+          material:         '**Material Component:** You must place a black onyx gem worth at least 25 gp per Hit Die of the undead into the mouth or eye socket of each corpse you intend to animate. The magic of the spell turns these gems into worthless, burned-out shells.'
+        },
+        'animate objects': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Animate_Objects',
+          school:           'Transmutation',
+          level:            'Brd 6, Chaos 6, Clr 6',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] Small object(s); see text',
+          duration:         '[[?{Casting Level}]] round(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You imbue inanimate objects with mobility and a semblance of life. Each such animated object then immediately attacks whomever or whatever you initially designate.
+                             An animated object can be of any nonmagical material. You may animate one Small or smaller object or an equivalent number of larger objects per caster level. A Medium object counts as two Small or smaller objects, a Large object as four, a Huge object as eight, a Gargantuan object as sixteen, and a Colossal object as thirty-two. You can change the designated target or targets as a move action, as if directing an active spell.
+                             This spell cannot animate objects carried or worn by a creature.
+                             *Animate objects* can be made permanent with a *permanency* spell.`,
+          material:         null
+        },
+        'animate plants': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Animate_Plants',
+          school:           'Transmutation',
+          level:            'Drd 7, Plant 7',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Targets',
+          target:           '[[floor(?{Casting Level}/3)]] Large plant(s) or all plants within range; see text',
+          duration:         '[[?{Casting Level}]] round(s) or [[?{Casting Level}]] hour(s); see text',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You imbue inanimate plants with mobility and a semblance of life. Each animated plant then immediately attacks whomever or whatever you initially designate as though it were an animated object of the appropriate size category. You may animate one Large or smaller plant, or an equivalent number of larger plants, per three caster levels. A Huge plant counts as two Large or smaller plants, a Gargantuan plant as four, and a Colossal plant as eight. You can change the designated target or targets as a move action, as if directing an active spell.
+                             Use the statistics for animated objects, except that plants smaller than Large usually don’t have hardness.
+                             *Animate plants* cannot affect plant creatures, nor does it affect nonliving vegetable material.
+                             *Entangle:* Alternatively, you may imbue all plants within range with a degree of mobility, which allows them to entwine around creatures in the area. This usage of the spell duplicates the effect of an *entangle* spell. Spell resistance does not keep creatures from being entangled. This effect lasts 1 hour per caster level.`,
+          material:         null
+        },
+        'animate rope': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Animate_Rope',
+          school:           'Transmutation',
+          level:            'Artifice 1, Brd 1, Sor/Wiz 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Target',
+          target:           'One ropelike object, length up to [[50+(5*?{Casting Level})]] ft.; see text',
+          duration:         '[[?{Casting Level}]] round(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You can animate a nonliving ropelike object. The maximum length assumes a rope with a 1-inch diameter.
+                             Reduce the maximum length by 50% for every additional inch of thickness, and increase it by 50% for each reduction of the rope’s diameter by half.
+                             The possible commands are “coil” (form a neat, coiled stack), “coil and knot,” “loop,” “loop and knot,” “tie and knot,” and the opposites of all of the above (“uncoil,” and so forth). You can give one command each round as a move action, as if directing an active spell.
+                             The rope can enwrap only a creature or an object within 1 foot of it—it does not snake outward—so it must be thrown near the intended target. Doing so requires a successful ranged touch attack roll (range increment 10 feet). A typical 1-inch-diameter hempen rope has 2 hit points, AC 10, and requires a DC 23 Strength check to burst it. The rope does not deal damage, but it can be used as a trip line or to cause a single opponent that fails a Reflex saving throw to become entangled. A creature capable of spellcasting that is bound by this spell must make a DC 15 Concentration check to cast a spell. An entangled creature can slip free with a DC 20 Escape Artist check.
+                             The rope itself and any knots tied in it are not magical.
+                             This spell grants a \`\`+2\`\` bonus on any Use Rope checks you make when using the transmuted rope.
+                             The spell cannot animate objects carried or worn by a creature.`,
+          material:         null
+        },
         /////////////////////////////////////
         'wall of fire': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Wall_of_Fire',
@@ -1708,7 +1785,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                           };
                           if (dnd35.spells()[spell_name].spell_resistance) {
                             spellmacro = spellmacro.concat(' {{Spell Resist.:=',dnd35.spells()[spell_name].spell_resistance,'}}');
-                            spellmacro = spellmacro.concat(' {{Caster level check:=[[1d20+?{Casting Level}+@{spellpen}]] vs spell resist.}}');
+                            if (dnd35.spells()[spell_name].spell_resistance != 'No') {
+                              spellmacro = spellmacro.concat(' {{Caster level check:=[[1d20+?{Casting Level}+@{spellpen}]] vs spell resist.}}');
+                            };
                           };
                           spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
                           spellmacro = spellmacro.concat(' {{succeedcheck=',dnd35.spells()[spell_name].text,'}}');
