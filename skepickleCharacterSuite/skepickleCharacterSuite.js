@@ -1078,13 +1078,59 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           material:         null
         },
         'bolt of glory': {
-          //TODO
+          ref:              'https://www.dandwiki.com/wiki/SRD:Bolt_of_Glory',
+          school:           'Evocation↲[Good]',
+          level:            'Glory 6',
+          components:       'V, S, D F',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Effect',
+          target:           'Ray',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `This spell projects a bolt of energy from the Positive Energy Plane against one creature. The caster must succeed at a ranged touch attack to strike the target. A creature struck suffers varying damage, depending on its nature and home plane of existence:
+                             ‹Material Plane↲Elemental Plane↲neutral outsider|[[[[{floor(?{Casting Level}/2),7}kl1]]d6]]›
+                             ‹Negative Energy Plane↲evil outsider↲undead creature|[[[[{?{Casting Level},15}kl1]]d6]]›
+                             ‹Positive Energy Plane↲good outsider|—›`,
+          material:         null
         },
         'bolts of bedevilment': {
-          //TODO
+          ref:              'https://www.dandwiki.com/wiki/SRD:Bolts_of_Bedevilment',
+          school:           'Enchantment↲[Mind-Affecting]',
+          level:            'Madness 5',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Effect',
+          target:           'Ray',
+          duration:         '[[?{Casting Level}]] round(s)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `This spell grants the caster the ability to make one ray attack per round. The ray dazes one living creature, clouding its mind so that it takes no action for [[1d3]] rounds. The creature is not stunned (so attackers get no special advantage against it), but it can’t move, cast spells, use mental abilities, and so on.`,
+          material:         null
         },
         'brain spider': {
-          //TODO
+          ref:              'https://www.dandwiki.com/wiki/SRD:Brain_Spider',
+          school:           'Divination↲[Mind-Affecting]',
+          level:            'Clr 8, Mind 7',
+          components:       'V, S, M, DF',
+          casting_time:     '1 round',
+          range:            'long',
+          target_type:      'Targets',
+          target:           'Up to eight living creatures',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `This spell allows you to eavesdrop as a standard action on the thoughts of up to eight other creatures at once, hearing as desired:
+
+                             • Individual trains of thought in whatever order you desire.
+                             • Information from all minds about one particular topic, thing, or being, one nugget of information per caster level.
+                             • A study of the thoughts and memories of one creature of the group in detail.
+
+                             Once per round, if you do not perform a detailed study of one creature’s mind, you can attempt (as a standard action) to implant a *suggestion* in the mind of any one of the affected creatures. The creature can make another Will saving throw to resist the *suggestion*, using the save DC of the *brain spider* spell. (Creatures with special resistance to enchantment spells can use this resistance to keep from being affected by the *suggestion*.) Success on this saving throw does not negate the other effects of the *brain spider* spell for that creature.
+                             You can affect all intelligent beings of your choice within range (up to the limit of eight), beginning with known or named beings. Language is not a barrier, and you need not personally know the beings. The spell cannot reach those who make a successful Will save.`,
+          material:         '**Material Component:** A spider of any size or kind. It can be dead, but must still have all eight legs.'
         },
         'break enchantment': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Break_Enchantment',
@@ -1133,23 +1179,24 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `A cone of searing flame shoots from your fingertips. Any creature in the area of the flames takes 1d4 points of ‹fire damage|[[[[{?{Casting Level},5}kl1]]d4]]› per caster level (maximum 5d4). Flammable materials burn if the flames touch them. A character can extinguish burning items as a full-round action.`,
           material:         null
         },
-
-        //'': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '↲',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'call lightning': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Call_Lightning',
+          school:           'Evocation↲[Electricity]',
+          level:            'Drd 3, Weather 3',
+          components:       'V, S',
+          casting_time:     '1 round',
+          range:            'medium',
+          target_type:      'Effect',
+          target:           'One or more 30-ft.-long vertical lines of lightning',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Reflex half',
+          spell_resistance: 'Yes',
+          text:             `Immediately upon completion of the spell, and once per round thereafter, you may call down a 5-foot-wide, 30-foot-long, vertical bolt of lightning that deals ‹3d6› points of electricity damage. The bolt of lightning flashes down in a vertical stroke at whatever target point you choose within the spell’s range (measured from your position at the time). Any creature in the target square or in the path of the bolt is affected.
+                             You need not call a bolt of lightning immediately; other actions, even spellcasting, can be performed. However, each round after the first you may use a standard action (concentrating on the spell) to call a bolt. You may call a total number of bolts equal to your caster level (maximum 10 bolts): [[{?{Casting Level},10}kl1]] bolts total.
+                             If you are outdoors and in a stormy area—a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado (including a whirlwind formed by a djinni or an air elemental of at least Large size)—each bolt deals ‹3d10› points of electricity damage instead of 3d6.
+                             This spell functions indoors or underground but not underwater.`,
+          material:         null
+        },
         //'': {
         //// ↲’‹›«»
         //  ref:              '',
@@ -1437,7 +1484,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'brain spider':         { recharge: '1 hour' },
         'break enchantment':    { recharge: '1 hour' },
         'bull\'s strength':     { recharge: '5 minutes' },
-        'burning hands':        { recharge: 'General' }
+        'burning hands':        { recharge: 'General' },
+        'call lightning':       { recharge: 'General' }
         //'': { recharge: 'General' },
       }
     },
