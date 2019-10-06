@@ -2223,7 +2223,91 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `This spell imbues a flask (1 pint) of water with negative energy, turning it into unholy water. Unholy water damages good [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type) the way holy water damages [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) and evil [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type).`,
           material:         '**Material Component:** 5 pounds of powdered silver (worth 25 gp).'
         },
-        //'': {
+        //TODO damnation
+        'dancing lights': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dancing_Lights',
+          school:           'Evocation [Light]',
+          level:            'Brd 0, Sor/Wiz 0',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Effect',
+          target:           'Up to four lights, all within a 10- ft.-radius area',
+          duration:         '1 minute (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `Depending on the version selected, you create up to four lights that resemble lanterns or torches (and cast that amount of light), or up to four glowing spheres of light (which look like [will-o’-wisps](https://www.dandwiki.com/wiki/SRD:Will-O%27-Wisp)), or one faintly glowing, vaguely [humanoid](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) shape. The *dancing lights* must stay within a 10-foot-radius area in relation to each other but otherwise move as you desire (no concentration required): forward or back, up or down, straight or turning corners, or the like. The lights can move up to 100 feet per round. A light winks out if the distance between you and it exceeds the spell’s range.
+                             *Dancing lights* can be made permanent with a [*permanency*](https://www.dandwiki.com/wiki/SRD:Permanency) spell.`,
+          material:         null
+        },
+        'darkness': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Darkness',
+          school:           'Evocation [Darkness]',
+          level:            'Asn 2, Blg 2, Brd 2, Clr 2, Sor/Wiz 2',
+          components:       'V, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Object touched',
+          duration:         '[[10*?{Casting Level}]] level(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell causes an object to radiate shadowy illumination out to a 20-foot radius. All creatures in the area gain [concealment](https://www.dandwiki.com/wiki/SRD:Concealment) (20% miss chance). Even creatures that can normally see in such conditions (such as with darkvision or low-light vision) have the miss chance in an area shrouded in magical *darkness*.
+                             Normal lights (torches, candles, lanterns, and so forth) are incapable of brightening the area, as are light spells of lower level. Higher level light spells are not affected by *darkness*.
+                             If *darkness* is cast on a small object that is then placed inside or under a lightproof covering, the spell’s effect is blocked until the covering is removed.
+                             *Darkness* counters or dispels any light spell of equal or lower spell level.`,
+          material:         '**Arcane Material Component:** A bit of bat fur and either a drop of pitch or a piece of coal.'
+        },
+        'darkvision': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Darkvision_(Spell)',
+          school:           'Transmutation',
+          level:            'Rgr 3, Sor/Wiz 2',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] hour(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The subject gains the ability to see 60 feet even in total darkness. Darkvision is black and white only but otherwise like normal sight. *Darkvision* does not grant one the ability to see in magical darkness.
+                             *Darkvision* can be made permanent with a [*permanency*](https://www.dandwiki.com/wiki/SRD:Permanency) spell.`,
+          material:         '**Material Component:** Either a pinch of dried carrot or an agate.'
+        },
+        'daylight': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Daylight',
+          school:           'Evocation [Light]',
+          level:            'Brd 3, Clr 3, Drd 3, Pal 3, Sor/Wiz 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Object touched',
+          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `The object touched sheds light as bright as full daylight in a 60-foot radius, and dim light for an additional 60 feet beyond that. Creatures that take penalties in bright light also take them while within the radius of this magical light. Despite its name, this spell is not the equivalent of daylight for the purposes of creatures that are damaged or destroyed by bright light.
+                             If *daylight* is cast on a small object that is then placed inside or under a light- proof covering, the spell’s effects are blocked until the covering is removed.
+                             *Daylight* brought into an area of magical darkness (or vice versa) is temporarily negated, so that the otherwise prevailing light conditions exist in the overlapping areas of effect.
+                             *Daylight* counters or dispels any darkness spell of equal or lower level, such as [*darkness*](https://www.dandwiki.com/wiki/SRD:Darkness).`,
+          material:         null
+        },
+        'daze': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Daze',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Brd 0, Sor/Wiz 0',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One [humanoid](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) creature of 4 HD or less',
+          duration:         '1 round',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `This enchantment clouds the mind of a [humanoid creature](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) with 4 or fewer Hit Dice so that it takes no actions. [Humanoids](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) of 5 or more HD are not affected. A [dazed](https://www.dandwiki.com/wiki/SRD:Dazed) subject is not [stunned](https://www.dandwiki.com/wiki/SRD:Stunned), so attackers get no special advantage against it.`,
+          material:         '**Material Component:** A pinch of wool or similar substance.'
+        },
+        //'daze monster': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2239,7 +2323,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'death knell': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2255,7 +2339,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'death ward': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2271,7 +2355,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'deathwatch': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2287,7 +2371,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'deep slumber': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2303,7 +2387,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'deeper darkness': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2319,7 +2403,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'delay poison': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2335,7 +2419,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'delayed blast fireball': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2351,7 +2435,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'demand': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2367,7 +2451,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //TODO demise unseen
+        //'desecrate': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2383,7 +2468,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'destruction': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2399,7 +2484,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'detect animals or plants': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2415,7 +2500,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'detect chaos': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2431,7 +2516,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'detect evil': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2447,7 +2532,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'detect good': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2463,7 +2548,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'detect law': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2479,7 +2564,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'detect magic': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2495,7 +2580,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'detect poison': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2511,7 +2596,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'detect scrying': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2527,7 +2612,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'detect secret doors': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2543,7 +2628,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'detect snares and pits': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2559,7 +2644,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'detect thoughts': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2575,7 +2660,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'detect undead': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2591,7 +2676,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'dictum': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2607,7 +2692,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'dimension door': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2623,7 +2708,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'dimensional anchor': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2639,7 +2724,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'dimensional lock': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2655,7 +2740,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'diminish plants': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2671,7 +2756,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //TODO dire winter
+        //'discern lies': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2687,7 +2773,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'discern location': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2703,7 +2789,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'disguise self': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2719,7 +2805,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'disintegrate': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2735,7 +2821,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'dismissal': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2751,7 +2837,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'dispel chaos': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2767,7 +2853,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'dispel evil': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2783,7 +2869,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
-        //'': {
+        //'dispel good': {
         //// ↲’‹›«»
         //  ref:              '',
         //  school:           '',
@@ -2799,6 +2885,2552 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  text:             ``,
         //  material:         null
         //},
+        //'dispel law': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'dispel magic': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'displacement': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'disrupt undead': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'disrupting weapon': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'divination': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'divine favor': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'divine power': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'dominate animal': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'dominate monster': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'dominate person': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'doom': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //TODO dragon knight (ritual)
+        //TODO dragon strike (ritual)
+        //'dream': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //TODO dreamscape
+        //'dweomer of transference': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+
+
+
+        //'eagle\'s splendor': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'earthquake': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //TODO eclipse
+        //TODO eidolon
+        //'elemental swarm': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'endure elements': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'energy drain': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'enervation': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'enlarge person': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //TODO enslave (ritual)
+        //'entangle': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'enthrall': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'entropic shield': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //TODO epic counterspell
+        //TODO epic mage armor
+        //TODO epic repulsion
+        //TODO epic spell reflection
+        //'erase': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //TODO eternal freedom
+        //'ethereal jaunt': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'etherealness': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'expeditious retreat': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'explosive runes': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'eyebite': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+
+
+
+
+
+        //'fabricate': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'faerie fire': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'false life': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'false vision': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'fear': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'feather fall': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'feeblemind': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'find traps': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'find the path': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'finger of death': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'fire seeds': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'fire shield': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'fire storm': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'fire trap': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'fireball': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'flame arrow': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'flame blade': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'flame strike': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'flaming sphere': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'flare': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'flesh to stone': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'floating disk': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'fly': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'fog cloud': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'forbiddance': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'forcecage': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'forceful hand': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'foresight': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'fox\'s cunning': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'freedom': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'freedom of movement': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'freezing sphere': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+
+
+
+
+        //'gaseous form': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'gate': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //TODO gathering of maggots
+        //'geas/quest': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'genesis': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'gentle repose': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'ghost sound': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'ghoul touch': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'giant vermin': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'glibness': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'glitterdust': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'globe of invulnerability': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'glossolalia': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'glyph of warding': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'good hope': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'goodberry': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'grasping hand': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'grease': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater arcane sight': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater command': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater dispel magic': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater glyph of warding': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater heroism': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater invisibility': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater magic fang': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater magic weapon': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater planar ally': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater planar binding': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater prying eyes': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater psychic turmoil': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater restoration': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //TODO greater ruin
+        //'greater scrying': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater shadow conjuration': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater shadow evocation': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater shout': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater spell immunity': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //TODO greater spell resistance
+        //'greater status': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'greater teleport': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'guards and wards': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'guidance': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'gust of wind': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+
+
+
+
+
+        //'hallow': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'hallucinatory terrain': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'halt undead': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'hardening': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'harm': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'haste': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'heal': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'heal mount': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'heat metal': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //TODO hellball
+        //'helping hand': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'heroes\' feast': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'heroism': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'hide from animals': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'hide from undead': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'hideous laughter': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'hold animal': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'hold monster': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'hold person': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'hold portal': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'holy aura': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'holy smite': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'holy sword': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'holy word': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'horrid wilting': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'hypnotic pattern': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'hypnotism': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+
+
+
+        //'ice storm': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'identify': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'illusory script': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'illusory wall': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'imbue with spell ability': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'implosion': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'imprisonment': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'incendiary cloud': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'inflict critical wounds': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'inflict light wounds': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'inflict minor wounds': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'inflict moderate wounds': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'inflict serious wounds': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'insanity': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'insect plague': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'instant summons': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'interposing hand': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'invisibility': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'invisibility purge': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'invisibility spell': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'invisibility sphere': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'iron body': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'ironwood': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'irresistible dance': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+
+
+
+
+        //'jump': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+
+
+
+
+
+        //'keen edge': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //TODO kinetic control
+        //'knock': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'know direction': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+
+
+
+
+
         //'': {
         //// ↲’‹›«»
         //  ref:              '',
