@@ -2307,199 +2307,217 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `This enchantment clouds the mind of a [humanoid creature](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) with 4 or fewer Hit Dice so that it takes no actions. [Humanoids](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) of 5 or more HD are not affected. A [dazed](https://www.dandwiki.com/wiki/SRD:Dazed) subject is not [stunned](https://www.dandwiki.com/wiki/SRD:Stunned), so attackers get no special advantage against it.`,
           material:         '**Material Component:** A pinch of wool or similar substance.'
         },
-        //'daze monster': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'death knell': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'death ward': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'deathwatch': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'deep slumber': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'deeper darkness': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'delay poison': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'delayed blast fireball': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'demand': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'daze monster': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Daze_Monster',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Brd 2, Sor/Wiz 2',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Target',
+          target:           'One living creature of 6 HD or less',
+          duration:         '1 round',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `This enchantment clouds the mind of a living creature with 6 or fewer Hit Dice so that it takes no actions. Creatures of 7 or more HD are not affected. A [dazed](https://www.dandwiki.com/wiki/SRD:Dazed) subject is not [stunned](https://www.dandwiki.com/wiki/Stunned), so attackers get no special advantage against it.`,
+          material:         '**Material Component:** A pinch of wool or similar substance.'
+        },
+        'death knell': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Death_Knell',
+          school:           'Necromancy [Death, Evil]',
+          level:            'Blg 2, Clr 2, Death 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Living creature touched',
+          duration:         'Instantaneous/10 minutes per HD of subject; see text',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `You draw forth the ebbing life force of a creature and use it to fuel your own power. Upon casting this spell, you touch a living creature that has \`\`–1\`\` or fewer hit points. If the subject fails its saving throw, it dies, and you gain 1d8 temporary hit points and a \`\`+2\`\` bonus to Strength. Additionally, your effective caster level goes up by \`\`+1\`\`, improving spell effects dependent on caster level. (This increase in effective caster level does not grant you access to more spells.) These effects last for 10 minutes per HD of the subject creature.`,
+          material:         null
+        },
+        'death ward': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Death_Ward',
+          school:           'Necromancy',
+          level:            'Clr 4, Death 4, Drd 5, Pal 4, Repose 4',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Living creature touched',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The subject is immune to all death spells, magical death effects, energy drain, and any negative energy effects.
+                             This spell doesn’t remove [negative levels](https://www.dandwiki.com/wiki/Energy_Drain,_Negative_Levels,_and_Level_Loss_(SRD_Special_Ability)#Negative_Levels) that the subject has already gained, nor does it affect the saving throw necessary 24 hours after gaining a negative level.
+                             *Death ward* does not protect against other sorts of attacks even if those attacks might be lethal.`,
+          material:         null
+        },
+        'deathwatch': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Deathwatch',
+          school:           'Necromancy [Evil]',
+          level:            'Clr 1, Repose 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '30 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `Using the foul sight granted by the powers of unlife, you can determine the condition of creatures near death within the spell’s range. You instantly know whether each creature within the area is [dead](https://www.dandwiki.com/wiki/SRD:Dead), fragile (alive and wounded, with 3 or fewer hit points left), fighting off death (alive with 4 or more hit points), [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type), or neither alive nor [dead](https://www.dandwiki.com/wiki/SRD:Dead) (such as a [construct](https://www.dandwiki.com/wiki/SRD:Construct_Type)).
+                             *Deathwatch* sees through any spell or ability that allows creatures to feign death.`,
+          material:         null
+        },
+        'deep slumber': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Deep_Slumber',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Asn 3, Brd 3, Sor/Wiz 3',
+          components:       'V, S, M',
+          casting_time:     '1 round',
+          range:            'close',
+          target_type:      'Area',
+          target:           'One or more living creatures within a 10-ft.-radius burst',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `A *deep slumber* spell causes a magical slumber to come upon 10 Hit Dice of creatures. Creatures with the fewest HD are affected first.
+                             Among creatures with equal HD, those who are closest to the spell’s point of origin are affected first. Hit Dice that are not sufficient to affect a creature are wasted.
+                             Sleeping creatures are [helpless](https://www.dandwiki.com/wiki/SRD:Helpless). Slapping or wounding awakens an affected creature, but normal noise does not. Awakening a creature is a standard action (an application of the aid another action).
+                             *Deep slumber* does not target unconscious creatures, [constructs](https://www.dandwiki.com/wiki/SRD:Construct_Type), or [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures.`,
+          material:         '**Material Component:** A pinch of fine sand, rose petals, or a live cricket.'
+        },
+        'deeper darkness': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Deeper_Darkness',
+          school:           'Evocation [Darkness]',
+          level:            'Asn 3, Blg 3, Clr 3',
+          components:       'V, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Object touched',
+          duration:         '[[?{Casting Level}]] day(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell causes an object to radiate shadowy illumination out to a 60-foot radius. All creatures in the area gain concealment (20% miss chance). Even creatures that can normally see in such conditions (such as with darkvision or low-light vision) have the miss chance in an area shrouded in magical *deeper darkness*.
+                             Normal lights (torches, candles, lanterns, and so forth) are incapable of brightening the area, as are light spells of lower level. *Deeper darkness* counters and dispels any light spell of equal or lower level, including [*daylight*](https://www.dandwiki.com/wiki/SRD:Daylight) and [*light*](https://www.dandwiki.com/wiki/SRD:Light).
+                             If *deeper darkness* is cast on a small object that is then placed inside or under a lightproof covering, the spell’s effect is blocked until the covering is removed.
+                             [*Daylight*](https://www.dandwiki.com/wiki/SRD:Daylight) brought into an area of *deeper darkness* (or vice versa) is temporarily negated, so that the otherwise prevailing light conditions exist in the overlapping areas of effect.`,
+          material:         '**Arcane Material Component:** A bit of bat fur and either a drop of pitch or a piece of coal.'
+        },
+        'delay poison': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Delay_Poison',
+          school:           'Conjuration (Healing)',
+          level:            'Brd 2, Clr 2, Drd 2, Pal 2, Rgr 1',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] hour(s)',
+          saving_throw:     'Fortitude negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The subject becomes temporarily immune to [poison](https://www.dandwiki.com/wiki/SRD:Poison). Any poison in its system or any poison to which it is exposed during the spell’s duration does not affect the subject until the spell’s duration has expired. *Delay poison* does not cure any damage that poison may have already done.`,
+          material:         null
+        },
+        'delayed blast fireball': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Delayed_Blast_Fireball',
+          school:           'Evocation [Fire]',
+          level:            'Sor/Wiz 7',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'long',
+          target_type:      'Area',
+          target:           '20-ft.-radius spread',
+          duration:         '5 rounds or less; see text',
+          saving_throw:     'Reflex half',
+          spell_resistance: 'Yes',
+          text:             `A *delayed blast fireball* spell is an explosion of flame that can detonate with a low roar up to 5 rounds after the spell is cast and deals 1d6 points of ‹fire damage|[[[[{?{Casting Level},20}kl1]]d6]]› per caster level (maximum 20d6) to every creature within the area. Unattended objects also take this damage. The explosion creates almost no pressure.
+                             You point your finger and determine the range (distance and height) at which the *delayed blast fireball* is to burst. A glowing, pea-sized bead streaks from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the *fireball* at that point. (An early impact results in an early detonation.) If you attempt to send the bead through a narrow passage, such as through an arrow slit, you must “hit” the opening with a ranged touch attack, or else the bead strikes the barrier and detonates prematurely.
+                             The glowing bead created by *delayed blast fireball* can detonate immediately if you desire, or you can choose to delay the burst for as many as 5 rounds. You select the amount of delay upon completing the spell, and that time cannot change once it has been set unless someone touches the bead (see below). If you choose a delay, the glowing bead sits at its destination until it detonates. A creature can pick up and hurl the bead as a thrown weapon (range increment 10 feet). If a creature handles and moves the bead within 1 round of its detonation, there is a 25% chance that the bead detonates while being handled.
+                             The *fireball* sets fire to combustibles and damages objects in the area. It can melt metals with low melting points, such as lead, gold, copper, silver, and bronze. If the damage caused to an interposing barrier shatters or breaks through it, the *fireball* may continue beyond the barrier if the area permits; otherwise it stops at the barrier just as any other spell effect does.`,
+          material:         null
+        },
+        'demand': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Demand',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Charm 8, Nobility 8, Sor/Wiz 8',
+          components:       'V, S, M/DF',
+          casting_time:     '10 minutes',
+          range:            'See text',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         '1 round; see text',
+          saving_throw:     'Will partial',
+          spell_resistance: 'Yes',
+          text:             `You contact a particular creature with which you are familiar and send a short message of twenty-five words or less to the subject. The subject recognizes you if it knows you. It can answer in like manner immediately. A creature with an Intelligence score as low as 1 can understand the *demand*, though the subject’s ability to react is limited as normal by its Intelligence score. Even if the *demand* is received, the subject is not obligated to act upon it in any manner.
+                             If the creature in question is not on the same plane of existence as you are, there is a 5% chance that the *demand* does not arrive. (Local conditions on other planes may worsen this chance considerably.)
+                             The message can also contain a [*suggestion*](https://www.dandwiki.com/wiki/SRD:Suggestion), which the subject does its best to carry out. A successful Will save negates the *suggestion* effect but not the contact itself. The *demand*, if received, is understood even if the subject’s Intelligence score is as low as 1. If the message is impossible or meaningless according to the circumstances that exist for the subject at the time the *demand* is issued, the message is understood but the *suggestion* is ineffective.
+                             The *demand*’s message to the creature must be twenty-five words or less, including the *suggestion*. The creature can also give a short reply immediately.`,
+          material:         '**Material Component:** A short piece of copper wire and some small part of the subject—a hair, a bit of nail, or the like.'
+        },
         //TODO demise unseen
-        //'desecrate': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'destruction': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'detect animals or plants': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'desecrate': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Desecrate',
+          school:           'Evocation [Evil]',
+          level:            'Clr 2, Evil 2',
+          components:       'V, S, M, DF',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Area',
+          target:           '20-ft.-radius emanation',
+          duration:         '[[2*?{Casting Level}]] hour(s)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `This spell imbues an area with negative energy. Each Charisma check made to turn [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) within this area takes a \`\`-3\`\` profane penalty, and every [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) entering a *desecrated* area gains a \`\`+1\`\` profane bonus on attack rolls, damage rolls, and saving throws. An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature created within or summoned into such an area gains \`\`+1\`\` hit points per HD.
+                             If the *desecrated* area contains an altar, shrine, or other permanent fixture dedicated to your deity or aligned higher power, the modifiers given above are doubled (\`\`-6\`\` profane penalty on turning checks, \`\`+2\`\` profane bonus and \`\`+2\`\` hit points per HD for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) in the area).
+                             Furthermore, anyone who casts [*animate dead*](https://www.dandwiki.com/wiki/SRD:Animate_Dead) within this area may create as many as double the normal amount of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) (that is, 4 HD per caster level rather than 2 HD per caster level).
+                             If the area contains an altar, shrine, or other permanent fixture of a deity, pantheon, or higher power other than your patron, the *desecrate* spell instead curses the area, cutting off its connection with the associated deity or power. This secondary function, if used, does not also grant the bonuses and penalties relating to [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type), as given above.
+                             *Desecrate* counters and dispels [*consecrate*](https://www.dandwiki.com/wiki/SRD:Consecrate).`,
+          material:         '**Material Component:** A vial of unholy water and 25 gp worth (5 pounds) of silver dust, all of which must be sprinkled around the area.'
+        },
+        'destruction': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Destruction',
+          school:           'Necromancy [Death]',
+          level:            'Clr 7, Death 7, Repose 7',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude partial',
+          spell_resistance: 'Yes',
+          text:             `This spell instantly slays the subject and consumes its remains (but not its equipment and possessions) utterly. If the target’s Fortitude saving throw succeeds, it instead takes ‹10d6› points of damage. The only way to restore life to a character who has failed to save against this spell is to use [*true resurrection*](https://www.dandwiki.com/wiki/SRD:True_Resurrection), a carefully worded [*wish*](https://www.dandwiki.com/wiki/SRD:Wish) spell followed by [*resurrection*](https://www.dandwiki.com/wiki/SRD:Resurrection), or [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle).`,
+          material:         '**Focus:** A special holy (or unholy) symbol of silver marked with verses of anathema (cost 500 gp).'
+        },
+        'detect animals or plants': {
+        // ↲’‹›«»
+          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Animals_or_Plants',
+          school:           'Divination',
+          level:            'Drd 1, Rgr 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'long',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation',
+          duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You can detect a particular kind of animal or plant in a cone emanating out from you in whatever direction you face. You must think of a kind of animal or plant when using the spell, but you can change the animal or plant kind each round. The amount of information revealed depends on how long you search a particular area or focus on a specific kind of animal or plant.
+                             1st Round: Presence or absence of that kind of animal or plant in the area.
+                             2nd Round: Number of individuals of the specified kind in the area, and the condition of the healthiest specimen.
+                             3rd Round: The condition (see below) and location of each individual present. If an animal or plant is outside your line of sight, then you discern its direction but not its exact location.
+                             Conditions: For purposes of this spell, the categories of condition are as follows:
+                             Normal: Has at least 90% of full normal hit points, free of disease.
+                             Fair: 30% to 90% of full normal hit points remaining.
+                             Poor: Less than 30% of full normal hit points remaining, afflicted with a disease, or suffering from a debilitating injury.
+                             Weak: 0 or fewer hit points remaining, afflicted with a disease in the terminal stage, or crippled.
+                             If a creature falls into more than one category, the spell indicates the weaker of the two.
+                             Each round you can turn to detect a kind of animal or plant in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
+          material:         null
+        },
         //'detect chaos': {
         //// ↲’‹›«»
         //  ref:              '',
@@ -5625,7 +5643,64 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'cure minor wounds':          { recharge: 'General' },
         'cure moderate wounds':       { recharge: 'General' },
         'cure serious wounds':        { recharge: 'General' },
-        'curse water':                { recharge: 'General' }
+        'curse water':                { recharge: 'General' },
+        'dancing lights':             { recharge: 'General' },
+        'darkness':                   { recharge: '4 hours' },
+
+        'darkvision':                 { recharge: '6 hours' },
+        'daylight':                   { recharge: '4 hours' },
+        'daze':                       { recharge: 'General' },
+        'daze monster':               { recharge: 'General' },
+        'death knell':                { recharge: 'General' },
+        'death ward':                 { recharge: '5 minutes' },
+        'deathwatch':                 { recharge: '4 hours' },
+        'deep slumber':               { recharge: 'General' },
+        'deeper darkness':            { recharge: '24 hours' },
+        'delay poison':               { recharge: '6 hours' },
+        'delayed blast fireball':     { recharge: 'General' },
+        'demand':                     { recharge: '30 minutes' },
+        'desecrate':                  { recharge: '30 minutes' },
+        'destruction':                { recharge: 'General' },
+        'detect animals or plants':   { recharge: 'General' },
+        'detect chaos':               { recharge: 'General' },
+        'detect evil':                { recharge: 'General' },
+        'detect good':                { recharge: 'General' },
+        'detect law':                 { recharge: 'General' },
+        'detect magic':               { recharge: 'General' },
+        'detect poison':              { recharge: '5 minutes' },
+        'detect scrying':             { recharge: 'General' },
+        'detect secret doors':        { recharge: 'General' },
+        'detect snares and pits':     { recharge: 'General' },
+        'detect undead':              { recharge: 'General' },
+        'dictum':                     { recharge: 'General' },
+        'dimension door':             { recharge: 'General' },
+        'dimensional anchor':         { recharge: 'General' },
+        'dimensional lock':           { recharge: '24 hours' },
+        'diminish plants':            { recharge: '4 hours' },
+        'discern lies':               { recharge: '6 hours' },
+        'discern location':           { recharge: '6 hours' },
+        'disguise self':              { recharge: '4 hours' },
+        'disintegrate':               { recharge: 'General' },
+        'disjunction':                { recharge: 'General' },
+        'dismissal':                  { recharge: 'General' },
+        'dispel chaos':               { recharge: 'General' },
+        'dispel evil':                { recharge: 'General' },
+        'dispel good':                { recharge: 'General' },
+        'dispel law':                 { recharge: 'General' },
+        'dispel magic':               { recharge: 'General' },
+        'displacement':               { recharge: 'General' },
+        'disrupt undead':             { recharge: 'General' },
+        'disrupting weapon':          { recharge: '5 minutes' },
+        'divination':                 { recharge: '6 hours' },
+        'divine favor':               { recharge: '5 minutes' },
+        'divine power':               { recharge: '5 minutes' },
+        'dominate animal':            { recharge: 'General' },
+        'dominate monster':           { recharge: '12 hours' },
+        'dominate person':            { recharge: '12 hours' },
+        'doom':                       { recharge: 'General' },
+        'dream':                      { recharge: 'General' }
+
+
 
         //'': { recharge: 'General' },
       }
