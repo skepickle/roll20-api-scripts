@@ -1880,7 +1880,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            'long',
           target_type:      'Area',
-          target:           'Water in a volume of [[10*?{Casting Level}]] ft. by [[10*?{Casting Level}]] ft. by [[2*?{Casting Level}]] ft. (S)',
+          target:           'Water in a volume of [[10*?{Casting Level}]] ft. by [[10*?{Casting Level}]] ft. by [[2*?{Casting Level}]] ft. (D)',
           duration:         '[[10*?{Casting Level}]] minute(s) (D)',
           saving_throw:     'None; see text',
           spell_resistance: 'No',
@@ -2259,7 +2259,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           material:         '**Arcane Material Component:** A bit of bat fur and either a drop of pitch or a piece of coal.'
         },
         'darkvision': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Darkvision_(Spell)',
+          ref:              'https://www.dandwiki.com/wiki/SRD:Darkvision_%28Spell%29',
           school:           'Transmutation',
           level:            'Rgr 3, Sor/Wiz 2',
           components:       'V, S, M',
@@ -2493,7 +2493,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           material:         '**Focus:** A special holy (or unholy) symbol of silver marked with verses of anathema (cost 500 gp).'
         },
         'detect animals or plants': {
-        // ↲’‹›«»
           ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Animals_or_Plants',
           school:           'Divination',
           level:            'Drd 1, Rgr 1',
@@ -2505,636 +2504,960 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `You can detect a particular kind of animal or plant in a cone emanating out from you in whatever direction you face. You must think of a kind of animal or plant when using the spell, but you can change the animal or plant kind each round. The amount of information revealed depends on how long you search a particular area or focus on a specific kind of animal or plant.
-                             1st Round: Presence or absence of that kind of animal or plant in the area.
-                             2nd Round: Number of individuals of the specified kind in the area, and the condition of the healthiest specimen.
-                             3rd Round: The condition (see below) and location of each individual present. If an animal or plant is outside your line of sight, then you discern its direction but not its exact location.
-                             Conditions: For purposes of this spell, the categories of condition are as follows:
+          text:             `You can detect a particular kind of [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) in a cone emanating out from you in whatever direction you face. You must think of a kind of [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) when using the spell, but you can change the [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) kind each round. The amount of information revealed depends on how long you search a particular area or focus on a specific kind of [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type).
+                             *1st Round:* Presence or absence of that kind of [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) in the area.
+                             *2nd Round:* Number of individuals of the specified kind in the area, and the condition of the healthiest specimen.
+                             *3rd Round:* The condition (see below) and location of each individual present. If an [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) is outside your line of sight, then you discern its direction but not its exact location.
+                             *Conditions:* For purposes of this spell, the categories of condition are as follows:
                              Normal: Has at least 90% of full normal hit points, free of disease.
                              Fair: 30% to 90% of full normal hit points remaining.
                              Poor: Less than 30% of full normal hit points remaining, afflicted with a disease, or suffering from a debilitating injury.
                              Weak: 0 or fewer hit points remaining, afflicted with a disease in the terminal stage, or crippled.
                              If a creature falls into more than one category, the spell indicates the weaker of the two.
-                             Each round you can turn to detect a kind of animal or plant in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
+                             Each round you can turn to detect a kind of [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
           material:         null
         },
-        //'detect chaos': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'detect evil': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'detect good': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'detect law': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'detect magic': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'detect poison': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'detect scrying': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'detect secret doors': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'detect snares and pits': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'detect thoughts': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'detect undead': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'dictum': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'dimension door': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'dimensional anchor': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'dimensional lock': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'diminish plants': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'detect chaos': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Chaos',
+          school:           'Divination',
+          level:            'Clr 1',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation',
+          duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You can sense the presence of chaos. The amount of information revealed depends on how long you study a particular area or subject.
+                             *1st Round:* Presence or absence of chaos.
+                             *2nd Round:* Number of chaotic auras (creatures, objects, or spells) in the area and the power of the most potent chaos aura present.
+                             If you are of lawful alignment, and the strongest chaos aura’s power is overwhelming (see below), and the HD or level of the aura’s source is at least twice your character level, you are [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for 1 round and the spell ends.
+                             *3rd Round:* The power and location of each aura. If an aura is outside your line of sight, then you discern its direction but not its exact location.
+                             *Aura Power:* An chaos aura’s power depends on the type of chaos creature or object that you’re detecting and its HD, caster level, or (in the case of a [cleric](https://www.dandwiki.com/wiki/SRD:Cleric)) class level; see the accompanying table. If an aura falls into more than one strength category, the spell indicates the stronger of the two.
+
+                             • Chaotic creature†(HD)
+                             -- **Faint:** 10 or lower
+                             -- **Moderate:** 11-25
+                             -- **Strong:** 26-50
+                             -- **Overwhelming:** 51 or higher
+                             • [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) (HD)
+                             -- **Faint:** 2 or lower
+                             -- **Moderate:** 3-8
+                             -- **Strong:** 9-20
+                             -- **Overwhelming:** 21 or higher
+                             • Chaotic [outsider](https://www.dandwiki.com/wiki/SRD:Outsider_Type) (HD)
+                             -- **Faint:** 1 or lower
+                             -- **Moderate:** 2-4
+                             -- **Strong:** 5-10
+                             -- **Overwhelming:** 11 or higher
+                             • [Cleric](https://www.dandwiki.com/wiki/SRD:Cleric) of a chaos deity‡(class levels)
+                             -- **Faint:** 1
+                             -- **Moderate:** 2-4
+                             -- **Strong:** 5-10
+                             -- **Overwhelming:** 11 or higher
+                             • Chaotic magic item or spell (caster level)
+                             -- **Faint:** 2nd or lower
+                             -- **Moderate:** 3rd-8th
+                             -- **Strong:** 9th-20th
+                             -- **Overwhelming:** 21st or higher
+                             † Except for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) and [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type), which have their own entries on the table.
+                             ‡ Some characters who are not [clerics](https://www.dandwiki.com/wiki/SRD:Cleric) may radiate an aura of equivalent power. The class description will indicate whether this applies.
+
+                             *Lingering Aura:* A chaos aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect chaos* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
+
+                             • Original Strength 'Faint'
+                             -- Duration of Lingering Aura: ‹1d6› round(s)
+                             • Original Strength 'Moderate':
+                             -- Duration of Lingering Aura: ‹1d6› minute(s)
+                             • Original Strength 'Strong':
+                             -- Duration of Lingering Aura: ‹1d6×10|10*1d6› minute(s)
+                             • Original Strength 'Overwhelming':
+                             -- Duration of Lingering Aura: ‹1d6› day(s)
+
+                             [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not chaos, and as such this spell does not detect them.
+                             Each round, you can turn to *detect chaos* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
+          material:         null
+        },
+        'detect evil': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Evil',
+          school:           'Divination',
+          level:            'Clr 1',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation',
+          duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You can sense the presence of evil. The amount of information revealed depends on how long you study a particular area or subject.
+                             *1st Round:* Presence or absence of evil.
+                             *2nd Round:* Number of evil auras (creatures, objects, or spells) in the area and the power of the most potent evil aura present.
+                             If you are of good alignment, and the strongest evil aura’s power is overwhelming (see below), and the HD or level of the aura’s source is at least twice your character level, you are [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for 1 round and the spell ends.
+                             *3rd Round:* The power and location of each aura. If an aura is outside your line of sight, then you discern its direction but not its exact location.
+                             *Aura Power:* An evil aura’s power depends on the type of evil creature or object that you’re detecting and its HD, caster level, or (in the case of a [cleric](https://www.dandwiki.com/wiki/SRD:Cleric)) class level; see the accompanying table. If an aura falls into more than one strength category, the spell indicates the stronger of the two.
+
+                             • Evil creature†(HD)
+                             -- **Faint:** 10 or lower
+                             -- **Moderate:** 11-25
+                             -- **Strong:** 26-50
+                             -- **Overwhelming:** 51 or higher
+                             • [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) (HD)
+                             -- **Faint:** 2 or lower
+                             -- **Moderate:** 3-8
+                             -- **Strong:** 9-20
+                             -- **Overwhelming:** 21 or higher
+                             • Evil [outsider](https://www.dandwiki.com/wiki/SRD:Outsider_Type) (HD)
+                             -- **Faint:** 1 or lower
+                             -- **Moderate:** 2-4
+                             -- **Strong:** 5-10
+                             -- **Overwhelming:** 11 or higher
+                             • [Cleric](https://www.dandwiki.com/wiki/SRD:Cleric) of a evil deity‡(class levels)
+                             -- **Faint:** 1
+                             -- **Moderate:** 2-4
+                             -- **Strong:** 5-10
+                             -- **Overwhelming:** 11 or higher
+                             • Evil magic item or spell (caster level)
+                             -- **Faint:** 2nd or lower
+                             -- **Moderate:** 3rd-8th
+                             -- **Strong:** 9th-20th
+                             -- **Overwhelming:** 21st or higher
+                             † Except for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) and [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type), which have their own entries on the table.
+                             ‡ Some characters who are not [clerics](https://www.dandwiki.com/wiki/SRD:Cleric) may radiate an aura of equivalent power. The class description will indicate whether this applies.
+
+                             *Lingering Aura:* A evil aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect evil* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
+
+                             • Original Strength 'Faint'
+                             -- Duration of Lingering Aura: ‹1d6› round(s)
+                             • Original Strength 'Moderate':
+                             -- Duration of Lingering Aura: ‹1d6› minute(s)
+                             • Original Strength 'Strong':
+                             -- Duration of Lingering Aura: ‹1d6×10|10*1d6› minute(s)
+                             • Original Strength 'Overwhelming':
+                             -- Duration of Lingering Aura: ‹1d6› day(s)
+
+                             [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not evil, and as such this spell does not detect them.
+                             Each round, you can turn to *detect evil* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
+          material:         null
+        },
+        'detect good': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Good',
+          school:           'Divination',
+          level:            'Clr 1',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation',
+          duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You can sense the presence of good. The amount of information revealed depends on how long you study a particular area or subject.
+                             *1st Round:* Presence or absence of good.
+                             *2nd Round:* Number of good auras (creatures, objects, or spells) in the area and the power of the most potent good aura present.
+                             If you are of evil alignment, and the strongest good aura’s power is overwhelming (see below), and the HD or level of the aura’s source is at least twice your character level, you are [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for 1 round and the spell ends.
+                             *3rd Round:* The power and location of each aura. If an aura is outside your line of sight, then you discern its direction but not its exact location.
+                             *Aura Power:* An good aura’s power depends on the type of good creature or object that you’re detecting and its HD, caster level, or (in the case of a [cleric](https://www.dandwiki.com/wiki/SRD:Cleric)) class level; see the accompanying table. If an aura falls into more than one strength category, the spell indicates the stronger of the two.
+
+                             • Good creature†(HD)
+                             -- **Faint:** 10 or lower
+                             -- **Moderate:** 11-25
+                             -- **Strong:** 26-50
+                             -- **Overwhelming:** 51 or higher
+                             • [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) (HD)
+                             -- **Faint:** 2 or lower
+                             -- **Moderate:** 3-8
+                             -- **Strong:** 9-20
+                             -- **Overwhelming:** 21 or higher
+                             • Good [outsider](https://www.dandwiki.com/wiki/SRD:Outsider_Type) (HD)
+                             -- **Faint:** 1 or lower
+                             -- **Moderate:** 2-4
+                             -- **Strong:** 5-10
+                             -- **Overwhelming:** 11 or higher
+                             • [Cleric](https://www.dandwiki.com/wiki/SRD:Cleric) of a good deity‡(class levels)
+                             -- **Faint:** 1
+                             -- **Moderate:** 2-4
+                             -- **Strong:** 5-10
+                             -- **Overwhelming:** 11 or higher
+                             • Good magic item or spell (caster level)
+                             -- **Faint:** 2nd or lower
+                             -- **Moderate:** 3rd-8th
+                             -- **Strong:** 9th-20th
+                             -- **Overwhelming:** 21st or higher
+                             † Except for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) and [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type), which have their own entries on the table.
+                             ‡ Some characters who are not [clerics](https://www.dandwiki.com/wiki/SRD:Cleric) may radiate an aura of equivalent power. The class description will indicate whether this applies.
+
+                             *Lingering Aura:* A good aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect good* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
+
+                             • Original Strength 'Faint'
+                             -- Duration of Lingering Aura: ‹1d6› round(s)
+                             • Original Strength 'Moderate':
+                             -- Duration of Lingering Aura: ‹1d6› minute(s)
+                             • Original Strength 'Strong':
+                             -- Duration of Lingering Aura: ‹1d6×10|10*1d6› minute(s)
+                             • Original Strength 'Overwhelming':
+                             -- Duration of Lingering Aura: ‹1d6› day(s)
+
+                             [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not good, and as such this spell does not detect them.
+                             Each round, you can turn to *detect good* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
+          material:         null
+        },
+        'detect law': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Law',
+          school:           'Divination',
+          level:            'Clr 1',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation',
+          duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You can sense the presence of lawful. The amount of information revealed depends on how long you study a particular area or subject.
+                             *1st Round:* Presence or absence of lawful.
+                             *2nd Round:* Number of lawful auras (creatures, objects, or spells) in the area and the power of the most potent lawful aura present.
+                             If you are of chaotic alignment, and the strongest lawful aura’s power is overwhelming (see below), and the HD or level of the aura’s source is at least twice your character level, you are [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for 1 round and the spell ends.
+                             *3rd Round:* The power and location of each aura. If an aura is outside your line of sight, then you discern its direction but not its exact location.
+                             *Aura Power:* An lawful aura’s power depends on the type of lawful creature or object that you’re detecting and its HD, caster level, or (in the case of a [cleric](https://www.dandwiki.com/wiki/SRD:Cleric)) class level; see the accompanying table. If an aura falls into more than one strength category, the spell indicates the stronger of the two.
+
+                             • Lawful creature†(HD)
+                             -- **Faint:** 10 or lower
+                             -- **Moderate:** 11-25
+                             -- **Strong:** 26-50
+                             -- **Overwhelming:** 51 or higher
+                             • [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) (HD)
+                             -- **Faint:** 2 or lower
+                             -- **Moderate:** 3-8
+                             -- **Strong:** 9-20
+                             -- **Overwhelming:** 21 or higher
+                             • Lawful [outsider](https://www.dandwiki.com/wiki/SRD:Outsider_Type) (HD)
+                             -- **Faint:** 1 or lower
+                             -- **Moderate:** 2-4
+                             -- **Strong:** 5-10
+                             -- **Overwhelming:** 11 or higher
+                             • [Cleric](https://www.dandwiki.com/wiki/SRD:Cleric) of a lawful deity‡(class levels)
+                             -- **Faint:** 1
+                             -- **Moderate:** 2-4
+                             -- **Strong:** 5-10
+                             -- **Overwhelming:** 11 or higher
+                             • Lawful magic item or spell (caster level)
+                             -- **Faint:** 2nd or lower
+                             -- **Moderate:** 3rd-8th
+                             -- **Strong:** 9th-20th
+                             -- **Overwhelming:** 21st or higher
+                             † Except for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) and [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type), which have their own entries on the table.
+                             ‡ Some characters who are not [clerics](https://www.dandwiki.com/wiki/SRD:Cleric) may radiate an aura of equivalent power. The class description will indicate whether this applies.
+
+                             *Lingering Aura:* A lawful aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect law* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
+
+                             • Original Strength 'Faint'
+                             -- Duration of Lingering Aura: ‹1d6› round(s)
+                             • Original Strength 'Moderate':
+                             -- Duration of Lingering Aura: ‹1d6› minute(s)
+                             • Original Strength 'Strong':
+                             -- Duration of Lingering Aura: ‹1d6×10|10*1d6› minute(s)
+                             • Original Strength 'Overwhelming':
+                             -- Duration of Lingering Aura: ‹1d6› day(s)
+
+                             [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not lawful, and as such this spell does not detect them.
+                             Each round, you can turn to *detect law* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
+          material:         null
+        },
+        'detect magic': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Magic',
+          school:           'Divination',
+          level:            'Brd 0, Clr 0, Drd 0, Sor/Wiz 0',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation',
+          duration:         'Concentration, up to [[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You detect magical auras. The amount of information revealed depends on how long you study a particular area or subject.
+                             *1st Round:* Presence or absence of magical auras.
+                             *2nd Round:* Number of different magical auras and the power of the most potent aura.
+                             *3rd Round:* The strength and location of each aura. If the items or creatures bearing the auras are in line of sight, you can make Spellcraft skill checks to determine the school of magic involved in each. (Make one check per aura; DC 15 + spell level, or 15 + half caster level for a nonspell effect.)
+                             Magical areas, multiple types of magic, or strong local magical emanations may distort or conceal weaker auras.
+                             *Aura Strength:* An aura’s power depends on a spell’s functioning spell level or an item’s caster level. If an aura falls into more than one category, *detect magic* indicates the stronger of the two.
+
+                             • Functioning spell (spell level)
+                             -- **Faint:** 3rd or lower
+                             -- **Moderate:** 4th-6th
+                             -- **Strong:** 7th-9th
+                             -- **Overwhelming:** 10th+ (deity-level)
+                             • Magic item (caster level)
+                             -- **Faint:** 5th or lower
+                             -- **Moderate:** 6th-11th
+                             -- **Strong:** 12th-20th
+                             -- **Overwhelming:** 21st+ (artifact)
+
+                             *Lingering Aura:* A magical aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a magic item). If *detect magic* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
+
+                             • Original Strength 'Faint'
+                             -- Duration of Lingering Aura: ‹1d6› round(s)
+                             • Original Strength 'Moderate':
+                             -- Duration of Lingering Aura: ‹1d6› minute(s)
+                             • Original Strength 'Strong':
+                             -- Duration of Lingering Aura: ‹1d6×10|10*1d6› minute(s)
+                             • Original Strength 'Overwhelming':
+                             -- Duration of Lingering Aura: ‹1d6› day(s)
+
+                             [Outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type) and [elementals](https://www.dandwiki.com/wiki/SRD:Elemental_Type) are not magical in themselves, but if they are summoned, the conjuration spell registers.
+                             Each round, you can turn to *detect magic* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.
+                             *Detect magic* can be made permanent with a [*permanency*](https://www.dandwiki.com/wiki/SRD:Permanency) spell.`,
+          material:         null
+        },
+        'detect poison': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Poison',
+          school:           'Divination',
+          level:            'Asn 1, Clr 0, Drd 0, Pal 1, Rgr 1, Sor/Wiz 0',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Target, or Area',
+          target:           'One creature, one object, or a 5-ft. cube',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You determine whether a creature, object, or area has been poisoned or is poisonous. You can determine the exact type of poison with a DC 20 Wisdom check. A character with the Craft (alchemy) skill may try a DC 20 Craft (alchemy) check if the Wisdom check fails, or may try the Craft (alchemy) check prior to the Wisdom check.
+                             The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
+          material:         null
+        },
+        'detect scrying': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Scrying',
+          school:           'Divination',
+          level:            'Brd 4, Sor/Wiz 4',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '40 ft.',
+          target_type:      'Area',
+          target:           '40-ft.-radius emanation centered on you',
+          duration:         '24 hours',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You immediately become aware of any attempt to observe you by means of a [divination (scrying)](https://www.dandwiki.com/wiki/SRD:Scrying_Subschool) spell or effect. The spell’s area radiates from you and moves as you move. You know the location of every magical sensor within the spell’s area.
+                             If the scrying attempt originates within the area, you also know its location; otherwise, you and the scrier immediately make opposed caster level checks (1d20 + caster level). If you at least match the scrier’s result, you get a visual image of the scrier and an accurate sense of his or her direction and distance from you.`,
+          material:         '**Material Component:** A small piece of mirror and a miniature brass hearing trumpet.'
+        },
+        'detect secret doors': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Secret_Doors',
+          school:           'Divination',
+          level:            'Brd 1, Knowledge 1, Sor/Wiz 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation',
+          duration:         'Concentration, up to [[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You can detect secret doors, compartments, caches, and so forth. Only passages, doors, or openings that have been specifically constructed to escape detection are detected by this spell. The amount of information revealed depends on how long you study a particular area or subject.
+                             *1st Round:* Presence or absence of secret doors.
+                             *2nd Round:* Number of secret doors and the location of each. If an aura is outside your line of sight, then you discern its direction but not its exact location.
+                             *Each Additional Round:* The mechanism or trigger for one particular secret portal closely examined by you. Each round, you can turn to *detect secret doors* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
+          material:         null
+        },
+        'detect snares and pits': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Snares_and_Pits',
+          school:           'Divination',
+          level:            'Drd 1, Rgr 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation',
+          duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You can detect simple pits, deadfalls, and snares as well as mechanical [traps](https://www.dandwiki.com/wiki/SRD:Traps) constructed of natural materials. The spell does not detect complex traps, including trapdoor traps.
+                             *Detect snares and pits* does detect certain natural hazards—quicksand (a snare), a sinkhole (a pit), or unsafe walls of natural rock (a deadfall). However, it does not reveal other potentially dangerous conditions. The spell does not detect magic traps (except those that operate by pit, deadfall, or snaring; see the spell [*snare*](https://www.dandwiki.com/wiki/SRD:Snare)), nor mechanically complex ones, nor those that have been rendered safe or inactive.
+                             The amount of information revealed depends on how long you study a particular area.
+                             *1st Round:* Presence or absence of hazards.
+                             *2nd Round:* Number of hazards and the location of each. If a hazard is outside your line of sight, then you discern its direction but not its exact location.
+                             *Each Additional Round:* The general type and trigger for one particular hazard closely examined by you.
+                             Each round, you can turn to *detect snares* and pits in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
+          material:         null
+        },
+        'detect thoughts': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Thoughts',
+          school:           'Divination [Mind-Affecting]',
+          level:            'Brd 2, Knowledge 2, Mind 2, Sor/Wiz 2',
+          components:       'V, S, F/DF',
+          casting_time:     '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation',
+          duration:         'Concentration, up to [[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Will negates; see text',
+          spell_resistance: 'No',
+          text:             `You detect surface thoughts. The amount of information revealed depends on how long you study a particular area or subject.
+                             *1st Round:* Presence or absence of thoughts (from conscious creatures with Intelligence scores of 1 or higher).
+                             *2nd Round:* Number of thinking minds and the Intelligence score of each. If the highest Intelligence is 26 or higher (and at least 10 points higher than your own Intelligence score), you are [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for 1 round and the spell ends. This spell does not let you determine the location of the thinking minds if you can’t see the creatures whose thoughts you are detecting.
+                             *3rd Round:* Surface thoughts of any mind in the area. A target’s Will save prevents you from reading its thoughts, and you must cast detect thoughts again to have another chance. Creatures of [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) intelligence (Int 1 or 2) have simple, instinctual thoughts that you can pick up.
+                             Each round, you can turn to *detect thoughts* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
+          material:         '**Arcane Focus:** A copper piece.'
+        },
+        'detect undead': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Undead',
+          school:           'Divination',
+          level:            'Clr 1, Pal 1, Sor/Wiz 1',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation',
+          duration:         'Concentration, up to [[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You can detect the aura that surrounds [undead creatures](https://www.dandwiki.com/wiki/SRD:Undead_Type). The amount of information revealed depends on how long you study a particular area.
+                             *1st Round:* Presence or absence of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) auras.
+                             *2nd Round:* Number of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) auras in the area and the strength of the strongest [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) aura present. If you are of good alignment, and the strongest [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) aura’s strength is overwhelming (see below), and the creature has HD of at least twice your character level, you are [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for 1 round and the spell ends.
+                             *3rd Round:* The strength and location of each [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) aura. If an aura is outside your line of sight, then you discern its direction but not its exact location.
+                             *Aura Strength:* The strength of an [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) aura is determined by the HD of the [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature, as given on the following table:
+
+                             • 1 or lower HD
+                             -- Faint
+                             • 2-4 HD
+                             -- Moderate
+                             • 5-10 HD
+                             -- Strong
+                             • 11 or higher HD
+                             -- OVerwhelming
+
+                             *Lingering Aura:* An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) aura lingers after its original source is destroyed. If *detect undead* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
+
+                             • Original Strength 'Faint'
+                             -- Duration of Lingering Aura: ‹1d6› round(s)
+                             • Original Strength 'Moderate'
+                             -- Duration of Lingering Aura: ‹1d6› minute(s)
+                             • Original Strength 'Strong'
+                             -- Duration of Lingering Aura: ‹1d6×10|10*1d6› minutes(s)
+                             • Original Strength 'Overwhelming'
+                             -- Duration of Lingering Aura: ‹1d6› day(s)
+
+                             Each round, you can turn to *detect undead* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
+          material:         '**Arcane Material Component:** A bit of earth from a grave.'
+        },
+        'dictum': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dictum',
+          school:           'Evocation [Lawful, Sonic]',
+          level:            'Clr 7, Law 7',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            '40 ft.',
+          target_type:      'Area',
+          target:           'Nonlawful creatures in a 40-ft.-radius spread centered on you',
+          duration:         'Instantaneous',
+          saving_throw:     'None or Will negates; see text',
+          spell_resistance: 'Yes',
+          text:             `Any nonlawful creature within the area of a *dictum* spell suffers the following ill effects.
+
+                             • HD Equal to caster level
+                             -- [Deafened](https://www.dandwiki.com/wiki/SRD:Deafened)
+                             • HD Up to caster level - 1
+                             -- [*Slowed*](https://www.dandwiki.com/wiki/SRD:Slow),[deafened](https://www.dandwiki.com/wiki/SRD:Deafened)
+                             • HD Up to caster level - 5
+                             -- [Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed),[*slowed*](https://www.dandwiki.com/wiki/SRD:Slow),[deafened](https://www.dandwiki.com/wiki/SRD:Deafened)
+                             • HD Up to caster level - 10
+                             -- [Killed](https://www.dandwiki.com/wiki/SRD:Dead),[paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed),[*slowed*](https://www.dandwiki.com/wiki/SRD:Slow),[deafened](https://www.dandwiki.com/wiki/SRD:Deafened)
+
+                             The effects are cumulative and concurrent. No saving throw is allowed against these effects.
+                             *[Deafened](https://www.dandwiki.com/wiki/SRD:Deafened):* The creature is [deafened](https://www.dandwiki.com/wiki/SRD:Deafened) for ‹1d4› rounds.
+                             *[Slowed](https://www.dandwiki.com/wiki/SRD:Slow):* The creature is *slowed*, as by the [*slow*](https://www.dandwiki.com/wiki/SRD:Slow) spell, for ‹2d4› rounds.
+                             *[Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed):* The creature is [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and [helpless](https://www.dandwiki.com/wiki/SRD:Helpless) for ‹1d10› minutes.
+                             *[Killed](https://www.dandwiki.com/wiki/SRD:Dead):* Living creatures die. [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures are destroyed.
+                             Furthermore, if you are on your home plane when you cast this spell, nonlawful extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *dictum*. The banishment effect allows a Will save (at a \`\`-4\`\` penalty) to negate.
+                             Creatures whose HD exceed your caster level are unaffected by *dictum*.`,
+          material:         null
+        },
+        'dimension door': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dimension_Door',
+          school:           'Conjuration (Teleportation)',
+          level:            'Asn 4, Brd 4, Sor/Wiz 4, Travel 4',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            'long',
+          target_type:      'Target',
+          target:           'You and touched objects or other touched willing creatures',
+          duration:         'Instantaneous',
+          saving_throw:     'None and Will negates (object)',
+          spell_resistance: 'No and Yes (object)',
+          text:             `You instantly transfer yourself from your current location to any other spot within range. You always arrive at exactly the spot desired—whether by simply visualizing the area or by stating direction. After using this spell, you can’t take any other actions until your next turn. You can bring along objects as long as their weight doesn’t exceed your maximum load. You may also bring one additional willing Medium or smaller creature (carrying gear or objects up to its maximum load) or its equivalent per three caster levels. A Large creature counts as two Medium creatures, a Huge creature counts as two Large creatures, and so forth. All creatures to be transported must be in contact with one another, and at least one of those creatures must be in contact with you.
+                             If you arrive in a place that is already occupied by a solid body, you and each creature traveling with you take ‹1d6› points of damage and are shunted to a random open space on a suitable surface within 100 feet of the intended location.
+                             If there is no free space within 100 feet, you and each creature traveling with you take an additional ‹2d6› points of damage and are shunted to a free space within 1,000 feet. If there is no free space within 1,000 feet, you and each creature travelling with you take an additional ‹4d6› points of damage and the spell simply fails.`,
+          material:         null
+        },
+        'dimensional anchor': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor',
+          school:           'Abjuration',
+          level:            'Clr 4, Sor/Wiz 4',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Effect',
+          target:           'Ray',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes (object)',
+          text:             `A green ray springs from your outstretched hand. You must make a ranged touch attack to hit the target. Any creature or object struck by the ray is covered with a shimmering emerald field that completely blocks extradimensional travel. Forms of movement barred by a *dimensional anchor* include [*astral projection*](https://www.dandwiki.com/wiki/SRD:Astral_Projection), [*blink*](https://www.dandwiki.com/wiki/SRD:Blink), [*dimension door*](https://www.dandwiki.com/wiki/SRD:Dimension_Door), [*ethereal jaunt*](https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt), [*etherealness*](https://www.dandwiki.com/wiki/SRD:Etherealness_%28Spell%29), [*gate*](https://www.dandwiki.com/wiki/SRD:Gate), [*maze*](https://www.dandwiki.com/wiki/SRD:Maze), [*plane shift*](https://www.dandwiki.com/wiki/SRD:Plane_Shift), [*shadow walk*](https://www.dandwiki.com/wiki/SRD:Shadow_Walk), [*teleport*](https://www.dandwiki.com/wiki/SRD:Teleport), and similar spell-like or psionic abilities. The spell also prevents the use of a [*gate*](https://www.dandwiki.com/wiki/SRD:Gate) or [*teleportation circle*](https://www.dandwiki.com/wiki/SRD:Teleportation_Circle) for the duration of the spell.
+                             A *dimensional anchor* does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms. Also, *dimensional anchor* does not prevent summoned creatures from disappearing at the end of a summoning spell.`,
+          material:         null
+        },
+        'dimensional lock': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dimensional_Lock',
+          school:           'Abjuration',
+          level:            'Clr 8, Sor/Wiz 8',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Area',
+          target:           '20-ft.-radius emanation centered on a point in space',
+          duration:         '[[?{Casting Level}]] day(s)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `You create a shimmering emerald barrier that completely blocks extradimensional travel. Forms of movement barred include [*astral projection*](https://www.dandwiki.com/wiki/SRD:Astral_Projection), [*blink*](https://www.dandwiki.com/wiki/SRD:Blink), [*dimension door*](https://www.dandwiki.com/wiki/SRD:Dimension_Door), [*ethereal jaunt*](https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt), [*etherealness*](https://www.dandwiki.com/wiki/SRD:Etherealness_%28Spell%29), [*gate*](https://www.dandwiki.com/wiki/SRD:Gate), [*maze*](https://www.dandwiki.com/wiki/SRD:Maze), [*plane shift*](https://www.dandwiki.com/wiki/SRD:Plane_Shift), [*shadow walk*](https://www.dandwiki.com/wiki/SRD:Shadow_Walk), [*teleport*](https://www.dandwiki.com/wiki/SRD:Teleport), and similar spell-like or psionic abilities. Once *dimensional lock* is in place, extradimensional travel into or out of the area is not possible.
+                             A *dimensional lock* does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms. Also, the spell does not prevent summoned creatures from disappearing at the end of a summoning spell.`,
+          material:         null
+        },
+        'diminish plants': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Diminish_Plants',
+          school:           'Transmutation',
+          level:            'Drd 3, Rgr 3',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'See text',
+          target_type:      'Target, or Area',
+          target:           'See text',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell has two versions.
+                             *Prune Growth:* This version causes normal vegetation within [[400+(40*[[?{Casting Level}]])]] ft. to shrink to about one-third of their normal size, becoming untangled and less bushy. The affected vegetation appears to have been carefully pruned and trimmed.
+                             At your option, the area can be a 100-foot-radius circle, a 150-foot-radius semicircle, or a 200-foot-radius quarter-circle.
+                             You may also designate portions of the area that are not affected.
+                             *Stunt Growth:* This version targets normal plants within a range of 1/2 mile, reducing their potential productivity over the course of the following year to one third below normal.
+                             *Diminish plants* counters *plant growth*.
+                             This spell has no effect on [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) creatures.`,
+          material:         null
+        },
         //TODO dire winter
-        //'discern lies': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'discern location': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'disguise self': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'disintegrate': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'dismissal': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'dispel chaos': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'dispel evil': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'dispel good': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'dispel law': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'dispel magic': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'displacement': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'disrupt undead': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'disrupting weapon': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'divination': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'divine favor': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'divine power': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'dominate animal': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'dominate monster': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'dominate person': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'doom': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'discern lies': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Discern_Lies',
+          school:           'Divination',
+          level:            'Clr 4, Mind 4, Nobility 4, Pal 3',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          duration:         'Concentration, up to [[?{Casting Level}]] round(s)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'No',
+          text:             `Each round, you concentrate on one subject, who must be within range. You know if the subject deliberately and knowingly speaks a lie by discerning disturbances in its aura caused by lying. The spell does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
+                             Each round, you may concentrate on a different subject.`,
+          material:         null
+        },
+        'discern location': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Discern_Location',
+          school:           'Divination',
+          level:            'Clr 8, Knowledge 8, Sor/Wiz 8',
+          components:       'V, S, DF',
+          casting_time:     '10 minutes',
+          range:            'Unlimited',
+          target_type:      'Target',
+          target:           'One creature or object',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `A *discern location* spell is among the most powerful means of locating creatures or objects. Nothing short of a [*mind blank*](https://www.dandwiki.com/wiki/SRD:Mind_Blank) spell or the direct intervention of a deity keeps you from learning the exact location of a single individual or object. *Discern location* circumvents normal means of protection from scrying or location. The spell reveals the name of the creature or object’s location (place, name, business name, building name, or the like), community, county (or similar political division), country, continent, and the plane of existence where the target lies.
+                             To find a creature with the spell, you must have seen the creature or have some item that once belonged to it. To find an object, you must have touched it at least once.`,
+          material:         null
+        },
+        'disguise self': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Disguise_Self',
+          school:           'Illusion (Glamer)',
+          level:            'Asn 1, Brd 1, Sor/Wiz 1, Trickery 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `You make yourself—including clothing, armor, weapons, and equipment—look different. You can seem 1 foot shorter or taller, thin, fat, or in between. You cannot change your body type. Otherwise, the extent of the apparent change is up to you. You could add or obscure a minor feature or look like an entirely different person.
+                             The spell does not provide the abilities or mannerisms of the chosen form, nor does it alter the perceived tactile (touch) or audible (sound) properties of you or your equipment.
+                             If you use this spell to create a disguise, you get a \`\`+10\`\` bonus on the Disguise check.
+                             A creature that interacts with the glamer gets a Will save to recognize it as an illusion.`,
+          material:         null
+        },
+        'disintegrate': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Disintegrate',
+          school:           'Transmutation',
+          level:            'Destruction 7, Sor/Wiz 6',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Effect',
+          target:           'Ray',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude partial (object)',
+          spell_resistance: 'Yes',
+          text:             `A thin, green ray springs from your pointing finger. You must make a successful ranged touch attack to hit. Any creature struck by the ray takes 2d6 points of ‹damage|[[[[{2*?{Casting Level},40}kl1]]d6]]› per caster level (to a maximum of 40d6). Any creature reduced to 0 or fewer hit points by this spell is entirely disintegrated, leaving behind only a trace of fine dust. A disintegrated creature’s equipment is unaffected.
+                             When used against an object, the ray simply disintegrates as much as one 10-foot cube of nonliving matter. Thus, the spell disintegrates only part of any very large object or structure targeted. The ray affects even objects constructed entirely of force, such as [*forceful hand*](https://www.dandwiki.com/wiki/SRD:Forceful_Hand) or a [*wall of force*](https://www.dandwiki.com/wiki/SRD:Wall_of_Force), but not magical effects such as a [*globe of invulnerability*](https://www.dandwiki.com/wiki/SRD:Globe_of_Invulnerability) or an [*antimagic field*](https://www.dandwiki.com/wiki/SRD:Antimagic_Field).
+                             A creature or object that makes a successful Fortitude save is partially affected, taking only ‹5d6› points of damage. If this damage reduces the creature or object to 0 or fewer hit points, it is entirely disintegrated.
+                             Only the first creature or object struck can be affected; that is, the ray affects only one target per casting.`,
+          material:         '**Arcane Material Component:** A lodestone and a pinch of dust.'
+        },
+        'dismissal': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dismissal',
+          school:           'Abjuration',
+          level:            'Clr 4, Sor/Wiz 5',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One extraplanar creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates; see text',
+          spell_resistance: 'Yes',
+          text:             `This spell forces an [extraplanar](https://www.dandwiki.com/wiki/SRD:Outsider_Type) creature back to its proper plane if it fails a special Will save (DC=spell’s save DC - creature’s HD + your caster level). If the spell is successful, the creature is instantly whisked away, but there is a 20% chance of actually sending the subject to a plane other than its own.`,
+          material:         null
+        },
+        'dispel chaos': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dispel_Chaos',
+          school:           'Abjuration [Lawful]',
+          level:            'Clr 5, Law 5, Pal 4',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Targets',
+          target:           'You and a touched chaotic creature from another plane; or you and an enchantment or chaotic spell on a touched creature or object',
+          duration:         '[[?{Casting Level}]] round(s) or until discharged, whichever comes first',
+          saving_throw:     'See text',
+          spell_resistance: 'See text',
+          text:             `You are surrounded by constant, blue, lawful energy.
+                             First, you gain a \`\`+4\`\` deflection bonus to AC against attacks by [chaotic creatures](https://www.dandwiki.com/wiki/SRD:Chaotic_Creatures).
+                             Second, on making a successful melee touch attack against an [chaotic creature](https://www.dandwiki.com/wiki/SRD:Chaotic_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
+                             Third, with a touch you can automatically dispel any one enchantment spell cast by an chaotic creature or any one chaotic spell. *Exception:* Spells that can’t be dispelled by [*dispel magic*](https://www.dandwiki.com/wiki/SRD:Dispel_Magic) also can’t be dispelled by *dispel chaos*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
+          material:         null
+        },
+        'dispel evil': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dispel_Evil',
+          school:           'Abjuration [Good]',
+          level:            'Clr 5, Good 5, Pal 4',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Targets',
+          target:           'You and a touched evil creature from another plane; or you and an enchantment or evil spell on a touched creature or object',
+          duration:         '[[?{Casting Level}]] round(s) or until discharged, whichever comes first',
+          saving_throw:     'See text',
+          spell_resistance: 'See text',
+          text:             `Shimmering, white, holy energy surrounds you. This power has three effects.
+                             First, you gain a \`\`+4\`\` deflection bonus to AC against attacks by [evil creatures](https://www.dandwiki.com/wiki/SRD:Evil_Creatures).
+                             Second, on making a successful melee touch attack against an [evil creature](https://www.dandwiki.com/wiki/SRD:Evil_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
+                             Third, with a touch you can automatically dispel any one enchantment spell cast by an evil creature or any one evil spell. *Exception:* Spells that can’t be dispelled by [*dispel magic*](https://www.dandwiki.com/wiki/SRD:Dispel_Magic) also can’t be dispelled by *dispel evil*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
+          material:         null
+        },
+        'dispel good': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dispel_Good',
+          school:           'Abjuration [Evil]',
+          level:            'Clr 5, Evil 5',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Targets',
+          target:           'You and a touched good creature from another plane; or you and an enchantment or good spell on a touched creature or object',
+          duration:         '[[?{Casting Level}]] round(s) or until discharged, whichever comes first',
+          saving_throw:     'See text',
+          spell_resistance: 'See text',
+          text:             `You are surrounded by dark, wavering, unholy energy.
+                             First, you gain a \`\`+4\`\` deflection bonus to AC against attacks by [good creatures](https://www.dandwiki.com/wiki/SRD:Good_Creatures).
+                             Second, on making a successful melee touch attack against an [good creature](https://www.dandwiki.com/wiki/SRD:Good_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
+                             Third, with a touch you can automatically dispel any one enchantment spell cast by an good creature or any one good spell. *Exception:* Spells that can’t be dispelled by [*dispel magic*](https://www.dandwiki.com/wiki/SRD:Dispel_Magic) also can’t be dispelled by *dispel good*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
+          material:         null
+        },
+        'dispel law': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dispel_Law',
+          school:           'Abjuration [Chaotic]',
+          level:            'Chaos 5, Clr 5',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Targets',
+          target:           'You and a touched lawful creature from another plane; or you and an enchantment or lawful spell on a touched creature or object',
+          duration:         '[[?{Casting Level}]] round(s) or until discharged, whichever comes first',
+          saving_throw:     'See text',
+          spell_resistance: 'See text',
+          text:             `You are surrounded by flickering, yellow, chaotic energy.
+                             First, you gain a \`\`+4\`\` deflection bonus to AC against attacks by [lawful creatures](https://www.dandwiki.com/wiki/SRD:Lawful_Creatures).
+                             Second, on making a successful melee touch attack against an [lawful creature](https://www.dandwiki.com/wiki/SRD:Lawful_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
+                             Third, with a touch you can automatically dispel any one enchantment spell cast by an lawful creature or any one lawful spell. *Exception:* Spells that can’t be dispelled by [*dispel magic*](https://www.dandwiki.com/wiki/SRD:Dispel_Magic) also can’t be dispelled by *dispel law*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
+          material:         null
+        },
+        'dispel magic': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dispel_Magic',
+          school:           'Abjuration',
+          level:            'Brd 3, Clr 3, Drd 4, Magic 3, Pal 3, Sor/Wiz 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Target, or Area',
+          target:           'One spellcaster, creature, or object; or 20-ft.-radius burst',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You can use *dispel magic* to end ongoing spells that have been cast on a creature or object, to temporarily suppress the magical abilities of a magic item, to end ongoing spells (or at least their effects) within an area, or to counter another spellcaster’s spell. A dispelled spell ends as if its duration had expired. Some spells, as detailed in their descriptions, can’t be defeated by *dispel magic*. *Dispel magic* can dispel (but not counter) spell-like effects just as it does spells.
+                             *Note:* The effect of a spell with an instantaneous duration can’t be dispelled, because the magical effect is already over before the *dispel magic* can take effect.
+                             You choose to use *dispel magic* in one of three ways: a targeted dispel, an area dispel, or a counterspell:
+                             *Targeted Dispel:* One object, creature, or spell is the target of the *dispel magic* spell. You make a dispel check (1d20 + your caster level, maximum +10) against the spell or against each ongoing spell currently in effect on the object or creature. The DC for this dispel check is 11 + the spell’s caster level. If you succeed on a particular check, that spell is dispelled; if you fail, that spell remains in effect.
+                             If you target an object or creature that is the effect of an ongoing spell (such as a monster summoned by [monster summoning](https://www.dandwiki.com/wiki/SRD:Summon_Monster_I)), you make a dispel check to end the spell that conjured the object or creature.
+                             If the object that you target is a magic item, you make a dispel check against the item’s caster level. If you succeed, all the item’s magical properties are suppressed for 1d4 rounds, after which the item recovers on its own. A suppressed item becomes nonmagical for the duration of the effect. An interdimensional interface (such as a *bag of holding*) is temporarily closed. A magic item’s physical properties are unchanged: A suppressed magic sword is still a sword (a masterwork sword, in fact). Artifacts and deities are unaffected by mortal magic such as this.
+                             You automatically succeed on your dispel check against any spell that you cast yourself.
+                             *Area Dispel:* When *dispel magic* is used in this way, the spell affects everything within a 20-foot radius.
+                             For each creature within the area that is the subject of one or more spells, you make a dispel check against the spell with the highest caster level. If that check fails, you make dispel checks against progressively weaker spells until you dispel one spell (which discharges the *dispel magic* spell so far as that target is concerned) or until you fail all your checks. The creature’s magic items are not affected.
+                             For each object within the area that is the target of one or more spells, you make dispel checks as with creatures. Magic items are not affected by an area dispel.
+                             For each ongoing area or effect spell whose point of origin is within the area of the *dispel magic* spell, you can make a dispel check to dispel the spell.
+                             For each ongoing spell whose area overlaps that of the *dispel magic* spell, you can make a dispel check to end the effect, but only within the overlapping area.
+                             If an object or creature that is the effect of an ongoing spell (such as a monster summoned by [monster summoning](https://www.dandwiki.com/wiki/SRD:Summon_Monster_I)) is in the area, you can make a dispel check to end the spell that conjured that object or creature (returning it whence it came) in addition to attempting to dispel spells targeting the creature or object.
+                             You may choose to automatically succeed on dispel checks against any spell that you have cast.
+                             *Counterspell:* When dispel magic* is used in this way, the spell targets a spellcaster and is cast as a counterspell. Unlike a true counterspell, however, *dispel magic* may not work; you must make a dispel check to counter the other spellcaster’s spell.`,
+          material:         null
+        },
+        'displacement': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Displacement',
+          school:           'Illusion (Glamer)',
+          level:            'Brd 3, Sor/Wiz 3',
+          components:       'V, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] round(s) (D)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The subject of this spell appears to be about 2 feet away from its true location. The creature benefits from a 50% miss chance as if it had [total concealment](https://www.dandwiki.com/wiki/SRD:Concealment). However, unlike actual total concealment, *displacement* does not prevent enemies from targeting the creature normally. [*True seeing*](https://www.dandwiki.com/wiki/SRD:True_Seeing) reveals its true location.`,
+          material:         '**Material Component:** A small strip of leather twisted into a loop.'
+        },
+        'disrupt undead': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Disrupt_Undead',
+          school:           'Necromancy',
+          level:            'Glory 1, Sor/Wiz 0',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Effect',
+          target:           'Ray',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `You direct a ray of positive energy. You must make a ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) to hit, and if the ray hits an [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type), it deals ‹1d6› points of damage to it.`,
+          material:         null
+        },
+        'disrupting weapon': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Disrupting_Weapon',
+          school:           'Transmutation',
+          level:            'Clr 5',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Targets',
+          target:           'One melee weapon',
+          duration:         '[[?{Casting Level}]] round(s)',
+          saving_throw:     'Will negates (harmless, object); see text',
+          spell_resistance: 'Yes (harmless, object)',
+          text:             `This spell makes a melee weapon deadly to [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type). Any [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature with HD equal to or less than your caster level must succeed on a Will save or be destroyed utterly if struck in combat with this weapon. Spell resistance does not apply against the destruction effect.`,
+          material:         null
+        },
+        'divination': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Divination',
+          school:           'Divination',
+          level:            'Clr 4, Knowledge 4',
+          components:       'V, S, M',
+          casting_time:     '10 minutes',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Instantaneous',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `Similar to [*augury*](https://www.dandwiki.com/wiki/SRD:Augury) but more powerful, a *divination* spell can provide you with a useful piece of advice in reply to a question concerning a specific goal, event, or activity that is to occur within one week. The advice can be as simple as a short phrase, or it might take the form of a cryptic rhyme or omen. If your party doesn’t act on the information, the conditions may change so that the information is no longer useful. The base chance for a correct *divination* is 70% + 1% per caster level, to a maximum of 90%. If the dice roll fails, you know the spell failed, unless specific magic yielding false information is at work.
+                             As with *augury*, multiple *divinations* about the same topic by the same caster use the same dice result as the first *divination* spell and yield the same answer each time.`,
+          material:         '**Material Component:** Incense and a sacrificial offering appropriate to your religion, together worth at least 25 gp.'
+        },
+        'divine favor': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Divine_Favor',
+          school:           'Evocation',
+          level:            'Clr 1, Nobility 1, Pal 1',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '1 minute',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `Calling upon the strength and wisdom of a deity, you gain a +[[{[[{[[floor(?{Casting Level}/3)]],1}kh1]],3}kl1]] luck bonus on attack and weapon damage rolls. The bonus doesn’t apply to spell damage.`,
+          material:         null
+        },
+        'divine power': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Divine_Power',
+          school:           'Evocation',
+          level:            'Clr 4, War 4',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] round(s)',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `Calling upon the divine power of your patron, you imbue yourself with strength and skill in combat. Your base attack bonus becomes equal to your character level (which may give you additional attacks), you gain a \`\`+6\`\` enhancement bonus to Strength, and you gain [[?{Casting Level}]] temporary hit point(s).`,
+          material:         null
+        },
+        'dominate animal': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dominate_Animal',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Animal 3, Drd 3',
+          components:       'V, S',
+          casting_time:     '1 round',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type)',
+          duration:         '[[?{Casting Level}]] round(s)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `You can enchant an animal and direct it with simple commands such as “Attack,” “Run,” and “Fetch.” Suicidal or self-destructive commands (including an order to attack a creature two or more size categories larger than the *dominated* animal) are simply ignored.
+                             *Dominate animal* establishes a mental link between you and the subject creature. The animal can be directed by silent mental command as long as it remains in range. You need not see the creature to control it. You do not receive direct sensory input from the creature, but you know what it is experiencing. Because you are directing the animal with your own intelligence, it may be able to undertake actions normally beyond its own comprehension. You need not concentrate exclusively on controlling the creature unless you are trying to direct it to do something it normally couldn’t do. Changing your instructions or giving a *dominated* creature a new command is the equivalent of redirecting a spell, so it is a move action.`,
+          material:         null
+        },
+        'dominate monster': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dominate_Monster',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Charm 9, Sor/Wiz 9',
+          components:       'V, S',
+          casting_time:     '1 round',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         '[[?{Casting Level}]] day(s)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `You can control the actions of any creature through a telepathic link that you establish with the subject’s mind.
+                             If you and the subject have a common language, you can generally force the subject to perform as you desire, within the limits of its abilities. If no common language exists, you can communicate only basic commands, such as “Come here,” “Go there,” “Fight,” and “Stand still.” You know what the subject is experiencing, but you do not receive direct sensory input from it, nor can it communicate with you telepathically.
+                             Once you have given a *dominated* creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject’s behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
+                             Changing your instructions or giving a *dominated* creature a new command is the equivalent of redirecting a spell, so it is a move action.
+                             By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can’t communicate with you. You can’t actually see through the subject’s eyes, so it’s not as good as being there yourself, but you still get a good idea of what’s going on.
+                             Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a \`\`+2\`\` bonus. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
+                             If you don’t spend at least 1 round concentrating on the spell each day, the subject receives a new saving throw to throw off the domination.
+                             [*Protection from evil*](https://www.dandwiki.com/wiki/SRD:Protection_from_Evil) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`,
+          material:         null
+        },
+        'dominate person': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dominate_Person',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Brd 4, Sor/Wiz 5',
+          components:       'V, S',
+          casting_time:     '1 round',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One [humanoid](https://www.dandwiki.com/wiki/SRD:Humanoid_Type)',
+          duration:         '[[?{Casting Level}]] day(s)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `You can control the actions of any humanoid creature through a telepathic link that you establish with the subject’s mind.
+                             If you and the subject have a common language, you can generally force the subject to perform as you desire, within the limits of its abilities. If no common language exists, you can communicate only basic commands, such as “Come here,” “Go there,” “Fight,” and “Stand still.” You know what the subject is experiencing, but you do not receive direct sensory input from it, nor can it communicate with you telepathically.
+                             Once you have given a *dominated* creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject’s behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
+                             Changing your instructions or giving a *dominated* creature a new command is the equivalent of redirecting a spell, so it is a move action.
+                             By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can’t communicate with you. You can’t actually see through the subject’s eyes, so it’s not as good as being there yourself, but you still get a good idea of what’s going on.
+                             Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a \`\`+2\`\ bonus. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
+                             If you don’t spend at least 1 round concentrating on the spell each day, the subject receives a new saving throw to throw off the domination.
+                             [*Protection from evil*](https://www.dandwiki.com/wiki/SRD:Protection_from_Evil) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`,
+          material:         null
+        },
+        'doom': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Doom',
+          school:           'Necromancy [Fear, Mind-Affecting]',
+          level:            'Blg 1, Clr 1',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Target',
+          target:           'One living creature',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `This spell fills a single subject with a feeling of horrible dread that causes it to become [shaken](https://www.dandwiki.com/wiki/SRD:Shaken).`,
+          material:         null
+        },
         //TODO dragon knight (ritual)
         //TODO dragon strike (ritual)
-        //'dream': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'dream': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dream',
+          school:           'Illusion (Phantasm) [Mind-Affecting]',
+          level:            'Brd 5, Sor/Wiz 5',
+          components:       'V, S',
+          casting_time:     '1 minute',
+          range:            'Unlimited',
+          target_type:      'Target',
+          target:           'One living creature touched',
+          duration:         'See text',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `You, or a messenger touched by you, sends a phantasmal message to others in the form of a dream. At the beginning of the spell, you must name the recipient or identify him or her by some title that leaves no doubt as to identity. The messenger then enters a trance, appears in the intended recipient’s dream, and delivers the message. The message can be of any length, and the recipient remembers it perfectly upon waking. The communication is one-way. The recipient cannot ask questions or offer information, nor can the messenger gain any information by observing the dreams of the recipient.
+                             Once the message is delivered, the messenger’s mind returns instantly to its body. The duration of the spell is the time required for the messenger to enter the recipient’s dream and deliver the message.
+                             If the recipient is awake when the spell begins, the messenger can choose to wake up (ending the spell) or remain in the trance. The messenger can remain in the trance until the recipient goes to sleep, then enter the recipient’s dream and deliver the message as normal. A messenger that is disturbed during the trance comes awake, ending the spell.
+                             Creatures who don’t sleep (such as elves, but not half-elves) or don’t dream cannot be contacted by this spell.
+                             The messenger is unaware of its own surroundings or of the activities around it while in the trance. It is defenseless both physically and mentally (always fails any saving throw) while in the trance.`,
+          material:         null
+        },
         //TODO dreamscape
-        //'dweomer of transference': {
-        //// ↲’‹›«»
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'dweomer of transference': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Dweomer_of_Transference',
+          school:           'Evocation',
+          level:            'Clr 4, Sor/Wiz 4',
+          components:       'V, S',
+          casting_time:     '1 minute',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One willing psionic creature',
+          duration:         '[[?{Casting Level}]] round(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `With this spell, you form a radiating corona around the head of a psionic ally, then convert some of your spells into psionic [power points](https://www.dandwiki.com/wiki/SRD:Power_Points). When you finish casting *dweomer of transference*, a red-orange glow surrounds the psionic creature’s head. For the duration of the spell, any spells cast at the subject don’t have their usual effect, instead converting themselves harmlessly into psionic energy that the subject can use as energy for psionic powers. You can cast any spell you like at the subject, even area spells, effect spells, and spells for whom the subject would ordinarily not be a legitimate target. The spells don’t do anything other than provide the subject with power points, but you must still cast them normally, obeying the component and range requirements listed in the description of each spell.
+                             For each spell you cast into the *dweomer of transference*, the psionic creature gets temporary power points, according to the following table. The transference isn’t perfectly efficient. The temporary power points acquired through a *dweomer of transference* dissipate after 1 hour if they haven’t already been spent.
+                             • Spell Level 0
+                             -- 0 Power Points Acquired
+                             • Spell Level 1st
+                             -- 1 Power Points Acquired
+                             • Spell Level 2nd
+                             -- 2 Power Points Acquired
+                             • Spell Level 3rd
+                             -- 4 Power Points Acquired
+                             • Spell Level 4th
+                             -- 6 Power Points Acquired
+                             • Spell Level 5th
+                             -- 8 Power Points Acquired
+                             • Spell Level 6th
+                             -- 10 Power Points Acquired
+                             • Spell Level 7th
+                             -- 12 Power Points Acquired
+                             • Spell Level 8th
+                             -- 14 Power Points Acquired
+                             • Spell Level 9th
+                             -- 16 Power Points Acquired`,
+          material:         null
+        },
 
 
 
         //'eagle\'s splendor': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3150,7 +3473,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'earthquake': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3168,7 +3491,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //TODO eclipse
         //TODO eidolon
         //'elemental swarm': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3184,7 +3507,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'endure elements': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3200,7 +3523,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'energy drain': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3216,7 +3539,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'enervation': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3232,7 +3555,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'enlarge person': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3249,7 +3572,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //},
         //TODO enslave (ritual)
         //'entangle': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3265,7 +3588,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'enthrall': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3281,7 +3604,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'entropic shield': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3301,7 +3624,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //TODO epic repulsion
         //TODO epic spell reflection
         //'erase': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3318,7 +3641,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //},
         //TODO eternal freedom
         //'ethereal jaunt': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3334,7 +3657,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'etherealness': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3350,7 +3673,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'expeditious retreat': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3366,7 +3689,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'explosive runes': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3382,7 +3705,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'eyebite': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3403,7 +3726,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'fabricate': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3419,7 +3742,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'faerie fire': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3435,7 +3758,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'false life': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3451,7 +3774,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'false vision': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3467,7 +3790,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fear': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3483,7 +3806,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'feather fall': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3499,7 +3822,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'feeblemind': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3515,7 +3838,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'find traps': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3531,7 +3854,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'find the path': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3547,7 +3870,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'finger of death': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3563,7 +3886,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fire seeds': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3579,7 +3902,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fire shield': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3595,7 +3918,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fire storm': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3611,7 +3934,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fire trap': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3627,7 +3950,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fireball': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3643,7 +3966,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'flame arrow': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3659,7 +3982,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'flame blade': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3675,7 +3998,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'flame strike': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3691,7 +4014,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'flaming sphere': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3707,7 +4030,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'flare': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3723,7 +4046,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'flesh to stone': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3739,7 +4062,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'floating disk': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3755,7 +4078,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fly': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3771,7 +4094,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fog cloud': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3787,7 +4110,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'forbiddance': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3803,7 +4126,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'forcecage': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3819,7 +4142,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'forceful hand': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3835,7 +4158,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'foresight': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3851,7 +4174,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fox\'s cunning': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3867,7 +4190,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'freedom': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3883,7 +4206,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'freedom of movement': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3899,7 +4222,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'freezing sphere': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3919,7 +4242,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'gaseous form': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3935,7 +4258,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'gate': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3952,7 +4275,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //},
         //TODO gathering of maggots
         //'geas/quest': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3968,7 +4291,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'genesis': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3984,7 +4307,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'gentle repose': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4000,7 +4323,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'ghost sound': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4016,7 +4339,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'ghoul touch': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4032,7 +4355,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'giant vermin': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4048,7 +4371,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'glibness': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4064,7 +4387,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'glitterdust': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4080,7 +4403,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'globe of invulnerability': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4096,7 +4419,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'glossolalia': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4112,7 +4435,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'glyph of warding': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4128,7 +4451,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'good hope': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4144,7 +4467,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'goodberry': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4160,7 +4483,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'grasping hand': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4176,7 +4499,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'grease': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4192,7 +4515,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater arcane sight': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4208,7 +4531,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater command': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4224,7 +4547,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater dispel magic': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4240,7 +4563,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater glyph of warding': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4256,7 +4579,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater heroism': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4272,7 +4595,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater invisibility': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4288,7 +4611,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater magic fang': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4304,7 +4627,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater magic weapon': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4320,7 +4643,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater planar ally': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4336,7 +4659,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater planar binding': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4352,7 +4675,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater prying eyes': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4368,7 +4691,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater psychic turmoil': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4384,7 +4707,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater restoration': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4401,7 +4724,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //},
         //TODO greater ruin
         //'greater scrying': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4417,7 +4740,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater shadow conjuration': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4433,7 +4756,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater shadow evocation': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4449,7 +4772,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater shout': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4465,7 +4788,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater spell immunity': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4482,7 +4805,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //},
         //TODO greater spell resistance
         //'greater status': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4498,7 +4821,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater teleport': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4514,7 +4837,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'guards and wards': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4530,7 +4853,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'guidance': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4546,7 +4869,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'gust of wind': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4567,7 +4890,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'hallow': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4583,7 +4906,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hallucinatory terrain': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4599,7 +4922,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'halt undead': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4615,7 +4938,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hardening': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4631,7 +4954,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'harm': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4647,7 +4970,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'haste': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4663,7 +4986,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'heal': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4679,7 +5002,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'heal mount': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4695,7 +5018,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'heat metal': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4712,7 +5035,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //},
         //TODO hellball
         //'helping hand': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4728,7 +5051,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'heroes\' feast': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4744,7 +5067,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'heroism': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4760,7 +5083,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hide from animals': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4776,7 +5099,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hide from undead': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4792,7 +5115,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hideous laughter': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4808,7 +5131,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hold animal': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4824,7 +5147,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hold monster': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4840,7 +5163,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hold person': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4856,7 +5179,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hold portal': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4872,7 +5195,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'holy aura': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4888,7 +5211,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'holy smite': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4904,7 +5227,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'holy sword': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4920,7 +5243,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'holy word': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4936,7 +5259,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'horrid wilting': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4952,7 +5275,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hypnotic pattern': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4968,7 +5291,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hypnotism': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4987,7 +5310,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'ice storm': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5003,7 +5326,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'identify': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5019,7 +5342,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'illusory script': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5035,7 +5358,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'illusory wall': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5051,7 +5374,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'imbue with spell ability': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5067,7 +5390,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'implosion': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5083,7 +5406,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'imprisonment': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5099,7 +5422,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'incendiary cloud': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5115,7 +5438,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'inflict critical wounds': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5131,7 +5454,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'inflict light wounds': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5147,7 +5470,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'inflict minor wounds': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5163,7 +5486,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'inflict moderate wounds': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5179,7 +5502,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'inflict serious wounds': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5195,7 +5518,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'insanity': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5211,7 +5534,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'insect plague': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5227,7 +5550,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'instant summons': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5243,7 +5566,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'interposing hand': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5259,7 +5582,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'invisibility': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5275,7 +5598,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'invisibility purge': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5291,7 +5614,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'invisibility spell': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5307,7 +5630,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'invisibility sphere': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5323,7 +5646,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'iron body': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5339,7 +5662,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'ironwood': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5355,7 +5678,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'irresistible dance': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5375,7 +5698,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'jump': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5396,7 +5719,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'keen edge': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5413,7 +5736,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //},
         //TODO kinetic control
         //'knock': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5429,7 +5752,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'know direction': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5450,7 +5773,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'': {
-        //// ↲’‹›«»
+        //// ↲’‹›«»•×†‡
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5698,8 +6021,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'dominate monster':           { recharge: '12 hours' },
         'dominate person':            { recharge: '12 hours' },
         'doom':                       { recharge: 'General' },
-        'dream':                      { recharge: 'General' }
-
+        'dream':                      { recharge: 'General' },
+        'dweomer of transference':    { recharge: '1 hour' }
 
 
         //'': { recharge: 'General' },
