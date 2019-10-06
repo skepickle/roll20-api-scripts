@@ -212,7 +212,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // NOTE: Use '’' character for appostrophes...
         // NOTE: Use ‹ and › characters to delimiter ... a chat button
         // NOTE: Use « and » characters to delimiter ... a chat button with escaped attributes/abilities
-        //'acid arrow':   { ref: 'https://www.dandwiki.com/wiki/SRD:Acid_Arrow',   school: 'Conjuration↲(Creation) [Acid]',             level: 'Sor/Wiz 2',                  components: 'V, S, M, F', casting_time: '1 standard action', range: 'long',   target_type: 'Effect', target: 'One arrow of acid',                                                                                                                                                    duration: '[[1+floor([[?{Casting Level}/3]])]] round(s)',   saving_throw: 'None',                            spell_resistance: 'No',                     text: 'A magical arrow of acid springs from your hand and speeds to its target. You must succeed on a ranged touch attack to hit your target. The arrow deals [[2d4]] points of acid damage with no splash damage. The acid, unless somehow neutralized, lasts for another [[floor({?{Casting Level},18}kl1/3)]] round(s), dealing another ‹2d4|Delayed *Acid Arrow* Damage: [[2d4]] acid› points of damage each round.',                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          material: '**Material Component:** Powdered rhubarb leaf and an adder’s stomach.↲**Focus:** A dart.' },
         'acid arrow': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Acid_Arrow',
           school:           'Conjuration (Creation) [Acid]',
@@ -1700,6 +1699,850 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Consecrate* counters and dispels [*desecrate*](https://www.dandwiki.com/wiki/SRD:Desecrate).`,
           material:         '**Material Component:** A vial of holy water and 25 gp worth (5 pounds) of silver dust, all of which must be sprinkled around the area.'
         },
+        'contact other plane': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Contact_Other_Plane',
+          school:           'Divination',
+          level:            'Sor/Wiz 5',
+          components:       'V',
+          casting_time:     '10 minutes',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Concentration',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `You send your mind to another plane of existence (an Elemental Plane or some plane farther removed) in order to receive advice and information from powers there. (See the accompanying table for possible consequences and results of the attempt.) The powers reply in a language you understand, but they resent such contact and give only brief answers to your questions. (All questions are answered with “yes,” “no,” “maybe,” “never,” “irrelevant,” or some other one-word answer.)
+                             You must concentrate on maintaining the spell (a standard action) in order to ask questions at the rate of one per round. A question is answered by the power during the same round. For every two caster levels, you may ask one question.
+                             Contact with minds far removed from your home plane increases the probability that you will incur a decrease to Intelligence and Charisma, but the chance of the power knowing the answer, as well as the probability of the entity answering correctly, are likewise increased by moving to distant planes.
+                             Once the Outer Planes are reached, the power of the deity contacted determines the effects. (Random results obtained from the table are subject to the personalities of individual deities.)
+                             On rare occasions, this divination may be blocked by an act of certain deities or forces.
+
+                             • **Plane Contacted**
+                             -- *Avoid Int/Cha Decrease*
+                             -- True Answer
+                             -- Don’t Know
+                             -- Lie
+                             -- Random Answer
+                             • **Elemental Plane:**
+                             -- *DC 7/1 week*
+                             -- 01–34
+                             -- 35–62
+                             -- 63–83
+                             -- 84–100
+                             • **(appropriate):**
+                             -- *(DC 7/1 week)*
+                             -- (01–68)
+                             -- (69–75)
+                             -- (76–98)
+                             -- (99–100)
+                             • **Positive/Negative Energy Plane:**
+                             -- *DC 8/1 week*
+                             -- 01–39
+                             -- 40–65
+                             -- 66–86
+                             -- 87–100
+                             • **Astral Plane:**
+                             -- *DC 9/1 week*
+                             -- 01–44
+                             -- 45–67
+                             -- 68–88
+                             -- 89–100
+                             • **Outer Plane, demideity:**
+                             -- *DC 10/2 weeks*
+                             -- 01–49
+                             -- 50–70
+                             -- 71–91
+                             -- 92–100
+                             • **Outer Plane, lesser deity:**
+                             -- *DC 12/3 weeks*
+                             -- 01–60
+                             -- 61–75
+                             -- 76–95
+                             -- 96–100
+                             • **Outer Plane, intermediate deity:**
+                             -- *DC 14/4 weeks*
+                             -- 01–73
+                             -- 74–81
+                             -- 82–98
+                             -- 99–100
+                             • **Outer Plane, greater deity:**
+                             -- *DC 16/5 weeks*
+                             -- 01–88
+                             -- 89–90
+                             -- 91–99
+                             -- 100
+
+                             *Avoid Int/Cha Decrease:* You must succeed on an Intelligence check against this DC to avoid a decrease in Intelligence and Charisma. If the check fails, your Intelligence and Charisma scores each fall to 8 for the stated duration, and you become unable to cast arcane spells. If you lose Intelligence and Charisma, the effect strikes as soon as the first question is asked, and no answer is received. (The entries in parentheses are for questions that pertain to the appropriate Elemental Plane.)
+                             **Results of a Successful Contact:** d% is rolled for the result shown on the table:
+                             *True Answer:* You get a true, one-word answer. Questions that cannot be answered in this way are answered randomly.
+                             *Don’t Know:* The entity tells you that it doesn’t know.
+                             *Lie:* The entity intentionally lies to you.
+                             *Random Answer:* The entity tries to lie but doesn’t know the answer, so it makes one up.`,
+          material:         null
+        },
+        'contagion': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Contagion',
+          school:           'Necromancy [Evil]',
+          level:            'Blg 3, Clr 3, Destruction 3, Drd 3, Sor/Wiz 4',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Living creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude negates',
+          spell_resistance: 'Yes',
+          text:             `The subject contracts a [disease](https://www.dandwiki.com/wiki/SRD:Disease) selected from the table below, which strikes immediately (no incubation period). The DC noted is for the subsequent saves (use *contagion’s* normal save DC for the initial saving throw).
+                             • **[Disease](https://www.dandwiki.com/wiki/SRD:Disease)** [DC] Damage
+                             • **[Blinding sickness](https://www.dandwiki.com/wiki/SRD:Disease#Blinding_Sickness)** [16] ‹1d4 STR|[[1d4]] STR damage›†
+                             • **[Cackle fever](https://www.dandwiki.com/wiki/SRD:Disease#Cackle_Fever)** [16] ‹1d6 WIS|[[1d6]] WIS damage›
+                             • **[Filth fever](https://www.dandwiki.com/wiki/SRD:Disease#Filth_Fever)** [12] ‹1d3 DEX + 1d3 CON|[[1d3]] DEX + [[1d3]] CON damage›
+                             • **[Mindfire](https://www.dandwiki.com/wiki/SRD:Disease#Mindfire)** [12] ‹1d4 INT|[[1d4]] INT damage›
+                             • **[Red ache](https://www.dandwiki.com/wiki/SRD:Disease#Red_Ache)** [15] ‹1d6 STR|[[1d6]] STR damage›
+                             • **[Shakes](https://www.dandwiki.com/wiki/SRD:Disease#Shakes)** [13] ‹1d8 DEX|[[1d8]] DEX damage›
+                             • **[Slimy doom](https://www.dandwiki.com/wiki/SRD:Disease#Slimy_Doom)** [14] ‹1d4 CON|[[1d4]] CON damage›
+                             † Each time a victim takes 2 or more points of Strength damage from blinding sickness, he or she must make another Fortitude save (using the disease’s save DC) or be permanently [blinded](https://www.dandwiki.com/wiki/SRD:Blinded).`,
+          material:         null
+        },
+        'contingency': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Contingency',
+          school:           'Evocation',
+          level:            'Sor/Wiz 6, Time 6',
+          components:       'V, S, M, F',
+          casting_time:     'At least 10 minutes; see text',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] day(s) (D) or until discharged',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `You can place another spell upon your person so that it comes into effect under some condition you dictate when casting *contingency*. The *contingency* spell and the companion spell are cast at the same time. The 10-minute casting time is the minimum total for both castings; if the companion spell has a casting time longer than 10 minutes, use that instead.
+                             The spell to be brought into effect by the *contingency* must be one that affects your person and be of a spell level no higher than one-third your caster level (rounded down, maximum 6th level).
+                             The conditions needed to bring the spell into effect must be clear, although they can be general. In all cases, the *contingency* immediately brings into effect the companion spell, the latter being “cast” instantaneously when the prescribed circumstances occur. If complicated or convoluted conditions are prescribed, the whole spell combination (*contingency* and the companion magic) may fail when called on. The companion spell occurs based solely on the stated conditions, regardless of whether you want it to.
+                             You can use only one *contingency* spell at a time; if a second is cast, the first one (if still active) is dispelled.`,
+          material:         `**Material Component:** That of the companion spell, plus quicksilver and an eyelash of an [ogre mage](https://www.dandwiki.com/wiki/SRD:Ogre_Mage), [rakshasa](https://www.dandwiki.com/wiki/SRD:Rakshasa), or similar spell-using creature.
+                             **Focus:** A statuette of you carved from elephant ivory and decorated with gems (worth at least 1,500 gp). You must carry the focus for the *contingency* to work.`
+        },
+        //TODO contingent resurrection
+        'continual flame': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Continual_Flame',
+          school:           'Evocation [Light]',
+          level:            'Clr 3, Sor/Wiz 2',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Effect',
+          target:           'Magical, heatless flame',
+          duration:         'Permanent',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn’t use oxygen. A *continual flame* can be covered and hidden but not smothered or quenched.
+                             Light spells counter and dispel darkness spells of an equal or lower level.`,
+          material:         '**Material Component:** You sprinkle ruby dust (worth 50 gp) on the item that is to carry the flame.'
+        },
+        'control plants': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Control_Plants',
+          school:           'Transmutation',
+          level:            'Drd 8, Plant 8',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Targets',
+          target:           'Up to [[2*?{Casting Level}]] HD of [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'No',
+          text:             `This spell enables you to control the actions of one or more [plant creatures](https://www.dandwiki.com/wiki/SRD:Plant_Type) for a short period of time. You command the creatures by voice and they understand you, no matter what language you speak. Even if vocal communication is impossible the controlled [plants](https://www.dandwiki.com/wiki/SRD:Plant_Type) do not attack you. At the end of the spell, the subjects revert to their normal behavior.
+                             Suicidal or self-destructive commands are simply ignored.`,
+          material:         null
+        },
+        'control undead': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Control_Undead',
+          school:           'Necromancy',
+          level:            'Sor/Wiz 7',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Targets',
+          target:           'Up to [[2*?{Casting Level}]] HD of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `This spell enables you to command [undead creatures](https://www.dandwiki.com/wiki/SRD:Undead_Type) for a short period of time. You command them by voice and they understand you, no matter what language you speak. Even if vocal communication is impossible the controlled [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) do not attack you. At the end of the spell, the subjects revert to their normal behavior.
+                             Intelligent [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures remember that you controlled them.`,
+          material:         '**Material Component:** A small piece of bone and a small piece of raw meat.'
+        },
+        'control water': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Control_Water',
+          school:           'Transmutation [Water]',
+          level:            'Clr 4, Drd 4, Sor/Wiz 6, Water 4',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'long',
+          target_type:      'Area',
+          target:           'Water in a volume of [[10*?{Casting Level}]] ft. by [[10*?{Casting Level}]] ft. by [[2*?{Casting Level}]] ft. (S)',
+          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None; see text',
+          spell_resistance: 'No',
+          text:             `Depending on the version you choose, the *control water* spell raises or lowers water.
+                             *Lower Water:* This causes water or similar liquid to reduce its depth by as much as 2 feet per caster level (to a minimum depth of 1 inch). The water is lowered within a squarish depression whose sides are up to caster level x 10 feet long. In extremely large and deep bodies of water, such as a deep ocean, the spell creates a whirlpool that sweeps ships and similar craft downward, putting them at risk and rendering them unable to leave by normal movement for the duration of the spell. When cast on water [elementals](https://www.dandwiki.com/wiki/SRD:Elemental_Type) and other water-based creatures, this spell acts as a *slow* spell (Will negates). The spell has no effect on other creatures.
+                             *Raise Water:* This causes water or similar liquid to rise in height, just as the *lower water* version causes it to lower. Boats raised in this way slide down the sides of the hump that the spell creates. If the area affected by the spell includes riverbanks, a beach, or other land nearby, the water can spill over onto dry land.
+                             With either version, you may reduce one horizontal dimension by half and double the other horizontal dimension.`,
+          material:         '**Arcane Material Component:** A drop of water (for *raise water*) or a pinch of dust (for *lower water*).'
+        },
+        'control weather': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Control_Weather',
+          school:           'Transmutation',
+          level:            'Air 7, Clr 7, Drd 7, Sor/Wiz 7, Weather 7',
+          components:       'V, S',
+          casting_time:     '10 minutes; see text',
+          range:            '2 miles',
+          target_type:      'Area',
+          target:           '2-mile-radius circle, centered on you; see text',
+          duration:         '[[4d12]] hours; see text',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You change the weather in the local area. It takes 10 minutes to cast the spell and an additional 10 minutes for the effects to manifest. You can call forth weather appropriate to the climate and season of the area you are in.
+
+                             • **Spring**
+                             -- Tornado
+                             -- Thunderstorm
+                             -- Sleet storm
+                             -- Hot weather
+                             • **Summer**
+                             -- Torrential rain
+                             -- Heat wave
+                             -- Hailstorm
+                             • **Autumn**
+                             -- Hot or cold weather
+                             -- Fog
+                             -- Sleet
+                             • **Winter**
+                             -- Frigid cold
+                             -- Blizzard
+                             -- Thaw
+                             • **Late winter**
+                             -- Hurricane-force winds
+                             -- Early spring (coastal area)
+
+                             You control the general tendencies of the weather, such as the direction and intensity of the wind. You cannot control specific applications of the weather—where lightning strikes, for example, or the exact path of a tornado. When you select a certain weather condition to occur, the weather assumes that condition 10 minutes later (changing gradually, not abruptly). The weather continues as you left it for the duration, or until you use a standard action to designate a new kind of weather (which fully manifests itself 10 minutes later). Contradictory conditions are not possible simultaneously.
+                             *Control weather* can do away with atmospheric phenomena (naturally occurring or otherwise) as well as create them.
+                             A [druid](https://www.dandwiki.com/wiki/SRD:Druid) casting this spell doubles the duration and affects a circle with a 3-mile radius.`,
+          material:         null
+        },
+        'control winds': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Control_Winds',
+          school:           'Transmutation [Air]',
+          level:            'Air 5, Drd 5, Weather 6',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '[[40*?{Casting Level}]] ft.',
+          target_type:      'Area',
+          target:           '[[40*?{Casting Level}]] ft. radius cylinder 40 ft. high',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'Fortitude negates',
+          spell_resistance: 'No',
+          text:             `You alter wind force in the area surrounding you. You can make the wind blow in a certain direction or manner, increase its strength, or decrease its strength. The new wind direction and strength persist until the spell ends or until you choose to alter your handiwork, which requires concentration. You may create an “eye” of calm air up to 80 feet in diameter at the center of the area if you so desire, and you may choose to limit the area to any cylindrical area less than your full limit.
+                             *Wind Direction:* You may choose one of four basic wind patterns to function over the spell’s area.
+                             • A downdraft blows from the center outward in equal strength in all directions.
+                             • An updraft blows from the outer edges in toward the center in equal strength from all directions, veering upward before impinging on the eye in the center.
+                             • A rotation causes the winds to circle the center in clockwise or counterclockwise fashion.
+                             • A blast simply causes the winds to blow in one direction across the entire area from one side to the other.
+                             *Wind Strength:* For every three caster levels, you can increase or decrease wind strength by one level. Each round on your turn, a creature in the wind must make a Fortitude save or suffer the effect of being in the windy area.
+                             Strong winds (21+ mph) make sailing difficult.
+                             A severe wind (31+ mph) causes minor ship and building damage.
+                             A windstorm (51+ mph) drives most flying creatures from the skies, uproots small trees, knocks down light wooden structures, tears off roofs, and endangers ships.
+                             Hurricane force winds (75+ mph) destroy wooden buildings, sometimes uproot even large trees, and cause most ships to founder.
+                             A tornado (175+ mph) destroys all nonfortified buildings and often uproots large trees.`,
+          material:         null
+        },
+        'corrupt weapon': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Corrupt_Weapon',
+          school:           'Transmutation',
+          level:            'Blg 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Weapon touched',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This transmutation makes a weapon strike true against good foes. The weapon is treated as having a +1 enhancement bonus for the purpose of bypassing the damage reduction of good creatures or striking good [incorporeal creatures](https://www.dandwiki.com/wiki/SRD:Incorporeal_Subtype) (though the spell doesn’t grant an actual enhancement bonus). The weapon also becomes evil, which means it can bypass the damage reduction of certain creatures. (This effect overrides and suppresses any other alignment the weapon might have.) Individual arrows or bolts can be transmuted, but affected projectile weapons (such as bows) don’t confer the benefit to the projectiles they shoot.
+                             In addition, all critical hit rolls against good foes are automatically successful, so every threat is a critical hit. This last effect does not apply to any weapon that already has a magical effect related to critical hits, such as a [keen](https://www.dandwiki.com/wiki/SRD:Keen) weapon or a [vorpal](https://www.dandwiki.com/wiki/SRD:Vorpal) sword.`,
+          material:         null
+        },
+        'create food and water': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Create_Food_and_Water',
+          school:           'Conjuration (Creation)',
+          level:            'Clr 3, Creation 3',
+          components:       'V, S',
+          casting_time:     '10 minutes',
+          range:            'close',
+          target_type:      'Effect',
+          target:           'Food and water to sustain [[3*?{Casting Level}]] humans or [[?{Casting Level}]] horse for 24 hours',
+          duration:         '24 hours; see text',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `The food that this spell creates is simple fare of your choice—highly nourishing, if rather bland. Food so created decays and becomes inedible within 24 hours, although it can be kept fresh for another 24 hours by casting a [purify food and drink](https://www.dandwiki.com/wiki/SRD:Purify_Food_and_Drink) spell on it. The water created by this spell is just like clean rain water, and it doesn’t go bad as the food does.`,
+          material:         null
+        },
+        'create greater undead': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Create_Greater_Undead',
+          school:           'Necromancy [Evil]',
+          level:            'Clr 8, Death 8, Sor/Wiz 8',
+          components:       'V, S, M',
+          casting_time:     '1 hour',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One corpse',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `A much more potent spell than [*animate dead*](https://www.dandwiki.com/wiki/SRD:Animate_Dead), this evil spell allows you to create more powerful sorts of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type): [shadows](https://www.dandwiki.com/wiki/SRD:Shadow), [wraiths](https://www.dandwiki.com/wiki/SRD:Wraith), [spectres](https://www.dandwiki.com/wiki/SRD:Spectre), and [devourers](https://www.dandwiki.com/wiki/SRD:Devourer). The type or types of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) you can create is based on your caster level, as shown on the table below.
+
+                             • Caster Level 15th or lower
+                             -- [Shadow](https://www.dandwiki.com/wiki/SRD:Shadow)
+                             • Caster Level 16th–17th
+                             -- [Wraith](https://www.dandwiki.com/wiki/SRD:Wraith)
+                             • Caster Level 18th–19th
+                             -- [Spectre](https://www.dandwiki.com/wiki/SRD:Spectre)
+                             • Caster Level 20th or higher
+                             -- [Devourer](https://www.dandwiki.com/wiki/SRD:Devourer)
+
+                             You may create less powerful [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) than your level would allow if you choose. Created [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) are not automatically under the control of their animator. If you are capable of commanding [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type), you may attempt to command the [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature as it forms.
+                             This spell must be cast at night.`,
+          material:         '**Material Component:** A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a [dead](https://www.dandwiki.com/wiki/SRD:Dead) body. You must place a black onyx gem worth at least 50 gp per HD of the [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) to be created into the mouth or eye socket of each corpse. The magic of the spell turns these gems into worthless shells.'
+        },
+        //TODO create living vault (ritual)
+        'create undead': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Create_Undead',
+          school:           'Necromancy [Evil]',
+          level:            'Clr 6, Death 6, Evil 6, Sor/Wiz 6',
+          components:       'V, S, M',
+          casting_time:     '1 hour',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One corpse',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `A much more potent spell than [animate dead](https://www.dandwiki.com/wiki/SRD:Animate_Dead), this evil spell allows you to create more powerful sorts of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type): [ghouls](https://www.dandwiki.com/wiki/SRD:Ghoul), [ghasts](https://www.dandwiki.com/wiki/SRD:Ghast), [mummies](https://www.dandwiki.com/wiki/SRD:Mummy), and [mohrgs](https://www.dandwiki.com/wiki/SRD:Mohrg). The type or types of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) you can create is based on your caster level, as shown on the table below.
+
+                             • Caster Level 11th or lower
+                             -- [Ghoul](https://www.dandwiki.com/wiki/SRD:Ghoul)
+                             • Caster Level 12th–14th
+                             -- [Ghast](https://www.dandwiki.com/wiki/SRD:Ghast)
+                             • Caster Level 15th–17th
+                             -- [Mummy](https://www.dandwiki.com/wiki/SRD:Mummy)
+                             • Caster Level 18th or higher
+                             -- [Mohrg](https://www.dandwiki.com/wiki/SRD:Mohrg)
+
+                             You may create less powerful [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) than your level would allow if you choose. Created [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) are not automatically under the control of their animator. If you are capable of commanding [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type), you may attempt to command the [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature as it forms.
+                             This spell must be cast at night.`,
+          material:         '**Material Component:** A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a [dead](https://www.dandwiki.com/wiki/SRD:Dead) body. You must place a black onyx gem worth at least 50 gp per HD of the [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) to be created into the mouth or eye socket of each corpse. The magic of the spell turns these gems into worthless shells.'
+        },
+        'create water': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Create_Water',
+          school:           'Conjuration (Creation) [Water]',
+          level:            'Clr 0, Creation 1, Drd 0, Pal 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Effect',
+          target:           'Up to [[2*?{Casting Level}]] gallons of water',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell generates wholesome, drinkable water, just like clean rain water. Water can be created in an area as small as will actually contain the liquid, or in an area three times as large—possibly creating a downpour or filling many small receptacles.
+                             *Note:* Conjuration spells can’t create substances or objects within a creature. Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.`,
+          material:         null
+        },
+        'creeping doom': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Creeping_Doom',
+          school:           'Conjuration (Summoning)',
+          level:            'Drd 7, Scalykind 7',
+          components:       'V, S',
+          casting_time:     '1 round',
+          range:            'close',
+          target_type:      'Effect',
+          target:           '[[floor(?{Casting Level}/2)]] swarm of centipedes',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `When you utter the spell of *creeping doom*, you call forth a [mass of centipede swarms](https://www.dandwiki.com/wiki/SRD:Centipede_Swarm) (one per two caster levels, to a maximum of ten swarms at 20th level), which need not appear adjacent to one another.
+                             You may summon the centipede swarms so that they share the area of other creatures. The swarms remain stationary, attacking any creatures in their area, unless you command the creeping doom to move (a standard action). As a standard action, you can command any number of the swarms to move toward any prey within 100 feet of you. You cannot command any swarm to move more than 100 feet away from you, and if you move more than 100 feet from any swarm, that swarm remains stationary, attacking any creatures in its area (but it can be commanded again if you move within 100 feet).`,
+          material:         null
+        },
+        'crown of glory': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Crown_of_Glory',
+          school:           'Evocation',
+          level:            'Glory 8',
+          components:       'V, S, M, D F',
+          casting_time:     '1 full round',
+          range:            'Personal',
+          target_type:      'Area',
+          target:           '120-ft.-radius emanation centered on you',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `The caster is imbued with an aura of [celestial](https://www.dandwiki.com/wiki/SRD:Celestial) authority, inspiring awe in all lesser creatures.
+                             The caster gains a \`\`+4\`\` enhancement bonus to his or her Charisma score for the duration of the spell. All creatures with fewer than 8 HD or levels cease whatever they are doing and are compelled to pay attention to the caster. Any such creature that wants to take hostile action against the caster must make a successful Will save to do so. Any creature that does not make this saving throw the first time it attempts a hostile action is *enthralled* for the duration of the spell (as the [*enthrall*](https://www.dandwiki.com/wiki/SRD:Enthrall) spell), as long as it is in the spell’s area, nor will it try to leave the area on its own. Creatures with 8 HD or more may pay attention to the caster, but are not affected by this spell.
+                             When the caster speaks, all listeners telepathically understand him or her, even if they do not understand the language. While the spell lasts, the caster can make up to three suggestions to creatures of fewer than 8 HD in range, as if using the [*mass suggestion*](https://www.dandwiki.com/wiki/SRD:Mass_Suggestion) spell (Will save negates); creatures with 8 HD or more aren’t affected by this power. Only creatures within range at the time a [*suggestion*](https://www.dandwiki.com/wiki/SRD:Suggestion) is given are subject to it.`,
+          material:         '**Material Component:** worth at least 200 gp.'
+        },
+        //TODO crown of vermin
+        'crushing despair': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Crushing_Despair',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Brd 3, Sor/Wiz 4',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '30 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped burst',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `An [invisible](https://www.dandwiki.com/wiki/SRD:Invisible) cone of despair causes great sadness in the subjects. Each affected creature takes a \`\`-2\`\` penalty on attack rolls, saving throws, ability checks, skill checks, and weapon damage rolls.
+                             *Crushing despair* counters and dispels [*good hope*](https://www.dandwiki.com/wiki/SRD:Good_Hope).`,
+          material:         '**Material Component:** A vial of tears.'
+        },
+        'crushing hand': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Crushing_Hand',
+          school:           'Evocation [Force]',
+          level:            'Sor/Wiz 9, Strength 9',
+          components:       'V, S, M, F/DF',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Effect',
+          target:           '10-ft. hand',
+          duration:         '[[?{Casting Level}]] round(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `This spell functions like [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand), except that the hand can interpose itself, push, or crush one opponent that you select.
+                             The *crushing hand* can [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) an opponent like [*grasping hand*](https://www.dandwiki.com/wiki/SRD:Grasping_Hand) does. Its [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) bonus equals your caster level + your Intelligence, Wisdom, or Charisma modifier (for a [wizard](https://www.dandwiki.com/wiki/SRD:Wizard), [cleric](https://www.dandwiki.com/wiki/SRD:Cleric), or [sorcerer](https://www.dandwiki.com/wiki/SRD:Sorcerer), respectively), \`\`+12\`\` for the hand's Strength score (35), \`\`+4\`\` for being Large. The hand deals ‹2d6+12› points of damage (lethal, not nonlethal) on each successful [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) check against an opponent.
+                             The *crushing hand* can also interpose itself as [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand) does, or it can [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) an opponent as [*forceful hand*](https://www.dandwiki.com/wiki/SRD:Forceful_Hand) does, but at a \`\`+18\`\` bonus.
+                             Directing the spell to a new target is a move action.
+                             [Clerics](https://www.dandwiki.com/wiki/SRD:Cleric) who cast this spell name it for their deities.`,
+          material:         `**Arcane Material Component:** The shell of an egg.
+                             **Arcane Focus:** A glove of snakeskin.`
+        },
+        'cure critical wounds': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Cure_Critical_Wounds',
+          school:           'Conjuration (Healing)',
+          level:            'Blg 4, Brd 4, Clr 4, Drd 5, Healing 4',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Will half (harmless); see text',
+          spell_resistance: 'Yes (harmless); see text',
+          text:             `When laying your hand upon a living creature, you channel positive energy that cures 4d8 points of damage +1 point per caster level (maximum +20): [[4d8+[[{?{Casting Level},20}kl1]]]].
+                             Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) can apply spell resistance, and can attempt a Will save to take half damage.`,
+          material:         null
+        },
+        'cure light wounds': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Cure_Light_Wounds',
+          school:           'Conjuration (Healing)',
+          level:            'Blg 1, Brd 1, Clr 1, Drd 1, Healing 1, Pal 1, Rgr 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Will half (harmless); see text',
+          spell_resistance: 'Yes (harmless); see text',
+          text:             `When laying your hand upon a living creature, you channel positive energy that cures 1d8 points of damage +1 point per caster level (maximum +5): [[1d8+[[{?{Casting Level},5}kl1]]]].
+                             Since [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) are powered by negative energy, this spell deals damage to them instead of curing their wounds. An [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) can apply spell resistance, and can attempt a Will save to take half damage.`,
+          material:         null
+        },
+        'cure minor wounds': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Cure_Minor_Wounds',
+          school:           'Conjuration (Healing)',
+          level:            'Clr 0, Drd 0',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Will half (harmless); see text',
+          spell_resistance: 'Yes (harmless); see text',
+          text:             `When laying your hand upon a living creature, you channel positive energy that cures 1 point of damage.
+                             Since [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) are powered by negative energy, this spell deals damage to them instead of curing their wounds. An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature can apply spell resistance, and can attempt a Will save to take half damage.`,
+          material:         null
+        },
+        'cure moderate wounds': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Cure_Moderate_Wounds',
+          school:           'Conjuration (Healing)',
+          level:            'Blg 2, Brd 2, Clr 2, Drd 3, Healing 2, Pal 3, Rgr 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Will half (harmless); see text',
+          spell_resistance: 'Yes (harmless); see text',
+          text:             `When laying your hand upon a living creature, you channel positive energy that cures 2d8 points of damage +1 point per caster level (maximum +10): [[2d8+[[{?{Casting Level},10}kl1]]]].
+                             Since [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) are powered by negative energy, this spell deals damage to them instead of curing their wounds. An [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) can apply spell resistance, and can attempt a Will save to take half damage.`,
+          material:         null
+        },
+        'cure serious wounds': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Cure_Serious_Wounds',
+          school:           'Conjuration (Healing)',
+          level:            'Blg 3, Brd 3, Clr 3, Drd 4, Pal 4, Rgr 4, Healing 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Will half (harmless); see text',
+          spell_resistance: 'Yes (harmless); see text',
+          text:             `When laying your hand upon a living creature, you channel positive energy that cures 3d8 points of damage +1 point per caster level (maximum +15): [[3d8+[[{?{Casting Level},15}kl1]]]].
+                             Since [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) are powered by negative energy, this spell deals damage to them instead of curing their wounds. An [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) can apply spell resistance, and can attempt a Will save to take half damage.`,
+          material:         null
+        },
+        'curse water': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Curse_Water',
+          school:           'Necromancy [Evil]',
+          level:            'Clr 1',
+          components:       'V, S, M',
+          casting_time:     '1 minute',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Flask of water touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates (object)',
+          spell_resistance: 'Yes (object)',
+          text:             `This spell imbues a flask (1 pint) of water with negative energy, turning it into unholy water. Unholy water damages good [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type) the way holy water damages [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) and evil [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type).`,
+          material:         '**Material Component:** 5 pounds of powdered silver (worth 25 gp).'
+        },
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
+        //'': {
+        //// ↲’‹›«»
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  material:         null
+        //},
         //'': {
         //// ↲’‹›«»
         //  ref:              '',
@@ -1991,54 +2834,54 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           material:         '**Arcane Material Component:** A small piece of phosphorus.'
         }
       },
-      spell_schools: {
-        'abjuration':    'https://www.dandwiki.com/wiki/SRD:Abjuration_School',
-        'conjuration':   'https://www.dandwiki.com/wiki/SRD:Conjuration_School',
-        'divination':    'https://www.dandwiki.com/wiki/SRD:Divination_School',
-        'enchantment':   'https://www.dandwiki.com/wiki/SRD:Enchantment_School',
-        'evocation':     'https://www.dandwiki.com/wiki/SRD:Evocation_School',
-        'illusion':      'https://www.dandwiki.com/wiki/SRD:Illusion_School',
-        'necromancy':    'https://www.dandwiki.com/wiki/SRD:Necromancy_School',
-        'transmutation': 'https://www.dandwiki.com/wiki/SRD:Transmutation_School',
-        'universal':     'https://www.dandwiki.com/wiki/SRD:Universal_School'
-      },
-      spell_subschools: {
-        'calling':       'https://www.dandwiki.com/wiki/SRD:Calling_Subschool',
-        'creation':      'https://www.dandwiki.com/wiki/SRD:Creation_Subschool',
-        'healing':       'https://www.dandwiki.com/wiki/SRD:Healing_Subschool',
-        'summoning':     'https://www.dandwiki.com/wiki/SRD:Summoning_Subschool',
-        'teleportation': 'https://www.dandwiki.com/wiki/SRD:Teleportation_Subschool',
-        'scrying':       'https://www.dandwiki.com/wiki/SRD:Scrying_Subschool',
-        'charm':         'https://www.dandwiki.com/wiki/SRD:Charm_Subschool',
-        'compulsion':    'https://www.dandwiki.com/wiki/SRD:Compulsion_Subschool',
-        'figment':       'https://www.dandwiki.com/wiki/SRD:Figment_Subschool',
-        'glamer':        'https://www.dandwiki.com/wiki/SRD:Glamer_Subschool',
-        'pattern':       'https://www.dandwiki.com/wiki/SRD:Pattern_Subschool',
-        'phantasm':      'https://www.dandwiki.com/wiki/SRD:Phantasm_Subschool',
-        'shadow':        'https://www.dandwiki.com/wiki/SRD:Shadow_Subschool'
-      },
-      spell_effects: {
-        'acid':               'https://www.dandwiki.com/wiki/SRD:Acid_Effect',
-        'air':                'https://www.dandwiki.com/wiki/SRD:Air_Effect',
-        'chaotic':            'https://www.dandwiki.com/wiki/SRD:Chaotic_Effect',
-        'cold':               'https://www.dandwiki.com/wiki/SRD:Cold_Effect',
-        'darkness':           'https://www.dandwiki.com/wiki/SRD:Darkness_Effect',
-        'death':              'https://www.dandwiki.com/wiki/SRD:Death_Effect',
-        'earth':              'https://www.dandwiki.com/wiki/SRD:Earth_Effect',
-        'electricity':        'https://www.dandwiki.com/wiki/SRD:Electricity_Effect',
-        'evil':               'https://www.dandwiki.com/wiki/SRD:Evil_Effect',
-        'good':               'https://www.dandwiki.com/wiki/SRD:Good_Effect',
-        'fear':               'https://www.dandwiki.com/wiki/SRD:Fear_Effect',
-        'fire':               'https://www.dandwiki.com/wiki/SRD:Fire_Effect',
-        'force':              'https://www.dandwiki.com/wiki/SRD:Force_Effect',
-        'language-dependent': 'https://www.dandwiki.com/wiki/SRD:Language-Dependent_Effect',
-        'lawful':             'https://www.dandwiki.com/wiki/SRD:Lawful_Effect',
-        'light effect':       'https://www.dandwiki.com/wiki/SRD:Light_Effect',
-        'mind-affecting':     'https://www.dandwiki.com/wiki/SRD:Mind-Affecting_Effect',
-        'sleep':              'https://www.dandwiki.com/wiki/SRD:Sleep_Effect',
-        'sonic':              'https://www.dandwiki.com/wiki/SRD:Sonic_Effect',
-        'water':              'https://www.dandwiki.com/wiki/SRD:Water_Effect'
-      },
+      //spell_schools: {
+      //  'abjuration':    'https://www.dandwiki.com/wiki/SRD:Abjuration_School',
+      //  'conjuration':   'https://www.dandwiki.com/wiki/SRD:Conjuration_School',
+      //  'divination':    'https://www.dandwiki.com/wiki/SRD:Divination_School',
+      //  'enchantment':   'https://www.dandwiki.com/wiki/SRD:Enchantment_School',
+      //  'evocation':     'https://www.dandwiki.com/wiki/SRD:Evocation_School',
+      //  'illusion':      'https://www.dandwiki.com/wiki/SRD:Illusion_School',
+      //  'necromancy':    'https://www.dandwiki.com/wiki/SRD:Necromancy_School',
+      //  'transmutation': 'https://www.dandwiki.com/wiki/SRD:Transmutation_School',
+      //  'universal':     'https://www.dandwiki.com/wiki/SRD:Universal_School'
+      //},
+      //spell_subschools: {
+      //  'calling':       'https://www.dandwiki.com/wiki/SRD:Calling_Subschool',
+      //  'creation':      'https://www.dandwiki.com/wiki/SRD:Creation_Subschool',
+      //  'healing':       'https://www.dandwiki.com/wiki/SRD:Healing_Subschool',
+      //  'summoning':     'https://www.dandwiki.com/wiki/SRD:Summoning_Subschool',
+      //  'teleportation': 'https://www.dandwiki.com/wiki/SRD:Teleportation_Subschool',
+      //  'scrying':       'https://www.dandwiki.com/wiki/SRD:Scrying_Subschool',
+      //  'charm':         'https://www.dandwiki.com/wiki/SRD:Charm_Subschool',
+      //  'compulsion':    'https://www.dandwiki.com/wiki/SRD:Compulsion_Subschool',
+      //  'figment':       'https://www.dandwiki.com/wiki/SRD:Figment_Subschool',
+      //  'glamer':        'https://www.dandwiki.com/wiki/SRD:Glamer_Subschool',
+      //  'pattern':       'https://www.dandwiki.com/wiki/SRD:Pattern_Subschool',
+      //  'phantasm':      'https://www.dandwiki.com/wiki/SRD:Phantasm_Subschool',
+      //  'shadow':        'https://www.dandwiki.com/wiki/SRD:Shadow_Subschool'
+      //},
+      //spell_effects: {
+      //  'acid':               'https://www.dandwiki.com/wiki/SRD:Acid_Effect',
+      //  'air':                'https://www.dandwiki.com/wiki/SRD:Air_Effect',
+      //  'chaotic':            'https://www.dandwiki.com/wiki/SRD:Chaotic_Effect',
+      //  'cold':               'https://www.dandwiki.com/wiki/SRD:Cold_Effect',
+      //  'darkness':           'https://www.dandwiki.com/wiki/SRD:Darkness_Effect',
+      //  'death':              'https://www.dandwiki.com/wiki/SRD:Death_Effect',
+      //  'earth':              'https://www.dandwiki.com/wiki/SRD:Earth_Effect',
+      //  'electricity':        'https://www.dandwiki.com/wiki/SRD:Electricity_Effect',
+      //  'evil':               'https://www.dandwiki.com/wiki/SRD:Evil_Effect',
+      //  'good':               'https://www.dandwiki.com/wiki/SRD:Good_Effect',
+      //  'fear':               'https://www.dandwiki.com/wiki/SRD:Fear_Effect',
+      //  'fire':               'https://www.dandwiki.com/wiki/SRD:Fire_Effect',
+      //  'force':              'https://www.dandwiki.com/wiki/SRD:Force_Effect',
+      //  'language-dependent': 'https://www.dandwiki.com/wiki/SRD:Language-Dependent_Effect',
+      //  'lawful':             'https://www.dandwiki.com/wiki/SRD:Lawful_Effect',
+      //  'light effect':       'https://www.dandwiki.com/wiki/SRD:Light_Effect',
+      //  'mind-affecting':     'https://www.dandwiki.com/wiki/SRD:Mind-Affecting_Effect',
+      //  'sleep':              'https://www.dandwiki.com/wiki/SRD:Sleep_Effect',
+      //  'sonic':              'https://www.dandwiki.com/wiki/SRD:Sonic_Effect',
+      //  'water':              'https://www.dandwiki.com/wiki/SRD:Water_Effect'
+      //},
       spell_ranges: {
         'close':    'Close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.)',
         'medium':   'Medium ([[100+(10*[[?{Casting Level}]])]] ft.)',
@@ -2129,7 +2972,29 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'comprehend languages':       { recharge: '4 hours' },
         'cone of cold':               { recharge: 'General' },
         'confusion':                  { recharge: 'General' },
-        'consecrate':                 { recharge: '30 minutes' }
+        'consecrate':                 { recharge: '30 minutes' },
+        'contact other plane':        { recharge: '6 hours' },
+        'contagion':                  { recharge: 'General' },
+        'contingency':                { recharge: 'General' },
+        'continual flame':            { recharge: 'General' },
+        'control plants':             { recharge: '30 minutes' },
+        'control undead':             { recharge: '30 minutes' },
+        'control water':              { recharge: '1 hour' },
+        'control weather':            { recharge: 'General' },
+        'control winds':              { recharge: '4 hours' },
+        'create food and water':      { recharge: '24 hours' },
+        'create greater undead':      { recharge: 'General' },
+        'create undead':              { recharge: 'General' },
+        'create water':               { recharge: '30 minutes' },
+        'crushing despair':           { recharge: 'General' },
+        'crushing hand':              { recharge: 'General' },
+        'cure critical wounds':       { recharge: 'General' },
+        'cure light wounds':          { recharge: 'General' },
+        'cure minor wounds':          { recharge: 'General' },
+        'cure moderate wounds':       { recharge: 'General' },
+        'cure serious wounds':        { recharge: 'General' },
+        'curse water':                { recharge: 'General' }
+
         //'': { recharge: 'General' },
       }
     },
@@ -3344,7 +4209,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       var rowID         = match_result[3];
                       //log("I deleting attribute: " + attr_obj.get('name'));
                       var spellmacro = getAttrByName(character.id, ''.concat('repeating_spells',spell_section,spell_column,'_',rowID,'_spellmacro',spell_section,spell_column));
-                      if (stringTrimWhitespace(spellmacro).toLowerCase() == "fill") {
+                      if (stringTrimWhitespace(spellmacro) == "") {
                         var spell_name = stringTrimWhitespace(spellname_attr.get('current').toLowerCase()).replace(/[^a-z ]/g, '');
                         if (Object.keys(dnd35.spells()).includes(spell_name)) {
                           var spell_spec = dnd35.spell(spell_name);
