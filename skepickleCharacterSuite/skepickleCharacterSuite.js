@@ -7239,7 +7239,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       var rowID         = match_result[3];
                       //log("I deleting attribute: " + attr_obj.get('name'));
                       var spellmacro = getAttrByName(character.id, ''.concat('repeating_spells',spell_section,spell_column,'_',rowID,'_spellmacro',spell_section,spell_column));
-                      if (stringTrimWhitespace(spellmacro) == "") {
+                      if (['','-','fill','empty'].includes(stringTrimWhitespace(spellmacro))) {
                         var spell_name = stringTrimWhitespace(spellname_attr.get('current').toLowerCase()).replace(/[^a-z ]/g, '');
                         if (Object.keys(dnd35.spells()).includes(spell_name)) {
                           var spell_spec = dnd35.spell(spell_name);
