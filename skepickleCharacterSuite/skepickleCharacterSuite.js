@@ -268,7 +268,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'None',
           spell_resistance: 'Yes (harmless)',
-          text:             '*Aid* grants the target a \`\`+1\`\` morale bonus on attack rolls and saves against fear effects, plus ‹temporary hit points|[[1d8+[[{?{Casting Level},10}kl1]]]]› equal to 1d8 + caster level (to a maximum of 1d8+10 temporary hit points at caster level 10th).',
+          text:             '*Aid* grants the target a \`\`+1 morale bonus\`\` on attack rolls and saves against fear effects, plus [[1d8+[[{?{Casting Level},10}kl1]]]] temporary hit points.',
           material:         null
         },
         'air walk': {
@@ -345,7 +345,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              You acquire the physical qualities of the new form while retaining your own mind. Physical qualities include natural size, mundane movement capabilities (such as burrowing, climbing, walking, swimming, and flight with wings, to a maximum speed of 120 feet for flying or 60 feet for nonflying movement), natural armor bonus, [natural weapons](https://www.dandwiki.com/wiki/SRD:Natural_Weapon) (such as claws, bite, and so on), racial skill bonuses, racial bonus feats, and any gross physical qualities (presence or absence of wings, number of extremities, and so forth). A body with extra limbs does not allow you to make more attacks (or more advantageous two-weapon attacks) than normal.
                              You do not gain any extraordinary special attacks or special qualities not noted above under physical qualities, such as darkvision, low-light vision, blindsense, blindsight, fast healing, regeneration, scent, and so forth.
                              You do not gain any supernatural special attacks, special qualities, or [spell-like abilities](https://www.dandwiki.com/wiki/SRD:Spell-Like_Ability) of the new form. Your creature type and subtype (if any) remain the same regardless of your new form. You cannot take the form of any creature with a template, even if that template doesn’t change the creature type or subtype.
-                             You can freely designate the new form’s minor physical qualities (such as hair color, hair texture, and skin color) within the normal ranges for a creature of that kind. The new form’s significant physical qualities (such as height, weight, and gender) are also under your control, but they must fall within the norms for the new form’s kind. You are effectively disguised as an average member of the new form’s race. If you use this spell to create a disguise, you get a \`\`+10\`\` bonus on your Disguise check.
+                             You can freely designate the new form’s minor physical qualities (such as hair color, hair texture, and skin color) within the normal ranges for a creature of that kind. The new form’s significant physical qualities (such as height, weight, and gender) are also under your control, but they must fall within the norms for the new form’s kind. You are effectively disguised as an average member of the new form’s race. If you use this spell to create a disguise, you get a \`\`+10 bonus\`\` on your Disguise check.
                              When the change occurs, your equipment, if any, either remains worn or held by the new form (if it is capable of wearing or holding the item), or melds into the new form and becomes nonfunctional. When you revert to your true form, any objects previously melded into the new form reappear in the same location on your body they previously occupied and are once again functional. Any new items you wore in the assumed form and can’t wear in your normal form fall off and land at your feet; any that you could wear in either form or carry in a body part common to both forms at the time of reversion are still held in the same way. Any part of the body or piece of equipment that is separated from the whole reverts to its true form.`,
           material:         null
         },
@@ -378,8 +378,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
-          text:             `A number of [animals](https://www.dandwiki.com/wiki/SRD:Animal_Type) grow to twice their normal size and eight times their normal weight. This alteration changes each [animal’s](https://www.dandwiki.com/wiki/SRD:Animal_Type) [size category](https://www.dandwiki.com/wiki/SRD:Size_Category) to the next largest, grants it a \`\`+8\`\` size bonus to Strength and a \`\`+4\`\` size bonus to Constitution (and thus an extra 2 hit points per HD), and imposes a \`\`-2\`\` size penalty to Dexterity. The creature’s existing natural armor bonus increases by 2. The size change also affects the [animal’s](https://www.dandwiki.com/wiki/SRD:Animal_Type) modifier to AC and attack rolls and its base damage. The [animal’s](https://www.dandwiki.com/wiki/SRD:Animal_Type) space and reach change as appropriate to the new size, but its speed does not change.
-                             The spell also grants each subject damage reduction 10/magic and a \`\`+4\`\` resistance bonus on saving throws. If insufficient room is available for the desired growth, the creature attains the maximum possible size and may make a Strength check (using its increased Strength) to burst any enclosures in the process. If it fails, it is constrained without harm by the materials enclosing it— the spell cannot be used to crush a creature by increasing its size.
+          text:             `A number of [animals](https://www.dandwiki.com/wiki/SRD:Animal_Type) grow to twice their normal size and eight times their normal weight. This alteration changes each [animal’s](https://www.dandwiki.com/wiki/SRD:Animal_Type) [size category](https://www.dandwiki.com/wiki/SRD:Size_Category) to the next largest, grants it a \`\`+8 size bonus\`\` to Strength and a \`\`+4 size bonus\`\` to Constitution (and thus an extra 2 hit points per HD), and imposes a \`\`-2 size penalty\`\` to Dexterity. The creature’s existing natural armor bonus increases by 2. The size change also affects the [animal’s](https://www.dandwiki.com/wiki/SRD:Animal_Type) modifier to AC and attack rolls and its base damage. The [animal’s](https://www.dandwiki.com/wiki/SRD:Animal_Type) space and reach change as appropriate to the new size, but its speed does not change.
+                             The spell also grants each subject damage reduction 10/magic and a \`\`+4 resistance bonus\`\` on saving throws. If insufficient room is available for the desired growth, the creature attains the maximum possible size and may make a Strength check (using its increased Strength) to burst any enclosures in the process. If it fails, it is constrained without harm by the materials enclosing it— the spell cannot be used to crush a creature by increasing its size.
                              All equipment worn or carried by an [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) is similarly enlarged by the spell, though this change has no effect on the magical properties of any such equipment.
                              Any enlarged item that leaves the enlarged creature’s possession instantly returns to its normal size.
                              The spell gives no means of command or influence over the enlarged [animals](https://www.dandwiki.com/wiki/SRD:Animal_Type).
@@ -426,11 +426,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            'close',
           target_type:      'Targets',
-          target:           'Animals or magical beasts with Intelligence 1 or 2',
+          target:           '[[2d6]] HD worth of Animals or magical beasts with Intelligence 1 or 2',
           duration:         'Concentration',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `Your swaying motions and music (or singing, or chanting) compel [animals](https://www.dandwiki.com/wiki/SRD:Animal_Type) and [magical beasts](https://www.dandwiki.com/wiki/SRD:Magical_Beast_Type) to do nothing but watch you. Only a creature with an Intelligence score of 1 or 2 can be [fascinated](https://www.dandwiki.com/wiki/SRD:Fascinated) by this spell. Roll ‹2d6› to determine the total number of HD worth of creatures that you [fascinate](https://www.dandwiki.com/wiki/SRD:Fascinated). The closest targets are selected first until no more targets within range can be affected.
+          text:             `Your swaying motions and music (or singing, or chanting) compel [animals](https://www.dandwiki.com/wiki/SRD:Animal_Type) and [magical beasts](https://www.dandwiki.com/wiki/SRD:Magical_Beast_Type) to do nothing but watch you. Only a creature with an Intelligence score of 1 or 2 can be [fascinated](https://www.dandwiki.com/wiki/SRD:Fascinated) by this spell. The closest targets are selected first until no more targets within range can be affected.
                              A [magical beast](https://www.dandwiki.com/wiki/SRD:Magical_Beast_Type), a [dire animal](https://www.dandwiki.com/wiki/SRD:Dire_Animal), or an [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) trained to attack or guard is allowed a saving throw; an [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) not trained to attack or guard is not.`,
           material:         null
         },
@@ -507,7 +507,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              The possible commands are “coil” (form a neat, coiled stack), “coil and knot,” “loop,” “loop and knot,” “tie and knot,” and the opposites of all of the above (“uncoil,” and so forth). You can give one command each round as a [move action](https://www.dandwiki.com/wiki/SRD:Move_Actions), as if directing an active spell.
                              The rope can enwrap only a creature or an object within 1 foot of it—it does not snake outward—so it must be thrown near the intended target. Doing so requires a successful ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) roll (range increment 10 feet). A typical 1-inch-diameter hempen rope has 2 hit points, AC 10, and requires a DC 23 Strength check to burst it. The rope does not deal damage, but it can be used as a trip line or to cause a single opponent that fails a Reflex saving throw to become [entangled](https://www.dandwiki.com/wiki/SRD:Entangled). A creature capable of spellcasting that is bound by this spell must make a DC 15 Concentration check to cast a spell. An [entangled](https://www.dandwiki.com/wiki/SRD:Entangled) creature can slip free with a DC 20 Escape Artist check.
                              The rope itself and any knots tied in it are not magical.
-                             This spell grants a \`\`+2\`\` bonus on any Use Rope checks you make when using the transmuted rope.
+                             This spell grants a \`\`+2 bonus\`\` on any Use Rope checks you make when using the transmuted rope.
                              The spell cannot animate objects carried or worn by a creature.`,
           material:         null
         },
@@ -661,7 +661,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `The spell envelops the warded creature in a shroud of shadows. The shroud can, if the caster desires, conceal the wearer’s features. In any case, it grants the recipient a \`\`+3\`\` deflection bonus to Armor Class plus an additional \`\`+1\`\` for every four caster levels (maximum bonus +8). The subject can see through the armor as if it did not exist and is also afforded darkvision with a range of 60 feet. Finally, the subject gains a \`\`+2\`\` bonus on saving throws against any holy, [good](https://www.dandwiki.com/wiki/SRD:Good_Effect), or [light](https://www.dandwiki.com/wiki/SRD:Light_Effect) spells or effects. [Undead creatures](https://www.dandwiki.com/wiki/SRD:Undead_Type) that are subjects of *armor of darkness* also gain \`\`+4\`\` turn resistance.`,
+          text:             `The spell envelops the warded creature in a shroud of shadows. The shroud can, if the caster desires, conceal the wearer’s features. In any case, it grants the recipient a [[{3+[[floor(?{Casting Level}/4)]],8}kl1]] deflection bonus to Armor Class. The subject can see through the armor as if it did not exist and is also afforded darkvision with a range of 60 feet. Finally, the subject gains a \`\`+2 bonus\`\` on saving throws against any holy, [good](https://www.dandwiki.com/wiki/SRD:Good_Effect), or [light](https://www.dandwiki.com/wiki/SRD:Light_Effect) spells or effects. [Undead creatures](https://www.dandwiki.com/wiki/SRD:Undead_Type) that are subjects of *armor of darkness* also gain \`\`+4\`\` turn resistance.`,
           material:         null
         },
         'astral projection': {
@@ -767,7 +767,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • The target also retains the ability to understand (but not to speak) the languages it understood in its original form. It can write in the languages it understands, but only the form is capable of writing in some manner (such as drawing in the dirt with a paw).
                              With those exceptions, the target’s normal game statistics are replaced by those of the new form. The target loses all the special abilities it has in its normal form, including its [class](https://www.dandwiki.com/wiki/SRD:Class) features.
                              All items worn or carried by the subject fall to the ground at its feet, even if they could be worn or carried by the new form.
-                             If the new form would prove fatal to the creature (for example, if you polymorphed a landbound target into a fish, or an airborne target into a toad), the subject gets a \`\`+4\`\` bonus on the save.
+                             If the new form would prove fatal to the creature (for example, if you polymorphed a landbound target into a fish, or an airborne target into a toad), the subject gets a \`\`+4 bonus\`\` on the save.
                              If the subject remains in the new form for 24 consecutive hours, it must attempt a Will save.
                              If this save fails, it loses its ability to understand language, as well as all other memories of its previous form, and its Hit Dice and hit points change to match an average creature of its new form. These abilities and statistics return to normal if the effect is later ended.
                              [Incorporeal](https://www.dandwiki.com/wiki/SRD:Incorporeal_Subtype) or [gaseous](https://www.dandwiki.com/wiki/SRD:Gaseous_Form) creatures are immune to *baleful polymorph*, and a creature with the [shapechanger](https://www.dandwiki.com/wiki/SRD:Shapechanger_Subtype) subtype (such as a [lycanthrope](https://www.dandwiki.com/wiki/SRD:Lycanthrope) or a [doppelganger](https://www.dandwiki.com/wiki/SRD:Doppelganger)) can revert to its natural form as a [standard action](https://www.dandwiki.com/wiki/SRD:Standard_Actions) (which ends the spell’s effect).`,
@@ -786,7 +786,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `*Bane* fills your enemies with fear and doubt. Each affected creature takes a \`\`-1\`\` penalty on attack rolls and a \`\`-1\`\` penalty on saving throws against fear effects.
+          text:             `*Bane* fills your enemies with fear and doubt. Each affected creature takes a \`\`-1 penalty\`\` on attack rolls and a \`\`-1 penalty\`\` on saving throws against fear effects.
                              *Bane* counters and dispels [*bless*](https://www.dandwiki.com/wiki/SRD:Bless).`,
           material:         null
         },
@@ -803,8 +803,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `A *banishment* spell is a more powerful version of the [*dismissal*](https://www.dandwiki.com/wiki/SRD:Dismissal) spell. It enables you to force [extraplanar creatures](https://www.dandwiki.com/wiki/SRD:Outsider_Type) out of your home plane. As many as 2 Hit Dice of creatures per caster level can be banished.
-                             You can improve the spell’s chance of success by presenting at least one object or substance that the target hates, fears, or otherwise opposes. For each such object or substance, you gain a \`\`+1\`\` bonus on your caster level check to overcome the target’s [spell resistance](https://www.dandwiki.com/wiki/SRD:Spell_Resistance) (if any), the saving throw DC increases by \`\`2\`\`.
-                             Certain rare items might work twice as well as a normal item for the purpose of the bonuses (each providing a \`\`+2\`\` bonus on the caster level check against [spell resistance](https://www.dandwiki.com/wiki/SRD:Spell_Resistance) and increasing the save DC by \`\`4\`\`).`,
+                             You can improve the spell’s chance of success by presenting at least one object or substance that the target hates, fears, or otherwise opposes. For each such object or substance, you gain a \`\`+1 bonus\`\` on your caster level check to overcome the target’s [spell resistance](https://www.dandwiki.com/wiki/SRD:Spell_Resistance) (if any), the saving throw DC increases by \`\`2\`\`.
+                             Certain rare items might work twice as well as a normal item for the purpose of the bonuses (each providing a \`\`+2 bonus\`\` on the caster level check against [spell resistance](https://www.dandwiki.com/wiki/SRD:Spell_Resistance) and increasing the save DC by \`\`4\`\`).`,
           material:         '**Arcane Focus:** Any item that is distasteful to the subject (optional, see above).'
         },
         'barkskin': {
@@ -819,7 +819,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s)',
           saving_throw:     'None',
           spell_resistance: 'Yes (harmless)',
-          text:             `*Barkskin* toughens a creature’s skin. The effect grants a \`\`+2\`\` enhancement bonus to the creature’s existing natural [armor bonus](https://www.dandwiki.com/wiki/SRD:Armor_Bonus). This enhancement bonus increases by \`\`1\`\` for every three caster levels above 3rd, to a maximum of \`\`+5\`\` at caster level 12th.
+          text:             `*Barkskin* toughens a creature’s skin. The effect grants a +[[2+{floor(?{Casting Level}/3),5}kl1]] enhancement bonus to the creature’s existing natural [armor bonus](https://www.dandwiki.com/wiki/SRD:Armor_Bonus).
                              The enhancement bonus provided by *barkskin* stacks with the target’s natural [armor bonus](https://www.dandwiki.com/wiki/SRD:Armor_Bonus), but not with other enhancement bonuses to [natural armor](https://www.dandwiki.com/wiki/SRD:Natural_Armor). A creature without [natural armor](https://www.dandwiki.com/wiki/SRD:Natural_Armor) has an effective [natural armor bonus](https://www.dandwiki.com/wiki/SRD:Natural_Armor_Bonus) of \`\`+0\`\`.`,
           material:         null
         },
@@ -835,7 +835,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The affected creature gains greater vitality and stamina. The spell grants the subject a \`\`+4\`\` enhancement bonus to Constitution, which adds the usual benefits to hit points, Fortitude saves, [Constitution checks](https://www.dandwiki.com/wiki/SRD:Constitution), and so forth.
+          text:             `The affected creature gains greater vitality and stamina. The spell grants the subject a \`\`+4 enhancement bonus\`\` to Constitution, which adds the usual benefits to hit points, Fortitude saves, [Constitution checks](https://www.dandwiki.com/wiki/SRD:Constitution), and so forth.
                              hit points gained by a temporary increase in Constitution score are not temporary hit points. They go away when the subject’s Constitution drops back to normal. They are not lost first as temporary hit points are.`,
           material:         null
         },
@@ -853,7 +853,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `You place a curse on the subject. Choose one of the following three effects.
                              • \`\`-6\`\` decrease to an [ability score](https://www.dandwiki.com/wiki/SRD:Ability_Scores) (minimum 1).
-                             • \`\`-4\`\` penalty on [attack rolls](https://www.dandwiki.com/wiki/SRD:Attack_Roll), saves, [ability checks](https://www.dandwiki.com/wiki/SRD:Ability_Check), and [skill checks](https://www.dandwiki.com/wiki/SRD:Skill_Check).
+                             • \`\`-4 penalty\`\` on [attack rolls](https://www.dandwiki.com/wiki/SRD:Attack_Roll), saves, [ability checks](https://www.dandwiki.com/wiki/SRD:Ability_Check), and [skill checks](https://www.dandwiki.com/wiki/SRD:Skill_Check).
                              • Each turn, the target has a 50% chance to act normally; otherwise, it takes no action.
                              You may also invent your own curse, but it should be no more powerful than those described above.
                              The *curse* bestowed by this spell cannot be dispelled, but it can be removed with a [*break enchantment*](https://www.dandwiki.com/wiki/SRD:Break_Enchantment), [*limited wish*](https://www.dandwiki.com/wiki/SRD:Limited_Wish), [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle), [*remove curse*](https://www.dandwiki.com/wiki/SRD:Remove_Curse), or [*wish*](https://www.dandwiki.com/wiki/SRD:Wish) spell.
@@ -919,7 +919,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `An immobile, vertical curtain of whirling blades shaped of pure force springs into existence. Any creature passing through the wall takes 1d6 points of ‹damage|[[[[{?{Casting Level},15}kl1]]d6]]› per caster level (maximum 15d6), with a Reflex save for half damage.
                              If you evoke the barrier so that it appears where creatures are, each creature takes damage as if passing through the wall. Each such creature can avoid the wall (ending up on the side of its choice) and thus take no damage by making a successful Reflex save.
-                             A *blade barrier* provides [cover](https://www.dandwiki.com/wiki/SRD:Cover) (\`\`+4\`\` bonus to AC, \`\`+2\`\` bonus on Reflex saves) against attacks made through it.`,
+                             A *blade barrier* provides [cover](https://www.dandwiki.com/wiki/SRD:Cover) (\`\`+4 bonus\`\` to AC, \`\`+2 bonus\`\` on Reflex saves) against attacks made through it.`,
           material:         null
         },
         'blasphemy': {
@@ -951,7 +951,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Weakened:* The creature’s [Strength](https://www.dandwiki.com/wiki/SRD:Strength) score decreases by [[2d6]] points for [[2d4]] rounds.
                              *[Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed):* The creature is [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and [helpless](https://www.dandwiki.com/wiki/SRD:Helpless) for [[1d10]] minutes.
                              *[Killed](https://www.dandwiki.com/wiki/SRD:Dead)*: Living creatures die. [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures are destroyed.
-                             Furthermore, if you are on your home plane when you cast this spell, nonevil extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *blasphemy*. The banishment effect allows a Will save (at a \`\`-4\`\` penalty) to negate.
+                             Furthermore, if you are on your home plane when you cast this spell, nonevil extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *blasphemy*. The banishment effect allows a Will save (at a \`\`-4 penalty\`\`) to negate.
                              Creatures whose Hit Dice exceed your caster level are unaffected by *blasphemy*.`,
           material:         null
         },
@@ -967,7 +967,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'None',
           spell_resistance: 'Yes (harmless)',
-          text:             `*Bless* fills your allies with courage. Each ally gains a \`\`+1\`\` morale bonus on [attack rolls](https://www.dandwiki.com/wiki/SRD:Attack_Roll) and on saving throws against fear effects.
+          text:             `*Bless* fills your allies with courage. Each ally gains a \`\`+1 morale bonus\`\` on [attack rolls](https://www.dandwiki.com/wiki/SRD:Attack_Roll) and on saving throws against fear effects.
                              *Bless* counters and dispels [*bane*](https://www.dandwiki.com/wiki/SRD:Bane).`,
           material:         null
         },
@@ -998,7 +998,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `This transmutation makes a weapon strike true against evil foes. The weapon is treated as having a \`\`+1\`\` enhancement bonus for the purpose of bypassing the damage reduction of evil creatures or striking evil [incorporeal](https://www.dandwiki.com/wiki/SRD:Incorporeal) creatures (though the spell doesn’t grant an actual enhancement bonus). The weapon also becomes good, which means it can bypass the damage reduction of certain creatures. (This effect overrides and suppresses any other alignment the weapon might have.) Individual arrows or bolts can be transmuted, but affected projectile weapons (such as bows) don’t confer the benefit to the projectiles they shoot.
+          text:             `This transmutation makes a weapon strike true against evil foes. The weapon is treated as having a \`\`+1 enhancement bonus\`\` for the purpose of bypassing the damage reduction of evil creatures or striking evil [incorporeal](https://www.dandwiki.com/wiki/SRD:Incorporeal) creatures (though the spell doesn’t grant an actual enhancement bonus). The weapon also becomes good, which means it can bypass the damage reduction of certain creatures. (This effect overrides and suppresses any other alignment the weapon might have.) Individual arrows or bolts can be transmuted, but affected projectile weapons (such as bows) don’t confer the benefit to the projectiles they shoot.
                              In addition, all [critical hit](https://www.dandwiki.com/wiki/SRD:Critical_Hit) rolls against evil foes are automatically successful, so every threat is a [critical hit](https://www.dandwiki.com/wiki/SRD:Critical_Hit). This last effect does not apply to any weapon that already has a magical effect related to [critical hits](https://www.dandwiki.com/wiki/SRD:Critical_Hit), such as a keen weapon or a vorpal sword.`,
           material:         null
         },
@@ -1014,7 +1014,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude half; see text',
           spell_resistance: 'Yes',
-          text:             `This spell withers a single [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) of any size. An affected [plant creature](https://www.dandwiki.com/wiki/SRD:Plant_Type) takes 1d6 points of ‹damage|[[[[{?{Casting Level},15}kl1]]d6]]› per level (maximum 15d6) and may attempt a Fortitude saving throw for half damage. A [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) that isn’t a creature doesn’t receive a save and immediately withers and dies.
+          text:             `This spell withers a single [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) of any size. An affected [plant creature](https://www.dandwiki.com/wiki/SRD:Plant_Type) takes [[[[{?{Casting Level},15}kl1]]d6]] points of damage and may attempt a Fortitude saving throw for half damage. A [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) that isn’t a creature doesn’t receive a save and immediately withers and dies.
                              This spell has no effect on the soil or surrounding [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) life.`,
           material:         null
         },
@@ -1050,7 +1050,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Physical attacks against you have a 50% miss chance, and the [Blind-Fight](https://www.dandwiki.com/wiki/SRD:Blind-Fight) [feat](https://www.dandwiki.com/wiki/SRD:Feats) doesn’t help opponents, since you’re ethereal and not merely [invisible](https://www.dandwiki.com/wiki/SRD:Invisible). If the attack is capable of striking ethereal creatures, the miss chance is only 20% (for [concealment](https://www.dandwiki.com/wiki/SRD:Concealment)).
                              If the attacker can see [invisible](https://www.dandwiki.com/wiki/SRD:Invisible) creatures, the miss chance is also only 20%. (For an attacker who can both see and strike ethereal creatures, there is no miss chance.) Likewise, your own attacks have a 20% miss chance, since you sometimes go ethereal just as you are about to strike.
                              Any individually targeted spell has a 50% chance to fail against you while you’re *blinking* unless your attacker can target [invisible](https://www.dandwiki.com/wiki/SRD:Invisible), ethereal creatures. Your own spells have a 20% chance to activate just as you go ethereal, in which case they typically do not affect the [Material Plane](https://www.dandwiki.com/wiki/SRD:Material_Plane).
-                             While *blinking*, you take only half damage from area attacks (but full damage from those that extend onto the Ethereal Plane). You strike as an [invisible](https://www.dandwiki.com/wiki/SRD:Invisible) creature (with a \`\`+2\`\` bonus on [attack rolls](https://www.dandwiki.com/wiki/SRD:Attack_Roll)), denying your target any Dexterity bonus to AC.
+                             While *blinking*, you take only half damage from area attacks (but full damage from those that extend onto the Ethereal Plane). You strike as an [invisible](https://www.dandwiki.com/wiki/SRD:Invisible) creature (with a \`\`+2 bonus\`\` on [attack rolls](https://www.dandwiki.com/wiki/SRD:Attack_Roll)), denying your target any Dexterity bonus to AC.
                              You take only half damage from falling, since you fall only while you are material.
                              While *blinking*, you can step through (but not see through) solid objects. For each 5 feet of solid material you walk through, there is a 50% chance that you become material. If this occurs, you are shunted off to the nearest open space and take 1d6 points of damage per 5 feet so traveled. You can move at only three-quarters speed (because movement on the Ethereal Plane is at half speed, and you spend about half your time there and half your time material.)
                              Since you spend about half your time on the Ethereal Plane, you can see and even attack ethereal creatures. You interact with ethereal creatures roughly the same way you interact with material ones.
@@ -1160,7 +1160,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `The subject becomes stronger. The spell grants a \`\`+4\`\` enhancement bonus to [Strength](https://www.dandwiki.com/wiki/SRD:Strength), adding the usual benefits to [melee attack](https://www.dandwiki.com/wiki/SRD:Melee_Attack) rolls, melee [damage rolls](https://www.dandwiki.com/wiki/SRD:Attack_Damage), and other uses of the [Strength](https://www.dandwiki.com/wiki/SRD:Strength) modifier.`,
+          text:             `The subject becomes stronger. The spell grants a \`\`+4 enhancement bonus\`\` to [Strength](https://www.dandwiki.com/wiki/SRD:Strength), adding the usual benefits to [melee attack](https://www.dandwiki.com/wiki/SRD:Melee_Attack) rolls, melee [damage rolls](https://www.dandwiki.com/wiki/SRD:Attack_Damage), and other uses of the [Strength](https://www.dandwiki.com/wiki/SRD:Strength) modifier.`,
           material:         '**Arcane Material Component:** A few hairs, or a pinch of dung, from a bull.'
         },
         'burning hands': {
@@ -1175,7 +1175,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
-          text:             `A cone of searing flame shoots from your fingertips. Any creature in the area of the flames takes 1d4 points of ‹fire damage|[[[[{?{Casting Level},5}kl1]]d4]]› per caster level (maximum 5d4). Flammable materials burn if the flames touch them. A character can extinguish burning items as a [full-round action](https://www.dandwiki.com/wiki/SRD:Full-Round_Actions).`,
+          text:             `A cone of searing flame shoots from your fingertips. Any creature in the area of the flames takes [[[[{?{Casting Level},5}kl1]]d4]] points of fire damage. Flammable materials burn if the flames touch them. A character can extinguish burning items as a [full-round action](https://www.dandwiki.com/wiki/SRD:Full-Round_Actions).`,
           material:         null
         },
         'call lightning': {
@@ -1191,7 +1191,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
           text:             `Immediately upon completion of the spell, and once per round thereafter, you may call down a 5-foot-wide, 30-foot-long, vertical bolt of lightning that deals ‹3d6› points of electricity damage. The bolt of lightning flashes down in a vertical stroke at whatever target point you choose within the spell’s range (measured from your position at the time). Any creature in the target square or in the path of the bolt is affected.
-                             You need not call a bolt of lightning immediately; other actions, even spellcasting, can be performed. However, each round after the first you may use a [standard action](https://www.dandwiki.com/wiki/SRD:Standard_Actions) (concentrating on the spell) to call a bolt. You may call a total number of bolts equal to your caster level (maximum 10 bolts): [[{?{Casting Level},10}kl1]] bolts total.
+                             You need not call a bolt of lightning immediately; other actions, even spellcasting, can be performed. However, each round after the first you may use a [standard action](https://www.dandwiki.com/wiki/SRD:Standard_Actions) (concentrating on the spell) to call a bolt. You may call a total of [[{?{Casting Level},10}kl1]] bolts.
                              If you are outdoors and in a stormy area—a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado (including a whirlwind formed by a [djinni](https://www.dandwiki.com/wiki/SRD:Djinni) or an [air elemental](https://www.dandwiki.com/wiki/SRD:Air_Elemental) of at least Large size)—each bolt deals ‹3d10› points of electricity damage instead of 3d6.
                              This spell functions indoors or underground but not underwater.`,
           material:         null
@@ -1209,7 +1209,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
           text:             `Immediately upon completion of the spell, and once per round thereafter, you may call down a 5-foot-wide, 30-foot-long, vertical bolt of lightning that deals ‹5d6› points of electricity damage. The bolt of lightning flashes down in a vertical stroke at whatever target point you choose within the spell’s range (measured from your position at the time). Any creature in the target square or in the path of the bolt is affected.
-                             You need not call a bolt of lightning immediately; other actions, even spellcasting, can be performed. However, each round after the first you may use a [standard action](https://www.dandwiki.com/wiki/SRD:Standard_Actions) (concentrating on the spell) to call a bolt. You may call a total number of bolts equal to your caster level (maximum 15 bolts): [[{?{Casting Level},15}kl1]] bolts total.
+                             You need not call a bolt of lightning immediately; other actions, even spellcasting, can be performed. However, each round after the first you may use a [standard action](https://www.dandwiki.com/wiki/SRD:Standard_Actions) (concentrating on the spell) to call a bolt. You may call a total of [[{?{Casting Level},15}kl1]] bolts.
                              If you are outdoors and in a stormy area—a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado (including a whirlwind formed by a [djinni](https://www.dandwiki.com/wiki/SRD:Djinni) or an [air elemental](https://www.dandwiki.com/wiki/SRD:Air_Elemental) of at least Large size)—each bolt deals ‹5d10› points of electricity damage instead of 3d6.
                              This spell functions indoors or underground but not underwater.`,
           material:         null
@@ -1258,7 +1258,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `The transmuted creature becomes more graceful, agile, and coordinated. The spell grants a \`\`+4\`\` enhancement bonus to Dexterity, adding the usual benefits to AC, Reflex saves, and other uses of the Dexterity modifier.`,
+          text:             `The transmuted creature becomes more graceful, agile, and coordinated. The spell grants a \`\`+4 enhancement bonus\`\` to Dexterity, adding the usual benefits to AC, Reflex saves, and other uses of the Dexterity modifier.`,
           material:         '**Material Component:** A pinch of cat fur'
         },
         'cause fear': {
@@ -1323,7 +1323,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will partial; see text',
           spell_resistance: 'Yes',
           text:             `You unleash chaotic power to smite your enemies. The power takes the form of a multicolored explosion of leaping, ricocheting energy. Only lawful and neutral (not chaotic) creatures are harmed by the spell.
-                             The spell deals 1d8 points of ‹damage|[[[[{floor(?{Casting Level}/2),5}kl1]]d8]]› per two caster levels (maximum 5d8) to lawful creatures (or 1d6 points of ‹damage|[[[[{?{Casting Level},10}kl1]]d6]]› per caster level, maximum 10d6, to lawful [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type)) and slows them for ‹1d6› rounds (see the [*slow*](https://www.dandwiki.com/wiki/SRD:Slow) spell). A successful Will save reduces the damage by half and negates the slow effect.
+                             The spell deals [[[[{floor(?{Casting Level}/2),5}kl1]]d8]] points of damage to lawful creatures (or [[[[{?{Casting Level},10}kl1]]d6]] points of damage to lawful [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type)) and slows them for [[1d6]] rounds (see the [*slow*](https://www.dandwiki.com/wiki/SRD:Slow) spell). A successful Will save reduces the damage by half and negates the slow effect.
                              The spell deals only half damage against creatures who are neither lawful nor chaotic, and they are not slowed. Such a creature can reduce the damage by half again (down to one-quarter) with a successful Will save.`,
           material:         null
         },
@@ -1339,7 +1339,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hour(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This charm makes an [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) is currently being threatened or attacked by you or your allies, however, it receives a \`\`+5\`\` bonus on its saving throw.
+          text:             `This charm makes an [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) is currently being threatened or attacked by you or your allies, however, it receives a \`\`+5 bonus\`\` on its saving throw.
                              The spell does not enable you to control the *charmed* [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An affected [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing. Any act by you or your apparent allies that threatens the *charmed* [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) breaks the spell. You must speak the [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type)'s language to communicate your commands, or else be good at pantomiming.`,
           material:         null
         },
@@ -1355,7 +1355,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] day(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This charm makes a creature regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a \`\`+5\`\` bonus on its saving throw.
+          text:             `This charm makes a creature regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a \`\`+5 bonus\`\` on its saving throw.
                              The spell does not enable you to control the *charmed* creature as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing. Any act by you or your apparent allies that threatens the *charmed* creature breaks the spell. You must speak the creature language to communicate your commands, or else be good at pantomiming.`,
           material:         null
         },
@@ -1371,7 +1371,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hour(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This charm makes a [humanoid creature](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a \`\`+5\`\` bonus on its saving throw.
+          text:             `This charm makes a [humanoid creature](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a \`\`+5 bonus\`\` on its saving throw.
                              The spell does not enable you to control the *charmed* person as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing. Any act by you or your apparent allies that threatens the *charmed* person breaks the spell. You must speak the person’s language to communicate your commands, or else be good at pantomiming.`,
           material:         null
         },
@@ -1413,7 +1413,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude partial or Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `A touch from your hand, which glows with blue energy, disrupts the life force of living creatures. Each touch channels negative energy that deals ‹1d6› points of damage. The touched creature also takes \`\`1\`\` point of [Strength damage](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Damage) unless it makes a successful Fortitude saving throw. You can use this melee [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) up to [[?{Casting Level}]] time(s).
+          text:             `A touch from your hand, which glows with blue energy, disrupts the life force of living creatures. Each touch channels negative energy that deals [[1d6]] points of damage. The touched creature also takes \`\`1\`\` point of [Strength damage](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Damage) unless it makes a successful Fortitude saving throw. You can use this melee [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) up to [[?{Casting Level}]] time(s).
                              An [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) you touch takes no damage of either sort, but it must make a successful Will saving throw or flee as if [panicked](https://www.dandwiki.com/wiki/SRD:Panicked) for 1d4 rounds +1 round per caster level: [[1d4+?{Casting Level}]] round(s).`,
           material:         null
         },
@@ -1462,7 +1462,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `This spell functions like [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand), except that the hand can interpose itself, push, or strike one opponent that you select. The floating hand can move as far as 60 feet and can attack in the same round. Since this hand is directed by you, its ability to notice or attack [invisible](https://www.dandwiki.com/wiki/SRD:Invisible) or concealed creatures is no better than yours.
                              The hand attacks once per round, and its attack bonus equals your caster level + your Intelligence, Wisdom, or Charisma modifier (for a [wizard](https://www.dandwiki.com/wiki/SRD:Wizard), [cleric](https://www.dandwiki.com/wiki/SRD:Cleric), or [sorcerer](https://www.dandwiki.com/wiki/SRD:Sorcerer), respectively), \`\`+11\`\` for the hand’s Strength score (33), \`\`-1\`\` for being Large. The hand deals ‹1d8+11› points of damage on each attack, and any creature struck must make a Fortitude save (against this spell’s save DC) or be [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for 1 round. Directing the spell to a new target is a [move action](https://www.dandwiki.com/wiki/SRD:Move_Actions).
-                             The *clenched fist* can also interpose itself as [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand) does, or it can [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) an opponent as [*forceful hand*](https://www.dandwiki.com/wiki/SRD:Forceful_Hand) does, but at a \`\`+15\`\` bonus on the Strength check.
+                             The *clenched fist* can also interpose itself as [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand) does, or it can [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) an opponent as [*forceful hand*](https://www.dandwiki.com/wiki/SRD:Forceful_Hand) does, but at a \`\`+15 bonus\`\` on the Strength check.
                              [Clerics](https://www.dandwiki.com/wiki/SRD:Cleric) who cast this spell name it for their deities.`,
           material:         '**Arcane Focus:** A leather glove.'
         },
@@ -1479,7 +1479,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'Yes (harmless)',
           text:             `A random pattern of color surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by lawful creatures, and causing lawful creatures that strike the subjects to become [*confused*](https://www.dandwiki.com/wiki/SRD:Confused). This abjuration has four effects.
-                             First, each warded creature gains a \`\`+4\`\` deflection bonus to AC and a \`\`+4\`\` resistance bonus on saves. Unlike [*protection from law*](https://www.dandwiki.com/wiki/SRD:Protection_from_Law), the benefit of this spell applies against all attacks, not just against attacks by lawful creatures.
+                             First, each warded creature gains a \`\`+4 deflection bonus\`\` to AC and a \`\`+4 resistance bonus\`\` on saves. Unlike [*protection from law*](https://www.dandwiki.com/wiki/SRD:Protection_from_Law), the benefit of this spell applies against all attacks, not just against attacks by lawful creatures.
                              Second, each warded creature gains [spell resistance](https://www.dandwiki.com/wiki/SRD:Spell_Resistance) 25 against lawful spells and spells cast by lawful creatures.
                              Third, the abjuration blocks possession and mental influence, just as *protection from law* does.
                              Finally, if a lawful creature succeeds on a [melee attack](https://www.dandwiki.com/wiki/SRD:Melee_Attack) against a warded creature, the offending attacker is [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) for 1 round (Will save negates, as with the [*confusion*](https://www.dandwiki.com/wiki/SRD:Confusion) spell, but against the save DC of *cloak of chaos*).`,
@@ -1498,7 +1498,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell makes an inert duplicate of a creature. If the original individual has been slain, its soul immediately transfers to the clone, creating a replacement (provided that the soul is free and willing to return). The original’s physical remains, should they still exist, become inert and cannot thereafter be restored to life. If the original creature has reached the end of its natural life span (that is, it has died of natural causes), any cloning attempt fails.
-                             To create the duplicate, you must have a piece of flesh (not hair, nails, scales, or the like) with a volume of at least 1 cubic inch that was taken from the original creature’s living body. The piece of flesh need not be fresh, but it must be kept from rotting. Once the spell is cast, the duplicate must be grown in a laboratory for ‹2d4› months.
+                             To create the duplicate, you must have a piece of flesh (not hair, nails, scales, or the like) with a volume of at least 1 cubic inch that was taken from the original creature’s living body. The piece of flesh need not be fresh, but it must be kept from rotting. Once the spell is cast, the duplicate must be grown in a laboratory for [[2d4]] months.
                              When the clone is completed, the original’s soul enters it immediately, if that creature is already [dead](https://www.dandwiki.com/wiki/SRD:Dead). The clone is physically identical with the original and possesses the same personality and memories as the original. In other respects, treat the clone as if it were the original character raised from the [dead](https://www.dandwiki.com/wiki/SRD:Dead), including the loss of one level or 2 points of Constitution (if the original was a 1st-level character). If this Constitution adjustment would give the clone a Constitution score of 0, the spell fails. If the original creature has lost levels since the flesh sample was taken and died at a lower level than the clone would otherwise be, the clone is one level below the level at which the original died.
                              The spell duplicates only the original’s body and mind, not its equipment.
                              A duplicate can be grown while the original still lives, or when the original soul is unavailable, but the resulting body is merely a soulless bit of inert flesh, which rots if not preserved.`,
@@ -1538,8 +1538,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `A vivid cone of clashing colors springs forth from your hand, causing creatures to become [stunned](https://www.dandwiki.com/wiki/SRD:Stunned), perhaps also [blinded](https://www.dandwiki.com/wiki/SRD:Blinded), and possibly knocking them unconscious.
                              Each creature within the cone is affected according to its Hit Dice.
-                             *2 HD or less*: The creature is [unconscious](https://www.dandwiki.com/wiki/SRD:Unconscious), [blinded](https://www.dandwiki.com/wiki/SRD:Blinded), and [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for ‹2d4› rounds, then [blinded](https://www.dandwiki.com/wiki/SRD:Blinded) and [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for ‹1d4› rounds, and then [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for 1 round. (Only living creatures are knocked unconscious.)
-                             *3 or 4 HD*: The creature is [blinded](https://www.dandwiki.com/wiki/SRD:Blinded) and [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for ‹1d4› rounds, then [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for 1 round.
+                             *2 HD or less*: The creature is [unconscious](https://www.dandwiki.com/wiki/SRD:Unconscious), [blinded](https://www.dandwiki.com/wiki/SRD:Blinded), and [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for [[2d4]] rounds, then [blinded](https://www.dandwiki.com/wiki/SRD:Blinded) and [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for [[1d4]] rounds, and then [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for 1 round. (Only living creatures are knocked unconscious.)
+                             *3 or 4 HD*: The creature is [blinded](https://www.dandwiki.com/wiki/SRD:Blinded) and [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for [[1d4]] rounds, then [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for 1 round.
                              *5 or more HD*: The creature is [stunned](https://www.dandwiki.com/wiki/SRD:Stunned) for 1 round.
                              Sightless creatures are not affected by color spray.`,
           material:         '**Material Component:** A pinch each of powder or sand that is colored red, yellow, and blue.'
@@ -1693,8 +1693,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[2*?{Casting Level}]] hour(s)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `This spell blesses an area with positive energy. Each Charisma check made to [turn undead](https://www.dandwiki.com/wiki/SRD:Turn_or_Rebuke_Undead) within this area gains a \`\`+3\`\` sacred bonus. Every [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) entering a *consecrated* area suffers minor disruption, giving it a \`\`-1\`\` penalty on attack rolls, damage rolls, and saves. [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) cannot be created within or summoned into a *consecrated* area.
-                             If the *consecrated* area contains an altar, shrine, or other permanent fixture dedicated to your deity, pantheon, or aligned higher power, the modifiers given above are doubled (\`\`+6\`\` sacred bonus on turning checks, \`\`-2\`\` penalties for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) in the area). You cannot consecrate an area with a similar fixture of a deity other than your own patron.
+          text:             `This spell blesses an area with positive energy. Each Charisma check made to [turn undead](https://www.dandwiki.com/wiki/SRD:Turn_or_Rebuke_Undead) within this area gains a \`\`+3 sacred bonus\`\`. Every [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) entering a *consecrated* area suffers minor disruption, giving it a \`\`-1 penalty\`\` on attack rolls, damage rolls, and saves. [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) cannot be created within or summoned into a *consecrated* area.
+                             If the *consecrated* area contains an altar, shrine, or other permanent fixture dedicated to your deity, pantheon, or aligned higher power, the modifiers given above are doubled (\`\`+6 sacred bonus\`\` on turning checks, \`\`-2 penalties\`\` for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) in the area). You cannot consecrate an area with a similar fixture of a deity other than your own patron.
                              If the area does contain an altar, shrine, or other permanent fixture of a deity, pantheon, or higher power other than your patron, the consecrate spell instead curses the area, cutting off its connection with the associated deity or power. This secondary function, if used, does not also grant the bonuses and penalties relating to [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type), as given above.
                              *Consecrate* counters and dispels [*desecrate*](https://www.dandwiki.com/wiki/SRD:Desecrate).`,
           material:         '**Material Component:** A vial of holy water and 25 gp worth (5 pounds) of silver dust, all of which must be sprinkled around the area.'
@@ -2087,7 +2087,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `The caster is imbued with an aura of [celestial](https://www.dandwiki.com/wiki/SRD:Celestial) authority, inspiring awe in all lesser creatures.
-                             The caster gains a \`\`+4\`\` enhancement bonus to his or her Charisma score for the duration of the spell. All creatures with fewer than 8 HD or levels cease whatever they are doing and are compelled to pay attention to the caster. Any such creature that wants to take hostile action against the caster must make a successful Will save to do so. Any creature that does not make this saving throw the first time it attempts a hostile action is *enthralled* for the duration of the spell (as the [*enthrall*](https://www.dandwiki.com/wiki/SRD:Enthrall) spell), as long as it is in the spell’s area, nor will it try to leave the area on its own. Creatures with 8 HD or more may pay attention to the caster, but are not affected by this spell.
+                             The caster gains a \`\`+4 enhancement bonus\`\` to his or her Charisma score for the duration of the spell. All creatures with fewer than 8 HD or levels cease whatever they are doing and are compelled to pay attention to the caster. Any such creature that wants to take hostile action against the caster must make a successful Will save to do so. Any creature that does not make this saving throw the first time it attempts a hostile action is *enthralled* for the duration of the spell (as the [*enthrall*](https://www.dandwiki.com/wiki/SRD:Enthrall) spell), as long as it is in the spell’s area, nor will it try to leave the area on its own. Creatures with 8 HD or more may pay attention to the caster, but are not affected by this spell.
                              When the caster speaks, all listeners telepathically understand him or her, even if they do not understand the language. While the spell lasts, the caster can make up to three suggestions to creatures of fewer than 8 HD in range, as if using the [*mass suggestion*](https://www.dandwiki.com/wiki/SRD:Mass_Suggestion) spell (Will save negates); creatures with 8 HD or more aren’t affected by this power. Only creatures within range at the time a [*suggestion*](https://www.dandwiki.com/wiki/SRD:Suggestion) is given are subject to it.`,
           material:         '**Material Component:** worth at least 200 gp.'
         },
@@ -2104,7 +2104,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `An [invisible](https://www.dandwiki.com/wiki/SRD:Invisible) cone of despair causes great sadness in the subjects. Each affected creature takes a \`\`-2\`\` penalty on attack rolls, saving throws, ability checks, skill checks, and weapon damage rolls.
+          text:             `An [invisible](https://www.dandwiki.com/wiki/SRD:Invisible) cone of despair causes great sadness in the subjects. Each affected creature takes a \`\`-2 penalty\`\` on attack rolls, saving throws, ability checks, skill checks, and weapon damage rolls.
                              *Crushing despair* counters and dispels [*good hope*](https://www.dandwiki.com/wiki/SRD:Good_Hope).`,
           material:         '**Material Component:** A vial of tears.'
         },
@@ -2122,7 +2122,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `This spell functions like [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand), except that the hand can interpose itself, push, or crush one opponent that you select.
                              The *crushing hand* can [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) an opponent like [*grasping hand*](https://www.dandwiki.com/wiki/SRD:Grasping_Hand) does. Its [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) bonus equals your caster level + your Intelligence, Wisdom, or Charisma modifier (for a [wizard](https://www.dandwiki.com/wiki/SRD:Wizard), [cleric](https://www.dandwiki.com/wiki/SRD:Cleric), or [sorcerer](https://www.dandwiki.com/wiki/SRD:Sorcerer), respectively), \`\`+12\`\` for the hand's Strength score (35), \`\`+4\`\` for being Large. The hand deals ‹2d6+12› points of damage (lethal, not nonlethal) on each successful [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) check against an opponent.
-                             The *crushing hand* can also interpose itself as [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand) does, or it can [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) an opponent as [*forceful hand*](https://www.dandwiki.com/wiki/SRD:Forceful_Hand) does, but at a \`\`+18\`\` bonus.
+                             The *crushing hand* can also interpose itself as [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand) does, or it can [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) an opponent as [*forceful hand*](https://www.dandwiki.com/wiki/SRD:Forceful_Hand) does, but at a \`\`+18 bonus\`\`.
                              Directing the spell to a new target is a move action.
                              [Clerics](https://www.dandwiki.com/wiki/SRD:Cleric) who cast this spell name it for their deities.`,
           material:         `**Arcane Material Component:** The shell of an egg.
@@ -2334,7 +2334,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous/10 minutes per HD of subject; see text',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `You draw forth the ebbing life force of a creature and use it to fuel your own power. Upon casting this spell, you touch a living creature that has \`\`–1\`\` or fewer hit points. If the subject fails its saving throw, it dies, and you gain 1d8 temporary hit points and a \`\`+2\`\` bonus to Strength. Additionally, your effective caster level goes up by \`\`+1\`\`, improving spell effects dependent on caster level. (This increase in effective caster level does not grant you access to more spells.) These effects last for 10 minutes per HD of the subject creature.`,
+          text:             `You draw forth the ebbing life force of a creature and use it to fuel your own power. Upon casting this spell, you touch a living creature that has \`\`-1\`\` or fewer hit points. If the subject fails its saving throw, it dies, and you gain 1d8 temporary hit points and a \`\`+2 bonus\`\` to Strength. Additionally, your effective caster level goes up by \`\`+1\`\`, improving spell effects dependent on caster level. (This increase in effective caster level does not grant you access to more spells.) These effects last for 10 minutes per HD of the subject creature.`,
           material:         null
         },
         'death ward': {
@@ -2433,7 +2433,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '5 rounds or less; see text',
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
-          text:             `A *delayed blast fireball* spell is an explosion of flame that can detonate with a low roar up to 5 rounds after the spell is cast and deals 1d6 points of ‹fire damage|[[[[{?{Casting Level},20}kl1]]d6]]› per caster level (maximum 20d6) to every creature within the area. Unattended objects also take this damage. The explosion creates almost no pressure.
+          text:             `A *delayed blast fireball* spell is an explosion of flame that can detonate with a low roar up to 5 rounds after the spell is cast and deals 1d6 points of fire damage per caster level (maximum 20d6) to every creature within the area: [[[[{?{Casting Level},20}kl1]]d6]]. Unattended objects also take this damage. The explosion creates almost no pressure.
                              You point your finger and determine the range (distance and height) at which the *delayed blast fireball* is to burst. A glowing, pea-sized bead streaks from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the *fireball* at that point. (An early impact results in an early detonation.) If you attempt to send the bead through a narrow passage, such as through an arrow slit, you must “hit” the opening with a ranged touch attack, or else the bead strikes the barrier and detonates prematurely.
                              The glowing bead created by *delayed blast fireball* can detonate immediately if you desire, or you can choose to delay the burst for as many as 5 rounds. You select the amount of delay upon completing the spell, and that time cannot change once it has been set unless someone touches the bead (see below). If you choose a delay, the glowing bead sits at its destination until it detonates. A creature can pick up and hurl the bead as a thrown weapon (range increment 10 feet). If a creature handles and moves the bead within 1 round of its detonation, there is a 25% chance that the bead detonates while being handled.
                              The *fireball* sets fire to combustibles and damages objects in the area. It can melt metals with low melting points, such as lead, gold, copper, silver, and bronze. If the damage caused to an interposing barrier shatters or breaks through it, the *fireball* may continue beyond the barrier if the area permits; otherwise it stops at the barrier just as any other spell effect does.`,
@@ -2470,8 +2470,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[2*?{Casting Level}]] hour(s)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `This spell imbues an area with negative energy. Each Charisma check made to turn [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) within this area takes a \`\`-3\`\` profane penalty, and every [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) entering a *desecrated* area gains a \`\`+1\`\` profane bonus on attack rolls, damage rolls, and saving throws. An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature created within or summoned into such an area gains \`\`+1\`\` hit points per HD.
-                             If the *desecrated* area contains an altar, shrine, or other permanent fixture dedicated to your deity or aligned higher power, the modifiers given above are doubled (\`\`-6\`\` profane penalty on turning checks, \`\`+2\`\` profane bonus and \`\`+2\`\` hit points per HD for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) in the area).
+          text:             `This spell imbues an area with negative energy. Each Charisma check made to turn [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) within this area takes a \`\`-3 profane penalty\`\`, and every [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) entering a *desecrated* area gains a \`\`+1 profane bonus\`\` on attack rolls, damage rolls, and saving throws. An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature created within or summoned into such an area gains \`\`+1\`\` hit points per HD.
+                             If the *desecrated* area contains an altar, shrine, or other permanent fixture dedicated to your deity or aligned higher power, the modifiers given above are doubled (\`\`-6 profane penalty\`\` on turning checks, \`\`+2 profane bonus\`\` and \`\`+2\`\` hit points per HD for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) in the area).
                              Furthermore, anyone who casts [*animate dead*](https://www.dandwiki.com/wiki/SRD:Animate_Dead) within this area may create as many as double the normal amount of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) (that is, 4 HD per caster level rather than 2 HD per caster level).
                              If the area contains an altar, shrine, or other permanent fixture of a deity, pantheon, or higher power other than your patron, the *desecrate* spell instead curses the area, cutting off its connection with the associated deity or power. This secondary function, if used, does not also grant the bonuses and penalties relating to [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type), as given above.
                              *Desecrate* counters and dispels [*consecrate*](https://www.dandwiki.com/wiki/SRD:Consecrate).`,
@@ -2489,7 +2489,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude partial',
           spell_resistance: 'Yes',
-          text:             `This spell instantly slays the subject and consumes its remains (but not its equipment and possessions) utterly. If the target’s Fortitude saving throw succeeds, it instead takes ‹10d6› points of damage. The only way to restore life to a character who has failed to save against this spell is to use [*true resurrection*](https://www.dandwiki.com/wiki/SRD:True_Resurrection), a carefully worded [*wish*](https://www.dandwiki.com/wiki/SRD:Wish) spell followed by [*resurrection*](https://www.dandwiki.com/wiki/SRD:Resurrection), or [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle).`,
+          text:             `This spell instantly slays the subject and consumes its remains (but not its equipment and possessions) utterly. If the target’s Fortitude saving throw succeeds, it instead takes [[10d6]] points of damage. The only way to restore life to a character who has failed to save against this spell is to use [*true resurrection*](https://www.dandwiki.com/wiki/SRD:True_Resurrection), a carefully worded [*wish*](https://www.dandwiki.com/wiki/SRD:Wish) spell followed by [*resurrection*](https://www.dandwiki.com/wiki/SRD:Resurrection), or [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle).`,
           material:         '**Focus:** A special holy (or unholy) symbol of silver marked with verses of anathema (cost 500 gp).'
         },
         'detect animals or plants': {
@@ -2567,13 +2567,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Lingering Aura:* A chaos aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect chaos* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
-                             -- Duration of Lingering Aura: ‹1d6› round(s)
+                             -- Duration of Lingering Aura: [[1d6]] round(s)
                              • Original Strength 'Moderate':
-                             -- Duration of Lingering Aura: ‹1d6› minute(s)
+                             -- Duration of Lingering Aura: [[1d6]] minute(s)
                              • Original Strength 'Strong':
-                             -- Duration of Lingering Aura: ‹1d6×10|10*1d6› minute(s)
+                             -- Duration of Lingering Aura: [[10*1d6]] minute(s)
                              • Original Strength 'Overwhelming':
-                             -- Duration of Lingering Aura: ‹1d6› day(s)
+                             -- Duration of Lingering Aura: [[1d6]] day(s)
 
                              [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not chaos, and as such this spell does not detect them.
                              Each round, you can turn to *detect chaos* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
@@ -2629,13 +2629,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Lingering Aura:* A evil aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect evil* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
-                             -- Duration of Lingering Aura: ‹1d6› round(s)
+                             -- Duration of Lingering Aura: [[1d6]] round(s)
                              • Original Strength 'Moderate':
-                             -- Duration of Lingering Aura: ‹1d6› minute(s)
+                             -- Duration of Lingering Aura: [[1d6]] minute(s)
                              • Original Strength 'Strong':
-                             -- Duration of Lingering Aura: ‹1d6×10|10*1d6› minute(s)
+                             -- Duration of Lingering Aura: [[10*1d6]] minute(s)
                              • Original Strength 'Overwhelming':
-                             -- Duration of Lingering Aura: ‹1d6› day(s)
+                             -- Duration of Lingering Aura: [[1d6]] day(s)
 
                              [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not evil, and as such this spell does not detect them.
                              Each round, you can turn to *detect evil* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
@@ -2691,13 +2691,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Lingering Aura:* A good aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect good* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
-                             -- Duration of Lingering Aura: ‹1d6› round(s)
+                             -- Duration of Lingering Aura: [[1d6]] round(s)
                              • Original Strength 'Moderate':
-                             -- Duration of Lingering Aura: ‹1d6› minute(s)
+                             -- Duration of Lingering Aura: [[1d6]] minute(s)
                              • Original Strength 'Strong':
-                             -- Duration of Lingering Aura: ‹1d6×10|10*1d6› minute(s)
+                             -- Duration of Lingering Aura: [[10*1d6]] minute(s)
                              • Original Strength 'Overwhelming':
-                             -- Duration of Lingering Aura: ‹1d6› day(s)
+                             -- Duration of Lingering Aura: [[1d6]] day(s)
 
                              [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not good, and as such this spell does not detect them.
                              Each round, you can turn to *detect good* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
@@ -2753,13 +2753,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Lingering Aura:* A lawful aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect law* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
-                             -- Duration of Lingering Aura: ‹1d6› round(s)
+                             -- Duration of Lingering Aura: [[1d6]] round(s)
                              • Original Strength 'Moderate':
-                             -- Duration of Lingering Aura: ‹1d6› minute(s)
+                             -- Duration of Lingering Aura: [[1d6]] minute(s)
                              • Original Strength 'Strong':
-                             -- Duration of Lingering Aura: ‹1d6×10|10*1d6› minute(s)
+                             -- Duration of Lingering Aura: [[10*1d6]] minute(s)
                              • Original Strength 'Overwhelming':
-                             -- Duration of Lingering Aura: ‹1d6› day(s)
+                             -- Duration of Lingering Aura: [[1d6]] day(s)
 
                              [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not lawful, and as such this spell does not detect them.
                              Each round, you can turn to *detect law* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
@@ -2798,13 +2798,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Lingering Aura:* A magical aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a magic item). If *detect magic* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
-                             -- Duration of Lingering Aura: ‹1d6› round(s)
+                             -- Duration of Lingering Aura: [[1d6]] round(s)
                              • Original Strength 'Moderate':
-                             -- Duration of Lingering Aura: ‹1d6› minute(s)
+                             -- Duration of Lingering Aura: [[1d6]] minute(s)
                              • Original Strength 'Strong':
-                             -- Duration of Lingering Aura: ‹1d6×10|10*1d6› minute(s)
+                             -- Duration of Lingering Aura: [[10*1d6]] minute(s)
                              • Original Strength 'Overwhelming':
-                             -- Duration of Lingering Aura: ‹1d6› day(s)
+                             -- Duration of Lingering Aura: [[1d6]] day(s)
 
                              [Outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type) and [elementals](https://www.dandwiki.com/wiki/SRD:Elemental_Type) are not magical in themselves, but if they are summoned, the conjuration spell registers.
                              Each round, you can turn to *detect magic* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.
@@ -2931,13 +2931,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Lingering Aura:* An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) aura lingers after its original source is destroyed. If *detect undead* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
-                             -- Duration of Lingering Aura: ‹1d6› round(s)
+                             -- Duration of Lingering Aura: [[1d6]] round(s)
                              • Original Strength 'Moderate'
-                             -- Duration of Lingering Aura: ‹1d6› minute(s)
+                             -- Duration of Lingering Aura: [[1d6]] minute(s)
                              • Original Strength 'Strong'
-                             -- Duration of Lingering Aura: ‹1d6×10|10*1d6› minutes(s)
+                             -- Duration of Lingering Aura: [[10*1d6]] minutes(s)
                              • Original Strength 'Overwhelming'
-                             -- Duration of Lingering Aura: ‹1d6› day(s)
+                             -- Duration of Lingering Aura: [[1d6]] day(s)
 
                              Each round, you can turn to *detect undead* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
           material:         '**Arcane Material Component:** A bit of earth from a grave.'
@@ -2966,11 +2966,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              -- [Killed](https://www.dandwiki.com/wiki/SRD:Dead),[paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed),[*slowed*](https://www.dandwiki.com/wiki/SRD:Slow),[deafened](https://www.dandwiki.com/wiki/SRD:Deafened)
 
                              The effects are cumulative and concurrent. No saving throw is allowed against these effects.
-                             *[Deafened](https://www.dandwiki.com/wiki/SRD:Deafened):* The creature is [deafened](https://www.dandwiki.com/wiki/SRD:Deafened) for ‹1d4› rounds.
-                             *[Slowed](https://www.dandwiki.com/wiki/SRD:Slow):* The creature is *slowed*, as by the [*slow*](https://www.dandwiki.com/wiki/SRD:Slow) spell, for ‹2d4› rounds.
-                             *[Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed):* The creature is [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and [helpless](https://www.dandwiki.com/wiki/SRD:Helpless) for ‹1d10› minutes.
+                             *[Deafened](https://www.dandwiki.com/wiki/SRD:Deafened):* The creature is [deafened](https://www.dandwiki.com/wiki/SRD:Deafened) for [[1d4]] rounds.
+                             *[Slowed](https://www.dandwiki.com/wiki/SRD:Slow):* The creature is *slowed*, as by the [*slow*](https://www.dandwiki.com/wiki/SRD:Slow) spell, for [[2d4]] rounds.
+                             *[Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed):* The creature is [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and [helpless](https://www.dandwiki.com/wiki/SRD:Helpless) for [[1d10]] minutes.
                              *[Killed](https://www.dandwiki.com/wiki/SRD:Dead):* Living creatures die. [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures are destroyed.
-                             Furthermore, if you are on your home plane when you cast this spell, nonlawful extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *dictum*. The banishment effect allows a Will save (at a \`\`-4\`\` penalty) to negate.
+                             Furthermore, if you are on your home plane when you cast this spell, nonlawful extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *dictum*. The banishment effect allows a Will save (at a \`\`-4 penalty\`\`) to negate.
                              Creatures whose HD exceed your caster level are unaffected by *dictum*.`,
           material:         null
         },
@@ -2987,8 +2987,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None and Will negates (object)',
           spell_resistance: 'No and Yes (object)',
           text:             `You instantly transfer yourself from your current location to any other spot within range. You always arrive at exactly the spot desired—whether by simply visualizing the area or by stating direction. After using this spell, you can’t take any other actions until your next turn. You can bring along objects as long as their weight doesn’t exceed your maximum load. You may also bring one additional willing Medium or smaller creature (carrying gear or objects up to its maximum load) or its equivalent per three caster levels. A Large creature counts as two Medium creatures, a Huge creature counts as two Large creatures, and so forth. All creatures to be transported must be in contact with one another, and at least one of those creatures must be in contact with you.
-                             If you arrive in a place that is already occupied by a solid body, you and each creature traveling with you take ‹1d6› points of damage and are shunted to a random open space on a suitable surface within 100 feet of the intended location.
-                             If there is no free space within 100 feet, you and each creature traveling with you take an additional ‹2d6› points of damage and are shunted to a free space within 1,000 feet. If there is no free space within 1,000 feet, you and each creature travelling with you take an additional ‹4d6› points of damage and the spell simply fails.`,
+                             If you arrive in a place that is already occupied by a solid body, you and each creature traveling with you take [[1d6]] points of damage and are shunted to a random open space on a suitable surface within 100 feet of the intended location.
+                             If there is no free space within 100 feet, you and each creature traveling with you take an additional [[2d6]] points of damage and are shunted to a free space within 1,000 feet. If there is no free space within 1,000 feet, you and each creature travelling with you take an additional [[4d6]] points of damage and the spell simply fails.`,
           material:         null
         },
         'dimensional anchor': {
@@ -3091,7 +3091,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: null,
           text:             `You make yourself—including clothing, armor, weapons, and equipment—look different. You can seem 1 foot shorter or taller, thin, fat, or in between. You cannot change your body type. Otherwise, the extent of the apparent change is up to you. You could add or obscure a minor feature or look like an entirely different person.
                              The spell does not provide the abilities or mannerisms of the chosen form, nor does it alter the perceived tactile (touch) or audible (sound) properties of you or your equipment.
-                             If you use this spell to create a disguise, you get a \`\`+10\`\` bonus on the Disguise check.
+                             If you use this spell to create a disguise, you get a \`\`+10 bonus\`\` on the Disguise check.
                              A creature that interacts with the glamer gets a Will save to recognize it as an illusion.`,
           material:         null
         },
@@ -3107,9 +3107,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude partial (object)',
           spell_resistance: 'Yes',
-          text:             `A thin, green ray springs from your pointing finger. You must make a successful ranged touch attack to hit. Any creature struck by the ray takes 2d6 points of ‹damage|[[[[{2*?{Casting Level},40}kl1]]d6]]› per caster level (to a maximum of 40d6). Any creature reduced to 0 or fewer hit points by this spell is entirely disintegrated, leaving behind only a trace of fine dust. A disintegrated creature’s equipment is unaffected.
+          text:             `A thin, green ray springs from your pointing finger. You must make a successful ranged touch attack to hit. Any creature struck by the ray takes 2d6 points of damage per caster level (to a maximum of 40d6): [[[[{2*?{Casting Level},40}kl1]]d6]]. Any creature reduced to 0 or fewer hit points by this spell is entirely disintegrated, leaving behind only a trace of fine dust. A disintegrated creature’s equipment is unaffected.
                              When used against an object, the ray simply disintegrates as much as one 10-foot cube of nonliving matter. Thus, the spell disintegrates only part of any very large object or structure targeted. The ray affects even objects constructed entirely of force, such as [*forceful hand*](https://www.dandwiki.com/wiki/SRD:Forceful_Hand) or a [*wall of force*](https://www.dandwiki.com/wiki/SRD:Wall_of_Force), but not magical effects such as a [*globe of invulnerability*](https://www.dandwiki.com/wiki/SRD:Globe_of_Invulnerability) or an [*antimagic field*](https://www.dandwiki.com/wiki/SRD:Antimagic_Field).
-                             A creature or object that makes a successful Fortitude save is partially affected, taking only ‹5d6› points of damage. If this damage reduces the creature or object to 0 or fewer hit points, it is entirely disintegrated.
+                             A creature or object that makes a successful Fortitude save is partially affected, taking only [[5d6]] points of damage. If this damage reduces the creature or object to 0 or fewer hit points, it is entirely disintegrated.
                              Only the first creature or object struck can be affected; that is, the ray affects only one target per casting.`,
           material:         '**Arcane Material Component:** A lodestone and a pinch of dust.'
         },
@@ -3141,7 +3141,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `You are surrounded by constant, blue, lawful energy.
-                             First, you gain a \`\`+4\`\` deflection bonus to AC against attacks by [chaotic creatures](https://www.dandwiki.com/wiki/SRD:Chaotic_Creatures).
+                             First, you gain a \`\`+4 deflection bonus\`\` to AC against attacks by [chaotic creatures](https://www.dandwiki.com/wiki/SRD:Chaotic_Creatures).
                              Second, on making a successful melee touch attack against an [chaotic creature](https://www.dandwiki.com/wiki/SRD:Chaotic_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
                              Third, with a touch you can automatically dispel any one enchantment spell cast by an chaotic creature or any one chaotic spell. *Exception:* Spells that can’t be dispelled by [*dispel magic*](https://www.dandwiki.com/wiki/SRD:Dispel_Magic) also can’t be dispelled by *dispel chaos*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
           material:         null
@@ -3159,7 +3159,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `Shimmering, white, holy energy surrounds you. This power has three effects.
-                             First, you gain a \`\`+4\`\` deflection bonus to AC against attacks by [evil creatures](https://www.dandwiki.com/wiki/SRD:Evil_Creatures).
+                             First, you gain a \`\`+4 deflection bonus\`\` to AC against attacks by [evil creatures](https://www.dandwiki.com/wiki/SRD:Evil_Creatures).
                              Second, on making a successful melee touch attack against an [evil creature](https://www.dandwiki.com/wiki/SRD:Evil_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
                              Third, with a touch you can automatically dispel any one enchantment spell cast by an evil creature or any one evil spell. *Exception:* Spells that can’t be dispelled by [*dispel magic*](https://www.dandwiki.com/wiki/SRD:Dispel_Magic) also can’t be dispelled by *dispel evil*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
           material:         null
@@ -3177,7 +3177,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `You are surrounded by dark, wavering, unholy energy.
-                             First, you gain a \`\`+4\`\` deflection bonus to AC against attacks by [good creatures](https://www.dandwiki.com/wiki/SRD:Good_Creatures).
+                             First, you gain a \`\`+4 deflection bonus\`\` to AC against attacks by [good creatures](https://www.dandwiki.com/wiki/SRD:Good_Creatures).
                              Second, on making a successful melee touch attack against an [good creature](https://www.dandwiki.com/wiki/SRD:Good_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
                              Third, with a touch you can automatically dispel any one enchantment spell cast by an good creature or any one good spell. *Exception:* Spells that can’t be dispelled by [*dispel magic*](https://www.dandwiki.com/wiki/SRD:Dispel_Magic) also can’t be dispelled by *dispel good*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
           material:         null
@@ -3195,7 +3195,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `You are surrounded by flickering, yellow, chaotic energy.
-                             First, you gain a \`\`+4\`\` deflection bonus to AC against attacks by [lawful creatures](https://www.dandwiki.com/wiki/SRD:Lawful_Creatures).
+                             First, you gain a \`\`+4 deflection bonus\`\` to AC against attacks by [lawful creatures](https://www.dandwiki.com/wiki/SRD:Lawful_Creatures).
                              Second, on making a successful melee touch attack against an [lawful creature](https://www.dandwiki.com/wiki/SRD:Lawful_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
                              Third, with a touch you can automatically dispel any one enchantment spell cast by an lawful creature or any one lawful spell. *Exception:* Spells that can’t be dispelled by [*dispel magic*](https://www.dandwiki.com/wiki/SRD:Dispel_Magic) also can’t be dispelled by *dispel law*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
           material:         null
@@ -3256,7 +3256,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `You direct a ray of positive energy. You must make a ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) to hit, and if the ray hits an [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type), it deals ‹1d6› points of damage to it.`,
+          text:             `You direct a ray of positive energy. You must make a ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) to hit, and if the ray hits an [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type), it deals [[1d6]] points of damage to it.`,
           material:         null
         },
         'disrupting weapon': {
@@ -3317,7 +3317,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round(s)',
           saving_throw:     null,
           spell_resistance: null,
-          text:             `Calling upon the divine power of your patron, you imbue yourself with strength and skill in combat. Your base attack bonus becomes equal to your character level (which may give you additional attacks), you gain a \`\`+6\`\` enhancement bonus to Strength, and you gain [[?{Casting Level}]] temporary hit point(s).`,
+          text:             `Calling upon the divine power of your patron, you imbue yourself with strength and skill in combat. Your base attack bonus becomes equal to your character level (which may give you additional attacks), you gain a \`\`+6 enhancement bonus\`\` to Strength, and you gain [[?{Casting Level}]] temporary hit point(s).`,
           material:         null
         },
         'dominate animal': {
@@ -3353,7 +3353,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Once you have given a *dominated* creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject’s behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
                              Changing your instructions or giving a *dominated* creature a new command is the equivalent of redirecting a spell, so it is a move action.
                              By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can’t communicate with you. You can’t actually see through the subject’s eyes, so it’s not as good as being there yourself, but you still get a good idea of what’s going on.
-                             Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a \`\`+2\`\` bonus. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
+                             Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a \`\`+2 bonus\`\`. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
                              If you don’t spend at least 1 round concentrating on the spell each day, the subject receives a new saving throw to throw off the domination.
                              [*Protection from evil*](https://www.dandwiki.com/wiki/SRD:Protection_from_Evil) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`,
           material:         null
@@ -3375,7 +3375,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Once you have given a *dominated* creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject’s behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
                              Changing your instructions or giving a *dominated* creature a new command is the equivalent of redirecting a spell, so it is a move action.
                              By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can’t communicate with you. You can’t actually see through the subject’s eyes, so it’s not as good as being there yourself, but you still get a good idea of what’s going on.
-                             Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a \`\`+2\`\ bonus. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
+                             Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a \`\`+2 bonus\`\`. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
                              If you don’t spend at least 1 round concentrating on the spell each day, the subject receives a new saving throw to throw off the domination.
                              [*Protection from evil*](https://www.dandwiki.com/wiki/SRD:Protection_from_Evil) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`,
           material:         null
@@ -3453,296 +3453,322 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              -- 16 Power Points Acquired`,
           material:         null
         },
-
-
-
-        //'eagle\'s splendor': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'earthquake': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'eagle\'s splendor': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Eagle%27s_Splendor',
+          school:           'Transmutation',
+          level:            'Blg 2, Brd 2, Clr 2, Pal 2, Sor/Wiz 2',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes',
+          text:             `The transmuted creature becomes more poised, articulate, and personally forceful. The spell grants a \`\`+4 enhancement bonus\`\` to Charisma, adding the usual benefits to Charisma-based skill checks and other uses of the Charisma modifier. Sorcerers and bards (and other spellcasters who rely on Charisma) affected by this spell do not gain any additional bonus spells for the increased Charisma, but the save DCs for spells they cast while under this spell’s effect do increase.`,
+          material:         '**Arcane Material Component:** A few feathers or a pinch of droppings from an eagle.'
+        },
+        'earthquake': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Earthquake',
+          school:           'Evocation [Earth]',
+          level:            'Clr 8, Destruction 8, Drd 8, Earth 7',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'long',
+          target_type:      'Area',
+          target:           '80-ft.-radius spread (S)',
+          duration:         '1 round',
+          saving_throw:     'See text',
+          spell_resistance: 'No',
+          text:             `When you cast *earthquake*, an intense but highly localized tremor rips the ground. The shock knocks creatures down, collapses structures, opens cracks in the ground, and more. The effect lasts for 1 round, during which time creatures on the ground can’t move or attack. A spellcaster on the ground must make a Concentration check (DC 20 + spell level) or lose any spell he or she tries to cast. The earthquake affects all terrain, vegetation, structures, and creatures in the area. The specific effect of an *earthquake* spell depends on the nature of the terrain where it is cast.
+                             *Cave, Cavern, or Tunnel:* The spell collapses the roof, dealing ‹8d6› points of bludgeoning damage to any creature caught under the cave-in (Reflex DC 15 half) and pinning that creature beneath the rubble (see below). An *earthquake* cast on the roof of a very large cavern could also endanger those outside the actual area but below the falling debris.
+                             *Cliffs:* *Earthquake* causes a cliff to crumble, creating a landslide that travels horizontally as far as it fell vertically. Any creature in the path takes ‹8d6› points of bludgeoning damage (Reflex DC 15 half) and is pinned beneath the rubble (see below).
+                             *Open Ground:* Each creature standing in the area must make a DC 15 Reflex save or fall down. Fissures open in the earth, and every creature on the ground has a ‹25%|[[{1d100}<25]]› chance to fall into one (Reflex DC 20 to avoid a fissure). At the end of the spell, all fissures grind shut, killing any creatures still trapped within.
+                             *Structure:* Any structure standing on open ground takes \`\`100\`\` points of damage, enough to collapse a typical wooden or masonry building, but not a structure built of stone or reinforced masonry. Hardness does not reduce this damage, nor is it halved as damage dealt to objects normally is. Any creature caught inside a collapsing structure takes ‹8d6› points of bludgeoning damage (Reflex DC 15 half) and is pinned beneath the rubble (see below).
+                             *River, Lake, or Marsh:* Fissures open underneath the water, draining away the water from that area and forming muddy ground. Soggy marsh or swampland becomes quicksand for the duration of the spell, sucking down creatures and structures. Each creature in the area must make a DC 15 Reflex save or sink down in the mud and quicksand. At the end of the spell, the rest of the body of water rushes in to replace the drained water, possibly drowning those caught in the mud.
+                             *Pinned beneath Rubble:* Any creature pinned beneath rubble takes ‹1d6› points of nonlethal damage per minute while pinned. If a pinned character falls unconscious, he or she must make a DC 15 Constitution check or take ‹1d6› points of lethal damage each minute thereafter until freed or dead.`,
+          material:         null
+        },
         //TODO eclipse
         //TODO eidolon
-        //'elemental swarm': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'endure elements': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'energy drain': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'enervation': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'enlarge person': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'elemental swarm': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Elemental_Swarm',
+          school:           'Conjuration (Summoning) [see text]',
+          level:            'Air 9, Drd 9, Earth 9, Fire 9, Water 9',
+          components:       'V, S',
+          casting_time:     '10 minutes',
+          range:            'medium',
+          target_type:      'Effect',
+          target:           'Two or more summoned creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell opens a portal to an Elemental Plane and summons [elementals](https://www.dandwiki.com/wiki/SRD:Elemental) from it. A druid can choose the plane (Air, Earth, Fire, or Water); a cleric opens a portal to the plane matching his domain.
+                             When the spell is complete, [[2d4]] Large elementals appear. Ten minutes later, [[1d4]] Huge elementals appear. Ten minutes after that, one greater elemental appears. Each elemental has maximum hit points per HD. Once these creatures appear, they serve you for the duration of the spell.
+                             The elementals obey you explicitly and never attack you, even if someone else manages to gain control over them. You do not need to concentrate to maintain control over the elementals. You can dismiss them singly or in groups at any time.
+                             When you use a summoning spell to summon an air, earth, fire, or water creature, it is a spell of that type.`,
+          material:         null
+        },
+        'endure elements': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Endure_Elements',
+          school:           'Abjuration',
+          level:            'Clr 1, Drd 1, Pal 1, Rgr 1, Sor/Wiz 1, Sun 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '24 hours',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `A creature protected by *endure elements* suffers no harm from being in a hot or cold environment. It can exist comfortably in conditions between -50 and 140 degrees Fahrenheit without having to make Fortitude saves). The creature’s equipment is likewise protected.
+                             *Endure elements* doesn’t provide any protection from fire or cold damage, nor does it protect against other environmental hazards such as smoke, lack of air, and so forth.`,
+          material:         null
+        },
+        'energy drain': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Energy_Drain_%28Spell%29',
+          school:           'Necromancy',
+          level:            'Clr 9, Sor/Wiz 9',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Effect',
+          target:           'Ray of negative energy',
+          duration:         'Instantaneous',
+          saving_throw:     'None; see text',
+          spell_resistance: 'Yes',
+          text:             `You point your finger and utter the incantation, releasing a black ray of crackling negative energy that suppresses the life force of any living creature it strikes. You must make a ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) to hit. If the attack succeeds, the subject gains [[2d4]] negative levels.
+                             If the subject has at least as many negative levels as HD, it dies. Each negative level gives a creature a \`\`-1 penalty\`\` on attack rolls, saving throws, skill checks, ability checks, and effective level (for determining the power, duration, DC, and other details of spells or special abilities).
+                             Additionally, a spellcaster loses one spell or spell slot from his or her highest available level. Negative levels stack.
+                             There is no saving throw to avoid gaining the negative levels, but 24 hours after gaining them, the subject must make a Fortitude saving throw (DC=energy drain spell’s save DC) for each negative level. If the save succeeds, that negative level is removed. If it fails, the negative level also goes away, but one of the subject’s character levels is permanently drained.
+                             An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature struck by the ray gains [[2d4*5]] temporary hit points for 1 hour.`,
+          material:         null
+        },
+        'enervation': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Enervation',
+          school:           'Necromancy',
+          level:            'Sor/Wiz 4',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Effect',
+          target:           'Ray of negative energy',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `You point your finger and utter the incantation, releasing a black ray of crackling negative energy that suppresses the life force of any living creature it strikes. You must make a ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) to hit. If the attack succeeds, the subject gains [[1d4]] negative levels.
+                             If the subject has at least as many negative levels as HD, it dies. Each negative level gives a creature a \`\`-1 penalty\`\` on attack rolls, saving throws, skill checks, ability checks, and effective level (for determining the power, duration, DC, and other details of spells or special abilities).
+                             Additionally, a spellcaster loses one spell or spell slot from his or her highest available level. Negative levels stack.
+                             Assuming the subject survives, it regains lost levels after a number of hours equal to your caster level (maximum 15 hours). Usually, negative levels have a chance of permanently draining the victim’s levels, but the negative levels from *enervation* don’t last long enough to do so.
+                             An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature struck by the ray gains [[1d4*5]] temporary hit points for 1 hour.`,
+          material:         null
+        },
+        'enlarge person': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Enlarge_Person',
+          school:           'Transmutation',
+          level:            'Sor/Wiz 1, Strength 1',
+          components:       'V, S, M',
+          casting_time:     '1 round',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One [humanoid](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) creature',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Fortitude negates',
+          spell_resistance: 'Yes',
+          text:             `This spell causes instant growth of a humanoid creature, doubling its height and multiplying its weight by 8. This increase changes the creature’s [size category](https://www.dandwiki.com/wiki/SRD:Size_Category) to the next larger one. The target gains a \`\`+2 size bonus\`\` to Strength, a \`\`-2 size penalty\`\` to Dexterity (to a minimum of 1), and a \`\`-1 penalty\'\' on attack rolls and AC due to its increased size.
+                             A humanoid creature whose size increases to Large has a space of 10 feet and a natural reach of 10 feet. This spell does not change the target’s speed.
+                             If insufficient room is available for the desired growth, the creature attains the maximum possible size and may make a Strength check (using its increased Strength) to burst any enclosures in the process. If it fails, it is constrained without harm by the materials enclosing it— the spell cannot be used to crush a creature by increasing its size.
+                             All equipment worn or carried by a creature is similarly enlarged by the spell. Melee and projectile weapons affected by this spell deal more damage. Other magical properties are not affected by this spell. Any *enlarged* item that leaves an *enlarged* creature’s possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage, and projectiles deal damage based on the size of the weapon that fired them. Magical properties of *enlarged* items are not increased by this spell.
+                             Multiple magical effects that increase size do not stack.
+                             *Enlarge person* counters and dispels *reduce person*.
+                             *Enlarge person* can be made permanent with a *permanency* spell.`,
+          material:         '**Material Component:** A pinch of powdered iron.'
+        },
         //TODO enslave (ritual)
-        //'entangle': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'enthrall': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'entropic shield': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'entangle': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Entangle',
+          school:           'Transmutation',
+          level:            'Drd 1, Plant 1, Rgr 1',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'long',
+          target_type:      'Area',
+          target:           '[Plants](https://www.dandwiki.com/wiki/SRD:Plant_Type) in a 40-ft.-radius spread',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Reflex partial; see text',
+          spell_resistance: 'No',
+          text:             `Grasses, weeds, bushes, and even trees wrap, twist, and entwine about creatures in the area or those that enter the area, holding them fast and causing them to become [entangled](https://www.dandwiki.com/wiki/SRD:Entangled). The creature can break free and move half its normal speed by using a full-round action to make a DC 20 Strength check or a DC 20 Escape Artist check. A creature that succeeds on a Reflex save is not [entangled](https://www.dandwiki.com/wiki/SRD:Entangled) but can still move at only half speed through the area. Each round on your turn, the [plants](https://www.dandwiki.com/wiki/SRD:Plant_Type) once again attempt to [entangle](https://www.dandwiki.com/wiki/SRD:Entangled) all creatures that have avoided or escaped entanglement.
+                             *Note:* The effects of the spell may be altered somewhat, based on the nature of the entangling [plants](https://www.dandwiki.com/wiki/SRD:Plant_Type).`,
+          material:         null
+        },
+        'enthrall': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Enthrall',
+          school:           'Enchantment (Charm) [Language-Dependent, Mind-Affecting, Sonic]',
+          level:            'Brd 2, Clr 2, Nobility 2',
+          components:       'V, S',
+          casting_time:     '1 round',
+          range:            'medium',
+          target_type:      'Targets',
+          target:           'Any number of creatures',
+          duration:         '1 hour or less',
+          saving_throw:     'Will negates; see text',
+          spell_resistance: 'Yes',
+          text:             `If you have the attention of a group of creatures, you can use this spell to hold them spellbound. To cast the spell, you must speak or sing without interruption for 1 full round. Thereafter, those affected give you their undivided attention, ignoring their surroundings. They are considered to have an attitude of friendly while under the effect of the spell. Any potentially affected creature of a race or religion unfriendly to yours gets a \`\`+4 bonus\`\` on the saving throw.
+                             A creature with 4 or more HD or with a Wisdom score of 16 or higher remains aware of its surroundings and has an attitude of indifferent. It gains a new saving throw if it witnesses actions that it opposes.
+                             The effect lasts as long as you speak or sing, to a maximum of 1 hour. Those *enthralled* by your words take no action while you speak or sing and for [[1d3]] rounds thereafter while they discuss the topic or performance. Those entering the area during the performance must also successfully save or become *enthralled*. The speech ends (but the 1d3-round delay still applies) if you lose concentration or do anything other than speak or sing.
+                             If those not *enthralled* have unfriendly or hostile attitudes toward you, they can collectively make a Charisma check to try to end the spell by jeering and heckling. For this check, use the Charisma bonus of the creature with the highest Charisma in the group; others may make Charisma checks to assist. The heckling ends the spell if this check result beats your Charisma check result. Only one such challenge is allowed per use of the spell.
+                             If any member of the audience is attacked or subjected to some other overtly hostile act, the spell ends and the previously *enthralled* members become immediately unfriendly toward you. Each creature with 4 or more HD or with a Wisdom score of 16 or higher becomes hostile.`,
+          material:         null
+        },
+        'entropic shield': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Entropic_Shield',
+          school:           'Abjuration',
+          level:            'Clr 1, Luck 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `A magical field appears around you, glowing with a chaotic blast of multicolored hues. This field deflects incoming arrows, rays, and other ranged attacks. Each ranged attack directed at you for which the attacker must make an attack roll has a 20% miss chance (similar to the effects of concealment). Other attacks that simply work at a distance are not affected.`,
+          material:         null
+        },
         //TODO epic counterspell
         //TODO epic mage armor
         //TODO epic repulsion
         //TODO epic spell reflection
-        //'erase': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'erase': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Erase',
+          school:           'Transmutation',
+          level:            'Brd 1, Rune 1, Sor/Wiz 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One scroll or two pages',
+          duration:         'Instantaneous',
+          saving_throw:     'See text',
+          spell_resistance: 'No',
+          text:             `*Erase* removes writings of either magical or mundane nature from a scroll or from one or two pages of paper, parchment, or similar surfaces. With this spell, you can remove [*explosive runes*](https://www.dandwiki.com/wiki/SRD:Explosive_Runes), a [*glyph of warding*](https://www.dandwiki.com/wiki/SRD:Glyph_of_Warding), a [*sepia snake sigil*](https://www.dandwiki.com/wiki/SRD:Sepia_Snake_Sigil), or an [*arcane mark*](https://www.dandwiki.com/wiki/SRD:Arcane_Mark), but not [*illusory script*](https://www.dandwiki.com/wiki/SRD:Illusory_Script) or a [*symbol*](https://www.dandwiki.com/wiki/SRD:Symbol_of_Death) spell. Nonmagical writing is automatically erased if you touch it and no one else is holding it. Otherwise, the chance of erasing nonmagical writing is 90%.
+                             Magic writing must be touched to be erased, and you also must succeed on a caster level check (1d20 + caster level) against DC 15. (A natural 1 or 2 is always a failure on this check.) If you fail to erase *explosive runes*, a *glyph of warding*, or a *sepia snake sigil*, you accidentally activate that writing instead.`,
+          material:         null
+        },
         //TODO eternal freedom
-        //'ethereal jaunt': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'etherealness': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'expeditious retreat': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'explosive runes': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'eyebite': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'ethereal jaunt': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt',
+          school:           'Transmutation',
+          level:            'Clr 7, Sor/Wiz 7',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] round(s) (D)',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `You become ethereal, along with your equipment. For the duration of the spell, you are in a place called the [Ethereal Plane](https://www.dandwiki.com/wiki/SRD:Ethereal_Plane), which overlaps the normal, physical, [Material Plane](https://www.dandwiki.com/wiki/SRD:Material_Plane). When the spell expires, you return to material existence.
+                             An ethereal creature is [invisible](https://www.dandwiki.com/wiki/SRD:Invisible), insubstantial, and capable of moving in any direction, even up or down, albeit at half normal speed. As an insubstantial creature, you can move through solid objects, including living creatures. An ethereal creature can see and hear on the Material Plane, but everything looks gray and ephemeral. Sight and hearing onto the Material Plane are limited to 60 feet.
+                             Force effects and abjurations affect an ethereal creature normally. Their effects extend onto the Ethereal Plane from the Material Plane, but not vice versa. An ethereal creature can’t attack material creatures, and spells you cast while ethereal affect only other ethereal things. Certain material creatures or objects have attacks or effects that work on the Ethereal Plane.
+                             Treat other ethereal creatures and ethereal objects as if they were material.
+                             If you end the spell and become material while inside a material object (such as a solid wall), you are shunted off to the nearest open space and take ‹1d6› points of damage per 5 feet that you so travel.`,
+          material:         null
+        },
+        'etherealness': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Etherealness_%28Spell%29',
+          school:           'Transmutation',
+          level:            'Clr 9, Sor/Wiz 9',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch; see text',
+          target_type:      'Targets',
+          target:           'You and [[floor(?{Casting Level}/3)]] other touched creature(s)',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     null,
+          spell_resistance: 'Yes',
+          text:             `This spell functions like [*ethereal jaunt*](https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt), except that you and other willing creatures joined by linked hands (along with their equipment) become ethereal. Besides yourself, you can bring one creature per three caster levels to the Ethereal Plane. Once ethereal, the subjects need not stay together.
+                             When the spell expires, all affected creatures on the [Ethereal Plane](https://www.dandwiki.com/wiki/SRD:Ethereal_Plane) return to material existence.`,
+          material:         null
+        },
+        'expeditious retreat': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Expeditious_Retreat',
+          school:           'Transmutation',
+          level:            'Brd 1, Sor/Wiz 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `This spell increases your base land speed by 30 feet. (This adjustment is treated as an enhancement bonus.) There is no effect on other modes of movement, such as burrow, climb, fly, or swim. As with any effect that increases your speed, this spell affects your jumping distance (see the Jump skill).`,
+          material:         null
+        },
+        'explosive runes': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Explosive_Runes',
+          school:           'Abjuration [Force]',
+          level:            'Rune 4, Sor/Wiz 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'One touched object weighing no more than 10 lb.',
+          duration:         'Permanent until discharged (D)',
+          saving_throw:     'See text',
+          spell_resistance: 'Yes',
+          text:             `You trace these mystic runes upon a book, map, scroll, or similar object bearing written information. The *runes* detonate when read, dealing ‹6d6› points of force damage. Anyone next to the *runes* (close enough to read them) takes the full damage with no saving throw; any other creature within 10 feet of the *runes* is entitled to a Reflex save for half damage. The object on which the *runes* were written also takes full damage (no saving throw).
+                             You and any characters you specifically instruct can read the protected writing without triggering the *runes*. Likewise, you can remove the *runes* whenever desired. Another creature can remove them with a successful *dispel magic* or *erase* spell, but attempting to dispel or erase the *runes* and failing to do so triggers the explosion.
+                             *Note:* Magic traps such as *explosive runes* are hard to detect and disable. A rogue (only) can use the Search skill to find the *runes* and Disable Device to thwart them. The DC in each case is 25 + spell level, or 28 for *explosive runes*.`,
+          material:         null
+        },
+        'eyebite': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Eyebite',
+          school:           'Necromancy [Evil]',
+          level:            'Brd 6, Scalykind 6, Sor/Wiz 6',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One living creature',
+          duration:         '[[floor(?{Casting Level}/3)]] round(s); see text',
+          saving_throw:     'Fortitude negates',
+          spell_resistance: 'Yes',
+          text:             `Each round, you may target a single living creature, striking it with waves of evil power. Depending on the target’s HD, this attack has as many as three effects.
 
+                             HD  Effect
+                             10 or more  Sickened
+                             5–9 Panicked, sickened
+                             4 or less Comatose, panicked, sickened
 
+                             The effects are cumulative and concurrent.
+                             *[Sickened](https://www.dandwiki.com/wiki/SRD:Sickened):* Sudden pain and fever sweeps over the subject’s body. A [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) creature takes a \`\`-2 penalty\`\` on attack rolls, weapon damage rolls, saving throws, skill checks, and ability checks. A creature affected by this spell remains [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) for [[10*?{Casting Level}]] minutes. The effects cannot be negated by a [*remove disease*](https://www.dandwiki.com/wiki/SRD:Remove_Disease) or [*heal*](https://www.dandwiki.com/wiki/SRD:Heal) spell, but a [*remove curse*](https://www.dandwiki.com/wiki/SRD:Remove_Curse) is effective.
+                             *[Panicked](https://www.dandwiki.com/wiki/SRD:Panicked):* The subject becomes [panicked](https://www.dandwiki.com/wiki/SRD:Panicked) for [[1d4]] rounds. Even after the panic ends, the creature remains [shaken](https://www.dandwiki.com/wiki/SRD:Shaken) for [[10*?{Casting Level}]] minutes, and it automatically becomes [panicked](https://www.dandwiki.com/wiki/SRD:Panicked) again if it comes within sight of you during that time. This is a fear effect.
+                             *Comatose:* The subject falls into a catatonic coma for [[10*?{Casting Level}]] minutes. During this time, it cannot be awakened by any means short of dispelling the effect. This is not a [*sleep*](https://www.dandwiki.com/wiki/SRD:Sleep) effect, and thus elves are not immune to it.
+                             You must spend a move action each round after the first to target a foe.`,
+          material:         null
+        },
 
-
-
-        //'fabricate': {
-        //// ↲’‹›«»•×†‡
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'fabricate': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Fabricate',
+          school:           'Transmutation',
+          level:            'Artifice 5, Sor/Wiz 5',
+          components:       'V, S, M',
+          casting_time:     'See text',
+          range:            'close',
+          target_type:      'Target',
+          target:           'Up to [[10*?{Casting Level}]] cu. ft.; see text',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You convert material of one sort into a product that is of the same material. Creatures or magic items cannot be created or transmuted by the *fabricate* spell. The quality of items made by this spell is commensurate with the quality of material used as the basis for the new fabrication. If you work with a mineral, the target is reduced to [[?{Casting Level}]] cu. ft.
+                             You must make an appropriate Craft check to fabricate articles requiring a high degree of craftsmanship.
+                             Casting requires 1 round per 10 cubic feet (or 1 cubic foot if mineral) of material to be affected by the spell.`,
+          material:         '**Material Component:** The original material, which costs the same amount as the raw materials required to craft the item to be created.'
+        },
         //'faerie fire': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3758,7 +3784,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'false life': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3774,7 +3800,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'false vision': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3790,7 +3816,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fear': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3806,7 +3832,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'feather fall': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3822,7 +3848,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'feeblemind': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3838,7 +3864,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'find traps': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3854,7 +3880,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'find the path': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3870,7 +3896,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'finger of death': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3886,7 +3912,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fire seeds': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3902,7 +3928,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fire shield': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3918,7 +3944,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fire storm': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3934,7 +3960,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fire trap': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3950,7 +3976,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fireball': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3966,7 +3992,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'flame arrow': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3982,7 +4008,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'flame blade': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -3998,7 +4024,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'flame strike': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4014,7 +4040,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'flaming sphere': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4030,7 +4056,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'flare': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4046,7 +4072,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'flesh to stone': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4062,7 +4088,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'floating disk': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4078,7 +4104,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fly': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4094,7 +4120,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fog cloud': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4110,7 +4136,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'forbiddance': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4126,7 +4152,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'forcecage': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4142,7 +4168,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'forceful hand': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4158,7 +4184,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'foresight': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4174,7 +4200,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'fox\'s cunning': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4190,7 +4216,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'freedom': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4206,7 +4232,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'freedom of movement': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4222,7 +4248,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'freezing sphere': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4242,7 +4268,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'gaseous form': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4258,7 +4284,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'gate': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4275,7 +4301,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //},
         //TODO gathering of maggots
         //'geas/quest': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4291,7 +4317,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'genesis': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4307,7 +4333,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'gentle repose': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4323,7 +4349,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'ghost sound': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4339,7 +4365,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'ghoul touch': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4355,7 +4381,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'giant vermin': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4371,7 +4397,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'glibness': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4387,7 +4413,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'glitterdust': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4403,7 +4429,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'globe of invulnerability': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4419,7 +4445,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'glossolalia': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4435,7 +4461,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'glyph of warding': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4451,7 +4477,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'good hope': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4467,7 +4493,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'goodberry': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4483,7 +4509,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'grasping hand': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4499,7 +4525,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'grease': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4515,7 +4541,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater arcane sight': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4531,7 +4557,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater command': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4547,7 +4573,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater dispel magic': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4563,7 +4589,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater glyph of warding': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4579,7 +4605,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater heroism': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4595,7 +4621,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater invisibility': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4611,7 +4637,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater magic fang': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4627,7 +4653,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater magic weapon': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4643,7 +4669,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater planar ally': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4659,7 +4685,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater planar binding': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4675,7 +4701,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater prying eyes': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4691,7 +4717,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater psychic turmoil': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4707,7 +4733,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater restoration': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4724,7 +4750,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //},
         //TODO greater ruin
         //'greater scrying': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4740,7 +4766,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater shadow conjuration': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4756,7 +4782,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater shadow evocation': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4772,7 +4798,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater shout': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4788,7 +4814,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater spell immunity': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4805,7 +4831,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //},
         //TODO greater spell resistance
         //'greater status': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4821,7 +4847,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'greater teleport': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4837,7 +4863,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'guards and wards': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4853,7 +4879,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'guidance': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4869,7 +4895,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'gust of wind': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4890,7 +4916,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'hallow': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4906,7 +4932,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hallucinatory terrain': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4922,7 +4948,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'halt undead': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4938,7 +4964,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hardening': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4954,7 +4980,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'harm': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4970,7 +4996,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'haste': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -4986,7 +5012,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'heal': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5002,7 +5028,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'heal mount': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5018,7 +5044,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'heat metal': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5035,7 +5061,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //},
         //TODO hellball
         //'helping hand': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5051,7 +5077,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'heroes\' feast': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5067,7 +5093,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'heroism': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5083,7 +5109,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hide from animals': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5099,7 +5125,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hide from undead': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5115,7 +5141,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hideous laughter': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5131,7 +5157,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hold animal': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5147,7 +5173,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hold monster': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5163,7 +5189,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hold person': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5179,7 +5205,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hold portal': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5195,7 +5221,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'holy aura': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5211,7 +5237,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'holy smite': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5227,7 +5253,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'holy sword': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5243,7 +5269,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'holy word': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5259,7 +5285,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'horrid wilting': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5275,7 +5301,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hypnotic pattern': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5291,7 +5317,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'hypnotism': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5310,7 +5336,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'ice storm': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5326,7 +5352,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'identify': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5342,7 +5368,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'illusory script': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5358,7 +5384,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'illusory wall': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5374,7 +5400,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'imbue with spell ability': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5390,7 +5416,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'implosion': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5406,7 +5432,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'imprisonment': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5422,7 +5448,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'incendiary cloud': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5438,7 +5464,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'inflict critical wounds': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5454,7 +5480,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'inflict light wounds': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5470,7 +5496,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'inflict minor wounds': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5486,7 +5512,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'inflict moderate wounds': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5502,7 +5528,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'inflict serious wounds': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5518,7 +5544,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'insanity': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5534,7 +5560,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'insect plague': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5550,7 +5576,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'instant summons': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5566,7 +5592,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'interposing hand': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5582,7 +5608,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'invisibility': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5598,7 +5624,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'invisibility purge': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5614,7 +5640,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'invisibility spell': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5630,7 +5656,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'invisibility sphere': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5646,7 +5672,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'iron body': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5662,7 +5688,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'ironwood': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5678,7 +5704,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'irresistible dance': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5698,7 +5724,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'jump': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5719,7 +5745,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'keen edge': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5736,7 +5762,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //},
         //TODO kinetic control
         //'knock': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5752,7 +5778,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  material:         null
         //},
         //'know direction': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -5773,7 +5799,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'': {
-        //// ↲’‹›«»•×†‡
+        //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
