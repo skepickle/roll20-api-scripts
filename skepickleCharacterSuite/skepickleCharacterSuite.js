@@ -3767,502 +3767,516 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Casting requires 1 round per 10 cubic feet (or 1 cubic foot if mineral) of material to be affected by the spell.`,
           material:         '**Material Component:** The original material, which costs the same amount as the raw materials required to craft the item to be created.'
         },
-        //'faerie fire': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'false life': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'false vision': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'fear': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'feather fall': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'feeblemind': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'find traps': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'find the path': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'finger of death': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'fire seeds': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'fire shield': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'fire storm': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'fire trap': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'fireball': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'flame arrow': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'flame blade': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'flame strike': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'flaming sphere': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'flare': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'flesh to stone': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'floating disk': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'fly': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'fog cloud': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'forbiddance': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'forcecage': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'forceful hand': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'foresight': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'fox\'s cunning': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'freedom': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'freedom of movement': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
-        //'freezing sphere': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  material:         null
-        //},
+        'faerie fire': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Faerie_Fire',
+          school:           'Evocation [Light]',
+          level:            'Drd 1',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'long',
+          target_type:      'Area',
+          target:           'Creatures and objects within a 5-ft.-radius burst',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `A pale glow surrounds and outlines the subjects. Outlined subjects shed light as candles. Outlined creatures do not benefit from the [concealment](https://www.dandwiki.com/wiki/SRD:Concealment) normally provided by darkness (though a 2nd-level or higher magical [*darkness*](https://www.dandwiki.com/wiki/SRD:Darkness) effect functions normally), [*blur*](https://www.dandwiki.com/wiki/SRD:Blur), [*displacement*](https://www.dandwiki.com/wiki/SRD:Displacement), [*invisibility*](https://www.dandwiki.com/wiki/SRD:Invisibility_%28Spell%29, or similar effects. The light is too dim to have any special effect on [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) or dark-dwelling creatures vulnerable to light. The *faerie fire* can be blue, green, or violet, according to your choice at the time of casting. The *faerie fire* does not cause any harm to the objects or creatures thus outlined.`,
+          material:         null
+        },
+        'false life': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:False_Life',
+          school:           'Necromancy',
+          level:            'Asn 3, Sor/Wiz 2',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] hour(s) or until discharged; see text',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `You harness the power of unlife to grant yourself a limited ability to avoid death. While this spell is in effect, you gain temporary hit points equal to [[1d10+{?{Casting Level},10}kl1]].`,
+          material:         '**Material Component:** A small amount of alcohol or distilled spirits, which you use to trace certain sigils on your body during casting. These sigils cannot be seen once the alcohol or spirits evaporate.'
+        },
+        'false vision': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:False_Vision',
+          school:           'Illusion (Glamer)',
+          level:            'Brd 5, Sor/Wiz 5, Trickery 5',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Area',
+          target:           '40-ft.-radius emanation',
+          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `Any divination (scrying) spell used to view anything within the area of this spell instead receives a false image (as the [*major image*](https://www.dandwiki.com/wiki/Major_Image) spell), as defined by you at the time of casting. As long as the duration lasts, you can concentrate to change the image as desired. While you aren’t concentrating, the image remains static.`,
+          material:         '**Arcane Material Component:** The ground dust of a piece of jade worth at least 250 gp, which is sprinkled into the air when the spell is cast.'
+        },
+        'fear': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Fear_%28Spell%29',
+          school:           'Necromancy [Fear, Mind-Affecting]',
+          level:            'Brd 3, Sor/Wiz 4',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '30 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped burst',
+          duration:         '[[?{Casting Level}]] round or 1 round; see text',
+          saving_throw:     'Will partial',
+          spell_resistance: 'Yes',
+          text:             `An [invisible](https://www.dandwiki.com/wiki/SRD:Invisible) cone of terror causes each living creature in the area to become [panicked](https://www.dandwiki.com/wiki/SRD:Panicked) unless it succeeds on a Will save. If cornered, a [panicked](https://www.dandwiki.com/wiki/SRD:Panicked) creature begins [cowering](https://www.dandwiki.com/wiki/SRD:Cowering). If the Will save succeeds, the creature is [shaken](https://www.dandwiki.com/wiki/SRD:Shaken) for 1 round.`,
+          material:         '**Material Component:** Either the heart of a hen or a white feather.'
+        },
+        'feather fall': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Feather_Fall',
+          school:           'Transmutation',
+          level:            'Asn 1, Brd 1, Sor/Wiz 1',
+          components:       'V',
+          casting_time:     '1 free action',
+          range:            'close',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] Medium or smaller freefalling object(s) or creature(s), no two of which may be more than 20 ft. apart',
+          duration:         'Until landing or [[?{Casting Level}]] round(s)',
+          saving_throw:     'Will negates (harmless) or Will negates (object)',
+          spell_resistance: 'Yes (object)',
+          text:             `The affected creatures or objects fall slowly. *Feather fall* instantly changes the rate at which the targets fall to a mere 60 feet per round (equivalent to the end of a fall from a few feet), and the subjects take no damage upon landing while the spell is in effect. However, when the spell duration expires, a normal rate of falling resumes.
+                             The spell affects one or more Medium or smaller creatures (including gear and carried objects up to each creature’s maximum load) or objects, or the equivalent in larger creatures: A Large creature or object counts as two Medium creatures or objects, a Huge creature or object counts as two Large creatures or objects, and so forth.
+                             You can cast this spell with an instant utterance, quickly enough to save yourself if you unexpectedly fall. Casting the spell is a [free action](https://www.dandwiki.com/wiki/SRD:Free_Actions), like casting a quickened spell, and it counts toward the normal limit of one quickened spell per round. You may even cast this spell when it isn’t your turn.
+                             This spell has no special effect on ranged weapons unless they are falling quite a distance. If the spell is cast on a falling item the object does half normal damage based on its weight, with no bonus for the height of the drop.
+                             *Feather fall* works only upon free-falling objects. It does not affect a sword blow or a charging or flying creature.`,
+          material:         null
+        },
+        'feeblemind': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Feeblemind',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Sor/Wiz 5',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates; see text',
+          spell_resistance: 'Yes',
+          text:             `If the target creature fails a Will saving throw, its Intelligence and Charisma scores each drop to 1. The affected creature is unable to use Intelligence- or Charisma-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a [*heal*](https://www.dandwiki.com/wiki/SRD:Heal), [*limited wish*](https://www.dandwiki.com/wiki/SRD:Limited_Wish), [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle), or [*wish*](https://www.dandwiki.com/wiki/SRD:Wish) spell is used to cancel the effect of the *feeblemind*. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a \`\`-4 penalty\`\` on its saving throw.`,
+          material:         '**Material Component:** A handful of clay, crystal, glass, or mineral spheres.'
+        },
+        'find traps': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Find_Traps',
+          school:           'Divination',
+          level:            'Clr 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `You gain intuitive insight into the workings of traps. You can use the Search skill to detect traps just as a rogue can. In addition, you gain +[[{floor(?{Casting Level}/2),10}kl1]] [insight bonus](https://www.dandwiki.com/wiki/Insight_bonus) on Search checks made to find traps while the spell is in effect.
+                             Note that *find traps* grants no ability to disable the traps that you may find.`,
+          material:         null
+        },
+        'find the path': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Find_the_Path',
+          school:           'Divination',
+          level:            'Brd 6, Clr 6, Drd 6, Knowledge 6, Travel 6',
+          components:       'V, S, F',
+          casting_time:     '3 rounds',
+          range:            'Personal or touch',
+          target_type:      'Target',
+          target:           'You or creature touched',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'None or Will negates (harmless)',
+          spell_resistance: 'No or Yes (harmless)',
+          text:             `The recipient of this spell can find the shortest, most direct physical route to a specified destination, be it the way into or out of a locale. The locale can be outdoors, underground, or even inside a [*maze*](https://www.dandwiki.com/wiki/SRD:Maze) spell. *Find the path* works with respect to locations, not objects or creatures at a locale. The location must be on the same plane as you are at the time of casting.
+                             The spell enables the subject to sense the correct direction that will eventually lead it to its destination, indicating at appropriate times the exact path to follow or physical actions to take. For example, the spell enables the subject to sense trip wires or the proper word to bypass a [*glyph of warding*](https://www.dandwiki.com/wiki/SRD:Glyph_of_Warding). The spell ends when the destination is reached or the duration expires, whichever comes first. *Find the path* can be used to remove the subject and its companions from the effect of a [*maze*](https://www.dandwiki.com/wiki/SRD:Maze) spell in a single round.
+                             This divination is keyed to the recipient, not its companions, and its effect does not predict or allow for the actions of creatures (including guardians).`,
+          material:         '**Focus:** A set of divination counters of the sort you favor.'
+        },
+        'finger of death': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Finger_of_Death',
+          school:           'Necromancy [Death]',
+          level:            'Drd 8, Sor/Wiz 7',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Target',
+          target:           'One living creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude partial',
+          spell_resistance: 'Yes',
+          text:             `You can slay any one living creature within range. The target is entitled to a Fortitude saving throw to survive the attack. If the save is successful, the creature instead takes [[3d6+{?{Casting Level},25}kl1]] points of damage.
+                             The subject might die from damage even if it succeeds on its saving throw.`,
+          material:         null
+        },
+        'fire seeds': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Fire_Seeds',
+          school:           'Conjuration (Creation) [Fire]',
+          level:            'Drd 6, Fire 6, Sun 6',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Targets',
+          target:           'Up to four touched acorns or up to eight touched holly berries',
+          duration:         '[[10*?{Casting Level}]] minute(s) or until used',
+          saving_throw:     'None or Reflex half; see text',
+          spell_resistance: 'No',
+          text:             `Depending on the version of *fire seeds* you choose, you turn acorns into splash weapons that you or another character can throw, or you turn holly berries into bombs that you can detonate on command.
+                             *Acorn Grenades:* As many as four acorns turn into special splash weapons that can be hurled as far as 100 feet. A ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) roll is required to strike the intended target. Together, the acorns are capable of dealing [[[[{?{Casting Level},20}kl1]]d6]] points of fire damage, divided up among the acorns as you wish.
+                             Each acorn explodes upon striking any hard surface. In addition to its regular fire damage, it deals [[{?{Casting Level},20}kl1]] point of splash damage per die, and it ignites any combustible materials within 10 feet. A creature within this area that makes a successful Reflex saving throw takes only half damage; a creature struck directly is not allowed a saving throw.
+                             *Holly Berry Bombs:* You turn as many as eight holly berries into special bombs. The holly berries are usually placed by hand, since they are too light to make effective thrown weapons (they can be tossed only 5 feet). If you are within 200 feet and speak a word of command, each berry instantly bursts into flame, causing [[1d8+?{Casting Level}]] points of fire damage to every creature in a 5-foot radius burst and igniting any combustible materials within 5 feet. A creature in the area that makes a successful Reflex saving throw takes only half damage.`,
+          material:         '**Material Component:** The acorns or holly berries.'
+        },
+        'fire shield': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Fire_Shield',
+          school:           'Evocation [Fire or Cold]',
+          level:            'Fire 5, Sor/Wiz 4, Sun 4',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] round(s) (D)',
+          saving_throw:     null,
+          spell_resistance: null,
+          text:             `This spell wreathes you in flame and causes damage to each creature that attacks you in melee. The flames also protect you from either cold-based or fire-based attacks (your choice).
+                             Any creature striking you with its body or a handheld weapon deals normal damage, but at the same time the attacker takes [[1d6+{?{Casting Level},15}kl1]] points of damage. This damage is either cold damage (if the *shield* protects against fire-based attacks) or fire damage (if the *shield* protects against cold-based attacks). If the attacker has spell resistance, it applies to this effect. Creatures wielding weapons with exceptional reach are not subject to this damage if they attack you.
+                             When casting this spell, you appear to immolate yourself, but the flames are thin and wispy, giving off light equal to only half the illumination of a normal torch (10 feet). The color of the flames is determined randomly (50% chance of either color)—blue or green if the *chill shield* is cast, violet or blue if the *warm shield* is employed. The special powers of each version are as follows.
+                             *Warm Shield:* The flames are warm to the touch. You take only half damage from cold-based attacks. If such an attack allows a Reflex save for half damage, you take no damage on a successful save.
+                             *Chill Shield:* The flames are cool to the touch. You take only half damage from fire-based attacks. If such an attack allows a Reflex save for half damage, you take no damage on a successful save.`,
+          material:         '**Arcane Material Component:** A bit of phosphorus for the *warm shield*; a live firefly or glowworm or the tail portions of four dead ones for the *chill shield*.'
+        },
+        'fire storm': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Fire_Storm',
+          school:           'Evocation [Fire]',
+          level:            'Clr 8, Drd 7, Fire 7',
+          components:       'V, S',
+          casting_time:     '1 round',
+          range:            'medium',
+          target_type:      'Area',
+          target:           '[[2*?{Casting Level}]] × 10-ft. cubes (S)',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half',
+          spell_resistance: 'Yes',
+          text:             `When a *fire storm* spell is cast, the whole area is shot through with sheets of roaring flame. The raging flames do not harm natural vegetation, ground [cover](https://www.dandwiki.com/wiki/SRD:Cover), and any [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) creatures in the area that you wish to exclude from damage. Any other creature within the area takes [[[[{?{Casting Level},20}kl1]]d6]] points of fire damage.`,
+          material:         null
+        },
+        'fire trap': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Fire_Trap',
+          school:           'Abjuration [Fire]',
+          level:            'Drd 2, Sor/Wiz 4',
+          components:       'V, S, M',
+          casting_time:     '10 minutes',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Object touched',
+          duration:         'Permanent until discharged (D)',
+          saving_throw:     'Reflex half; see text',
+          spell_resistance: 'Yes',
+          text:             `*Fire trap* creates a fiery explosion when an intruder opens the item that the trap protects. A *fire trap* can ward any object that can be opened and closed.
+                             When casting *fire trap*, you select a point on the object as the spell’s center. When someone other than you opens the object, a fiery explosion fills the area within a 5-foot radius around the spell’s center. The flames deal [[1d4+[[{?{Casting Level},20}kl1]]]] points of fire damage. The item protected by the trap is not harmed by this explosion.
+                             A *fire trapped* item cannot have a second closure or warding spell placed on it.
+                             A [*knock*](https://www.dandwiki.com/wiki/SRD:Knock) spell does not bypass a *fire trap*. An unsuccessful [*dispel magic*](https://www.dandwiki.com/wiki/SRD:Dispel_Magic) spell does not detonate the spell.
+                             Underwater, this ward deals half damage and creates a large cloud of steam.
+                             You can use the *fire trapped* object without discharging it, as can any individual to whom the object was specifically attuned when cast. Attuning a *fire trapped* object to an individual usually involves setting a password that you can share with friends.
+                             *Note:* Magic traps such as *fire trap* are hard to detect and disable. A rogue (only) can use the Search skill to find a *fire trap* and Disable Device to thwart it. The DC in each case is 25 + spell level (DC 27 for a druid’s *fire trap* or DC 29 for the arcane version).`,
+          material:         '**Material Component:** A half-pound of gold dust (cost 25 gp) sprinkled on the warded object.'
+        },
+        'fireball': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Fireball',
+          school:           'Evocation [Fire]',
+          level:            'Sor/Wiz 3',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'long',
+          target_type:      'Area',
+          target:           '20-ft.-radius spread',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half',
+          spell_resistance: 'Yes',
+          text:             `A *fireball* spell is an explosion of flame that detonates with a low roar and deals [[[[{?{Casting Level},10}kl1]]d6]] points of fire damage to every creature within the area. Unattended objects also take this damage. The explosion creates almost no pressure.
+                             You point your finger and determine the range (distance and height) at which the *fireball* is to burst. A glowing, pea-sized bead streaks from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the *fireball* at that point. (An early impact results in an early detonation.) If you attempt to send the bead through a narrow passage, such as through an arrow slit, you must “hit” the opening with a ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack), or else the bead strikes the barrier and detonates prematurely.
+                             The *fireball* sets fire to combustibles and damages objects in the area. It can melt metals with low melting points, such as lead, gold, copper, silver, and bronze. If the damage caused to an interposing barrier shatters or breaks through it, the *fireball* may continue beyond the barrier if the area permits; otherwise it stops at the barrier just as any other spell effect does.`,
+          material:         '**Material Component:** A tiny ball of bat guano and sulfur.'
+        },
+        'flame arrow': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Flame_Arrow',
+          school:           'Transmutation [Fire]',
+          level:            'Sor/Wiz 3',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Target',
+          target:           'Fifty projectiles, all of which must be in contact with each other at the time of casting',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You turn ammunition (such as arrows, bolts, shuriken, and stones) into fiery projectiles. Each piece of ammunition deals an extra ‹1d6› points of fire damage to any target it hits. A flaming projectile can easily ignite a flammable object or structure, but it won’t ignite a creature it strikes.`,
+          material:         '**Material Component:** A drop of oil and a small piece of flint.'
+        },
+        'flame blade': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Flame_Blade',
+          school:           'Evocation [Fire]',
+          level:            'Drd 2',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '0 ft.',
+          target_type:      'Effect',
+          target:           'Sword-like beam',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `A 3-foot-long, blazing beam of red-hot fire springs forth from your hand. You wield this bladelike beam as if it were a scimitar. Attacks with the *flame blade* are melee [touch attacks](https://www.dandwiki.com/wiki/SRD:Touch_Attack). The blade deals [[1d8+[[{?{Casting Level},10}kl1]]]] points of fire damage. Since the blade is immaterial, your Strength modifier does not apply to the damage. A *flame blade* can ignite combustible materials such as parchment, straw, dry sticks, and cloth.
+                             The spell does not function underwater.`,
+          material:         null
+        },
+        'flame strike': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Flame_Strike',
+          school:           'Evocation [Fire]',
+          level:            'Clr 5, Drd 4, Sun 5, War 5',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Area',
+          target:           'Cylinder (10-ft. radius, 40 ft. high)',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half',
+          spell_resistance: 'Yes',
+          text:             `A *flame strike* produces a vertical column of divine fire roaring downward. The spell deals [[[[{?{Caster Level},15}kl1]]d6]] points of damage. Half the damage is fire damage, but the other half results directly from divine power and is therefore not subject to being reduced by resistance to fire-based attacks.`,
+          material:         null
+        },
+        'flaming sphere': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Flaming_Sphere',
+          school:           'Evocation [Fire]',
+          level:            'Drd 2, Sor/Wiz 2',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Effect',
+          target:           '5-ft.-diameter sphere',
+          duration:         '[[?{Casting Level}]] round(s)',
+          saving_throw:     'Reflex negates',
+          spell_resistance: 'Yes',
+          text:             `A burning globe of fire rolls in whichever direction you point and burns those it strikes. It moves 30 feet per round. As part of this movement, it can ascend or jump up to 30 feet to strike a target. If it enters a space with a creature, it stops moving for the round and deals ‹2d6› points of fire damage to that creature, though a successful Reflex save negates that damage. A *flaming sphere* rolls over barriers less than 4 feet tall. It ignites flammable substances it touches and illuminates the same area as a torch would.
+                             The sphere moves as long as you actively direct it (a move action for you); otherwise, it merely stays at rest and burns. It can be extinguished by any means that would put out a normal fire of its size. The surface of the sphere has a spongy, yielding consistency and so does not cause damage except by its flame. It cannot push aside unwilling creatures or batter down large obstacles. A *flaming sphere* winks out if it exceeds the spell’s range.`,
+          material:         '**Arcane Material Component:** A bit of tallow, a pinch of brimstone, and a dusting of powdered iron.'
+        },
+        'flare': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Flare',
+          school:           'Evocation [Light]',
+          level:            'Brd 0, Drd 0, Sor/Wiz 0',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Effect',
+          target:           'Burst of light',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude negates',
+          spell_resistance: 'Yes',
+          text:             `This cantrip creates a burst of light. If you cause the light to burst directly in front of a single creature, that creature is [dazzled](https://www.dandwiki.com/wiki/SRD:Dazzled) for 1 minute unless it makes a successful Fortitude save. Sightless creatures, as well as creatures already [dazzled](https://www.dandwiki.com/wiki/SRD:Dazzled), are not affected by *flare*.`,
+          material:         null
+        },
+        'flesh to stone': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Flesh_to_Stone',
+          school:           'Transmutation',
+          level:            'Sor/Wiz 6',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude negates',
+          spell_resistance: 'Yes',
+          text:             `The subject, along with all its carried gear, turns into a mindless, inert statue. If the statue resulting from this spell is broken or damaged, the subject (if ever returned to its original state) has similar damage or deformities. The creature is not [dead](https://www.dandwiki.com/wiki/SRD:Dead), but it does not seem to be alive either when viewed with spells such as [*deathwatch*](https://www.dandwiki.com/wiki/SRD:Deathwatch).
+                             Only creatures made of flesh are affected by this spell.`,
+          material:         '*Material Component:* Lime, water, and earth.'
+        },
+        'floating disk': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Floating_Disk',
+          school:           'Evocation [Force]',
+          level:            'Sor/Wiz 1',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Effect',
+          target:           '3-ft.-diameter disk of force',
+          duration:         '[[?{Casting Level}]] hour(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You create a slightly concave, circular plane of force that follows you about and carries loads for you. The disk is 3 feet in diameter and 1 inch deep at its center. It can hold [[100*?{Casting Level}]] pounds of weight. (If used to transport a liquid, its capacity is 2 gallons.) The disk floats approximately 3 feet above the ground at all times and remains level. It floats along horizontally within spell range and will accompany you at a rate of no more than your normal speed each round. If not otherwise directed, it maintains a constant interval of 5 feet between itself and you. The disk winks out of existence when the spell duration expires. The disk also winks out if you move beyond range or try to take the disk more than 3 feet away from the surface beneath it. When the disk winks out, whatever it was supporting falls to the surface beneath it.`,
+          material:         '**Material Component:** A drop of mercury.'
+        },
+        'fly': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Fly_%28Spell%29',
+          school:           'Transmutation',
+          level:            'Sor/Wiz 3, Travel 3',
+          components:       'V, S, F/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The subject can fly at a speed of 60 feet (or 40 feet if it wears medium or heavy armor, or if it carries a medium or heavy load). It can ascend at half speed and descend at double speed, and its maneuverability is good. Using a *fly* spell requires only as much concentration as walking, so the subject can attack or cast spells normally. The subject of a *fly* spell can charge but not run, and it cannot carry aloft more weight than its maximum load, plus any armor it wears.
+                             Should the spell duration expire while the subject is still aloft, the magic fails slowly. The subject floats downward 60 feet per round for 1d6 rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking 1d6 points of damage per 10 feet of fall. Since dispelling a spell effectively ends it, the subject also descends in this way if the *fly* spell is dispelled, but not if it is negated by an [*antimagic field*](https://www.dandwiki.com/wiki/SRD:Antimagic_Field).`,
+          material:         '**Arcane Focus:** A wing feather from any bird.'
+        },
+        'fog cloud': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Fog_Cloud',
+          school:           'Conjuration (Creation)',
+          level:            'Drd 2, Sor/Wiz 2, Water 2, Weather 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Effect',
+          target:           'Fog spreads in 20-ft. radius, 20 ft. high',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `A bank of fog billows out from the point you designate. The fog obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has [concealment](https://www.dandwiki.com/wiki/SRD:Concealment) (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker can’t use sight to locate the target).
+                             A moderate wind (11+ mph) disperses the fog in 4 rounds; a strong wind (21+ mph) disperses the fog in 1 round.
+                             The spell does not function underwater.`,
+          material:         null
+        },
+        'forbiddance': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Forbiddance',
+          school:           'Abjuration',
+          level:            'Clr 6',
+          components:       'V, S, M, DF',
+          casting_time:     '6 rounds',
+          range:            'medium',
+          target_type:      'Area',
+          target:           '[[?{Casting Level}]] × 60-ft. cube (S)',
+          duration:         'Permanent',
+          saving_throw:     'See text',
+          spell_resistance: 'Yes',
+          text:             `*Forbiddance* seals an area against all planar travel into or within it. This includes all teleportation spells (such as [*dimension door*](https://www.dandwiki.com/wiki/SRD:Dimension_Door) and [*teleport*](https://www.dandwiki.com/wiki/SRD:Teleport)), plane shifting, astral travel, ethereal travel, and all summoning spells. Such effects simply fail automatically.
+                             In addition, it damages entering creatures whose alignments are different from yours. The effect on those attempting to enter the warded area is based on their alignment relative to yours (see below). A creature inside the area when the spell is cast takes no damage unless it exits the area and attempts to reenter, at which time it is affected as normal.
+                             *Alignments identical:* No effect. The creature may enter the area freely (although not by planar travel).
+                             *Alignments different with respect to either law/chaos or good/evil:* The creature takes ‹6d6› points of damage. A successful Will save halves the damage, and spell resistance applies.
+                             *Alignments different with respect to both law/chaos and good/evil:* The creature takes ‹12d6› points of damage. A successful Will save halves the damage, and spell resistance applies.
+                             At your option, the abjuration can include a password, in which case creatures of alignments different from yours can avoid the damage by speaking the password as they enter the area. You must select this option (and the password) at the time of casting.
+                             [*Dispel magic*](https://www.dandwiki.com/wiki/SRD:Dispel_Magic) does not dispel a *forbiddance* effect unless the dispeller’s level is at least as high as your caster level.
+                             You can’t have multiple overlapping *forbiddance* effects. In such a case, the more recent effect stops at the boundary of the older effect.`,
+          material:         '**Material Component:** A sprinkling of holy water and rare incenses worth at least 1,500 gp, plus 1,500 gp per 60-foot cube. If a password is desired, this requires the burning of additional rare incenses worth at least 1,000 gp, plus 1,000 gp per 60-foot cube.'
+        },
+        'forcecage': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Forcecage',
+          school:           'Evocation [Force]',
+          level:            'Sor/Wiz 7',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Area',
+          target:           'Barred cage (20-ft. cube) or windowless cell (10-ft. cube)',
+          duration:         '[[2*?{Casting Level}]] hour(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This powerful spell brings into being an immobile, [invisible](https://www.dandwiki.com/wiki/SRD:Invisible) cubical prison composed of either bars of force or solid walls of force (your choice).
+                             Creatures within the area are caught and contained unless they are too big to fit inside, in which case the spell automatically fails. Teleportation and other forms of astral travel provide a means of escape, but the force walls or bars extend into the Ethereal Plane, blocking ethereal travel.
+                             Like a [*wall of force*](https://www.dandwiki.com/wiki/SRD:Wall_of_Force) spell, a *forcecage* resists [*dispel magic*](https://www.dandwiki.com/wiki/SRD:Dispel_Magic), but it is vulnerable to a *disintegrate* spell, and it can be destroyed by a *sphere of annihilation* or a *rod of cancellation*.
+                             *Barred Cage:* This version of the spell produces a 20-foot cube made of bands of force (similar to a *wall of force* spell) for bars. The bands are a half-inch wide, with half-inch gaps between them. Any creature capable of passing through such a small space can escape; others are confined. You can’t attack a creature in a barred cage with a weapon unless the weapon can fit between the gaps. Even against such weapons (including arrows and similar ranged attacks), a creature in the barred cage has cover. All spells and breath weapons can pass through the gaps in the bars.
+                             *Windowless Cell:* This version of the spell produces a 10-foot cube with no way in and no way out. Solid walls of force form its six sides.`,
+          material:         '**Material Component:** Ruby dust worth 1,500 gp, which is tossed into the air and disappears when you cast the spell.'
+        },
+        'forceful hand': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Forceful_Hand',
+          school:           'Evocation [Force]',
+          level:            'Sor/Wiz 6',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Effect',
+          target:           '10-ft. hand',
+          duration:         '[[?{Casting Level}]] round(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `This spell functions like [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand), except that the *forceful hand* pursues and pushes away the opponent that you designate. Treat this attack as a [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) with a \`\`+14 bonus\`\` on the Strength check (+8 for Strength 27, +4 for being Large, and a +2 bonus for charging, which it always gets). The hand always moves with the opponent to push that target back the full distance allowed, and it has no speed limit. Directing the spell to a new target is a move action.
+                             A very strong creature could not push the hand out of its way because the latter would instantly reposition itself between the creature and you, but an opponent could push the hand up against you by successfully bull rushing it.`,
+          material:         '**Focus:** A sturdy glove made of leather or heavy cloth.'
+        },
+        'foresight': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Foresight',
+          school:           'Divination',
+          level:            'Drd 9, Knowledge 9, Sor/Wiz 9',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Personal or touch',
+          target_type:      'Target',
+          target:           'See text',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'None or Will negates (harmless)',
+          spell_resistance: 'No or Yes (harmless)',
+          text:             `This spell grants you a powerful sixth sense in relation to yourself or another. Once *foresight* is cast, you receive instantaneous warnings of impending danger or harm to the subject of the spell. You are never surprised or flat-footed. In addition, the spell gives you a general idea of what action you might take to best protect yourself and gives you a \`\`+2 insight bonus\`\` to AC and Reflex saves. This insight bonus is lost whenever you would lose a Dexterity bonus to AC.
+                             When another creature is the subject of the spell, you receive warnings about that creature. You must communicate what you learn to the other creature for the warning to be useful, and the creature can be caught unprepared in the absence of such a warning. Shouting a warning, yanking a person back, and even telepathically communicating (via an appropriate spell) can all be accomplished before some danger befalls the subject, provided you act on the warning without delay. The subject, however, does not gain the insight bonus to AC and Reflex saves.`,
+          material:         '**Arcane Material Component:** A hummingbird’s feather.'
+        },
+        'fox\'s cunning': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Fox%27s_Cunning',
+          school:           'Transmutation',
+          level:            'Asn 2, Brd 2, Sor/Wiz 2',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes',
+          text:             `The transmuted creature becomes smarter. The spell grants a \`\`+4 enhancement bonus\`\` to Intelligence, adding the usual benefits to Intelligence-based skill checks and other uses of the Intelligence modifier. Wizards (and other spellcasters who rely on Intelligence) affected by this spell do not gain any additional bonus spells for the increased Intelligence, but the save DCs for spells they cast while under this spell’s effect do increase. This spell doesn’t grant extra skill points.`,
+          material:         '**Arcane Material Component:** A few hairs, or a pinch of dung, from a fox.'
+        },
+        'freedom': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Freedom',
+          school:           'Abjuration',
+          level:            'Liberation 9, Sor/Wiz 9',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.) or see text',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes',
+          text:             `The subject is freed from spells and effects that restrict its movement, including [*binding*](https://www.dandwiki.com/wiki/SRD:Binding), [*entangle*](https://www.dandwiki.com/wiki/SRD:Entangle), [grappling](https://www.dandwiki.com/wiki/SRD:Grapple), [*imprisonment*](https://www.dandwiki.com/wiki/SRD:Imprisonment), [*maze*](https://www.dandwiki.com/wiki/SRD:Maze), [paralysis](https://www.dandwiki.com/wiki/SRD:Paralysis), [*petrification*](https://www.dandwiki.com/wiki/SRD:Flesh_to_Stone), [pinning](https://www.dandwiki.com/wiki/SRD:Grapple), [*sleep*](https://www.dandwiki.com/wiki/SRD:Sleep), [*slow*](https://www.dandwiki.com/wiki/SRD:Slow), [stunning](https://www.dandwiki.com/wiki/SRD:Stunned), [*temporal stasis*](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis), and [*web*](https://www.dandwiki.com/wiki/SRD:Web). To free a creature from *imprisonment* or *maze*, you must know its name and background, and you must cast this spell at the spot where it was entombed or banished into the *maze*.`,
+          material:         null
+        },
+        'freedom of movement': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Freedom_of_Movement',
+          school:           'Abjuration',
+          level:            'Asn 4, Blg 4, Brd 4, Clr 4, Drd 4, Liberation 4, Luck 4, Rgr 4',
+          components:       'V, S, M, DF',
+          casting_time:     '1 standard action',
+          range:            'Personal or touch',
+          target_type:      'Target',
+          target:           'You or creature touched',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `This spell enables you or a creature you touch to move and attack normally for the duration of the spell, even under the influence of magic that usually impedes movement, such as [paralysis](https://www.dandwiki.com/wiki/SRD:Paralysis), [*solid fog*](https://www.dandwiki.com/wiki/SRD:Solid_Fog), [*slow*](https://www.dandwiki.com/wiki/SRD:Slow), and [*web*](https://www.dandwiki.com/wiki/SRD:Web). The subject automatically succeeds on any [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) check made to resist a grapple attempt, as well as on grapple checks or Escape Artist checks made to escape a grapple or a pin.
+                             The spell also allows the subject to move and attack normally while underwater, even with slashing weapons such as axes and swords or with bludgeoning weapons such as flails, hammers, and maces, provided that the weapon is wielded in the hand rather than hurled. The *freedom of movement* spell does not, however, allow water breathing.`,
+          material:         '**Material Component:** A leather thong, bound around the arm or a similar appendage.'
+        },
+        'freezing sphere': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Freezing_Sphere',
+          school:           'Evocation [Cold]',
+          level:            'Sor/Wiz 6',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            'long',
+          target_type:      'Target, Effect, or Area',
+          target:           'See text',
+          duration:         'Instantaneous or [[?{Casting Level}]] round(s); see text',
+          saving_throw:     'Reflex half; see text',
+          spell_resistance: 'Yes',
+          text:             `*Freezing sphere* creates a frigid globe of cold energy that streaks from your fingertips to the location you select, where it explodes in a 10-foot-radius burst, dealing [[[[{?{Casting Level},15}kl1]]d6]] points of cold damage to each creature in the area. An elemental (water) creature instead takes [[[[{?{Casting Level},15}kl1]]d8]] points of cold damage.
+                             If the *freezing sphere* strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area equal to [[100*[[{?{Casting Level},15}kl1]]]] square feet. This ice lasts for [[?{Casting Level}]] round(s). Creatures that were swimming on the surface of frozen water become trapped in the ice. Attempting to break free is a full-round action. A trapped creature must make a DC 25 Strength check or a DC 25 Escape Artist check to do so.
+                             You can refrain from firing the globe after completing the spell, if you wish. Treat this as a touch spell for which you are holding the charge. You can hold the charge for as long as [[?{Casting Level}]] round(s), at the end of which time the *freezing sphere* bursts centered on you (and you receive no saving throw to resist its effect). Firing the globe in a later round is a standard action.`,
+          material:         '**Focus:** A small crystal sphere.'
+        },
 
 
 
