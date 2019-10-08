@@ -2064,7 +2064,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Drd 7, Scalykind 7',
           components:       'V, S',
           casting_time:     '1 round',
-          range:            'close',
+          range:            'Close ([[25+(5*floor([[?{Casting Level}/2]]))]]) / 100 ft.; see text',
           target_type:      'Effect',
           target:           '[[floor(?{Casting Level}/2)]] swarm of centipedes',
           duration:         '[[?{Casting Level}]] minute(s)',
