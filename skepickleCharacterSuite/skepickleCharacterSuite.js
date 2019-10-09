@@ -4741,7 +4741,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Sor/Wiz 8',
           components:       'V, S',
           casting_time:     '10 minutes',
-          range:            'Close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.); see text',,
+          range:            'Close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.); see text',
           target_type:      'Targets',
           target:           'Up to three [elementals](https://www.dandwiki.com/wiki/SRD:Elemental_Type) or [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type), totaling no more than 18 HD, no two of which can be more than 30 ft. apart when they appear.',
           duration:         'Instantaneous',
