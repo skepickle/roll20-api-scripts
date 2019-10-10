@@ -5872,41 +5872,69 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:null
         },
         // Spells that start with J
-        //'jump': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
-        //},
+        'jump': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Jump',
+          school:           'Transmutation',
+          level:            'Asn 1, Drd 1, Rgr 1, Sor/Wiz 1',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes',
+          text:             `The subject gets a +10 \`\`enhancement bonus\`\` on Jump checks. The enhancement bonus increases to +20 at caster level 5th, and to +30 (the maximum) at caster level 9th.`,
+          component_details:'Material Component: A grasshopper’s hind leg, which you break when the spell is cast.'
+        },
         // Spells that start with K
-        //'keen edge': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
-        //},
+        'keen edge': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Keen_Edge',
+          school:           'Transmutation',
+          level:            'Sor/Wiz 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'close',
+          target_type:      'Targets',
+          target:           'One weapon or fifty projectiles, all of which must be in contact with each other at the time of casting',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless, object)',
+          spell_resistance: 'Yes (harmless, object)',
+          text:             `This spell makes a weapon magically keen, improving its ability to deal telling blows. This transmutation doubles the threat range of the weapon. A threat range of 20 becomes 19–20, a threat range of 19–20 becomes 17–20, and a threat range of 18–20 becomes 15–20. The spell can be cast only on piercing or slashing weapons. If cast on arrows or crossbow bolts, the *keen edge* on a particular projectile ends after one use, whether or not the missile strikes its intended target. (Treat shuriken as arrows, rather than as thrown weapons, for the purpose of this spell.)
+                             Multiple effects that increase a weapon’s threat range (such as the *keen edge* spell and the Improved Critical feat) don’t stack. You can’t cast this spell on a natural weapon, such as a claw.`,
+          component_details:null
+        },
         //Epic Spell: kinetic control
-        //'knock': {
+        'knock': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Knock',
+          school:           'Transmutation',
+          level:            'Sor/Wiz 2',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            'medium',
+          target_type:      'Target',
+          target:           'One door, box, or chest with an area of up to [[10*?{Casting Level}]] sq. ft.',
+          duration:         'Instantaneous; see text',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `The *knock* spell opens stuck, barred, locked, [*held*](https://www.dandwiki.com/wiki/SRD:Hold_Portal), or [*arcane locked*](https://www.dandwiki.com/wiki/SRD:Arcane_Lock) doors. It opens secret doors, as well as locked or trick-opening boxes or chests. It also loosens welds, shackles, or chains (provided they serve to hold closures shut). If used to open an *arcane locked* door, the spell does not remove the *arcane lock* but simply suspends its functioning for 10 minutes. In all other cases, the door does not relock itself or become stuck again on its own. *Knock* does not raise barred gates or similar impediments (such as a portcullis), nor does it affect ropes, vines, and the like. The effect is limited by the area. Each spell can undo as many as two means of preventing egress.`,
+          component_details:null
+        },
+        'know direction': {
+          ref:              'https://www.dandwiki.com/wiki/SRD:Know_Direction',
+          school:           'Divination',
+          level:            'Brd 0, Drd 0',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Instantaneous',
+          text:             `You instantly know the direction of north from your current position. The spell is effective in any environment in which “north” exists, but it may not work in extraplanar settings. Your knowledge of north is correct at the moment of casting, but you can get lost again within moments if you don’t find some external reference point to help you keep track of direction.`,
+          component_details:null
+        },
+        // Spells that start with L
+        'legend lore': {
         //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
@@ -5921,8 +5949,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  spell_resistance: '',
         //  text:             ``,
         //  component_details:null
-        //},
-        //'know direction': {
+        },
+        'lesser confusion': {
         //// ↲’‹›«»•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
@@ -5937,10 +5965,1341 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  spell_resistance: '',
         //  text:             ``,
         //  component_details:null
-        //},
+        },
+        'lesser geas': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'lesser globe of invulnerability': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'lesser planar ally': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'lesser planar binding': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'lesser restoration': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'lesser telepathic bond': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        // Epic Spell: let go of me
+        'levitate': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'light': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'lightning bolt': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'limited wish': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'liveoak': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        // Epic Spell: living lightning
+        'locate creature': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'locate object': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'longstrider': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        // Epic Wish: lord of nightmares
+        'lullaby': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        // Spells that start with M
+        'maddening scream': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mage\'s disjunction': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mage\'s faithful hound': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mage\'s lucubration': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mage\'s magnificent mansion': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mage\'s private sanctum': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mage\'s sword': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mage armor': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mage hand': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'magic aura': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'magic circle against chaos': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'magic circle against evil': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'magic circle against good': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'magic circle against law': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'magic fang': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'magic jar': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'magic missile': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'magic mouth': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'magic stone': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'magic vestment': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'magic weapon': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'major creation': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'major image': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'make whole': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mark of justice': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass bear\'s endurance': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass bull\'s strength': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass cat\'s grace': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass charm monster': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass cure critical wounds': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass cure light wounds': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass cure moderate wounds': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass cure serious wounds': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass eagle\'s splendor': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass enlarge person': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass fox\'s cunning': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        // Epic Spell: mass frog
+        'mass heal': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass hold monster': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass hold person': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass inflict critical wounds': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass inflict light wounds': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass inflict moderate wounds': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass inflict serious wounds': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass invisibility': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass owl\'s wisdom': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass reduce person': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mass suggestion': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'maze': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'meld into stone': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mending': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mental pinnacle': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'message': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'meteor swarm': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mind blank': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mind fog': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'minor creation': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'minor image': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'miracle': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mirage arcana': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mirror image': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'misdirection': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mislead': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'mnemonic enhancer': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'modify memory': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'moment of prescience': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        // Epic Spell: momento mori
+        'mount': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'move earth': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        // Epic Spell: mummy dust
 
 
-
+        // Spells that start with N
+        // Spells that start with O
+        // Spells that start with P
+        // Spells that start with Q
+        // Spells that start with R
+        // Spells that start with S
+        // Spells that start with T
+        // Spells that start with U
+        // Spells that start with V
+        // Spells that start with W
+        // Spells that start with X
+        // Spells that start with Y
+        // Spells that start with Z
 
 
         //'': {
@@ -6329,7 +7688,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'invisibility sphere':        { recharge: 'General' },
         'iron body':                  { recharge: '30 minutes' },
         'ironwood':                   { recharge: '12 hours' },
-        'irresistible dance':         { recharge: 'General' }
+        'irresistible dance':         { recharge: 'General' },
+        'jump':                       { recharge: '5 minutes' },
+        'keen edge':                  { recharge: '1 hour' },
+        'knock':                      { recharge: '5 minutes' },
+        'know direction':             { recharge: 'General' }
         //'': { recharge: 'General' },
       }
     },
