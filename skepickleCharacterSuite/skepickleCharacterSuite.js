@@ -760,10 +760,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              If this save fails, it loses its ability to understand language, as well as all other memories of its previous form, and its Hit Dice and hit points change to match an average creature of its new form. These abilities and statistics return to normal if the effect is later ended.
                              [Incorporeal](http://www.d20srd.org/srd/conditionSummary.htm#incorporeal) or gaseous creatures are immune to baleful polymorph, and a creature with the shapechanger subtype (such as a lycanthrope or a doppelganger) can revert to its natural form as a standard action (which ends the spell’s effect).`
         },
-        //REVIEW MARKER
         //TODO? baleful transposition -- might not be SRD!
         'bane': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Bane',
+          ref:              'http://www.d20srd.org/srd/spells/bane.htm',
           school:           'Enchantment (Compulsion) [Fear, Mind-Affecting]',
           level:            'Clr 1',
           components:       'V, S, DF',
@@ -774,12 +773,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `*Bane* fills your enemies with fear and doubt. Each affected creature takes a -1 \`\`penalty\`\` on attack rolls and a -1 \`\`penalty\`\` on saving throws against fear effects.
-                             *Bane* counters and dispels [*bless*](https://www.dandwiki.com/wiki/SRD:Bless).`,
-          component_details:null
+          text:             `Bane fills your enemies with fear and doubt. Each affected creature takes a **-1 penalty** on attack rolls and a **-1 penalty** on saving throws against fear effects.
+                             Bane counters and dispels ***[bless](http://www.d20srd.org/srd/spells/bless.htm)***.`
         },
         'banishment': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Banishment',
+          ref:              'http://www.d20srd.org/srd/spells/banishment.htm',
           school:           'Abjuration',
           level:            'Clr 6, Sor/Wiz 7',
           components:       'V, S, F',
@@ -790,13 +788,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `A *banishment* spell is a more powerful version of the [*dismissal*](https://www.dandwiki.com/wiki/SRD:Dismissal) spell. It enables you to force [extraplanar creatures](https://www.dandwiki.com/wiki/SRD:Outsider_Type) out of your home plane. As many as 2 Hit Dice of creatures per caster level can be banished.
-                             You can improve the spell’s chance of success by presenting at least one object or substance that the target hates, fears, or otherwise opposes. For each such object or substance, you gain a +1 \`\`bonus\`\` on your caster level check to overcome the target’s [spell resistance](https://www.dandwiki.com/wiki/SRD:Spell_Resistance) (if any), the saving throw DC increases by 2.
-                             Certain rare items might work twice as well as a normal item for the purpose of the bonuses (each providing a +2 \`\`bonus\`\` on the caster level check against [spell resistance](https://www.dandwiki.com/wiki/SRD:Spell_Resistance) and increasing the save DC by 4).`,
+          text:             `A banishment spell is a more powerful version of the ***[dismissal](http://www.d20srd.org/srd/spells/dismissal.htm)*** spell. It enables you to force extraplanar creatures out of your home plane. As many as 2 Hit Dice of creatures per caster level can be banished.
+                             You can improve the spell’s chance of success by presenting at least one object or substance that the target hates, fears, or otherwise opposes. For each such object or substance, you gain a **+1 bonus** on your caster level check to overcome the target’s spell resistance (if any), the saving throw DC increases by 2.
+                             Certain rare items might work twice as well as a normal item for the purpose of the bonuses (each providing a **+2 bonus** on the caster level check against spell resistance and increasing the save DC by 4).`,
           component_details:'Arcane Focus: Any item that is distasteful to the subject (optional, see above).'
         },
         'barkskin': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Barkskin',
+          ref:              'http://www.d20srd.org/srd/spells/barkskin.htm',
           school:           'Transmutation',
           level:            'Drd 2, Rgr 2, Plant 2',
           components:       'V, S, DF',
@@ -807,12 +805,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s)',
           saving_throw:     'None',
           spell_resistance: 'Yes (harmless)',
-          text:             `*Barkskin* toughens a creature’s skin. The effect grants a +[[2+{floor(?{Casting Level}/3),5}kl1]] enhancement bonus to the creature’s existing natural [armor bonus](https://www.dandwiki.com/wiki/SRD:Armor_Bonus).
-                             The enhancement bonus provided by *barkskin* stacks with the target’s natural [armor bonus](https://www.dandwiki.com/wiki/SRD:Armor_Bonus), but not with other enhancement bonuses to [natural armor](https://www.dandwiki.com/wiki/SRD:Natural_Armor). A creature without [natural armor](https://www.dandwiki.com/wiki/SRD:Natural_Armor) has an effective [natural armor bonus](https://www.dandwiki.com/wiki/SRD:Natural_Armor_Bonus) of +0.`,
-          component_details:null
+          text:             `Barkskin toughens a creature’s skin. The effect grants a **+[[2+{floor({(?{Casting Level}-3)/3,0}kh1),3}kl1]] enhancement bonus** to the creature’s existing natural armor bonus.
+                             The enhancement bonus provided by barkskin stacks with the target’s natural armor bonus, but not with other enhancement bonuses to natural armor. A creature without natural armor has an effective natural armor bonus of +0.`
         },
         'bear\'s endurance': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Bear%27s_Endurance',
+          ref:              'http://www.d20srd.org/srd/spells/bearsEndurance.htm',
           school:           'Transmutation',
           level:            'Clr 2, Drd 2, Rgr 2, Sor/Wiz 2',
           components:       'V, S, DF',
@@ -823,12 +820,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The affected creature gains greater vitality and stamina. The spell grants the subject a +4 \`\`enhancement bonus\`\` to Constitution, which adds the usual benefits to hit points, Fortitude saves, [Constitution checks](https://www.dandwiki.com/wiki/SRD:Constitution), and so forth.
-                             hit points gained by a temporary increase in Constitution score are not temporary hit points. They go away when the subject’s Constitution drops back to normal. They are not lost first as temporary hit points are.`,
-          component_details:null
+          text:             `The affected creature gains greater vitality and stamina. The spell grants the subject a **+4 enhancement bonus** to Constitution, which adds the usual benefits to hit points, Fortitude saves, Constitution checks, and so forth.
+                             hit points gained by a temporary increase in Constitution score are not temporary hit points. They go away when the subject’s Constitution drops back to normal. They are not lost first as temporary hit points are.`
         },
         'bestow curse': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Bestow_Curse',
+          ref:              'http://www.d20srd.org/srd/spells/bestowCurse.htm',
           school:           'Necromancy',
           level:            'Clr 3, Sor/Wiz 4',
           components:       'V, S',
@@ -840,16 +836,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `You place a curse on the subject. Choose one of the following three effects.
-                             • -6 decrease to an [ability score](https://www.dandwiki.com/wiki/SRD:Ability_Scores) (minimum 1).
-                             • -4 \`\`penalty\`\` on [attack rolls](https://www.dandwiki.com/wiki/SRD:Attack_Roll), saves, [ability checks](https://www.dandwiki.com/wiki/SRD:Ability_Check), and [skill checks](https://www.dandwiki.com/wiki/SRD:Skill_Check).
+                             • -6 decrease to an ability score (minimum 1).
+                             • -4 penalty on attack rolls, saves, ability checks, and skill checks.
                              • Each turn, the target has a 50% chance to act normally; otherwise, it takes no action.
                              You may also invent your own curse, but it should be no more powerful than those described above.
-                             The *curse* bestowed by this spell cannot be dispelled, but it can be removed with a [*break enchantment*](https://www.dandwiki.com/wiki/SRD:Break_Enchantment), [*limited wish*](https://www.dandwiki.com/wiki/SRD:Limited_Wish), [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle), [*remove curse*](https://www.dandwiki.com/wiki/SRD:Remove_Curse), or [*wish*](https://www.dandwiki.com/wiki/SRD:Wish) spell.
-                             *Bestow curse* counters [*remove curse*](https://www.dandwiki.com/wiki/SRD:Remove_Curse).`,
-          component_details:null
+                             The curse bestowed by this spell cannot be dispelled, but it can be removed with a ***[break enchantment](http://www.d20srd.org/srd/spells/breakEnchantment.htm)***, ***[limited wish](http://www.d20srd.org/srd/spells/limitedWish.htm)***, ***[miracle](http://www.d20srd.org/srd/spells/miracle.htm)***, ***[remove curse](http://www.d20srd.org/srd/spells/bestowCurse.htm)***, or ***[wish](http://www.d20srd.org/srd/spells/wish.htm)*** spell.
+                             Bestow curse counters ***[remove curse](http://www.d20srd.org/srd/spells/bestowCurse.htm)***.`
         },
         'binding': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Binding',
+          ref:              'http://www.d20srd.org/srd/spells/binding.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
           level:            'Sor/Wiz 8',
           components:       'V, S, M',
@@ -860,23 +855,22 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'See text (D)',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `A *binding* spell creates a magical restraint to hold a creature. The target gets an initial saving throw only if its Hit Dice equal at least one-half your caster level.
-                             You may have as many as six assistants help you with the spell. For each assistant who casts [*suggestion*](https://www.dandwiki.com/wiki/SRD:Suggestion), your caster level for this casting of *binding* increases by 1. For each assistant who casts [*dominate animal*](https://www.dandwiki.com/wiki/SRD:Dominate_Animal), [*dominate person*](https://www.dandwiki.com/wiki/SRD:Dominate_Person), or *[dominate monster*](https://www.dandwiki.com/wiki/SRD:Dominate_Monster), your caster level for this casting of *binding* increases by a number equal to one-third of that assistant’s level, provided that the spell’s target is appropriate for a *binding* spell. Since the assistants’ spells are cast simply to improve your caster level for the purpose of the *binding* spell, saving throws and [spell resistance](https://www.dandwiki.com/wiki/SRD:Spell_Resistance) against the assistants’ spells are irrelevant. Your caster level determines whether the target gets an initial Willsaving throw and how long the *binding* lasts. All *binding* spells are dismissible.
-                             Regardless of the version of *binding* you cast, you can specify triggering conditions that end the spell and release the creature whenever they occur. These triggers can be as simple or elaborate as you desire, but the condition must be reasonable and have a likelihood of coming to pass. The conditions can be based on a creature’s name, identity, or alignment but otherwise must be based on observable actions or qualities. Intangibles such as level, [class](https://www.dandwiki.com/wiki/SRD:Class), Hit Dice, or hit points don’t qualify. Once the spell is cast, its triggering conditions cannot be changed. Setting a release condition increases the save DC (assuming a saving throw is allowed) by 2.
-                             If you are casting any of the first three versions of *binding* (those with limited durations), you may cast additional *binding* spells to prolong the effect, since the durations overlap. If you do so, the target gets a saving throw at the end of the first spell’s duration, even if your caster level was high enough to disallow an initial saving throw. If the creature succeeds on this save, all the *binding* spells it has received are broken.
-                             The *binding* spell has six versions. Choose one of the following versions when you cast the spell.
-                             *Chaining:* The subject is confined by restraints that generate an [*antipathy*](http://www.d20srd.org/srd/spells/antipathy.htm) spell affecting all creatures who approach the subject, except you. The duration is one year per caster level. The subject of this form of *binding* is confined to the spot it occupied when it received the spell.
-                             *Slumber:* This version causes the subject to become comatose for as long as one year per caster level. The subject does not need to eat or drink while *slumbering*, nor does it age. This form of *binding* is more difficult to cast than *chaining*, making it slightly easier to resist. Reduce the spell’s save DC by 1.
-                             *Bound Slumber:* This combination of *chaining* and *slumber* lasts for as long as one month per caster level. Reduce the save DC by 2.
+          text:             `A binding spell creates a magical restraint to hold a creature. The target gets an initial saving throw only if its Hit Dice equal at least one-half your caster level.
+                             You may have as many as six assistants help you with the spell. For each assistant who casts ***[suggestion](http://www.d20srd.org/srd/spells/suggestion.htm)***, your caster level for this casting of binding increases by 1. For each assistant who casts ***[dominate animal](http://www.d20srd.org/srd/spells/dominateAnimal.htm)***, ***[dominate person](http://www.d20srd.org/srd/spells/dominatePerson.htm)***, or ***[dominate monster](http://www.d20srd.org/srd/spells/dominateMonster.htm)***, your caster level for this casting of binding increases by a number equal to one-third of that assistant’s level, provided that the spell’s target is appropriate for a binding spell. Since the assistants’ spells are cast simply to improve your caster level for the purpose of the binding spell, saving throws and spell resistance against the assistants’ spells are irrelevant. Your caster level determines whether the target gets an initial Willsaving throw and how long the binding lasts. All binding spells are dismissible.
+                             Regardless of the version of binding you cast, you can specify triggering conditions that end the spell and release the creature whenever they occur. These triggers can be as simple or elaborate as you desire, but the condition must be reasonable and have a likelihood of coming to pass. The conditions can be based on a creature’s name, identity, or alignment but otherwise must be based on observable actions or qualities. Intangibles such as level, class, Hit Dice, or hit points don’t qualify. Once the spell is cast, its triggering conditions cannot be changed. Setting a release condition increases the save DC (assuming a saving throw is allowed) by 2.
+                             If you are casting any of the first three versions of binding (those with limited durations), you may cast additional binding spells to prolong the effect, since the durations overlap. If you do so, the target gets a saving throw at the end of the first spell’s duration, even if your caster level was high enough to disallow an initial saving throw. If the creature succeeds on this save, all the binding spells it has received are broken.
+                             The binding spell has six versions. Choose one of the following versions when you cast the spell.
+                             *Chaining:* The subject is confined by restraints that generate an ***[antipathy](http://www.d20srd.org/srd/spells/antipathy.htm)*** spell affecting all creatures who approach the subject, except you. The duration is one year per caster level. The subject of this form of binding is confined to the spot it occupied when it received the spell.
+                             *Slumber:* This version causes the subject to become comatose for as long as one year per caster level. The subject does not need to eat or drink while slumbering, nor does it age. This form of binding is more difficult to cast than chaining, making it slightly easier to resist. Reduce the spell’s save DC by 1.
+                             *Bound Slumber:* This combination of chaining and slumber lasts for as long as one month per caster level. Reduce the save DC by 2.
                              *Hedged Prison:* The subject is transported to or otherwise brought within a confined area from which it cannot wander by any means. The effect is permanent. Reduce the save DC by 3.
-                             *Metamorphosis:* The subject assumes gaseous form, except for its head or face. It is held harmless in a jar or other container, which may be transparent if you so choose. The creature remains aware of its surroundings and can speak, but it cannot leave the container, attack, or use any of its powers or abilities. The *binding* is permanent. The subject does not need to breathe, eat, or drink while *metamorphosed*, nor does it age. Reduce the save DC by 4.
-                             *Minimus Containment:* The subject is shrunk to a height of 1 inch or even less and held within some gem, jar, or similar object. The *binding* is permanent. The subject does not need to breathe, eat, or drink while *contained*, nor does it age. Reduce the save DC by 4.
-                             You can’t dispel a *binding* spell with [*dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm) or a similar effect, though an [*antimagic field*](http://www.d20srd.org/srd/specialAbilities.htm#antimagic) or [*Mage’s disjunction*](https://www.dandwiki.com/wiki/SRD:Mage%27s_Disjunction) affects it normally. A bound extraplanar creature cannot be sent back to its home plane due to [*dismissal*](https://www.dandwiki.com/wiki/SRD:Dismissal), [*banishment*](https://www.dandwiki.com/wiki/SRD:Banishment), *or a similar effect*.`,
-          component_details:`Components: The components for a binding spell vary according to the version of the spell, but they always include a continuous chanting utterance read from the scroll or spellbook page containing the spell, somatic gestures, and materials appropriate to the form of binding used. These components can include such items as miniature chains of special metals, soporific herbs of the rarest sort (for slumber bindings), a bell jar of the finest crystal, and the like.
-                             In addition to the specially made props suited to the specific type of binding (cost 500 gp), the spell requires opals worth at least 500 gp for each HD of the target and a vellum depiction or carved statuette of the subject to be captured.`
+                             *Metamorphosis:* The subject assumes gaseous form, except for its head or face. It is held harmless in a jar or other container, which may be transparent if you so choose. The creature remains aware of its surroundings and can speak, but it cannot leave the container, attack, or use any of its powers or abilities. The binding is permanent. The subject does not need to breathe, eat, or drink while metamorphosed, nor does it age. Reduce the save DC by 4.
+                             *Minimus Containment:* The subject is shrunk to a height of 1 inch or even less and held within some gem, jar, or similar object. The binding is permanent. The subject does not need to breathe, eat, or drink while contained, nor does it age. Reduce the save DC by 4.
+                             You can’t dispel a binding spell with ***[dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm)*** or a similar effect, though an ***[antimagic field](http://www.d20srd.org/srd/specialAbilities.htm#antimagic)*** or ***[Mage’s disjunction](http://www.d20srd.org/srd/spells/magesDisjunction.htm)*** affects it normally. A bound extraplanar creature cannot be sent back to its home plane due to ***[dismissal](http://www.d20srd.org/srd/spells/dismissal.htm)***, ***[banishment](http://www.d20srd.org/srd/spells/banishment.htm)***, or a similar effect.`,
+          component_details:`Components: The components for a binding spell vary according to the version of the spell, but they always include a continuous chanting utterance read from the scroll or spellbook page containing the spell, somatic gestures, and materials appropriate to the form of binding used. These components can include such items as miniature chains of special metals, soporific herbs of the rarest sort (for slumber bindings), a bell jar of the finest crystal, and the like.↲In addition to the specially made props suited to the specific type of binding (cost 500 gp), the spell requires opals worth at least 500 gp for each HD of the target and a vellum depiction or carved statuette of the subject to be captured.`
         },
         'black tentacles': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Black_Tentacles',
+          ref:              'http://www.d20srd.org/srd/spells/blackTentacles.htm',
           school:           'Conjuration (Creation)',
           level:            'Sor/Wiz 4',
           components:       'V, S, M',
@@ -888,13 +882,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell conjures a field of rubbery black tentacles, each 10 feet long. These waving members seem to spring forth from the earth, floor, or whatever surface is underfoot—including water. They grasp and entwine around creatures that enter the area, holding them fast and crushing them with great strength.
-                             Every creature within the area of the spell must make a [grapple check](https://www.dandwiki.com/wiki/SRD:Grapple), opposed by the [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) check of the tentacles. Treat the tentacles attacking a particular target as a Large creature with a base attack bonus equal to your caster level and a [Strength](https://www.dandwiki.com/wiki/SRD:Strength) score of 19. Thus, its [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) check modifier is equal to your caster level +8. The tentacles are immune to all types of damage.
-                             Once the tentacles [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) an opponent, they may make a [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) check each round on your turn to deal 1d6+4 points of bludgeoning damage. The tentacles continue to crush the opponent until the spell ends or the opponent escapes.
-                             Any creature that enters the area of the spell is immediately attacked by the tentacles. Even creatures who aren’t [grappling](https://www.dandwiki.com/wiki/SRD:Grappling) with the tentacles may move through the area at only half normal speed.`,
-          component_details:'Material Component: A piece of tentacle from a [giant](https://www.dandwiki.com/wiki/SRD:Giant_Type) octopus or a [giant](https://www.dandwiki.com/wiki/SRD:Giant_Type) squid.'
+                             Every creature within the area of the spell must make a grapple check, opposed by the grapple check of the tentacles. Treat the tentacles attacking a particular target as a Large creature with a base attack bonus equal to your caster level and a Strength score of 19. Thus, its grapple check modifier is equal to your caster level +8. The tentacles are immune to all types of damage.
+                             Once the tentacles grapple an opponent, they may make a grapple check each round on your turn to deal ‹1d6+4|[[1d6+4]] points of bludgeoning damage› points of bludgeoning damage. The tentacles continue to crush the opponent until the spell ends or the opponent escapes.
+                             Any creature that enters the area of the spell is immediately attacked by the tentacles. Even creatures who aren’t grappling with the tentacles may move through the area at only half normal speed.`,
+          component_details:'Material Component: A piece of tentacle from a giant octopus or a giant squid.'
         },
         'blade barrier': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Blade_Barrier',
+          ref:              'http://www.d20srd.org/srd/spells/bladeBarrier.htm',
           school:           'Evocation [Force]',
           level:            'Clr 6, Good 6, War 6',
           components:       'V, S',
@@ -907,11 +901,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `An immobile, vertical curtain of whirling blades shaped of pure force springs into existence. Any creature passing through the wall takes 1d6 points of ‹damage|[[[[{?{Casting Level},15}kl1]]d6]]› per caster level (maximum 15d6), with a Reflex save for half damage.
                              If you evoke the barrier so that it appears where creatures are, each creature takes damage as if passing through the wall. Each such creature can avoid the wall (ending up on the side of its choice) and thus take no damage by making a successful Reflex save.
-                             A *blade barrier* provides [cover](https://www.dandwiki.com/wiki/SRD:Cover) (+4 \`\`bonus\`\` to AC, +2 \`\`bonus\`\` on Reflex saves) against attacks made through it.`,
-          component_details:null
+                             A blade barrier provides cover (**+4 bonus** to AC, ***+2 bonus** on Reflex saves) against attacks made through it.`
         },
         'blasphemy': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Blasphemy',
+          ref:              'http://www.d20srd.org/srd/spells/blasphemy.htm',
           school:           'Evocation [Evil, Sonic]',
           level:            'Clr 7, Evil 7',
           components:       'V',
@@ -924,29 +917,24 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `Any nonevil creature within the area of a *blasphemy* spell suffers the following ill effects.
 
-                             **[[?{Casting Level}]] HD**
-                             • [Dazed](https://www.dandwiki.com/wiki/SRD:Dazed)
-                             **Up to [[?{Casting Level}-1]] HD**
-                             • Weakened, [dazed](https://www.dandwiki.com/wiki/SRD:Dazed)
-                             **Up to <= [[?{Casting Level}-5]] HD**
-                             • [Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed), weakened, [dazed](https://www.dandwiki.com/wiki/SRD:Dazed)
-                             **Up to <= [[?{Casting Level}-10]] HD**
-                             • Killed, [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed), weakened, [dazed](https://www.dandwiki.com/wiki/SRD:Dazed)
+                             • **[[?{Casting Level}]] HD**: Dazed
+                             • **Up to [[?{Casting Level}-1]] HD**: Weakened, dazed
+                             • **Up to [[?{Casting Level}-5]] HD**: Paralyzed, weakened, dazed
+                             • **Up to [[?{Casting Level}-10]] HD**: Killed, paralyzed, weakened, dazed
 
                              The effects are cumulative and concurrent.
                              No saving throw is allowed against these effects.
-                             *[Dazed](https://www.dandwiki.com/wiki/SRD:Dazed):* The creature can take no actions for 1 round, though it defends itself normally.
-                             *Weakened:* The creature’s [Strength](https://www.dandwiki.com/wiki/SRD:Strength) score decreases by [[2d6]] points for [[2d4]] rounds.
-                             *[Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed):* The creature is [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and [helpless](https://www.dandwiki.com/wiki/SRD:Helpless) for [[1d10]] minutes.
-                             *[Killed](http://www.d20srd.org/srd/conditionSummary.htm#dead)*: Living creatures die. [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures are destroyed.
-                             Furthermore, if you are on your home plane when you cast this spell, nonevil extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *blasphemy*. The banishment effect allows a Will save (at a -4 \`\`penalty\`\`) to negate.
-                             Creatures whose Hit Dice exceed your caster level are unaffected by *blasphemy*.`,
-          component_details:null
+                             *Dazed:* The creature can take no actions for 1 round, though it defends itself normally.
+                             *Weakened:* The creature’s Strength score decreases by [[2d6]] points for [[2d4]] rounds.
+                             *Paralyzed:* The creature is [paralyzed](http://www.d20srd.org/srd/conditionSummary.htm#paralyzed) and [helpless](http://www.d20srd.org/srd/conditionSummary.htm#helpless) for [[1d10]] minutes.
+                             *Killed*: Living creatures die. [Undead](http://www.d20srd.org/srd/typesSubtypes.htm#undeadType) creatures are destroyed.
+                             Furthermore, if you are on your home plane when you cast this spell, nonevil extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the blasphemy. The banishment effect allows a Will save (at a **-4 penalty**) to negate.
+                             Creatures whose Hit Dice exceed your caster level are unaffected by blasphemy.`
         },
         'bless': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Bless',
+          ref:              'http://www.d20srd.org/srd/spells/bless.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Clr 1, Community 1, Pal 1',
+          level:            'Clr 1, Pal 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '50 ft.',
@@ -955,12 +943,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'None',
           spell_resistance: 'Yes (harmless)',
-          text:             `*Bless* fills your allies with courage. Each ally gains a +1 \`\`morale bonus\`\` on [attack rolls](https://www.dandwiki.com/wiki/SRD:Attack_Roll) and on saving throws against fear effects.
-                             *Bless* counters and dispels [*bane*](https://www.dandwiki.com/wiki/SRD:Bane).`,
-          component_details:null
+          text:             `Bless fills your allies with courage. Each ally gains a **+1 morale bonus** on attack rolls and on saving throws against fear effects.
+                             Bless counters and dispels ***[bane](http://www.d20srd.org/srd/spells/bane.htm)***.`
         },
         'bless water': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Bless_Water',
+          ref:              'http://www.d20srd.org/srd/spells/blessWater.htm',
           school:           'Transmutation [Good]',
           level:            'Clr 1, Pal 1',
           components:       'V, S, M',
@@ -971,13 +958,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates (object)',
           spell_resistance: 'Yes (Object)',
-          text:             `This transmutation imbues a flask (1 pint) of water with positive energy, turning it into [holy water](https://www.dandwiki.com/wiki/SRD:Holy_Water).`,
+          text:             `This transmutation imbues a flask (1 pint) of water with positive energy, turning it into [holy water](http://www.d20srd.org/srd/equipment/goodsAndServices.htm#holyWater).`,
           component_details:'Material Component: 5 pounds of powdered silver (worth 25 gp).'
         },
         'bless weapon': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Bless_Weapon',
+          ref:              'http://www.d20srd.org/srd/spells/blessWeapon.htm',
           school:           'Transmutation',
-          level:            'Glory 2, Pal 1',
+          level:            'Pal 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -986,12 +973,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `This transmutation makes a weapon strike true against evil foes. The weapon is treated as having a +1 \`\`enhancement bonus\`\` for the purpose of bypassing the damage reduction of evil creatures or striking evil [incorporeal](http://www.d20srd.org/srd/conditionSummary.htm#incorporeal) creatures (though the spell doesn’t grant an actual enhancement bonus). The weapon also becomes good, which means it can bypass the damage reduction of certain creatures. (This effect overrides and suppresses any other alignment the weapon might have.) Individual arrows or bolts can be transmuted, but affected projectile weapons (such as bows) don’t confer the benefit to the projectiles they shoot.
-                             In addition, all [critical hit](https://www.dandwiki.com/wiki/SRD:Critical_Hit) rolls against evil foes are automatically successful, so every threat is a [critical hit](https://www.dandwiki.com/wiki/SRD:Critical_Hit). This last effect does not apply to any weapon that already has a magical effect related to [critical hits](https://www.dandwiki.com/wiki/SRD:Critical_Hit), such as a keen weapon or a vorpal sword.`,
-          component_details:null
+          text:             `This transmutation makes a weapon strike true against evil foes. The weapon is treated as having a **+1 enhancement bonus** for the purpose of bypassing the damage reduction of evil creatures or striking evil [incorporeal](http://www.d20srd.org/srd/conditionSummary.htm#incorporeal) creatures (though the spell doesn’t grant an actual enhancement bonus). The weapon also becomes good, which means it can bypass the damage reduction of certain creatures. (This effect overrides and suppresses any other alignment the weapon might have.) Individual arrows or bolts can be transmuted, but affected projectile weapons (such as bows) don’t confer the benefit to the projectiles they shoot.
+                             In addition, all critical hit rolls against evil foes are automatically successful, so every threat is a critical hit. This last effect does not apply to any weapon that already has a magical effect related to critical hits, such as a keen weapon or a vorpal sword.`
         },
         'blight': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Blight',
+          ref:              'http://www.d20srd.org/srd/spells/blight.htm',
           school:           'Necromancy',
           level:            'Drd 4, Sor/Wiz 5',
           components:       'V, S, DF',
@@ -1002,10 +988,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude half; see text',
           spell_resistance: 'Yes',
-          text:             `This spell withers a single [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) of any size. An affected [plant creature](https://www.dandwiki.com/wiki/SRD:Plant_Type) takes [[[[{?{Casting Level},15}kl1]]d6]] points of damage and may attempt a Fortitude saving throw for half damage. A [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) that isn’t a creature doesn’t receive a save and immediately withers and dies.
-                             This spell has no effect on the soil or surrounding [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) life.`,
-          component_details:null
+          text:             `This spell withers a single plant of any size. An affected plant creature takes [[[[{?{Casting Level},15}kl1]]d6]] points of damage and may attempt a Fortitude saving throw for half damage. A plant that isn’t a creature doesn’t receive a save and immediately withers and dies.
+                             This spell has no effect on the soil or surrounding plant life.`,
+          other_versions:   'Defenders of the Faith on page 81, Masters of the Wild on page 84'
         },
+        //REVIEW MARKER
         'blindness/deafness': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Blindness/Deafness',
           school:           'Necromancy',
@@ -1113,12 +1100,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • Information from all minds about one particular topic, thing, or being, one nugget of information per caster level.
                              • A study of the thoughts and memories of one creature of the group in detail.
 
-                             Once per round, if you do not perform a detailed study of one creature’s mind, you can attempt (as a [standard action](https://www.dandwiki.com/wiki/SRD:Standard_Actions)) to implant a [*suggestion*](https://www.dandwiki.com/wiki/SRD:Suggestion) in the mind of any one of the affected creatures. The creature can make another Will saving throw to resist the *suggestion*, using the save DC of the *brain spider* spell. (Creatures with special resistance to enchantment spells can use this resistance to keep from being affected by the *suggestion*.) Success on this saving throw does not negate the other effects of the *brain spider* spell for that creature.
+                             Once per round, if you do not perform a detailed study of one creature’s mind, you can attempt (as a [standard action](https://www.dandwiki.com/wiki/SRD:Standard_Actions)) to implant a [*suggestion*](http://www.d20srd.org/srd/spells/suggestion.htm) in the mind of any one of the affected creatures. The creature can make another Will saving throw to resist the *suggestion*, using the save DC of the *brain spider* spell. (Creatures with special resistance to enchantment spells can use this resistance to keep from being affected by the *suggestion*.) Success on this saving throw does not negate the other effects of the *brain spider* spell for that creature.
                              You can affect all intelligent beings of your choice within range (up to the limit of eight), beginning with known or named beings. Language is not a barrier, and you need not personally know the beings. The spell cannot reach those who make a successful Will save.`,
           component_details:'Material Component: A spider of any size or kind. It can be [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead), but must still have all eight legs.'
         },
         'break enchantment': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Break_Enchantment',
+          ref:              'http://www.d20srd.org/srd/spells/breakEnchantment.htm',
           school:           'Abjuration',
           level:            'Brd 4, Clr 5, Liberation 5, Luck 5, Pal 4, Sor/Wiz 5',
           components:       'V, S',
@@ -1230,7 +1217,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This spell calms agitated creatures. You have no control over the affected creatures, but *calm emotions* can stop raging creatures from fighting or joyous ones from reveling. Creatures so affected cannot take violent actions (although they can defend themselves) or do anything destructive. Any aggressive action against or damage dealt to a calmed creature immediately breaks the spell on all calmed creatures.
-                             This spell automatically suppresses (but does not dispel) any morale bonuses granted by spells such as [*bless*](https://www.dandwiki.com/wiki/SRD:Bless), [*good hope*](https://www.dandwiki.com/wiki/SRD:Good_Hope), and [*rage*](https://www.dandwiki.com/wiki/SRD:Rage), as well as negating a [bard’s ability](https://www.dandwiki.com/wiki/SRD:Bard) to inspire courage or a [barbarian’s rage](https://www.dandwiki.com/wiki/SRD:Barbarian) ability. It also suppresses any fear effects and removes the [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) condition from all targets. While the spell lasts, a suppressed spell or effect has no effect. When the *calm emotions* spell ends, the original spell or effect takes hold of the creature again, provided that its duration has not expired in the meantime.`,
+                             This spell automatically suppresses (but does not dispel) any morale bonuses granted by spells such as [*bless*](http://www.d20srd.org/srd/spells/bless.htm), [*good hope*](https://www.dandwiki.com/wiki/SRD:Good_Hope), and [*rage*](https://www.dandwiki.com/wiki/SRD:Rage), as well as negating a [bard’s ability](https://www.dandwiki.com/wiki/SRD:Bard) to inspire courage or a [barbarian’s rage](https://www.dandwiki.com/wiki/SRD:Barbarian) ability. It also suppresses any fear effects and removes the [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) condition from all targets. While the spell lasts, a suppressed spell or effect has no effect. When the *calm emotions* spell ends, the original spell or effect takes hold of the creature again, provided that its duration has not expired in the meantime.`,
           component_details:null
         },
         'cat\'s grace': {
@@ -2065,7 +2052,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `The caster is imbued with an aura of [celestial](https://www.dandwiki.com/wiki/SRD:Celestial) authority, inspiring awe in all lesser creatures.
                              The caster gains a +4 \`\`enhancement bonus\`\` to his or her Charisma score for the duration of the spell. All creatures with fewer than 8 HD or levels cease whatever they are doing and are compelled to pay attention to the caster. Any such creature that wants to take hostile action against the caster must make a successful Will save to do so. Any creature that does not make this saving throw the first time it attempts a hostile action is *enthralled* for the duration of the spell (as the [*enthrall*](https://www.dandwiki.com/wiki/SRD:Enthrall) spell), as long as it is in the spell’s area, nor will it try to leave the area on its own. Creatures with 8 HD or more may pay attention to the caster, but are not affected by this spell.
-                             When the caster speaks, all listeners telepathically understand him or her, even if they do not understand the language. While the spell lasts, the caster can make up to three suggestions to creatures of fewer than 8 HD in range, as if using the [*mass suggestion*](https://www.dandwiki.com/wiki/SRD:Mass_Suggestion) spell (Will save negates); creatures with 8 HD or more aren’t affected by this power. Only creatures within range at the time a [*suggestion*](https://www.dandwiki.com/wiki/SRD:Suggestion) is given are subject to it.`,
+                             When the caster speaks, all listeners telepathically understand him or her, even if they do not understand the language. While the spell lasts, the caster can make up to three suggestions to creatures of fewer than 8 HD in range, as if using the [*mass suggestion*](https://www.dandwiki.com/wiki/SRD:Mass_Suggestion) spell (Will save negates); creatures with 8 HD or more aren’t affected by this power. Only creatures within range at the time a [*suggestion*](http://www.d20srd.org/srd/spells/suggestion.htm) is given are subject to it.`,
           component_details:'Material Component: worth at least 200 gp.'
         },
         //Epic Spell: crown of vermin
@@ -2431,7 +2418,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `You contact a particular creature with which you are familiar and send a short message of twenty-five words or less to the subject. The subject recognizes you if it knows you. It can answer in like manner immediately. A creature with an Intelligence score as low as 1 can understand the *demand*, though the subject’s ability to react is limited as normal by its Intelligence score. Even if the *demand* is received, the subject is not obligated to act upon it in any manner.
                              If the creature in question is not on the same plane of existence as you are, there is a 5% chance that the *demand* does not arrive. (Local conditions on other planes may worsen this chance considerably.)
-                             The message can also contain a [*suggestion*](https://www.dandwiki.com/wiki/SRD:Suggestion), which the subject does its best to carry out. A successful Will save negates the *suggestion* effect but not the contact itself. The *demand*, if received, is understood even if the subject’s Intelligence score is as low as 1. If the message is impossible or meaningless according to the circumstances that exist for the subject at the time the *demand* is issued, the message is understood but the *suggestion* is ineffective.
+                             The message can also contain a [*suggestion*](http://www.d20srd.org/srd/spells/suggestion.htm), which the subject does its best to carry out. A successful Will save negates the *suggestion* effect but not the contact itself. The *demand*, if received, is understood even if the subject’s Intelligence score is as low as 1. If the message is impossible or meaningless according to the circumstances that exist for the subject at the time the *demand* is issued, the message is understood but the *suggestion* is ineffective.
                              The *demand*’s message to the creature must be twenty-five words or less, including the *suggestion*. The creature can also give a short reply immediately.`,
           component_details:'Material Component: A short piece of copper wire and some small part of the subject—a hair, a bit of nail, or the like.'
         },
@@ -2467,7 +2454,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude partial',
           spell_resistance: 'Yes',
-          text:             `This spell instantly slays the subject and consumes its remains (but not its equipment and possessions) utterly. If the target’s Fortitude saving throw succeeds, it instead takes [[10d6]] points of damage. The only way to restore life to a character who has failed to save against this spell is to use [*true resurrection*](https://www.dandwiki.com/wiki/SRD:True_Resurrection), a carefully worded [*wish*](https://www.dandwiki.com/wiki/SRD:Wish) spell followed by [*resurrection*](https://www.dandwiki.com/wiki/SRD:Resurrection), or [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle).`,
+          text:             `This spell instantly slays the subject and consumes its remains (but not its equipment and possessions) utterly. If the target’s Fortitude saving throw succeeds, it instead takes [[10d6]] points of damage. The only way to restore life to a character who has failed to save against this spell is to use [*true resurrection*](https://www.dandwiki.com/wiki/SRD:True_Resurrection), a carefully worded [*wish*](http://www.d20srd.org/srd/spells/wish.htm) spell followed by [*resurrection*](https://www.dandwiki.com/wiki/SRD:Resurrection), or [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm).`,
           component_details:'Focus: A special holy (or unholy) symbol of silver marked with verses of anathema (cost 500 gp).'
         },
         'detect animals or plants': {
@@ -3090,7 +3077,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Arcane Material Component: A lodestone and a pinch of dust.'
         },
         'dismissal': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dismissal',
+          ref:              'http://www.d20srd.org/srd/spells/dismissal.htm',
           school:           'Abjuration',
           level:            'Clr 4, Sor/Wiz 5',
           components:       'V, S, DF',
@@ -3291,7 +3278,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:null
         },
         'dominate animal': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dominate_Animal',
+          ref:              'http://www.d20srd.org/srd/spells/dominateAnimal.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
           level:            'Animal 3, Drd 3',
           components:       'V, S',
@@ -3307,7 +3294,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:null
         },
         'dominate monster': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dominate_Monster',
+          ref:              'http://www.d20srd.org/srd/spells/dominateMonster.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
           level:            'Charm 9, Sor/Wiz 9',
           components:       'V, S',
@@ -3329,7 +3316,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:null
         },
         'dominate person': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dominate_Person',
+          ref:              'http://www.d20srd.org/srd/spells/dominatePerson.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
           level:            'Brd 4, Sor/Wiz 5',
           components:       'V, S',
@@ -3706,7 +3693,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              4 or less Comatose, panicked, sickened
 
                              The effects are cumulative and concurrent.
-                             *[Sickened](https://www.dandwiki.com/wiki/SRD:Sickened):* Sudden pain and fever sweeps over the subject’s body. A [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) creature takes a -2 \`\`penalty\`\` on attack rolls, weapon damage rolls, saving throws, skill checks, and ability checks. A creature affected by this spell remains [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) for [[10*?{Casting Level}]] minutes. The effects cannot be negated by a [*remove disease*](https://www.dandwiki.com/wiki/SRD:Remove_Disease) or [*heal*](https://www.dandwiki.com/wiki/SRD:Heal) spell, but a [*remove curse*](https://www.dandwiki.com/wiki/SRD:Remove_Curse) is effective.
+                             *[Sickened](https://www.dandwiki.com/wiki/SRD:Sickened):* Sudden pain and fever sweeps over the subject’s body. A [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) creature takes a -2 \`\`penalty\`\` on attack rolls, weapon damage rolls, saving throws, skill checks, and ability checks. A creature affected by this spell remains [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) for [[10*?{Casting Level}]] minutes. The effects cannot be negated by a [*remove disease*](https://www.dandwiki.com/wiki/SRD:Remove_Disease) or [*heal*](https://www.dandwiki.com/wiki/SRD:Heal) spell, but a [*remove curse*](http://www.d20srd.org/srd/spells/bestowCurse.htm) is effective.
                              *[Panicked](https://www.dandwiki.com/wiki/SRD:Panicked):* The subject becomes [panicked](https://www.dandwiki.com/wiki/SRD:Panicked) for [[1d4]] rounds. Even after the panic ends, the creature remains [shaken](https://www.dandwiki.com/wiki/SRD:Shaken) for [[10*?{Casting Level}]] minutes, and it automatically becomes [panicked](https://www.dandwiki.com/wiki/SRD:Panicked) again if it comes within sight of you during that time. This is a fear effect.
                              *Comatose:* The subject falls into a catatonic coma for [[10*?{Casting Level}]] minutes. During this time, it cannot be awakened by any means short of dispelling the effect. This is not a [*sleep*](https://www.dandwiki.com/wiki/SRD:Sleep) effect, and thus elves are not immune to it.
                              You must spend a move action each round after the first to target a foe.`,
@@ -3819,7 +3806,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `If the target creature fails a Will saving throw, its Intelligence and Charisma scores each drop to 1. The affected creature is unable to use Intelligence- or Charisma-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a [*heal*](https://www.dandwiki.com/wiki/SRD:Heal), [*limited wish*](https://www.dandwiki.com/wiki/SRD:Limited_Wish), [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle), or [*wish*](https://www.dandwiki.com/wiki/SRD:Wish) spell is used to cancel the effect of the *feeblemind*. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a -4 \`\`penalty\`\` on its saving throw.`,
+          text:             `If the target creature fails a Will saving throw, its Intelligence and Charisma scores each drop to 1. The affected creature is unable to use Intelligence- or Charisma-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a [*heal*](https://www.dandwiki.com/wiki/SRD:Heal), [*limited wish*](http://www.d20srd.org/srd/spells/limitedWish.htm), [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm), or [*wish*](http://www.d20srd.org/srd/spells/wish.htm) spell is used to cancel the effect of the *feeblemind*. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a -4 \`\`penalty\`\` on its saving throw.`,
           component_details:'Material Component: A handful of clay, crystal, glass, or mineral spheres.'
         },
         'find traps': {
@@ -4198,7 +4185,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The subject is freed from spells and effects that restrict its movement, including [*binding*](https://www.dandwiki.com/wiki/SRD:Binding), [*entangle*](https://www.dandwiki.com/wiki/SRD:Entangle), [grappling](https://www.dandwiki.com/wiki/SRD:Grapple), [*imprisonment*](https://www.dandwiki.com/wiki/SRD:Imprisonment), [*maze*](https://www.dandwiki.com/wiki/SRD:Maze), [paralysis](https://www.dandwiki.com/wiki/SRD:Paralysis), [*petrification*](https://www.dandwiki.com/wiki/SRD:Flesh_to_Stone), [pinning](https://www.dandwiki.com/wiki/SRD:Grapple), [*sleep*](https://www.dandwiki.com/wiki/SRD:Sleep), [*slow*](https://www.dandwiki.com/wiki/SRD:Slow), [stunning](http://www.d20srd.org/srd/conditionSummary.htm#stunned), [*temporal stasis*](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis), and [*web*](https://www.dandwiki.com/wiki/SRD:Web). To free a creature from *imprisonment* or *maze*, you must know its name and background, and you must cast this spell at the spot where it was entombed or banished into the *maze*.`,
+          text:             `The subject is freed from spells and effects that restrict its movement, including [*binding*](http://www.d20srd.org/srd/spells/binding.htm), [*entangle*](https://www.dandwiki.com/wiki/SRD:Entangle), [grappling](https://www.dandwiki.com/wiki/SRD:Grapple), [*imprisonment*](https://www.dandwiki.com/wiki/SRD:Imprisonment), [*maze*](https://www.dandwiki.com/wiki/SRD:Maze), [paralysis](https://www.dandwiki.com/wiki/SRD:Paralysis), [*petrification*](https://www.dandwiki.com/wiki/SRD:Flesh_to_Stone), [pinning](https://www.dandwiki.com/wiki/SRD:Grapple), [*sleep*](https://www.dandwiki.com/wiki/SRD:Sleep), [*slow*](https://www.dandwiki.com/wiki/SRD:Slow), [stunning](http://www.d20srd.org/srd/conditionSummary.htm#stunned), [*temporal stasis*](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis), and [*web*](https://www.dandwiki.com/wiki/SRD:Web). To free a creature from *imprisonment* or *maze*, you must know its name and background, and you must cast this spell at the spot where it was entombed or banished into the *maze*.`,
           component_details:null
         },
         'freedom of movement': {
@@ -4294,7 +4281,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              The *geased* creature must follow the given instructions until the *geas* is completed, no matter how long it takes.
                              If the instructions involve some open-ended task that the recipient cannot complete through his own actions the spell remains in effect for a maximum of one day per caster level. A clever recipient can subvert some instructions:
                              If the subject is prevented from obeying the *geas* for 24 hours, the subject takes 3d6 points of damage each day it does not attempt to follow the *geas/quest*. Additionally, each day it must make a Fortitude saving throw or become [sickened](https://www.dandwiki.com/wiki/SRD:Sickened). These effects end 24 hours after the creature attempts to resume the *geas/quest*.
-                             A [*remove curse*](https://www.dandwiki.com/wiki/SRD:Remove_Curse) spell ends a *geas/quest* spell only if its caster level is at least two higher than your caster level. [*Break enchantment*](https://www.dandwiki.com/wiki/SRD:Break_Enchantment) does not end a *geas/quest*, but [*limited wish*](https://www.dandwiki.com/wiki/SRD:Limited_Wish), [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle), and [*wish*](https://www.dandwiki.com/wiki/SRD:Wish) do.
+                             A [*remove curse*](http://www.d20srd.org/srd/spells/bestowCurse.htm) spell ends a *geas/quest* spell only if its caster level is at least two higher than your caster level. [*Break enchantment*](http://www.d20srd.org/srd/spells/breakEnchantment.htm) does not end a *geas/quest*, but [*limited wish*](http://www.d20srd.org/srd/spells/limitedWish.htm), [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm), and [*wish*](http://www.d20srd.org/srd/spells/wish.htm) do.
                              Bards, sorcerers, and wizards usually refer to this spell as *geas*, while clerics call the same spell *quest*.`,
           component_details:null
         },
@@ -4609,7 +4596,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              If an object or creature that is the effect of an ongoing spell (such as a monster summoned by [*monster summoning*](https://www.dandwiki.com/wiki/SRD:Summon_Monster_I)) is in the area, you can make a dispel check to end the spell that conjured that object or creature (returning it whence it came) in addition to attempting to dispel spells targeting the creature or object.
                              You may choose to automatically succeed on dispel checks against any spell that you have cast.
                              *Counterspell:* When *greater dispel magic* is used in this way, the spell targets a spellcaster and is cast as a counterspell. Unlike a true counterspell, however, *greater dispel magic* may not work; you must make a dispel check to counter the other spellcaster’s spell.
-                             Additionally, greater *greater dispel magic* has a chance to dispel any effect that [*remove curse*](https://www.dandwiki.com/wiki/SRD:Remove_Curse) can remove, even if *dispel magic* can’t dispel that effect.`,
+                             Additionally, greater *greater dispel magic* has a chance to dispel any effect that [*remove curse*](http://www.d20srd.org/srd/spells/bestowCurse.htm) can remove, even if *dispel magic* can’t dispel that effect.`,
           component_details:null
         },
         'greater glyph of warding': {
@@ -4961,8 +4948,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              2. A [*magic mouth*](https://www.dandwiki.com/wiki/SRD:Magic_Mouth) in two places. Saving Throw: None. Spell Resistance: No.
                              3. A [*stinking cloud*](https://www.dandwiki.com/wiki/SRD:Stinking_Cloud) in two places. The vapors appear in the places you designate; they return within 10 minutes if dispersed by wind while the *guards and wards* spell lasts. Saving Throw: Fortitude negates; see text for [*stinking cloud*](https://www.dandwiki.com/wiki/SRD:Stinking_Cloud). Spell Resistance: No.
                              4. A [*gust of wind*](https://www.dandwiki.com/wiki/SRD:Gust_of_Wind) in one corridor or room. Saving Throw: Fortitude negates. Spell Resistance: Yes.
-                             5. A [*suggestion*](https://www.dandwiki.com/wiki/SRD:Suggestion) in one place. You select an area of up to 5 feet square, and any creature who enters or passes through the area receives the *suggestion* mentally. Saving Throw: Will negates. Spell Resistance: Yes.
-                             The whole warded area radiates strong magic of the abjuration school. A [*dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm) cast on a specific effect, if successful, removes only that effect. A successful [*Mage’s disjunction*](https://www.dandwiki.com/wiki/SRD:Mage%27s_Disjunction) destroys the entire *guards and wards* effect.`,
+                             5. A [*suggestion*](http://www.d20srd.org/srd/spells/suggestion.htm) in one place. You select an area of up to 5 feet square, and any creature who enters or passes through the area receives the *suggestion* mentally. Saving Throw: Will negates. Spell Resistance: Yes.
+                             The whole warded area radiates strong magic of the abjuration school. A [*dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm) cast on a specific effect, if successful, removes only that effect. A successful [*Mage’s disjunction*](http://www.d20srd.org/srd/spells/magesDisjunction.htm) destroys the entire *guards and wards* effect.`,
           component_details:`Material Component: Burning incense, a small measure of brimstone and oil, a knotted string, and a small amount of blood.
                              Focus: A small silver rod.`
         },
@@ -5023,7 +5010,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Second, all Charisma checks made to turn [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) gain a +4 \`\`sacred bonus\`\`, and Charisma checks to command [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) take a -4 \`\`penalty\`\`. Spell resistance does not apply to this effect. (This provision does not apply to the druid version of the spell.)
                              Third, any [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead) body interred in a *hallowed* site cannot be [turned](https://www.dandwiki.com/wiki/SRD:Turned) into an undead creature.
                              Finally, you may choose to fix a single spell effect to the *hallowed* site. The spell effect lasts for one year and functions throughout the entire site, regardless of the normal duration and area or effect. You may designate whether the effect applies to all creatures, creatures who share your faith or alignment, or creatures who adhere to another faith or alignment. At the end of the year, the chosen effect lapses, but it can be renewed or replaced simply by casting *hallow* again.
-                             Spell effects that may be tied to a *hallowed* site include [*aid*](https://www.dandwiki.com/wiki/SRD:Aid), [*bane*](https://www.dandwiki.com/wiki/SRD:Bane), [*bless*](https://www.dandwiki.com/wiki/SRD:Bless), [*cause fear*](https://www.dandwiki.com/wiki/SRD:Cause_Fear), [*darkness*](https://www.dandwiki.com/wiki/SRD:Darkness), [*daylight*](https://www.dandwiki.com/wiki/SRD:Daylight), [*death ward*](https://www.dandwiki.com/wiki/SRD:Death_Ward), [*deeper darkness*](https://www.dandwiki.com/wiki/SRD:Deeper_Darkness), [*detect evil*](https://www.dandwiki.com/wiki/SRD:Detect_Evil), [*detect magic*](http://www.d20srd.org/srd/spells/detectMagic.htm), [*dimensional anchor*](https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor), [*discern lies*](https://www.dandwiki.com/wiki/SRD:Discern_Lies), [*dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm), [*endure elements*](https://www.dandwiki.com/wiki/SRD:Endure_Elements), [*freedom of movement*](https://www.dandwiki.com/wiki/SRD:Freedom_of_Movement), [*invisibility purge*](https://www.dandwiki.com/wiki/SRD:Invisibility_Purge), [*protection from energy*](https://www.dandwiki.com/wiki/SRD:Protection_from_Energy), [*remove fear*](https://www.dandwiki.com/wiki/SRD:Remove_Fear), [*resist energy*](https://www.dandwiki.com/wiki/SRD:Resist_Energy), [*silence*](http://www.d20srd.org/srd/spells/silence.htm), [*tongues*](https://www.dandwiki.com/wiki/SRD:Tongues), and [*zone of truth*](https://www.dandwiki.com/wiki/SRD:Zone_of_Truth). Saving throws and spell resistance might apply to these spells’ effects. (See the individual spell descriptions for details.)
+                             Spell effects that may be tied to a *hallowed* site include [*aid*](https://www.dandwiki.com/wiki/SRD:Aid), [*bane*](http://www.d20srd.org/srd/spells/bane.htm), [*bless*](http://www.d20srd.org/srd/spells/bless.htm), [*cause fear*](https://www.dandwiki.com/wiki/SRD:Cause_Fear), [*darkness*](https://www.dandwiki.com/wiki/SRD:Darkness), [*daylight*](https://www.dandwiki.com/wiki/SRD:Daylight), [*death ward*](https://www.dandwiki.com/wiki/SRD:Death_Ward), [*deeper darkness*](https://www.dandwiki.com/wiki/SRD:Deeper_Darkness), [*detect evil*](https://www.dandwiki.com/wiki/SRD:Detect_Evil), [*detect magic*](http://www.d20srd.org/srd/spells/detectMagic.htm), [*dimensional anchor*](https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor), [*discern lies*](https://www.dandwiki.com/wiki/SRD:Discern_Lies), [*dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm), [*endure elements*](https://www.dandwiki.com/wiki/SRD:Endure_Elements), [*freedom of movement*](https://www.dandwiki.com/wiki/SRD:Freedom_of_Movement), [*invisibility purge*](https://www.dandwiki.com/wiki/SRD:Invisibility_Purge), [*protection from energy*](https://www.dandwiki.com/wiki/SRD:Protection_from_Energy), [*remove fear*](https://www.dandwiki.com/wiki/SRD:Remove_Fear), [*resist energy*](https://www.dandwiki.com/wiki/SRD:Resist_Energy), [*silence*](http://www.d20srd.org/srd/spells/silence.htm), [*tongues*](https://www.dandwiki.com/wiki/SRD:Tongues), and [*zone of truth*](https://www.dandwiki.com/wiki/SRD:Zone_of_Truth). Saving throws and spell resistance might apply to these spells’ effects. (See the individual spell descriptions for details.)
                              An area can receive only one *hallow* spell (and its associated spell effect) at a time. Hallow counters but does not dispel [*unhallow*](https://www.dandwiki.com/wiki/SRD:Unhallow).`,
           component_details:'Material Component: Herbs, oils, and incense worth at least 1,000 gp, plus 1,000 gp per level of the spell to be included in the *hallowed* area.'
         },
@@ -5391,7 +5378,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell allows you to channel holy power into your sword, or any other melee weapon you choose. The weapon acts as a +5 *holy weapon* (+5 \`\`enhancement bonus\`\` on attack and damage rolls, extra ‹2d6› damage against evil opponents). It also emits a [*magic circle against evil*](https://www.dandwiki.com/wiki/SRD:Magic_Circle_against_Evil) effect (as the spell). If the *magic circle* ends, the sword creates a new one on your turn as a free action. The spell is automatically canceled 1 round after the weapon leaves your hand. You cannot have more than one *holy sword* at a time.
-                             If this spell is cast on a magic weapon, the powers of the spell supersede any that the weapon normally has, rendering the normal enhancement bonus and powers of the weapon inoperative for the duration of the spell. This spell is not cumulative with [*bless weapon*](https://www.dandwiki.com/wiki/SRD:Bless_Weapon) or any other spell that might modify the weapon in any way.
+                             If this spell is cast on a magic weapon, the powers of the spell supersede any that the weapon normally has, rendering the normal enhancement bonus and powers of the weapon inoperative for the duration of the spell. This spell is not cumulative with [*bless weapon*](http://www.d20srd.org/srd/spells/blessWeapon.htm) or any other spell that might modify the weapon in any way.
                              This spell does not work on artifacts.
                              *Note:* A masterwork weapon’s bonus to attack does not stack with an enhancement bonus to attack.`,
           component_details:null
@@ -5589,7 +5576,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `When you cast *imprisonment* and touch a creature, it is entombed in a state of suspended animation (see the [*temporal stasis*](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis) spell) in a small sphere far beneath the surface of the earth. The subject remains there unless a *freedom* spell is cast at the locale where the imprisonment took place. Magical search by a *crystal ball*, a [*locate object*](https://www.dandwiki.com/wiki/SRD:Locate_Object) spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but [*discern location*](https://www.dandwiki.com/wiki/SRD:Discern_Location) does. A [*wish*](https://www.dandwiki.com/wiki/SRD:Wish) or [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle) spell will not free the recipient, but will reveal where it is entombed. If you know the target’s name and some facts about its life, the target takes a -4 \`\`penalty\`\` on its save.`,
+          text:             `When you cast *imprisonment* and touch a creature, it is entombed in a state of suspended animation (see the [*temporal stasis*](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis) spell) in a small sphere far beneath the surface of the earth. The subject remains there unless a *freedom* spell is cast at the locale where the imprisonment took place. Magical search by a *crystal ball*, a [*locate object*](https://www.dandwiki.com/wiki/SRD:Locate_Object) spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but [*discern location*](https://www.dandwiki.com/wiki/SRD:Discern_Location) does. A [*wish*](http://www.d20srd.org/srd/spells/wish.htm) or [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm) spell will not free the recipient, but will reveal where it is entombed. If you know the target’s name and some facts about its life, the target takes a -4 \`\`penalty\`\` on its save.`,
           component_details:null
         },
         'incendiary cloud': {
@@ -5702,7 +5689,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `The affected creature suffers from a continuous [*confusion*](https://www.dandwiki.com/wiki/SRD:Confusion) effect, as the spell.
-                             [*Remove curse*](https://www.dandwiki.com/wiki/SRD:Remove_Curse) does not remove *insanity*. [*Greater restoration*](https://www.dandwiki.com/wiki/SRD:Greater_Restoration), [*heal*](https://www.dandwiki.com/wiki/SRD:Heal), [*limited wish*](https://www.dandwiki.com/wiki/SRD:Limited_Wish), [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle), or [*wish*](https://www.dandwiki.com/wiki/SRD:Wish) can restore the creature.`,
+                             [*Remove curse*](http://www.d20srd.org/srd/spells/bestowCurse.htm) does not remove *insanity*. [*Greater restoration*](https://www.dandwiki.com/wiki/SRD:Greater_Restoration), [*heal*](https://www.dandwiki.com/wiki/SRD:Heal), [*limited wish*](http://www.d20srd.org/srd/spells/limitedWish.htm), [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm), or [*wish*](http://www.d20srd.org/srd/spells/wish.htm) can restore the creature.`,
           component_details:null
         },
         'insect plague': {
@@ -5968,7 +5955,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              The *geased* creature must follow the given instructions until the *geas* is completed, no matter how long it takes.
                              If the instructions involve some open-ended task that the recipient cannot complete through his own actions the spell remains in effect for a maximum of one day per caster level. A clever recipient can subvert some instructions:
                              If the subject is prevented from obeying the *lesser geas* for 24 hours, it takes a -2 \`\`penalty\`\` to each of its ability scores. Each day, another -2 \`\`penalty\`\` accumulates, up to a total of -8. No ability score can be reduced to less than 1 by this effect. The ability score penalties are removed 24 hours after the subject resumes obeying the *lesser geas*.
-                             A *lesser geas* (and all ability score penalties) can be ended by [*break enchantment*]()https://www.dandwiki.com/wiki/SRD:Break_Enchantment, [*limited wish*](https://www.dandwiki.com/wiki/SRD:Limited_Wish), [*remove curse*](https://www.dandwiki.com/wiki/SRD:Remove_Curse), [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle), or [*wish*](https://www.dandwiki.com/wiki/SRD:Wish). [*Dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm) does not affect a *lesser geas*.`,
+                             A *lesser geas* (and all ability score penalties) can be ended by [*break enchantment*]()http://www.d20srd.org/srd/spells/breakEnchantment.htm, [*limited wish*](http://www.d20srd.org/srd/spells/limitedWish.htm), [*remove curse*](http://www.d20srd.org/srd/spells/bestowCurse.htm), [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm), or [*wish*](http://www.d20srd.org/srd/spells/wish.htm). [*Dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm) does not affect a *lesser geas*.`,
           component_details:null
         },
         'lesser globe of invulnerability': {
@@ -6109,7 +6096,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: A bit of fur and an amber, crystal, or glass rod.'
         },
         'limited wish': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Limited_Wish',
+          ref:              'http://www.d20srd.org/srd/spells/limitedWish.htm',
           school:           'Universal',
           level:            'Sor/Wiz 7',
           components:       'V, S, XP',
@@ -6228,7 +6215,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:null
         },
         'mage\'s disjunction': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mage%27s_Disjunction',
+          ref:              'http://www.d20srd.org/srd/spells/magesDisjunction.htm',
           school:           'Abjuration',
           level:            'Magic 9, Sor/Wiz 9',
           components:       'V',
@@ -6241,7 +6228,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'No',
           text:             `All magical effects and magic items within the radius of the spell, except for those that you carry or touch, are disjoined. That is, spells and spell-like effects are separated into their individual components (ending the effect as a [*dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell does), and each permanent magic item must make a successful Will save or be [turned](https://www.dandwiki.com/wiki/SRD:Turned) into a normal item. An item in a creature’s possession uses its own Will save bonus or its possessor’s Will save bonus, whichever is higher.
                              You also have a 1% chance per caster level of destroying an [*antimagic field*](http://www.d20srd.org/srd/specialAbilities.htm#antimagic). If the *antimagic field* survives the *disjunction*, no items within it are disjoined.
-                             Even artifacts are subject to *disjunction*, though there is only a 1% chance per caster level of actually affecting such powerful items. Additionally, if an artifact is destroyed, you must make a DC 25 Will save or permanently lose all spellcasting abilities. (These abilities cannot be recovered by mortal magic, not even [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle) or [*wish*](https://www.dandwiki.com/wiki/SRD:Wish).)
+                             Even artifacts are subject to *disjunction*, though there is only a 1% chance per caster level of actually affecting such powerful items. Additionally, if an artifact is destroyed, you must make a DC 25 Will save or permanently lose all spellcasting abilities. (These abilities cannot be recovered by mortal magic, not even [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm) or [*wish*](http://www.d20srd.org/srd/spells/wish.htm).)
                              *Note:* Destroying artifacts is a dangerous business, and it is 95% likely to attract the attention of some powerful being who has an interest in or connection with the device.`,
           component_details:null
         },
@@ -6650,9 +6637,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Permanent; see text',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `You draw an indelible mark on the subject and state some behavior on the part of the subject that will activate the mark. When activated, the mark curses the subject. Typically, you designate some sort of criminal behavior that activates the mark, but you can pick any act you please. The effect of the mark is identical with the effect of [bestow curse](https://www.dandwiki.com/wiki/SRD:Bestow_Curse).
+          text:             `You draw an indelible mark on the subject and state some behavior on the part of the subject that will activate the mark. When activated, the mark curses the subject. Typically, you designate some sort of criminal behavior that activates the mark, but you can pick any act you please. The effect of the mark is identical with the effect of [bestow curse](http://www.d20srd.org/srd/spells/bestowCurse.htm).
                              Since this spell takes 10 minutes to cast and involves writing on the target, you can cast it only on a creature that is willing or restrained.
-                             Like the effect of [bestow curse](https://www.dandwiki.com/wiki/SRD:Bestow_Curse), a *mark of justice* cannot be dispelled, but it can be removed with a [*break enchantment*](https://www.dandwiki.com/wiki/SRD:Break_Enchantment), [*limited wish*](https://www.dandwiki.com/wiki/SRD:Limited_Wish), [*miracle*](https://www.dandwiki.com/wiki/SRD:Miracle), [*remove curse*](https://www.dandwiki.com/wiki/SRD:Remove_Curse), or [*wish*](https://www.dandwiki.com/wiki/SRD:Wish) spell. [*Remove curse*](https://www.dandwiki.com/wiki/SRD:Remove_Curse) works only if its caster level is equal to or higher than your *mark of justice* caster level. These restrictions apply regardless of whether the mark has activated.`,
+                             Like the effect of [bestow curse](http://www.d20srd.org/srd/spells/bestowCurse.htm), a *mark of justice* cannot be dispelled, but it can be removed with a [*break enchantment*](http://www.d20srd.org/srd/spells/breakEnchantment.htm), [*limited wish*](http://www.d20srd.org/srd/spells/limitedWish.htm), [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm), [*remove curse*](http://www.d20srd.org/srd/spells/bestowCurse.htm), or [*wish*](http://www.d20srd.org/srd/spells/wish.htm) spell. [*Remove curse*](http://www.d20srd.org/srd/spells/bestowCurse.htm) works only if its caster level is equal to or higher than your *mark of justice* caster level. These restrictions apply regardless of whether the mark has activated.`,
           component_details:null
         },
         'mass bear\'s endurance': {
