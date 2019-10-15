@@ -218,7 +218,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'acid arrow': {
           ref:              'http://www.d20srd.org/srd/spells/acidArrow.htm',
           school:           'Conjuration (Creation) [Acid]',
-          level:            'Sor/Wiz 2',
+          level:            'Duskblade 2, Slime 2, Sor/Wiz 2, Wmg 2',
           components:       'V, S, M, F',
           casting_time:     '1 standard action',
           range:            '_long_',
@@ -234,7 +234,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'acid fog': {
           ref:              'http://www.d20srd.org/srd/spells/acidFog.htm',
           school:           'Conjuration (Creation) [Acid]',
-          level:            'Sor/Wiz 6, Water 7',
+          level:            'Arc 6, Blg 6, Sor/Wiz 6, Water 7, Wmg 6',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -249,7 +249,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'acid splash': {
           ref:              'http://www.d20srd.org/srd/spells/acidSplash.htm',
           school:           'Conjuration (Creation) [Acid]',
-          level:            'Sor/Wiz 0',
+          level:            'Duskblade 0, Sor/Wiz 0, Wmg 0',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -258,12 +258,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             'You fire a small orb of acid at the target. You must succeed on a ranged touch attack to hit your target. The orb deals [[1d3]] points of acid damage.'
+          text:             'You fire a small orb of acid at the target. You must succeed on a ranged touch attack to hit your target. The orb deals [[1d3]] points of acid damage.',
+          other_versions:   'Magic of Faerun on page 76'
         },
         'aid': {
           ref:              'http://www.d20srd.org/srd/spells/aid.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Clr 2, Good 2, Luck 2',
+          level:            'Adp 2, APeace 2, Arc 2, Clr 2, Courage 2, Good 2, KotC 2, Luck 2',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -277,7 +278,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'air walk': {
           ref:              'http://www.d20srd.org/srd/spells/airWalk.htm',
           school:           'Transmutation [Air]',
-          level:            'Air 4, Clr 4, Drd 4',
+          level:            'Air 4, APeace 4, Arc 4, Clr 4, Drd 4, Shu 4',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -294,7 +295,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'alarm': {
           ref:              'http://www.d20srd.org/srd/spells/alarm.htm',
           school:           'Abjuration',
-          level:            'Brd 1, Rgr 1, Sor/Wiz 1',
+          level:            'Arc 1, Brd 1, HB 1, Rgr 1, Sor/Wiz 1, Wealth 1',
           components:       'V, S, F/DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -314,7 +315,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'align weapon': {
           ref:              'http://www.d20srd.org/srd/spells/alignWeapon.htm',
           school:           'Transmutation [see text]',
-          level:            'Clr 2',
+          level:            'Arc 2, Artificer 2, Clr 2, KotC 2, Vassal of Bahamut 2',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -330,7 +331,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'alter self': {
           ref:              'http://www.d20srd.org/srd/spells/alterSelf.htm',
           school:           'Transmutation',
-          level:            'Brd 2, Sor/Wiz 2',
+          level:            'Asn 2, Brd 2, HB 2, Slayer of Domiel 2, Sor/Wiz 2, Transformation 2, Vassal of Bahamut 2, Wuj 2',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Personal',
@@ -345,12 +346,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              You do not gain any extraordinary special attacks or special qualities not noted above under physical qualities, such as darkvision, low-light vision, blindsense, blindsight, fast healing, regeneration, scent, and so forth.
                              You do not gain any supernatural special attacks, special qualities, or spell-like abilities of the new form. Your creature type and subtype (if any) remain the same regardless of your new form. You cannot take the form of any creature with a template, even if that template doesn’t change the creature type or subtype.
                              You can freely designate the new form’s minor physical qualities (such as hair color, hair texture, and skin color) within the normal ranges for a creature of that kind. The new form’s significant physical qualities (such as height, weight, and gender) are also under your control, but they must fall within the norms for the new form’s kind. You are effectively disguised as an average member of the new form’s race. If you use this spell to create a disguise, you get a **+10 bonus** on your Disguise check.
-                             When the change occurs, your equipment, if any, either remains worn or held by the new form (if it is capable of wearing or holding the item), or melds into the new form and becomes nonfunctional. When you revert to your true form, any objects previously melded into the new form reappear in the same location on your body they previously occupied and are once again functional. Any new items you wore in the assumed form and can’t wear in your normal form fall off and land at your feet; any that you could wear in either form or carry in a body part common to both forms at the time of reversion are still held in the same way. Any part of the body or piece of equipment that is separated from the whole reverts to its true form.`
+                             When the change occurs, your equipment, if any, either remains worn or held by the new form (if it is capable of wearing or holding the item), or melds into the new form and becomes nonfunctional. When you revert to your true form, any objects previously melded into the new form reappear in the same location on your body they previously occupied and are once again functional. Any new items you wore in the assumed form and can’t wear in your normal form fall off and land at your feet; any that you could wear in either form or carry in a body part common to both forms at the time of reversion are still held in the same way. Any part of the body or piece of equipment that is separated from the whole reverts to its true form.`,
+          other_versions:    'Tome and Blood on page 95'
         },
         'analyze dweomer': {
           ref:              'http://www.d20srd.org/srd/spells/analyzeDweomer.htm',
           school:           'Divination',
-          level:            'Brd 6, Sor/Wiz 6',
+          level:            'Brd 6, Commerce 8, Sor/Wiz 6',
           components:       'V, S, F',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -367,7 +369,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'animal growth': {
           ref:              'http://www.d20srd.org/srd/spells/animalGrowth.htm',
           school:           'Transmutation',
-          level:            'Drd 5, Rgr 4, Sor/Wiz 5',
+          level:            'Arc 4, Drd 5, Rgr 4, Scalykind 5, Sor/Wiz 5, Wuj 5',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -386,7 +388,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'animal messenger': {
           ref:              'http://www.d20srd.org/srd/spells/animalMessenger.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Brd 2, Drd 2, Rgr 1',
+          level:            'Arc 1, Brd 2, Drd 2, EmBarachiel 2, Rgr 1',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -403,7 +405,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'animal shapes': {
           ref:              'http://www.d20srd.org/srd/spells/animalShapes.htm',
           school:           'Transmutation',
-          level:            'Animal 7, Drd 8',
+          level:            'Animal 7, Arc 8, Drd 8, Moon 8, Scalykind 8',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -417,7 +419,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'animal trance': {
           ref:              'http://www.d20srd.org/srd/spells/animalTrance.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting, Sonic]',
-          level:            'Brd 2, Drd 2',
+          level:            'Adp 2, Arc 2, Brd 2, Drd 2, Scalykind 2',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -432,7 +434,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'animate dead': {
           ref:              'http://www.d20srd.org/srd/spells/animateDead.htm',
           school:           'Necromancy [Evil]',
-          level:            'Clr 3, Death 3, Sor/Wiz 4',
+          level:            'Adp 3, Arc 3, Blg 4, Clr 3, Death 3, Sor/Wiz 4, Undeath 3, Wuj 4',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -452,7 +454,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'animate objects': {
           ref:              'http://www.d20srd.org/srd/spells/animateObjects.htm',
           school:           'Transmutation',
-          level:            'Brd 6, Chaos 6, Clr 6',
+          level:            'Arc 6, Brd 6, Chaos 6, Clr 6, Life 6, Sor/Wiz 6',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -469,7 +471,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'animate plants': {
           ref:              'http://www.d20srd.org/srd/spells/animatePlants.htm',
           school:           'Transmutation',
-          level:            'Drd 7, Plant 7',
+          level:            'Arc 7, Drd 7, Life 8, Plant 7',
           components:       'V',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -486,7 +488,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'animate rope': {
           ref:              'http://www.d20srd.org/srd/spells/animateRope.htm',
           school:           'Transmutation',
-          level:            'Brd 1, Sor/Wiz 1',
+          level:            'Artifice 1, Brd 1, Craft 1, Sor/Wiz 1, Wuj 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -508,7 +510,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'antilife shell': {
           ref:              'http://www.d20srd.org/srd/spells/antilifeShell.htm',
           school:           'Abjuration',
-          level:            'Animal 6, Clr 6, Drd 6',
+          level:            'Animal 6, APeace 6, Arc 6, Blg 5, Clr 6, Decay 6, Drd 6',
           components:       'V, S, DF',
           casting_time:     '1 round',
           range:            '10 ft.',
@@ -524,7 +526,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'antimagic field': {
           ref:              'http://www.d20srd.org/srd/spells/antimagicField.htm',
           school:           'Abjuration',
-          level:            'Clr 8, Magic 6, Protection 6, Sor/Wiz 6',
+          level:            'APeace 8, Arc 8, Clr 8, Magic 6, Protection 6, Shu 6, Sor/Wiz 6, Spell 8',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            '10 ft.',
@@ -544,7 +546,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'antipathy': {
           ref:              'http://www.d20srd.org/srd/spells/antipathy.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Drd 9, Sor/Wiz 8',
+          level:            'Arc 6, Blg 6, Blg 9, Drd 9, Elf 9, Hatred 8, Mental 7, Shu 9, Sin-A 9, Sor/Wiz 8, Wealth 9, Wuj 8',
           components:       'V, S, M/DF',
           casting_time:     '1 hour',
           range:            '_close_',
@@ -562,7 +564,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'antiplant shell': {
           ref:              'http://www.d20srd.org/srd/spells/antiplantShell.htm',
           school:           'Abjuration',
-          level:            'Drd 4',
+          level:            'Arc 4, Blg 4, Drd 4, Wuj 4',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '10 ft.',
@@ -576,7 +578,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'arcane eye': {
           ref:              'http://www.d20srd.org/srd/spells/arcaneEye.htm',
           school:           'Divination (Scrying)',
-          level:            'Sor/Wiz 4',
+          level:            'Hoard 4, MH 4, Sor/Wiz 4',
           components:       'V, S, M',
           casting_time:     '10 minutes',
           range:            'Unlimited',
@@ -593,7 +595,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'arcane lock': {
           ref:              'http://www.d20srd.org/srd/spells/arcaneLock.htm',
           school:           'Abjuration',
-          level:            'Sor/Wiz 2',
+          level:            'Sor/Wiz 2, Wuj 2',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -608,7 +610,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'arcane mark': {
           ref:              'http://www.d20srd.org/srd/spells/arcaneMark.htm',
           school:           'Universal',
-          level:            'Sor/Wiz 0',
+          level:            'HB 1, Sor/Wiz 0, Wuj 0',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '0 ft.',
@@ -625,7 +627,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'arcane sight': {
           ref:              'http://www.d20srd.org/srd/spells/arcaneSight.htm',
           school:           'Divination',
-          level:            'Sor/Wiz 3',
+          level:            'Beguiler 3, HB 3, Hoard 3, Sor/Wiz 3',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Personal',
@@ -635,7 +637,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `This spell makes your eyes glow blue and allows you to see magical auras within 120 feet of you. The effect is similar to that of a ***[detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm)*** spell, but arcane sight does not require concentration and discerns aura location and power more quickly.
                              You know the location and power of all magical auras within your sight. An aura’s power depends on a spell’s functioning level or an item’s caster level, as noted in the description of the ***[detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm)*** spell. If the items or creatures bearing the auras are in line of sight, you can make Spellcraft skill checks to determine the school of magic involved in each. (Make one check per aura; DC 15 + spell level, or 15 + one-half caster level for a nonspell effect.)
                              If you concentrate on a specific creature within 120 feet of you as a standard action, you can determine whether it has any spellcasting or spell-like abilities, whether these are arcane or divine (spell-like abilities register as arcane), and the strength of the most powerful spell or spell-like ability the creature currently has available for use.
-                             Arcane sight can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`
+                             Arcane sight can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`,
+          other_versions:   'Tome and Blood on page 85'
         },
         'armor of darkness': {
           ref:              'http://www.d20srd.org/srd/divine/spells/armorOfDarkness.htm',
@@ -649,12 +652,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `The spell envelops the warded creature in a shroud of shadows. The shroud can, if the caster desires, conceal the wearer’s features. In any case, it grants the recipient a **[[{3+[[floor(?{Casting Level}/4)]],8}kl1]] deflection bonus** to Armor Class. The subject can see through the armor as if it did not exist and is also afforded darkvision with a range of 60 feet. Finally, the subject gains a **+2 bonus** on saving throws against any holy, good, or light spells or effects. Undead creatures that are subjects of armor of darkness also gain **+4 turn resistance**.`
+          text:             `The spell envelops the warded creature in a shroud of shadows. The shroud can, if the caster desires, conceal the wearer’s features. In any case, it grants the recipient a **[[{3+[[floor(?{Casting Level}/4)]],8}kl1]] deflection bonus** to Armor Class. The subject can see through the armor as if it did not exist and is also afforded darkvision with a range of 60 feet. Finally, the subject gains a **+2 bonus** on saving throws against any holy, good, or light spells or effects. Undead creatures that are subjects of armor of darkness also gain **+4 turn resistance**.`,
+          other_versions:   'Forgotten Realms Campaign Setting on page 67, Spell Compendium on page 15'
         },
         'astral projection': {
           ref:              'http://www.d20srd.org/srd/spells/astralProjection.htm',
           school:           'Necromancy',
-          level:            'Clr 9, Sor/Wiz 9, Travel 9',
+          level:            'APeace 9, Arc 9, Clr 9, Meditation 9, Mental 9, Sin-S 9, Sor/Wiz 9, Travel 9, Wuj 9',
           components:       'V, S, M',
           casting_time:     '30 minutes',
           range:            'Touch',
@@ -673,7 +677,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'atonement': {
           ref:              'http://www.d20srd.org/srd/spells/atonement.htm',
           school:           'Abjuration',
-          level:            'Clr 5, Drd 5',
+          level:            'APeace 5, Arc 5, Clr 5, Drd 5, EmBarachiel 4, Hlr 5, Renewal 5, Shu 5',
           components:       'V, S, M, F, DF, XP',
           casting_time:     '1 hour',
           range:            'Touch',
@@ -697,7 +701,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'augury': {
           ref:              'http://www.d20srd.org/srd/spells/augury.htm',
           school:           'Divination',
-          level:            'Clr 2',
+          level:            'APeace 2, Arc 2, Clr 2, Destiny 2, Dream 2, Fate 2, Oracle 2, Planning 2',
           components:       'V, S, M, F',
           casting_time:     '1 minute',
           range:            'Personal',
@@ -718,7 +722,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'awaken': {
           ref:              'http://www.d20srd.org/srd/spells/awaken.htm',
           school:           'Transmutation',
-          level:            'Drd 5',
+          level:            'Arc 5, Drd 5',
           components:       'V, S, DF, XP',
           casting_time:     '24 hours',
           range:            'Touch',
@@ -738,7 +742,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'baleful polymorph': {
           ref:              'http://www.d20srd.org/srd/spells/balefulPolymorph.htm',
           school:           'Transmutation',
-          level:            'Drd 5, Sor/Wiz 5',
+          level:            'Adp 5, Arc 5, Drd 5, HB 4, Sin-G 5, Sor/Wiz 5, Transformation 6, Wuj 5',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -764,7 +768,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'bane': {
           ref:              'http://www.d20srd.org/srd/spells/bane.htm',
           school:           'Enchantment (Compulsion) [Fear, Mind-Affecting]',
-          level:            'Clr 1',
+          level:            'Arc 1, Blg 1, Clr 1, Dem 1, Suffering 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '50 ft.',
@@ -779,7 +783,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'banishment': {
           ref:              'http://www.d20srd.org/srd/spells/banishment.htm',
           school:           'Abjuration',
-          level:            'Clr 6, Sor/Wiz 7',
+          level:            'APeace 6, Arc 6, Balance 6, Clr 6, Exorcism 6, Portal 6, Retribution 6, Shu 6, Sor/Wiz 7',
           components:       'V, S, F',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -796,7 +800,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'barkskin': {
           ref:              'http://www.d20srd.org/srd/spells/barkskin.htm',
           school:           'Transmutation',
-          level:            'Drd 2, Rgr 2, Plant 2',
+          level:            'Arc 2, BVal 2, Drd 2, Plant 2, Rgr 2, Shu 2',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -811,7 +815,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'bear\'s endurance': {
           ref:              'http://www.d20srd.org/srd/spells/bearsEndurance.htm',
           school:           'Transmutation',
-          level:            'Clr 2, Drd 2, Rgr 2, Sor/Wiz 2',
+          level:            'Adp 2, APeace 2, Arc 2, Artificer 2, Clr 2, Drd 2, Duskblade 2, Dwarf 2, Endurance 2, KotC 2, Retribution 2, Rgr 2, Shu 2, Sor/Wiz 2, Suffering 2, Vassal of Bahamut 2, Wuj 2',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -826,7 +830,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'bestow curse': {
           ref:              'http://www.d20srd.org/srd/spells/bestowCurse.htm',
           school:           'Necromancy',
-          level:            'Clr 3, Sor/Wiz 4',
+          level:            'Adp 3, Arc 3, Clr 3, Dem 2, Destiny 4, DrgBlw 3, Fate 3, Hatred 3, Sor/Wiz 4, Suffering 3',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -846,7 +850,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'binding': {
           ref:              'http://www.d20srd.org/srd/spells/binding.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Sor/Wiz 8',
+          level:            'Arc 8, Shu 8, Sor/Wiz 8',
           components:       'V, S, M',
           casting_time:     'One minute',
           range:            '_close_',
@@ -872,7 +876,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'black tentacles': {
           ref:              'http://www.d20srd.org/srd/spells/blackTentacles.htm',
           school:           'Conjuration (Creation)',
-          level:            'Sor/Wiz 4',
+          level:            'Blackwater 3, Slime 5, Sor/Wiz 4, VDarkness 5, Wmg 4',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -901,12 +905,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes or no (object)',
           text:             `The caster creates an area of total darkness. The darkness is impenetrable to normal vision and darkvision, but the caster can see normally within the blacklit area. Creatures outside the spell’s area, even the caster, cannot see through it.
                              The spell can be cast on a point in space, but the effect is stationary when cast on a mobile object. A character can cast the spell on a creature, and the effect then radiates from the creature and moves as it moves. Unattended objects and points in space do not get saving throws or benefit from spell resistance.
-                             Blacklight counters or dispels any light spell of equal or lower level. The 3rd-level cleric spell ***[daylight](http://www.d20srd.org/srd/spells/daylight.htm)*** counters or dispels blacklight.`
+                             Blacklight counters or dispels any light spell of equal or lower level. The 3rd-level cleric spell ***[daylight](http://www.d20srd.org/srd/spells/daylight.htm)*** counters or dispels blacklight.`,
+          other_versions:   'Forgotten Realms Campaign Setting on page 67, Spell Compendium on page 30'
         },
         'blade barrier': {
           ref:              'http://www.d20srd.org/srd/spells/bladeBarrier.htm',
           school:           'Evocation [Force]',
-          level:            'Clr 6, Good 6, War 6',
+          level:            'Arc 6, Artificer 6, Clr 6, Good 6, Metal 6, War 6, Wmg 6',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -922,7 +927,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'blasphemy': {
           ref:              'http://www.d20srd.org/srd/spells/blasphemy.htm',
           school:           'Evocation [Evil, Sonic]',
-          level:            'Clr 7, Evil 7',
+          level:            'Arc 7, Clr 7, DrgBlw 7, Evil 7, Hatred 7, Mysticism 7, Orc 7',
           components:       'V',
           casting_time:     '1 standard action',
           range:            '40 ft.',
@@ -950,7 +955,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'bless': {
           ref:              'http://www.d20srd.org/srd/spells/bless.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Clr 1, Pal 1',
+          level:            'Adp 1, APeace 1, Arc 1, ChamGwyn 1, Clr 1, Community 1, Exalted Arcanist 1, Family 1, Pal 1, Shu 1, Vassal of Bahamut 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '50 ft.',
@@ -965,7 +970,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'bless water': {
           ref:              'http://www.d20srd.org/srd/spells/blessWater.htm',
           school:           'Transmutation [Good]',
-          level:            'Clr 1, Pal 1',
+          level:            'APeace 1, Arc 1, Clr 1, Hlr 1, KotC 1, Pal 1',
           components:       'V, S, M',
           casting_time:     '1 minute',
           range:            'Touch',
@@ -980,7 +985,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'bless weapon': {
           ref:              'http://www.d20srd.org/srd/spells/blessWeapon.htm',
           school:           'Transmutation',
-          level:            'Pal 1',
+          level:            'Arc 1, ChamGwyn 1, Glory 2, KotC 1, Pal 1, Slayer of Domiel 1, Vassal of Bahamut 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -995,7 +1000,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'blight': {
           ref:              'http://www.d20srd.org/srd/spells/blight.htm',
           school:           'Necromancy',
-          level:            'Drd 4, Sor/Wiz 5',
+          level:            'Arc 4, Blg 4, Decay 5, Drd 4, Sor/Wiz 5',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -1011,7 +1016,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'blindness/deafness': {
           ref:              'http://www.d20srd.org/srd/spells/blindnessDeafness.htm',
           school:           'Necromancy',
-          level:            'Brd 2, Clr 3, Sor/Wiz 2',
+          level:            'Arc 3, Brd 2, Clr 3, Corruption 2, Darkness 2, EmBarachiel 2, HB 2, Sor/Wiz 2',
           components:       'V',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -1048,7 +1053,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'blur': {
           ref:              'http://www.d20srd.org/srd/spells/blur.htm',
           school:           'Illusion (Glamer)',
-          level:            'Brd 2, Sor/Wiz 2',
+          level:            'Beguiler 2, Brd 2, Celerity 3, EmBarachiel 2, Sor/Wiz 2, Wuj 2',
           components:       'V',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -1064,7 +1069,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'bolt of glory': {
           ref:              'http://www.d20srd.org/srd/divine/spells/boltOfGlory.htm',
           school:           'Evocation [Good]',
-          level:            'Glory 6',
+          level:            'Arc 6, Clr 6, Exalted Arcanist 6, Glory 6',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -1082,7 +1087,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'bolts of bedevilment': {
           ref:              'http://www.d20srd.org/srd/divine/spells/boltsOfBedevilment.htm',
           school:           'Enchantment [Mind-Affecting]',
-          level:            'Madness 5',
+          level:            'Brd 5, Madness 5',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -1097,7 +1102,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'brain spider': {
           ref:              'http://www.d20srd.org/srd/psionic/spells/brainSpider.htm',
           school:           'Divination [Mind-Affecting]',
-          level:            'Clr 8, Mind 7',
+          level:            'Arc 7, Clr 7, Mind 7',
           components:       'V, S, M, DF',
           casting_time:     '1 round',
           range:            '_long_',
@@ -1120,7 +1125,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'break enchantment': {
           ref:              'http://www.d20srd.org/srd/spells/breakEnchantment.htm',
           school:           'Abjuration',
-          level:            'Brd 4, Clr 5, Luck 5, Pal 4, Sor/Wiz 5',
+          level:            'Adp 5, APeace 5, Arc 5, Beguiler 5, Brd 4, ChamGwyn 4, Clr 5, EmBarachiel 4, HB 4, Hlr 5, Liberation 5, Luck 5, Pal 4, Sor/Wiz 5, Spell 5',
           components:       'V, S',
           casting_time:     '1 minute',
           range:            '_close_',
@@ -1136,7 +1141,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'bull\'s strength': {
           ref:              'http://www.d20srd.org/srd/spells/bullsStrength.htm',
           school:           'Transmutation',
-          level:            'Clr 2, Drd 2, Pal 2, Sor/Wiz 2, Strength 2',
+          level:            'Adp 2, Arc 2, Artificer 2, Bestial 2, Blk 2, ChamGwyn 2, Clr 2, Drd 2, Duskblade 2, HB 2, HotD 2, KotC 2, Pal 2, Shu 2, Sin-W 2, Sor/Wiz 2, Strength 2, Vassal of Bahamut 2, Wuj 2',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -1151,7 +1156,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'burning hands': {
           ref:              'http://www.d20srd.org/srd/spells/burningHands.htm',
           school:           'Evocation [Fire]',
-          level:            'Fire 1, Sor/Wiz 1',
+          level:            'Adp 1, Arc 1, Blg 1, Duskblade 1, Fire 1, Shu 1, Sor/Wiz 1, Wmg 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '15 ft.',
@@ -1162,12 +1167,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `A cone of searing flame shoots from your fingertips. Any creature in the area of the flames takes [[[[{?{Casting Level},5}kl1]]d4]] points of fire damage. Flammable materials burn if the flames touch them. A character can extinguish burning items as a full-round action.`
         },
-        //REVIEW MARKER
         // C Spell
         'call lightning': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Call_Lightning',
+          ref:              'http://www.d20srd.org/srd/spells/callLightning.htm',
           school:           'Evocation [Electricity]',
-          level:            'Drd 3, Weather 3',
+          level:            'Arc 3, Drd 3, Shu 3, Storm 3, Weather 3',
           components:       'V, S',
           casting_time:     '1 round',
           range:            '_medium_',
@@ -1177,15 +1181,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
           text:             `Immediately upon completion of the spell, and once per round thereafter, you may call down a 5-foot-wide, 30-foot-long, vertical bolt of lightning that deals ‹3d6› points of electricity damage. The bolt of lightning flashes down in a vertical stroke at whatever target point you choose within the spell’s range (measured from your position at the time). Any creature in the target square or in the path of the bolt is affected.
-                             You need not call a bolt of lightning immediately; other actions, even spellcasting, can be performed. However, each round after the first you may use a [standard action](https://www.dandwiki.com/wiki/SRD:Standard_Actions) (concentrating on the spell) to call a bolt. You may call a total of [[{?{Casting Level},10}kl1]] bolts.
-                             If you are outdoors and in a stormy area—a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado (including a whirlwind formed by a [djinni](https://www.dandwiki.com/wiki/SRD:Djinni) or an [air elemental](https://www.dandwiki.com/wiki/SRD:Air_Elemental) of at least Large size)—each bolt deals ‹3d10› points of electricity damage instead of 3d6.
-                             This spell functions indoors or underground but not underwater.`,
-          component_details:null
+                             You need not call a bolt of lightning immediately; other actions, even spellcasting, can be performed. However, each round after the first you may use a standard action (concentrating on the spell) to call a bolt. You may call a total of [[{?{Casting Level},10}kl1]] bolts.
+                             If you are outdoors and in a stormy area—a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado (including a whirlwind formed by a djinni or an air elemental of at least Large size)—each bolt deals ‹3d10› points of electricity damage instead of 3d6.
+                             This spell functions indoors or underground but not underwater.`
         },
         'call lightning storm': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Call_Lightning_Storm',
+          ref:              'http://www.d20srd.org/srd/spells/callLightningStorm.htm',
           school:           'Evocation [Electricity]',
-          level:            'Drd 5, Weather 5',
+          level:            'Arc 5, Drd 5, Storm 6',
           components:       'V, S',
           casting_time:     '1 round',
           range:            '_long_',
@@ -1195,15 +1198,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
           text:             `Immediately upon completion of the spell, and once per round thereafter, you may call down a 5-foot-wide, 30-foot-long, vertical bolt of lightning that deals ‹5d6› points of electricity damage. The bolt of lightning flashes down in a vertical stroke at whatever target point you choose within the spell’s range (measured from your position at the time). Any creature in the target square or in the path of the bolt is affected.
-                             You need not call a bolt of lightning immediately; other actions, even spellcasting, can be performed. However, each round after the first you may use a [standard action](https://www.dandwiki.com/wiki/SRD:Standard_Actions) (concentrating on the spell) to call a bolt. You may call a total of [[{?{Casting Level},15}kl1]] bolts.
-                             If you are outdoors and in a stormy area—a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado (including a whirlwind formed by a [djinni](https://www.dandwiki.com/wiki/SRD:Djinni) or an [air elemental](https://www.dandwiki.com/wiki/SRD:Air_Elemental) of at least Large size)—each bolt deals ‹5d10› points of electricity damage instead of 3d6.
-                             This spell functions indoors or underground but not underwater.`,
-          component_details:null
+                             You need not call a bolt of lightning immediately; other actions, even spellcasting, can be performed. However, each round after the first you may use a standard action (concentrating on the spell) to call a bolt. You may call a total of [[{?{Casting Level},15}kl1]] bolts.
+                             If you are outdoors and in a stormy area—a rain shower, clouds and wind, hot and cloudy conditions, or even a tornado (including a whirlwind formed by a djinni or an air elemental of at least Large size)—each bolt deals ‹5d10› points of electricity damage instead of 5d6.
+                             This spell functions indoors or underground but not underwater.`
         },
         'calm animals': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Calm_Animals',
+          ref:              'http://www.d20srd.org/srd/spells/calmAnimals.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Animal 1, Drd 1, Rgr 1',
+          level:            'Animal 1, Arc 1, BVal 1, Drd 1, Rgr 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -1212,14 +1214,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates, see text',
           spell_resistance: 'Yes',
-          text:             `This spell soothes and quiets [animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), rendering them docile and harmless. Only ordinary [animals](https://www.dandwiki.com/wiki/SRD:Animal_Type) (those with Intelligence scores of 1 or 2) can be affected by this spell. All the subjects must be of the same kind, and no two may be more than 30 feet apart. The maximum number of Hit Dice of [animals](https://www.dandwiki.com/wiki/SRD:Animal_Type) you can affect is equal to 2d4 + caster level: [[2d6+?{Casting Level}]]. A [dire animal](https://www.dandwiki.com/wiki/SRD:Dire_Animal) or an [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) trained to attack or guard is allowed a saving throw; other [animals](https://www.dandwiki.com/wiki/SRD:Animal_Type) are not.
-                             The affected creatures remain where they are and do not attack or flee. They are not [helpless](https://www.dandwiki.com/wiki/SRD:Helpless) and defend themselves normally if attacked. Any threat breaks the spell on the threatened creatures.`,
-          component_details:null
+          text:             `This spell soothes and quiets animals, rendering them docile and harmless. Only ordinary animals (those with Intelligence scores of 1 or 2) can be affected by this spell. All the subjects must be of the same kind, and no two may be more than 30 feet apart. The maximum number of Hit Dice of animals you can affect is equal to 2d4 + caster level: [[2d4+?{Casting Level}]]. A dire animal or an animal trained to attack or guard is allowed a saving throw; other animals are not.
+                             The affected creatures remain where they are and do not attack or flee. They are not helpless and defend themselves normally if attacked. Any threat breaks the spell on the threatened creatures.`
         },
         'calm emotions': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Calm_Emotions',
+          ref:              'http://www.d20srd.org/srd/spells/calmEmotions.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Brd 2, Charm 2, Clr 2, Law 2',
+          level:            'APeace 2, Arc 2, Balance 2, Brd 2, Charm 2, Clr 2, EmBarachiel 2, Hlr 2, Law 2',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -1229,28 +1230,27 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This spell calms agitated creatures. You have no control over the affected creatures, but *calm emotions* can stop raging creatures from fighting or joyous ones from reveling. Creatures so affected cannot take violent actions (although they can defend themselves) or do anything destructive. Any aggressive action against or damage dealt to a calmed creature immediately breaks the spell on all calmed creatures.
-                             This spell automatically suppresses (but does not dispel) any morale bonuses granted by spells such as [*bless*](http://www.d20srd.org/srd/spells/bless.htm), [*good hope*](https://www.dandwiki.com/wiki/SRD:Good_Hope), and [*rage*](https://www.dandwiki.com/wiki/SRD:Rage), as well as negating a [bard’s ability](https://www.dandwiki.com/wiki/SRD:Bard) to inspire courage or a [barbarian’s rage](https://www.dandwiki.com/wiki/SRD:Barbarian) ability. It also suppresses any fear effects and removes the [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) condition from all targets. While the spell lasts, a suppressed spell or effect has no effect. When the *calm emotions* spell ends, the original spell or effect takes hold of the creature again, provided that its duration has not expired in the meantime.`,
-          component_details:null
+                             This spell automatically suppresses (but does not dispel) any morale bonuses granted by spells such as ***[bless](http://www.d20srd.org/srd/spells/bless.htm)***, ***[good hope](http://www.d20srd.org/srd/spells/goodHope.htm)***, and ***[rage](http://www.d20srd.org/srd/spells/rage.htm)***, as well as negating a bard’s ability to inspire courage or a barbarian’s rage ability. It also suppresses any fear effects and removes the [*confused*](http://www.d20srd.org/srd/conditionSummary.htm#confused) condition from all targets. While the spell lasts, a suppressed spell or effect has no effect. When the calm emotions spell ends, the original spell or effect takes hold of the creature again, provided that its duration has not expired in the meantime.`
         },
         'cat\'s grace': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Cat%27s_Grace',
+          ref:              'http://www.d20srd.org/srd/spells/catsGrace.htm',
           school:           'Transmutation',
-          level:            'Asn 2, Brd 2, Drd 2, Rgr 2, Sor/Wiz 2',
+          level:            'Adp 2, Arc 2, Artificer 2, Asn 2, Brd 2, Celerity 2, Drd 2, Duskblade 2, Elf 2, EmBarachiel 2, Halfling 2, Hoard 2, Rgr 2, Shu 2, Sor/Wiz 2, Wuj 2',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
           duration:         '[[?{Casting Level}]] minute(s)',
-          saving_throw:     'Will negates',
+          saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The transmuted creature becomes more graceful, agile, and coordinated. The spell grants a +4 \`\`enhancement bonus\`\` to Dexterity, adding the usual benefits to AC, Reflex saves, and other uses of the Dexterity modifier.`,
+          text:             `The transmuted creature becomes more graceful, agile, and coordinated. The spell grants a **+4 enhancement bonus** to Dexterity, adding the usual benefits to AC, Reflex saves, and other uses of the Dexterity modifier.`,
           component_details:'Material Component: A pinch of cat fur'
         },
         'cause fear': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Cause_Fear',
+          ref:              'http://www.d20srd.org/srd/spells/causeFear.htm',
           school:           'Necromancy [Fear, Mind-Affecting]',
-          level:            'Blg 1, Brd 1, Clr 1, Death 1, Sor/Wiz 1',
+          level:            'Adp 1, Arc 1, Blackwater 1, Blk 1, Brd 1, Clr 1, Death 1, DrgBlw 1, Duskblade 1, HB 1, MH 1, Orc 1, Passion 1, Shu 1, Sor/Wiz 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -1259,14 +1259,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[1d4]] rounds or 1 round; see text',
           saving_throw:     'Will partial',
           spell_resistance: 'Yes',
-          text:             `The affected creature becomes [frightened](https://www.dandwiki.com/wiki/SRD:Frightened). If the subject succeeds on a Will save, it is [shaken](https://www.dandwiki.com/wiki/SRD:Shaken) for 1 round. Creatures with 6 or more Hit Dice are immune to this effect.
-                             *Cause fear* counters and dispels [*remove fear*](https://www.dandwiki.com/wiki/SRD:Remove_Fear).`,
-          component_details:null
+          text:             `The affected creature becomes [frightened](http://www.d20srd.org/srd/conditionSummary.htm#frightened). If the subject succeeds on a Will save, it is [shaken](http://www.d20srd.org/srd/conditionSummary.htm#shaken) for 1 round. Creatures with 6 or more Hit Dice are immune to this effect.
+                             Cause fear counters and dispels ***[remove fear](http://www.d20srd.org/srd/spells/removeFear.htm)***.`
         },
         'chain lightning': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Chain_Lightning',
+          ref:              'http://www.d20srd.org/srd/spells/chainLightning.htm',
           school:           'Evocation [Electricity]',
-          level:            'Air 6, Sor/Wiz 6',
+          level:            'Air 6, Arc 7, Duskblade 5, Shu 7, Sor/Wiz 6, Wmg 6',
           components:       'V, S, F',
           casting_time:     '1 standard action',
           range:            '_long_',
@@ -1275,15 +1274,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
-          text:             `This spell creates an electrical discharge that begins as a single stroke commencing from your fingertips. Unlike [*lightning bolt*](https://www.dandwiki.com/wiki/SRD:Lightning_Bolt), *chain lightning* strikes one object or creature initially, then arcs to other targets.
+          text:             `This spell creates an electrical discharge that begins as a single stroke commencing from your fingertips. Unlike ***[lightning bolt](http://www.d20srd.org/srd/spells/lightningBolt.htm)***, chain lightning strikes one object or creature initially, then arcs to other targets.
                              The bolt deals 1d6 points of electricity damage per caster level (maximum 20d6) to the primary target: [[[[{?{Casting Level},20}kl1]]d6]]. After it strikes, lightning can arc to a number of secondary targets equal to your caster level (maximum 20): [[{?{Casting Level},20}kl1]]. The secondary bolts each strike one target and deal half as much damage as the primary one did (rounded down).
                              Each target can attempt a Reflex saving throw for half damage. You choose secondary targets as you like, but they must all be within 30 feet of the primary target, and no target can be struck more than once. You can choose to affect fewer secondary targets than the maximum.`,
           component_details:'Focus: A bit of fur; a piece of amber, glass, or a crystal rod; plus one silver pin for each of your caster levels.'
         },
         'changestaff': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Changestaff',
+          ref:              'http://www.d20srd.org/srd/spells/changestaff.htm',
           school:           'Transmutation',
-          level:            'Drd 7',
+          level:            'Arc 7, Drd 7',
           components:       'V, S, F',
           casting_time:     '1 round',
           range:            'Touch',
@@ -1292,12 +1291,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hour(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `You change a specially prepared quarterstaff into a Huge [treantlike](https://www.dandwiki.com/wiki/SRD:Treant) creature, about 24 feet tall. When you [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) the end of the staff in the ground and speak a special command to conclude the casting of the spell, your staff turns into a creature that looks and fights just like a treant. The staff-treant defends you and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees. If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder and the staff is destroyed. Otherwise, the staff returns to its normal form when the spell duration expires (or when the spell is dismissed), and it can be used as the focus for another casting of the spell. The staff-treant is always at full strength when created, despite any wounds it may have incurred the last time it appeared.`,
+          text:             `You change a specially prepared quarterstaff into a Huge treantlike creature, about 24 feet tall. When you plant the end of the staff in the ground and speak a special command to conclude the casting of the spell, your staff turns into a creature that looks and fights just like a treant. The staff-treant defends you and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees. If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder and the staff is destroyed. Otherwise, the staff returns to its normal form when the spell duration expires (or when the spell is dismissed), and it can be used as the focus for another casting of the spell. The staff-treant is always at full strength when created, despite any wounds it may have incurred the last time it appeared.`,
           component_details:`Focus: The quarterstaff, which must be specially prepared. The staff must be a sound limb cut from an ash, oak, or yew, then cured, shaped, carved, and polished (a process requiring twenty-eight days).
                              You cannot adventure or engage in other strenuous activity during the shaping and carving of the staff.`
         },
         'chaos hammer': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Chaos_Hammer',
+          ref:              'http://www.d20srd.org/srd/spells/chaosHammer.htm',
           school:           'Evocation [Chaotic]',
           level:            'Chaos 4',
           components:       'V, S',
@@ -1309,14 +1308,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will partial; see text',
           spell_resistance: 'Yes',
           text:             `You unleash chaotic power to smite your enemies. The power takes the form of a multicolored explosion of leaping, ricocheting energy. Only lawful and neutral (not chaotic) creatures are harmed by the spell.
-                             The spell deals [[[[{floor(?{Casting Level}/2),5}kl1]]d8]] points of damage to lawful creatures (or [[[[{?{Casting Level},10}kl1]]d6]] points of damage to lawful [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type)) and slows them for [[1d6]] rounds (see the [*slow*](https://www.dandwiki.com/wiki/SRD:Slow) spell). A successful Will save reduces the damage by half and negates the slow effect.
-                             The spell deals only half damage against creatures who are neither lawful nor chaotic, and they are not slowed. Such a creature can reduce the damage by half again (down to one-quarter) with a successful Will save.`,
-          component_details:null
+                             The spell deals [[[[{floor(?{Casting Level}/2),5}kl1]]d8]] points of damage to lawful creatures (or [[[[{?{Casting Level},10}kl1]]d6]] points of damage to lawful outsiders) and slows them for [[1d6]] rounds (see the ***[slow](http://www.d20srd.org/srd/spells/slow.htm)*** spell). A successful Will save reduces the damage by half and negates the slow effect.
+                             The spell deals only half damage against creatures who are neither lawful nor chaotic, and they are not slowed. Such a creature can reduce the damage by half again (down to one-quarter) with a successful Will save.`
         },
         'charm animal': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Charm_Animal',
+          ref:              'http://www.d20srd.org/srd/spells/charmAnimal.htm',
           school:           'Enchantment (Charm) [Mind-Affecting]',
-          level:            'Drd 1, Rgr 1',
+          level:            'Arc 1, BVal 1, Drd 1, Rgr 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -1325,14 +1323,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hour(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This charm makes an [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) is currently being threatened or attacked by you or your allies, however, it receives a +5 \`\`bonus\`\` on its saving throw.
-                             The spell does not enable you to control the *charmed* [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An affected [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing. Any act by you or your apparent allies that threatens the *charmed* [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) breaks the spell. You must speak the [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type)'s language to communicate your commands, or else be good at pantomiming.`,
-          component_details:null
+          text:             `This charm makes an animal regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the animal is currently being threatened or attacked by you or your allies, however, it receives a **+5 bonus** on its saving throw.
+                             The spell does not enable you to control the charmed animal as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An affected animal never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing. Any act by you or your apparent allies that threatens the charmed animal breaks the spell. You must speak the animal's language to communicate your commands, or else be good at pantomiming.`
         },
         'charm monster': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Charm_Monster',
+          ref:              'http://www.d20srd.org/srd/spells/charmMonster.htm',
           school:           'Enchantment (Charm) [Mind-Affecting]',
-          level:            'Brd 3, Charm 5, Sor/Wiz 4',
+          level:            'Beguiler 4, Bestial 5, Brd 3, Charm 5, EmBarachiel 3, HB 3, Sor/Wiz 4, Wuj 4',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -1341,14 +1338,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] day(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This charm makes a creature regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a +5 \`\`bonus\`\` on its saving throw.
-                             The spell does not enable you to control the *charmed* creature as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing. Any act by you or your apparent allies that threatens the *charmed* creature breaks the spell. You must speak the creature language to communicate your commands, or else be good at pantomiming.`,
-          component_details:null
+          text:             `This charm makes a creature regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a **+5 bonus** on its saving throw.
+                             The spell does not enable you to control the charmed creature as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing. Any act by you or your apparent allies that threatens the charmed creature breaks the spell. You must speak the creature language to communicate your commands, or else be good at pantomiming.`
         },
         'charm person': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Charm_Person',
+          ref:              'http://www.d20srd.org/srd/spells/charmPerson.htm',
           school:           'Enchantment (Charm) [Mind-Affecting]',
-          level:            'Brd 1, Charm 1, Sor/Wiz 1',
+          level:            'Beguiler 1, Brd 1, Charm 1, EmBarachiel 1, Fey 2, HB 1, MH 1, Renewal 1, Sin-L 1, Sor/Wiz 1, Wuj 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -1357,14 +1353,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hour(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This charm makes a [humanoid creature](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a +5 \`\`bonus\`\` on its saving throw.
-                             The spell does not enable you to control the *charmed* person as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing. Any act by you or your apparent allies that threatens the *charmed* person breaks the spell. You must speak the person’s language to communicate your commands, or else be good at pantomiming.`,
-          component_details:null
+          text:             `This charm makes a humanoid creature regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a **+5 bonus** on its saving throw.
+                             The spell does not enable you to control the charmed person as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing. Any act by you or your apparent allies that threatens the charmed person breaks the spell. You must speak the person’s language to communicate your commands, or else be good at pantomiming.`
         },
         'chill metal': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Chill_Metal',
+          ref:              'http://www.d20srd.org/srd/spells/chillMetal.htm',
           school:           'Transmutation [Cold]',
-          level:            'Drd 2',
+          level:            'Arc 2, Artificer 2, Blg 2, Cold 2, Drd 2',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -1373,7 +1368,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '7 rounds',
           saving_throw:     'Will negates (object)',
           spell_resistance: 'Yes (object)',
-          text:             `*Chill metal* makes metal extremely cold. Unattended, nonmagical metal gets no saving throw. Magical metal is allowed a saving throw against the spell. An item in a creature’s possession uses the creature’s saving throw bonus unless its own is higher.
+          text:             `Chill metal makes metal extremely cold. Unattended, nonmagical metal gets no saving throw. Magical metal is allowed a saving throw against the spell. An item in a creature’s possession uses the creature’s saving throw bonus unless its own is higher.
                              A creature takes cold damage if its equipment is chilled. It takes full damage if its armor is affected or if it is holding, touching, wearing, or carrying metal weighing one-fifth of its weight. The creature takes minimum damage (1 point or 2 points; see the table) if it’s not wearing metal armor and the metal that it’s carrying weighs less than one-fifth of its weight.
                              On the first round of the spell, the metal becomes chilly and uncomfortable to touch but deals no damage. The same effect also occurs on the last round of the spell’s duration. During the second (and also the next-to-last) round, icy coldness causes pain and damage. In the third, fourth, and fifth rounds, the metal is freezing cold, causing more damage, as shown on the table below.
 
@@ -1383,14 +1378,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • Round 6: ‹Icy|[[1d4]] cold damage›
                              • Round 7: ‹Cold|No damage›
 
-                             Any heat intense enough to damage the creature negates cold damage from the spell (and vice versa) on a point-for-point basis. Underwater, *chill metal* deals no damage, but ice immediately forms around the affected metal, making it more buoyant.
-                             *Chill metal* counters and dispels [*heat metal*](https://www.dandwiki.com/wiki/SRD:Heat_Metal).`,
-          component_details:null
+                             Any heat intense enough to damage the creature negates cold damage from the spell (and vice versa) on a point-for-point basis. Underwater, chill metal deals no damage, but ice immediately forms around the affected metal, making it more buoyant.
+                             Chill metal counters and dispels ***[heat metal](http://www.d20srd.org/srd/spells/heatMetal.htm)***.`
         },
         'chill touch': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Chill_Touch',
+          ref:              'http://www.d20srd.org/srd/spells/chillTouch.htm',
           school:           'Necromancy',
-          level:            'Sor/Wiz 1',
+          level:            'Arc 2, Blg 2, Cold 1, Duskblade 1, Sor/Wiz 1, Wmg 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -1399,14 +1393,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude partial or Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `A touch from your hand, which glows with blue energy, disrupts the life force of living creatures. Each touch channels negative energy that deals [[1d6]] points of damage. The touched creature also takes 1 point of [Strength damage](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Damage) unless it makes a successful Fortitude saving throw. You can use this melee [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) up to [[?{Casting Level}]] time(s).
-                             An [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) you touch takes no damage of either sort, but it must make a successful Will saving throw or flee as if [panicked](https://www.dandwiki.com/wiki/SRD:Panicked) for 1d4 rounds +1 round per caster level: [[1d4+?{Casting Level}]] round(s).`,
-          component_details:null
+          text:             `A touch from your hand, which glows with blue energy, disrupts the life force of living creatures. Each touch channels negative energy that deals [[1d6]] points of damage. The touched creature also takes 1 point of Strength damage unless it makes a successful Fortitude saving throw. You can use this melee touch attack up to [[?{Casting Level}]] time(s).
+                             An undead creature you touch takes no damage of either sort, but it must make a successful Will saving throw or flee as if [panicked](http://www.d20srd.org/srd/conditionSummary.htm#panicked) for 1d4 rounds +1 round per caster level: [[1d4+?{Casting Level}]] round(s).`
         },
         'circle of death': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Circle_of_Death',
+          ref:              'http://www.d20srd.org/srd/spells/circleOfDeath.htm',
           school:           'Necromancy [Death]',
-          level:            'Sor/Wiz 6',
+          level:            'Arc 6, Blg 6, Sor/Wiz 6, Wmg 6',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -1415,14 +1408,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
-          text:             `A *circle of death* snuffs out the life force of living creatures, killing them instantly.
+          text:             `A circle of death snuffs out the life force of living creatures, killing them instantly.
                              The spell slays 1d4 HD worth of living creatures per caster level (maximum 20d4): [[[[{?{Casting Level},20}kl1]]d4]] HD worth. Creatures with the fewest HD are affected first; among creatures with equal HD, those who are closest to the burst’s point of origin are affected first. No creature of 9 or more HD can be affected, and Hit Dice that are not sufficient to affect a creature are wasted.`,
           component_details:'Material Component: The powder of a crushed black pearl with a minimum value of 500 gp.'
         },
         'clairaudience/clairvoyance': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Clairaudience/Clairvoyance',
+          ref:              'http://www.d20srd.org/srd/spells/clairaudienceClairvoyance.htm',
           school:           'Divination (Scrying)',
-          level:            'Asn 4, Brd 3, Knowledge 3, Sor/Wiz 3',
+          level:            'Arc 3, Asn 4, Beguiler 3, Brd 3, Drow 2, EmBarachiel 3, Hoard 3, Knowledge 3, Mental 3, Planning 3, Shu 3, Sin-L 3, Sor/Wiz 3',
           components:       'V, S, F/DF',
           casting_time:     '10 minutes',
           range:            '_long_',
@@ -1431,13 +1424,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `*Clairaudience/clairvoyance* creates an [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) magical sensor at a specific location that enables you to hear or see (your choice) almost as if you were there. You don’t need line of sight or line of effect, but the locale must be known—a place familiar to you or an obvious one. Once you have selected the locale, the sensor doesn’t move, but you can rotate it in all directions to view the area as desired. Unlike other scrying spells, this spell does not allow magically or supernaturally enhanced senses to work through it. If the chosen locale is magically dark, you see nothing. If it is naturally pitch black, you can see in a 10- foot radius around the center of the spell’s effect. *Clairaudience/clairvoyance* functions only on the plane of existence you are currently occupying.`,
+          text:             `Clairaudience/clairvoyance creates an [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) magical sensor at a specific location that enables you to hear or see (your choice) almost as if you were there. You don’t need line of sight or line of effect, but the locale must be known—a place familiar to you or an obvious one. Once you have selected the locale, the sensor doesn’t move, but you can rotate it in all directions to view the area as desired. Unlike other scrying spells, this spell does not allow magically or supernaturally enhanced senses to work through it. If the chosen locale is magically dark, you see nothing. If it is naturally pitch black, you can see in a 10-foot radius around the center of the spell’s effect. Clairaudience/clairvoyance functions only on the plane of existence you are currently occupying.`,
           component_details:'Arcane Focus: A small horn (for hearing) or a glass eye (for seeing).'
         },
         'clenched fist': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Clenched_Fist',
+          ref:              'http://www.d20srd.org/srd/spells/clenchedFist.htm',
           school:           'Evocation [Force]',
-          level:            'Sor/Wiz 8, Strength 8',
+          level:            'Duskblade 5, Sor/Wiz 8, Strength 8',
           components:       'V, S, F/DF',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -1446,16 +1439,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `This spell functions like [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand), except that the hand can interpose itself, push, or strike one opponent that you select. The floating hand can move as far as 60 feet and can attack in the same round. Since this hand is directed by you, its ability to notice or attack [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) or concealed creatures is no better than yours.
-                             The hand attacks once per round, and its attack bonus equals your caster level + your Intelligence, Wisdom, or Charisma modifier (for a [wizard](https://www.dandwiki.com/wiki/SRD:Wizard), [cleric](https://www.dandwiki.com/wiki/SRD:Cleric), or [sorcerer](https://www.dandwiki.com/wiki/SRD:Sorcerer), respectively), +11 for the hand’s Strength score (33), -1 for being Large. The hand deals ‹1d8+11› points of damage on each attack, and any creature struck must make a Fortitude save (against this spell’s save DC) or be [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for 1 round. Directing the spell to a new target is a [move action](https://www.dandwiki.com/wiki/SRD:Move_Actions).
-                             The *clenched fist* can also interpose itself as [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand) does, or it can [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) an opponent as [*forceful hand*](https://www.dandwiki.com/wiki/SRD:Forceful_Hand) does, but at a +15 \`\`bonus\`\` on the Strength check.
-                             [Clerics](https://www.dandwiki.com/wiki/SRD:Cleric) who cast this spell name it for their deities.`,
+          text:             `This spell functions like ***[interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm)***, except that the hand can interpose itself, push, or strike one opponent that you select. The floating hand can move as far as 60 feet and can attack in the same round. Since this hand is directed by you, its ability to notice or attack [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) or concealed creatures is no better than yours.
+                             The hand attacks once per round, and its attack bonus equals your caster level + your Intelligence, Wisdom, or Charisma modifier (for a wizard, cleric, or sorcerer, respectively), +11 for the hand’s Strength score (33), -1 for being Large. The hand deals ‹1d8+11› points of damage on each attack, and any creature struck must make a Fortitude save (against this spell’s save DC) or be [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for 1 round. Directing the spell to a new target is a move action.
+                             The clenched fist can also interpose itself as ***[interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm)*** does, or it can bull rush an opponent as ***[forceful hand](http://www.d20srd.org/srd/spells/forcefulHand.htm)*** does, but at a **+15 bonus** on the Strength check.
+                             Clerics who cast this spell name it for their deities.`,
           component_details:'Arcane Focus: A leather glove.'
         },
         'cloak of chaos': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Cloak_of_Chaos',
+          ref:              'http://www.d20srd.org/srd/spells/cloakOfChaos.htm',
           school:           'Abjuration [Chaotic]',
-          level:            'Chaos 8, Clr 8',
+          level:            'Arc 8, Chaos 8, Clr 8, Orc 8',
           components:       'V, S, F',
           casting_time:     '1 standard action',
           range:            '20 ft.',
@@ -1464,15 +1457,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round(s) (D)',
           saving_throw:     'See text',
           spell_resistance: 'Yes (harmless)',
-          text:             `A random pattern of color surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by lawful creatures, and causing lawful creatures that strike the subjects to become [*confused*](https://www.dandwiki.com/wiki/SRD:Confused). This abjuration has four effects.
-                             First, each warded creature gains a +4 \`\`deflection bonus\`\` to AC and a +4 \`\`resistance bonus\`\` on saves. Unlike [*protection from law*](https://www.dandwiki.com/wiki/SRD:Protection_from_Law), the benefit of this spell applies against all attacks, not just against attacks by lawful creatures.
-                             Second, each warded creature gains [spell resistance](https://www.dandwiki.com/wiki/SRD:Spell_Resistance) 25 against lawful spells and spells cast by lawful creatures.
-                             Third, the abjuration blocks possession and mental influence, just as *protection from law* does.
-                             Finally, if a lawful creature succeeds on a [melee attack](https://www.dandwiki.com/wiki/SRD:Melee_Attack) against a warded creature, the offending attacker is [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) for 1 round (Will save negates, as with the [*confusion*](https://www.dandwiki.com/wiki/SRD:Confusion) spell, but against the save DC of *cloak of chaos*).`,
+          text:             `A random pattern of color surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by lawful creatures, and causing lawful creatures that strike the subjects to become [confused(http://www.d20srd.org/srd/conditionSummary.htm#confused). This abjuration has four effects.
+                             First, each warded creature gains a **+4 deflection bonus** to AC and a **+4 resistance bonus** on saves. Unlike ***[protection from law](http://www.d20srd.org/srd/spells/protectionFromLaw.htm)***, the benefit of this spell applies against all attacks, not just against attacks by lawful creatures.
+                             Second, each warded creature gains spell resistance 25 against lawful spells and spells cast by lawful creatures.
+                             Third, the abjuration blocks possession and mental influence, just as ***[protection from law](http://www.d20srd.org/srd/spells/protectionFromLaw.htm)*** does.
+                             Finally, if a lawful creature succeeds on a melee attack against a warded creature, the offending attacker is [confused](http://www.d20srd.org/srd/conditionSummary.htm#confused) for 1 round (Will save negates, as with the ***[confusion](http://www.d20srd.org/srd/spells/confusion.htm)*** spell, but against the save DC of cloak of chaos).`,
           component_details:'Focus: A tiny reliquary containing some sacred relic, such as a scrap of parchment from a chaotic text. The reliquary costs at least 500 gp.'
         },
         'clone': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Clone',
+          ref:              'http://www.d20srd.org/srd/spells/clone.htm',
           school:           'Necromancy',
           level:            'Sor/Wiz 8',
           components:       'V, S, M, F',
@@ -1492,9 +1485,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Focus: Special laboratory equipment (cost 500 gp).`
         },
         'cloudkill': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Cloudkill',
+          ref:              'http://www.d20srd.org/srd/spells/cloudkill.htm',
           school:           'Conjuration (Creation)',
-          level:            'Sor/Wiz 5',
+          level:            'Arc 6, Shu 6, Sor/Wiz 5, Wmg 5',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -1503,17 +1496,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Fortitude partial; see text',
           spell_resistance: 'No',
-          text:             `This spell generates a bank of fog, similar to a [*fog cloud*](https://www.dandwiki.com/wiki/SRD:Fog_Cloud), except that its vapors are yellowish green and poisonous. These vapors automatically kill any living creature with 3 or fewer HD (no save). A living creature with 4 to 6 HD is slain unless it succeeds on a Fortitude save (in which case it takes ‹1d4› points of Constitution damage on your turn each round while in the cloud).
+          text:             `This spell generates a bank of fog, similar to a ***[fog cloud](http://www.d20srd.org/srd/spells/fogCloud.htm)***, except that its vapors are yellowish green and poisonous. These vapors automatically kill any living creature with 3 or fewer HD (no save). A living creature with 4 to 6 HD is slain unless it succeeds on a Fortitude save (in which case it takes ‹1d4› points of Constitution damage on your turn each round while in the cloud).
                              A living creature with 6 or more HD takes ‹1d4› points of Constitution damage on your turn each round while in the cloud (a successful Fortitude save halves this damage). Holding one’s breath doesn’t help, but creatures immune to poison are unaffected by the spell.
                              Unlike a *fog cloud*, the *cloudkill* moves away from you at 10 feet per round, rolling along the surface of the ground.
                              Figure out the cloud’s new spread each round based on its new point of origin, which is 10 feet farther away from the point of origin where you cast the spell.
-                             Because the vapors are heavier than air, they sink to the lowest level of the land, even pouring down den or sinkhole openings. It cannot penetrate liquids, nor can it be cast underwater.`,
-          component_details:null
+                             Because the vapors are heavier than air, they sink to the lowest level of the land, even pouring down den or sinkhole openings. It cannot penetrate liquids, nor can it be cast underwater.`
         },
         'color spray': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Color_Spray',
+          ref:              'http://www.d20srd.org/srd/spells/colorSpray.htm',
           school:           'Illusion (Pattern) [Mind-Affecting]',
-          level:            'Sor/Wiz 1',
+          level:            'Arc 2, Beguiler 1, Duskblade 1, Shu 2, Sor/Wiz 1',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '15 ft.',
@@ -1524,16 +1516,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `A vivid cone of clashing colors springs forth from your hand, causing creatures to become [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned), perhaps also [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded), and possibly knocking them unconscious.
                              Each creature within the cone is affected according to its Hit Dice.
-                             *2 HD or less*: The creature is [unconscious](https://www.dandwiki.com/wiki/SRD:Unconscious), [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded), and [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for [[2d4]] rounds, then [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded) and [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for [[1d4]] rounds, and then [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for 1 round. (Only living creatures are knocked unconscious.)
+                             *2 HD or less*: The creature is [unconscious](http://www.d20srd.org/srd/conditionSummary.htm#unconscious), [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded), and [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for [[2d4]] rounds, then [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded) and [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for [[1d4]] rounds, and then [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for 1 round. (Only living creatures are knocked unconscious.)
                              *3 or 4 HD*: The creature is [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded) and [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for [[1d4]] rounds, then [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for 1 round.
                              *5 or more HD*: The creature is [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for 1 round.
                              Sightless creatures are not affected by color spray.`,
           component_details:'Material Component: A pinch each of powder or sand that is colored red, yellow, and blue.'
         },
         'command': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Command',
+          ref:              'http://www.d20srd.org/srd/spells/command.htm',
           school:           'Enchantment (Compulsion) [Language-Dependent, Mind-Affecting]',
-          level:            'Clr 1',
+          level:            'Adp 1, APeace 1, Arc 1, Clr 1, Domination 1, Pact 1, Tyranny 1',
           components:       'V',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -1543,34 +1535,32 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `You give the subject a single command, which it obeys to the best of its ability at its earliest opportunity. You may select from the following options.
-                             *Approach*: On its turn, the subject moves toward you as quickly and directly as possible for 1 round. The creature may do nothing but move during its turn, and it provokes [attacks of opportunity](https://www.dandwiki.com/wiki/SRD:Attack_of_Opportunity) for this movement as normal.
+                             *Approach*: On its turn, the subject moves toward you as quickly and directly as possible for 1 round. The creature may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
                              *Drop*: On its turn, the subject drops whatever it is holding. It can’t pick up any dropped item until its next turn.
-                             *Fall*: On its turn, the subject falls to the ground and remains [prone](https://www.dandwiki.com/wiki/SRD:Prone) for 1 round. It may act normally while [prone](https://www.dandwiki.com/wiki/SRD:Prone) but takes any appropriate penalties.
-                             *Flee*: On its turn, the subject moves away from you as quickly as possible for 1 round. It may do nothing but move during its turn, and it provokes [attacks of opportunity](https://www.dandwiki.com/wiki/SRD:Attack_of_Opportunity) for this movement as normal.
-                             *Halt*: The subject stands in place for 1 round. It may not take any actions but is not considered [helpless](https://www.dandwiki.com/wiki/SRD:Helpless).
-                             If the subject can’t carry out your command on its next turn, the spell automatically fails.`,
-          component_details:null
+                             *Fall*: On its turn, the subject falls to the ground and remains [prone](http://www.d20srd.org/srd/conditionSummary.htm#prone) for 1 round. It may act normally while [prone](http://www.d20srd.org/srd/conditionSummary.htm#prone) but takes any appropriate penalties.
+                             *Flee*: On its turn, the subject moves away from you as quickly as possible for 1 round. It may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
+                             *Halt*: The subject stands in place for 1 round. It may not take any actions but is not considered [helpless](http://www.d20srd.org/srd/conditionSummary.htm#helpless).
+                             If the subject can’t carry out your command on its next turn, the spell automatically fails.`
         },
         'command plants': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Command_Plants',
+          ref:              'http://www.d20srd.org/srd/spells/commandPlants.htm',
           school:           'Transmutation',
-          level:            'Drd 4, Plant 4, Rgr 3',
+          level:            'Arc 3, Drd 4, Plant 4, Rgr 3, Wuj 4',
           components:       'V',
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           'Up to [[2*?{Casting Level}]] HD of [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) creatures, no two of which can be more than 30 ft. apart',
+          target:           'Up to [[2*?{Casting Level}]] HD of plant creatures, no two of which can be more than 30 ft. apart',
           duration:         '[[?{Casting Level}]] day(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This spell allows you some degree of control over one or more [plant creatures](https://www.dandwiki.com/wiki/SRD:Plant_Type). Affected [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) creatures can understand you, and they perceive your words and actions in the most favorable way (treat their attitude as friendly). They will not attack you while the spell lasts. You can try to give a subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) A commanded [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing.
-                             You can affect a number of [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) creatures whose combined level or HD do not exceed twice your level.`,
-          component_details:null
+          text:             `This spell allows you some degree of control over one or more plant creatures. Affected plant creatures can understand you, and they perceive your words and actions in the most favorable way (treat their attitude as friendly). They will not attack you while the spell lasts. You can try to give a subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) A commanded plant never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing.
+                             You can affect a number of plant creatures whose combined level or HD do not exceed twice your level.`
         },
         'command undead': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Command_Undead',
+          ref:              'http://www.d20srd.org/srd/spells/commandUndead.htm',
           school:           'Necromancy',
-          level:            'Sor/Wiz 2',
+          level:            'Arc 3, Drd 4, Plant 4, Rgr 3, Wuj 4',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -1579,60 +1569,60 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] day(s)',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `This spell allows you some degree of control over an [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type). Assuming the subject is intelligent, it perceives your words and actions in the most favorable way (treat its attitude as friendly). It will not attack you while the spell lasts. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An intelligent commanded [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing.
-                             A nonintelligent [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature gets no saving throw against this spell. When you control a mindless being, you can communicate only basic commands, such as “come here,” “go there,” “fight,” “stand still,” and so on. Nonintelligent [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) won’t resist suicidal or obviously harmful orders.
-                             Any act by you or your apparent allies that threatens the commanded [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) (regardless of its Intelligence) breaks the spell.
-                             Your commands are not telepathic. The [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature must be able to hear you.`,
-          component_details:'Material Component: A shred of raw meat and a splinter of bone.'
+          text:             `This spell allows you some degree of control over an undead creature. Assuming the subject is intelligent, it perceives your words and actions in the most favorable way (treat its attitude as friendly). It will not attack you while the spell lasts. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An intelligent commanded undead never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing.
+                             A nonintelligent undead creature gets no saving throw against this spell. When you control a mindless being, you can communicate only basic commands, such as “come here,” “go there,” “fight,” “stand still,” and so on. Nonintelligent undead won’t resist suicidal or obviously harmful orders.
+                             Any act by you or your apparent allies that threatens the commanded undead (regardless of its Intelligence) breaks the spell.
+                             Your commands are not telepathic. The undead creature must be able to hear you.`,
+          component_details:'Material Component: A shred of raw meat and a splinter of bone.',
+          other_versions:   'Tome and Blood on page 86'
         },
         'commune': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Commune',
+          ref:              'http://www.d20srd.org/srd/spells/commune.htm',
           school:           'Divination',
-          level:            'Clr 5',
+          level:            'Adp 5, APeace 5, Arc 5, Clr 5, Oracle 5',
           components:       'V, S, M, DF, XP',
           casting_time:     '10 minutes',
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
           duration:         '[[?{Casting Level}]] round(s)',
-          text:             `You contact your deity—or agents thereof —and ask questions that can be answered by a simple yes or no. (A [cleric](https://www.dandwiki.com/wiki/SRD:Cleric) of no particular deity contacts a philosophically allied deity.) You are allowed one such question per caster level. The answers given are correct within the limits of the entity’s knowledge. “Unclear” is a legitimate answer, because powerful beings of the Outer Planes are not necessarily omniscient. In cases where a one-word answer would be misleading or contrary to the deity’s interests, a short phrase (five words or less) may be given as an answer instead.
+          text:             `You contact your deity—or agents thereof —and ask questions that can be answered by a simple yes or no. (A cleric of no particular deity contacts a philosophically allied deity.) You are allowed one such question per caster level. The answers given are correct within the limits of the entity’s knowledge. “Unclear” is a legitimate answer, because powerful beings of the Outer Planes are not necessarily omniscient. In cases where a one-word answer would be misleading or contrary to the deity’s interests, a short phrase (five words or less) may be given as an answer instead.
                              The spell, at best, provides information to aid character decisions. The entities contacted structure their answers to further their own purposes. If you lag, discuss the answers, or go off to do anything else, the spell ends.`,
           component_details:`Material Component: Holy (or unholy) water and incense.
                              XP Cost: 100 XP.`
         },
         'commune with nature': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Commune_with_Nature',
+          ref:              'http://www.d20srd.org/srd/spells/communeWithNature.htm',
           school:           'Divination',
-          level:            'Animal 5, Drd 5, Rgr 4',
+          level:            'Animal 5, Arc 4, BVal 4, Drd 5, Elf 5, Rgr 4, Seafolk 5, Shu 5',
           components:       'V, S',
           casting_time:     '10 minutes',
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
           duration:         'Instantaneous',
-          text:             `You become one with nature, attaining knowledge of the surrounding territory. You instantly gain knowledge of as many as three facts from among the following subjects: the ground or terrain, [plants](https://www.dandwiki.com/wiki/SRD:Plant_Type), minerals, bodies of water, people, general [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) population, presence of woodland creatures, presence of powerful unnatural creatures, or even the general state of the natural setting.
-                             In outdoor settings, the spell operates in a radius of 1 mile per caster level. In natural underground settings—caves, caverns, and the like—the radius is limited to 100 feet per caster level. The spell does not function where nature has been replaced by construction or settlement, such as in dungeons and towns.`,
-          component_details:null
+          text:             `You become one with nature, attaining knowledge of the surrounding territory. You instantly gain knowledge of as many as three facts from among the following subjects: the ground or terrain, plants, minerals, bodies of water, people, general animal population, presence of woodland creatures, presence of powerful unnatural creatures, or even the general state of the natural setting.
+                             In outdoor settings, the spell operates in a radius of 1 mile per caster level. In natural underground settings—caves, caverns, and the like—the radius is limited to 100 feet per caster level. The spell does not function where nature has been replaced by construction or settlement, such as in dungeons and towns.`
         },
         'comprehend languages': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Comprehend_Languages',
+          ref:              'http://www.d20srd.org/srd/spells/comprehendLanguages.htm',
           school:           'Divination',
-          level:            'Brd 1, Clr 1, Mind 1, Sor/Wiz 1',
+          level:            'Adp 1, APeace 1, Arc 1, Beguiler 1, Brd 1, Clr 1, Commerce 1, EmBarachiel 1, Herald 1, Meditation 1, Mind 1, Sor/Wiz 1, Wuj 1',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
           text:             `You can understand the spoken words of creatures or read otherwise incomprehensible written messages. In either case, you must touch the creature or the writing. The ability to read does not necessarily impart insight into the material, merely its literal meaning. The spell enables you to understand or read an unknown language, not speak or write it.
-                             Written material can be read at the rate of one page (250 words) per minute. Magical writing cannot be read, though the spell reveals that it is magical. This spell can be foiled by certain warding magic (such as the [*secret page*](https://www.dandwiki.com/wiki/SRD:Secret_Page) and [*illusory script*](https://www.dandwiki.com/wiki/SRD:Illusory_Script) spells). It does not decipher codes or reveal messages concealed in otherwise normal text.
-                             *Comprehend languages* can be made permanent with a [*permanency*](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
+                             Written material can be read at the rate of one page (250 words) per minute. Magical writing cannot be read, though the spell reveals that it is magical. This spell can be foiled by certain warding magic (such as the ***[secret page](http://www.d20srd.org/srd/spells/secretPage.htm)*** and ***[illusory script](http://www.d20srd.org/srd/spells/illusoryScript.htm)*** spells). It does not decipher codes or reveal messages concealed in otherwise normal text.
+                             Comprehend languages can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`,
           component_details:'Arcane Material Component: A pinch of soot and a few grains of salt.'
         },
         'cone of cold': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Cone_of_Cold',
+          ref:              'http://www.d20srd.org/srd/spells/coneOfCold.htm',
           school:           'Evocation [Cold]',
-          level:            'Sor/Wiz 5, Water 6',
+          level:            'Cold 6, Sor/Wiz 5, Water 6, Wmg 5, Wuj 5',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            '60 ft.',
@@ -1645,9 +1635,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Arcane Material Component: A very small crystal or glass cone.'
         },
         'confusion': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Confusion',
+          ref:              'http://www.d20srd.org/srd/spells/confusion.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Brd 3, Madness 4, Sor/Wiz 4, Trickery 4',
+          level:            'Arc 5, Beguiler 4, Brd 3, HB 3, Madness 4, Passion 3, Shu 5, Sor/Wiz 4, Trickery 4, Wuj 4',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -1656,15 +1646,22 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This spell causes the targets to become [*confused*](https://www.dandwiki.com/wiki/SRD:Confused), making them unable to independently determine what they will do.
-                             Roll ‹1d100› on the [*confused condition table*](https://www.dandwiki.com/wiki/SRD:Confused) at the beginning of each subject’s turn each round to see what the subject does in that round.
-                             A [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) character who can’t carry out the indicated action does nothing but babble incoherently. Attackers are not at any special advantage when attacking a [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) character. Any [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) character who is attacked automatically attacks its attackers on its next turn, as long as it is still [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) when its turn comes. Note that a [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) character will not make [attacks of opportunity](https://www.dandwiki.com/wiki/SRD:Attack_of_Opportunity) against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).`,
+          text:             `This spell causes the targets to become [confused](http://www.d20srd.org/srd/conditionSummary.htm#confused), making them unable to independently determine what they will do.
+                             Roll ‹1d100› on the following table at the beginning of each subject’s turn each round to see what the subject does in that round.
+
+                             • **01-10**: Attack caster with melee or ranged weapons (or close with caster if attack is not possible).
+                             • **11-20**: Act normally.
+                             • **21-50**: Do nothing but babble incoherently.
+                             • **51-70**: Flee away from caster at top possible speed.
+                             • **71-100**: Attack nearest creature (for this purpose, a familiar counts as part of the subject’s self).
+
+                             A [confused](http://www.d20srd.org/srd/conditionSummary.htm#confused) character who can’t carry out the indicated action does nothing but babble incoherently. Attackers are not at any special advantage when attacking a [confused](http://www.d20srd.org/srd/conditionSummary.htm#confused) character. Any [confused](http://www.d20srd.org/srd/conditionSummary.htm#confused) character who is attacked automatically attacks its attackers on its next turn, as long as it is still [confused](http://www.d20srd.org/srd/conditionSummary.htm#confused) when its turn comes. Note that a [confused](http://www.d20srd.org/srd/conditionSummary.htm#confused) character will not make attacks of opportunity against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).`,
           component_details:'Arcane Material Component: A set of three nut shells.'
         },
         'consecrate': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Consecrate',
+          ref:              'http://www.d20srd.org/srd/spells/consecrate.htm',
           school:           'Evocation [Good]',
-          level:            'Clr 2',
+          level:            'APeace 2, Arc 2, Celestial 2, Clr 2, Deathless 2, Exalted Arcanist 2, KotC 2',
           components:       'V, S, M, DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -1673,16 +1670,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[2*?{Casting Level}]] hour(s)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `This spell blesses an area with positive energy. Each Charisma check made to [turn undead](https://www.dandwiki.com/wiki/SRD:Turn_or_Rebuke_Undead) within this area gains a +3 \`\`sacred bonus\`\`. Every [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) entering a *consecrated* area suffers minor disruption, giving it a -1 \`\`penalty\`\` on attack rolls, damage rolls, and saves. [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) cannot be created within or summoned into a *consecrated* area.
-                             If the *consecrated* area contains an altar, shrine, or other permanent fixture dedicated to your deity, pantheon, or aligned higher power, the modifiers given above are doubled (+6 \`\`sacred bonus\`\` on turning checks, -2 \`\`penalties\`\` for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) in the area). You cannot consecrate an area with a similar fixture of a deity other than your own patron.
-                             If the area does contain an altar, shrine, or other permanent fixture of a deity, pantheon, or higher power other than your patron, the consecrate spell instead curses the area, cutting off its connection with the associated deity or power. This secondary function, if used, does not also grant the bonuses and penalties relating to [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type), as given above.
-                             *Consecrate* counters and dispels [*desecrate*](https://www.dandwiki.com/wiki/SRD:Desecrate).`,
+          text:             `This spell blesses an area with positive energy. Each Charisma check made to turn undead within this area gains a **+3 sacred bonus**. Every undead creature entering a consecrated area suffers minor disruption, giving it a **-1 penalty** on attack rolls, damage rolls, and saves. Undead cannot be created within or summoned into a consecrated area.
+                             If the consecrated area contains an altar, shrine, or other permanent fixture dedicated to your deity, pantheon, or aligned higher power, the modifiers given above are doubled (**+6 sacred bonus** on turning checks, **-2 penalties** for undead in the area). You cannot consecrate an area with a similar fixture of a deity other than your own patron.
+                             If the area does contain an altar, shrine, or other permanent fixture of a deity, pantheon, or higher power other than your patron, the consecrate spell instead curses the area, cutting off its connection with the associated deity or power. This secondary function, if used, does not also grant the bonuses and penalties relating to undead, as given above.
+                             Consecrate counters and dispels ***[desecrate](http://www.d20srd.org/srd/spells/desecrate.htm)***.`,
           component_details:'Material Component: A vial of holy water and 25 gp worth (5 pounds) of silver dust, all of which must be sprinkled around the area.'
         },
         'contact other plane': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Contact_Other_Plane',
+          ref:              'http://www.d20srd.org/srd/spells/contactOtherPlane.htm',
           school:           'Divination',
-          level:            'Sor/Wiz 5',
+          level:            'HB 4, Sor/Wiz 5',
           components:       'V',
           casting_time:     '10 minutes',
           range:            'Personal',
@@ -1707,7 +1704,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              -- 35–62
                              -- 63–83
                              -- 84–100
-                             • **(appropriate):**
+                             • **Elemental Plane (appropriate):**
                              -- *(DC 7/1 week)*
                              -- (01–68)
                              -- (69–75)
@@ -1755,13 +1752,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *True Answer:* You get a true, one-word answer. Questions that cannot be answered in this way are answered randomly.
                              *Don’t Know:* The entity tells you that it doesn’t know.
                              *Lie:* The entity intentionally lies to you.
-                             *Random Answer:* The entity tries to lie but doesn’t know the answer, so it makes one up.`,
-          component_details:null
+                             *Random Answer:* The entity tries to lie but doesn’t know the answer, so it makes one up.`
         },
         'contagion': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Contagion',
+          ref:              'http://www.d20srd.org/srd/spells/contagion.htm',
           school:           'Necromancy [Evil]',
-          level:            'Blg 3, Clr 3, Destruction 3, Drd 3, Sor/Wiz 4',
+          level:            'Adp 3, Arc 3, Blg 3, Blk 3, Clr 3, Corruption 3, Decay 3, Destruction 3, Drd 3, Pestilence 3, Sor/Wiz 4, Wmg 4',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -1770,40 +1766,39 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
-          text:             `The subject contracts a [disease](https://www.dandwiki.com/wiki/SRD:Disease) selected from the table below, which strikes immediately (no incubation period). The DC noted is for the subsequent saves (use *contagion’s* normal save DC for the initial saving throw).
-                             • **[Disease](https://www.dandwiki.com/wiki/SRD:Disease)** [DC] Damage
-                             • **[Blinding sickness](https://www.dandwiki.com/wiki/SRD:Disease#Blinding_Sickness)** [16] ‹1d4 STR|[[1d4]] STR damage›†
-                             • **[Cackle fever](https://www.dandwiki.com/wiki/SRD:Disease#Cackle_Fever)** [16] ‹1d6 WIS|[[1d6]] WIS damage›
-                             • **[Filth fever](https://www.dandwiki.com/wiki/SRD:Disease#Filth_Fever)** [12] ‹1d3 DEX + 1d3 CON|[[1d3]] DEX + [[1d3]] CON damage›
-                             • **[Mindfire](https://www.dandwiki.com/wiki/SRD:Disease#Mindfire)** [12] ‹1d4 INT|[[1d4]] INT damage›
-                             • **[Red ache](https://www.dandwiki.com/wiki/SRD:Disease#Red_Ache)** [15] ‹1d6 STR|[[1d6]] STR damage›
-                             • **[Shakes](https://www.dandwiki.com/wiki/SRD:Disease#Shakes)** [13] ‹1d8 DEX|[[1d8]] DEX damage›
-                             • **[Slimy doom](https://www.dandwiki.com/wiki/SRD:Disease#Slimy_Doom)** [14] ‹1d4 CON|[[1d4]] CON damage›
-                             † Each time a victim takes 2 or more points of Strength damage from blinding sickness, he or she must make another Fortitude save (using the disease’s save DC) or be permanently [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded).`,
-          component_details:null
+          text:             `The subject contracts a [disease](http://www.d20srd.org/srd/specialAbilities.htm#disease) selected from the table below, which strikes immediately (no incubation period). The DC noted is for the subsequent saves (use *contagion’s* normal save DC for the initial saving throw).
+                             • **[Disease](http://www.d20srd.org/srd/specialAbilities.htm#disease)** [DC] Damage
+                             • **Blinding sickness** [16] ‹1d4 STR|[[1d4]] STR damage›†
+                             • **Cackle fever** [16] ‹1d6 WIS|[[1d6]] WIS damage›
+                             • **Filth fever** [12] ‹1d3 DEX + 1d3 CON|[[1d3]] DEX + [[1d3]] CON damage›
+                             • **Mindfire** [12] ‹1d4 INT|[[1d4]] INT damage›
+                             • **Red ache** [15] ‹1d6 STR|[[1d6]] STR damage›
+                             • **Shakes** [13] ‹1d8 DEX|[[1d8]] DEX damage›
+                             • **Slimy doom** [14] ‹1d4 CON|[[1d4]] CON damage›
+                             † Each time a victim takes 2 or more points of Strength damage from blinding sickness, he or she must make another Fortitude save (using the disease’s save DC) or be permanently [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded).`
         },
         'contingency': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Contingency',
+          ref:              'http://www.d20srd.org/srd/spells/contingency.htm',
           school:           'Evocation',
-          level:            'Sor/Wiz 6, Time 6',
+          level:            'Arc 6, Shu 6, Sor/Wiz 6, Time 6',
           components:       'V, S, M, F',
           casting_time:     'At least 10 minutes; see text',
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
           duration:         '[[?{Casting Level}]] day(s) (D) or until discharged',
-          text:             `You can place another spell upon your person so that it comes into effect under some condition you dictate when casting *contingency*. The *contingency* spell and the companion spell are cast at the same time. The 10-minute casting time is the minimum total for both castings; if the companion spell has a casting time longer than 10 minutes, use that instead.
-                             The spell to be brought into effect by the *contingency* must be one that affects your person and be of a spell level no higher than one-third your caster level (rounded down, maximum 6th level).
-                             The conditions needed to bring the spell into effect must be clear, although they can be general. In all cases, the *contingency* immediately brings into effect the companion spell, the latter being “cast” instantaneously when the prescribed circumstances occur. If complicated or convoluted conditions are prescribed, the whole spell combination (*contingency* and the companion magic) may fail when called on. The companion spell occurs based solely on the stated conditions, regardless of whether you want it to.
-                             You can use only one *contingency* spell at a time; if a second is cast, the first one (if still active) is dispelled.`,
-          component_details:`Material Component: That of the companion spell, plus quicksilver and an eyelash of an [ogre mage](https://www.dandwiki.com/wiki/SRD:Ogre_Mage), [rakshasa](https://www.dandwiki.com/wiki/SRD:Rakshasa), or similar spell-using creature.
-                             Focus: A statuette of you carved from elephant ivory and decorated with gems (worth at least 1,500 gp). You must carry the focus for the *contingency* to work.`
+          text:             `You can place another spell upon your person so that it comes into effect under some condition you dictate when casting contingency. The contingency spell and the companion spell are cast at the same time. The 10-minute casting time is the minimum total for both castings; if the companion spell has a casting time longer than 10 minutes, use that instead.
+                             The spell to be brought into effect by the contingency must be one that affects your person and be of a spell level no higher than one-third your caster level (rounded down, maximum 6th level).
+                             The conditions needed to bring the spell into effect must be clear, although they can be general. In all cases, the contingency immediately brings into effect the companion spell, the latter being “cast” instantaneously when the prescribed circumstances occur. If complicated or convoluted conditions are prescribed, the whole spell combination (contingency and the companion magic) may fail when called on. The companion spell occurs based solely on the stated conditions, regardless of whether you want it to.
+                             You can use only one contingency spell at a time; if a second is cast, the first one (if still active) is dispelled.`,
+          component_details:`Material Component: That of the companion spell, plus quicksilver and an eyelash of an [ogre mage](http://www.d20srd.org/srd/monsters/ogreMage.htm), rakshasa, or similar spell-using creature.
+                             Focus: A statuette of you carved from elephant ivory and decorated with gems (worth at least 1,500 gp). You must carry the focus for the contingency to work.`
         },
         //Epic Spell: contingent resurrection
         'continual flame': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Continual_Flame',
+          ref:              'http://www.d20srd.org/srd/spells/continualFlame.htm',
           school:           'Evocation [Light]',
-          level:            'Clr 3, Sor/Wiz 2',
+          level:            'Adp 3, Arc 3, Clr 3, HotD 2, Sor/Wiz 2, Wmg 2',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -1812,46 +1807,45 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Permanent',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn’t use oxygen. A *continual flame* can be covered and hidden but not smothered or quenched.
+          text:             `A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn’t use oxygen. A continual flame can be covered and hidden but not smothered or quenched.
                              Light spells counter and dispel darkness spells of an equal or lower level.`,
           component_details:'Material Component: You sprinkle ruby dust (worth 50 gp) on the item that is to carry the flame.'
         },
         'control plants': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Control_Plants',
+          ref:              'http://www.d20srd.org/srd/spells/controlPlants.htm',
           school:           'Transmutation',
-          level:            'Drd 8, Plant 8',
+          level:            'Arc 8, Drd 8, Plant 8, Wuj 8',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           'Up to [[2*?{Casting Level}]] HD of [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) creatures, no two of which can be more than 30 ft. apart',
+          target:           'Up to [[2*?{Casting Level}]] HD of plant creatures, no two of which can be more than 30 ft. apart',
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'No',
-          text:             `This spell enables you to control the actions of one or more [plant creatures](https://www.dandwiki.com/wiki/SRD:Plant_Type) for a short period of time. You command the creatures by voice and they understand you, no matter what language you speak. Even if vocal communication is impossible the controlled [plants](https://www.dandwiki.com/wiki/SRD:Plant_Type) do not attack you. At the end of the spell, the subjects revert to their normal behavior.
-                             Suicidal or self-destructive commands are simply ignored.`,
-          component_details:null
+          text:             `This spell enables you to control the actions of one or more plant creatures for a short period of time. You command the creatures by voice and they understand you, no matter what language you speak. Even if vocal communication is impossible the controlled plants do not attack you. At the end of the spell, the subjects revert to their normal behavior.
+                             Suicidal or self-destructive commands are simply ignored.`
         },
         'control undead': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Control_Undead',
+          ref:              'http://www.d20srd.org/srd/spells/controlUndead.htm',
           school:           'Necromancy',
-          level:            'Sor/Wiz 7',
+          level:            'Arc 7, Blg 7, Necro 7, Sor/Wiz 7, Undeath 7',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           'Up to [[2*?{Casting Level}]] HD of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures, no two of which can be more than 30 ft. apart',
+          target:           'Up to [[2*?{Casting Level}]] HD of undead creatures, no two of which can be more than 30 ft. apart',
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This spell enables you to command [undead creatures](https://www.dandwiki.com/wiki/SRD:Undead_Type) for a short period of time. You command them by voice and they understand you, no matter what language you speak. Even if vocal communication is impossible the controlled [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) do not attack you. At the end of the spell, the subjects revert to their normal behavior.
-                             Intelligent [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures remember that you controlled them.`,
+          text:             `This spell enables you to command undead creatures for a short period of time. You command them by voice and they understand you, no matter what language you speak. Even if vocal communication is impossible the controlled undead do not attack you. At the end of the spell, the subjects revert to their normal behavior.
+                             Intelligent undead creatures remember that you controlled them.`,
           component_details:'Material Component: A small piece of bone and a small piece of raw meat.'
         },
         'control water': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Control_Water',
+          ref:              'http://www.d20srd.org/srd/spells/controlWater.htm',
           school:           'Transmutation [Water]',
-          level:            'Clr 4, Drd 4, Sor/Wiz 6, Water 4',
+          level:            'APeace 4, Arc 4, Clr 4, Drd 4, Shu 4, Sor/Wiz 6, Water 4, Watery Death 3, Wuj 6',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            '_long_',
@@ -1860,16 +1854,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s) (D)',
           saving_throw:     'None; see text',
           spell_resistance: 'No',
-          text:             `Depending on the version you choose, the *control water* spell raises or lowers water.
-                             *Lower Water:* This causes water or similar liquid to reduce its depth by as much as 2 feet per caster level (to a minimum depth of 1 inch). The water is lowered within a squarish depression whose sides are up to caster level x 10 feet long. In extremely large and deep bodies of water, such as a deep ocean, the spell creates a whirlpool that sweeps ships and similar craft downward, putting them at risk and rendering them unable to leave by normal movement for the duration of the spell. When cast on water [elementals](https://www.dandwiki.com/wiki/SRD:Elemental_Type) and other water-based creatures, this spell acts as a *slow* spell (Will negates). The spell has no effect on other creatures.
-                             *Raise Water:* This causes water or similar liquid to rise in height, just as the *lower water* version causes it to lower. Boats raised in this way slide down the sides of the hump that the spell creates. If the area affected by the spell includes riverbanks, a beach, or other land nearby, the water can spill over onto dry land.
+          text:             `Depending on the version you choose, the control water spell raises or lowers water.
+                             *Lower Water:* This causes water or similar liquid to reduce its depth by as much as 2 feet per caster level (to a minimum depth of 1 inch). The water is lowered within a squarish depression whose sides are up to caster level × 10 feet long. In extremely large and deep bodies of water, such as a deep ocean, the spell creates a whirlpool that sweeps ships and similar craft downward, putting them at risk and rendering them unable to leave by normal movement for the duration of the spell. When cast on water elementals and other water-based creatures, this spell acts as a ***[slow](http://www.d20srd.org/srd/spells/slow.htm)*** spell (Will negates). The spell has no effect on other creatures.
+                             *Raise Water:* This causes water or similar liquid to rise in height, just as the lower water version causes it to lower. Boats raised in this way slide down the sides of the hump that the spell creates. If the area affected by the spell includes riverbanks, a beach, or other land nearby, the water can spill over onto dry land.
                              With either version, you may reduce one horizontal dimension by half and double the other horizontal dimension.`,
-          component_details:'Arcane Material Component: A drop of water (for *raise water*) or a pinch of dust (for *lower water*).'
+          component_details:'Arcane Material Component: A drop of water (for raise water) or a pinch of dust (for lower water).'
         },
         'control weather': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Control_Weather',
+          ref:              'http://www.d20srd.org/srd/spells/controlWeather.htm',
           school:           'Transmutation',
-          level:            'Air 7, Clr 7, Drd 7, Sor/Wiz 7, Weather 7',
+          level:            'Air 7, APeace 7, Arc 7, Blg 7, Clr 7, Cold 7, Drd 7, Shu 6, Sor/Wiz 7, Storm 7, Summer 7, Weather 7, Winter 7, Wuj 6',
           components:       'V, S',
           casting_time:     '10 minutes; see text',
           range:            '2 miles',
@@ -1902,14 +1896,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              -- Early spring (coastal area)
 
                              You control the general tendencies of the weather, such as the direction and intensity of the wind. You cannot control specific applications of the weather—where lightning strikes, for example, or the exact path of a tornado. When you select a certain weather condition to occur, the weather assumes that condition 10 minutes later (changing gradually, not abruptly). The weather continues as you left it for the duration, or until you use a standard action to designate a new kind of weather (which fully manifests itself 10 minutes later). Contradictory conditions are not possible simultaneously.
-                             *Control weather* can do away with atmospheric phenomena (naturally occurring or otherwise) as well as create them.
-                             A [druid](https://www.dandwiki.com/wiki/SRD:Druid) casting this spell doubles the duration and affects a circle with a 3-mile radius.`,
-          component_details:null
+                             Control weather can do away with atmospheric phenomena (naturally occurring or otherwise) as well as create them.
+                             A druid casting this spell doubles the duration and affects a circle with a 3-mile radius.`
         },
         'control winds': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Control_Winds',
+          ref:              'http://www.d20srd.org/srd/spells/controlWinds.htm',
           school:           'Transmutation [Air]',
-          level:            'Air 5, Drd 5, Weather 6',
+          level:            'Air 5, Arc 5, Drd 5, Shu 5, Sky 5',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '[[40*?{Casting Level}]] ft.',
@@ -1929,13 +1922,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              A severe wind (31+ mph) causes minor ship and building damage.
                              A windstorm (51+ mph) drives most flying creatures from the skies, uproots small trees, knocks down light wooden structures, tears off roofs, and endangers ships.
                              Hurricane force winds (75+ mph) destroy wooden buildings, sometimes uproot even large trees, and cause most ships to founder.
-                             A tornado (175+ mph) destroys all nonfortified buildings and often uproots large trees.`,
-          component_details:null
+                             A tornado (175+ mph) destroys all nonfortified buildings and often uproots large trees.`
         },
         'corrupt weapon': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Corrupt_Weapon',
+          ref:              'http://www.d20srd.org/srd/prestigeClasses/blackguard.htm#corruptWeapon',
           school:           'Transmutation',
-          level:            'Blg 1',
+          level:            'Arc 1, Blk 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -1945,28 +1937,26 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This transmutation makes a weapon strike true against good foes. The weapon is treated as having a +1 enhancement bonus for the purpose of bypassing the damage reduction of good creatures or striking good [incorporeal creatures](http://www.d20srd.org/srd/conditionSummary.htm#incorporeal) (though the spell doesn’t grant an actual enhancement bonus). The weapon also becomes evil, which means it can bypass the damage reduction of certain creatures. (This effect overrides and suppresses any other alignment the weapon might have.) Individual arrows or bolts can be transmuted, but affected projectile weapons (such as bows) don’t confer the benefit to the projectiles they shoot.
-                             In addition, all critical hit rolls against good foes are automatically successful, so every threat is a critical hit. This last effect does not apply to any weapon that already has a magical effect related to critical hits, such as a [keen](https://www.dandwiki.com/wiki/SRD:Keen) weapon or a [vorpal](https://www.dandwiki.com/wiki/SRD:Vorpal) sword.`,
-          component_details:null
+                             In addition, all critical hit rolls against good foes are automatically successful, so every threat is a critical hit. This last effect does not apply to any weapon that already has a magical effect related to critical hits, such as a keen weapon or a vorpal sword.`
         },
         'create food and water': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Create_Food_and_Water',
+          ref:              'http://www.d20srd.org/srd/spells/createFoodAndWater.htm',
           school:           'Conjuration (Creation)',
-          level:            'Clr 3, Creation 3',
+          level:            'APeace 3, Arc 3, Clr 3, Creation 3, Feast 3, Hlr 3, Sin-G 3',
           components:       'V, S',
           casting_time:     '10 minutes',
           range:            '_close_',
           target_type:      'Effect',
-          target:           'Food and water to sustain [[3*?{Casting Level}]] humans or [[?{Casting Level}]] horse for 24 hours',
+          target:           'Food and water to sustain [[3*?{Casting Level}]] human(s) or [[?{Casting Level}]] horse(s) for 24 hours',
           duration:         '24 hours; see text',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `The food that this spell creates is simple fare of your choice—highly nourishing, if rather bland. Food so created decays and becomes inedible within 24 hours, although it can be kept fresh for another 24 hours by casting a [purify food and drink](https://www.dandwiki.com/wiki/SRD:Purify_Food_and_Drink) spell on it. The water created by this spell is just like clean rain water, and it doesn’t go bad as the food does.`,
-          component_details:null
+          text:             `The food that this spell creates is simple fare of your choice—highly nourishing, if rather bland. Food so created decays and becomes inedible within 24 hours, although it can be kept fresh for another 24 hours by casting a ***[purify food and drink](http://www.d20srd.org/srd/spells/purifyFoodAndDrink.htm)*** spell on it. The water created by this spell is just like clean rain water, and it doesn’t go bad as the food does.`
         },
         'create greater undead': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Create_Greater_Undead',
+          ref:              'http://www.d20srd.org/srd/spells/createGreaterUndead.htm',
           school:           'Necromancy [Evil]',
-          level:            'Clr 8, Death 8, Sor/Wiz 8',
+          level:            'Arc 8, Clr 8, Death 8, Pestilence 8, Sor/Wiz 8, Undeath 8',
           components:       'V, S, M',
           casting_time:     '1 hour',
           range:            '_close_',
@@ -1975,26 +1965,26 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `A much more potent spell than [*animate dead*](https://www.dandwiki.com/wiki/SRD:Animate_Dead), this evil spell allows you to create more powerful sorts of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type): [shadows](https://www.dandwiki.com/wiki/SRD:Shadow), [wraiths](https://www.dandwiki.com/wiki/SRD:Wraith), [spectres](https://www.dandwiki.com/wiki/SRD:Spectre), and [devourers](https://www.dandwiki.com/wiki/SRD:Devourer). The type or types of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) you can create is based on your caster level, as shown on the table below.
+          text:             `A much more potent spell than ***[animate dead](http://www.d20srd.org/srd/spells/createUndead.htm)***, this evil spell allows you to create more powerful sorts of undead: shadows, wraiths, spectres, and devourers. The type or types of undead you can create is based on your caster level, as shown on the table below.
 
                              • Caster Level 15th or lower
-                             -- [Shadow](https://www.dandwiki.com/wiki/SRD:Shadow)
+                             -- Shadow
                              • Caster Level 16th–17th
-                             -- [Wraith](https://www.dandwiki.com/wiki/SRD:Wraith)
+                             -- Wraith
                              • Caster Level 18th–19th
-                             -- [Spectre](https://www.dandwiki.com/wiki/SRD:Spectre)
+                             -- Spectre
                              • Caster Level 20th or higher
-                             -- [Devourer](https://www.dandwiki.com/wiki/SRD:Devourer)
+                             -- Devourer
 
-                             You may create less powerful [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) than your level would allow if you choose. Created [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) are not automatically under the control of their animator. If you are capable of commanding [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type), you may attempt to command the [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature as it forms.
+                             You may create less powerful undead than your level would allow if you choose. Created undead are not automatically under the control of their animator. If you are capable of commanding undead, you may attempt to command the undead creature as it forms.
                              This spell must be cast at night.`,
-          component_details:'Material Component: A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead) body. You must place a black onyx gem worth at least 50 gp per HD of the [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) to be created into the mouth or eye socket of each corpse. The magic of the spell turns these gems into worthless shells.'
+          component_details:'Material Component: A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead) body. You must place a black onyx gem worth at least 50 gp per HD of the undead to be created into the mouth or eye socket of each corpse. The magic of the spell turns these gems into worthless shells.'
         },
         //Epic Spell: create living vault (ritual)
         'create undead': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Create_Undead',
+          ref:              'http://www.d20srd.org/srd/spells/createUndead.htm',
           school:           'Necromancy [Evil]',
-          level:            'Clr 6, Death 6, Evil 6, Sor/Wiz 6',
+          level:            'Arc 6, Blg 5, Clr 6, Death 6, Evil 6, Sor/Wiz 6, Undeath 6',
           components:       'V, S, M',
           casting_time:     '1 hour',
           range:            '_close_',
@@ -2003,25 +1993,25 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `A much more potent spell than [animate dead](https://www.dandwiki.com/wiki/SRD:Animate_Dead), this evil spell allows you to create more powerful sorts of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type): [ghouls](https://www.dandwiki.com/wiki/SRD:Ghoul), [ghasts](https://www.dandwiki.com/wiki/SRD:Ghast), [mummies](https://www.dandwiki.com/wiki/SRD:Mummy), and [mohrgs](https://www.dandwiki.com/wiki/SRD:Mohrg). The type or types of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) you can create is based on your caster level, as shown on the table below.
+          text:             `A much more potent spell than ***[animate dead](http://www.d20srd.org/srd/spells/createUndead.htm)***, this evil spell allows you to create more powerful sorts of undead: ghouls, ghasts, mummies, and mohrgs. The type or types of undead you can create is based on your caster level, as shown on the table below.
 
                              • Caster Level 11th or lower
-                             -- [Ghoul](https://www.dandwiki.com/wiki/SRD:Ghoul)
+                             -- Ghoul
                              • Caster Level 12th–14th
-                             -- [Ghast](https://www.dandwiki.com/wiki/SRD:Ghast)
+                             -- Ghast
                              • Caster Level 15th–17th
-                             -- [Mummy](https://www.dandwiki.com/wiki/SRD:Mummy)
+                             -- Mummy
                              • Caster Level 18th or higher
-                             -- [Mohrg](https://www.dandwiki.com/wiki/SRD:Mohrg)
+                             -- Mohrg
 
-                             You may create less powerful [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) than your level would allow if you choose. Created [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) are not automatically under the control of their animator. If you are capable of commanding [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type), you may attempt to command the [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature as it forms.
+                             You may create less powerful undead than your level would allow if you choose. Created undead are not automatically under the control of their animator. If you are capable of commanding undead, you may attempt to command the undead creature as it forms.
                              This spell must be cast at night.`,
-          component_details:'Material Component: A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead) body. You must place a black onyx gem worth at least 50 gp per HD of the [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) to be created into the mouth or eye socket of each corpse. The magic of the spell turns these gems into worthless shells.'
+          component_details:'Material Component: A clay pot filled with grave dirt and another filled with brackish water. The spell must be cast on a [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead) body. You must place a black onyx gem worth at least 50 gp per HD of the undead to be created into the mouth or eye socket of each corpse. The magic of the spell turns these gems into worthless shells.'
         },
         'create water': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Create_Water',
+          ref:              'http://www.d20srd.org/srd/spells/createWater.htm',
           school:           'Conjuration (Creation) [Water]',
-          level:            'Clr 0, Creation 1, Drd 0, Pal 1',
+          level:            'Adp 0, APeace 0, Arc 0, Clr 0, Creation 1, Drd 0, Hlr 0, Pal 1, Shu 0',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -2031,13 +2021,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell generates wholesome, drinkable water, just like clean rain water. Water can be created in an area as small as will actually contain the liquid, or in an area three times as large—possibly creating a downpour or filling many small receptacles.
-                             *Note:* Conjuration spells can’t create substances or objects within a creature. Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.`,
-          component_details:null
+                             *Note:* Conjuration spells can’t create substances or objects within a creature. Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.`
         },
         'creeping doom': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Creeping_Doom',
+          ref:              'http://www.d20srd.org/srd/spells/creepingDoom.htm',
           school:           'Conjuration (Summoning)',
-          level:            'Drd 7, Scalykind 7',
+          level:            'Arc 7, Drd 7, Spider 8',
           components:       'V, S',
           casting_time:     '1 round',
           range:            'Close ([[25+(5*floor([[?{Casting Level}/2]]))]]) / 100 ft.; see text',
@@ -2046,14 +2035,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `When you utter the spell of *creeping doom*, you call forth a [mass of centipede swarms](https://www.dandwiki.com/wiki/SRD:Centipede_Swarm) (one per two caster levels, to a maximum of ten swarms at 20th level), which need not appear adjacent to one another.
-                             You may summon the centipede swarms so that they share the area of other creatures. The swarms remain stationary, attacking any creatures in their area, unless you command the creeping doom to move (a standard action). As a standard action, you can command any number of the swarms to move toward any prey within 100 feet of you. You cannot command any swarm to move more than 100 feet away from you, and if you move more than 100 feet from any swarm, that swarm remains stationary, attacking any creatures in its area (but it can be commanded again if you move within 100 feet).`,
-          component_details:null
+          text:             `When you utter the spell of creeping doom, you call forth a[mass of centipede swarms (one per two caster levels, to a maximum of ten swarms at 20th level), which need not appear adjacent to one another.
+                             You may summon the centipede swarms so that they share the area of other creatures. The swarms remain stationary, attacking any creatures in their area, unless you command the creeping doom to move (a standard action). As a standard action, you can command any number of the swarms to move toward any prey within 100 feet of you. You cannot command any swarm to move more than 100 feet away from you, and if you move more than 100 feet from any swarm, that swarm remains stationary, attacking any creatures in its area (but it can be commanded again if you move within 100 feet).`
         },
         'crown of glory': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Crown_of_Glory',
+          ref:              'http://www.d20srd.org/srd/divine/spells/crownOfGlory.htm',
           school:           'Evocation',
-          level:            'Glory 8',
+          level:            'Glory 8, Herald 8',
           components:       'V, S, M, DF',
           casting_time:     '1 full round',
           range:            'Personal',
@@ -2062,16 +2050,17 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `The caster is imbued with an aura of [celestial](https://www.dandwiki.com/wiki/SRD:Celestial) authority, inspiring awe in all lesser creatures.
-                             The caster gains a +4 \`\`enhancement bonus\`\` to his or her Charisma score for the duration of the spell. All creatures with fewer than 8 HD or levels cease whatever they are doing and are compelled to pay attention to the caster. Any such creature that wants to take hostile action against the caster must make a successful Will save to do so. Any creature that does not make this saving throw the first time it attempts a hostile action is *enthralled* for the duration of the spell (as the [*enthrall*](https://www.dandwiki.com/wiki/SRD:Enthrall) spell), as long as it is in the spell’s area, nor will it try to leave the area on its own. Creatures with 8 HD or more may pay attention to the caster, but are not affected by this spell.
-                             When the caster speaks, all listeners telepathically understand him or her, even if they do not understand the language. While the spell lasts, the caster can make up to three suggestions to creatures of fewer than 8 HD in range, as if using the [*mass suggestion*](https://www.dandwiki.com/wiki/SRD:Mass_Suggestion) spell (Will save negates); creatures with 8 HD or more aren’t affected by this power. Only creatures within range at the time a [*suggestion*](http://www.d20srd.org/srd/spells/suggestion.htm) is given are subject to it.`,
-          component_details:'Material Component: worth at least 200 gp.'
+          text:             `The caster is imbued with an aura of celestial authority, inspiring awe in all lesser creatures.
+                             The caster gains a **+4 enhancement bonus** to his or her Charisma score for the duration of the spell. All creatures with fewer than 8 HD or levels cease whatever they are doing and are compelled to pay attention to the caster. Any such creature that wants to take hostile action against the caster must make a successful Will save to do so. Any creature that does not make this saving throw the first time it attempts a hostile action is enthralled for the duration of the spell (as the ***[enthrall](http://www.d20srd.org/srd/spells/enthrall.htm)*** spell), as long as it is in the spell’s area, nor will it try to leave the area on its own. Creatures with 8 HD or more may pay attention to the caster, but are not affected by this spell.
+                             When the caster speaks, all listeners telepathically understand him or her, even if they do not understand the language. While the spell lasts, the caster can make up to three suggestions to creatures of fewer than 8 HD in range, as if using the ***[mass suggestion](http://www.d20srd.org/srd/spells/suggestionMass.htm)*** spell (Will save negates); creatures with 8 HD or more aren’t affected by this power. Only creatures within range at the time a ***[suggestion](http://www.d20srd.org/srd/spells/suggestion.htm)*** is given are subject to it.`,
+          component_details:'Material Component: worth at least 200 gp.',
+          other_versions:   'Book of Exalted Deeds on page 95, Complete Divine on page 160, Defenders of the Faith on page 84, Draconomicon on page 110'
         },
         //Epic Spell: crown of vermin
         'crushing despair': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Crushing_Despair',
+          ref:              'http://www.d20srd.org/srd/spells/crushingDespair.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Brd 3, Sor/Wiz 4',
+          level:            'Beguiler 4, Brd 3, Passion 4, Sin-E 5, Sor/Wiz 4, Wuj 4',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '30 ft.',
@@ -2080,14 +2069,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `An [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) cone of despair causes great sadness in the subjects. Each affected creature takes a -2 \`\`penalty\`\` on attack rolls, saving throws, ability checks, skill checks, and weapon damage rolls.
-                             *Crushing despair* counters and dispels [*good hope*](https://www.dandwiki.com/wiki/SRD:Good_Hope).`,
+          text:             `An [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) cone of despair causes great sadness in the subjects. Each affected creature takes a **-2 penalty** on attack rolls, saving throws, ability checks, skill checks, and weapon damage rolls.
+                             Crushing despair counters and dispels ***[good hope](http://www.d20srd.org/srd/spells/goodHope.htm)***.`,
           component_details:'Material Component: A vial of tears.'
         },
         'crushing hand': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Crushing_Hand',
           school:           'Evocation [Force]',
-          level:            'Sor/Wiz 9, Strength 9',
+          level:            'Force 9, Sor/Wiz 9, Strength 9',
           components:       'V, S, M, F/DF',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -2096,18 +2085,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `This spell functions like [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand), except that the hand can interpose itself, push, or crush one opponent that you select.
-                             The *crushing hand* can [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) an opponent like [*grasping hand*](https://www.dandwiki.com/wiki/SRD:Grasping_Hand) does. Its [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) bonus equals your caster level + your Intelligence, Wisdom, or Charisma modifier (for a [wizard](https://www.dandwiki.com/wiki/SRD:Wizard), [cleric](https://www.dandwiki.com/wiki/SRD:Cleric), or [sorcerer](https://www.dandwiki.com/wiki/SRD:Sorcerer), respectively), +12 for the hand's Strength score (35), +4 for being Large. The hand deals ‹2d6+12› points of damage (lethal, not nonlethal) on each successful [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) check against an opponent.
-                             The *crushing hand* can also interpose itself as [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand) does, or it can [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) an opponent as [*forceful hand*](https://www.dandwiki.com/wiki/SRD:Forceful_Hand) does, but at a +18 \`\`bonus\`\`.
+          text:             `This spell functions like ***[interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm)***, except that the hand can interpose itself, push, or crush one opponent that you select.
+                             The crushing hand can grapple an opponent like ***[grasping hand](http://www.d20srd.org/srd/spells/graspingHand.htm)*** does. Its grapple bonus equals your caster level + your Intelligence, Wisdom, or Charisma modifier (for a wizard, cleric, or sorcerer, respectively), +12 for the hand's Strength score (35), +4 for being Large. The hand deals ‹2d6+12› points of damage (lethal, not nonlethal) on each successful grapple check against an opponent.
+                             The crushing hand can also interpose itself as ***[interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm)*** does, or it can bull rush an opponent as ***[forceful hand](http://www.d20srd.org/srd/spells/forcefulHand.htm)*** does, but at a **+18 bonus**.
                              Directing the spell to a new target is a move action.
-                             [Clerics](https://www.dandwiki.com/wiki/SRD:Cleric) who cast this spell name it for their deities.`,
+                             Clerics who cast this spell name it for their deities.`,
           component_details:`Arcane Material Component: The shell of an egg.
                              Arcane Focus: A glove of snakeskin.`
         },
         'cure critical wounds': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Cure_Critical_Wounds',
+          ref:              'http://www.d20srd.org/srd/spells/cureCriticalWounds.htm',
           school:           'Conjuration (Healing)',
-          level:            'Blg 4, Brd 4, Clr 4, Drd 5, Healing 4',
+          level:            'Adp 4, APeace 4, Arc 4, Blk 4, Brd 4, BVal 4, Clr 4, Drd 5, EmBarachiel 4, Healing 4, Hlr 4, HotD 4, Shu 4',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -2117,13 +2106,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will half (harmless); see text',
           spell_resistance: 'Yes (harmless); see text',
           text:             `When laying your hand upon a living creature, you channel positive energy that cures 4d8 points of damage +1 point per caster level (maximum +20): [[4d8+[[{?{Casting Level},20}kl1]]]].
-                             Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) can apply spell resistance, and can attempt a Will save to take half damage.`,
-          component_details:null
+                             Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a Will save to take half damage.`
         },
         'cure light wounds': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Cure_Light_Wounds',
+          ref:              'http://www.d20srd.org/srd/spells/cureLightWounds.htm',
           school:           'Conjuration (Healing)',
-          level:            'Blg 1, Brd 1, Clr 1, Drd 1, Healing 1, Pal 1, Rgr 2',
+          level:            'Adp 1, APeace 1, Arc 1, Blk 1, Brd 1, BVal 1, ChamGwyn 1, Clr 1, Drd 1, EmBarachiel 1, Healing 1, Hlr 1, HotD 1, Pal 1, Rgr 2, Shu 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -2133,13 +2121,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will half (harmless); see text',
           spell_resistance: 'Yes (harmless); see text',
           text:             `When laying your hand upon a living creature, you channel positive energy that cures 1d8 points of damage +1 point per caster level (maximum +5): [[1d8+[[{?{Casting Level},5}kl1]]]].
-                             Since [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) are powered by negative energy, this spell deals damage to them instead of curing their wounds. An [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) can apply spell resistance, and can attempt a Will save to take half damage.`,
-          component_details:null
+                             Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a Will save to take half damage.`
         },
         'cure minor wounds': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Cure_Minor_Wounds',
+          ref:              'http://www.d20srd.org/srd/spells/cureMinorWounds.htm',
           school:           'Conjuration (Healing)',
-          level:            'Clr 0, Drd 0',
+          level:            'Adp 0, APeace 0, Arc 0, Clr 0, Drd 0, Hlr 0, Shu 0',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -2149,13 +2136,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will half (harmless); see text',
           spell_resistance: 'Yes (harmless); see text',
           text:             `When laying your hand upon a living creature, you channel positive energy that cures 1 point of damage.
-                             Since [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) are powered by negative energy, this spell deals damage to them instead of curing their wounds. An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature can apply spell resistance, and can attempt a Will save to take half damage.`,
-          component_details:null
+                             Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a Will save to take half damage.`
         },
         'cure moderate wounds': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Cure_Moderate_Wounds',
+          ref:              'http://www.d20srd.org/srd/spells/cureModerateWounds.htm',
           school:           'Conjuration (Healing)',
-          level:            'Blg 2, Brd 2, Clr 2, Drd 3, Healing 2, Pal 3, Rgr 3',
+          level:            'Adp 2, APeace 2, Arc 2, Blk 2, Brd 2, BVal 2, ChamGwyn 3, Clr 2, Drd 3, EmBarachiel 2, Healing 2, Hlr 2, HotD 2, Pal 3, Rgr 3, Shu 2',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -2165,13 +2151,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will half (harmless); see text',
           spell_resistance: 'Yes (harmless); see text',
           text:             `When laying your hand upon a living creature, you channel positive energy that cures 2d8 points of damage +1 point per caster level (maximum +10): [[2d8+[[{?{Casting Level},10}kl1]]]].
-                             Since [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) are powered by negative energy, this spell deals damage to them instead of curing their wounds. An [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) can apply spell resistance, and can attempt a Will save to take half damage.`,
-          component_details:null
+                             Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a Will save to take half damage.`
         },
         'cure serious wounds': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Cure_Serious_Wounds',
+          ref:              'http://www.d20srd.org/srd/spells/cureSeriousWounds.htm',
           school:           'Conjuration (Healing)',
-          level:            'Blg 3, Brd 3, Clr 3, Drd 4, Pal 4, Rgr 4, Healing 3',
+          level:            'Adp 3, APeace 3, Arc 3, Blk 3, Brd 3, BVal 3, ChamGwyn 4, Clr 3, Drd 4, EmBarachiel 3, Healing 3, Hlr 3, HotD 3, Pal 4, Rgr 4, Shu 3',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -2181,13 +2166,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will half (harmless); see text',
           spell_resistance: 'Yes (harmless); see text',
           text:             `When laying your hand upon a living creature, you channel positive energy that cures 3d8 points of damage +1 point per caster level (maximum +15): [[3d8+[[{?{Casting Level},15}kl1]]]].
-                             Since [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) are powered by negative energy, this spell deals damage to them instead of curing their wounds. An [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) can apply spell resistance, and can attempt a Will save to take half damage.`,
-          component_details:null
+                             Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a Will save to take half damage.`
         },
         'curse water': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Curse_Water',
+          ref:              'http://www.d20srd.org/srd/spells/curseWater.htm',
           school:           'Necromancy [Evil]',
-          level:            'Clr 1',
+          level:            'Arc 1, Blg 1, Clr 1',
           components:       'V, S, M',
           casting_time:     '1 minute',
           range:            'Touch',
@@ -2196,15 +2180,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates (object)',
           spell_resistance: 'Yes (object)',
-          text:             `This spell imbues a flask (1 pint) of water with negative energy, turning it into unholy water. Unholy water damages good [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type) the way holy water damages [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) and evil [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type).`,
+          text:             `This spell imbues a flask (1 pint) of water with negative energy, turning it into unholy water. Unholy water damages good outsiders the way holy water damages undead and evil outsiders.`,
           component_details:'Material Component: 5 pounds of powdered silver (worth 25 gp).'
         },
         // Spells that start with D
         //Epic Spell: damnation
         'dancing lights': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dancing_Lights',
+          ref:              'http://www.d20srd.org/srd/spells/dancingLights.htm',
           school:           'Evocation [Light]',
-          level:            'Brd 0, Sor/Wiz 0',
+          level:            'Arc 0, Beguiler 0, Brd 0, Duskblade 0, Shu 0, Sor/Wiz 0, Wuj 0',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -2213,14 +2197,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '1 minute (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `Depending on the version selected, you create up to four lights that resemble lanterns or torches (and cast that amount of light), or up to four glowing spheres of light (which look like [will-o’-wisps](https://www.dandwiki.com/wiki/SRD:Will-O%27-Wisp)), or one faintly glowing, vaguely [humanoid](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) shape. The *dancing lights* must stay within a 10-foot-radius area in relation to each other but otherwise move as you desire (no concentration required): forward or back, up or down, straight or turning corners, or the like. The lights can move up to 100 feet per round. A light winks out if the distance between you and it exceeds the spell’s range.
-                             *Dancing lights* can be made permanent with a [*permanency*](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
-          component_details:null
+          text:             `Depending on the version selected, you create up to four lights that resemble lanterns or torches (and cast that amount of light), or up to four glowing spheres of light (which look like will-o’-wisps), or one faintly glowing, vaguely humanoid shape. The dancing lights must stay within a 10-foot-radius area in relation to each other but otherwise move as you desire (no concentration required): forward or back, up or down, straight or turning corners, or the like. The lights can move up to 100 feet per round. A light winks out if the distance between you and it exceeds the spell’s range.
+                             Dancing lights can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`
         },
         'darkness': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Darkness',
+          ref:              'http://www.d20srd.org/srd/spells/darkness.htm',
           school:           'Evocation [Darkness]',
-          level:            'Asn 2, Blg 2, Brd 2, Clr 2, Sor/Wiz 2',
+          level:            'Adp 2, Arc 2, Asn 2, Blg 2, Blk 2, Brd 2, Cavern 2, Clr 2, HB 2, Shadow 2, Slayer of Domiel 2, Sor/Wiz 2',
           components:       'V, M/DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -2229,16 +2212,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] level(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `This spell causes an object to radiate shadowy illumination out to a 20-foot radius. All creatures in the area gain [concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment) (20% miss chance). Even creatures that can normally see in such conditions (such as with darkvision or low-light vision) have the miss chance in an area shrouded in magical *darkness*.
-                             Normal lights (torches, candles, lanterns, and so forth) are incapable of brightening the area, as are light spells of lower level. Higher level light spells are not affected by *darkness*.
-                             If *darkness* is cast on a small object that is then placed inside or under a lightproof covering, the spell’s effect is blocked until the covering is removed.
-                             *Darkness* counters or dispels any light spell of equal or lower spell level.`,
+          text:             `This spell causes an object to radiate shadowy illumination out to a 20-foot radius. All creatures in the area gain [concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment) (20% miss chance). Even creatures that can normally see in such conditions (such as with darkvision or low-light vision) have the miss chance in an area shrouded in magical darkness.
+                             Normal lights (torches, candles, lanterns, and so forth) are incapable of brightening the area, as are light spells of lower level. Higher level light spells are not affected by darkness.
+                             If darkness is cast on a small object that is then placed inside or under a lightproof covering, the spell’s effect is blocked until the covering is removed.
+                             Darkness counters or dispels any light spell of equal or lower spell level.`,
           component_details:'Arcane Material Component: A bit of bat fur and either a drop of pitch or a piece of coal.'
         },
         'darkvision': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Darkvision_%28Spell%29',
+          ref:              'http://www.d20srd.org/srd/spells/darkvision.htm',
           school:           'Transmutation',
-          level:            'Rgr 3, Sor/Wiz 2',
+          level:            'Arc 3, BVal 3, Duskblade 2, HotD 2, Rgr 3, Sor/Wiz 2, VDarkness 1',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -2247,14 +2230,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hour(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `The subject gains the ability to see 60 feet even in total darkness. Darkvision is black and white only but otherwise like normal sight. *Darkvision* does not grant one the ability to see in magical darkness.
-                             *Darkvision* can be made permanent with a [*permanency*](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
+          text:             `The subject gains the ability to see 60 feet even in total darkness. Darkvision is black and white only but otherwise like normal sight. Darkvision does not grant one the ability to see in magical darkness.
+                             *Darkvision* can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`,
           component_details:'Material Component: Either a pinch of dried carrot or an agate.'
         },
         'daylight': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Daylight',
+          ref:              'http://www.d20srd.org/srd/spells/daylight.htm',
           school:           'Evocation [Light]',
-          level:            'Brd 3, Clr 3, Drd 3, Pal 3, Sor/Wiz 3',
+          level:            'Adp 3, Arc 3, Brd 3, ChamGwyn 3, Clr 3, Drd 3, EmBarachiel 3, HotD 3, Pal 3, Shu 3, Sor/Wiz 3',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -2264,30 +2247,29 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `The object touched sheds light as bright as full daylight in a 60-foot radius, and dim light for an additional 60 feet beyond that. Creatures that take penalties in bright light also take them while within the radius of this magical light. Despite its name, this spell is not the equivalent of daylight for the purposes of creatures that are damaged or destroyed by bright light.
-                             If *daylight* is cast on a small object that is then placed inside or under a light- proof covering, the spell’s effects are blocked until the covering is removed.
-                             *Daylight* brought into an area of magical darkness (or vice versa) is temporarily negated, so that the otherwise prevailing light conditions exist in the overlapping areas of effect.
-                             *Daylight* counters or dispels any darkness spell of equal or lower level, such as [*darkness*](https://www.dandwiki.com/wiki/SRD:Darkness).`,
-          component_details:null
+                             If daylight is cast on a small object that is then placed inside or under a light-proof covering, the spell’s effects are blocked until the covering is removed.
+                             Daylight brought into an area of magical darkness (or vice versa) is temporarily negated, so that the otherwise prevailing light conditions exist in the overlapping areas of effect.
+                             Daylight counters or dispels any darkness spell of equal or lower level, such as ***[darkness](http://www.d20srd.org/srd/spells/darkness.htm)***.`
         },
         'daze': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Daze',
+          ref:              'http://www.d20srd.org/srd/spells/daze.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Brd 0, Sor/Wiz 0',
+          level:            'Arc 0, Beguiler 0, Brd 0, Shu 0, Sor/Wiz 0, Wuj 0',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Target',
-          target:           'One [humanoid](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) creature of 4 HD or less',
+          target:           'One humanoid creature of 4 HD or less',
           duration:         '1 round',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This enchantment clouds the mind of a [humanoid creature](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) with 4 or fewer Hit Dice so that it takes no actions. [Humanoids](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) of 5 or more HD are not affected. A [dazed](http://www.d20srd.org/srd/conditionSummary.htm#dazed) subject is not [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned), so attackers get no special advantage against it.`,
+          text:             `This enchantment clouds the mind of a humanoid creature with 4 or fewer Hit Dice so that it takes no actions. Humanoids of 5 or more HD are not affected. A [dazed](http://www.d20srd.org/srd/conditionSummary.htm#dazed) subject is not [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned), so attackers get no special advantage against it.`,
           component_details:'Material Component: A pinch of wool or similar substance.'
         },
         'daze monster': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Daze_Monster',
+          ref:              'http://www.d20srd.org/srd/spells/dazeMonster.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Brd 2, Sor/Wiz 2',
+          level:            'Beguiler 2, Brd 2, Sor/Wiz 2',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -2296,13 +2278,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '1 round',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This enchantment clouds the mind of a living creature with 6 or fewer Hit Dice so that it takes no actions. Creatures of 7 or more HD are not affected. A [dazed](http://www.d20srd.org/srd/conditionSummary.htm#dazed) subject is not [stunned](https://www.dandwiki.com/wiki/Stunned), so attackers get no special advantage against it.`,
+          text:             `This enchantment clouds the mind of a living creature with 6 or fewer Hit Dice so that it takes no actions. Creatures of 7 or more HD are not affected. A [dazed](http://www.d20srd.org/srd/conditionSummary.htm#dazed) subject is not [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned), so attackers get no special advantage against it.`,
           component_details:'Material Component: A pinch of wool or similar substance.'
         },
         'death knell': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Death_Knell',
+          ref:              'http://www.d20srd.org/srd/spells/deathKnell.htm',
           school:           'Necromancy [Death, Evil]',
-          level:            'Blg 2, Clr 2, Death 2',
+          level:            'Arc 2, Blg 2, Blk 1, Clr 2, Death 2, DrgBlw 2, Sin-G 2',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -2311,13 +2293,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous/10 minutes per HD of subject; see text',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `You draw forth the ebbing life force of a creature and use it to fuel your own power. Upon casting this spell, you touch a living creature that has -1 or fewer hit points. If the subject fails its saving throw, it dies, and you gain 1d8 temporary hit points and a +2 \`\`bonus\`\` to Strength. Additionally, your effective caster level goes up by +1, improving spell effects dependent on caster level. (This increase in effective caster level does not grant you access to more spells.) These effects last for 10 minutes per HD of the subject creature.`,
-          component_details:null
+          text:             `You draw forth the ebbing life force of a creature and use it to fuel your own power. Upon casting this spell, you touch a living creature that has -1 or fewer hit points. If the subject fails its saving throw, it dies, and you gain ‹1d8› temporary hit points and a **+2 bonus** to Strength. Additionally, your effective caster level goes up by +1, improving spell effects dependent on caster level. (This increase in effective caster level does not grant you access to more spells.) These effects last for 10 minutes per HD of the subject creature.`
         },
         'death ward': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Death_Ward',
+          ref:              'http://www.d20srd.org/srd/spells/deathWard.htm',
           school:           'Necromancy',
-          level:            'Clr 4, Death 4, Drd 5, Pal 4, Repose 4',
+          level:            'APeace 4, Arc 4, Blg 4, ChamGwyn 4, Clr 4, Death 4, Drd 5, Hlr 4, HotD 4, Life 4, Pal 4, Repose 4, Shu 4, Slayer of Domiel 4, Undeath 4',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -2327,14 +2308,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The subject is immune to all death spells, magical death effects, energy drain, and any negative energy effects.
-                             This spell doesn’t remove [negative levels](https://www.dandwiki.com/wiki/Energy_Drain,_Negative_Levels,_and_Level_Loss_(SRD_Special_Ability)#Negative_Levels) that the subject has already gained, nor does it affect the saving throw necessary 24 hours after gaining a negative level.
-                             *Death ward* does not protect against other sorts of attacks even if those attacks might be lethal.`,
-          component_details:null
+                             This spell doesn’t remove negative levels that the subject has already gained, nor does it affect the saving throw necessary 24 hours after gaining a negative level.
+                             Death ward does not protect against other sorts of attacks even if those attacks might be lethal.`
         },
         'deathwatch': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Deathwatch',
+          ref:              'http://www.d20srd.org/srd/spells/deathwatch.htm',
           school:           'Necromancy [Evil]',
-          level:            'Clr 1, Repose 1',
+          level:            'Arc 1, Clr 1, Hlr 0, Planning 1, Slayer of Domiel 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '30 ft.',
@@ -2343,14 +2323,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `Using the foul sight granted by the powers of unlife, you can determine the condition of creatures near death within the spell’s range. You instantly know whether each creature within the area is [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead), fragile (alive and wounded, with 3 or fewer hit points left), fighting off death (alive with 4 or more hit points), [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type), or neither alive nor [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead) (such as a [construct](https://www.dandwiki.com/wiki/SRD:Construct_Type)).
-                             *Deathwatch* sees through any spell or ability that allows creatures to feign death.`,
-          component_details:null
+          text:             `Using the foul sight granted by the powers of unlife, you can determine the condition of creatures near death within the spell’s range. You instantly know whether each creature within the area is [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead), fragile (alive and wounded, with 3 or fewer hit points left), fighting off death (alive with 4 or more hit points), undead, or neither alive nor [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead) (such as a construct).
+                             Deathwatch sees through any spell or ability that allows creatures to feign death.`
         },
         'deep slumber': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Deep_Slumber',
+          ref:              'http://www.d20srd.org/srd/spells/deepSlumber.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Asn 3, Brd 3, Sor/Wiz 3',
+          level:            'Asn 3, Beguiler 3, Brd 3, Dream 3, EmBarachiel 3, HB 3, Sin-S 3, Sor/Wiz 3',
           components:       'V, S, M',
           casting_time:     '1 round',
           range:            '_close_',
@@ -2359,16 +2338,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `A *deep slumber* spell causes a magical slumber to come upon 10 Hit Dice of creatures. Creatures with the fewest HD are affected first.
+          text:             `A deep slumber spell causes a magical slumber to come upon 10 Hit Dice of creatures. Creatures with the fewest HD are affected first.
                              Among creatures with equal HD, those who are closest to the spell’s point of origin are affected first. Hit Dice that are not sufficient to affect a creature are wasted.
-                             Sleeping creatures are [helpless](https://www.dandwiki.com/wiki/SRD:Helpless). Slapping or wounding awakens an affected creature, but normal noise does not. Awakening a creature is a standard action (an application of the aid another action).
-                             *Deep slumber* does not target unconscious creatures, [constructs](https://www.dandwiki.com/wiki/SRD:Construct_Type), or [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures.`,
+                             Sleeping creatures are [helpless](http://www.d20srd.org/srd/conditionSummary.htm#helpless). Slapping or wounding awakens an affected creature, but normal noise does not. Awakening a creature is a standard action (an application of the aid another action).
+                             Deep slumber does not target unconscious creatures, constructs, or undead creatures.`,
           component_details:'Material Component: A pinch of fine sand, rose petals, or a live cricket.'
         },
         'deeper darkness': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Deeper_Darkness',
+          ref:              'http://www.d20srd.org/srd/spells/deeperDarkness.htm',
           school:           'Evocation [Darkness]',
-          level:            'Asn 3, Blg 3, Clr 3',
+          level:            'Adp 3, Arc 3, Asn 3, Blg 3, Blk 3, Clr 3, Shadow 3, Slayer of Domiel 3, VDarkness 3',
           components:       'V, M/DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -2377,16 +2356,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] day(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `This spell causes an object to radiate shadowy illumination out to a 60-foot radius. All creatures in the area gain concealment (20% miss chance). Even creatures that can normally see in such conditions (such as with darkvision or low-light vision) have the miss chance in an area shrouded in magical *deeper darkness*.
-                             Normal lights (torches, candles, lanterns, and so forth) are incapable of brightening the area, as are light spells of lower level. *Deeper darkness* counters and dispels any light spell of equal or lower level, including [*daylight*](https://www.dandwiki.com/wiki/SRD:Daylight) and [*light*](https://www.dandwiki.com/wiki/SRD:Light).
-                             If *deeper darkness* is cast on a small object that is then placed inside or under a lightproof covering, the spell’s effect is blocked until the covering is removed.
-                             [*Daylight*](https://www.dandwiki.com/wiki/SRD:Daylight) brought into an area of *deeper darkness* (or vice versa) is temporarily negated, so that the otherwise prevailing light conditions exist in the overlapping areas of effect.`,
+          text:             `This spell causes an object to radiate shadowy illumination out to a 60-foot radius. All creatures in the area gain concealment (20% miss chance). Even creatures that can normally see in such conditions (such as with darkvision or low-light vision) have the miss chance in an area shrouded in magical deeper darkness.
+                             Normal lights (torches, candles, lanterns, and so forth) are incapable of brightening the area, as are light spells of lower level. Deeper darkness counters and dispels any light spell of equal or lower level, including ***[daylight](http://www.d20srd.org/srd/spells/daylight.htm)*** and ***[light](http://www.d20srd.org/srd/spells/light.htm)***.
+                             If deeper darkness is cast on a small object that is then placed inside or under a lightproof covering, the spell’s effect is blocked until the covering is removed.
+                             ***[Daylight](http://www.d20srd.org/srd/spells/daylight.htm)*** brought into an area of deeper darkness (or vice versa) is temporarily negated, so that the otherwise prevailing light conditions exist in the overlapping areas of effect.`,
           component_details:'Arcane Material Component: A bit of bat fur and either a drop of pitch or a piece of coal.'
         },
         'delay poison': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Delay_Poison',
+          ref:              'http://www.d20srd.org/srd/spells/delayPoison.htm',
           school:           'Conjuration (Healing)',
-          level:            'Brd 2, Clr 2, Drd 2, Pal 2, Rgr 1',
+          level:            'Adp 2, APeace 2, Arc 2, Brd 2, BVal 1, ChamGwyn 2, Clr 2, Drd 2, Feast 2, Hlr 2, Pal 2, Rgr 1, Shu 2',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -2395,13 +2374,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hour(s)',
           saving_throw:     'Fortitude negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `The subject becomes temporarily immune to [poison](https://www.dandwiki.com/wiki/SRD:Poison). Any poison in its system or any poison to which it is exposed during the spell’s duration does not affect the subject until the spell’s duration has expired. *Delay poison* does not cure any damage that poison may have already done.`,
-          component_details:null
+          text:             `The subject becomes temporarily immune to poison. Any poison in its system or any poison to which it is exposed during the spell’s duration does not affect the subject until the spell’s duration has expired. Delay poison does not cure any damage that poison may have already done.`
         },
         'delayed blast fireball': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Delayed_Blast_Fireball',
+          ref:              'http://www.d20srd.org/srd/spells/delayedBlastFireball.htm',
           school:           'Evocation [Fire]',
-          level:            'Sor/Wiz 7',
+          level:            'Sor/Wiz 7, Wmg 7, Wuj 7',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_long_',
@@ -2410,16 +2388,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '5 rounds or less; see text',
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
-          text:             `A *delayed blast fireball* spell is an explosion of flame that can detonate with a low roar up to 5 rounds after the spell is cast and deals 1d6 points of fire damage per caster level (maximum 20d6) to every creature within the area: [[[[{?{Casting Level},20}kl1]]d6]]. Unattended objects also take this damage. The explosion creates almost no pressure.
-                             You point your finger and determine the range (distance and height) at which the *delayed blast fireball* is to burst. A glowing, pea-sized bead streaks from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the *fireball* at that point. (An early impact results in an early detonation.) If you attempt to send the bead through a narrow passage, such as through an arrow slit, you must “hit” the opening with a ranged touch attack, or else the bead strikes the barrier and detonates prematurely.
-                             The glowing bead created by *delayed blast fireball* can detonate immediately if you desire, or you can choose to delay the burst for as many as 5 rounds. You select the amount of delay upon completing the spell, and that time cannot change once it has been set unless someone touches the bead (see below). If you choose a delay, the glowing bead sits at its destination until it detonates. A creature can pick up and hurl the bead as a thrown weapon (range increment 10 feet). If a creature handles and moves the bead within 1 round of its detonation, there is a 25% chance that the bead detonates while being handled.
-                             The *fireball* sets fire to combustibles and damages objects in the area. It can melt metals with low melting points, such as lead, gold, copper, silver, and bronze. If the damage caused to an interposing barrier shatters or breaks through it, the *fireball* may continue beyond the barrier if the area permits; otherwise it stops at the barrier just as any other spell effect does.`,
-          component_details:null
+          text:             `A delayed blast fireball spell is an explosion of flame that can detonate with a low roar up to 5 rounds after the spell is cast and deals 1d6 points of fire damage per caster level (maximum 20d6) to every creature within the area: [[[[{?{Casting Level},20}kl1]]d6]]. Unattended objects also take this damage. The explosion creates almost no pressure.
+                             You point your finger and determine the range (distance and height) at which the delayed blast fireball is to burst. A glowing, pea-sized bead streaks from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the fireball at that point. (An early impact results in an early detonation.) If you attempt to send the bead through a narrow passage, such as through an arrow slit, you must “hit” the opening with a ranged touch attack, or else the bead strikes the barrier and detonates prematurely.
+                             The glowing bead created by delayed blast fireball can detonate immediately if you desire, or you can choose to delay the burst for as many as 5 rounds. You select the amount of delay upon completing the spell, and that time cannot change once it has been set unless someone touches the bead (see below). If you choose a delay, the glowing bead sits at its destination until it detonates. A creature can pick up and hurl the bead as a thrown weapon (range increment 10 feet). If a creature handles and moves the bead within 1 round of its detonation, there is a 25% chance that the bead detonates while being handled.
+                             The fireball sets fire to combustibles and damages objects in the area. It can melt metals with low melting points, such as lead, gold, copper, silver, and bronze. If the damage caused to an interposing barrier shatters or breaks through it, the fireball may continue beyond the barrier if the area permits; otherwise it stops at the barrier just as any other spell effect does.`,
+          component_details:'Material Component: A tiny ball of bat guano and sulfur.'
         },
         'demand': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Demand',
+          ref:              'http://www.d20srd.org/srd/spells/demand.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Charm 8, Nobility 8, Sor/Wiz 8',
+          level:            'Beguiler 8, Charm 8, Diabolic 8, Nobility 8, Sor/Wiz 8',
           components:       'V, S, M/DF',
           casting_time:     '10 minutes',
           range:            'See text',
@@ -2428,17 +2406,17 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '1 round; see text',
           saving_throw:     'Will partial',
           spell_resistance: 'Yes',
-          text:             `You contact a particular creature with which you are familiar and send a short message of twenty-five words or less to the subject. The subject recognizes you if it knows you. It can answer in like manner immediately. A creature with an Intelligence score as low as 1 can understand the *demand*, though the subject’s ability to react is limited as normal by its Intelligence score. Even if the *demand* is received, the subject is not obligated to act upon it in any manner.
-                             If the creature in question is not on the same plane of existence as you are, there is a 5% chance that the *demand* does not arrive. (Local conditions on other planes may worsen this chance considerably.)
-                             The message can also contain a [*suggestion*](http://www.d20srd.org/srd/spells/suggestion.htm), which the subject does its best to carry out. A successful Will save negates the *suggestion* effect but not the contact itself. The *demand*, if received, is understood even if the subject’s Intelligence score is as low as 1. If the message is impossible or meaningless according to the circumstances that exist for the subject at the time the *demand* is issued, the message is understood but the *suggestion* is ineffective.
-                             The *demand*’s message to the creature must be twenty-five words or less, including the *suggestion*. The creature can also give a short reply immediately.`,
+          text:             `You contact a particular creature with which you are familiar and send a short message of twenty-five words or less to the subject. The subject recognizes you if it knows you. It can answer in like manner immediately. A creature with an Intelligence score as low as 1 can understand the demand, though the subject’s ability to react is limited as normal by its Intelligence score. Even if the demand is received, the subject is not obligated to act upon it in any manner.
+                             If the creature in question is not on the same plane of existence as you are, there is a 5% chance that the demand does not arrive. (Local conditions on other planes may worsen this chance considerably.)
+                             The message can also contain a ***[suggestion](http://www.d20srd.org/srd/spells/suggestion.htm)***, which the subject does its best to carry out. A successful Will save negates the suggestion effect but not the contact itself. The demand, if received, is understood even if the subject’s Intelligence score is as low as 1. If the message is impossible or meaningless according to the circumstances that exist for the subject at the time the demand is issued, the message is understood but the suggestion is ineffective.
+                             The demand’s message to the creature must be twenty-five words or less, including the suggestion. The creature can also give a short reply immediately.`,
           component_details:'Material Component: A short piece of copper wire and some small part of the subject—a hair, a bit of nail, or the like.'
         },
         //Epic Spell: demise unseen
         'desecrate': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Desecrate',
+          ref:              'http://www.d20srd.org/srd/spells/desecrate.htm',
           school:           'Evocation [Evil]',
-          level:            'Clr 2, Evil 2',
+          level:            'Arc 2, Blg 3, Clr 2, Evil 2, Undeath 2',
           components:       'V, S, M, DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -2447,17 +2425,17 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[2*?{Casting Level}]] hour(s)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `This spell imbues an area with negative energy. Each Charisma check made to turn [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) within this area takes a -3 \`\`profane penalty\`\`, and every [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type) entering a *desecrated* area gains a +1 \`\`profane bonus\`\` on attack rolls, damage rolls, and saving throws. An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature created within or summoned into such an area gains +1 hit points per HD.
-                             If the *desecrated* area contains an altar, shrine, or other permanent fixture dedicated to your deity or aligned higher power, the modifiers given above are doubled (-6 \`\`profane penalty\`\` on turning checks, +2 \`\`profane bonus\`\` and +2 hit points per HD for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) in the area).
-                             Furthermore, anyone who casts [*animate dead*](https://www.dandwiki.com/wiki/SRD:Animate_Dead) within this area may create as many as double the normal amount of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) (that is, 4 HD per caster level rather than 2 HD per caster level).
-                             If the area contains an altar, shrine, or other permanent fixture of a deity, pantheon, or higher power other than your patron, the *desecrate* spell instead curses the area, cutting off its connection with the associated deity or power. This secondary function, if used, does not also grant the bonuses and penalties relating to [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type), as given above.
-                             *Desecrate* counters and dispels [*consecrate*](https://www.dandwiki.com/wiki/SRD:Consecrate).`,
+          text:             `This spell imbues an area with negative energy. Each Charisma check made to turn undead within this area takes a **-3 profane penalty**, and every undead creature entering a desecrated area gains a **+1 profane bonus** on attack rolls, damage rolls, and saving throws. An undead creature created within or summoned into such an area gains +1 hit points per HD.
+                             If the desecrated area contains an altar, shrine, or other permanent fixture dedicated to your deity or aligned higher power, the modifiers given above are doubled (**-6 profane penalty** on turning checks, **+2 profane bonus** and +2 hit points per HD for undead in the area).
+                             Furthermore, anyone who casts ***[animate dead](http://www.d20srd.org/srd/spells/animateDead.htm)*** within this area may create as many as double the normal amount of undead (that is, 4 HD per caster level rather than 2 HD per caster level).
+                             If the area contains an altar, shrine, or other permanent fixture of a deity, pantheon, or higher power other than your patron, the desecrate spell instead curses the area, cutting off its connection with the associated deity or power. This secondary function, if used, does not also grant the bonuses and penalties relating to undead, as given above.
+                             Desecrate counters and dispels ***[consecrate](http://www.d20srd.org/srd/spells/consecrate.htm)***.`,
           component_details:'Material Component: A vial of unholy water and 25 gp worth (5 pounds) of silver dust, all of which must be sprinkled around the area.'
         },
         'destruction': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Destruction',
+          ref:              'http://www.d20srd.org/srd/spells/destruction.htm',
           school:           'Necromancy [Death]',
-          level:            'Clr 7, Death 7, Repose 7',
+          level:            'Arc 7, Clr 7, Death 7, Repose 7, Slime 7',
           components:       'V, S, F',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -2466,13 +2444,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude partial',
           spell_resistance: 'Yes',
-          text:             `This spell instantly slays the subject and consumes its remains (but not its equipment and possessions) utterly. If the target’s Fortitude saving throw succeeds, it instead takes [[10d6]] points of damage. The only way to restore life to a character who has failed to save against this spell is to use [*true resurrection*](https://www.dandwiki.com/wiki/SRD:True_Resurrection), a carefully worded [*wish*](http://www.d20srd.org/srd/spells/wish.htm) spell followed by [*resurrection*](https://www.dandwiki.com/wiki/SRD:Resurrection), or [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm).`,
+          text:             `This spell instantly slays the subject and consumes its remains (but not its equipment and possessions) utterly. If the target’s Fortitude saving throw succeeds, it instead takes [[10d6]] points of damage. The only way to restore life to a character who has failed to save against this spell is to use ***[true resurrection](http://www.d20srd.org/srd/spells/trueResurrection.htm)***, a carefully worded ***[wish](http://www.d20srd.org/srd/spells/wish.htm)*** spell followed by ***[resurrection](http://www.d20srd.org/srd/spells/resurrection.htm)***, or ***[miracle](http://www.d20srd.org/srd/spells/miracle.htm)***.`,
           component_details:'Focus: A special holy (or unholy) symbol of silver marked with verses of anathema (cost 500 gp).'
         },
         'detect animals or plants': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Animals_or_Plants',
+          ref:              'http://www.d20srd.org/srd/spells/detectAnimalsOrPlants.htm',
           school:           'Divination',
-          level:            'Drd 1, Rgr 1',
+          level:            'Arc 1, Drd 1, Rgr 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_long_',
@@ -2481,19 +2459,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `You can detect a particular kind of [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) in a cone emanating out from you in whatever direction you face. You must think of a kind of [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) when using the spell, but you can change the [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) kind each round. The amount of information revealed depends on how long you search a particular area or focus on a specific kind of [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type).
-                             *1st Round:* Presence or absence of that kind of [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) in the area.
+          text:             `You can detect a particular kind of animal or plant in a cone emanating out from you in whatever direction you face. You must think of a kind of animal or plant when using the spell, but you can change the animal or plant kind each round. The amount of information revealed depends on how long you search a particular area or focus on a specific kind of animal or plant.
+                             *1st Round:* Presence or absence of that kind of animal or plant in the area.
                              *2nd Round:* Number of individuals of the specified kind in the area, and the condition of the healthiest specimen.
-                             *3rd Round:* The condition (see below) and location of each individual present. If an [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) is outside your line of sight, then you discern its direction but not its exact location.
+                             *3rd Round:* The condition (see below) and location of each individual present. If an animal or plant is outside your line of sight, then you discern its direction but not its exact location.
                              *Conditions:* For purposes of this spell, the categories of condition are as follows:
                              Normal: Has at least 90% of full normal hit points, free of disease.
                              Fair: 30% to 90% of full normal hit points remaining.
                              Poor: Less than 30% of full normal hit points remaining, afflicted with a disease, or suffering from a debilitating injury.
                              Weak: 0 or fewer hit points remaining, afflicted with a disease in the terminal stage, or crippled.
                              If a creature falls into more than one category, the spell indicates the weaker of the two.
-                             Each round you can turn to detect a kind of [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) or [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
-          component_details:null
+                             Each round you can turn to detect a kind of animal or plant in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`
         },
+        //BEGIN REVIEW MARKER
         'detect chaos': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Chaos',
           school:           'Divination',
@@ -2860,7 +2838,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:null
         },
         'detect thoughts': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Thoughts',
+          ref:              'http://www.d20srd.org/srd/spells/detectThoughts.htm',
           school:           'Divination [Mind-Affecting]',
           level:            'Brd 2, Knowledge 2, Mind 2, Sor/Wiz 2',
           components:       'V, S, F/DF',
@@ -2936,23 +2914,23 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • HD Equal to caster level
                              -- [Deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened)
                              • HD Up to caster level - 1
-                             -- [*Slowed*](https://www.dandwiki.com/wiki/SRD:Slow),[deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened)
+                             -- [*Slowed*](http://www.d20srd.org/srd/spells/slow.htm),[deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened)
                              • HD Up to caster level - 5
-                             -- [Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed),[*slowed*](https://www.dandwiki.com/wiki/SRD:Slow),[deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened)
+                             -- [Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed),[*slowed*](http://www.d20srd.org/srd/spells/slow.htm),[deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened)
                              • HD Up to caster level - 10
-                             -- [Killed](http://www.d20srd.org/srd/conditionSummary.htm#dead),[paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed),[*slowed*](https://www.dandwiki.com/wiki/SRD:Slow),[deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened)
+                             -- [Killed](http://www.d20srd.org/srd/conditionSummary.htm#dead),[paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed),[*slowed*](http://www.d20srd.org/srd/spells/slow.htm),[deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened)
 
                              The effects are cumulative and concurrent. No saving throw is allowed against these effects.
                              *[Deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened):* The creature is [deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened) for [[1d4]] rounds.
-                             *[Slowed](https://www.dandwiki.com/wiki/SRD:Slow):* The creature is *slowed*, as by the [*slow*](https://www.dandwiki.com/wiki/SRD:Slow) spell, for [[2d4]] rounds.
-                             *[Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed):* The creature is [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and [helpless](https://www.dandwiki.com/wiki/SRD:Helpless) for [[1d10]] minutes.
+                             *[Slowed](http://www.d20srd.org/srd/spells/slow.htm):* The creature is *slowed*, as by the [*slow*](http://www.d20srd.org/srd/spells/slow.htm) spell, for [[2d4]] rounds.
+                             *[Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed):* The creature is [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and [helpless](http://www.d20srd.org/srd/conditionSummary.htm#helpless) for [[1d10]] minutes.
                              *[Killed](http://www.d20srd.org/srd/conditionSummary.htm#dead):* Living creatures die. [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures are destroyed.
                              Furthermore, if you are on your home plane when you cast this spell, nonlawful extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *dictum*. The banishment effect allows a Will save (at a -4 \`\`penalty\`\`) to negate.
                              Creatures whose HD exceed your caster level are unaffected by *dictum*.`,
           component_details:null
         },
         'dimension door': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dimension_Door',
+          ref:              'http://www.d20srd.org/srd/spells/dimensionDoor.htm',
           school:           'Conjuration (Teleportation)',
           level:            'Asn 4, Brd 4, Sor/Wiz 4, Travel 4',
           components:       'V',
@@ -2969,7 +2947,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:null
         },
         'dimensional anchor': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor',
+          ref:              'http://www.d20srd.org/srd/spells/dimensionalAnchor.htm',
           school:           'Abjuration',
           level:            'Clr 4, Sor/Wiz 4',
           components:       'V, S',
@@ -2980,7 +2958,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'None',
           spell_resistance: 'Yes (object)',
-          text:             `A green ray springs from your outstretched hand. You must make a ranged touch attack to hit the target. Any creature or object struck by the ray is covered with a shimmering emerald field that completely blocks extradimensional travel. Forms of movement barred by a *dimensional anchor* include [*astral projection*](http://www.d20srd.org/srd/spells/astralProjection.htm), [*blink*](http://www.d20srd.org/srd/spells/blink.htm), [*dimension door*](https://www.dandwiki.com/wiki/SRD:Dimension_Door), [*ethereal jaunt*](https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt), [*etherealness*](https://www.dandwiki.com/wiki/SRD:Etherealness_%28Spell%29), [*gate*](http://www.d20srd.org/srd/spells/gate.htm), [*maze*](https://www.dandwiki.com/wiki/SRD:Maze), [*plane shift*](https://www.dandwiki.com/wiki/SRD:Plane_Shift), [*shadow walk*](https://www.dandwiki.com/wiki/SRD:Shadow_Walk), [*teleport*](https://www.dandwiki.com/wiki/SRD:Teleport), and similar spell-like or psionic abilities. The spell also prevents the use of a [*gate*](http://www.d20srd.org/srd/spells/gate.htm) or [*teleportation circle*](https://www.dandwiki.com/wiki/SRD:Teleportation_Circle) for the duration of the spell.
+          text:             `A green ray springs from your outstretched hand. You must make a ranged touch attack to hit the target. Any creature or object struck by the ray is covered with a shimmering emerald field that completely blocks extradimensional travel. Forms of movement barred by a *dimensional anchor* include [*astral projection*](http://www.d20srd.org/srd/spells/astralProjection.htm), [*blink*](http://www.d20srd.org/srd/spells/blink.htm), [*dimension door*](http://www.d20srd.org/srd/spells/dimensionDoor.htm), [*ethereal jaunt*](https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt), [*etherealness*](http://www.d20srd.org/srd/spells/etherealness.htm), [*gate*](http://www.d20srd.org/srd/spells/gate.htm), [*maze*](https://www.dandwiki.com/wiki/SRD:Maze), [*plane shift*](http://www.d20srd.org/srd/spells/planeShift.htm), [*shadow walk*](http://www.d20srd.org/srd/spells/shadowWalk.htm), [*teleport*](http://www.d20srd.org/srd/spells/teleport.htm), and similar spell-like or psionic abilities. The spell also prevents the use of a [*gate*](http://www.d20srd.org/srd/spells/gate.htm) or [*teleportation circle*](http://www.d20srd.org/srd/spells/teleportationCircle.htm) for the duration of the spell.
                              A *dimensional anchor* does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms. Also, *dimensional anchor* does not prevent summoned creatures from disappearing at the end of a summoning spell.`,
           component_details:null
         },
@@ -2996,7 +2974,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] day(s)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `You create a shimmering emerald barrier that completely blocks extradimensional travel. Forms of movement barred include [*astral projection*](http://www.d20srd.org/srd/spells/astralProjection.htm), [*blink*](http://www.d20srd.org/srd/spells/blink.htm), [*dimension door*](https://www.dandwiki.com/wiki/SRD:Dimension_Door), [*ethereal jaunt*](https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt), [*etherealness*](https://www.dandwiki.com/wiki/SRD:Etherealness_%28Spell%29), [*gate*](http://www.d20srd.org/srd/spells/gate.htm), [*maze*](https://www.dandwiki.com/wiki/SRD:Maze), [*plane shift*](https://www.dandwiki.com/wiki/SRD:Plane_Shift), [*shadow walk*](https://www.dandwiki.com/wiki/SRD:Shadow_Walk), [*teleport*](https://www.dandwiki.com/wiki/SRD:Teleport), and similar spell-like or psionic abilities. Once *dimensional lock* is in place, extradimensional travel into or out of the area is not possible.
+          text:             `You create a shimmering emerald barrier that completely blocks extradimensional travel. Forms of movement barred include [*astral projection*](http://www.d20srd.org/srd/spells/astralProjection.htm), [*blink*](http://www.d20srd.org/srd/spells/blink.htm), [*dimension door*](http://www.d20srd.org/srd/spells/dimensionDoor.htm), [*ethereal jaunt*](https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt), [*etherealness*](http://www.d20srd.org/srd/spells/etherealness.htm), [*gate*](http://www.d20srd.org/srd/spells/gate.htm), [*maze*](https://www.dandwiki.com/wiki/SRD:Maze), [*plane shift*](http://www.d20srd.org/srd/spells/planeShift.htm), [*shadow walk*](http://www.d20srd.org/srd/spells/shadowWalk.htm), [*teleport*](http://www.d20srd.org/srd/spells/teleport.htm), and similar spell-like or psionic abilities. Once *dimensional lock* is in place, extradimensional travel into or out of the area is not possible.
                              A *dimensional lock* does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms. Also, the spell does not prevent summoned creatures from disappearing at the end of a summoning spell.`,
           component_details:null
         },
@@ -3083,7 +3061,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Fortitude partial (object)',
           spell_resistance: 'Yes',
           text:             `A thin, green ray springs from your pointing finger. You must make a successful ranged touch attack to hit. Any creature struck by the ray takes 2d6 points of damage per caster level (to a maximum of 40d6): [[[[{2*?{Casting Level},40}kl1]]d6]]. Any creature reduced to 0 or fewer hit points by this spell is entirely disintegrated, leaving behind only a trace of fine dust. A disintegrated creature’s equipment is unaffected, though Mage's disjunction might.
-                             When used against an object, the ray simply disintegrates as much as one 10-foot cube of nonliving matter. Thus, the spell disintegrates only part of any very large object or structure targeted. The ray affects even objects constructed entirely of force, such as [*forceful hand*](https://www.dandwiki.com/wiki/SRD:Forceful_Hand) or a [*wall of force*](http://www.d20srd.org/srd/spells/wallOfForce.htm), but not magical effects such as a [*globe of invulnerability*](https://www.dandwiki.com/wiki/SRD:Globe_of_Invulnerability) or an [*antimagic field*](http://www.d20srd.org/srd/specialAbilities.htm#antimagic).
+                             When used against an object, the ray simply disintegrates as much as one 10-foot cube of nonliving matter. Thus, the spell disintegrates only part of any very large object or structure targeted. The ray affects even objects constructed entirely of force, such as [*forceful hand*](http://www.d20srd.org/srd/spells/forcefulHand.htm) or a [*wall of force*](http://www.d20srd.org/srd/spells/wallOfForce.htm), but not magical effects such as a [*globe of invulnerability*](https://www.dandwiki.com/wiki/SRD:Globe_of_Invulnerability) or an [*antimagic field*](http://www.d20srd.org/srd/specialAbilities.htm#antimagic).
                              A creature or object that makes a successful Fortitude save is partially affected, taking only [[5d6]] points of damage. If this damage reduces the creature or object to 0 or fewer hit points, it is entirely disintegrated.
                              Only the first creature or object struck can be affected; that is, the ray affects only one target per casting.`,
           component_details:'Arcane Material Component: A lodestone and a pinch of dust.'
@@ -3324,7 +3302,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can’t communicate with you. You can’t actually see through the subject’s eyes, so it’s not as good as being there yourself, but you still get a good idea of what’s going on.
                              Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a +2 \`\`bonus\`\`. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
                              If you don’t spend at least 1 round concentrating on the spell each day, the subject receives a new saving throw to throw off the domination.
-                             [*Protection from evil*](https://www.dandwiki.com/wiki/SRD:Protection_from_Evil) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`,
+                             [*Protection from evil*](http://www.d20srd.org/srd/spells/protectionFromEvil.htm) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`,
           component_details:null
         },
         'dominate person': {
@@ -3346,7 +3324,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can’t communicate with you. You can’t actually see through the subject’s eyes, so it’s not as good as being there yourself, but you still get a good idea of what’s going on.
                              Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a +2 \`\`bonus\`\`. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
                              If you don’t spend at least 1 round concentrating on the spell each day, the subject receives a new saving throw to throw off the domination.
-                             [*Protection from evil*](https://www.dandwiki.com/wiki/SRD:Protection_from_Evil) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`,
+                             [*Protection from evil*](http://www.d20srd.org/srd/spells/protectionFromEvil.htm) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`,
           component_details:null
         },
         'doom': {
@@ -3361,7 +3339,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This spell fills a single subject with a feeling of horrible dread that causes it to become [shaken](https://www.dandwiki.com/wiki/SRD:Shaken).`,
+          text:             `This spell fills a single subject with a feeling of horrible dread that causes it to become [shaken](http://www.d20srd.org/srd/conditionSummary.htm#shaken).`,
           component_details:null
         },
         //Epic Spell: dragon knight (ritual)
@@ -3572,7 +3550,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:null
         },
         'enthrall': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Enthrall',
+          ref:              'http://www.d20srd.org/srd/spells/enthrall.htm',
           school:           'Enchantment (Charm) [Language-Dependent, Mind-Affecting, Sonic]',
           level:            'Brd 2, Clr 2, Nobility 2',
           components:       'V, S',
@@ -3618,7 +3596,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'See text',
           spell_resistance: 'No',
-          text:             `*Erase* removes writings of either magical or mundane nature from a scroll or from one or two pages of paper, parchment, or similar surfaces. With this spell, you can remove [*explosive runes*](https://www.dandwiki.com/wiki/SRD:Explosive_Runes), a [*glyph of warding*](https://www.dandwiki.com/wiki/SRD:Glyph_of_Warding), a [*sepia snake sigil*](https://www.dandwiki.com/wiki/SRD:Sepia_Snake_Sigil), or an [*arcane mark*](http://www.d20srd.org/srd/spells/arcaneMark.htm), but not [*illusory script*](https://www.dandwiki.com/wiki/SRD:Illusory_Script) or a [*symbol*](https://www.dandwiki.com/wiki/SRD:Symbol_of_Death) spell. Nonmagical writing is automatically erased if you touch it and no one else is holding it. Otherwise, the chance of erasing nonmagical writing is 90%.
+          text:             `*Erase* removes writings of either magical or mundane nature from a scroll or from one or two pages of paper, parchment, or similar surfaces. With this spell, you can remove [*explosive runes*](https://www.dandwiki.com/wiki/SRD:Explosive_Runes), a [*glyph of warding*](https://www.dandwiki.com/wiki/SRD:Glyph_of_Warding), a [*sepia snake sigil*](https://www.dandwiki.com/wiki/SRD:Sepia_Snake_Sigil), or an [*arcane mark*](http://www.d20srd.org/srd/spells/arcaneMark.htm), but not [*illusory script*](http://www.d20srd.org/srd/spells/illusoryScript.htm) or a [*symbol*](https://www.dandwiki.com/wiki/SRD:Symbol_of_Death) spell. Nonmagical writing is automatically erased if you touch it and no one else is holding it. Otherwise, the chance of erasing nonmagical writing is 90%.
                              Magic writing must be touched to be erased, and you also must succeed on a caster level check (1d20 + caster level) against DC 15. (A natural 1 or 2 is always a failure on this check.) If you fail to erase *explosive runes*, a *glyph of warding*, or a *sepia snake sigil*, you accidentally activate that writing instead.`,
           component_details:null
         },
@@ -3641,7 +3619,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:null
         },
         'etherealness': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Etherealness_%28Spell%29',
+          ref:              'http://www.d20srd.org/srd/spells/etherealness.htm',
           school:           'Transmutation',
           level:            'Clr 9, Sor/Wiz 9',
           components:       'V, S',
@@ -3706,7 +3684,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
                              The effects are cumulative and concurrent.
                              *[Sickened](https://www.dandwiki.com/wiki/SRD:Sickened):* Sudden pain and fever sweeps over the subject’s body. A [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) creature takes a -2 \`\`penalty\`\` on attack rolls, weapon damage rolls, saving throws, skill checks, and ability checks. A creature affected by this spell remains [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) for [[10*?{Casting Level}]] minutes. The effects cannot be negated by a [*remove disease*](https://www.dandwiki.com/wiki/SRD:Remove_Disease) or [*heal*](https://www.dandwiki.com/wiki/SRD:Heal) spell, but a [*remove curse*](http://www.d20srd.org/srd/spells/bestowCurse.htm) is effective.
-                             *[Panicked](https://www.dandwiki.com/wiki/SRD:Panicked):* The subject becomes [panicked](https://www.dandwiki.com/wiki/SRD:Panicked) for [[1d4]] rounds. Even after the panic ends, the creature remains [shaken](https://www.dandwiki.com/wiki/SRD:Shaken) for [[10*?{Casting Level}]] minutes, and it automatically becomes [panicked](https://www.dandwiki.com/wiki/SRD:Panicked) again if it comes within sight of you during that time. This is a fear effect.
+                             *[Panicked](http://www.d20srd.org/srd/conditionSummary.htm#panicked):* The subject becomes [panicked](http://www.d20srd.org/srd/conditionSummary.htm#panicked) for [[1d4]] rounds. Even after the panic ends, the creature remains [shaken](http://www.d20srd.org/srd/conditionSummary.htm#shaken) for [[10*?{Casting Level}]] minutes, and it automatically becomes [panicked](http://www.d20srd.org/srd/conditionSummary.htm#panicked) again if it comes within sight of you during that time. This is a fear effect.
                              *Comatose:* The subject falls into a catatonic coma for [[10*?{Casting Level}]] minutes. During this time, it cannot be awakened by any means short of dispelling the effect. This is not a [*sleep*](https://www.dandwiki.com/wiki/SRD:Sleep) effect, and thus elves are not immune to it.
                              You must spend a move action each round after the first to target a foe.`,
           component_details:null
@@ -3741,7 +3719,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `A pale glow surrounds and outlines the subjects. Outlined subjects shed light as candles. Outlined creatures do not benefit from the [concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment) normally provided by darkness (though a 2nd-level or higher magical [*darkness*](https://www.dandwiki.com/wiki/SRD:Darkness) effect functions normally), [*blur*](http://www.d20srd.org/srd/spells/blur.htm), [*displacement*](https://www.dandwiki.com/wiki/SRD:Displacement), [*invisibility*](https://www.dandwiki.com/wiki/SRD:Invisibility_%28Spell%29, or similar effects. The light is too dim to have any special effect on [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) or dark-dwelling creatures vulnerable to light. The *faerie fire* can be blue, green, or violet, according to your choice at the time of casting. The *faerie fire* does not cause any harm to the objects or creatures thus outlined.`,
+          text:             `A pale glow surrounds and outlines the subjects. Outlined subjects shed light as candles. Outlined creatures do not benefit from the [concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment) normally provided by darkness (though a 2nd-level or higher magical [*darkness*](http://www.d20srd.org/srd/spells/darkness.htm) effect functions normally), [*blur*](http://www.d20srd.org/srd/spells/blur.htm), [*displacement*](https://www.dandwiki.com/wiki/SRD:Displacement), [*invisibility*](https://www.dandwiki.com/wiki/SRD:Invisibility_%28Spell%29, or similar effects. The light is too dim to have any special effect on [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) or dark-dwelling creatures vulnerable to light. The *faerie fire* can be blue, green, or violet, according to your choice at the time of casting. The *faerie fire* does not cause any harm to the objects or creatures thus outlined.`,
           component_details:null
         },
         'false life': {
@@ -3784,7 +3762,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round or 1 round; see text',
           saving_throw:     'Will partial',
           spell_resistance: 'Yes',
-          text:             `An [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) cone of terror causes each living creature in the area to become [panicked](https://www.dandwiki.com/wiki/SRD:Panicked) unless it succeeds on a Will save. If cornered, a [panicked](https://www.dandwiki.com/wiki/SRD:Panicked) creature begins [cowering](https://www.dandwiki.com/wiki/SRD:Cowering). If the Will save succeeds, the creature is [shaken](https://www.dandwiki.com/wiki/SRD:Shaken) for 1 round.`,
+          text:             `An [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) cone of terror causes each living creature in the area to become [panicked](http://www.d20srd.org/srd/conditionSummary.htm#panicked) unless it succeeds on a Will save. If cornered, a [panicked](http://www.d20srd.org/srd/conditionSummary.htm#panicked) creature begins [cowering](https://www.dandwiki.com/wiki/SRD:Cowering). If the Will save succeeds, the creature is [shaken](http://www.d20srd.org/srd/conditionSummary.htm#shaken) for 1 round.`,
           component_details:'Material Component: Either the heart of a hen or a white feather.'
         },
         'feather fall': {
@@ -4045,7 +4023,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
-          text:             `The subject, along with all its carried gear, turns into a mindless, inert statue. If the statue resulting from this spell is broken or damaged, the subject (if ever returned to its original state) has similar damage or deformities. The creature is not [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead), but it does not seem to be alive either when viewed with spells such as [*deathwatch*](https://www.dandwiki.com/wiki/SRD:Deathwatch).
+          text:             `The subject, along with all its carried gear, turns into a mindless, inert statue. If the statue resulting from this spell is broken or damaged, the subject (if ever returned to its original state) has similar damage or deformities. The creature is not [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead), but it does not seem to be alive either when viewed with spells such as [*deathwatch*](http://www.d20srd.org/srd/spells/deathwatch.htm).
                              Only creatures made of flesh are affected by this spell.`,
           component_details:'*Material Component:* Lime, water, and earth.'
         },
@@ -4081,7 +4059,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Arcane Focus: A wing feather from any bird.'
         },
         'fog cloud': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Fog_Cloud',
+          ref:              'http://www.d20srd.org/srd/spells/fogCloud.htm',
           school:           'Conjuration (Creation)',
           level:            'Drd 2, Sor/Wiz 2, Water 2, Weather 2',
           components:       'V, S',
@@ -4109,7 +4087,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Permanent',
           saving_throw:     'See text',
           spell_resistance: 'Yes',
-          text:             `*Forbiddance* seals an area against all planar travel into or within it. This includes all teleportation spells (such as [*dimension door*](https://www.dandwiki.com/wiki/SRD:Dimension_Door) and [*teleport*](https://www.dandwiki.com/wiki/SRD:Teleport)), plane shifting, astral travel, ethereal travel, and all summoning spells. Such effects simply fail automatically.
+          text:             `*Forbiddance* seals an area against all planar travel into or within it. This includes all teleportation spells (such as [*dimension door*](http://www.d20srd.org/srd/spells/dimensionDoor.htm) and [*teleport*](http://www.d20srd.org/srd/spells/teleport.htm)), plane shifting, astral travel, ethereal travel, and all summoning spells. Such effects simply fail automatically.
                              In addition, it damages entering creatures whose alignments are different from yours. The effect on those attempting to enter the warded area is based on their alignment relative to yours (see below). A creature inside the area when the spell is cast takes no damage unless it exits the area and attempts to reenter, at which time it is affected as normal.
                              *Alignments identical:* No effect. The creature may enter the area freely (although not by planar travel).
                              *Alignments different with respect to either law/chaos or good/evil:* The creature takes ‹6d6› points of damage. A successful Will save halves the damage, and spell resistance applies.
@@ -4139,7 +4117,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: Ruby dust worth 1,500 gp, which is tossed into the air and disappears when you cast the spell.'
         },
         'forceful hand': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Forceful_Hand',
+          ref:              'http://www.d20srd.org/srd/spells/forcefulHand.htm',
           school:           'Evocation [Force]',
           level:            'Sor/Wiz 6',
           components:       'V, S, F',
@@ -4150,7 +4128,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `This spell functions like [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand), except that the *forceful hand* pursues and pushes away the opponent that you designate. Treat this attack as a [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) with a +14 \`\`bonus\`\` on the Strength check (+8 for Strength 27, +4 for being Large, and a +2 bonus for charging, which it always gets). The hand always moves with the opponent to push that target back the full distance allowed, and it has no speed limit. Directing the spell to a new target is a move action.
+          text:             `This spell functions like [*interposing hand*](http://www.d20srd.org/srd/spells/interposingHand.htm), except that the *forceful hand* pursues and pushes away the opponent that you designate. Treat this attack as a [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) with a +14 \`\`bonus\`\` on the Strength check (+8 for Strength 27, +4 for being Large, and a +2 bonus for charging, which it always gets). The hand always moves with the opponent to push that target back the full distance allowed, and it has no speed limit. Directing the spell to a new target is a move action.
                              A very strong creature could not push the hand out of its way because the latter would instantly reposition itself between the creature and you, but an opponent could push the hand up against you by successfully bull rushing it.`,
           component_details:'Focus: A sturdy glove made of leather or heavy cloth.'
         },
@@ -4197,7 +4175,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The subject is freed from spells and effects that restrict its movement, including [*binding*](http://www.d20srd.org/srd/spells/binding.htm), [*entangle*](https://www.dandwiki.com/wiki/SRD:Entangle), [grappling](https://www.dandwiki.com/wiki/SRD:Grapple), [*imprisonment*](https://www.dandwiki.com/wiki/SRD:Imprisonment), [*maze*](https://www.dandwiki.com/wiki/SRD:Maze), [paralysis](https://www.dandwiki.com/wiki/SRD:Paralysis), [*petrification*](https://www.dandwiki.com/wiki/SRD:Flesh_to_Stone), [pinning](https://www.dandwiki.com/wiki/SRD:Grapple), [*sleep*](https://www.dandwiki.com/wiki/SRD:Sleep), [*slow*](https://www.dandwiki.com/wiki/SRD:Slow), [stunning](http://www.d20srd.org/srd/conditionSummary.htm#stunned), [*temporal stasis*](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis), and [*web*](https://www.dandwiki.com/wiki/SRD:Web). To free a creature from *imprisonment* or *maze*, you must know its name and background, and you must cast this spell at the spot where it was entombed or banished into the *maze*.`,
+          text:             `The subject is freed from spells and effects that restrict its movement, including [*binding*](http://www.d20srd.org/srd/spells/binding.htm), [*entangle*](https://www.dandwiki.com/wiki/SRD:Entangle), [grappling](https://www.dandwiki.com/wiki/SRD:Grapple), [*imprisonment*](https://www.dandwiki.com/wiki/SRD:Imprisonment), [*maze*](https://www.dandwiki.com/wiki/SRD:Maze), [paralysis](https://www.dandwiki.com/wiki/SRD:Paralysis), [*petrification*](https://www.dandwiki.com/wiki/SRD:Flesh_to_Stone), [pinning](https://www.dandwiki.com/wiki/SRD:Grapple), [*sleep*](https://www.dandwiki.com/wiki/SRD:Sleep), [*slow*](http://www.d20srd.org/srd/spells/slow.htm), [stunning](http://www.d20srd.org/srd/conditionSummary.htm#stunned), [*temporal stasis*](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis), and [*web*](https://www.dandwiki.com/wiki/SRD:Web). To free a creature from *imprisonment* or *maze*, you must know its name and background, and you must cast this spell at the spot where it was entombed or banished into the *maze*.`,
           component_details:null
         },
         'freedom of movement': {
@@ -4212,7 +4190,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `This spell enables you or a creature you touch to move and attack normally for the duration of the spell, even under the influence of magic that usually impedes movement, such as [paralysis](https://www.dandwiki.com/wiki/SRD:Paralysis), ***[solid fog](https://www.dandwiki.com/wiki/SRD:Solid_Fog)***, [*slow*](https://www.dandwiki.com/wiki/SRD:Slow), and [*web*](https://www.dandwiki.com/wiki/SRD:Web). The subject automatically succeeds on any [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) check made to resist a grapple attempt, as well as on grapple checks or Escape Artist checks made to escape a grapple or a pin.
+          text:             `This spell enables you or a creature you touch to move and attack normally for the duration of the spell, even under the influence of magic that usually impedes movement, such as [paralysis](https://www.dandwiki.com/wiki/SRD:Paralysis), ***[solid fog](https://www.dandwiki.com/wiki/SRD:Solid_Fog)***, [*slow*](http://www.d20srd.org/srd/spells/slow.htm), and [*web*](https://www.dandwiki.com/wiki/SRD:Web). The subject automatically succeeds on any [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) check made to resist a grapple attempt, as well as on grapple checks or Escape Artist checks made to escape a grapple or a pin.
                              The spell also allows the subject to move and attack normally while underwater, even with slashing weapons such as axes and swords or with bludgeoning weapons such as flails, hammers, and maces, provided that the weapon is wielded in the hand rather than hurled. The *freedom of movement* spell does not, however, allow water breathing.`,
           component_details:'Material Component: A leather thong, bound around the arm or a similar appendage.'
         },
@@ -4266,7 +4244,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Second, you may then call a particular individual or kind of being through the *gate*.
                              The *gate* itself is a circular hoop or disk from 5 to 20 feet in diameter (caster’s choice), oriented in the direction you desire when it comes into existence (typically vertical and facing you). It is a two-dimensional window looking into the plane you specified when casting the spell, and anyone or anything that moves through is shunted instantly to the other side.
                              A *gate* has a front and a back. Creatures moving through the *gate* from the front are transported to the other plane; creatures moving through it from the back are not.
-                             *Planar Travel:* As a mode of planar travel, a *gate* spell functions much like a [*plane shift*](https://www.dandwiki.com/wiki/SRD:Plane_Shift) spell, except that the gate opens precisely at the point you desire (a creation effect). Deities and other beings who rule a planar realm can prevent a *gate* from opening in their presence or personal demesnes if they so desire. Travelers need not join hands with you—anyone who chooses to step through the portal is transported. A *gate* cannot be opened to another point on the same plane; the spell works only for interplanar travel.
+                             *Planar Travel:* As a mode of planar travel, a *gate* spell functions much like a [*plane shift*](http://www.d20srd.org/srd/spells/planeShift.htm) spell, except that the gate opens precisely at the point you desire (a creation effect). Deities and other beings who rule a planar realm can prevent a *gate* from opening in their presence or personal demesnes if they so desire. Travelers need not join hands with you—anyone who chooses to step through the portal is transported. A *gate* cannot be opened to another point on the same plane; the spell works only for interplanar travel.
                              You may hold the *gate* open only for a brief time (no more than 1 round per caster level), and you must concentrate on doing so, or else the interplanar connection is severed.
                              *Calling Creatures:* The second effect of the *gate* spell is to call an extraplanar creature to your aid (a calling effect). By naming a particular being or kind of being as you cast the spell, you cause the *gate* to open in the immediate vicinity of the desired creature and pull the subject through, willing or unwilling. Deities and unique beings are under no compulsion to come through the *gate*, although they may choose to do so of their own accord. This use of the spell creates a *gate* that remains open just long enough to transport the called creatures. This use of the spell has an XP cost (see below).
                              If you choose to call a kind of creature instead of a known individual you may call either a single creature (of any HD) or several creatures. You can call and control several creatures as long as their HD total does not exceed your caster level. In the case of a single creature, you can control it if its HD do not exceed twice your caster level. A single creature with more HD than twice your caster level can’t be controlled. Deities and unique beings cannot be controlled in any event. An uncontrolled being acts as it pleases, making the calling of such creatures rather dangerous. An uncontrolled being may return to its home plane at any time.
@@ -4452,7 +4430,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude partial; see text',
           spell_resistance: 'Yes',
-          text:             `You utter shrieks of nonsense and gibberish that thinking creatures find distracting and confusing. The spell affects only creatures with Intelligence scores of 3 or higher. Any such creatures within the spell’s area must succeed on Fortitude saves or be [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for 1 round (if they have Intelligence scores of 20 or higher), [dazed](http://www.d20srd.org/srd/conditionSummary.htm#dazed) for 1 round (if they have Intelligence scores between 10 and 19), or [shaken](https://www.dandwiki.com/wiki/SRD:Shaken) for 1 round (if they have Intelligence scores between 3 and 9). In addition, a creature within the spell’s area loses any psionic focus it might have had and takes a -4 \`\`penalty\`\` on Concentration checks for 1 round. These effects happen whether or not the creature succeeded on its save.`,
+          text:             `You utter shrieks of nonsense and gibberish that thinking creatures find distracting and confusing. The spell affects only creatures with Intelligence scores of 3 or higher. Any such creatures within the spell’s area must succeed on Fortitude saves or be [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for 1 round (if they have Intelligence scores of 20 or higher), [dazed](http://www.d20srd.org/srd/conditionSummary.htm#dazed) for 1 round (if they have Intelligence scores between 10 and 19), or [shaken](http://www.d20srd.org/srd/conditionSummary.htm#shaken) for 1 round (if they have Intelligence scores between 3 and 9). In addition, a creature within the spell’s area loses any psionic focus it might have had and takes a -4 \`\`penalty\`\` on Concentration checks for 1 round. These effects happen whether or not the creature succeeded on its save.`,
           component_details:null
         },
         'glyph of warding': {
@@ -4478,7 +4456,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: You trace the glyph with incense, which must first be sprinkled with powdered diamond worth at least 200 gp.'
         },
         'good hope': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Good_Hope',
+          ref:              'http://www.d20srd.org/srd/spells/goodHope.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
           level:            'Brd 3',
           components:       'V, S',
@@ -4509,7 +4487,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:null
         },
         'grasping hand': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Grasping_Hand',
+          ref:              'http://www.d20srd.org/srd/spells/graspingHand.htm',
           school:           'Evocation [Force]',
           level:            'Sor/Wiz 7, Strength 7',
           components:       'V, S, F/DF',
@@ -4520,10 +4498,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `This spell functions like [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand), except the hand can also [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) one opponent that you select. The *grasping hand* gets one [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) attack per round.
+          text:             `This spell functions like [*interposing hand*](http://www.d20srd.org/srd/spells/interposingHand.htm), except the hand can also [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) one opponent that you select. The *grasping hand* gets one [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) attack per round.
                              Its attack bonus to make contact equals your caster level + your Intelligence, Wisdom, or Charisma modifier (for a wizard, cleric, or sorcerer, respectively), +10 for the hand’s Strength score (31), -1 for being Large. Its grapple bonus is this same figure, except with a +4 modifier for being Large instead of -1. The hand holds but does not harm creatures it grapples.
                              Directing the spell to a new target is a move action.
-                             The *grasping hand* can also bull rush an opponent as [*forceful hand*](https://www.dandwiki.com/wiki/SRD:Forceful_Hand) does, but at a +16 \`\`bonus\`\` on the Strength check (+10 for Strength 31, +4 for being Large, and a +2 \`\`bonus\`\` for charging, which it always gets), or interpose itself as [*interposing hand*](https://www.dandwiki.com/wiki/SRD:Interposing_Hand) does.
+                             The *grasping hand* can also bull rush an opponent as [*forceful hand*](http://www.d20srd.org/srd/spells/forcefulHand.htm) does, but at a +16 \`\`bonus\`\` on the Strength check (+10 for Strength 31, +4 for being Large, and a +2 \`\`bonus\`\` for charging, which it always gets), or interpose itself as [*interposing hand*](http://www.d20srd.org/srd/spells/interposingHand.htm) does.
                              Clerics who cast this spell name it for their deities.`,
           component_details:'Arcane Focus: A leather glove.'
         },
@@ -4575,9 +4553,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `You give creatures a single command, which they obey to the best of their ability at their earliest opportunity. You may select from the following options. At the start of each commanded creature’s action after the first, it gets another Will save to attempt to break free from the spell. Each creature must receive the same command.
                              Approach: On its turn, the subject moves toward you as quickly and directly as possible for 1 round. The creature may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
                              *Drop:* On its turn, the subject drops whatever it is holding. It can’t pick up any dropped item until its next turn.
-                             *Fall:* On its turn, the subject falls to the ground and remains [prone](https://www.dandwiki.com/wiki/SRD:Prone) for 1 round. It may act normally while [prone](https://www.dandwiki.com/wiki/SRD:Prone) but takes any appropriate penalties.
+                             *Fall:* On its turn, the subject falls to the ground and remains [prone](http://www.d20srd.org/srd/conditionSummary.htm#prone) for 1 round. It may act normally while [prone](http://www.d20srd.org/srd/conditionSummary.htm#prone) but takes any appropriate penalties.
                              *Flee:* On its turn, the subject moves away from you as quickly as possible for 1 round. It may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
-                             *Halt:* The subject stands in place for 1 round. It may not take any actions but is not considered [helpless](https://www.dandwiki.com/wiki/SRD:Helpless).
+                             *Halt:* The subject stands in place for 1 round. It may not take any actions but is not considered [helpless](http://www.d20srd.org/srd/conditionSummary.htm#helpless).
                              If the subject can’t carry out your command on its next turn, the spell automatically fails.`,
           component_details:null
         },
@@ -4721,7 +4699,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'XP Cost: 500 XP.'
         },
         'greater planar binding': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Planar_Binding',
+          ref:              'http://www.d20srd.org/srd/spells/planarBindingGreater.htm',
           school:           'Conjuration (Calling) [see text]',
           level:            'Sor/Wiz 8',
           components:       'V, S',
@@ -4734,7 +4712,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'No and Yes; see text',
           text:             `Casting this spell attempts a dangerous act: to lure a creature from another plane to a specifically prepared trap, which must lie within the spell’s range. The called creature is held in the trap until it agrees to perform one service in return for its freedom.
                              To create the trap, you must use a Magic Circle spell, focused inward. The kind of creature to be bound must be known and stated. If you wish to call a specific individual, you must use that individual’s proper name in casting the spell.
-                             The target creature is allowed a Will saving throw. If the saving throw succeeds, the creature resists the spell. If the saving throw fails, the creature is immediately drawn to the trap (spell resistance does not keep it from being called). The creature can escape from the trap with by successfully pitting its spell resistance against your caster level check, by dimensional travel, or with a successful Charisma check (DC 15 + 1/2 your caster level + your Cha modifier). It can try each method once per day. If it breaks loose, it can flee or attack you. A [*dimensional anchor*](https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor) cast on the creature prevents its escape via dimensional travel. You can also employ a calling diagram (see [*magic circle against evil*](https://www.dandwiki.com/wiki/SRD:Magic_Circle_against_Evil)) to make the trap more secure.
+                             The target creature is allowed a Will saving throw. If the saving throw succeeds, the creature resists the spell. If the saving throw fails, the creature is immediately drawn to the trap (spell resistance does not keep it from being called). The creature can escape from the trap with by successfully pitting its spell resistance against your caster level check, by dimensional travel, or with a successful Charisma check (DC 15 + 1/2 your caster level + your Cha modifier). It can try each method once per day. If it breaks loose, it can flee or attack you. A [*dimensional anchor*](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm) cast on the creature prevents its escape via dimensional travel. You can also employ a calling diagram (see [*magic circle against evil*](http://www.d20srd.org/srd/spells/magicCircleAgainstEvil.htm)) to make the trap more secure.
                              If the creature does not break free of the trap, you can keep it bound for as long as you dare. You can attempt to compel the creature to perform a service by describing the service and perhaps offering some sort of reward. You make a Charisma check opposed by the creature’s Charisma check. The check is assigned a bonus of +0 to +6 based on the nature of the service and the reward. If the creature wins the opposed check, it refuses service. New offers, bribes, and the like can be made or the old ones reoffered every 24 hours. This process can be repeated until the creature promises to serve, until it breaks free, or until you decide to get rid of it by means of some other spell. Impossible demands or unreasonable commands are never agreed to. If you roll a 1 on the Charisma check, the creature breaks free of the binding and can escape or attack you.
                              Each creature gets a saving throw, makes independent attempts to escape, and must be persuaded to aid you individually.
                              Once the requested service is completed, the creature need only so inform you to be instantly sent back whence it came. The creature might later seek revenge. If you assign some open-ended task that the creature cannot complete though its own actions the spell remains in effect for a maximum of one day per caster level, and the creature gains an immediate chance to break free. Note that a clever recipient can subvert some instructions.
@@ -4791,7 +4769,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `*Greater restoration* dispels all negative levels afflicting the healed creature. This effect also reverses [level drains](https://www.dandwiki.com/wiki/Energy_Drain,_Negative_Levels,_and_Level_Loss_(SRD_Special_Ability)#Level_Loss) by a force or creature, restoring the creature to the highest level it had previously attained. The drained levels are restored only if the time since the creature lost the level is no more than one week per caster level.
-                             *Greater restoration* also dispels all magical effects penalizing the creature’s abilities, cures all temporary [ability damage](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Damage), and restores all points permanently drained from all ability scores. It also eliminates [fatigue](https://www.dandwiki.com/wiki/SRD:Fatigued) and [exhaustion](https://www.dandwiki.com/wiki/SRD:Exhausted), and removes all forms of [insanity](https://www.dandwiki.com/wiki/SRD:Insanity), [*confusion*](https://www.dandwiki.com/wiki/SRD:Confusion), and similar mental effects. *Greater restoration* does not restore levels or Constitution points lost due to [death](http://www.d20srd.org/srd/conditionSummary.htm#dead).`,
+                             *Greater restoration* also dispels all magical effects penalizing the creature’s abilities, cures all temporary [ability damage](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Damage), and restores all points permanently drained from all ability scores. It also eliminates [fatigue](https://www.dandwiki.com/wiki/SRD:Fatigued) and [exhaustion](https://www.dandwiki.com/wiki/SRD:Exhausted), and removes all forms of [insanity](https://www.dandwiki.com/wiki/SRD:Insanity), [*confusion*](http://www.d20srd.org/srd/spells/confusion.htm), and similar mental effects. *Greater restoration* does not restore levels or Constitution points lost due to [death](http://www.d20srd.org/srd/conditionSummary.htm#dead).`,
           component_details:'XP Cost: 500 XP.'
         },
         //Epic Spell: greater ruin
@@ -4822,7 +4800,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • -10 Body part, lock of hair, bit of nail, etc.
 
                              If the save fails, you can see and hear the subject and the subject’s immediate surroundings (approximately 10 feet in all directions of the subject). If the subject moves, the sensor follows at a speed of up to 150 feet.
-                             As with all divination (scrying) spells, the sensor has your full visual acuity, including any magical effects. In addition, all of the following spells function reliably through the sensor: [*detect chaos*](https://www.dandwiki.com/wiki/SRD:Detect_Chaos), [*detect evil*](https://www.dandwiki.com/wiki/SRD:Detect_Evil), [*detect good*](https://www.dandwiki.com/wiki/SRD:Detect_Good), [*detect law*](https://www.dandwiki.com/wiki/SRD:Detect_Law), [*detect magic*](http://www.d20srd.org/srd/spells/detectMagic.htm), [*message*](https://www.dandwiki.com/wiki/SRD:Message), [*read magic*](http://www.d20srd.org/srd/spells/readMagic.htm), and [*tongues*](https://www.dandwiki.com/wiki/SRD:Tongues).
+                             As with all divination (scrying) spells, the sensor has your full visual acuity, including any magical effects. In addition, all of the following spells function reliably through the sensor: [*detect chaos*](https://www.dandwiki.com/wiki/SRD:Detect_Chaos), [*detect evil*](https://www.dandwiki.com/wiki/SRD:Detect_Evil), [*detect good*](https://www.dandwiki.com/wiki/SRD:Detect_Good), [*detect law*](https://www.dandwiki.com/wiki/SRD:Detect_Law), [*detect magic*](http://www.d20srd.org/srd/spells/detectMagic.htm), [*message*](http://www.d20srd.org/srd/spells/message.htm), [*read magic*](http://www.d20srd.org/srd/spells/readMagic.htm), and [*tongues*](https://www.dandwiki.com/wiki/SRD:Tongues).
                              If the save succeeds, you can’t attempt to scry on that subject again for at least 24 hours.`,
           component_details:null
         },
@@ -4912,7 +4890,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hour(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `When you need to keep track of comrades who may get separated, *greater status* allows you to mentally monitor their relative positions and general condition. You are aware of direction and distance to the creatures and any conditions affecting them: unharmed, wounded, [disabled](https://www.dandwiki.com/wiki/SRD:Disabled), [staggered](https://www.dandwiki.com/wiki/SRD:Staggered), [unconscious](https://www.dandwiki.com/wiki/SRD:Unconscious), [dying](https://www.dandwiki.com/wiki/SRD:Dying), [nauseated](https://www.dandwiki.com/wiki/SRD:Nauseated), [panicked](https://www.dandwiki.com/wiki/SRD:Panicked), [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned), [poisoned](https://www.dandwiki.com/wiki/SRD:Poison), [diseased](https://www.dandwiki.com/wiki/SRD:Disease), [*confused*](https://www.dandwiki.com/wiki/SRD:Confused), or the like. Once the spell has been cast upon the subjects, the distance between them and the caster does not affect the spell as long as they are on the same plane of existence. If a subject leaves the plane, or if it dies, the spell ceases to function for it.
+          text:             `When you need to keep track of comrades who may get separated, *greater status* allows you to mentally monitor their relative positions and general condition. You are aware of direction and distance to the creatures and any conditions affecting them: unharmed, wounded, [disabled](https://www.dandwiki.com/wiki/SRD:Disabled), [staggered](https://www.dandwiki.com/wiki/SRD:Staggered), [unconscious](http://www.d20srd.org/srd/conditionSummary.htm#unconscious), [dying](https://www.dandwiki.com/wiki/SRD:Dying), [nauseated](https://www.dandwiki.com/wiki/SRD:Nauseated), [panicked](http://www.d20srd.org/srd/conditionSummary.htm#panicked), [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned), [poisoned](https://www.dandwiki.com/wiki/SRD:Poison), [diseased](http://www.d20srd.org/srd/specialAbilities.htm#disease), [*confused*](http://www.d20srd.org/srd/conditionSummary.htm#confused), or the like. Once the spell has been cast upon the subjects, the distance between them and the caster does not affect the spell as long as they are on the same plane of existence. If a subject leaves the plane, or if it dies, the spell ceases to function for it.
                              You can also cast a limited selection of spells through the link, as if you were touching the target. You can cast any spell that meets the following conditions:
                              • **Level:** 0, 1st, or 2nd
                              • **Range:** Touch
@@ -4956,7 +4934,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Confusion:* Where there are choices in direction—such as a corridor intersection or side passage—a minor *confusion*-type effect functions so as to make it 50% probable that intruders believe they are going in the opposite direction from the one they actually chose. This is an enchantment, mind-affecting effect. Saving Throw: None. Spell Resistance: Yes.
                              *Lost Doors:* One door per caster level is covered by a [*silent image*](https://www.dandwiki.com/wiki/SRD:Silent_Image) to appear as if it were a plain wall. Saving Throw: Will disbelief (if interacted with). Spell Resistance: No.
                              In addition, you can place your choice of one of the following five magical effects.
-                             1. [*Dancing lights*](https://www.dandwiki.com/wiki/SRD:Dancing_Lights) in four corridors. You can designate a simple program that causes the lights to repeat as long as the *guards and wards* spell lasts. Saving Throw: None. Spell Resistance: No.
+                             1. [*Dancing lights*](http://www.d20srd.org/srd/spells/dancingLights.htm) in four corridors. You can designate a simple program that causes the lights to repeat as long as the *guards and wards* spell lasts. Saving Throw: None. Spell Resistance: No.
                              2. A [*magic mouth*](https://www.dandwiki.com/wiki/SRD:Magic_Mouth) in two places. Saving Throw: None. Spell Resistance: No.
                              3. A [*stinking cloud*](https://www.dandwiki.com/wiki/SRD:Stinking_Cloud) in two places. The vapors appear in the places you designate; they return within 10 minutes if dispersed by wind while the *guards and wards* spell lasts. Saving Throw: Fortitude negates; see text for [*stinking cloud*](https://www.dandwiki.com/wiki/SRD:Stinking_Cloud). Spell Resistance: No.
                              4. A [*gust of wind*](https://www.dandwiki.com/wiki/SRD:Gust_of_Wind) in one corridor or room. Saving Throw: Fortitude negates. Spell Resistance: Yes.
@@ -5018,11 +4996,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `*Hallow* makes a particular site, building, or structure a holy site. This has four major effects.
-                             First, the site or structure is guarded by a [*magic circle against evil*](https://www.dandwiki.com/wiki/SRD:Magic_Circle_against_Evil) effect.
+                             First, the site or structure is guarded by a [*magic circle against evil*](http://www.d20srd.org/srd/spells/magicCircleAgainstEvil.htm) effect.
                              Second, all Charisma checks made to turn [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) gain a +4 \`\`sacred bonus\`\`, and Charisma checks to command [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) take a -4 \`\`penalty\`\`. Spell resistance does not apply to this effect. (This provision does not apply to the druid version of the spell.)
                              Third, any [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead) body interred in a *hallowed* site cannot be [turned](https://www.dandwiki.com/wiki/SRD:Turned) into an undead creature.
                              Finally, you may choose to fix a single spell effect to the *hallowed* site. The spell effect lasts for one year and functions throughout the entire site, regardless of the normal duration and area or effect. You may designate whether the effect applies to all creatures, creatures who share your faith or alignment, or creatures who adhere to another faith or alignment. At the end of the year, the chosen effect lapses, but it can be renewed or replaced simply by casting *hallow* again.
-                             Spell effects that may be tied to a *hallowed* site include [*aid*](https://www.dandwiki.com/wiki/SRD:Aid), [*bane*](http://www.d20srd.org/srd/spells/bane.htm), [*bless*](http://www.d20srd.org/srd/spells/bless.htm), [*cause fear*](https://www.dandwiki.com/wiki/SRD:Cause_Fear), [*darkness*](https://www.dandwiki.com/wiki/SRD:Darkness), [*daylight*](https://www.dandwiki.com/wiki/SRD:Daylight), [*death ward*](https://www.dandwiki.com/wiki/SRD:Death_Ward), [*deeper darkness*](https://www.dandwiki.com/wiki/SRD:Deeper_Darkness), [*detect evil*](https://www.dandwiki.com/wiki/SRD:Detect_Evil), [*detect magic*](http://www.d20srd.org/srd/spells/detectMagic.htm), [*dimensional anchor*](https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor), [*discern lies*](https://www.dandwiki.com/wiki/SRD:Discern_Lies), [*dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm), [*endure elements*](https://www.dandwiki.com/wiki/SRD:Endure_Elements), [*freedom of movement*](https://www.dandwiki.com/wiki/SRD:Freedom_of_Movement), [*invisibility purge*](https://www.dandwiki.com/wiki/SRD:Invisibility_Purge), [*protection from energy*](https://www.dandwiki.com/wiki/SRD:Protection_from_Energy), [*remove fear*](https://www.dandwiki.com/wiki/SRD:Remove_Fear), [*resist energy*](https://www.dandwiki.com/wiki/SRD:Resist_Energy), [*silence*](http://www.d20srd.org/srd/spells/silence.htm), [*tongues*](https://www.dandwiki.com/wiki/SRD:Tongues), and [*zone of truth*](https://www.dandwiki.com/wiki/SRD:Zone_of_Truth). Saving throws and spell resistance might apply to these spells’ effects. (See the individual spell descriptions for details.)
+                             Spell effects that may be tied to a *hallowed* site include [*aid*](https://www.dandwiki.com/wiki/SRD:Aid), [*bane*](http://www.d20srd.org/srd/spells/bane.htm), [*bless*](http://www.d20srd.org/srd/spells/bless.htm), [*cause fear*](http://www.d20srd.org/srd/spells/causeFear.htm), [*darkness*](http://www.d20srd.org/srd/spells/darkness.htm), [*daylight*](http://www.d20srd.org/srd/spells/daylight.htm), [*death ward*](http://www.d20srd.org/srd/spells/deathWard.htm), [*deeper darkness*](http://www.d20srd.org/srd/spells/deeperDarkness.htm), [*detect evil*](https://www.dandwiki.com/wiki/SRD:Detect_Evil), [*detect magic*](http://www.d20srd.org/srd/spells/detectMagic.htm), [*dimensional anchor*](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm), [*discern lies*](https://www.dandwiki.com/wiki/SRD:Discern_Lies), [*dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm), [*endure elements*](https://www.dandwiki.com/wiki/SRD:Endure_Elements), [*freedom of movement*](https://www.dandwiki.com/wiki/SRD:Freedom_of_Movement), [*invisibility purge*](https://www.dandwiki.com/wiki/SRD:Invisibility_Purge), [*protection from energy*](https://www.dandwiki.com/wiki/SRD:Protection_from_Energy), [*remove fear*](http://www.d20srd.org/srd/spells/removeFear.htm), [*resist energy*](https://www.dandwiki.com/wiki/SRD:Resist_Energy), [*silence*](http://www.d20srd.org/srd/spells/silence.htm), [*tongues*](https://www.dandwiki.com/wiki/SRD:Tongues), and [*zone of truth*](https://www.dandwiki.com/wiki/SRD:Zone_of_Truth). Saving throws and spell resistance might apply to these spells’ effects. (See the individual spell descriptions for details.)
                              An area can receive only one *hallow* spell (and its associated spell effect) at a time. Hallow counters but does not dispel [*unhallow*](https://www.dandwiki.com/wiki/SRD:Unhallow).`,
           component_details:'Material Component: Herbs, oils, and incense worth at least 1,000 gp, plus 1,000 gp per level of the spell to be included in the *hallowed* area.'
         },
@@ -5106,7 +5084,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              When making a full attack action, a hasted creature may make one extra attack with any weapon he is holding. The attack is made using the creature’s full base attack bonus, plus any modifiers appropriate to the situation. (This effect is not cumulative with similar effects, such as that provided by a weapon of speed, nor does it actually grant an extra action, so you can’t use it to cast a second spell or otherwise take an extra action in the round.)
                              A *hasted* creature gains a +1 \`\`bonus\`\` on attack rolls and a +1 \`\`dodge bonus\`\` to AC and Reflex saves. Any condition that makes you lose your Dexterity bonus to Armor Class (if any) also makes you lose dodge bonuses.
                              All of the *hasted* creature’s modes of movement (including land movement, burrow, climb, fly, and swim) increase by 30 feet, to a maximum of twice the subject’s normal speed using that form of movement. This increase counts as an enhancement bonus, and it affects the creature’s jumping distance as normal for increased speed.
-                             Multiple *haste* effects don’t stack. *Haste* dispels and counters [*slow*](https://www.dandwiki.com/wiki/SRD:Slow).`,
+                             Multiple *haste* effects don’t stack. *Haste* dispels and counters [*slow*](http://www.d20srd.org/srd/spells/slow.htm).`,
           component_details:'Material Component: A shaving of licorice root.'
         },
         'heal': {
@@ -5121,7 +5099,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `*Heal* enables you to channel positive energy into a creature to wipe away injury and afflictions. It immediately ends any and all of the following adverse conditions affecting the Target: [ability damage](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Damage), [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded), [*confused*](https://www.dandwiki.com/wiki/SRD:Confused), [dazed](http://www.d20srd.org/srd/conditionSummary.htm#dazed), [dazzled](https://www.dandwiki.com/wiki/SRD:Dazzled), [deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened), [diseased](https://www.dandwiki.com/wiki/SRD:Disease), [exhausted](https://www.dandwiki.com/wiki/SRD:Exhausted), [fatigued](https://www.dandwiki.com/wiki/SRD:Fatigued), [*feebleminded*](https://www.dandwiki.com/wiki/SRD:Feeblemind), [insanity](https://www.dandwiki.com/wiki/SRD:Insanity), [nauseated](https://www.dandwiki.com/wiki/SRD:Nauseated), [sickened](https://www.dandwiki.com/wiki/SRD:Sickened), [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned), and [poisoned](https://www.dandwiki.com/wiki/SRD:Poison). It also cures [[10*{?{Caster Level},15}kl1]] hit points of damage.
+          text:             `*Heal* enables you to channel positive energy into a creature to wipe away injury and afflictions. It immediately ends any and all of the following adverse conditions affecting the Target: [ability damage](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Damage), [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded), [*confused*](http://www.d20srd.org/srd/conditionSummary.htm#confused), [dazed](http://www.d20srd.org/srd/conditionSummary.htm#dazed), [dazzled](https://www.dandwiki.com/wiki/SRD:Dazzled), [deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened), [diseased](http://www.d20srd.org/srd/specialAbilities.htm#disease), [exhausted](https://www.dandwiki.com/wiki/SRD:Exhausted), [fatigued](https://www.dandwiki.com/wiki/SRD:Fatigued), [*feebleminded*](https://www.dandwiki.com/wiki/SRD:Feeblemind), [insanity](https://www.dandwiki.com/wiki/SRD:Insanity), [nauseated](https://www.dandwiki.com/wiki/SRD:Nauseated), [sickened](https://www.dandwiki.com/wiki/SRD:Sickened), [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned), and [poisoned](https://www.dandwiki.com/wiki/SRD:Poison). It also cures [[10*{?{Caster Level},15}kl1]] hit points of damage.
                              *Heal* does not remove negative levels, restore permanently drained levels, or restore permanently drained ability score points.
                              If used against an [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature, *heal* instead acts like [*harm*](https://www.dandwiki.com/wiki/SRD:Harm).`,
           component_details:null
@@ -5138,13 +5116,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `*Heal mount* enables you to channel positive energy into your special mount (typically a warhorse) to wipe away injury and afflictions. It immediately ends any and all of the following adverse conditions affecting the Target: [ability damage](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Damage), [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded), [*confused*](https://www.dandwiki.com/wiki/SRD:Confused), [dazed](http://www.d20srd.org/srd/conditionSummary.htm#dazed), [dazzled](https://www.dandwiki.com/wiki/SRD:Dazzled), [deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened), [diseased](https://www.dandwiki.com/wiki/SRD:Disease), [exhausted](https://www.dandwiki.com/wiki/SRD:Exhausted), [fatigued](https://www.dandwiki.com/wiki/SRD:Fatigued), [*feebleminded*](https://www.dandwiki.com/wiki/SRD:Feeblemind), [insanity](https://www.dandwiki.com/wiki/SRD:Insanity), [nauseated](https://www.dandwiki.com/wiki/SRD:Nauseated), [sickened](https://www.dandwiki.com/wiki/SRD:Sickened), [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned), and [poisoned](https://www.dandwiki.com/wiki/SRD:Poison). It also cures [[10*{?{Caster Level},15}kl1]] hit points of damage.
+          text:             `*Heal mount* enables you to channel positive energy into your special mount (typically a warhorse) to wipe away injury and afflictions. It immediately ends any and all of the following adverse conditions affecting the Target: [ability damage](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Damage), [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded), [*confused*](http://www.d20srd.org/srd/conditionSummary.htm#confused), [dazed](http://www.d20srd.org/srd/conditionSummary.htm#dazed), [dazzled](https://www.dandwiki.com/wiki/SRD:Dazzled), [deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened), [diseased](http://www.d20srd.org/srd/specialAbilities.htm#disease), [exhausted](https://www.dandwiki.com/wiki/SRD:Exhausted), [fatigued](https://www.dandwiki.com/wiki/SRD:Fatigued), [*feebleminded*](https://www.dandwiki.com/wiki/SRD:Feeblemind), [insanity](https://www.dandwiki.com/wiki/SRD:Insanity), [nauseated](https://www.dandwiki.com/wiki/SRD:Nauseated), [sickened](https://www.dandwiki.com/wiki/SRD:Sickened), [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned), and [poisoned](https://www.dandwiki.com/wiki/SRD:Poison). It also cures [[10*{?{Caster Level},15}kl1]] hit points of damage.
                              *Heal mount* does not remove negative levels, restore permanently drained levels, or restore permanently drained ability score points.
                              If used against an [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature, *heal mount* instead acts like [*harm*](https://www.dandwiki.com/wiki/SRD:Harm).`,
           component_details:null
         },
         'heat metal': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Heat_Metal',
+          ref:              'http://www.d20srd.org/srd/spells/heatMetal.htm',
           school:           'Transmutation [Fire]',
           level:            'Drd 2, Sun 2',
           components:       'V, S, DF',
@@ -5166,7 +5144,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • Round 7: ‹Warm|No fire damage›
 
                              Any cold intense enough to damage the creature negates fire damage from the spell (and vice versa) on a point-for-point basis. If cast underwater, *heat metal* deals half damage and boils the surrounding water.
-                             *Heat metal* counters and dispels [*chill metal*](https://www.dandwiki.com/wiki/SRD:Chill_Metal).`,
+                             *Heat metal* counters and dispels [*chill metal*](http://www.d20srd.org/srd/spells/chillMetal.htm).`,
           component_details:null
         },
         //Epic Spell: hellball
@@ -5273,7 +5251,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This spell afflicts the subject with uncontrollable laughter. It collapses into gales of manic laughter, falling [prone](https://www.dandwiki.com/wiki/SRD:Prone). The subject can take no actions while laughing, but is not considered [helpless](https://www.dandwiki.com/wiki/SRD:Helpless). After the spell ends, it can act normally.
+          text:             `This spell afflicts the subject with uncontrollable laughter. It collapses into gales of manic laughter, falling [prone](http://www.d20srd.org/srd/conditionSummary.htm#prone). The subject can take no actions while laughing, but is not considered [helpless](http://www.d20srd.org/srd/conditionSummary.htm#helpless). After the spell ends, it can act normally.
                              A creature with an Intelligence score of 2 or lower is not affected. A creature whose type is different from the caster’s receives a +4 \`\`bonus\`\` on its saving throw, because humor doesn’t “translate” well.`,
           component_details:'Material Component: Tiny tarts that are thrown at the target and a feather that is waved in the air.'
         },
@@ -5354,7 +5332,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'Yes (harmless)',
           text:             `A brilliant divine radiance surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by [evil creatures](https://www.dandwiki.com/wiki/SRD:Evil_Subtype), and causing evil creatures to become [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded) when they strike the subjects. This abjuration has four effects.
-                             First, each warded creature gains a +4 \`\`deflection bonus\`\` to AC and a +4 \`\`resistance bonus\`\` on saves. Unlike [*protection from evil*](https://www.dandwiki.com/wiki/SRD:Protection_from_Evil), this benefit applies against all attacks, not just against attacks by evil creatures.
+                             First, each warded creature gains a +4 \`\`deflection bonus\`\` to AC and a +4 \`\`resistance bonus\`\` on saves. Unlike [*protection from evil*](http://www.d20srd.org/srd/spells/protectionFromEvil.htm), this benefit applies against all attacks, not just against attacks by evil creatures.
                              Second, each warded creature gains spell resistance 25 against evil spells and spells cast by evil creatures.
                              Third, the abjuration blocks possession and mental influence, just as *protection from evil* does.
                              Finally, if an evil creature succeeds on a melee attack against a warded creature, the offending attacker is [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded) (Fortitude save negates, as [*blindness/deafness*](http://www.d20srd.org/srd/spells/blindnessDeafness.htm), but against *holy aura*’s save DC).`,
@@ -5389,7 +5367,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round(s)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `This spell allows you to channel holy power into your sword, or any other melee weapon you choose. The weapon acts as a +5 *holy weapon* (+5 \`\`enhancement bonus\`\` on attack and damage rolls, extra ‹2d6› damage against evil opponents). It also emits a [*magic circle against evil*](https://www.dandwiki.com/wiki/SRD:Magic_Circle_against_Evil) effect (as the spell). If the *magic circle* ends, the sword creates a new one on your turn as a free action. The spell is automatically canceled 1 round after the weapon leaves your hand. You cannot have more than one *holy sword* at a time.
+          text:             `This spell allows you to channel holy power into your sword, or any other melee weapon you choose. The weapon acts as a +5 *holy weapon* (+5 \`\`enhancement bonus\`\` on attack and damage rolls, extra ‹2d6› damage against evil opponents). It also emits a [*magic circle against evil*](http://www.d20srd.org/srd/spells/magicCircleAgainstEvil.htm) effect (as the spell). If the *magic circle* ends, the sword creates a new one on your turn as a free action. The spell is automatically canceled 1 round after the weapon leaves your hand. You cannot have more than one *holy sword* at a time.
                              If this spell is cast on a magic weapon, the powers of the spell supersede any that the weapon normally has, rendering the normal enhancement bonus and powers of the weapon inoperative for the duration of the spell. This spell is not cumulative with [*bless weapon*](http://www.d20srd.org/srd/spells/blessWeapon.htm) or any other spell that might modify the weapon in any way.
                              This spell does not work on artifacts.
                              *Note:* A masterwork weapon’s bonus to attack does not stack with an enhancement bonus to attack.`,
@@ -5417,7 +5395,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              The effects are cumulative and concurrent. No saving throw is allowed against these effects.
                              *[Deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened):* The creature is [deafened](http://www.d20srd.org/srd/conditionSummary.htm#deafened) for ‹1d4› rounds.
                              *[Blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded):* The creature is [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded) for ‹2d4› rounds.
-                             *[Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed):* The creature is [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and [helpless](https://www.dandwiki.com/wiki/SRD:Helpless) for ‹1d10› minutes.
+                             *[Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed):* The creature is [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and [helpless](http://www.d20srd.org/srd/conditionSummary.htm#helpless) for ‹1d10› minutes.
                              *[Killed](http://www.d20srd.org/srd/conditionSummary.htm#dead):* Living creatures die. [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures are destroyed.
                              Furthermore, if you are on your home plane when you cast this spell, nongood extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *holy word*. The banishment effect allows a Will save (at a -4 \`\`penalty\`\`) to negate.
                              Creatures whose HD exceed your caster level are unaffected by *holy word*.`,
@@ -5489,7 +5467,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Arcane Material Component: A pinch of dust and a few drops of water.'
         },
         'identify': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Identify',
+          ref:              'http://www.d20srd.org/srd/spells/identify.htm',
           school:           'Divination',
           level:            'Brd 1, Magic 2, Sor/Wiz 1',
           components:       'V, S, M/DF',
@@ -5505,7 +5483,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Arcane Material Component: A pearl of at least 100 gp value, crushed and stirred into wine with an owl feather; the infusion must be drunk prior to spellcasting.'
         },
         'illusory script': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Illusory_Script',
+          ref:              'http://www.d20srd.org/srd/spells/illusoryScript.htm',
           school:           'Illusion (Phantasm) [Mind-Affecting]',
           level:            'Asn 2, Brd 3, Sor/Wiz 3',
           components:       'V, S, M',
@@ -5517,7 +5495,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
           text:             `You write instructions or other information on parchment, paper, or any suitable writing material. The *illusory script* appears to be some form of foreign or magical writing. Only the person (or people) designated by you at the time of the casting are able to read the writing; it’s unintelligible to any other character, although an illusionist recognizes it as *illusory script*.
-                             Any unauthorized creature attempting to read the script triggers a potent illusory effect and must make a saving throw. A successful saving throw means the creature can look away with only a mild sense of disorientation. Failure means the creature is subject to a suggestion implanted in the script by you at the time the *illusory script* spell was cast. The suggestion lasts only 30 minutes. Typical suggestions include “Close the book and leave,” “Forget the existence of the book,” and so forth. If successfully dispelled by [*dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm), the *illusory script* and its secret message disappear. The hidden message can be read by a combination of the [*true seeing*](http://www.d20srd.org/srd/spells/trueSeeing.htm) spell with the [*read magic*]https://www.dandwikicom/wiki/SRD:Read_Magic) or [*comprehend languages*](https://www.dandwiki.com/wiki/SRD:Comprehend_Languages) spell.
+                             Any unauthorized creature attempting to read the script triggers a potent illusory effect and must make a saving throw. A successful saving throw means the creature can look away with only a mild sense of disorientation. Failure means the creature is subject to a suggestion implanted in the script by you at the time the *illusory script* spell was cast. The suggestion lasts only 30 minutes. Typical suggestions include “Close the book and leave,” “Forget the existence of the book,” and so forth. If successfully dispelled by [*dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm), the *illusory script* and its secret message disappear. The hidden message can be read by a combination of the [*true seeing*](http://www.d20srd.org/srd/spells/trueSeeing.htm) spell with the [*read magic*]https://www.dandwikicom/wiki/SRD:Read_Magic) or [*comprehend languages*](http://www.d20srd.org/srd/spells/comprehendLanguages.htm) spell.
                              The casting time depends on how long a message you wish to write, but it is always at least 1 minute.`,
           component_details:'Material Component: A lead-based ink (cost of not less than 50 gp).'
         },
@@ -5603,9 +5581,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round(s)',
           saving_throw:     'Reflex half; see text',
           spell_resistance: 'No',
-          text:             `An *incendiary cloud* spell creates a cloud of roiling smoke shot through with white-hot embers. The smoke obscures all sight as a [*fog cloud*](https://www.dandwiki.com/wiki/SRD:Fog_Cloud) does. In addition, the white-hot embers within the cloud deal ‹4d6› points of fire damage to everything within the cloud on your turn each round. All targets can make Reflex saves each round to take half damage.
-                             As with a [*cloudkill*](https://www.dandwiki.com/wiki/SRD:Cloudkill) spell, the smoke moves away from you at 10 feet per round. Figure out the smoke’s new spread each round based on its new point of origin, which is 10 feet farther away from where you were when you cast the spell. By concentrating, you can make the cloud (actually its point of origin) move as much as 60 feet each round. Any portion of the cloud that would extend beyond your maximum range dissipates harmlessly, reducing the remainder’s spread thereafter.
-                             As with [*fog cloud*](https://www.dandwiki.com/wiki/SRD:Fog_Cloud), wind disperses the smoke, and the spell can’t be cast underwater.`,
+          text:             `An *incendiary cloud* spell creates a cloud of roiling smoke shot through with white-hot embers. The smoke obscures all sight as a [*fog cloud*](http://www.d20srd.org/srd/spells/fogCloud.htm) does. In addition, the white-hot embers within the cloud deal ‹4d6› points of fire damage to everything within the cloud on your turn each round. All targets can make Reflex saves each round to take half damage.
+                             As with a [*cloudkill*](http://www.d20srd.org/srd/spells/cloudkill.htm) spell, the smoke moves away from you at 10 feet per round. Figure out the smoke’s new spread each round based on its new point of origin, which is 10 feet farther away from where you were when you cast the spell. By concentrating, you can make the cloud (actually its point of origin) move as much as 60 feet each round. Any portion of the cloud that would extend beyond your maximum range dissipates harmlessly, reducing the remainder’s spread thereafter.
+                             As with [*fog cloud*](http://www.d20srd.org/srd/spells/fogCloud.htm), wind disperses the smoke, and the spell can’t be cast underwater.`,
           component_details:null
         },
         'inflict critical wounds': {
@@ -5700,7 +5678,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `The affected creature suffers from a continuous [*confusion*](https://www.dandwiki.com/wiki/SRD:Confusion) effect, as the spell.
+          text:             `The affected creature suffers from a continuous [*confusion*](http://www.d20srd.org/srd/spells/confusion.htm) effect, as the spell.
                              [*Remove curse*](http://www.d20srd.org/srd/spells/bestowCurse.htm) does not remove *insanity*. [*Greater restoration*](https://www.dandwiki.com/wiki/SRD:Greater_Restoration), [*heal*](https://www.dandwiki.com/wiki/SRD:Heal), [*limited wish*](http://www.d20srd.org/srd/spells/limitedWish.htm), [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm), or [*wish*](http://www.d20srd.org/srd/spells/wish.htm) can restore the creature.`,
           component_details:null
         },
@@ -5739,7 +5717,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: A sapphire worth at least 1,000 gp.'
         },
         'interposing hand': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Interposing_Hand',
+          ref:              'http://www.d20srd.org/srd/spells/interposingHand.htm',
           school:           'Evocation [Force]',
           level:            'Sor/Wiz 5',
           components:       'V, S, F',
@@ -5819,7 +5797,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         '[[?{Casting Level}]] minute(s) (D)',
           text:             `This spell transforms your body into living iron, which grants you several powerful resistances and abilities.
-                             You gain damage reduction 15/adamantine. You are immune to [blindness](http://www.d20srd.org/srd/spells/blindnessDeafness.htm), critical hits, ability score damage, [deafness](http://www.d20srd.org/srd/conditionSummary.htm#deafened), [disease](https://www.dandwiki.com/wiki/SRD:Disease), drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect. You take only half damage from acid and fire of all kinds. However, you also become vulnerable to all special attacks that affect iron golems.
+                             You gain damage reduction 15/adamantine. You are immune to [blindness](http://www.d20srd.org/srd/spells/blindnessDeafness.htm), critical hits, ability score damage, [deafness](http://www.d20srd.org/srd/conditionSummary.htm#deafened), [disease](http://www.d20srd.org/srd/specialAbilities.htm#disease), drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect. You take only half damage from acid and fire of all kinds. However, you also become vulnerable to all special attacks that affect iron golems.
                              You gain a +6 \`\`enhancement bonus\`\` to your Strength score, but you take a -6 \`\`penalty\`\` to Dexterity as well (to a minimum Dexterity score of 1), and your speed is reduced to half normal. You have an arcane spell failure chance of 50% and a -8 armor check penalty, just as if you were clad in full plate armor. You cannot drink (and thus can’t use potions) or play wind instruments.
                              Your unarmed attacks deal damage equal to a [club](https://www.dandwiki.com/wiki/SRD:Club) sized for you (‹1d4› for Small characters or ‹1d6› for Medium characters), and you are considered armed when making unarmed attacks.
                              Your weight increases by a factor of ten, causing you to sink in water like a stone. However, you could survive the crushing pressure and lack of air at the bottom of the ocean—at least until the spell duration expires.`,
@@ -5946,9 +5924,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '1 round',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This spell causes a single creature to become [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) for 1 round.
-                             Roll ‹1d100› on the [*confused condition table*](https://www.dandwiki.com/wiki/SRD:Confused) at the beginning of each subject’s turn each round to see what the subject does in that round.
-                             A [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) character who can’t carry out the indicated action does nothing but babble incoherently. Attackers are not at any special advantage when attacking a [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) character. Any [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) character who is attacked automatically attacks its attackers on its next turn, as long as it is still [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) when its turn comes. Note that a [*confused*](https://www.dandwiki.com/wiki/SRD:Confused) character will not make [attacks of opportunity](https://www.dandwiki.com/wiki/SRD:Attack_of_Opportunity) against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).`,
+          text:             `This spell causes a single creature to become [*confused*](http://www.d20srd.org/srd/conditionSummary.htm#confused) for 1 round.
+                             Roll ‹1d100› on the [*confused condition table*](http://www.d20srd.org/srd/conditionSummary.htm#confused) at the beginning of each subject’s turn each round to see what the subject does in that round.
+                             A [*confused*](http://www.d20srd.org/srd/conditionSummary.htm#confused) character who can’t carry out the indicated action does nothing but babble incoherently. Attackers are not at any special advantage when attacking a [*confused*](http://www.d20srd.org/srd/conditionSummary.htm#confused) character. Any [*confused*](http://www.d20srd.org/srd/conditionSummary.htm#confused) character who is attacked automatically attacks its attackers on its next turn, as long as it is still [*confused*](http://www.d20srd.org/srd/conditionSummary.htm#confused) when its turn comes. Note that a [*confused*](http://www.d20srd.org/srd/conditionSummary.htm#confused) character will not make [attacks of opportunity](https://www.dandwiki.com/wiki/SRD:Attack_of_Opportunity) against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).`,
           component_details:null
         },
         'lesser geas': {
@@ -6009,7 +5987,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'XP Cost: 100 XP.'
         },
         'lesser planar binding': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Lesser_Planar_Binding',
+          ref:              'http://www.d20srd.org/srd/spells/planarBindingLesser.htm',
           school:           'Conjuration (Calling) [see text]',
           level:            'Rune 5, Sor/Wiz 5',
           components:       'V, S',
@@ -6021,8 +5999,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           spell_resistance: 'No and Yes; see text',
           text:             `Casting this spell attempts a dangerous act: to lure a [creature from another plane](https://www.dandwiki.com/wiki/SRD:Outsider_Type) to a specifically prepared trap, which must lie within the spell’s range. The called creature is held in the trap until it agrees to perform one service in return for its freedom.
-                             To create the trap, you must use a [*Magic Circle*](https://www.dandwiki.com/wiki/SRD:Magic_Circle_against_Evil) spell, focused inward. The kind of creature to be bound must be known and stated. If you wish to call a specific individual, you must use that individual’s proper name in casting the spell.
-                             The target creature is allowed a Will saving throw. If the saving throw succeeds, the creature resists the spell. If the saving throw fails, the creature is immediately drawn to the trap (spell resistance does not keep it from being called). The creature can escape from the trap with by successfully pitting its spell resistance against your caster level check, by dimensional travel, or with a successful Charisma check (DC 15 + 1/2 your caster level + your Cha modifier). It can try each method once per day. If it breaks loose, it can flee or attack you. A [*dimensional anchor*](https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor) cast on the creature prevents its escape via dimensional travel. You can also employ a calling diagram (see [*magic circle against evil*](https://www.dandwiki.com/wiki/SRD:Magic_Circle_against_Evil)) to make the trap more secure.
+                             To create the trap, you must use a [*Magic Circle*](http://www.d20srd.org/srd/spells/magicCircleAgainstEvil.htm) spell, focused inward. The kind of creature to be bound must be known and stated. If you wish to call a specific individual, you must use that individual’s proper name in casting the spell.
+                             The target creature is allowed a Will saving throw. If the saving throw succeeds, the creature resists the spell. If the saving throw fails, the creature is immediately drawn to the trap (spell resistance does not keep it from being called). The creature can escape from the trap with by successfully pitting its spell resistance against your caster level check, by dimensional travel, or with a successful Charisma check (DC 15 + 1/2 your caster level + your Cha modifier). It can try each method once per day. If it breaks loose, it can flee or attack you. A [*dimensional anchor*](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm) cast on the creature prevents its escape via dimensional travel. You can also employ a calling diagram (see [*magic circle against evil*](http://www.d20srd.org/srd/spells/magicCircleAgainstEvil.htm)) to make the trap more secure.
                              If the creature does not break free of the trap, you can keep it bound for as long as you dare. You can attempt to compel the creature to perform a service by describing the service and perhaps offering some sort of reward. You make a Charisma check opposed by the creature’s Charisma check. The check is assigned a bonus of +0 to +6 based on the nature of the service and the reward. If the creature wins the opposed check, it refuses service. New offers, bribes, and the like can be made or the old ones reoffered every 24 hours. This process can be repeated until the creature promises to serve, until it breaks free, or until you decide to get rid of it by means of some other spell. Impossible demands or unreasonable commands are never agreed to. If you roll a 1 on the Charisma check, the creature breaks free of the binding and can escape or attack you.
                              Once the requested service is completed, the creature need only so inform you to be instantly sent back whence it came. The creature might later seek revenge. If you assign some open-ended task that the creature cannot complete though its own actions the spell remains in effect for a maximum of one day per caster level, and the creature gains an immediate chance to break free. Note that a clever recipient can subvert some instructions.
                              *Note:* When you use a calling spell such as gate to call an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.`,
@@ -6076,7 +6054,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Focus: Either a small leather loop or a piece of golden wire bent into a cup shape with a long shank on one end.'
         },
         'light': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Light',
+          ref:              'http://www.d20srd.org/srd/spells/light.htm',
           school:           'Evocation [Light]',
           level:            'Brd 0, Clr 0, Drd 0, Sor/Wiz 0',
           components:       'V, M/DF',
@@ -6092,7 +6070,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Arcane Material Component: A firefly or a piece of phosphorescent moss.'
         },
         'lightning bolt': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Lightning_Bolt',
+          ref:              'http://www.d20srd.org/srd/spells/lightningBolt.htm',
           school:           'Evocation [Electricity]',
           level:            'Sor/Wiz 3',
           components:       'V, S, M',
@@ -6210,8 +6188,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:null
         },
         // Spells that start with M
+        //END REVIEW MARKER
         'maddening scream': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Maddening_Scream',
+          ref:              'http://www.d20srd.org/srd/divine/spells/maddeningScream.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
           level:            'Sor/Wiz 8, Madness 8',
           components:       'V',
@@ -6224,12 +6203,42 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `The subject cannot keep him or herself from behaving as though completely mad. This spell makes it impossible for the victim to do anything other than race about caterwauling.
                              The effect worsens the Armor Class of the creature by 4, makes Reflex saving throws impossible except on a roll of 20, and makes it impossible to use a shield.`,
-          component_details:null
+          other_versions:   'Complete Divine on page 168, Defenders of the Faith on page 87, Eberron Campaign Setting on page 113, Lords of Madness on page 212, Spell Compendium on page 135'
+        },
+        'mage armor': {
+          ref:              'http://www.d20srd.org/srd/spells/mageArmor.htm',
+          school:           'Conjuration (Creation) [Force]',
+          level:            'Beguiler 1, Force 1, Sor/Wiz 1, Spell 1',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'No',
+          text:             `An [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) but tangible field of force surrounds the subject of a mage armor spell, providing a **+4 armor bonus** to AC.
+                             Unlike mundane armor, *mage armor* entails no armor check penalty, arcane spell failure chance, or speed reduction. Since mage armor is made of force, [incorporeal creatures](http://www.d20srd.org/srd/conditionSummary.htm#incorporeal) can’t bypass it the way they do normal armor.`,
+          component_details:'Focus: A piece of cured leather.'
+        },
+        'mage hand': {
+          ref:              'http://www.d20srd.org/srd/spells/mageHand.htm',
+          school:           'Transmutation',
+          level:            'Arc 0, Brd 0, Shu 0, Sor/Wiz 0, Wuj 0',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One nonmagical, unattended object weighing up to 5 lb.',
+          duration:         'Concentration',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You point your finger at an object and can lift it and move it at will from a distance. As a move action, you can propel the object as far as 15 feet in any direction, though the spell ends if the distance between you and the object ever exceeds the spell’s range.`
         },
         'mage\'s disjunction': {
           ref:              'http://www.d20srd.org/srd/spells/magesDisjunction.htm',
           school:           'Abjuration',
-          level:            'Magic 9, Sor/Wiz 9',
+          level:            'Magic 9, Sor/Wiz 9, Spell 9',
           components:       'V',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6238,16 +6247,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates (object)',
           spell_resistance: 'No',
-          text:             `All magical effects and magic items within the radius of the spell, except for those that you carry or touch, are disjoined. That is, spells and spell-like effects are separated into their individual components (ending the effect as a [*dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell does), and each permanent magic item must make a successful Will save or be [turned](https://www.dandwiki.com/wiki/SRD:Turned) into a normal item. An item in a creature’s possession uses its own Will save bonus or its possessor’s Will save bonus, whichever is higher.
-                             You also have a 1% chance per caster level of destroying an [*antimagic field*](http://www.d20srd.org/srd/specialAbilities.htm#antimagic). If the *antimagic field* survives the *disjunction*, no items within it are disjoined.
-                             Even artifacts are subject to *disjunction*, though there is only a 1% chance per caster level of actually affecting such powerful items. Additionally, if an artifact is destroyed, you must make a DC 25 Will save or permanently lose all spellcasting abilities. (These abilities cannot be recovered by mortal magic, not even [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm) or [*wish*](http://www.d20srd.org/srd/spells/wish.htm).)
-                             *Note:* Destroying artifacts is a dangerous business, and it is 95% likely to attract the attention of some powerful being who has an interest in or connection with the device.`,
-          component_details:null
+          text:             `All magical effects and magic items within the radius of the spell, except for those that you carry or touch, are disjoined. That is, spells and spell-like effects are separated into their individual components (ending the effect as a ***[dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm)*** spell does), and each permanent magic item must make a successful Will save or be turned into a normal item. An item in a creature’s possession uses its own Will save bonus or its possessor’s Will save bonus, whichever is higher.
+                             You also have a 1% chance per caster level of destroying an ***[antimagic field](http://www.d20srd.org/srd/specialAbilities.htm#antimagic)***. If the antimagic field survives the disjunction, no items within it are disjoined.
+                             Even artifacts are subject to disjunction, though there is only a 1% chance per caster level of actually affecting such powerful items. Additionally, if an artifact is destroyed, you must make a DC 25 Will save or permanently lose all spellcasting abilities. (These abilities cannot be recovered by mortal magic, not even ***[miracle](http://www.d20srd.org/srd/spells/miracle.htm)*** or ***[wish](http://www.d20srd.org/srd/spells/wish.htm)***.)
+                             *Note:* Destroying artifacts is a dangerous business, and it is 95% likely to attract the attention of some powerful being who has an interest in or connection with the device.`
         },
         'mage\'s faithful hound': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mage%27s_Faithful_Hound',
+          ref:              'http://www.d20srd.org/srd/spells/magesFaithfulHound.htm',
           school:           'Conjuration (Creation)',
-          level:            'Sor/Wiz 5',
+          level:            'Halfling 5, Sor/Wiz 5',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6263,7 +6271,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: A tiny silver whistle, a piece of bone, and a thread.'
         },
         'mage\'s lucubration': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mage%27s_Lucubration',
+          ref:              'http://www.d20srd.org/srd/spells/magesLucubration.htm',
           school:           'Transmutation',
           level:            'Wiz 6',
           components:       'V, S',
@@ -6273,14 +6281,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         'Instantaneous',
           text:             `You instantly recall any one spell of 5th level or lower that you have used during the past 24 hours. The spell must have been actually cast during that period. The recalled spell is stored in your mind as through prepared in the normal fashion.
-                             If the recalled spell requires material components, you must provide them. The recovered spell is not usable until the material components are available.`,
-          component_details:null
+                             If the recalled spell requires material components, you must provide them. The recovered spell is not usable until the material components are available.`
         },
         'mage\'s magnificent mansion': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mage%27s_Magnificent_Mansion',
+          ref:              'http://www.d20srd.org/srd/spells/magesMagnificentMansion.htm',
           school:           'Conjuration (Creation)',
-          level:            'Sor/Wiz 7',
-          components:       'V, S, F',
+          level:            'Community 8, Feast 7, Sor/Wiz 7, Trade 7',
+          components:       'V, S, F/DF',
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Effect',
@@ -6289,12 +6296,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You conjure up an extradimensional dwelling that has a single entrance on the plane from which the spell was cast. The entry point looks like a faint shimmering in the air that is 4 feet wide and 8 feet high. Only those you designate may enter the mansion, and the portal is shut and made [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) behind you when you enter. You may open it again from your own side at will. Once observers have passed beyond the entrance, they are in a magnificent foyer with numerous chambers beyond. The atmosphere is clean, fresh, and warm.
-                             You can create any floor plan you desire to the limit of the spell’s effect. The place is furnished and contains sufficient foodstuffs to serve a nine-course banquet to [[12*?{Casting Level}]] people. A staff of near-transparent servants (as many as [[2*?{Casting Level}]]), liveried and obedient, wait upon all who enter. The servants function as [*unseen servant*](https://www.dandwiki.com/wiki/SRD:Unseen_Servant) spells except that they are visible and can go anywhere in the mansion.
+                             You can create any floor plan you desire to the limit of the spell’s effect. The place is furnished and contains sufficient foodstuffs to serve a nine-course banquet to [[12*?{Casting Level}]] people. A staff of near-transparent servants (as many as [[2*?{Casting Level}]]), liveried and obedient, wait upon all who enter. The servants function as ***[unseen servant](http://www.d20srd.org/srd/spells/unseenServant.htm)*** spells except that they are visible and can go anywhere in the mansion.
                              Since the place can be entered only through its special portal, outside conditions do not affect the mansion, nor do conditions inside it pass to the plane beyond.`,
           component_details:'Focus: A miniature portal carved from ivory, a small piece of polished marble, and a tiny silver spoon (each item worth 5 gp).'
         },
         'mage\'s private sanctum': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mage%27s_Private_Sanctum',
+          ref:              'http://www.d20srd.org/srd/spells/magesPrivateSanctum.htm',
           school:           'Abjuration',
           level:            'Sor/Wiz 5',
           components:       'V, S, M',
@@ -6306,15 +6313,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell ensures privacy. Anyone looking into the area from outside sees only a dark, foggy mass. Darkvision cannot penetrate it. No sounds, no matter how loud, can escape the area, so nobody can eavesdrop from outside. Those inside can see out normally.
-                             Divination (scrying) spells cannot perceive anything within the area, and those within are immune to [*detect thoughts*](https://www.dandwiki.com/wiki/SRD:Detect_Thoughts). The ward prevents speech between those inside and those outside (because it blocks sound), but it does not prevent other communication, such as a [*sending*](https://www.dandwiki.com/wiki/SRD:Sending) or [*message*](https://www.dandwiki.com/wiki/SRD:Message) spell, or telepathic communication, such as that between a wizard and her familiar.
+                             Divination (scrying) spells cannot perceive anything within the area, and those within are immune to ***[detect thoughts](http://www.d20srd.org/srd/spells/detectThoughts.htm)***. The ward prevents speech between those inside and those outside (because it blocks sound), but it does not prevent other communication, such as a ***[sending](http://www.d20srd.org/srd/spells/sending.htm)*** or ***[message](http://www.d20srd.org/srd/spells/message.htm)*** spell, or telepathic communication, such as that between a wizard and her familiar.
                              The spell does not prevent creatures or objects from moving into and out of the area.
-                             *Mage’s private sanctum* can be made permanent with a [*permanency*](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
+                             Mage’s private sanctum can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`,
           component_details:'Material Component: A thin sheet of lead, a piece of opaque glass, a wad of cotton or cloth, and powdered chrysolite.'
         },
         'mage\'s sword': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mage%27s_Sword',
+          ref:              'http://www.d20srd.org/srd/spells/magesSword.htm',
           school:           'Evocation [Force]',
-          level:            'Sor/Wiz 7',
+          level:            'Sor/Wiz 7, Wmg 7',
           components:       'V, S, F',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6323,48 +6330,17 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `This spell brings into being a shimmering, swordlike plane of force. The sword strikes at any opponent within its range, as you desire, starting in the round that you cast the spell. The sword attacks its designated target once each round on your turn. Its attack bonus is equal to your caster level + your Intelligence bonus or your Charisma bonus (for wizards or sorcerers, respectively) with an additional +3 \`\`enhancement bonus\`\`. As a force effect, it can strike ethereal and [incorporeal](http://www.d20srd.org/srd/conditionSummary.htm#incorporeal) creatures. It deals ‹4d6+3› points of force damage, with a threat range of 19–20 and a critical multiplier of ×2.
+          text:             `This spell brings into being a shimmering, swordlike plane of force. The sword strikes at any opponent within its range, as you desire, starting in the round that you cast the spell. The sword attacks its designated target once each round on your turn. Its attack bonus is equal to your caster level + your Intelligence bonus or your Charisma bonus (for wizards or sorcerers, respectively) with an additional **+3 enhancement bonus**. As a force effect, it can strike ethereal and [incorporeal](http://www.d20srd.org/srd/conditionSummary.htm#incorporeal) creatures. It deals ‹4d6+3› points of force damage, with a threat range of 19–20 and a critical multiplier of ×2.
                              The sword always strikes from your direction. It does not get a bonus for flanking or help a combatant get one. If the sword goes beyond the spell range from you, if it goes out of your sight, or if you are not directing it, the sword returns to you and hovers.
                              Each round after the first, you can use a standard action to switch the sword to a new target. If you do not, the sword continues to attack the previous round’s target.
-                             The sword cannot be attacked or harmed by physical attacks, but [*dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm), [*disintegrate*](https://www.dandwiki.com/wiki/SRD:Disintegrate), a [*sphere of annihilation*](https://www.dandwiki.com/wiki/SRD:Sphere_of_Annihilation), or a [*rod of cancellation*](https://www.dandwiki.com/wiki/SRD:Rod_of_Cancellation) affects it. The sword’s AC is 13 (10, +0 size bonus for Medium object, +3 deflection bonus).
-                             If an attacked creature has spell resistance, the resistance is checked the first time *Mage’s sword* strikes it. If the sword is successfully resisted, the spell is dispelled. If not, the sword has its normal full effect on that creature for the duration of the spell.`,
+                             The sword cannot be attacked or harmed by physical attacks, but ***[dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm)***, ***[disintegrate](http://www.d20srd.org/srd/spells/disintegrate.htm)***, a sphere of annihilation, or a rod of cancellation affects it. The sword’s AC is 13 (10, +0 size bonus for Medium object, +3 deflection bonus).
+                             If an attacked creature has spell resistance, the resistance is checked the first time Mage’s sword strikes it. If the sword is successfully resisted, the spell is dispelled. If not, the sword has its normal full effect on that creature for the duration of the spell.`,
           component_details:'Focus: A miniature platinum sword with a grip and pommel of copper and zinc. It costs 250 gp to construct.'
         },
-        'mage armor': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mage_Armor',
-          school:           'Conjuration (Creation) [Force]',
-          level:            'Sor/Wiz 1',
-          components:       'V, S, F',
-          casting_time:     '1 standard action',
-          range:            'Touch',
-          target_type:      'Target',
-          target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] hour(s) (D)',
-          saving_throw:     'Will negates (harmless)',
-          spell_resistance: 'No',
-          text:             `An [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) but tangible field of force surrounds the subject of a mage armor spell, providing a +4 \`\`armor bonus\`\` to AC.
-                             Unlike mundane armor, *mage armor* entails no armor check penalty, arcane spell failure chance, or speed reduction. Since *mage armor* is made of force, [incorporeal creatures](http://www.d20srd.org/srd/conditionSummary.htm#incorporeal) can’t bypass it the way they do normal armor.`,
-          component_details:'Focus: A piece of cured leather.'
-        },
-        'mage hand': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mage_Hand',
-          school:           'Transmutation',
-          level:            'Brd 0, Sor/Wiz 0',
-          components:       'V, S',
-          casting_time:     '1 standard action',
-          range:            '_close_',
-          target_type:      'Target',
-          target:           'One nonmagical, unattended object weighing up to 5 lb.',
-          duration:         'Concentration',
-          saving_throw:     'None',
-          spell_resistance: 'No',
-          text:             `You point your finger at an object and can lift it and move it at will from a distance. As a move action, you can propel the object as far as 15 feet in any direction, though the spell ends if the distance between you and the object ever exceeds the spell’s range.`,
-          component_details:null
-        },
         'magic aura': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Magic_Aura',
+          ref:              'http://www.d20srd.org/srd/spells/magicAura.htm',
           school:           'Illusion (Glamer)',
-          level:            'Brd 1, Magic 1, Sor/Wiz 1',
+          level:            'Brd 1, HB 1, Hoard 1, Magic 1, Sor/Wiz 1',
           components:       'V, S, F',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -6373,16 +6349,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] day(s) (D)',
           saving_throw:     'None; see text',
           spell_resistance: 'No',
-          text:             `You alter an item’s aura so that it registers to *detect* spells (and spells with similar capabilities) as though it were nonmagical, or a magic item of a kind you specify, or the subject of a spell you specify.
-                             If the object bearing *magic aura* has [*identify*](https://www.dandwiki.com/wiki/SRD:Identify) cast on it or is similarly examined, the examiner recognizes that the aura is false and detects the object’s actual qualities if he succeeds on a Will save. Otherwise, he believes the aura and no amount of testing reveals what the true magic is.
-                             If the targeted item’s own aura is exceptionally powerful (if it is an artifact, for instance), *magic aura* doesn’t work.
+          text:             `You alter an item’s aura so that it registers to detect spells (and spells with similar capabilities) as though it were nonmagical, or a magic item of a kind you specify, or the subject of a spell you specify.
+                             If the object bearing magic aura has ***[identify](http://www.d20srd.org/srd/spells/identify.htm)*** cast on it or is similarly examined, the examiner recognizes that the aura is false and detects the object’s actual qualities if he succeeds on a Will save. Otherwise, he believes the aura and no amount of testing reveals what the true magic is.
+                             If the targeted item’s own aura is exceptionally powerful (if it is an artifact, for instance), magic aura doesn’t work.
                              *Note:* A magic weapon, shield, or suit of armor must be a masterwork item, so a sword of average make, for example, looks suspicious if it has a magical aura.`,
           component_details:'Focus: A small square of silk that must be passed over the object that receives the aura.'
         },
         'magic circle against chaos': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Magic_Circle_against_Chaos',
+          ref:              'http://www.d20srd.org/srd/spells/magicCircleAgainstChaos.htm',
           school:           'Abjuration [Lawful]',
-          level:            'Clr 3, Law 3, Pal 3, Sor/Wiz 3',
+          level:            'Arc 3, Clr 3, Law 3, Pal 3, Sor/Wiz 3, Wuj 3',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -6391,18 +6367,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'No; see text',
-          text:             `All creatures within the area gain the effects of a [*protection from chaos*](https://www.dandwiki.com/wiki/SRD:Protection_from_Chaos) spell, and no nonlawful summoned creatures can enter the area either. You must overcome a creature’s spell resistance in order to keep it at bay (as in the third function of [*protection from chaos*](https://www.dandwiki.com/wiki/SRD:Protection_from_Chaos)), but the deflection and resistance bonuses and the protection from mental control apply regardless of enemies’ spell resistance.
-                             This spell has an alternative version that you may choose when casting it. A *magic circle against chaos* can be focused inward rather than outward. When focused inward, the spell binds a nonlawful called creature (such as those called by the [*lesser planar binding*](https://www.dandwiki.com/wiki/SRD:Lesser_Planar_Binding), [*planar binding*](https://www.dandwiki.com/wiki/SRD:Planar_Binding), and [*greater planar binding*](https://www.dandwiki.com/wiki/SRD:Greater_Planar_Binding) spells) for a maximum of [[24*?{Casting Level}]] hours, provided that you cast the spell that calls the creature within 1 round of casting the *magic circle*. The creature cannot cross the circle’s boundaries. If a creature too large to fit into the spell’s area is the subject of the spell, the spell acts as a normal [*protection from chaos*](https://www.dandwiki.com/wiki/SRD:Protection_from_Chaos) spell for that creature only.
-                             A *magic circle* leaves much to be desired as a trap. If the circle of powdered silver laid down in the process of spellcasting is broken, the effect immediately ends. The trapped creature can do nothing that disturbs the circle, directly or indirectly, but other creatures can. If the called creature has spell resistance, it can test the trap once a day. If you fail to overcome its spell resistance, the creature breaks free, destroying the circle. A creature capable of any form of dimensional travel ([*astral projection*](http://www.d20srd.org/srd/spells/astralProjection.htm), [*blink*](http://www.d20srd.org/srd/spells/blink.htm), [*dimension door*](https://www.dandwiki.com/wiki/SRD:Dimension_Door), [*etherealness*](https://www.dandwiki.com/wiki/SRD:Etherealness_%28Spell%29), [*gate*](http://www.d20srd.org/srd/spells/gate.htm), [*plane shift*](https://www.dandwiki.com/wiki/SRD:Plane_Shift), [*shadow walk*](https://www.dandwiki.com/wiki/SRD:Shadow_Walk), [*teleport*](https://www.dandwiki.com/wiki/SRD:Teleport), and similar abilities) can simply leave the circle through that means. You can prevent the creature’s extradimensional escape by casting a [*dimensional anchor*](https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor) spell on it, but you must cast the spell before the creature acts. If you are successful, the *anchor* effect lasts as long as the *magic circle* does. The creature cannot reach across the *magic circle*, but its ranged attacks (ranged weapons, spells, magical abilities, and the like) can. The creature can attack any target it can reach with its ranged attacks except for the circle itself.
-                             You can add a special diagram (a two-dimensional bounded figure with no gaps along its circumference, augmented with various magical sigils) to make the *magic circle* more secure. Drawing the diagram by hand takes 10 minutes and requires a DC 20 Spellcraft check. You do not know the result of this check. If the check fails, the diagram is ineffective. You can take 10 when drawing the diagram if you are under no particular time pressure to complete the task. This task also takes 10 full minutes. If time is no factor at all, and you devote 3 hours and 20 minutes to the task, you can take 20.
-                             A successful diagram allows you to cast a [*dimensional anchor*](https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor) spell on the *magic circle* during the round before casting any summoning spell. The *anchor* holds any called creatures in the *magic circle* for [[24*?{Casting Level}]] hours. A creature cannot use its spell resistance against a *magic circle* prepared with a diagram, and none of its abilities or attacks can cross the diagram. If the creature tries a Charisma check to break free of the trap (see the [*lesser planar binding*](https://www.dandwiki.com/wiki/SRD:Lesser_Planar_Binding) spell), the DC increases by 5. The creature is immediately released if anything disturbs the diagram—even a straw laid across it. However, the creature itself cannot disturb the diagram either directly or indirectly, as noted above.
-                             This spell is not cumulative with [*protection from chaos*](https://www.dandwiki.com/wiki/SRD:Protection_from_Chaos) and vice versa.`,
+          text:             `All creatures within the area gain the effects of a ***[protection from chaos](http://www.d20srd.org/srd/spells/protectionFromChaos.htm)*** spell, and no nonlawful summoned creatures can enter the area either. You must overcome a creature’s spell resistance in order to keep it at bay (as in the third function of ***[protection from chaos](http://www.d20srd.org/srd/spells/protectionFromChaos.htm)***), but the deflection and resistance bonuses and the protection from mental control apply regardless of enemies’ spell resistance.
+                             This spell has an alternative version that you may choose when casting it. A magic circle against chaos can be focused inward rather than outward. When focused inward, the spell binds a nonlawful called creature (such as those called by the ***[lesser planar binding](http://www.d20srd.org/srd/spells/planarBindingLesser.htm)***, ***[planar binding](http://www.d20srd.org/srd/spells/planarBinding.htm)***, and ***[greater planar binding](http://www.d20srd.org/srd/spells/planarBindingGreater.htm)*** spells) for a maximum of [[24*?{Casting Level}]] hours, provided that you cast the spell that calls the creature within 1 round of casting the magic circle. The creature cannot cross the circle’s boundaries. If a creature too large to fit into the spell’s area is the subject of the spell, the spell acts as a normal ***[protection from chaos](http://www.d20srd.org/srd/spells/protectionFromChaos.htm)*** spell for that creature only.
+                             A magic circle leaves much to be desired as a trap. If the circle of powdered silver laid down in the process of spellcasting is broken, the effect immediately ends. The trapped creature can do nothing that disturbs the circle, directly or indirectly, but other creatures can. If the called creature has spell resistance, it can test the trap once a day. If you fail to overcome its spell resistance, the creature breaks free, destroying the circle. A creature capable of any form of dimensional travel (***[astral projection](http://www.d20srd.org/srd/spells/astralProjection.htm)***, ***[blink](http://www.d20srd.org/srd/spells/blink.htm)***, ***[dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm)***, ***[etherealness](http://www.d20srd.org/srd/spells/etherealness.htm)***, ***[gate](http://www.d20srd.org/srd/spells/gate.htm)***, ***[plane shift](http://www.d20srd.org/srd/spells/planeShift.htm)***, ***[shadow walk](http://www.d20srd.org/srd/spells/shadowWalk.htm)***, ***[teleport](http://www.d20srd.org/srd/spells/teleport.htm)***, and similar abilities) can simply leave the circle through that means. You can prevent the creature’s extradimensional escape by casting a ***[dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm)*** spell on it, but you must cast the spell before the creature acts. If you are successful, the anchor effect lasts as long as the magic circle does. The creature cannot reach across the magic circle, but its ranged attacks (ranged weapons, spells, magical abilities, and the like) can. The creature can attack any target it can reach with its ranged attacks except for the circle itself.
+                             You can add a special diagram (a two-dimensional bounded figure with no gaps along its circumference, augmented with various magical sigils) to make the magic circle more secure. Drawing the diagram by hand takes 10 minutes and requires a DC 20 Spellcraft check. You do not know the result of this check. If the check fails, the diagram is ineffective. You can take 10 when drawing the diagram if you are under no particular time pressure to complete the task. This task also takes 10 full minutes. If time is no factor at all, and you devote 3 hours and 20 minutes to the task, you can take 20.
+                             A successful diagram allows you to cast a ***[dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm)*** spell on the magic circle during the round before casting any summoning spell. The anchor holds any called creatures in the magic circle for [[24*?{Casting Level}]] hours. A creature cannot use its spell resistance against a magic circle prepared with a diagram, and none of its abilities or attacks can cross the diagram. If the creature tries a Charisma check to break free of the trap (see the ***[lesser planar binding](http://www.d20srd.org/srd/spells/planarBindingLesser.htm)*** spell), the DC increases by 5. The creature is immediately released if anything disturbs the diagram—even a straw laid across it. However, the creature itself cannot disturb the diagram either directly or indirectly, as noted above.
+                             This spell is not cumulative with ***[protection from chaos](http://www.d20srd.org/srd/spells/protectionFromChaos.htm)*** and vice versa.`,
           component_details:'Arcane Material Component: A little powdered silver with which you trace a 3-foot-diameter circle on the floor (or ground) around the creature to be warded.'
         },
         'magic circle against evil': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Magic_Circle_against_Evil',
+          ref:              'http://www.d20srd.org/srd/spells/magicCircleAgainstEvil.htm',
           school:           'Abjuration [Good]',
-          level:            'Clr 3, Good 3, Pal 3, Sor/Wiz 3',
+          level:            'APeace 3, Arc 3, ChamGwyn 3, Clr 3, Dem 2, Exorcism 2, Good 3, KotC 3, Pal 3, Sor/Wiz 3, Vassal of Bahamut 3, Wuj 3',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -6411,18 +6387,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'No; see text',
-          text:             `All creatures within the area gain the effects of a [*protection from evil*](https://www.dandwiki.com/wiki/SRD:Protection_from_Evil) spell, and no nongood summoned creatures can enter the area either. You must overcome a creature’s spell resistance in order to keep it at bay (as in the third function of [*protection from evil*](https://www.dandwiki.com/wiki/SRD:Protection_from_Evil)), but the deflection and resistance bonuses and the protection from mental control apply regardless of enemies’ spell resistance.
-                             This spell has an alternative version that you may choose when casting it. A *magic circle against evil* can be focused inward rather than outward. When focused inward, the spell binds a nongood called creature (such as those called by the [*lesser planar binding*](https://www.dandwiki.com/wiki/SRD:Lesser_Planar_Binding), [*planar binding*](https://www.dandwiki.com/wiki/SRD:Planar_Binding), and [*greater planar binding*](https://www.dandwiki.com/wiki/SRD:Greater_Planar_Binding) spells) for a maximum of [[24*?{Casting Level}]] hours, provided that you cast the spell that calls the creature within 1 round of casting the *magic circle*. The creature cannot cross the circle’s boundaries. If a creature too large to fit into the spell’s area is the subject of the spell, the spell acts as a normal [*protection from evil*](https://www.dandwiki.com/wiki/SRD:Protection_from_Evil) spell for that creature only.
-                             A *magic circle* leaves much to be desired as a trap. If the circle of powdered silver laid down in the process of spellcasting is broken, the effect immediately ends. The trapped creature can do nothing that disturbs the circle, directly or indirectly, but other creatures can. If the called creature has spell resistance, it can test the trap once a day. If you fail to overcome its spell resistance, the creature breaks free, destroying the circle. A creature capable of any form of dimensional travel ([*astral projection*](http://www.d20srd.org/srd/spells/astralProjection.htm), [*blink*](http://www.d20srd.org/srd/spells/blink.htm), [*dimension door*](https://www.dandwiki.com/wiki/SRD:Dimension_Door), [*etherealness*](https://www.dandwiki.com/wiki/SRD:Etherealness_%28Spell%29), [*gate*](http://www.d20srd.org/srd/spells/gate.htm), [*plane shift*](https://www.dandwiki.com/wiki/SRD:Plane_Shift), [*shadow walk*](https://www.dandwiki.com/wiki/SRD:Shadow_Walk), [*teleport*](https://www.dandwiki.com/wiki/SRD:Teleport), and similar abilities) can simply leave the circle through that means. You can prevent the creature’s extradimensional escape by casting a [*dimensional anchor*](https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor) spell on it, but you must cast the spell before the creature acts. If you are successful, the *anchor* effect lasts as long as the *magic circle* does. The creature cannot reach across the *magic circle*, but its ranged attacks (ranged weapons, spells, magical abilities, and the like) can. The creature can attack any target it can reach with its ranged attacks except for the circle itself.
-                             You can add a special diagram (a two-dimensional bounded figure with no gaps along its circumference, augmented with various magical sigils) to make the *magic circle* more secure. Drawing the diagram by hand takes 10 minutes and requires a DC 20 Spellcraft check. You do not know the result of this check. If the check fails, the diagram is ineffective. You can take 10 when drawing the diagram if you are under no particular time pressure to complete the task. This task also takes 10 full minutes. If time is no factor at all, and you devote 3 hours and 20 minutes to the task, you can take 20.
-                             A successful diagram allows you to cast a [*dimensional anchor*](https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor) spell on the *magic circle* during the round before casting any summoning spell. The *anchor* holds any called creatures in the *magic circle* for [[24*?{Casting Level}]] hours. A creature cannot use its spell resistance against a *magic circle* prepared with a diagram, and none of its abilities or attacks can cross the diagram. If the creature tries a Charisma check to break free of the trap (see the [*lesser planar binding*](https://www.dandwiki.com/wiki/SRD:Lesser_Planar_Binding) spell), the DC increases by 5. The creature is immediately released if anything disturbs the diagram—even a straw laid across it. However, the creature itself cannot disturb the diagram either directly or indirectly, as noted above.
-                             This spell is not cumulative with [*protection from evil*](https://www.dandwiki.com/wiki/SRD:Protection_from_Evil) and vice versa.`,
+          text:             `All creatures within the area gain the effects of a ***[protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm)*** spell, and no nongood summoned creatures can enter the area either. You must overcome a creature’s spell resistance in order to keep it at bay (as in the third function of ***[protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm)***), but the deflection and resistance bonuses and the protection from mental control apply regardless of enemies’ spell resistance.
+                             This spell has an alternative version that you may choose when casting it. A magic circle against evil can be focused inward rather than outward. When focused inward, the spell binds a nongood called creature (such as those called by the ***[lesser planar binding](http://www.d20srd.org/srd/spells/planarBindingLesser.htm)***, ***[planar binding](http://www.d20srd.org/srd/spells/planarBinding.htm)***, and ***[greater planar binding](http://www.d20srd.org/srd/spells/planarBindingGreater.htm)*** spells) for a maximum of [[24*?{Casting Level}]] hours, provided that you cast the spell that calls the creature within 1 round of casting the magic circle. The creature cannot cross the circle’s boundaries. If a creature too large to fit into the spell’s area is the subject of the spell, the spell acts as a normal ***[protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm)*** spell for that creature only.
+                             A magic circle leaves much to be desired as a trap. If the circle of powdered silver laid down in the process of spellcasting is broken, the effect immediately ends. The trapped creature can do nothing that disturbs the circle, directly or indirectly, but other creatures can. If the called creature has spell resistance, it can test the trap once a day. If you fail to overcome its spell resistance, the creature breaks free, destroying the circle. A creature capable of any form of dimensional travel (***[astral projection](http://www.d20srd.org/srd/spells/astralProjection.htm)***, ***[blink](http://www.d20srd.org/srd/spells/blink.htm)***, ***[dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm)***, ***[etherealness](http://www.d20srd.org/srd/spells/etherealness.htm)***, ***[gate](http://www.d20srd.org/srd/spells/gate.htm)***, ***[plane shift](http://www.d20srd.org/srd/spells/planeShift.htm)***, ***[shadow walk](http://www.d20srd.org/srd/spells/shadowWalk.htm)***, ***[teleport](http://www.d20srd.org/srd/spells/teleport.htm)***, and similar abilities) can simply leave the circle through that means. You can prevent the creature’s extradimensional escape by casting a ***[dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm)*** spell on it, but you must cast the spell before the creature acts. If you are successful, the anchor effect lasts as long as the magic circle does. The creature cannot reach across the magic circle, but its ranged attacks (ranged weapons, spells, magical abilities, and the like) can. The creature can attack any target it can reach with its ranged attacks except for the circle itself.
+                             You can add a special diagram (a two-dimensional bounded figure with no gaps along its circumference, augmented with various magical sigils) to make the magic circle more secure. Drawing the diagram by hand takes 10 minutes and requires a DC 20 Spellcraft check. You do not know the result of this check. If the check fails, the diagram is ineffective. You can take 10 when drawing the diagram if you are under no particular time pressure to complete the task. This task also takes 10 full minutes. If time is no factor at all, and you devote 3 hours and 20 minutes to the task, you can take 20.
+                             A successful diagram allows you to cast a ***[dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm)*** spell on the magic circle during the round before casting any summoning spell. The anchor holds any called creatures in the magic circle for [[24*?{Casting Level}]] hours. A creature cannot use its spell resistance against a magic circle prepared with a diagram, and none of its abilities or attacks can cross the diagram. If the creature tries a Charisma check to break free of the trap (see the ***[lesser planar binding](http://www.d20srd.org/srd/spells/planarBindingLesser.htm)*** spell), the DC increases by 5. The creature is immediately released if anything disturbs the diagram—even a straw laid across it. However, the creature itself cannot disturb the diagram either directly or indirectly, as noted above.
+                             This spell is not cumulative with ***[protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm)*** and vice versa.`,
           component_details:'Arcane Material Component: A little powdered silver with which you trace a 3-foot-diameter circle on the floor (or ground) around the creature to be warded.'
         },
         'magic circle against good': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Magic_Circle_against_Good',
+          ref:              'http://www.d20srd.org/srd/spells/magicCircleAgainstGood.htm',
           school:           'Abjuration [Evil]',
-          level:            'Asn 3, Clr 3, Evil 3, Sor/Wiz 3',
+          level:            'Arc 3, Asn 3, Clr 3, Dem 2, Evil 3, MH 2, Sor/Wiz 3, Wuj 3',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -6431,18 +6407,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'No; see text',
-          text:             `All creatures within the area gain the effects of a [*protection from good*](https://www.dandwiki.com/wiki/SRD:Protection_from_Good) spell, and no nonevil summoned creatures can enter the area either. You must overcome a creature’s spell resistance in order to keep it at bay (as in the third function of [*protection from good*](https://www.dandwiki.com/wiki/SRD:Protection_from_Good)), but the deflection and resistance bonuses and the protection from mental control apply regardless of enemies’ spell resistance.
-                             This spell has an alternative version that you may choose when casting it. A *magic circle against good* can be focused inward rather than outward. When focused inward, the spell binds a nonevil called creature (such as those called by the [*lesser planar binding*](https://www.dandwiki.com/wiki/SRD:Lesser_Planar_Binding), [*planar binding*](https://www.dandwiki.com/wiki/SRD:Planar_Binding), and [*greater planar binding*](https://www.dandwiki.com/wiki/SRD:Greater_Planar_Binding) spells) for a maximum of [[24*?{Casting Level}]] hours, provided that you cast the spell that calls the creature within 1 round of casting the *magic circle*. The creature cannot cross the circle’s boundaries. If a creature too large to fit into the spell’s area is the subject of the spell, the spell acts as a normal [*protection from good*](https://www.dandwiki.com/wiki/SRD:Protection_from_Good) spell for that creature only.
-                             A *magic circle* leaves much to be desired as a trap. If the circle of powdered silver laid down in the process of spellcasting is broken, the effect immediately ends. The trapped creature can do nothing that disturbs the circle, directly or indirectly, but other creatures can. If the called creature has spell resistance, it can test the trap once a day. If you fail to overcome its spell resistance, the creature breaks free, destroying the circle. A creature capable of any form of dimensional travel ([*astral projection*](http://www.d20srd.org/srd/spells/astralProjection.htm), [*blink*](http://www.d20srd.org/srd/spells/blink.htm), [*dimension door*](https://www.dandwiki.com/wiki/SRD:Dimension_Door), [*etherealness*](https://www.dandwiki.com/wiki/SRD:Etherealness_%28Spell%29), [*gate*](http://www.d20srd.org/srd/spells/gate.htm), [*plane shift*](https://www.dandwiki.com/wiki/SRD:Plane_Shift), [*shadow walk*](https://www.dandwiki.com/wiki/SRD:Shadow_Walk), [*teleport*](https://www.dandwiki.com/wiki/SRD:Teleport), and similar abilities) can simply leave the circle through that means. You can prevent the creature’s extradimensional escape by casting a [*dimensional anchor*](https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor) spell on it, but you must cast the spell before the creature acts. If you are successful, the *anchor* effect lasts as long as the *magic circle* does. The creature cannot reach across the *magic circle*, but its ranged attacks (ranged weapons, spells, magical abilities, and the like) can. The creature can attack any target it can reach with its ranged attacks except for the circle itself.
-                             You can add a special diagram (a two-dimensional bounded figure with no gaps along its circumference, augmented with various magical sigils) to make the *magic circle* more secure. Drawing the diagram by hand takes 10 minutes and requires a DC 20 Spellcraft check. You do not know the result of this check. If the check fails, the diagram is ineffective. You can take 10 when drawing the diagram if you are under no particular time pressure to complete the task. This task also takes 10 full minutes. If time is no factor at all, and you devote 3 hours and 20 minutes to the task, you can take 20.
-                             A successful diagram allows you to cast a [*dimensional anchor*](https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor) spell on the *magic circle* during the round before casting any summoning spell. The *anchor* holds any called creatures in the *magic circle* for [[24*?{Casting Level}]] hours. A creature cannot use its spell resistance against a *magic circle* prepared with a diagram, and none of its abilities or attacks can cross the diagram. If the creature tries a Charisma check to break free of the trap (see the [*lesser planar binding*](https://www.dandwiki.com/wiki/SRD:Lesser_Planar_Binding) spell), the DC increases by 5. The creature is immediately released if anything disturbs the diagram—even a straw laid across it. However, the creature itself cannot disturb the diagram either directly or indirectly, as noted above.
-                             This spell is not cumulative with [*protection from good*](https://www.dandwiki.com/wiki/SRD:Protection_from_Good) and vice versa.`,
+          text:             `All creatures within the area gain the effects of a ***[protection from good](http://www.d20srd.org/srd/spells/protectionFromGood.htm)*** spell, and no nonevil summoned creatures can enter the area either. You must overcome a creature’s spell resistance in order to keep it at bay (as in the third function of ***[protection from good](http://www.d20srd.org/srd/spells/protectionFromGood.htm)***), but the deflection and resistance bonuses and the protection from mental control apply regardless of enemies’ spell resistance.
+                             This spell has an alternative version that you may choose when casting it. A magic circle against good can be focused inward rather than outward. When focused inward, the spell binds a nonevil called creature (such as those called by the ***[lesser planar binding](http://www.d20srd.org/srd/spells/planarBindingLesser.htm)***, ***[planar binding](http://www.d20srd.org/srd/spells/planarBinding.htm)***, and ***[greater planar binding](http://www.d20srd.org/srd/spells/planarBindingGreater.htm)*** spells) for a maximum of [[24*?{Casting Level}]] hours, provided that you cast the spell that calls the creature within 1 round of casting the magic circle. The creature cannot cross the circle’s boundaries. If a creature too large to fit into the spell’s area is the subject of the spell, the spell acts as a normal ***[protection from good](http://www.d20srd.org/srd/spells/protectionFromGood.htm)*** spell for that creature only.
+                             A magic circle leaves much to be desired as a trap. If the circle of powdered silver laid down in the process of spellcasting is broken, the effect immediately ends. The trapped creature can do nothing that disturbs the circle, directly or indirectly, but other creatures can. If the called creature has spell resistance, it can test the trap once a day. If you fail to overcome its spell resistance, the creature breaks free, destroying the circle. A creature capable of any form of dimensional travel (***[astral projection](http://www.d20srd.org/srd/spells/astralProjection.htm)***, ***[blink](http://www.d20srd.org/srd/spells/blink.htm)***, ***[dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm)***, ***[etherealness](http://www.d20srd.org/srd/spells/etherealness.htm)***, ***[gate](http://www.d20srd.org/srd/spells/gate.htm)***, ***[plane shift](http://www.d20srd.org/srd/spells/planeShift.htm)***, ***[shadow walk](http://www.d20srd.org/srd/spells/shadowWalk.htm)***, ***[teleport](http://www.d20srd.org/srd/spells/teleport.htm)***, and similar abilities) can simply leave the circle through that means. You can prevent the creature’s extradimensional escape by casting a ***[dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm)*** spell on it, but you must cast the spell before the creature acts. If you are successful, the anchor effect lasts as long as the magic circle does. The creature cannot reach across the magic circle, but its ranged attacks (ranged weapons, spells, magical abilities, and the like) can. The creature can attack any target it can reach with its ranged attacks except for the circle itself.
+                             You can add a special diagram (a two-dimensional bounded figure with no gaps along its circumference, augmented with various magical sigils) to make the magic circle more secure. Drawing the diagram by hand takes 10 minutes and requires a DC 20 Spellcraft check. You do not know the result of this check. If the check fails, the diagram is ineffective. You can take 10 when drawing the diagram if you are under no particular time pressure to complete the task. This task also takes 10 full minutes. If time is no factor at all, and you devote 3 hours and 20 minutes to the task, you can take 20.
+                             A successful diagram allows you to cast a ***[dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm)*** spell on the magic circle during the round before casting any summoning spell. The anchor holds any called creatures in the magic circle for [[24*?{Casting Level}]] hours. A creature cannot use its spell resistance against a magic circle prepared with a diagram, and none of its abilities or attacks can cross the diagram. If the creature tries a Charisma check to break free of the trap (see the ***[lesser planar binding](http://www.d20srd.org/srd/spells/planarBindingLesser.htm)*** spell), the DC increases by 5. The creature is immediately released if anything disturbs the diagram—even a straw laid across it. However, the creature itself cannot disturb the diagram either directly or indirectly, as noted above.
+                             This spell is not cumulative with ***[protection from good](http://www.d20srd.org/srd/spells/protectionFromGood.htm)*** and vice versa.`,
           component_details:'Arcane Material Component: A little powdered silver with which you trace a 3-foot-diameter circle on the floor (or ground) around the creature to be warded.'
         },
         'magic circle against law': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Magic_Circle_against_Law',
+          ref:              'http://www.d20srd.org/srd/spells/magicCircleAgainstLaw.htm',
           school:           'Abjuration [Chaotic]',
-          level:            'Chaos 3, Clr 3, Sor/Wiz 3',
+          level:            'Arc 3, Chaos 3, Clr 3, Sor/Wiz 3, Wuj 3',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -6451,18 +6427,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'No; see text',
-          text:             `All creatures within the area gain the effects of a [*protection from law*](https://www.dandwiki.com/wiki/SRD:Protection_from_Law) spell, and no nonchaotic summoned creatures can enter the area either. You must overcome a creature’s spell resistance in order to keep it at bay (as in the third function of [*protection from law*](https://www.dandwiki.com/wiki/SRD:Protection_from_Law)), but the deflection and resistance bonuses and the protection from mental control apply regardless of enemies’ spell resistance.
-                             This spell has an alternative version that you may choose when casting it. A *magic circle against law* can be focused inward rather than outward. When focused inward, the spell binds a nonchaotic called creature (such as those called by the [*lesser planar binding*](https://www.dandwiki.com/wiki/SRD:Lesser_Planar_Binding), [*planar binding*](https://www.dandwiki.com/wiki/SRD:Planar_Binding), and [*greater planar binding*](https://www.dandwiki.com/wiki/SRD:Greater_Planar_Binding) spells) for a maximum of [[24*?{Casting Level}]] hours, provided that you cast the spell that calls the creature within 1 round of casting the *magic circle*. The creature cannot cross the circle’s boundaries. If a creature too large to fit into the spell’s area is the subject of the spell, the spell acts as a normal [*protection from law*](https://www.dandwiki.com/wiki/SRD:Protection_from_Law) spell for that creature only.
-                             A *magic circle* leaves much to be desired as a trap. If the circle of powdered silver laid down in the process of spellcasting is broken, the effect immediately ends. The trapped creature can do nothing that disturbs the circle, directly or indirectly, but other creatures can. If the called creature has spell resistance, it can test the trap once a day. If you fail to overcome its spell resistance, the creature breaks free, destroying the circle. A creature capable of any form of dimensional travel ([*astral projection*](http://www.d20srd.org/srd/spells/astralProjection.htm), [*blink*](http://www.d20srd.org/srd/spells/blink.htm), [*dimension door*](https://www.dandwiki.com/wiki/SRD:Dimension_Door), [*etherealness*](https://www.dandwiki.com/wiki/SRD:Etherealness_%28Spell%29), [*gate*](http://www.d20srd.org/srd/spells/gate.htm), [*plane shift*](https://www.dandwiki.com/wiki/SRD:Plane_Shift), [*shadow walk*](https://www.dandwiki.com/wiki/SRD:Shadow_Walk), [*teleport*](https://www.dandwiki.com/wiki/SRD:Teleport), and similar abilities) can simply leave the circle through that means. You can prevent the creature’s extradimensional escape by casting a [*dimensional anchor*](https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor) spell on it, but you must cast the spell before the creature acts. If you are successful, the *anchor* effect lasts as long as the *magic circle* does. The creature cannot reach across the *magic circle*, but its ranged attacks (ranged weapons, spells, magical abilities, and the like) can. The creature can attack any target it can reach with its ranged attacks except for the circle itself.
-                             You can add a special diagram (a two-dimensional bounded figure with no gaps along its circumference, augmented with various magical sigils) to make the *magic circle* more secure. Drawing the diagram by hand takes 10 minutes and requires a DC 20 Spellcraft check. You do not know the result of this check. If the check fails, the diagram is ineffective. You can take 10 when drawing the diagram if you are under no particular time pressure to complete the task. This task also takes 10 full minutes. If time is no factor at all, and you devote 3 hours and 20 minutes to the task, you can take 20.
-                             A successful diagram allows you to cast a [*dimensional anchor*](https://www.dandwiki.com/wiki/SRD:Dimensional_Anchor) spell on the *magic circle* during the round before casting any summoning spell. The *anchor* holds any called creatures in the *magic circle* for [[24*?{Casting Level}]] hours. A creature cannot use its spell resistance against a *magic circle* prepared with a diagram, and none of its abilities or attacks can cross the diagram. If the creature tries a Charisma check to break free of the trap (see the [*lesser planar binding*](https://www.dandwiki.com/wiki/SRD:Lesser_Planar_Binding) spell), the DC increases by 5. The creature is immediately released if anything disturbs the diagram—even a straw laid across it. However, the creature itself cannot disturb the diagram either directly or indirectly, as noted above.
-                             This spell is not cumulative with [*protection from law*](https://www.dandwiki.com/wiki/SRD:Protection_from_Law) and vice versa.`,
+          text:             `All creatures within the area gain the effects of a ***[protection from law](http://www.d20srd.org/srd/spells/protectionFromLaw.htm)*** spell, and no nonchaotic summoned creatures can enter the area either. You must overcome a creature’s spell resistance in order to keep it at bay (as in the third function of ***[protection from law](http://www.d20srd.org/srd/spells/protectionFromLaw.htm)***), but the deflection and resistance bonuses and the protection from mental control apply regardless of enemies’ spell resistance.
+                             This spell has an alternative version that you may choose when casting it. A magic circle against law can be focused inward rather than outward. When focused inward, the spell binds a nonchaotic called creature (such as those called by the ***[lesser planar binding](http://www.d20srd.org/srd/spells/planarBindingLesser.htm)***, ***[planar binding](http://www.d20srd.org/srd/spells/planarBinding.htm)***, and ***[greater planar binding](http://www.d20srd.org/srd/spells/planarBindingGreater.htm)*** spells) for a maximum of [[24*?{Casting Level}]] hours, provided that you cast the spell that calls the creature within 1 round of casting the magic circle. The creature cannot cross the circle’s boundaries. If a creature too large to fit into the spell’s area is the subject of the spell, the spell acts as a normal ***[protection from law](http://www.d20srd.org/srd/spells/protectionFromLaw.htm)*** spell for that creature only.
+                             A magic circle leaves much to be desired as a trap. If the circle of powdered silver laid down in the process of spellcasting is broken, the effect immediately ends. The trapped creature can do nothing that disturbs the circle, directly or indirectly, but other creatures can. If the called creature has spell resistance, it can test the trap once a day. If you fail to overcome its spell resistance, the creature breaks free, destroying the circle. A creature capable of any form of dimensional travel (***[astral projection](http://www.d20srd.org/srd/spells/astralProjection.htm)***, ***[blink](http://www.d20srd.org/srd/spells/blink.htm)***, ***[dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm)***, ***[etherealness](http://www.d20srd.org/srd/spells/etherealness.htm)***, ***[gate](http://www.d20srd.org/srd/spells/gate.htm***), ***[plane shift](http://www.d20srd.org/srd/spells/planeShift.htm)***, ***[shadow walk](http://www.d20srd.org/srd/spells/shadowWalk.htm)***, ***[teleport](http://www.d20srd.org/srd/spells/teleport.htm)***, and similar abilities) can simply leave the circle through that means. You can prevent the creature’s extradimensional escape by casting a ***[dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm)*** spell on it, but you must cast the spell before the creature acts. If you are successful, the anchor effect lasts as long as the magic circle does. The creature cannot reach across the magic circle, but its ranged attacks (ranged weapons, spells, magical abilities, and the like) can. The creature can attack any target it can reach with its ranged attacks except for the circle itself.
+                             You can add a special diagram (a two-dimensional bounded figure with no gaps along its circumference, augmented with various magical sigils) to make the magic circle more secure. Drawing the diagram by hand takes 10 minutes and requires a DC 20 Spellcraft check. You do not know the result of this check. If the check fails, the diagram is ineffective. You can take 10 when drawing the diagram if you are under no particular time pressure to complete the task. This task also takes 10 full minutes. If time is no factor at all, and you devote 3 hours and 20 minutes to the task, you can take 20.
+                             A successful diagram allows you to cast a ***[dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm)*** spell on the magic circle during the round before casting any summoning spell. The anchor holds any called creatures in the magic circle for [[24*?{Casting Level}]] hours. A creature cannot use its spell resistance against a magic circle prepared with a diagram, and none of its abilities or attacks can cross the diagram. If the creature tries a Charisma check to break free of the trap (see the ***[lesser planar binding](http://www.d20srd.org/srd/spells/planarBindingLesser.htm)*** spell), the DC increases by 5. The creature is immediately released if anything disturbs the diagram—even a straw laid across it. However, the creature itself cannot disturb the diagram either directly or indirectly, as noted above.
+                             This spell is not cumulative with ***[protection from law](http://www.d20srd.org/srd/spells/protectionFromLaw.htm)*** and vice versa.`,
           component_details:'Arcane Material Component: A little powdered silver with which you trace a 3-foot-diameter circle on the floor (or ground) around the creature to be warded.'
         },
         'magic fang': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Magic_Fang',
+          ref:              'http://www.d20srd.org/srd/spells/magicFang.htm',
           school:           'Transmutation',
-          level:            'Drd 1, Rgr 1, Scalykind 1',
+          level:            'Arc 1, Bestial 1, Dragon 1, Drd 1, Rgr 1, Scalykind 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -6471,14 +6447,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `*Magic fang* gives one natural weapon of the subject a +1 \`\`enhancement bonus\`\` on attack and damage rolls. The spell can affect a slam attack, fist, bite, or other natural weapon. (The spell does not change an unarmed strike’s damage from nonlethal damage to lethal damage.)
-                             *Magic fang* can be made permanent with a [*permanency*](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
-          component_details:null
+          text:             `Magic fang gives one natural weapon of the subject a **+1 enhancement bonus** on attack and damage rolls. The spell can affect a slam attack, fist, bite, or other natural weapon. (The spell does not change an unarmed strike’s damage from nonlethal damage to lethal damage.)
+                             Magic fang can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`
         },
         'magic jar': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Magic_Jar',
+          ref:              'http://www.d20srd.org/srd/spells/magicJar.htm',
           school:           'Necromancy',
-          level:            'Sor/Wiz 5',
+          level:            'Sin-E 6, Sor/Wiz 5',
           components:       'V, S, F',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -6487,17 +6462,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hour(s) or until you return to your body',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `By casting *magic jar*, you place your soul in a gem or large crystal (known as the *magic jar*), leaving your body lifeless. Then you can attempt to take control of a nearby body, forcing its soul into the *magic jar*. You may move back to the jar (thereby returning the trapped soul to its body) and attempt to possess another body. The spell ends when you send your soul back to your own body, leaving the receptacle empty.
-                             To cast the spell, the *magic jar* must be within spell range and you must know where it is, though you do not need line of sight or line of effect to it. When you transfer your soul upon casting, your body is, as near as anyone can tell, [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead).
-                             While in the *magic jar*, you can sense and attack any life force within 10 feet per caster level (and on the same plane of existence). You do need line of effect from the jar to the creatures. You cannot determine the exact creature types or positions of these creatures. In a group of life forces, you can sense a difference of 4 or more Hit Dice between one creature and another and can determine whether a life force is powered by positive or negative energy. ([Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures are powered by negative energy. Only sentient undead creatures have, or are, souls.)
+          text:             `By casting magic jar, you place your soul in a gem or large crystal (known as the magic jar), leaving your body lifeless. Then you can attempt to take control of a nearby body, forcing its soul into the magic jar. You may move back to the jar (thereby returning the trapped soul to its body) and attempt to possess another body. The spell ends when you send your soul back to your own body, leaving the receptacle empty.
+                             To cast the spell, the magic jar must be within spell range and you must know where it is, though you do not need line of sight or line of effect to it. When you transfer your soul upon casting, your body is, as near as anyone can tell, [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead).
+                             While in the magic jar, you can sense and attack any life force within 10 feet per caster level (and on the same plane of existence). You do need line of effect from the jar to the creatures. You cannot determine the exact creature types or positions of these creatures. In a group of life forces, you can sense a difference of 4 or more Hit Dice between one creature and another and can determine whether a life force is powered by positive or negative energy. (Undead creatures are powered by negative energy. Only sentient undead creatures have, or are, souls.)
                              You could choose to take over either a stronger or a weaker creature, but which particular stronger or weaker creature you attempt to possess is determined randomly.
-                             Attempting to possess a body is a full-round action. It is blocked by [*protection from evil*](https://www.dandwiki.com/wiki/SRD:Protection_from_Evil) or a similar ward. You possess the body and force the creature’s soul into the *magic jar* unless the subject succeeds on a Will save. Failure to take over the host leaves your life force in the *magic jar*, and the target automatically succeeds on further saving throws if you attempt to possess its body again.
-                             If you are successful, your life force occupies the host body, and the host’s life force is imprisoned in the *magic jar*. You keep your Intelligence, Wisdom, Charisma, level, class, base attack bonus, base save bonuses, alignment, and mental abilities. The body retains its Strength, Dexterity, Constitution, hit points, natural abilities, and automatic abilities. A body with extra limbs does not allow you to make more attacks (or more advantageous two-weapon attacks) than normal. You can’t choose to activate the body’s extraordinary or supernatural abilities. The creature’s spells and spell-like abilities do not stay with the body.
-                             As a standard action, you can shift freely from a host to the *magic jar* if within range, sending the trapped soul back to its body. The spell ends when you shift from the jar to your own body.
-                             If the host body is slain, you return to the *magic jar*, if within range, and the life force of the host departs (it is dead). If the host body is slain beyond the range of the spell, both you and the host die. Any life force with nowhere to go is treated as slain.
-                             If the spell ends while you are in the *magic jar*, you return to your body (or die if your body is out of range or destroyed). If the spell ends while you are in a host, you return to your body (or die, if it is out of range of your current position), and the soul in the *magic jar* returns to its body (or dies if it is out of range). Destroying the receptacle ends the spell, and the spell can be dispelled at either the *magic jar* or at the host’s location.`,
+                             Attempting to possess a body is a full-round action. It is blocked by ***[protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm)*** or a similar ward. You possess the body and force the creature’s soul into the magic jar unless the subject succeeds on a Will save. Failure to take over the host leaves your life force in the magic jar, and the target automatically succeeds on further saving throws if you attempt to possess its body again.
+                             If you are successful, your life force occupies the host body, and the host’s life force is imprisoned in the magic jar. You keep your Intelligence, Wisdom, Charisma, level, class, base attack bonus, base save bonuses, alignment, and mental abilities. The body retains its Strength, Dexterity, Constitution, hit points, natural abilities, and automatic abilities. A body with extra limbs does not allow you to make more attacks (or more advantageous two-weapon attacks) than normal. You can’t choose to activate the body’s extraordinary or supernatural abilities. The creature’s spells and spell-like abilities do not stay with the body.
+                             As a standard action, you can shift freely from a host to the magic jar if within range, sending the trapped soul back to its body. The spell ends when you shift from the jar to your own body.
+                             If the host body is slain, you return to the magic jar, if within range, and the life force of the host departs (it is dead). If the host body is slain beyond the range of the spell, both you and the host die. Any life force with nowhere to go is treated as slain.
+                             If the spell ends while you are in the magic jar, you return to your body (or die if your body is out of range or destroyed). If the spell ends while you are in a host, you return to your body (or die, if it is out of range of your current position), and the soul in the magic jar returns to its body (or dies if it is out of range). Destroying the receptacle ends the spell, and the spell can be dispelled at either the magic jar or at the host’s location.`,
           component_details:'Focus: A gem or crystal worth at least 100 gp.'
         },
+        //REVIEW CATCHUP
         'magic missile': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Magic_Missile',
           school:           'Evocation [Force]',
@@ -6528,7 +6504,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates (object)',
           spell_resistance: 'Yes (object)',
           text:             `This spell imbues the chosen object or creature with an enchanted mouth that suddenly appears and speaks its message the next time a specified event occurs. The message, which must be twenty-five or fewer words long, can be in any language known by you and can be delivered over a period of 10 minutes. The mouth cannot utter verbal components, use command words, or activate magical effects. It does, however, move according to the words articulated; if it were placed upon a statue, the mouth of the statue would move and appear to speak. Of course, *magic mouth* can be placed upon a tree, rock, or any other object or creature.
-                             The spell functions when specific conditions are fulfilled according to your command as set in the spell. Commands can be as general or as detailed as desired, although only visual and audible triggers can be used. Triggers react to what appears to be the case. Disguises and illusions can fool them. Normal darkness does not defeat a visual trigger, but magical [*darkness*](https://www.dandwiki.com/wiki/SRD:Darkness) or [*invisibility*](https://www.dandwiki.com/wiki/SRD:Invisibility_%28Spell%29) does. Silent movement or magical silence defeats audible triggers. Audible triggers can be keyed to general types of noises or to a specific noise or spoken word. Actions can serve as triggers if they are visible or audible. A *magic mouth* cannot distinguish alignment, level, Hit Dice, or class except by external garb.
+                             The spell functions when specific conditions are fulfilled according to your command as set in the spell. Commands can be as general or as detailed as desired, although only visual and audible triggers can be used. Triggers react to what appears to be the case. Disguises and illusions can fool them. Normal darkness does not defeat a visual trigger, but magical [*darkness*](http://www.d20srd.org/srd/spells/darkness.htm) or [*invisibility*](https://www.dandwiki.com/wiki/SRD:Invisibility_%28Spell%29) does. Silent movement or magical silence defeats audible triggers. Audible triggers can be keyed to general types of noises or to a specific noise or spoken word. Actions can serve as triggers if they are visible or audible. A *magic mouth* cannot distinguish alignment, level, Hit Dice, or class except by external garb.
                              The range limit of a trigger is 15 feet per caster level, so a 6th-level caster can command a *magic mouth* to respond to triggers as far as 90 feet away. Regardless of range, the mouth can respond only to visible or audible triggers and actions in line of sight or within hearing distance.
                              *Magic mouth* can be made permanent with a [*permanency*](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
           component_details:'Material Component: A small bit of honeycomb and jade dust worth 10 gp.'
@@ -7383,54 +7359,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Arcane Material Component: A small piece of phosphorus.'
         }
       },
-      //spell_schools: {
-      //  'abjuration':    'https://www.dandwiki.com/wiki/SRD:Abjuration_School',
-      //  'conjuration':   'https://www.dandwiki.com/wiki/SRD:Conjuration_School',
-      //  'divination':    'https://www.dandwiki.com/wiki/SRD:Divination_School',
-      //  'enchantment':   'https://www.dandwiki.com/wiki/SRD:Enchantment_School',
-      //  'evocation':     'https://www.dandwiki.com/wiki/SRD:Evocation_School',
-      //  'illusion':      'https://www.dandwiki.com/wiki/SRD:Illusion_School',
-      //  'necromancy':    'https://www.dandwiki.com/wiki/SRD:Necromancy_School',
-      //  'transmutation': 'https://www.dandwiki.com/wiki/SRD:Transmutation_School',
-      //  'universal':     'https://www.dandwiki.com/wiki/SRD:Universal_School'
-      //},
-      //spell_subschools: {
-      //  'calling':       'https://www.dandwiki.com/wiki/SRD:Calling_Subschool',
-      //  'creation':      'https://www.dandwiki.com/wiki/SRD:Creation_Subschool',
-      //  'healing':       'https://www.dandwiki.com/wiki/SRD:Healing_Subschool',
-      //  'summoning':     'https://www.dandwiki.com/wiki/SRD:Summoning_Subschool',
-      //  'teleportation': 'https://www.dandwiki.com/wiki/SRD:Teleportation_Subschool',
-      //  'scrying':       'https://www.dandwiki.com/wiki/SRD:Scrying_Subschool',
-      //  'charm':         'https://www.dandwiki.com/wiki/SRD:Charm_Subschool',
-      //  'compulsion':    'https://www.dandwiki.com/wiki/SRD:Compulsion_Subschool',
-      //  'figment':       'https://www.dandwiki.com/wiki/SRD:Figment_Subschool',
-      //  'glamer':        'https://www.dandwiki.com/wiki/SRD:Glamer_Subschool',
-      //  'pattern':       'https://www.dandwiki.com/wiki/SRD:Pattern_Subschool',
-      //  'phantasm':      'https://www.dandwiki.com/wiki/SRD:Phantasm_Subschool',
-      //  'shadow':        'https://www.dandwiki.com/wiki/SRD:Shadow_Subschool'
-      //},
-      //spell_effects: {
-      //  'acid':               'https://www.dandwiki.com/wiki/SRD:Acid_Effect',
-      //  'air':                'https://www.dandwiki.com/wiki/SRD:Air_Effect',
-      //  'chaotic':            'https://www.dandwiki.com/wiki/SRD:Chaotic_Effect',
-      //  'cold':               'https://www.dandwiki.com/wiki/SRD:Cold_Effect',
-      //  'darkness':           'https://www.dandwiki.com/wiki/SRD:Darkness_Effect',
-      //  'death':              'https://www.dandwiki.com/wiki/SRD:Death_Effect',
-      //  'earth':              'https://www.dandwiki.com/wiki/SRD:Earth_Effect',
-      //  'electricity':        'https://www.dandwiki.com/wiki/SRD:Electricity_Effect',
-      //  'evil':               'https://www.dandwiki.com/wiki/SRD:Evil_Effect',
-      //  'good':               'https://www.dandwiki.com/wiki/SRD:Good_Effect',
-      //  'fear':               'https://www.dandwiki.com/wiki/SRD:Fear_Effect',
-      //  'fire':               'https://www.dandwiki.com/wiki/SRD:Fire_Effect',
-      //  'force':              'https://www.dandwiki.com/wiki/SRD:Force_Effect',
-      //  'language-dependent': 'https://www.dandwiki.com/wiki/SRD:Language-Dependent_Effect',
-      //  'lawful':             'https://www.dandwiki.com/wiki/SRD:Lawful_Effect',
-      //  'light effect':       'https://www.dandwiki.com/wiki/SRD:Light_Effect',
-      //  'mind-affecting':     'https://www.dandwiki.com/wiki/SRD:Mind-Affecting_Effect',
-      //  'sleep':              'https://www.dandwiki.com/wiki/SRD:Sleep_Effect',
-      //  'sonic':              'https://www.dandwiki.com/wiki/SRD:Sonic_Effect',
-      //  'water':              'https://www.dandwiki.com/wiki/SRD:Water_Effect'
-      //},
       spell_ranges: {
         '_close_':    'Close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.)',
         '_medium_':   'Medium ([[100+(10*[[?{Casting Level}]])]] ft.)',
@@ -7536,6 +7464,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'create greater undead':           { recharge: 'General' },
         'create undead':                   { recharge: 'General' },
         'create water':                    { recharge: '30 minutes' },
+        'creeping doom':                   { recharge: 'General' },
+        'crown of glory':                  { recharge: 'General' },
         'crushing despair':                { recharge: 'General' },
         'crushing hand':                   { recharge: 'General' },
         'cure critical wounds':            { recharge: 'General' },
@@ -7756,7 +7686,24 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'locate creature':                 { recharge: '4 hours' },
         'locate object':                   { recharge: '30 minutes' },
         'longstrider':                     { recharge: '24 hours' },
-        'lullaby':                         { recharge: 'General' }
+        'lullaby':                         { recharge: 'General' },
+        'maddening scream':                { recharge: 'General' },
+        'mage armor':                      { recharge: '6 hours' },
+        'mage hand':                       { recharge: 'General' },
+        'mage\'s disjunction':             { recharge: 'General' },
+        'mage\'s faithful hound':          { recharge: '6 hours' },
+        'mage\'s lucubration':             { recharge: 'Prohibited' },
+        'mage\'s magnificent mansion':     { recharge: '6 hours' },
+        'mage\'s private sanctum':         { recharge: '24 hours' },
+        'mage\'s sword':                   { recharge: 'General' },
+        'magic aura':                      { recharge: '24 hours' },
+        'magic circle against chaos':      { recharge: '4 hours' },
+        'magic circle against evil':       { recharge: '4 hours' },
+        'magic circle against good':       { recharge: '4 hours' },
+        'magic circle against law':        { recharge: '4 hours' },
+        'magic fang':                      { recharge: '5 minutes' },
+        'magic jar':                       { recharge: 'General' },
+        //RECHARGES
         //'': { recharge: 'General' },
       }
     },
