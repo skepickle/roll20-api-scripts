@@ -3719,7 +3719,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `A pale glow surrounds and outlines the subjects. Outlined subjects shed light as candles. Outlined creatures do not benefit from the [concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment) normally provided by darkness (though a 2nd-level or higher magical [*darkness*](http://www.d20srd.org/srd/spells/darkness.htm) effect functions normally), [*blur*](http://www.d20srd.org/srd/spells/blur.htm), [*displacement*](https://www.dandwiki.com/wiki/SRD:Displacement), [*invisibility*](https://www.dandwiki.com/wiki/SRD:Invisibility_%28Spell%29, or similar effects. The light is too dim to have any special effect on [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) or dark-dwelling creatures vulnerable to light. The *faerie fire* can be blue, green, or violet, according to your choice at the time of casting. The *faerie fire* does not cause any harm to the objects or creatures thus outlined.`,
+          text:             `A pale glow surrounds and outlines the subjects. Outlined subjects shed light as candles. Outlined creatures do not benefit from the [concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment) normally provided by darkness (though a 2nd-level or higher magical [*darkness*](http://www.d20srd.org/srd/spells/darkness.htm) effect functions normally), [*blur*](http://www.d20srd.org/srd/spells/blur.htm), [*displacement*](https://www.dandwiki.com/wiki/SRD:Displacement), [*invisibility*](http://www.d20srd.org/srd/specialAbilities.htm#invisibility, or similar effects. The light is too dim to have any special effect on [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) or dark-dwelling creatures vulnerable to light. The *faerie fire* can be blue, green, or violet, according to your choice at the time of casting. The *faerie fire* does not cause any harm to the objects or creatures thus outlined.`,
           component_details:null
         },
         'false life': {
@@ -4935,7 +4935,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Lost Doors:* One door per caster level is covered by a [*silent image*](https://www.dandwiki.com/wiki/SRD:Silent_Image) to appear as if it were a plain wall. Saving Throw: Will disbelief (if interacted with). Spell Resistance: No.
                              In addition, you can place your choice of one of the following five magical effects.
                              1. [*Dancing lights*](http://www.d20srd.org/srd/spells/dancingLights.htm) in four corridors. You can designate a simple program that causes the lights to repeat as long as the *guards and wards* spell lasts. Saving Throw: None. Spell Resistance: No.
-                             2. A [*magic mouth*](https://www.dandwiki.com/wiki/SRD:Magic_Mouth) in two places. Saving Throw: None. Spell Resistance: No.
+                             2. A [*magic mouth*](http://www.d20srd.org/srd/spells/magicMouth.htm) in two places. Saving Throw: None. Spell Resistance: No.
                              3. A [*stinking cloud*](https://www.dandwiki.com/wiki/SRD:Stinking_Cloud) in two places. The vapors appear in the places you designate; they return within 10 minutes if dispersed by wind while the *guards and wards* spell lasts. Saving Throw: Fortitude negates; see text for [*stinking cloud*](https://www.dandwiki.com/wiki/SRD:Stinking_Cloud). Spell Resistance: No.
                              4. A [*gust of wind*](https://www.dandwiki.com/wiki/SRD:Gust_of_Wind) in one corridor or room. Saving Throw: Fortitude negates. Spell Resistance: Yes.
                              5. A [*suggestion*](http://www.d20srd.org/srd/spells/suggestion.htm) in one place. You select an area of up to 5 feet square, and any creature who enters or passes through the area receives the *suggestion* mentally. Saving Throw: Will negates. Spell Resistance: Yes.
@@ -5737,7 +5737,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Focus: A soft glove.'
         },
         'invisibility': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Invisibility_%28Spell%29',
+          ref:              'http://www.d20srd.org/srd/specialAbilities.htm#invisibility',
           school:           'Illusion (Glamer)',
           level:            'Asn 2, Brd 2, Sor/Wiz 2, Trickery 2',
           components:       'V, S, M/DF',
@@ -6187,8 +6187,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `Any creature within the area that fails a Will save becomes drowsy and inattentive, taking a -5 \`\`penalty\`\` on Listen and Spot checks and a -2 \`\`penalty\`\` on Will saves against *sleep* effects while the *lullaby* is in effect. *Lullaby* lasts for as long as the caster concentrates, plus up to 1 round per caster level thereafter.`,
           component_details:null
         },
-        // Spells that start with M
         //END REVIEW MARKER
+        // Spells that start with M
         'maddening scream': {
           ref:              'http://www.d20srd.org/srd/divine/spells/maddeningScream.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
@@ -6473,11 +6473,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              If the spell ends while you are in the magic jar, you return to your body (or die if your body is out of range or destroyed). If the spell ends while you are in a host, you return to your body (or die, if it is out of range of your current position), and the soul in the magic jar returns to its body (or dies if it is out of range). Destroying the receptacle ends the spell, and the spell can be dispelled at either the magic jar or at the host’s location.`,
           component_details:'Focus: A gem or crystal worth at least 100 gp.'
         },
-        //REVIEW CATCHUP
         'magic missile': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Magic_Missile',
+          ref:              'http://www.d20srd.org/srd/spells/magicMissile.htm',
           school:           'Evocation [Force]',
-          level:            'Sor/Wiz 1',
+          level:            'Force 2, Sor/Wiz 1, Wmg 1, Wuj 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -6487,14 +6486,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `[[{floor((1+?{Casting Level})/2),5}kl1]] missile(s) of magical energy darts forth from your fingertip and strikes their target(s), each dealing ‹1d4+1› points of force damage.
-                             The missile strikes unerringly, even if the target is in melee combat or has less than total [cover](https://www.dandwiki.com/wiki/SRD:Cover) or total [concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment). Specific parts of a creature can’t be singled out. Inanimate objects are not damaged by the spell.
-                             If you shoot multiple missiles, you can have them strike a single creature or several creatures. A single missile can strike only one creature. You must designate targets before you check for spell resistance or roll damage.`,
-          component_details:null
+                             The missile strikes unerringly, even if the target is in melee combat or has less than [total cover](http://www.d20srd.org/srd/combat/combatModifiers.htm#totalCover) or [total concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment). Specific parts of a creature can’t be singled out. Inanimate objects are not damaged by the spell.
+                             If you shoot multiple missiles, you can have them strike a single creature or several creatures. A single missile can strike only one creature. You must designate targets before you check for spell resistance or roll damage.`
         },
         'magic mouth': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Magic_Mouth',
+          ref:              'http://www.d20srd.org/srd/spells/magicMouth.htm',
           school:           'Illusion (Glamer)',
-          level:            'Brd 1, Sor/Wiz 2',
+          level:            'Brd 1, EmBarachiel 1, Sor/Wiz 2',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6503,16 +6501,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Permanent until discharged',
           saving_throw:     'Will negates (object)',
           spell_resistance: 'Yes (object)',
-          text:             `This spell imbues the chosen object or creature with an enchanted mouth that suddenly appears and speaks its message the next time a specified event occurs. The message, which must be twenty-five or fewer words long, can be in any language known by you and can be delivered over a period of 10 minutes. The mouth cannot utter verbal components, use command words, or activate magical effects. It does, however, move according to the words articulated; if it were placed upon a statue, the mouth of the statue would move and appear to speak. Of course, *magic mouth* can be placed upon a tree, rock, or any other object or creature.
-                             The spell functions when specific conditions are fulfilled according to your command as set in the spell. Commands can be as general or as detailed as desired, although only visual and audible triggers can be used. Triggers react to what appears to be the case. Disguises and illusions can fool them. Normal darkness does not defeat a visual trigger, but magical [*darkness*](http://www.d20srd.org/srd/spells/darkness.htm) or [*invisibility*](https://www.dandwiki.com/wiki/SRD:Invisibility_%28Spell%29) does. Silent movement or magical silence defeats audible triggers. Audible triggers can be keyed to general types of noises or to a specific noise or spoken word. Actions can serve as triggers if they are visible or audible. A *magic mouth* cannot distinguish alignment, level, Hit Dice, or class except by external garb.
-                             The range limit of a trigger is 15 feet per caster level, so a 6th-level caster can command a *magic mouth* to respond to triggers as far as 90 feet away. Regardless of range, the mouth can respond only to visible or audible triggers and actions in line of sight or within hearing distance.
-                             *Magic mouth* can be made permanent with a [*permanency*](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
+          text:             `This spell imbues the chosen object or creature with an enchanted mouth that suddenly appears and speaks its message the next time a specified event occurs. The message, which must be twenty-five or fewer words long, can be in any language known by you and can be delivered over a period of 10 minutes. The mouth cannot utter verbal components, use command words, or activate magical effects. It does, however, move according to the words articulated; if it were placed upon a statue, the mouth of the statue would move and appear to speak. Of course, magic mouth can be placed upon a tree, rock, or any other object or creature.
+                             The spell functions when specific conditions are fulfilled according to your command as set in the spell. Commands can be as general or as detailed as desired, although only visual and audible triggers can be used. Triggers react to what appears to be the case. Disguises and illusions can fool them. Normal darkness does not defeat a visual trigger, but magical ***[darkness](http://www.d20srd.org/srd/spells/darkness.htm)*** or ***[invisibility](http://www.d20srd.org/srd/specialAbilities.htm#invisibility)*** does. Silent movement or magical silence defeats audible triggers. Audible triggers can be keyed to general types of noises or to a specific noise or spoken word. Actions can serve as triggers if they are visible or audible. A magic mouth cannot distinguish alignment, level, Hit Dice, or class except by external garb.
+                             The range limit of a trigger is 15 feet per caster level, so a 6th-level caster can command a magic mouth to respond to triggers as far as 90 feet away. Regardless of range, the mouth can respond only to visible or audible triggers and actions in line of sight or within hearing distance.
+                             Magic mouth can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`,
           component_details:'Material Component: A small bit of honeycomb and jade dust worth 10 gp.'
         },
         'magic stone': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Magic_Stone',
+          ref:              'http://www.d20srd.org/srd/spells/magicStone.htm',
           school:           'Transmutation',
-          level:            'Clr 1, Drd 1, Earth 1',
+          level:            'Arc 1, Artificer 1, Clr 1, Drd 1, Earth 1, Halfling 1, HotD 1, Shu 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -6521,13 +6519,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '30 minutes or until discharged',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
-          text:             `You transmute as many as three pebbles, which can be no larger than sling bullets, so that they strike with great force when thrown or slung. If hurled, they have a range increment of 20 feet. If slung, treat them as sling bullets (range increment 50 feet). The spell gives them a +1 \`\`enhancement bonus\`\` on attack and damage rolls. The user of the stones makes a normal ranged attack. Each stone that hits deals ‹1d6+1› points of damage (including the spell’s enhancement bonus), or ‹2d6+2› points against [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type).`,
-          component_details:null
+          text:             `You transmute as many as three pebbles, which can be no larger than sling bullets, so that they strike with great force when thrown or slung. If hurled, they have a range increment of 20 feet. If slung, treat them as sling bullets (range increment 50 feet). The spell gives them a **+1 enhancement bonus** on attack and damage rolls. The user of the stones makes a normal ranged attack. Each stone that hits deals ‹1d6+1› points of damage (including the spell’s enhancement bonus), or ‹2d6+2› points against undead.`
         },
         'magic vestment': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Magic_Vestment',
+          ref:              'http://www.d20srd.org/srd/spells/magicVestment.htm',
           school:           'Transmutation',
-          level:            'Clr 3, Nobility 3, Strength 3, War 3',
+          level:            'APeace 3, Arc 3, Artificer 1, Clr 3, Halfling 3, KotC 3, Nobility 3, Strength 3, War 3',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -6536,14 +6533,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hour(s)',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
-          text:             `You imbue a suit of armor or a shield with a +[[{?{Casting Level}/4,5}kl1]] \`\`enhancement bonus\`\`.
-                             An outfit of regular clothing counts as armor that grants no AC bonus for the purpose of this spell.`,
-          component_details:null
+          text:             `You imbue a suit of armor or a shield with a **+[[{?{Casting Level}/4,5}kl1]] enhancement bonus**.
+                             An outfit of regular clothing counts as armor that grants no AC bonus for the purpose of this spell.`
         },
         'magic weapon': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Magic_Weapon',
+          ref:              'http://www.d20srd.org/srd/spells/magicWeapon.htm',
           school:           'Transmutation',
-          level:            'Blg 1, Clr 1, Pal 1, Sor/Wiz 1, War 1',
+          level:            'Arc 1, Artificer 1, Blk 1, ChamGwyn 1, Clr 1, Duskblade 1, Dwarf 1, HB 1, HotD 1, KotC 1, Metal 1, Pal 1, Shu 1, Sor/Wiz 1, War 1, Wuj 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -6552,14 +6548,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
-          text:             `*Magic weapon* gives a weapon a +1 \`\`enhancement bonus\`\` on attack and damage rolls. (An enhancement bonus does not stack with a masterwork weapon’s +1 bonus on attack rolls.)
-                             You can’t cast this spell on a natural weapon, such as an unarmed strike (instead, see [*magic fang*](https://www.dandwiki.com/wiki/SRD:Magic_Fang)). A monk’s unarmed strike is considered a weapon, and thus it can be enhanced by this spell.`,
-          component_details:null
+          text:             `Magic weapon gives a weapon a **+1 enhancement bonus** on attack and damage rolls. (An enhancement bonus does not stack with a masterwork weapon’s +1 bonus on attack rolls.)
+                             You can’t cast this spell on a natural weapon, such as an unarmed strike (instead, see ***[magic fang](http://www.d20srd.org/srd/spells/magicFang.htm)***). A monk’s unarmed strike is considered a weapon, and thus it can be enhanced by this spell.`
         },
         'major creation': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Major_Creation',
+          ref:              'http://www.d20srd.org/srd/spells/majorCreation.htm',
           school:           'Conjuration (Creation)',
-          level:            'Creation 5, Sor/Wiz 5',
+          level:            'Adp 5, Arc 5, Artifice 6, Artificer 5, Craft 7, Creation 5, Sor/Wiz 5, Wuj 5',
           components:       'V, S, M',
           casting_time:     '10 minutes',
           range:            '_close_',
@@ -6578,13 +6573,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • *Precious metals* [[20*?{Casting Level}]] minute(s)
                              • **Gems** [[10*?{Casting Level}]] minute(s)
                              • **Rare metal†** [[?{Casting Level}]] round(s)
-                             † Includes adamantine, alchemical silver, and Mithral. You can’t use *major creation* to create a cold iron item.`,
-          component_details:'Material Component: A tiny piece of matter of the same sort of item you plan to create with *major creation*.'
+                             † Includes adamantine, alchemical silver, and Mithral. You can’t use major creation to create a cold iron item.`,
+          component_details:'Material Component: A tiny piece of matter of the same sort of item you plan to create with major creation.'
         },
         'major image': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Major_Image',
+          ref:              'http://www.d20srd.org/srd/spells/majorImage.htm',
           school:           'Illusion (Figment)',
-          level:            'Brd 3, Sor/Wiz 3',
+          level:            'Arc 3, Beguiler 3, Brd 3, Shu 3, Sor/Wiz 3, Wuj 3',
           components:       'V, S, F',
           casting_time:     '1 standard action',
           range:            '_long_',
@@ -6598,25 +6593,23 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Focus: A bit of fleece.'
         },
         'make whole': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Make_Whole',
+          ref:              'http://www.d20srd.org/srd/spells/makeWhole.htm',
           school:           'Transmutation',
-          level:            'Clr 2',
+          level:            'APeace 2, Arc 2, Balance 1, Clr 2, Shu 2',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Target',
-          target:           'One object of up to 10 cu. ft./ level',
+          target:           'One object of up to [[10*?{Casting Level}]] cu. ft.',
           duration:         'Instantaneous',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
-          text:             `*Make whole* completely repairs an object made of any substance, even one with multiple breaks, to be as strong as new, (but not warps, such as might be caused by a [*warp wood*](https://www.dandwiki.com/wiki/SRD:Warp_Wood) spell). It will weld broken metallic objects such as a ring, a chain link, a medallion, or a slender dagger, providing but one break exists.
-                             The spell does not restore the magical abilities of a broken magic item made whole, and it cannot mend broken magic rods, staffs, or wands. The spell does not repair items that have been warped, burned, disintegrated, ground to powder, melted, or vaporized, nor does it affect creatures (including [constructs](https://www.dandwiki.com/wiki/SRD:Construct_Type)).`,
-          component_details:null
+          text:             `This spell functions like ***[mending](http://www.d20srd.org/srd/spells/mending.htm)***, except that make whole completely repairs an object made of any substance, even one with multiple breaks, to be as strong as new. The spell does not restore the magical abilities of a broken magic item made whole, and it cannot mend broken magic rods, staffs, or wands. The spell does not repair items that have been warped, burned, disintegrated, ground to powder, melted, or vaporized, nor does it affect creatures (including constructs).`
         },
         'mark of justice': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mark_of_Justice',
+          ref:              'http://www.d20srd.org/srd/spells/markOfJustice.htm',
           school:           'Necromancy',
-          level:            'Clr 5, Pal 4',
+          level:            'APeace 5, Arc 5, Clr 5, Exalted Arcanist 5, Fate 5, Pal 4, Retribution 5',
           components:       'V, S, DF',
           casting_time:     '10 minutes',
           range:            'Touch',
@@ -6625,15 +6618,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Permanent; see text',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `You draw an indelible mark on the subject and state some behavior on the part of the subject that will activate the mark. When activated, the mark curses the subject. Typically, you designate some sort of criminal behavior that activates the mark, but you can pick any act you please. The effect of the mark is identical with the effect of [bestow curse](http://www.d20srd.org/srd/spells/bestowCurse.htm).
+          text:             `You draw an indelible mark on the subject and state some behavior on the part of the subject that will activate the mark. When activated, the mark curses the subject. Typically, you designate some sort of criminal behavior that activates the mark, but you can pick any act you please. The effect of the mark is identical with the effect of ***[bestow curse](http://www.d20srd.org/srd/spells/bestowCurse.htm)***.
                              Since this spell takes 10 minutes to cast and involves writing on the target, you can cast it only on a creature that is willing or restrained.
-                             Like the effect of [bestow curse](http://www.d20srd.org/srd/spells/bestowCurse.htm), a *mark of justice* cannot be dispelled, but it can be removed with a [*break enchantment*](http://www.d20srd.org/srd/spells/breakEnchantment.htm), [*limited wish*](http://www.d20srd.org/srd/spells/limitedWish.htm), [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm), [*remove curse*](http://www.d20srd.org/srd/spells/bestowCurse.htm), or [*wish*](http://www.d20srd.org/srd/spells/wish.htm) spell. [*Remove curse*](http://www.d20srd.org/srd/spells/bestowCurse.htm) works only if its caster level is equal to or higher than your *mark of justice* caster level. These restrictions apply regardless of whether the mark has activated.`,
-          component_details:null
+                             Like the effect of ***[bestow curse](http://www.d20srd.org/srd/spells/bestowCurse.htm)***, a mark of justice cannot be dispelled, but it can be removed with a ***[break enchantment](http://www.d20srd.org/srd/spells/breakEnchantment.htm)***, ***[limited wish](http://www.d20srd.org/srd/spells/limitedWish.htm)***, ***[miracle](http://www.d20srd.org/srd/spells/miracle.htm)***, ***[remove curse](http://www.d20srd.org/srd/spells/bestowCurse.htm)***, or ***[wish](http://www.d20srd.org/srd/spells/wish.htm)*** spell. ***[Remove curse](http://www.d20srd.org/srd/spells/removeCurse.htm)* works only if its caster level is equal to or higher than your mark of justice caster level. These restrictions apply regardless of whether the mark has activated.`
         },
         'mass bear\'s endurance': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mass_Bear%27s_Endurance',
+          ref:              'http://www.d20srd.org/srd/spells/bearsEnduranceMass.htm',
           school:           'Transmutation',
-          level:            'Clr 6, Drd 6, Sor/Wiz 6',
+          level:            'APeace 6, Arc 6, Clr 6, Drd 6, Endurance 6, Sor/Wiz 6',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6641,15 +6633,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
-          spell_resistance: 'Yes (harmless)',
-          text:             `The affected creature(s) gains greater vitality and stamina. The spell grants the subject(s) a +4 \`\`enhancement bonus\`\` to Constitution, which adds the usual benefits to hit points, Fortitude saves, Constitution checks, and so forth.
-                             Hit points gained by a temporary increase in Constitution score are not temporary hit points. They go away when the subject’s Constitution drops back to normal. They are not lost first as temporary hit points are.`,
-          component_details:null
+          spell_resistance: 'Yes',
+          text:             `The affected creature(s) gains greater vitality and stamina. The spell grants the subject(s) a **+4 enhancement bonus** to Constitution, which adds the usual benefits to hit points, Fortitude saves, Constitution checks, and so forth.
+                             Hit points gained by a temporary increase in Constitution score are not temporary hit points. They go away when the subject’s Constitution drops back to normal. They are not lost first as temporary hit points are.`
         },
         'mass bull\'s strength': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mass_Bull%27s_Strength',
+          ref:              'http://www.d20srd.org/srd/spells/bullsStrengthMass.htm',
           school:           'Transmutation',
-          level:            'Clr 6, Drd 6, Sor/Wiz 6',
+          level:            'Arc 6, Clr 6, Drd 6, Sor/Wiz 6',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6658,13 +6649,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `The subjects becomes stronger. The spell grants a +4 enhancement bonus to Strength, adding the usual benefits to melee attack rolls, melee damage rolls, and other uses of the Strength modifier.`,
+          text:             `The subjects becomes stronger. The spell grants a **+4 enhancement bonus** to Strength, adding the usual benefits to melee attack rolls, melee damage rolls, and other uses of the Strength modifier.`,
           component_details:'Arcane Material Component: A few hairs, or a pinch of dung, from a bull.'
         },
         'mass cat\'s grace': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mass_Cat%27s_Grace',
+          ref:              'http://www.d20srd.org/srd/spells/catsGraceMass.htm',
           school:           'Transmutation',
-          level:            'Brd 6, Drd 6, Sor/Wiz 6',
+          level:            'Arc 6, Brd 6, Celerity 7, Drd 6, Sor/Wiz 6',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6673,13 +6664,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The transmuted creatures becomes more graceful, agile, and coordinated. The spell grants a +4 enhancement bonus to Dexterity, adding the usual benefits to AC, Reflex saves, and other uses of the Dexterity modifier.`,
+          text:             `The transmuted creatures becomes more graceful, agile, and coordinated. The spell grants a **+4 enhancement bonus** to Dexterity, adding the usual benefits to AC, Reflex saves, and other uses of the Dexterity modifier.`,
           component_details:'Material Component: A pinch of cat fur.'
         },
         'mass charm monster': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mass_Charm_Monster',
+          ref:              'http://www.d20srd.org/srd/spells/charmMonsterMass.htm',
           school:           'Enchantment (Charm) [Mind-Affecting]',
-          level:            'Brd 6, Sor/Wiz 8',
+          level:            'Brd 6, Sin-P 9, Sor/Wiz 8, Tyranny 8',
           components:       'V',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6688,15 +6679,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] day(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This charm makes a creature regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a +5 bonus on its saving throw.
+          text:             `This charm makes a creature regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a **+5 bonus** on its saving throw.
                              Mass charm monster affects a number of creatures whose combined HD do not exceed twice your level, or at least one creature regardless of HD. If there are more potential targets than you can affect, you choose them one at a time until you choose a creature with too many HD.
-                             The spell does not enable you to control the charmed creature as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing. Any act by you or your apparent allies that threatens the charmed creature breaks the spell. You must speak the creature language to communicate your commands, or else be good at pantomiming.`,
-          component_details:null
+                             The spell does not enable you to control the charmed creature as if it were an automaton, but it perceives your words and actions in the most favorable way. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An affected creature never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing. Any act by you or your apparent allies that threatens the charmed creature breaks the spell. You must speak the creature language to communicate your commands, or else be good at pantomiming.`
         },
         'mass cure critical wounds': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mass_Cure_Critical_Wounds',
+          ref:              'http://www.d20srd.org/srd/spells/cureCriticalWoundsMass.htm',
           school:           'Conjuration (Healing)',
-          level:            'Clr 8, Drd 9, Healing 8',
+          level:            'APeace 8, Arc 8, Clr 8, Drd 9, Healing 8, Hlr 7',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6706,13 +6696,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will half (harmless) or Will half; see text',
           spell_resistance: 'Yes (harmless) or Yes; see text',
           text:             `You channel positive energy to cure [[4d8+{?{Casting Level},40}kl1]] points of damage in each selected creature.
-                             Like other cure spells, mass cure critical wounds deals damage to undead in its area rather than curing them. Each affected undead may attempt a Will save for half damage.`,
-          component_details:null
+                             Like other cure spells, mass cure critical wounds deals damage to undead in its area rather than curing them. Each affected undead may attempt a Will save for half damage.`
         },
         'mass cure light wounds': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mass_Cure_Light_Wounds',
+          ref:              'http://www.d20srd.org/srd/spells/cureLightWoundsMass.htm',
           school:           'Conjuration (Healing)',
-          level:            'Brd 5, Clr 5, Drd 6, Healing 5',
+          level:            'APeace 5, Arc 5, Brd 5, Clr 5, Drd 6, Healing 5, Hlr 4, Shu 5',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6722,13 +6711,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will half (harmless) or Will half; see text',
           spell_resistance: 'Yes (harmless) or Yes; see text',
           text:             `You channel positive energy to cure [[1d8+{?{Casting Level},25}kl1]] points of damage in each selected creature.
-                             Like other cure spells, mass cure light wounds deals damage to undead in its area rather than curing them. Each affected undead may attempt a Will save for half damage.`,
-          component_details:null
+                             Like other cure spells, mass cure light wounds deals damage to undead in its area rather than curing them. Each affected undead may attempt a Will save for half damage.`
         },
         'mass cure moderate wounds': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mass_Cure_Moderate_Wounds',
+          ref:              'http://www.d20srd.org/srd/spells/cureModerateWoundsMass.htm',
           school:           'Conjuration (Healing)',
-          level:            'Brd 6, Clr 6, Drd 7',
+          level:            'APeace 6, Arc 6, Brd 6, Clr 6, Drd 7, Hlr 5',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6738,13 +6726,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will half (harmless) or Will half; see text',
           spell_resistance: 'Yes (harmless) or Yes; see text',
           text:             `You channel positive energy to cure [[2d8+{?{Casting Level},30}kl1]] points of damage in each selected creature.
-                             Like other cure spells, mass cure moderate wounds deals damage to undead in its area rather than curing them. Each affected undead may attempt a Will save for half damage.`,
-          component_details:null
+                             Like other cure spells, mass cure moderate wounds deals damage to undead in its area rather than curing them. Each affected undead may attempt a Will save for half damage.`
         },
         'mass cure serious wounds': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mass_Cure_Serious_Wounds',
+          ref:              'http://www.d20srd.org/srd/spells/cureSeriousWoundsMass.htm',
           school:           'Conjuration (Healing)',
-          level:            'Clr 7, Drd 8',
+          level:            'APeace 7, Arc 7, Clr 7, Drd 8, Hlr 6',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6754,13 +6741,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will half (harmless) or Will half; see text',
           spell_resistance: 'Yes (harmless) or Yes; see text',
           text:             `You channel positive energy to cure [[3d8+{?{Casting Level},35}kl1]] points of damage in each selected creature.
-                             Like other cure spells, mass cure serious wounds deals damage to undead in its area rather than curing them. Each affected undead may attempt a Will save for half damage.`,
-          component_details:null
+                             Like other cure spells, mass cure serious wounds deals damage to undead in its area rather than curing them. Each affected undead may attempt a Will save for half damage.`
         },
         'mass eagle\'s splendor': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mass_Eagle%27s_Splendor',
+          ref:              'http://www.d20srd.org/srd/spells/eaglesSplendorMass.htm',
           school:           'Transmutation',
-          level:            'Brd 6, Clr 6, Sor/Wiz 6',
+          level:            'APeace 6, Arc 6, Brd 6, Clr 6, Pleasure 5, Sor/Wiz 6',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6769,11 +6755,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The transmuted creatures becomes more poised, articulate, and personally forceful. The spell grants a +4 enhancement bonus to Charisma, adding the usual benefits to Charisma-based skill checks and other uses of the Charisma modifier. Sorcerers and bards (and other spellcasters who rely on Charisma) affected by this spell do not gain any additional bonus spells for the increased Charisma, but the save DCs for spells they cast while under this spell’s effect do increase.`,
+          text:             `The transmuted creatures becomes more poised, articulate, and personally forceful. The spell grants a **+4 enhancement bonus** to Charisma, adding the usual benefits to Charisma-based skill checks and other uses of the Charisma modifier. Sorcerers and bards (and other spellcasters who rely on Charisma) affected by this spell do not gain any additional bonus spells for the increased Charisma, but the save DCs for spells they cast while under this spell’s effect do increase.`,
           component_details:'Arcane Material Component: A few feathers or a pinch of droppings from an eagle.'
         },
         'mass enlarge person': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mass_Enlarge_Person',
+          ref:              'http://www.d20srd.org/srd/spells/enlargePersonMass.htm',
           school:           'Transmutation',
           level:            'Sor/Wiz 4',
           components:       'V, S, M',
@@ -6784,16 +6770,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s) (D)',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
-          text:             `This spell causes instant growth of humanoid creatures, doubling their height and multiplying their weight by 8. This increase changes the creatures' size category to the next larger one. The targets gains a +2 size bonus to Strength, a –2 size penalty to Dexterity (to a minimum of 1), and a –1 penalty on attack rolls and AC due to their increased size.
+          text:             `This spell causes instant growth of humanoid creatures, doubling their height and multiplying their weight by 8. This increase changes the creatures' size category to the next larger one. The targets gains a **+2 size bonus** to Strength, a **-2 size penalty** to Dexterity (to a minimum of 1), and a **-1 penalty** on attack rolls and AC due to their increased size.
                              A humanoid creature whose size increases to Large has a space of 10 feet and a natural reach of 10 feet. This spell does not change the target’s speed.
                              If insufficient room is available for the desired growth, the creature attains the maximum possible size and may make a Strength check (using its increased Strength) to burst any enclosures in the process. If it fails, it is constrained without harm by the materials enclosing it— the spell cannot be used to crush a creature by increasing its size.
                              All equipment worn or carried by a creature is similarly enlarged by the spell. Melee and projectile weapons affected by this spell deal more damage. Other magical properties are not affected by this spell. Any enlarged item that leaves an enlarged creature’s possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage, and projectiles deal damage based on the size of the weapon that fired them. Magical properties of enlarged items are not increased by this spell.
-                             Multiple magical effects that increase size do not stack,.
-                             Mass Enlarge person counters and dispels reduce person.`,
+                             Multiple magical effects that increase size do not stack.
+                             Mass Enlarge person counters and dispels ***[mass reduce person](http://www.d20srd.org/srd/spells/reducePersonMass.htm)***.`,
           component_details:'Material Component: A pinch of powdered iron.'
         },
         'mass fox\'s cunning': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mass_Fox%27s_Cunning',
+          ref:              'http://www.d20srd.org/srd/spells/foxsCunningMass.htm',
           school:           'Transmutation',
           level:            'Brd 6, Sor/Wiz 6',
           components:       'V, S, M/DF',
@@ -6804,14 +6790,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The transmuted creatures becomes smarter. The spell grants a +4 enhancement bonus to Intelligence, adding the usual benefits to Intelligence-based skill checks and other uses of the Intelligence modifier. Wizards (and other spellcasters who rely on Intelligence) affected by this spell do not gain any additional bonus spells for the increased Intelligence, but the save DCs for spells they cast while under this spell’s effect do increase. This spell doesn’t grant extra skill points.`,
+          text:             `The transmuted creatures becomes smarter. The spell grants a **+4 enhancement bonus** to Intelligence, adding the usual benefits to Intelligence-based skill checks and other uses of the Intelligence modifier. Wizards (and other spellcasters who rely on Intelligence) affected by this spell do not gain any additional bonus spells for the increased Intelligence, but the save DCs for spells they cast while under this spell’s effect do increase. This spell doesn’t grant extra skill points.`,
           component_details:'Arcane Material Component: A few hairs, or a pinch of dung, from a fox.'
         },
         // Epic Spell: mass frog
         'mass heal': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mass_Heal',
+          ref:              'http://www.d20srd.org/srd/spells/healMass.htm',
           school:           'Conjuration (Healing)',
-          level:            'Clr 9, Community 9, Healing 9',
+          level:            'APeace 9, Arc 9, Clr 9, Community 9, Healing 9, Hlr 8, Life 9, Shu 8',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -6822,13 +6808,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes (harmless)',
           text:             `Mass heal enables you to channel positive energy into a creature to wipe away injury and afflictions. It immediately ends any and all of the following adverse conditions affecting the Target: ability damage, blinded, confused, dazed, dazzled, deafened, diseased, exhausted, fatigued, feebleminded, insanity, nauseated, sickened, stunned, and poisoned. It also cures 10 hit points of damage per level of the caster, to a maximum of 250 points at 25th level.
                              Mass heal does not remove negative levels, restore permanently drained levels, or restore permanently drained ability score points.
-                             If used against an undead creature, mass heal instead acts like harm.`,
-          component_details:null
+                             If used against an undead creature, mass heal instead acts like ***[harm](http://www.d20srd.org/srd/spells/harm.htm)***.`
         },
         'mass hold monster': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Mass_Hold_Monster',
+          ref:              'http://www.d20srd.org/srd/spells/holdMonsterMass.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Sor/Wiz 9',
+          level:            'Beguiler 9, Sor/Wiz 9',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -6839,151 +6824,152 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `The subject becomes paralyzed and freezes in place. It is aware and breathes normally but cannot take any actions, even speech. Each round on its turn, the subject may attempt a new saving throw to end the effect. (This is a full-round action that does not provoke attacks of opportunity.)
                              A winged creature who is paralyzed cannot flap its wings and falls. A swimmer can’t swim and may drown.`,
-          component_details:'One hard metal bar or rod, which can be as small as a three-penny nail.'
+          component_details:'Arcane Material Component: One hard metal bar or rod, which can be as small as a three-penny nail.'
         },
         'mass hold person': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/holdPersonMass.htm',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Beguiler 7, Sor/Wiz 7',
+          components:       'V, S, F/DF',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Targets',
+          target:           'One or more humanoid creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] round(s) (D); see text',
+          saving_throw:     'Will negates; see text',
+          spell_resistance: 'Yes',
+          text:             `The subjects becomes paralyzed and freezes in place. It is aware and breathes normally but cannot take any actions, even speech. Each round on its turn, the subject may attempt a new saving throw to end the effect. (This is a full-round action that does not provoke attacks of opportunity.)
+                             A winged creature who is paralyzed cannot flap its wings and falls. A swimmer can’t swim and may drown.`,
+          component_details:'Arcane Focus: A small, straight piece of iron.'
         },
         'mass inflict critical wounds': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/inflictCriticalWoundsMass.htm',
+          school:           'Necromancy',
+          level:            'Arc 8, Clr 8',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          duration:         'Instantaneous',
+          saving_throw:     'Will half',
+          spell_resistance: 'Yes',
+          text:             `Negative energy spreads out in all directions from the point of origin, dealing [[4d8+{?{Casting Level},40}kl1]] points of damage to nearby living enemies.
+                             Like other inflict spells, mass inflict light wounds cures undead in its area rather than damaging them. A cleric capable of spontaneously casting inflict spells can also spontaneously cast mass inflict spells.`
         },
         'mass inflict light wounds': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/inflictLightWoundsMass.htm',
+          school:           'Necromancy',
+          level:            'Arc 5, Clr 5, Destruction 5, Undeath 5',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          duration:         'Instantaneous',
+          saving_throw:     'Will half',
+          spell_resistance: 'Yes',
+          text:             `Negative energy spreads out in all directions from the point of origin, dealing [[1d8+{?{Casting Level},25}kl1]] points of damage to nearby living enemies.
+                             Like other inflict spells, mass inflict light wounds cures undead in its area rather than damaging them. A cleric capable of spontaneously casting inflict spells can also spontaneously cast mass inflict spells.`
         },
         'mass inflict moderate wounds': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/inflictModerateWoundsMass.htm',
+          school:           'Necromancy',
+          level:            'Arc 6, Clr 6',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          duration:         'Instantaneous',
+          saving_throw:     'Will half',
+          spell_resistance: 'Yes',
+          text:             `Negative energy spreads out in all directions from the point of origin, dealing [[2d8+{?{Casting Level},30}kl1]] points of damage to nearby living enemies.
+                             Like other inflict spells, mass inflict light wounds cures undead in its area rather than damaging them. A cleric capable of spontaneously casting inflict spells can also spontaneously cast mass inflict spells.`
         },
         'mass inflict serious wounds': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/inflictSeriousWoundsMass.htm',
+          school:           'Necromancy',
+          level:            'Arc 7, Clr 7',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          duration:         'Instantaneous',
+          saving_throw:     'Will half',
+          spell_resistance: 'Yes',
+          text:             `Negative energy spreads out in all directions from the point of origin, dealing [[3d8+{?{Casting Level},35}kl1]] points of damage to nearby living enemies.
+                             Like other inflict spells, mass inflict light wounds cures undead in its area rather than damaging them. A cleric capable of spontaneously casting inflict spells can also spontaneously cast mass inflict spells.`
         },
         'mass invisibility': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/invisibilityMass.htm',
+          school:           'Illusion (Glamer)',
+          level:            'Arc 7, Beguiler 7, Shu 7, Sor/Wiz 7',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_long_',
+          target_type:      'Targets',
+          target:           'Any number of creatures, no two of which can be more than 180 ft. apart',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Will negates (harmless) or Will negates (harmless, object)',
+          spell_resistance: 'Yes (harmless) or Yes (harmless, object)',
+          text:             `This spell functions like [invisibility](http://www.d20srd.org/srd/spells/invisibility.htm), except that the effect is mobile with the group and is broken when anyone in the group attacks. Individuals in the group cannot see each other. The spell is broken for any individual who moves more than 180 feet from the nearest member of the group. (If only two individuals are affected, the one moving away from the other one loses its invisibility. If both are moving away from each other, they both become visible when the distance between them exceeds 180 feet.)`,
+          component_details:'Material Component: An eyelash encased in a bit of gum arabic.'
         },
         'mass owl\'s wisdom': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/owlsWisdomMass.htm',
+          school:           'Transmutation',
+          level:            'APeace 6, Arc 6, Clr 6, Drd 6, Sor/Wiz 6',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes',
+          text:             `The transmuted creatures become wiser. The spell grants a **+4 enhancement bonus** to Wisdom, adding the usual benefit to Wisdom-related skills. Clerics, druids, paladins, and rangers (and other Wisdom-based spellcasters) who receive owl’s wisdom do not gain any additional bonus spells for the increased Wisdom, but the save DCs for their spells increase.`,
+          component_details:'Arcane Material Component: A few feathers, or a pinch of droppings, from an owl.'
         },
         'mass reduce person': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/reducePersonMass.htm',
+          school:           'Transmutation',
+          level:            'Sin-P 5, Sor/Wiz 4',
+          components:       'V, S, M',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] humanoid creature(s), no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Fortitude negates',
+          spell_resistance: 'Yes',
+          text:             `This spell causes instant diminution of humanoid creatures, halving their height, length, and width and dividing their weight by 8. This decrease changes the creatures’ size category to the next smaller one. The targets gain a **+2 size bonus** to Dexterity, a **-2 size penalty** to Strength (to a minimum of 1), and a **+1 bonus** on attack rolls and AC due to its reduced size.
+                             A Small humanoid creature whose size decreases to Tiny has a space of 2½ feet and a natural reach of 0 feet (meaning that it must enter an opponent’s square to attack). A Large humanoid creature whose size decreases to Medium has a space of 5 feet and a natural reach of 5 feet. This spell doesn’t change the target’s speed.
+                             All equipment worn or carried by a creature is similarly reduced by the spell.
+                             Melee and projectile weapons deal less damage. Other magical properties are not affected by this spell. Any reduced item that leaves the reduced creatures’ possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage (projectiles deal damage based on the size of the weapon that fired them).
+                             Multiple magical effects that reduce size do not stack.
+                             Mass reduce person counters and dispels ***[mass enlarge person](http://www.d20srd.org/srd/spells/enlargePersonMass.htm)***.
+                             Mass reduce person can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`,
+          component_details:'Material Component: A pinch of powdered iron.'
         },
+        //REVIEW CATCHUP
         'mass suggestion': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/suggestionMass.htm',
+          school:           'Enchantment (Compulsion) [Language-Dependent, Mind-Affecting]',
+          level:            'Beguiler 6, Brd 5, Domination 7, Dragon 8, Sor/Wiz 6, Wuj 6',
+          components:       'V, M',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] hour(s) or until completed',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `You influence the actions of the target creatures by suggesting a course of activity (limited to a sentence or two). The suggestion must be worded in such a manner as to make the activity sound reasonable. Asking the creatures to do some obviously harmful act automatically negates the effect of the spell.
+                             The suggested course of activity can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do. You can instead specify conditions that will trigger a special activity during the duration. If the condition is not met before the spell duration expires, the activity is not performed.
+                             A very reasonable suggestion causes the save to be made with a penalty (such as -1 or -2).`,
+          component_details:'Material Component: A snake’s tongue and either a bit of honeycomb or a drop of sweet oil.'
         },
         'maze': {
         //// ↲’‹›«»•×†‡ %28Spell%29
@@ -7703,6 +7689,37 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'magic circle against law':        { recharge: '4 hours' },
         'magic fang':                      { recharge: '5 minutes' },
         'magic jar':                       { recharge: 'General' },
+        'magic missile':                   { recharge: 'General' },
+        'magic mouth':                     { recharge: '24 hours' },
+        'magic stone':                     { recharge: '5 minutes' },
+        'magic vestment':                  { recharge: '6 hours' },
+        'magic weapon':                    { recharge: '5 minutes' },
+        'major creation':                  { recharge: 'General' },
+        'major image':                     { recharge: 'General' },
+        'make whole':                      { recharge: '6 hours' },
+        'mark of justice':                 { recharge: 'General' },
+        'mass bear\'s endurance':          { recharge: '30 minutes' },
+        'mass bull\'s strength':           { recharge: '30 minutes' },
+        'mass cat\'s grace':               { recharge: '30 minutes' },
+        'mass charm monster':              { recharge: '1 hour' },
+        'mass cure critical wounds':       { recharge: 'General' },
+        'mass cure light wounds':          { recharge: 'General' },
+        'mass cure moderate wounds':       { recharge: 'General' },
+        'mass cure serious wounds':        { recharge: 'General' },
+        'mass eagle\'s splendor':          { recharge: '30 minutes' },
+        'mass enlarge person':             { recharge: '30 minutes' },
+        'mass fox\'s cunning':             { recharge: '30 minutes' },
+        'mass heal':                       { recharge: 'General' },
+        'mass hold monster':               { recharge: 'General' },
+        'mass hold person':                { recharge: 'General' },
+        'mass inflict critical wounds':    { recharge: 'General' },
+        'mass inflict light wounds':       { recharge: 'General' },
+        'mass inflict moderate wounds':    { recharge: 'General' },
+        'mass inflict serious wounds':     { recharge: 'General' },
+        'mass invisibility':               { recharge: '30 minutes' },
+        'mass owl\'s wisdom':              { recharge: '30 minutes' },
+        'mass reduce person':              { recharge: '30 minutes' },
+        'mass suggestion':                 { recharge: '30 minutes' },
         //RECHARGES
         //'': { recharge: 'General' },
       }
