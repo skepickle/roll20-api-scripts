@@ -6953,7 +6953,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Mass reduce person can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`,
           component_details:'Material Component: A pinch of powdered iron.'
         },
-        //REVIEW CATCHUP
         'mass suggestion': {
           ref:              'http://www.d20srd.org/srd/spells/suggestionMass.htm',
           school:           'Enchantment (Compulsion) [Language-Dependent, Mind-Affecting]',
@@ -6972,328 +6971,339 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: A snake’s tongue and either a bit of honeycomb or a drop of sweet oil.'
         },
         'maze': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/maze.htm',
+          school:           'Conjuration (Teleportation)',
+          level:            'Sor/Wiz 8',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'See text',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `You banish the subject into an extradimensional labyrinth of force planes. Each round on its turn, it may attempt a DC 20 Intelligence check to escape the labyrinth as a full-round action. If the subject doesn’t escape, the maze disappears after 10 minutes, forcing the subject to leave.
+                             On escaping or leaving the maze, the subject reappears where it had been when the maze spell was cast. If this location is filled with a solid object, the subject appears in the nearest open space. Spells and abilities that move a creature within a plane, such as ***[teleport](http://www.d20srd.org/srd/spells/teleport.htm)*** and ***[dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm)***, do not help a creature escape a maze spell, although a ***[plane shift](http://www.d20srd.org/srd/spells/planeShift.htm)*** spell allows it to exit to whatever plane is designated in that spell. Minotaurs are not affected by this spell.`
         },
         'meld into stone': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/meldIntoStone.htm',
+          school:           'Transmutation [Earth]',
+          level:            'APeace 3, Arc 3, Cavern 3, Clr 3, Drd 3, Shu 3',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          text:             `Meld into stone enables you to meld your body and possessions into a single block of stone. The stone must be large enough to accommodate your body in all three dimensions. When the casting is complete, you and not more than 100 pounds of nonliving gear merge with the stone. If either condition is violated, the spell fails and is wasted.
+                             While in the stone, you remain in contact, however tenuous, with the face of the stone through which you melded. You remain aware of the passage of time and can cast spells on yourself while hiding in the stone. Nothing that goes on outside the stone can be seen, but you can still hear what happens around you. Minor physical damage to the stone does not harm you, but its partial destruction (to the extent that you no longer fit within it) expels you and deals you ‹5d6|[[5d6]] points of damage› points of damage. The stone’s complete destruction expels you and slays you instantly unless you make a DC 18 Fortitude save.
+                             Any time before the duration expires, you can step out of the stone through the surface that you entered. If the spell’s duration expires or the effect is dispelled before you voluntarily exit the stone, you are violently expelled and take ‹5d6|[[5d6]] points of damage› points of damage.
+                             The following spells harm you if cast upon the stone that you are occupying: ***[Stone to flesh](http://www.d20srd.org/srd/spells/stoneToFlesh.htm)*** expels you and deals you ‹5d6|[[5d6]] points of damage› points of damage. ***[Stone shape](http://www.d20srd.org/srd/spells/stoneShape.htm)*** deals you ‹3d6|[[3d6]] points of damage› points of damage but does not expel you. ***[Transmute rock to mud](http://www.d20srd.org/srd/spells/transmuteRockToMud.htm)*** expels you and then slays you instantly unless you make a DC 18 Fortitude save, in which case you are merely expelled. Finally, ***[passwall](http://www.d20srd.org/srd/spells/passwall.htm)*** expels you without damage.`
         },
         'mending': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/mending.htm',
+          school:           'Transmutation',
+          level:            'Adp 0, APeace 0, Arc 0, Brd 0, Clr 0, Drd 0, Hlr 0, Shu 0, Sor/Wiz 0, Wuj 0',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '10 ft.',
+          target_type:      'Target',
+          target:           'One object of up to 1 lb.',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates (harmless, object)',
+          spell_resistance: 'Yes (harmless, object)',
+          text:             `Mending repairs small breaks or tears in objects (but not warps, such as might be caused by a ***[warp wood](http://www.d20srd.org/srd/spells/warpWood.htm)*** spell). It will weld broken metallic objects such as a ring, a chain link, a medallion, or a slender dagger, providing but one break exists.
+                             Ceramic or wooden objects with multiple breaks can be invisibly rejoined to be as strong as new. A hole in a leather sack or a wineskin is completely healed over by mending. The spell can repair a magic item, but the item’s magical abilities are not restored. The spell cannot mend broken magic rods, staffs, or wands, nor does it affect creatures (including constructs).`
         },
         'mental pinnacle': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/psionic/spells/mentalPinnacle.htm',
+          school:           'Transmutation',
+          level:            'Sor/Wiz 6',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] round(s)',
+          text:             `For a brief time, you achieve the mental dominance of a powerful psion, able to lash out at enemies using only the power of your mind. Your revel in your new mental powers to the point that you disdain using spells, even in the form of effects from magic items. You gain a **+4 enhancement bonus** to Intelligence and Wisdom, [[3*?{Casting Level}]] power points, and access to the following powers.
+                             ***[Mind Thrust](http://www.d20srd.org/srd/psionic/powers/mindThrust.htm)***: Deal ‹1d10|[[1d10]] damage› damage.
+                             ***[Ego Whip](http://www.d20srd.org/srd/psionic/powers/egoWhip.htm)***: Deal ‹1d4|[[1d4]] Cha damage› Cha damage and daze for 1 round.
+                             ***[Psionic Blast](http://www.d20srd.org/srd/psionic/powers/psionicBlast.htm)***: Stun creatures in 30-ft. cone for 1 round.
+                             ***[Id Insinuation](http://www.d20srd.org/srd/psionic/powers/idInsinuation.htm)***: Swift tendrils of thought disrupt and confuse your target.
+                             ***[Psychic Crush](http://www.d20srd.org/srd/psionic/powers/psychicCrush.htm)***: Brutally crush subject’s mental essence, reducing subject to -1 hit points.
+                             You manifest the powers as a psion of your caster level does, creating displays as described in each power’s description. You lose your spellcasting ability, including your ability to use spell trigger or spell completion magic items, just as if those spells were no longer on your class list. For the duration of this spell, you use magic items and psionic items as if you were a psion with only the five powers given above on your class list.
+                             Any unspent power points dissipate when the spell ends.`,
+          component_details:'Material Component: A potion of ***[fox’s cunning](http://www.d20srd.org/srd/spells/foxsCunning.htm)***, which you drink (its effect is overridden by the effect of this spell).'
         },
         'message': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/message.htm',
+          school:           'Transmutation [Language-Dependent]',
+          level:            'Beguiler 0, Brd 0, EmBarachiel 1, Sor/Wiz 0, Trade 1, Wuj 0',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] creature(s)',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You can whisper messages and receive whispered replies with little chance of being overheard. You point your finger at each creature you want to receive the message. When you whisper, the whispered message is audible to all targeted creatures within range. Magical silence, 1 foot of stone, 1 inch of common metal (or a thin sheet of lead), or 3 feet of wood or dirt blocks the spell. The message does not have to travel in a straight line. It can circumvent a barrier if there is an open path between you and the subject, and the path’s entire length lies within the spell’s range. The creatures that receive the message can whisper a reply that you hear. The spell transmits sound, not meaning. It doesn’t transcend language barriers.
+                             *Note:* To speak a message, you must mouth the words and whisper, possibly allowing observers the opportunity to read your lips.`,
+          component_details:'Focus: A short piece of copper wire.'
         },
         'meteor swarm': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/meteorSwarm.htm',
+          school:           'Evocation [Fire]',
+          level:            'Arc 9, Shu 9, Sor/Wiz 9, Wmg 9',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_long_',
+          target_type:      'Area',
+          target:           'Four 40-ft.-radius spreads; see text',
+          duration:         'Instantaneous',
+          saving_throw:     'None or Reflex half; see text',
+          spell_resistance: 'Yes',
+          text:             `Meteor swarm is a very powerful and spectacular spell that is similar to ***[fireball](http://www.d20srd.org/srd/spells/fireball.htm)*** in many aspects. When you cast it, four 2-foot-diameter spheres spring from your outstretched hand and streak in straight lines to the spots you select. The meteor spheres leave a fiery trail of sparks.
+                             If you aim a sphere at a specific creature, you may make a ranged touch attack to strike the target with the meteor. Any creature struck by one of these spheres takes ‹2d6|[[2d6]] points of bludgeoning damage› points of bludgeoning damage (no save) and receives no saving throw against the sphere’s fire damage (see below). If a targeted sphere misses its target, it simply explodes at the nearest corner of the target’s space. You may aim more than one meteor at the same target.
+                             Once a sphere reaches its destination, it explodes in a 40-foot-radius spread, dealing ‹6d6|[[6d6]] points of fire damage› points of fire damage to each creature in the area. If a creature is within the area of more than one sphere, it must save separately against each. (Fire resistance applies to each sphere’s damage individually.)`
         },
         'mind blank': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/mindBlank.htm',
+          school:           'Abjuration',
+          level:            'Arc 8, Beguiler 8, Blg 8, Liberation 8, Meditation 8, Mental 8, Mind 8, Protection 8, Sor/Wiz 8, Trade 8, Wuj 8',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         '24 hours',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The subject is protected from all devices and spells that detect, influence, or read emotions or thoughts. This spell protects against all mind-affecting spells and effects as well as information gathering by divination spells or effects. Mind blank even foils ***[limited wish](http://www.d20srd.org/srd/spells/limitedWish.htm)***, ***[miracle](http://www.d20srd.org/srd/spells/miracle.htm)***, and ***[wish](http://www.d20srd.org/srd/spells/wish.htm)*** spells when they are used in such a way as to affect the subject’s mind or to gain information about it. In the case of scrying that scans an area the creature is in, such as ***[arcane eye](http://www.d20srd.org/srd/spells/arcaneEye.htm)***, the spell works but the creature simply isn’t detected. Scrying attempts that are targeted specifically at the subject do not work at all.`
         },
         'mind fog': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/mindFog.htm',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Beguiler 5, Brd 5, Mental 5, Sor/Wiz 5',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'Fog spreads in 20-ft.-radius, 20 ft. high',
+          duration:         '30 minutes and [[2d6]] rounds; see text',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `Mind fog produces a bank of thin mist that weakens the mental resistance of those caught in it. Creatures in the mind fog take a **-10 competence penalty** on Wisdom checks and Will saves. (A creature that successfully saves against the fog is not affected and need not make further saves even if it remains in the fog.) Affected creatures take the penalty as long as they remain in the fog and for ‹2d6|[[2d6]] rounds› rounds thereafter. The fog is stationary and lasts for 30 minutes (or until dispersed by wind).
+                             A moderate wind (11+ mph) disperses the fog in four rounds; a strong wind (21+ mph) disperses the fog in 1 round.
+                             The fog is thin and does not significantly hamper vision.`
         },
         'minor creation': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/minorCreation.htm',
+          school:           'Conjuration (Creation)',
+          level:            'Adp 4, Arc 4, Artifice 4, Artificer 4, Craft 4, Creation 4, Gnome 4, Sor/Wiz 4, Wuj 4',
+          components:       'V, S, M',
+          casting_time:     '1 minute',
+          range:            '0 ft.',
+          target_type:      'Effect',
+          target:           'Unattended, nonmagical object of nonliving plant matter, up to [[?{Casting Level}]] cu. ft.',
+          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You create a nonmagical, unattended object of nonliving, vegetable matter. The volume of the item created cannot exceed 1 cubic foot per caster level. You must succeed on an appropriate skill check to make a complex item.
+                             Attempting to use any created object as a material component causes the spell to fail.`,
+          component_details:'Material Component: A tiny piece of matter of the same sort of item you plan to create with minor creation.'
         },
         'minor image': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/minorImage.htm',
+          school:           'Illusion (Figment)',
+          level:            'Arc 2, Beguiler 2, Brd 2, Creation 2, Gnome 3, Illusion 2, Shu 2, Sor/Wiz 2, Wuj 2',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            '_long_',
+          target_type:      'Effect',
+          target:           'Visual figment that cannot extend beyond [[4+?{Casting Level}]] 10-ft. cubes (S)',
+          duration:         'Concentration + 2 rounds',
+          saving_throw:     'Will disbelief (if interacted with)',
+          spell_resistance: 'No',
+          text:             `This spell creates the visual illusion of an object, creature, or force, as visualized by you. The illusion does not create smell, texture, or temperature. The illusion may include some minor sounds but not understandable speech. You can move the image within the limits of the size of the effect.`,
+          component_details:'Focus: A bit of fleece.'
         },
         'miracle': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/miracle.htm',
+          school:           'Evocation',
+          level:            'APeace 9, Arc 9, Clr 9, Luck 9',
+          components:       'V, S, XP; see text',
+          casting_time:     '1 standard action',
+          range:            'See text',
+          target_type:      'Target, Effect, or Area',
+          target:           'See text',
+          duration:         'See text',
+          saving_throw:     'See text',
+          spell_resistance: 'Yes',
+          text:             `You don’t so much cast a miracle as request one. You state what you would like to have happen and request that your deity (or the power you pray to for spells) intercede.
+                             A miracle can do any of the following things.
+
+                             • Duplicate any cleric spell of 8th level or lower (including spells to which you have access because of your domains).
+                             • Duplicate any other spell of 7th level or lower.
+                             • Undo the harmful effects of certain spells, such as ***[feeblemind](http://www.d20srd.org/srd/spells/feeblemind.htm)*** or ***[insanity](http://www.d20srd.org/srd/spells/insanity.htm)***.
+                             • Have any effect whose power level is in line with the above effects.
+
+                             If the miracle has any of the above effects, casting it has no experience point cost.
+                             Alternatively, a cleric can make a very powerful request. Casting such a miracle costs the cleric 5,000 XP because of the powerful divine energies involved. Examples of especially powerful miracles of this sort could include the following.
+
+                             • Swinging the tide of a battle in your favor by raising fallen allies to continue fighting.
+                             • Moving you and your allies, with all your and their gear, from one plane to another through planar barriers to a specific locale with no chance of error.
+                             • Protecting a city from an earthquake, volcanic eruption, flood, or other major natural disaster.
+
+                             In any event, a request that is out of line with the deity’s (or alignment’s) nature is refused.
+                             A duplicated spell allows saving throws and spell resistance as normal, but the save DCs are as for a 9th-level spell. When a miracle duplicates a spell that has an XP cost, you must pay that cost. When a miracle spell duplicates a spell with a material component that costs more than 100 gp, you must provide that component.`,
+          component_details:'XP Cost: 5,000 XP (for some uses of the miracle spell; see above).'
         },
         'mirage arcana': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/mirageArcana.htm',
+          school:           'Illusion (Glamer)',
+          level:            'Arc 5, Brd 5, Shu 5, Sor/Wiz 5',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_long_',
+          target_type:      'Area',
+          target:           '[[?{Casting Level}]] 20-ft. cube(s) (S)',
+          duration:         'Concentration + [[?{Casting Level}]] hour(s) (D)',
+          saving_throw:     'Will disbelief (if interacted with)',
+          spell_resistance: 'No',
+          text:             `This spell functions like ***[hallucinatory terrain](http://www.d20srd.org/srd/spells/hallucinatoryTerrain.htm)***, except that it enables you to make any area appear to be something other than it is. The illusion includes audible, visual, tactile, and olfactory elements. Unlike ***[hallucinatory terrain](http://www.d20srd.org/srd/spells/hallucinatoryTerrain.htm)***, the spell can alter the appearance of structures (or add them where none are present). Still, it can’t disguise, conceal, or add creatures (though creatures within the area might hide themselves within the illusion just as they can hide themselves within a real location).`
         },
         'mirror image': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/mirrorImage.htm',
+          school:           'Illusion (Figment)',
+          level:            'Adp 2, Arc 2, Beguiler 2, Brd 2, HB 2, Sor/Wiz 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Personal; see text',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          text:             `Several illusory duplicates of you pop into being, making it difficult for enemies to know which target to attack. The figments stay near you and disappear when struck.
+                             Mirror image creates [[{[[1d4+?{Casting Level}]],8}kl1]] images. These figments separate from you and remain in a cluster, each within 5 feet of at least one other figment or you. You can move into and through a mirror image. When you and the mirror image separate, observers can’t use vision or hearing to tell which one is you and which the image. The figments may also move through each other. The figments mimic your actions, pretending to cast spells when you cast a spell, drink potions when you drink a potion, levitate when you levitate, and so on.
+                             Enemies attempting to attack you or cast spells at you must select from among indistinguishable targets. Generally, roll randomly to see whether the selected target is real or a figment. Any successful attack against an image destroys it. An image’s AC is 10 + your size modifier + your Dex modifier. Figments seem to react normally to area spells (such as looking like they’re burned or dead after being hit by a ***[fireball](http://www.d20srd.org/srd/spells/fireball.htm)***).
+                             While moving, you can merge with and split off from figments so that enemies who have learned which image is real are again confounded.
+                             An attacker must be able to see the images to be fooled. If you are [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) or an attacker shuts his or her eyes, the spell has no effect. (Being unable to see carries the same penalties as being [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded).)`
         },
         'misdirection': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/misdirection.htm',
+          school:           'Illusion (Glamer)',
+          level:            'Asn 2, Beguiler 2, Brd 2, Slayer of Domiel 3, Sor/Wiz 2, Wuj 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature or object, up to a 10-ft. cube in size',
+          duration:         '[[?{Casting Level}]] hour(s)',
+          saving_throw:     'None or Will negates; see text',
+          spell_resistance: 'No',
+          text:             `By means of this spell, you misdirect the information from divination spells that reveal auras (***[detect evil](http://www.d20srd.org/srd/spells/detectEvil.htm)***, ***[detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm)***, ***[discern lies](http://www.d20srd.org/srd/spells/discernLies.htm)***, and the like). On casting the spell, you choose another object within range. For the duration of the spell, the subject of misdirection is detected as if it were the other object. (Neither the subject nor the other object gets a saving throw against this effect.) Detection spells provide information based on the second object rather than on the actual target of the detection unless the caster of the detection succeeds on a Will save. For instance, you could make yourself detect as a tree if one were within range at casting: not evil, not lying, not magical, neutral in alignment, and so forth. This spell does not affect other types of divination magic (***[augury](http://www.d20srd.org/srd/spells/augury.htm)***, ***[detect thoughts](http://www.d20srd.org/srd/spells/detectThoughts.htm)***, ***[clairaudience/clairvoyance](http://www.d20srd.org/srd/spells/clairaudienceClairvoyance.htm)***, and the like).`
         },
         'mislead': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/mislead.htm',
+          school:           'Illusion (Figment, Glamer)',
+          level:            'Arc 7, Beguiler 6, Brd 5, Illusion 6, Luck 6, Shu 7, Sor/Wiz 6, Trickery 6',
+          components:       'S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Target/Effect',
+          target:           'You/one illusory double',
+          duration:         '[[?{Casting Level}]] round(s) (D) and concentration + 3 rounds; see text',
+          saving_throw:     'None or Will disbelief (if interacted with); see text',
+          spell_resistance: 'No',
+          text:             `You become invisible (as ***[greater invisibility](http://www.d20srd.org/srd/spells/invisibilityGreater.htm)***, a glamer), and at the same time, an illusory double of you (as ***[major image](http://www.d20srd.org/srd/spells/majorImage.htm)***, a figment) appears. You are then free to go elsewhere while your double moves away. The double appears within range but thereafter moves as you direct it (which requires concentration beginning on the first round after the casting). You can make the figment appear superimposed perfectly over your own body so that observers don’t notice an image appearing and you turning invisible. You and the figment can then move in different directions. The double moves at your speed and can talk and gesture as if it were real, but it cannot attack or cast spells, though it can pretend to do so.
+                             The illusory double lasts as long as you concentrate upon it, plus 3 additional rounds. After you cease concentration, the illusory double continues to carry out the same activity until the duration expires. The ***[greater invisibility](http://www.d20srd.org/srd/spells/invisibilityGreater.htm)*** lasts for 1 round per level, regardless of concentration.`
         },
         'mnemonic enhancer': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/mnemonicEnhancer.htm',
+          school:           'Transmutation',
+          level:            'Wiz 4, Spell 4',
+          components:       'V, S, M, F',
+          casting_time:     '10 minutes',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Instantaneous',
+          text:             `Casting this spell allows you to prepare additional spells or retain spells recently cast. Pick one of these two versions when the spell is cast.
+                             *Prepare*: You prepare up to three additional levels of spells. A cantrip counts as ½ level for this purpose. You prepare and cast these spells normally.
+                             *Retain*: You retain any spell of 3rd level or lower that you had cast up to 1 round before you started casting the mnemonic enhancer. This restores the previously cast spell to your mind.
+                             In either event, the spell or spells prepared or retained fade after 24 hours (if not cast).`,
+          component_details:`Material Component: A piece of string, and ink consisting of squid secretion with black dragon’s blood.
+                             Focus: An ivory plaque of at least 50 gp value.`
         },
         'modify memory': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/modifyMemory.htm',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Asn 4, Brd 4, Mental 4',
+          components:       'V, S',
+          casting_time:     '1 round; see text',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One living creature',
+          duration:         'Permanent',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `You reach into the subject’s mind and modify as many as 5 minutes of its memories in one of the following ways.
+                             • Eliminate all memory of an event the subject actually experienced. This spell cannot negate charm, ***[geas/quest](http://www.d20srd.org/srd/spells/geasQuest.htm)***, ***[suggestion](http://www.d20srd.org/srd/spells/suggestion.htm)***, or similar spells.
+                             • Allow the subject to recall with perfect clarity an event it actually experienced.
+                             • Change the details of an event the subject actually experienced.
+                             • Implant a memory of an event the subject never experienced.
+                             Casting the spell takes 1 round. If the subject fails to save, you proceed with the spell by spending as much as 5 minutes (a period of time equal to the amount of memory time you want to modify) visualizing the memory you wish to modify in the subject. If your concentration is disturbed before the visualization is complete, or if the subject is ever beyond the spell’s range during this time, the spell is lost.
+                             A modified memory does not necessarily affect the subject’s actions, particularly if it contradicts the creature’s natural inclinations. An illogical modified memory is dismissed by the creature as a bad dream or a memory muddied by too much wine.`
         },
         'moment of prescience': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/momentOfPrescience.htm',
+          school:           'Divination',
+          level:            'Beguiler 8, Competition 8, Destiny 8, Fate 8, Luck 8, Sor/Wiz 8, Time 7',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] hour(s) or until discharged',
+          text:             `This spell grants you a powerful sixth sense in relation to yourself. Once during the spell’s duration, you may choose to use its effect. This spell grants you a **+[[{?{Casting Level},25}kl1]] insight bonus** on any single attack roll, opposed ability or skill check, or saving throw. Alternatively, you can apply the insight bonus to your AC against a single attack (even if flat-footed). Activating the effect doesn’t take an action; you can even activate it on another character’s turn if needed. You must choose to use the moment of prescience before you make the roll it is to modify. Once used, the spell ends.
+                             You can’t have more than one moment of prescience active on you at the same time.`
         },
         // Epic Spell: momento mori
         'mount': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/mount.htm',
+          school:           'Conjuration (Summoning)',
+          level:            'HB 1, Sor/Wiz 1',
+          components:       'V, S, M',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One mount',
+          duration:         '[[2*?{Casting Level}]] hours (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You summon a light horse or a pony (your choice) to serve you as a mount. The steed serves willingly and well. The mount comes with a bit and bridle and a riding saddle.`,
+          component_details:'Material Component: A bit of horse hair.'
         },
         'move earth': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/moveEarth.htm',
+          school:           'Transmutation [Earth]',
+          level:            'Arc 6, Artificer 6, Drd 6, Halfling 6, Shu 6, Sor/Wiz 6, Wuj 6',
+          components:       'V, S, M',
+          casting_time:     'See text',
+          range:            '_long_',
+          target_type:      'Area',
+          target:           'Dirt in an area up to 750 ft. square and up to 10 ft. deep (S)',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `Move earth moves dirt (clay, loam, sand), possibly collapsing embankments, moving hillocks, shifting dunes, and so forth.
+                             However, in no event can rock formations be collapsed or moved. The area to be affected determines the casting time. For every 150-foot square (up to 10 feet deep), casting takes 10 minutes. The maximum area, 750 feet by 750 feet, takes 4 hours and 10 minutes to move.
+                             This spell does not violently break the surface of the ground. Instead, it creates wavelike crests and troughs, with the earth reacting with glacierlike fluidity until the desired result is achieved. Trees, structures, rock formations, and such are mostly unaffected except for changes in elevation and relative topography.
+                             The spell cannot be used for tunneling and is generally too slow to trap or bury creatures. Its primary use is for digging or filling moats or for adjusting terrain contours before a battle.
+                             This spell has no effect on earth creatures.`,
+          component_details:'Material Component: A mixture of soils (clay, loam, and sand) in a small bag, and an iron blade.'
         },
         // Epic Spell: mummy dust
-
 
         // Spells that start with N
         // Spells that start with O
@@ -7720,6 +7730,26 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'mass owl\'s wisdom':              { recharge: '30 minutes' },
         'mass reduce person':              { recharge: '30 minutes' },
         'mass suggestion':                 { recharge: '30 minutes' },
+        'maze':                            { recharge: 'General' },
+        'meld into stone':                 { recharge: '4 hours' },
+        'mending':                         { recharge: '6 hours' },
+        'mental pinnacle':                 { recharge: 'General' },
+        'message':                         { recharge: 'General' },
+        'meteor swarm':                    { recharge: 'General' },
+        'mind blank':                      { recharge: '12 hours' },
+        'mind fog':                        { recharge: '6 hours' },
+        'minor creation':                  { recharge: '6 hours' },
+        'minor image':                     { recharge: '12 hours' },
+        'miracle':                         { recharge: 'General' },
+        'mirage arcana':                   { recharge: 'General' },
+        'mirror image':                    { recharge: '30 minutes' },
+        'misdirection':                    { recharge: '6 hours' },
+        'mislead':                         { recharge: 'General' },
+        'mnemonic enhancer':               { recharge: 'General' },
+        'modify memory':                   { recharge: 'General' },
+        'moment of prescience':            { recahrge: '6 hours' },
+        'mount':                           { recharge: '6 hours' },
+        'move earth':                      { recharge: '1 hour' },
         //RECHARGES
         //'': { recharge: 'General' },
       }
