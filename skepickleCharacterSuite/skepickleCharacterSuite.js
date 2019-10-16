@@ -809,7 +809,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s)',
           saving_throw:     'None',
           spell_resistance: 'Yes (harmless)',
-          text:             `Barkskin toughens a creature’s skin. The effect grants a **+[[2+{floor({(?{Casting Level}-3)/3,0}kh1),3}kl1]] enhancement bonus** to the creature’s existing natural armor bonus.
+          text:             `Barkskin toughens a creature’s skin. The effect grants a **+[[2+{[[floor({(?{Casting Level}-3)/3,0}kh1)]],3}kl1]] enhancement bonus** to the creature’s existing natural armor bonus.
                              The enhancement bonus provided by barkskin stacks with the target’s natural armor bonus, but not with other enhancement bonuses to natural armor. A creature without natural armor has an effective natural armor bonus of +0.`
         },
         'bear\'s endurance': {
@@ -3414,7 +3414,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
           text:             `The transmuted creature becomes more poised, articulate, and personally forceful. The spell grants a +4 \`\`enhancement bonus\`\` to Charisma, adding the usual benefits to Charisma-based skill checks and other uses of the Charisma modifier. Sorcerers and bards (and other spellcasters who rely on Charisma) affected by this spell do not gain any additional bonus spells for the increased Charisma, but the save DCs for spells they cast while under this spell’s effect do increase.`,
-          component_details:'Arcane Material Component: A few feathers or a pinch of droppings from an eagle.'
+          component_details:'Arcane Material Component: A few feathers or a pinch of droppings from an eagle.',
+          other_versions:   'Forgotten Realms Campaign Setting on page 68, Tome and Blood on page 87'
         },
         'earthquake': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Earthquake',
@@ -4161,7 +4162,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
           text:             `The transmuted creature becomes smarter. The spell grants a +4 \`\`enhancement bonus\`\` to Intelligence, adding the usual benefits to Intelligence-based skill checks and other uses of the Intelligence modifier. Wizards (and other spellcasters who rely on Intelligence) affected by this spell do not gain any additional bonus spells for the increased Intelligence, but the save DCs for spells they cast while under this spell’s effect do increase. This spell doesn’t grant extra skill points.`,
-          component_details:'Arcane Material Component: A few hairs, or a pinch of dung, from a fox.'
+          component_details:'Arcane Material Component: A few hairs, or a pinch of dung, from a fox.',
+          other_versions:   'Savage Species on page 66, Tome and Blood on page 89'
         },
         'freedom': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Freedom',
@@ -7304,10 +7306,812 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: A mixture of soils (clay, loam, and sand) in a small bag, and an iron blade.'
         },
         // Epic Spell: mummy dust
-
         // Spells that start with N
+        // Epic Spell: nailed to the sky
+        'neutralize poison': {
+          ref:              'http://www.d20srd.org/srd/spells/neutralizePoison.htm',
+          school:           'Conjuration (Healing)',
+          level:            'Adp 3, APeace 4, Arc 4, Brd 4, BVal 3, ChamGwyn 4, Clr 4, Drd 3, Feast 4, Hlr 3, Pal 4, Rgr 3, Shu 4',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature or object of up to [[?{Casting Level}]] cu. ft. touched',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless, object)',
+          spell_resistance: 'Yes (harmless, object)',
+          text:             `You detoxify any sort of venom in the creature or object touched. A poisoned creature suffers no additional effects from the poison, and any temporary effects are ended, but the spell does not reverse instantaneous effects, such as hit point damage, temporary ability damage, or effects that don’t go away on their own.
+                             The creature is immune to any poison it is exposed to during the duration of the spell. Unlike with ***[delay poison](http://www.d20srd.org/srd/spells/delayPoison.htm)***, such effects aren’t postponed until after the duration —the creature need not make any saves against poison effects applied to it during the length of the spell.
+                             This spell can instead neutralize the poison in a poisonous creature or object for the duration of the spell, at the caster’s option.`,
+          component_details:'Arcane Material Component: A bit of charcoal.'
+        },
+        'nightmare': {
+          ref:              'http://www.d20srd.org/srd/spells/nightmare.htm',
+          school:           'Illusion (Phantasm) [Mind-Affecting, Evil]',
+          level:            'Brd 5, Darkness 7, Dream 5, Sor/Wiz 5, Wuj 5',
+          components:       'V, S',
+          casting_time:     '10 minutes',
+          range:            'Unlimited',
+          target_type:      'Target',
+          target:           'One living creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates; see text',
+          spell_resistance: 'Yes',
+          text:             `You send a hideous and unsettling phantasmal vision to a specific creature that you name or otherwise specifically designate.
+                             The nightmare prevents restful sleep and causes [[1d10]] points of damage. The nightmare leaves the subject [fatigued](http://www.d20srd.org/srd/conditionSummary.htm#fatigued) and unable to regain arcane spells for the next 24 hours.
+                             The difficulty of the save depends on how well you know the subject and what sort of physical connection (if any) you have to that creature.
+
+                             • **+10** - Knowledge, None†
+                             • **+5** - Knowledge, Secondhand (you have heard of the subject)
+                             • **+0** - Knowledge, Firsthand (you have met the subject)
+                             • **-5** - Knowledge, Familiar (you know the subject well)
+                             † You must have some sort of connection to a creature you have no knowledge of.
+
+                             • **-2** - Connection, Likeness or picture
+                             • **-4** - Connection, Possession or garment
+                             • **-10** - Connection, Body part, lock of hair, bit of nail, etc.
+
+                             ***[Dispel evil](http://www.d20srd.org/srd/spells/dispelEvil.htm)*** cast on the subject while you are casting the spell dispels the nightmare and causes you to be [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for 10 minutes per caster level of the ***[dispel evil](http://www.d20srd.org/srd/spells/dispelEvil.htm)***.
+                             If the recipient is awake when the spell begins, you can choose to cease casting (ending the spell) or to enter a trance until the recipient goes to sleep, whereupon you become alert again and complete the casting. If you are disturbed during the trance, you must succeed on a Concentration check as if you were in the midst of casting a spell or the spell ends.
+                             If you choose to enter a trance, you are not aware of your surroundings or the activities around you while in the trance.
+                             You are defenseless, both physically and mentally, while in the trance. (You always fail any saving throw, for example.)
+                             Creatures who don’t sleep (such as elves, but not half-elves) or dream are immune to this spell.`
+        },
+        'nondetection': {
+          ref:              'http://www.d20srd.org/srd/spells/nondetection.htm',
+          school:           'Abjuration',
+          level:            'Arc 4, Asn 3, Beguiler 3, BVal 4, HB 3, MH 3, Rgr 4, Slayer of Domiel 3, Sor/Wiz 3, Trickery 3',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature or object touched',
+          duration:         '[[?{Casting Level}]] hour(s)',
+          saving_throw:     'Will negates (harmless, object)',
+          spell_resistance: 'Yes (harmless, object)',
+          text:             `The warded creature or object becomes difficult to detect by divination spells such as ***[clairaudience/clairvoyance](http://www.d20srd.org/srd/spells/clairaudienceClairvoyance.htm)***, ***[locate object](http://www.d20srd.org/srd/spells/locateObject.htm)***, and detect spells. Nondetection also prevents location by such magic items as crystal balls. If a divination is attempted against the warded creature or item, the caster of the divination must succeed on a caster level check (1d20 + caster level) against a DC of 11 + the caster level of the spellcaster who cast nondetection. If you cast nondetection on yourself or on an item currently in your possession, the DC is 15 + your caster level.
+                             If cast on a creature, nondetection wards the creature’s gear as well as the creature itself.`,
+          component_details:'Material Component: A pinch of diamond dust worth 50 gp.'
+        },
         // Spells that start with O
+        'obscure object': {
+          ref:              'http://www.d20srd.org/srd/spells/obscureObject.htm',
+          school:           'Abjuration',
+          level:            'Arc 3, Brd 1, Clr 3, Sor/Wiz 2, Wealth 2',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'One object touched of up to [[100*?{Casting Level}]] lb.',
+          duration:         '8 hours (D)',
+          saving_throw:     'Will negates (object)',
+          spell_resistance: 'Yes (object)',
+          text:             `This spell hides an object from location by divination (scrying) effects, such as the ***[scrying](http://www.d20srd.org/srd/spells/scrying.htm)*** spell or a crystal ball. Such an attempt automatically fails (if the divination is targeted on the object) or fails to perceive the object (if the divination is targeted on a nearby location, object, or person).`,
+          component_details:'Arcane Material Component: A piece of chameleon skin.'
+        },
+        'obscuring mist': {
+          ref:              'http://www.d20srd.org/srd/spells/obscuringMist.htm',
+          school:           'Conjuration (Creation)',
+          level:            'Adp 1, Air 1, APeace 1, Arc 1, Asn 1, Beguiler 1, Clr 1, Darkness 1, Drd 1, Duskblade 1, Shadow 1, Shu 1, Slayer of Domiel 1, Sor/Wiz 1, Water 1, Weather 1, Wuj 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '20 ft.',
+          target_type:      'Effect',
+          target:           'Cloud spreads in 20-ft. radius from you, 20 ft. high',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `A misty vapor arises around you. It is stationary once created. The vapor obscures all sight, including darkvision, beyond 5 feet. A creature 5 feet away has concealment (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker cannot use sight to locate the target).
+                             A moderate wind (11+ mph), such as from a ***[gust of wind](http://www.d20srd.org/srd/spells/gustOfWind.htm)*** spell, disperses the fog in 4 rounds. A strong wind (21+ mph) disperses the fog in 1 round. A ***[fireball](http://www.d20srd.org/srd/spells/fireball.htm)***, ***[flame strike](http://www.d20srd.org/srd/spells/flameStrike.htm)***, or similar spell burns away the fog in the explosive or fiery spell’s area. A ***[wall of fire](http://www.d20srd.org/srd/spells/wallOfFire.htm)*** burns away the fog in the area into which it deals damage.
+                             This spell does not function underwater.`
+        },
+        'open/close': {
+        // ↲’‹›«»•×†‡ %28Spell%29
+          ref:              'http://www.d20srd.org/srd/spells/openClose.htm',
+          school:           'Transmutation',
+          level:            'Beguiler 0, Brd 0, Sor/Wiz 0, Wuj 0',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'Object weighing up to 30 lb. or portal that can be opened or closed',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates (object)',
+          spell_resistance: 'Yes (object)',
+          text:             `You can open or close (your choice) a door, chest, box, window, bag, pouch, bottle, barrel, or other container. If anything resists this activity (such as a bar on a door or a lock on a chest), the spell fails. In addition, the spell can only open and close things weighing 30 pounds or less. Thus, doors, chests, and similar objects sized for enormous creatures may be beyond this spell’s ability to affect.`,
+          component_details:'Focus: A brass key.'
+        },
+        'order\'s wrath': {
+          ref:              'http://www.d20srd.org/srd/spells/ordersWrath.htm',
+          school:           'Evocation [Lawful]',
+          level:            'Law 4',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Area',
+          target:           'Nonlawful creatures within a burst that fills a 30-ft. cube',
+          duration:         'Instantaneous (1 round); see text',
+          saving_throw:     'Will partial; see text',
+          spell_resistance: 'Yes',
+          text:             `You channel lawful power to smite enemies. The power takes the form of a three-dimensional grid of energy. Only chaotic and neutral (not lawful) creatures are harmed by the spell.
+                             The spell deals [[[[{floor(?{Casting Level}/2),5}kl1]]d8]] points of damage to chaotic creatures (or [[[[{?{Casting Level},10}kl1]]d6]] points of damage to chaotic outsiders) and causes them to be [dazed](http://www.d20srd.org/srd/conditionSummary.htm#dazed) for 1 round. A successful Will save reduces the damage to half and negates the daze effect.
+                             The spell deals only half damage to creatures who are neither chaotic nor lawful, and they are not dazed. They can reduce the damage in half again (down to one-quarter of the roll) with a successful Will save.`
+        },
+        // Epic Spell: origin of species: achaierai
+        'overland flight': {
+          ref:              'http://www.d20srd.org/srd/spells/overlandFlight.htm',
+          school:           'Transmutation',
+          level:            'Sor/Wiz 5',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] hour(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `This spell functions like a ***[fly](http://www.d20srd.org/srd/spells/fly.htm)*** spell, except you can fly at a speed of 40 feet (30 feet if wearing medium or heavy armor, or if carrying a medium or heavy load) with average maneuverability. When using this spell for long-distance movement, you can hustle without taking nonlethal damage (a forced march still requires Constitution checks). This means you can cover 64 miles in an eight-hour period of flight (or 48 miles at a speed of 30 feet).`
+        },
+        'owl\'s wisdom': {
+          ref:              'http://www.d20srd.org/srd/spells/owlsWisdom.htm',
+          school:           'Transmutation',
+          level:            'APeace 2, Arc 2, Artificer 2, BVal 2, ChamGwyn 2, Clr 2, Drd 2, Meditation 2, Pal 2, Rgr 2, Sor/Wiz 2',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes',
+          text:             `The transmuted creature becomes wiser. The spell grants a **+4 enhancement bonus** to Wisdom, adding the usual benefit to Wisdom-related skills. Clerics, druids, paladins, and rangers (and other Wisdom-based spellcasters) who receive owl’s wisdom do not gain any additional bonus spells for the increased Wisdom, but the save DCs for their spells increase.`,
+          component_details:'Arcane Material Component: A few feathers, or a pinch of droppings, from an owl.',
+          other_versions:   'Tome and Blood on page 94'
+        },
         // Spells that start with P
+        'pass without trace': {
+          ref:              'http://www.d20srd.org/srd/spells/passWithoutTrace.htm',
+          school:           'Transmutation',
+          level:            'Arc 1, Asn 2, BVal 1, Drd 1, Rgr 1, Shu 1, Slayer of Domiel 2',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] creature(s) touched',
+          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The subject or subjects can move through any type of terrain and leave neither footprints nor scent. Tracking the subjects is impossible by nonmagical means.`
+        },
+        'passwall': {
+          ref:              'http://www.d20srd.org/srd/spells/passwall.htm',
+          school:           'Transmutation',
+          level:            'Arc 5, Cavern 5, Shu 5, Sor/Wiz 5, Wuj 5',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Effect',
+          target:           '5 ft. by 8 ft. opening, [[10+(5*floor([[{[[{[[?{Casting Level}-9]],0}kh1]],9}kl1]]/3))]] ft. deep',
+          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You create a passage through wooden, plaster, or stone walls, but not through metal or other harder materials. The passage is 10 feet deep plus an additional 5 feet deep per three caster levels above 9th (15 feet at 12th, 20 feet at 15th, and a maximum of 25 feet deep at 18th level). If the wall’s thickness is more than the depth of the passage created, then a single passwall simply makes a niche or short tunnel. Several passwall spells can then form a continuing passage to breach very thick walls. When passwall ends, creatures within the passage are ejected out the nearest exit. If someone dispels the passwall or you dismiss it, creatures in the passage are ejected out the far exit, if there is one, or out the sole exit if there is only one.`,
+          component_details:'Material Component: A pinch of sesame seeds.'
+        },
+        //Epic Spell: peripety
+        'permanency': {
+        // ↲’‹›«»•×†‡ %28Spell%29
+          ref:              'http://www.d20srd.org/srd/spells/permanency.htm',
+          school:           'Universal',
+          level:            'Sor/Wiz 5, Time 5, Wuj 5',
+          components:       'V, S, XP',
+          casting_time:     '2 rounds',
+          range:            'See text',
+          target_type:      'Target, Effect, or Area',
+          target:           'See text',
+          duration:         'Permanent; see text',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell makes certain other spells permanent.
+                             Depending on the spell, you must be of a minimum caster level and must expend a number of XP.
+                             You can make the following spells permanent in regard to yourself.
+
+`,
+          component_details:'XP Cost: See tables above.'
+        },
+        'permanent image': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'persistent image': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        //Epic Spell: pestilence
+        'phantasmal killer': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'phantom steed': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'phantom trap': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'phase door': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'planar ally': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'planar binding': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'plane shift': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'plant growth': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'poison': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'polar ray': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'polymorph': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'polymorph any object': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'power word blind': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'power word kill': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'power word stun': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'prayer': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'prestidigitation': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'prismatic sphere': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'prismatic spray': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'prismatic wall': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'probe thoughts': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              'http://www.d20srd.org/srd/psionic/spells/probeThoughts.htm',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'produce flame': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'programmed image': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'project image': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'protection from arrows': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'protection from chaos': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'protection from energy': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'protection from evil': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'protection from good': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'protection from law': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'protection from spells': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'prying eyes': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'psychic turmoil': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              'http://www.d20srd.org/srd/psionic/spells/psychicTurmoil.htm',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'purify food and drink': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'pyrotechnics': {
+        //// ↲’‹›«»•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
         // Spells that start with Q
         // Spells that start with R
         // Spells that start with S
@@ -7750,6 +8554,55 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'moment of prescience':            { recahrge: '6 hours' },
         'mount':                           { recharge: '6 hours' },
         'move earth':                      { recharge: '1 hour' },
+        'neutralize poison':               { recharge: '1 hour' },
+        'nightmare':                       { recharge: 'General' },
+        'nondetection':                    { recharge: '6 hours' },
+        'obscure object':                  { recharge: '24 hours' },
+        'obscuring mist':                  { recharge: 'General' },
+        'open/close':                      { recharge: 'General' },
+        'order\'s wrath':                  { recharge: 'General' },
+        'overland flight':                 { recharge: '6 hours' },
+        'owl\'s wisdom':                   { recharge: '5 minutes' },
+        'pass without trace':              { recharge: '6 hours' },
+        'passwall':                        { recharge: '6 hours' },
+        'permanency':                      { recharge: '' },
+        'permanent image':                 { recharge: '' },
+        'persistent image':                { recharge: '' },
+        'phantasmal killer':               { recharge: '' },
+        'phantom steed':                   { recharge: '' },
+        'phantom trap':                    { recharge: '' },
+        'phase door':                      { recharge: '' },
+        'planar ally':                     { recharge: '' },
+        'planar binding':                  { recharge: '' },
+        'plane shift':                     { recharge: '' },
+        'plant growth':                    { recharge: '' },
+        'poison':                          { recharge: '' },
+        'polar ray':                       { recharge: '' },
+        'polymorph':                       { recharge: '' },
+        'polymorph any object':            { recharge: '' },
+        'power word blind':                { recharge: '' },
+        'power word kill':                 { recharge: '' },
+        'power word stun':                 { recharge: '' },
+        'prayer':                          { recharge: '' },
+        'prestidigitation':                { recharge: '' },
+        'prismatic sphere':                { recharge: '' },
+        'prismatic spray':                 { recharge: '' },
+        'prismatic wall':                  { recharge: '' },
+        'probe thoughts':                  { recharge: '' },
+        'produce flame':                   { recharge: '' },
+        'programmed image':                { recharge: '' },
+        'project image':                   { recharge: '' },
+        'protection from arrows':          { recharge: '' },
+        'protection from chaos':           { recharge: '' },
+        'protection from energy':          { recharge: '' },
+        'protection from evil':            { recharge: '' },
+        'protection from good':            { recharge: '' },
+        'protection from law':             { recharge: '' },
+        'protection from spells':          { recharge: '' },
+        'prying eyes':                     { recharge: '' },
+        'psychic turmoil':                 { recharge: '' },
+        'purify food and drink':           { recharge: '' },
+        'pyrotechnics':                    { recharge: '' },
         //RECHARGES
         //'': { recharge: 'General' },
       }
