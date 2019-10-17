@@ -8227,7 +8227,508 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: The spell uses one fire source, which is immediately extinguished. A fire so large that it exceeds a 20-foot cube is only partly extinguished. Magical fires are not extinguished, although a fire-based creature used as a source takes 1 point of damage per caster level.'
         },
         // Spells that start with Q
+        'quench': {
+          ref:              'http://www.d20srd.org/srd/spells/quench.htm',
+          school:           'Transmutation',
+          level:            'Arc 3, Drd 3, Shu 4',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Area or Target',
+          target:           '[[?{Casting Level}]] 20-ft. cube(s) (S) or one fire-based magic item',
+          duration:         'Instantaneous',
+          saving_throw:     'None or Will negates (object)',
+          spell_resistance: 'No or Yes (object)',
+          text:             `Quench is often used to put out forest fires and other conflagrations. It extinguishes all nonmagical fires in its area. The spell also dispels any fire spells in its area, though you must succeed on a dispel check ([[1d20+{?{Casting Level},15}kl1]]) against each spell to dispel it. The DC to dispel such spells is 11 + the caster level of the fire spell.
+                             Each elemental (fire) creature within the area of a quench spell takes [[[[{?{Casting Level},15}kl1]]d6]] points of damage (no save allowed).
+                             Alternatively, you can target the spell on a single magic item that creates or controls flame. The item loses all its fire-based magical abilities for [[1d4]] hours unless it succeeds on a Will save. (Artifacts are immune to this effect.)`
+        },
         // Spells that start with R
+        'rage': {
+          ref:              'http://www.d20srd.org/srd/spells/rage.htm',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Brd 2, HB 2, Liberation 3, Madness 3, Sin-W 3, Sor/Wiz 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Targets',
+          target:           '[[floor(?{Casting Level}/3)]] willing living creature(s), no two of which may be more than 30 ft. apart',
+          duration:         'Concentration + [[?{Casting Level}]] round(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `Each affected creature gains a **+2 morale bonus** to Strength and Constitution, a **+1 morale bonus** on Will saves, and a **-2 penalty** to AC. The effect is otherwise identical with a barbarian’s rage except that the subjects aren’t fatigued at the end of the rage.`,
+          other_versions:   'Defenders of the Faith on page 88'
+        },
+        //Epic Spell: rain of fire
+        'rainbow pattern': {
+          ref:              'http://www.d20srd.org/srd/spells/rainbowPattern.htm',
+          school:           'Illusion (Pattern) [Mind-Affecting]',
+          level:            'Beguiler 4, Brd 4, Sor/Wiz 4',
+          components:       'V (Brd only), S, M, F; see text',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'Colorful lights with a 20-ft.-radius spread',
+          duration:         'Concentration + [[?{Casting Level}]] round(s) (D)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `A glowing, rainbow-hued pattern of interweaving colors [fascinates](http://www.d20srd.org/srd/conditionSummary.htm#fascinated) those within it. Rainbow pattern fascinates a maximum of 24 Hit Dice of creatures. Creatures with the fewest HD are affected first. Among creatures with equal HD, those who are closest to the spell’s point of origin are affected first. An affected creature that fails its saves is fascinated by the pattern.
+                             With a simple gesture (a free action), you can make the rainbow pattern move up to 30 feet per round (moving its effective point of origin). All fascinated creatures follow the moving rainbow of light, trying to get or remain within the effect. Fascinated creatures who are restrained and removed from the pattern still try to follow it. If the pattern leads its subjects into a dangerous area each fascinated creature gets a second save. If the view of the lights is completely blocked creatures who can’t see them are no longer affected.
+                             The spell does not affect sightless creatures.`,
+          component_details:`Verbal Component: A wizard or sorcerer need not utter a sound to cast this spell, but a bard must sing, play music, or recite a rhyme as a verbal component.
+                             Material Component: A piece of phosphor.
+                             Focus: A crystal prism.`
+        },
+        'raise dead': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        //Epic Spell: raise island
+        'ray of enfeeblement': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'ray of exhaustion': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'ray of frost': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'read magic': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'reduce animal': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'reduce person': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'refuge': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'regenerate': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'reincarnate': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'remove blindness/deafness': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'remove curse': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'remove disease': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'remove fear': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'remove paralysis': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'repel metal or stone': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'repel vermin': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'repel wood': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'repulsion': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'resilient sphere': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'resistance': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'resist energy': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'restoration': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'resurrection': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'reverse gravity': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'righteous might': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'rope trick': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        //Epic Spell: ruin
+        'rusting grasp': {
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
         // Spells that start with S
         // Spells that start with T
         // Spells that start with U
@@ -8717,6 +9218,37 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'psychic turmoil':                 { recharge: 'General' },
         'purify food and drink':           { recharge: '5 minutes' },
         'pyrotechnics':                    { recharge: 'General' },
+        'quench':                          { recharge: 'General' },
+        'rage':                            { recharge: '5 minutes' },
+        'rainbow pattern':                 { recharge: 'General' },
+        'raise dead':                      { recharge: '' },
+        'ray of enfeeblement':             { recharge: '' },
+        'ray of exhaustion':               { recharge: '' },
+        'ray of frost':                    { recharge: '' },
+        'read magic':                      { recharge: '' },
+        'reduce animal':                   { recharge: '' },
+        'reduce person':                   { recharge: '' },
+        'refuge':                          { recharge: '' },
+        'regenerate':                      { recharge: '' },
+        'reincarnate':                     { recharge: '' },
+        'remove blindness/deafness':       { recharge: '' },
+        'remove curse':                    { recharge: '' },
+        'remove disease':                  { recharge: '' },
+        'remove fear':                     { recharge: '' },
+        'remove paralysis':                { recharge: '' },
+        'repel metal or stone':            { recharge: '' },
+        'repel vermin':                    { recharge: '' },
+        'repel wood':                      { recharge: '' },
+        'repulsion':                       { recharge: '' },
+        'resilient sphere':                { recharge: '' },
+        'resistance':                      { recharge: '' },
+        'resist energy':                   { recharge: '' },
+        'restoration':                     { recharge: '' },
+        'resurrection':                    { recharge: '' },
+        'reverse gravity':                 { recharge: '' },
+        'righteous might':                 { recharge: '' },
+        'rope trick':                      { recharge: '' },
+        'rusting grasp':                   { recharge: '' },
         //RECHARGES
         //'': { recharge: 'General' },
       }
