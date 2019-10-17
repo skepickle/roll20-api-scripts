@@ -1767,7 +1767,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
           text:             `The subject contracts a [disease](http://www.d20srd.org/srd/specialAbilities.htm#disease) selected from the table below, which strikes immediately (no incubation period). The DC noted is for the subsequent saves (use *contagion’s* normal save DC for the initial saving throw).
-                             • **[Disease](http://www.d20srd.org/srd/specialAbilities.htm#disease)** [DC] Damage
+                             ◦ **[Disease](http://www.d20srd.org/srd/specialAbilities.htm#disease)** [DC] Damage
                              • **Blinding sickness** [16] ‹1d4 STR|[[1d4]] STR damage›†
                              • **Cackle fever** [16] ‹1d6 WIS|[[1d6]] WIS damage›
                              • **Filth fever** [12] ‹1d3 DEX + 1d3 CON|[[1d3]] DEX + [[1d3]] CON damage›
@@ -7406,7 +7406,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              This spell does not function underwater.`
         },
         'open/close': {
-        // ↲’‹›«»•×†‡ %28Spell%29
           ref:              'http://www.d20srd.org/srd/spells/openClose.htm',
           school:           'Transmutation',
           level:            'Beguiler 0, Brd 0, Sor/Wiz 0, Wuj 0',
@@ -7500,7 +7499,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         //Epic Spell: peripety
         'permanency': {
-        // ↲’‹›«»•×†‡ %28Spell%29
           ref:              'http://www.d20srd.org/srd/spells/permanency.htm',
           school:           'Universal',
           level:            'Sor/Wiz 5, Time 5, Wuj 5',
@@ -7516,540 +7514,650 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Depending on the spell, you must be of a minimum caster level and must expend a number of XP.
                              You can make the following spells permanent in regard to yourself.
 
-`,
+                             • **Spell**, *Minimum Caster Level*, XP Cost
+                             • **[Arcane sight](http://www.d20srd.org/srd/spells/arcaneSight.htm)**, *11th*, 1,500 XP
+                             • **[Comprehend languages](http://www.d20srd.org/srd/spells/comprehendLanguages.htm)**, *9th*, 500 XP
+                             • **[Darkvision](http://www.d20srd.org/srd/spells/darkvision.htm)**, *10th*, 1,000 XP
+                             • **[Detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm)**, *9th*, 500 XP
+                             • **[Read magic](http://www.d20srd.org/srd/spells/readMagic.htm)**, *9th*, 500 XP
+                             • **[See invisibility](http://www.d20srd.org/srd/spells/seeInvisibility.htm)**, *10th*, 1,000 XP
+                             • **[Tongues](http://www.d20srd.org/srd/spells/tongues.htm)**, *11th*, 1,500 XP
+
+                             You cast the desired spell and then follow it with the permanency spell. You cannot cast these spells on other creatures. This application of permanency can be dispelled only by a caster of higher level than you were when you cast the spell.
+                             In addition to personal use, permanency can be used to make the following spells permanent on yourself, another creature, or an object (as appropriate).
+
+                             • **Spell**, *Minimum Caster Level*, XP Cost
+                             • **[Enlarge person](http://www.d20srd.org/srd/spells/enlargePerson.htm)**, *9th*, 500 XP
+                             • **[Magic fang](http://www.d20srd.org/srd/spells/magicFang.htm)**, *9th*, 500 XP
+                             • **[Magic fang, greater](http://www.d20srd.org/srd/spells/magicFangGreater.htm)**, *11th*, 1,500 XP
+                             • **[Reduce person](http://www.d20srd.org/srd/spells/reducePerson.htm)**, *9th*, 500 XP
+                             • **[Resistance](http://www.d20srd.org/srd/spells/resistance.htm)**, *9th*, 500 XP
+                             • **[Telepathic bond](http://www.d20srd.org/srd/spells/telepathicBond.htm)**†, *13th*, 2,500 XP
+                             † Only bonds two creatures per casting of permanency.
+
+                             Additionally, the following spells can be cast upon objects or areas only and rendered permanent.
+
+                             • **Spell**, *Minimum Caster Level*, XP Cost
+                             • **[Alarm](http://www.d20srd.org/srd/spells/alarm.htm)**, *9th*, 500 XP
+                             • **[Animate objects](http://www.d20srd.org/srd/spells/animateObjects.htm)**, *14th*, 3,000 XP
+                             • **[Dancing lights](http://www.d20srd.org/srd/spells/dancingLights.htm)**, *9th*, 500 XP
+                             • **[Ghost sound](http://www.d20srd.org/srd/spells/ghostSound.htm)**, *9th*, 500 XP
+                             • **[Gust of wind](http://www.d20srd.org/srd/spells/gustOfWind.htm)**, *11th*, 1,500 XP
+                             • **[Invisibility](http://www.d20srd.org/srd/spells/invisibility.htm)**, *10th*, 1,000 XP
+                             • **[Mage’s private sanctum](http://www.d20srd.org/srd/spells/magesPrivateSanctum.htm)**, *13th*, 2,500 XP
+                             • **[Magic mouth](http://www.d20srd.org/srd/spells/magicMouth.htm)**, *10th*, 1,000 XP
+                             • **[Phase door](http://www.d20srd.org/srd/spells/phaseDoor.htm)**, *15th*, 3,500 XP
+                             • **[Prismatic sphere](http://www.d20srd.org/srd/spells/prismaticSphere.htm)**, *17th*, 4,500 XP
+                             • **[Prismatic wall](http://www.d20srd.org/srd/spells/prismaticWall.htm)**, *16th*, 4,000 XP
+                             • **[Shrink item](http://www.d20srd.org/srd/spells/shrinkItem.htm)**, *11th*, 1,500 XP
+                             • **[Solid fog](http://www.d20srd.org/srd/spells/solidFog.htm)**, *12th*, 2,000 XP
+                             • **[Stinking cloud](http://www.d20srd.org/srd/spells/stinkingCloud.htm)**, *11th*, 1,500 XP
+                             • **[Symbol of death](http://www.d20srd.org/srd/spells/symbolOfDeath.htm)**, *16th*, 4,000 XP
+                             • **[Symbol of fear](http://www.d20srd.org/srd/spells/symbolOfFear.htm)**, *14th*, 3,000 XP
+                             • **[Symbol of insanity](http://www.d20srd.org/srd/spells/symbolOfInsanity.htm)**, *16th*, 4,000 XP
+                             • **[Symbol of pain](http://www.d20srd.org/srd/spells/symbolOfPain.htm)**, *13th*, 2,500 XP
+                             • **[Symbol of persuasion](http://www.d20srd.org/srd/spells/symbolOfPersuasion.htm)**, *14th*, 3,000 XP
+                             • **[Symbol of sleep](http://www.d20srd.org/srd/spells/symbolOfSleep.htm)**, *16th*, 4,000 XP
+                             • **[Symbol of stunning](http://www.d20srd.org/srd/spells/symbolOfStunning.htm)**, *15th*, 3,500 XP
+                             • **[Symbol of weakness](http://www.d20srd.org/srd/spells/symbolOfWeakness.htm)**, *15th*, 3,500 XP
+                             • **[Teleportation circle](http://www.d20srd.org/srd/spells/teleportationCircle.htm)**, *17th*, 4,500 XP
+                             • **[Wall of fire](http://www.d20srd.org/srd/spells/wallOfFire.htm)**, *12th*, 2,000 XP
+                             • **[Wall of force](http://www.d20srd.org/srd/spells/wallOfForce.htm)**, *13th*, 2,500 XP
+                             • **[Web](http://www.d20srd.org/srd/spells/web.htm)**, *10th*, 1,000 XP
+
+                             Spells cast on other creatures, objects, or locations (not on you) are vulnerable to dispel magic as normal.`,
           component_details:'XP Cost: See tables above.'
         },
         'permanent image': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/permanentImage.htm',
+          school:           'Illusion (Figment)',
+          level:            'Arc 6, Brd 6, Creation 7, Moon 6, Shu 6, Sor/Wiz 6, Wuj 6',
+          components:       'V, S, M, F',
+          casting_time:     '1 standard action',
+          range:            '_long_',
+          target_type:      'Effect',
+          target:           'Figment that cannot extend beyond a 20-ft. cube + [[?{Casting Level}]] × 10-ft. cube(s) (S)',
+          duration:         'Permanent (D)',
+          saving_throw:     'Will disbelief (if interacted with)',
+          spell_resistance: 'No',
+          text:             `This spell functions like ***[silent image](http://www.d20srd.org/srd/spells/silentImage.htm)***, except that the figment includes visual, auditory, olfactory, and thermal elements, and the spell is permanent. By concentrating, you can move the image within the limits of the range, but it is static while you are not concentrating.`,
+          component_details:`Material Component: Powdered jade worth 100 gp.
+                             Focus: A bit of fleece.`
         },
         'persistent image': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/persistentImage.htm',
+          school:           'Illusion (Figment)',
+          level:            'Arc 5, Brd 5, Illusion 5, Shu 5, Sor/Wiz 5, Wuj 5',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_long_',
+          target_type:      'Effect',
+          target:           'Visual figment that cannot extend beyond [[4+?{Casting Level}]] 10-ft. cubes (S)',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Will disbelief (if interacted with)',
+          spell_resistance: 'No',
+          text:             `This spell functions like ***[silent image](http://www.d20srd.org/srd/spells/silentImage.htm)***, except that the figment includes visual, auditory, olfactory, and thermal components, and the figment follows a script determined by you. The figment follows that script without your having to concentrate on it. The illusion can include intelligible speech if you wish.`,
+          component_details:'Material Component: A bit of fleece and several grains of sand.'
         },
         //Epic Spell: pestilence
         'phantasmal killer': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/phantasmalKiller.htm',
+          school:           'Illusion (Phantasm) [Fear, Mind-Affecting]',
+          level:            'Dream 4, Duskblade 4, HB 4, Illusion 4, Madness 6, MH 4, Sor/Wiz 4, Wmg 4',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One living creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Will disbelief (if interacted with), then Fortitude partial; see text',
+          spell_resistance: 'Yes',
+          text:             `You create a phantasmal image of the most fearsome creature imaginable to the subject simply by forming the fears of the subject’s subconscious mind into something that its conscious mind can visualize: this most horrible beast. Only the spell’s subject can see the phantasmal killer. You see only a vague shape. The target first gets a Will save to recognize the image as unreal. If that save fails, the phantasm touches the subject, and the subject must succeed on a Fortitude save or die from fear. Even if the Fortitude save is successful, the subject takes 3d6 points of damage.
+                             If the subject of a phantasmal killer attack succeeds in disbelieving and is wearing a helm of telepathy, the beast can be turned upon you. You must then disbelieve it or become subject to its deadly fear attack.`
         },
         'phantom steed': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/phantomSteed.htm',
+          school:           'Conjuration (Creation)',
+          level:            'Brd 3, HB 3, Sor/Wiz 3, Spider 3',
+          components:       'V, S',
+          casting_time:     '10 minutes',
+          range:            '0 ft.',
+          target_type:      'Effect',
+          target:           'One quasi-real, horselike creature',
+          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You conjure a Large, quasi-real, horselike creature. The steed can be ridden only by you or by the one person for whom you specifically created the mount. A phantom steed has a black head and body, gray mane and tail, and smoke-colored, insubstantial hooves that make no sound. It has what seems to be a saddle, bit, and bridle. It does not fight, but animals shun it and refuse to attack it.
+                             The mount has an AC of 18 (-1 size, +4 natural armor, +5 Dex) and [[7+?{Casting Level}]] hit points. If it loses all its hit points, the phantom steed disappears. A phantom steed has a speed of [[{[[20*?{Casting Level}]],240}kl1]] feet. It can bear its rider’s weight plus up to [[10*?{Casting Level}]] pounds.
+                             These mounts gain certain powers according to caster level. A mount’s abilities include those of mounts of lower caster levels.
+                             *8th Level*: The mount can ride over sandy, muddy, or even swampy ground without difficulty or decrease in speed.
+                             *10th Level*: The mount can use ***[water walk](http://www.d20srd.org/srd/spells/waterWalk.htm)*** at will (as the spell, no action required to activate this ability).
+                             *12th Level*: The mount can use ***[air walk](http://www.d20srd.org/srd/spells/airWalk.htm)*** at will (as the spell, no action required to activate this ability) for up to 1 round at a time, after which it falls to the ground.
+                             *14th Level*: The mount can fly at its speed (average maneuverability).`
         },
         'phantom trap': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/phantomTrap.htm',
+          school:           'Illusion (Glamer)',
+          level:            'Sor/Wiz 2',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Object touched',
+          duration:         'Permanent (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell makes a lock or other small mechanism seem to be trapped to anyone who can detect traps. You place the spell upon any small mechanism or device, such as a lock, hinge, hasp, cork, cap, or ratchet. Any character able to detect traps, or who uses any spell or device enabling trap detection, is 100% certain a real trap exists. Of course, the effect is illusory and nothing happens if the trap is “sprung”; its primary purpose is to frighten away thieves or make them waste precious time.
+                             If another phantom trap is active within 50 feet when the spell is cast, the casting fails.`,
+          component_details:'Material Component: A piece of iron pyrite touched to the object to be trapped while the object is sprinkled with a special dust requiring 50 gp to prepare.'
         },
         'phase door': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/phaseDoor.htm',
+          school:           'Conjuration (Creation)',
+          level:            'Beguiler 7, Sor/Wiz 7, Travel 8',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            '0 ft.',
+          target_type:      'Effect',
+          target:           'Ethereal 5 ft. by 8 ft. opening, [[10+[[5*floor(?{Casting Level}/3)]]]] ft. deep',
+          duration:         '[[floor(?{Casting Level}/2)]] usage(s)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell creates an [ethereal](http://www.d20srd.org/srd/specialAbilities.htm#etherealness) passage through wooden, plaster, or stone walls, but not other materials. The phase door is invisible and inaccessible to all creatures except you, and only you can use the passage. You disappear when you enter the phase door and appear when you exit. If you desire, you can take one other creature (Medium or smaller) through the door. This counts as two uses of the door. The door does not allow light, sound, or spell effects through it, nor can you see through it without using it. Thus, the spell can provide an escape route, though certain creatures, such as [phase spiders](http://www.d20srd.org/srd/monsters/phaseSpider.htm), can follow with ease. A gem of ***[true seeing](http://www.d20srd.org/srd/spells/trueSeeing.htm)*** or similar magic reveals the presence of a phase door but does not allow its use.
+                             A phase door is subject to ***[dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm)***. If anyone is within the passage when it is dispelled, he is harmlessly ejected just as if he were inside a ***[passwall](http://www.d20srd.org/srd/spells/passwall.htm)*** effect.
+                             You can allow other creatures to use the phase door by setting some triggering condition for the door. Such conditions can be as simple or elaborate as you desire. They can be based on a creature’s name, identity, or alignment, but otherwise must be based on observable actions or qualities. Intangibles such as level, class, Hit Dice, and hit points don’t qualify.
+                             Phase door can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`
         },
         'planar ally': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/planarAlly.htm',
+          school:           'Conjuration (Calling) [see text for ***[lesser planar ally](http://www.d20srd.org/srd/spells/planarAllyLesser.htm)***]',
+          level:            'APeace 6, Arc 6, Clr 6, DrgBlw 6, Exalted Arcanist 6, Hth 6, Summoner 6',
+          components:       'V, S, DF, XP',
+          casting_time:     '10 minutes',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or two called elementals or outsiders, totaling no more than 12 HD, which cannot be more than 30 ft. apart when they appear',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like ***[lesser planar ally](http://www.d20srd.org/srd/spells/planarAllyLesser.htm)***, except you may call a single creature of 12 HD or less, or two creatures of the same kind whose Hit Dice total no more than 12. The creatures agree to help you and request your return payment together.`,
+          component_details:'XP Cost: 250 XP.'
         },
         'planar binding': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/planarBinding.htm',
+          school:           'Conjuration (Calling) [see text for ***[lesser planar binding](http://www.d20srd.org/srd/spells/planarBindingLesser.htm)***]',
+          level:            'Dem 4, Demonic 6, Diabolic 6, Hth 6, Sor/Wiz 6',
+          components:       'V, S',
+          casting_time:     '10 minutes',
+          range:            'Close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.); see text',
+          target_type:      'Targets',
+          target:           'Up to three elementals or outsiders, totaling no more than 12 HD, no two of which can be more than 30 ft. apart when they appear',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates',
+          spell_resistance: 'No and Yes; see text',
+          text:             `This spell functions like ***[lesser planar binding](http://www.d20srd.org/srd/spells/planarBindingLesser.htm)***, except that you may call a single creature of 12 HD or less, or up to three creatures of the same kind whose Hit Dice total no more than 12. Each creature gets a save, makes an independent attempt to escape, and must be individually persuaded to aid you.`
         },
         'plane shift': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/planeShift.htm',
+          school:           'Conjuration (Teleportation)',
+          level:            'APeace 5, Arc 5, Clr 5, Sor/Wiz 7',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched, or up to eight willing creatures joining hands',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `You move yourself or some other creature to another plane of existence or alternate dimension. If several willing persons link hands in a circle, as many as eight can be affected by the plane shift at the same time. Precise accuracy as to a particular arrival location on the intended plane is nigh impossible. From the Material Plane, you can reach any other plane, though you appear [[5d100]] miles from your intended destination.
+                             *Note:* Plane shift transports creatures instantaneously and then ends. The creatures need to find other means if they are to travel back.`,
+          component_details:'Focus: A small, forked metal rod. The size and metal type dictates to which plane of existence or alternate dimension the spell sends the affected creatures.'
         },
         'plant growth': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/plantGrowth.htm',
+          school:           'Transmutation',
+          level:            'Arc 3, Drd 3, Life 3, Plant 3, Rgr 3, Shu 3, Wuj 3',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'See text',
+          target_type:      'Target or Area',
+          target:           'See text',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `Plant growth has different effects depending on the version chosen.
+
+                             **Overgrowth**
+                             This effect causes normal vegetation (grasses, briars, bushes, creepers, thistles, trees, vines) within long range ([[400+(40*[[?{Casting Level}]])]] ft.) to become thick and overgrown. The plants entwine to form a thicket or jungle that creatures must hack or force a way through. Speed drops to 5 feet, or 10 feet for Large or larger creatures. The area must have brush and trees in it for this spell to take effect.
+                             At your option, the area can be a 100-foot-radius circle, a 150-foot-radius semicircle, or a 200-foot-radius quarter circle.
+                             You may designate places within the area that are not affected.
+
+                             **Enrichment**
+                             This effect targets plants within a range of one-half mile, raising their potential productivity over the course of the next year to one-third above normal.
+
+                             Plant growth counters ***[diminish plants](http://www.d20srd.org/srd/spells/diminishPlants.htm)***.
+                             This spell has no effect on plant creatures.`
         },
         'poison': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/poison.htm',
+          school:           'Necromancy',
+          level:            'Arc 4, Asn 4, Blg 3, Blk 4, Clr 4, Drd 3, HB 3, Pestilence 4, Scalykind 4, Slime 3, Wmg 3',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Living creature touched',
+          duration:         'Instantaneous; see text',
+          saving_throw:     'Fortitude negates; see text',
+          spell_resistance: 'Yes',
+          text:             `Calling upon the venomous powers of natural predators, you infect the subject with a horrible poison by making a successful melee touch attack. The poison deals [[1d10]] points of temporary Constitution damage immediately and another ‹1d10|[[1d10]] points of temporary CON damage› points of temporary Constitution damage 1 minute later. Each instance of damage can be negated by a Fortitude save (DC 10 + ½ your caster level + your Wis modifier).`
         },
         'polar ray': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/polarRay.htm',
+          school:           'Evocation [Cold]',
+          level:            'Cold 8, Duskblade 5, Sor/Wiz 8, Wmg 8',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'Ray',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `A blue-white ray of freezing air and ice springs from your hand. You must succeed on a ranged touch attack with the ray to deal damage to a target. The ray deals [[[[{?{Casting Level},25}kl1]]d6]] points of cold damage.`,
+          component_details:'Focus: A small, white ceramic cone or prism.'
         },
         'polymorph': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/polymorph.htm',
+          school:           'Transmutation',
+          level:            'Adp 4, Arc 4, HB 4, Sor/Wiz 4, Transformation 5, Wuj 4',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Willing living creature touched',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like ***[alter self](http://www.d20srd.org/srd/spells/alterSelf.htm)***, except that you change the willing subject into another form of living creature. The new form may be of the same type as the subject or any of the following types: aberration, animal, dragon, fey, giant, humanoid, magical beast, monstrous humanoid, ooze, plant, or vermin. The assumed form can’t have more than [[?{Casting Level}]] Hit Dice (or the subject’s HD, whichever is lower), to a maximum of 15 HD at 15th level. You can’t cause a subject to assume a form smaller than Fine, nor can you cause a subject to assume an incorporeal or gaseous form. The subject’s creature type and subtype (if any) change to match the new form.
+                             Upon changing, the subject regains lost hit points as if it had rested for a night (though this healing does not restore temporary ability damage and provide other benefits of resting; and changing back does not heal the subject further). If slain, the subject reverts to its original form, though it remains dead.
+                             The subject gains the Strength, Dexterity, and Constitution scores of the new form but retains its own Intelligence, Wisdom, and Charisma scores. It also gains all extraordinary special attacks possessed by the form but does not gain the extraordinary special qualities possessed by the new form or any supernatural or spell-like abilities.
+                             Incorporeal or gaseous creatures are immune to being polymorphed, and a creature with the shapechanger subtype can revert to its natural form as a standard action.`,
+          component_details:'Material Component: An empty cocoon.'
         },
         'polymorph any object': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/polymorphAnyObject.htm',
+          school:           'Transmutation',
+          level:            'Commerce 9, Renewal 8, Sor/Wiz 8, Transformation 8, Trickery 8, Wuj 8',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature, or one nonmagical object of up to [[100*?{Casting Level}]] cu. ft.',
+          duration:         'See text',
+          saving_throw:     'Fortitude negates (object); see text',
+          spell_resistance: 'Yes (object)',
+          text:             `This spell functions like ***[polymorph](http://www.d20srd.org/srd/spells/polymorph.htm)***, except that it changes one object or creature into another. The duration of the spell depends on how radical a change is made from the original state to its enchanted state. The duration is determined by using the following guidelines.
+
+                             ◦ Changed Subject Is: Increase to Duration Factor†
+                             • Same kingdom (animal, vegetable, mineral): +5
+                             • Same class (mammals, fungi, metals, etc.): +2
+                             • Same size: +2
+                             • Related (twig is to tree, wolf fur is to wolf, etc.): +2
+                             • Same or lower Intelligence: +2
+                             † Add all that apply. Look up the total on the next table.
+
+                             ◦ Duration Factor **Duration** Example
+                             • 0 **20 minutes** Pebble to human
+                             • 2 **1 hour** Marionette to human
+                             • 4 **3 hours** Human to marionette
+                             • 5 **12 hours** Lizard to manticore
+                             • 6 **2 days** Sheep to wool coat
+                             • 7 **1 week** Shrew to manticore
+                             • 9+ **Permanent** Manticore to shrew
+
+                             Unlike ***[polymorph](http://www.d20srd.org/srd/spells/polymorph.htm)***, polymorph any object does grant the creature the Intelligence score of its new form. If the original form didn’t have a Wisdom or Charisma score, it gains those scores as appropriate for the new form.
+                             Damage taken by the new form can result in the injury or death of the polymorphed creature. In general, damage occurs when the new form is changed through physical force.
+                             A nonmagical object cannot be made into a magic item with this spell. Magic items aren’t affected by this spell.
+                             This spell cannot create material of great intrinsic value, such as copper, silver, gems, silk, gold, platinum, mithral, or adamantine. It also cannot reproduce the special properties of cold iron in order to overcome the damage reduction of certain creatures.
+                             This spell can also be used to duplicate the effects of ***[baleful polymorph](http://www.d20srd.org/srd/spells/balefulPolymorph.htm)***, ***[polymorph](http://www.d20srd.org/srd/spells/polymorph.htm)***, ***[flesh to stone](http://www.d20srd.org/srd/spells/fleshToStone.htm)***, ***[stone to flesh](http://www.d20srd.org/srd/spells/stoneToFlesh.htm)***, ***[transmute mud to rock](http://www.d20srd.org/srd/spells/transmuteMudToRock.htm)***, ***[transmute metal to wood](http://www.d20srd.org/srd/spells/transmuteMetalToWood.htm)***, or ***[transmute rock to mud](http://www.d20srd.org/srd/spells/transmuteRockToMud.htm)***.`,
+          component_details:'Arcane Material Component: Mercury, gum arabic, and smoke.',
+          other_versions:   'Tome and Blood on page 94'
         },
         'power word blind': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/powerWordBlind.htm',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Arc 8, Beguiler 7, Darkness 8, Shu 8, Slime 8, Sor/Wiz 7, War 7, Wuj 7',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature with 200 hp or less',
+          duration:         'See text',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `You utter a single word of power that causes one creature of your choice to become blinded, whether the creature can hear the word or not. The duration of the spell depends on the target’s current hit point total. Any creature that currently has 201 or more hit points is unaffected by power word blind.
+                             ◦ **Hit Points**: Duration
+                             • **50 or less**: Permanent
+                             • **51-100**: [[1d4+1]] minutes
+                             • **101-200**: [[1d4+1]] rounds`
         },
         'power word kill': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/powerWordKill.htm',
+          school:           'Enchantment (Compulsion) [Death, Mind-Affecting]',
+          level:            'Beguiler 9, Darkness 9, Orc 9, Sor/Wiz 9, War 9, Wuj 9',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One living creature with 100 hp or less',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `You utter a single word of power that instantly kills one creature of your choice, whether the creature can hear the word or not. Any creature that currently has 101 or more hit points is unaffected by power word kill.`
         },
         'power word stun': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/powerWordStun.htm',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'Beguiler 8, Dream 8, Sor/Wiz 8, War 8, Wuj 8',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature with 150 hp or less',
+          duration:         'See text',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `You utter a single word of power that instantly causes one creature of your choice to become stunned, whether the creature can hear the word or not. The duration of the spell depends on the target’s current hit point total. Any creature that currently has 151 or more hit points is unaffected by power word stun.
+                             ◦ **Hit Points** Duration
+                             • **50 or less** [[4d4]] rounds
+                             • **51-100** [[2d4]] rounds
+                             • **101-150** [[1d4]] rounds`
         },
         'prayer': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/prayer.htm',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'APeace 3, Arc 3, ChamGwyn 3, Clr 3, Community 3, Competition 3, KotC 3, Orc 3, Pal 3, Shu 3',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '40 ft.',
+          target_type:      'Area',
+          target:           'All allies and foes within a 40-ft.-radius burst centered on you',
+          duration:         '[[?{Casting Level}]] round(s)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `You bring special favor upon yourself and your allies while bringing disfavor to your enemies. You and your each of your allies gain a **+1 luck bonus** on attack rolls, weapon damage rolls, saves, and skill checks, while each of your foes takes a **-1 penalty** on such rolls.`
         },
         'prestidigitation': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/prestidigitation.htm',
+          school:           'Universal',
+          level:            'Brd 0, HB 1, Sor/Wiz 0, Wuj 0',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '10 ft.',
+          target_type:      'Target, Effect, or Area',
+          target:           'See text',
+          duration:         '1 hour',
+          saving_throw:     'See text',
+          spell_resistance: 'No',
+          text:             `Prestidigitations are minor tricks that novice spellcasters use for practice. Once cast, a prestidigitation spell enables you to perform simple magical effects for 1 hour. The effects are minor and have severe limitations. A prestidigitation can slowly lift 1 pound of material. It can color, clean, or soil items in a 1-foot cube each round. It can chill, warm, or flavor 1 pound of nonliving material. It cannot deal damage or affect the concentration of spellcasters. Prestidigitation can create small objects, but they look crude and artificial. The materials created by a prestidigitation spell are extremely fragile, and they cannot be used as tools, weapons, or spell components. Finally, a prestidigitation lacks the power to duplicate any other spell effects. Any actual change to an object (beyond just moving, cleaning, or soiling it) persists only 1 hour.`
         },
         'prismatic sphere': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/prismaticSphere.htm',
+          school:           'Abjuration',
+          level:            'Artifice 9, Family 9, Protection 9, Sor/Wiz 9, Sun 9, Wmg 9',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            '10 ft.',
+          target_type:      'Effect',
+          target:           '10-ft.-radius sphere centered on you',
+          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'See text',
+          spell_resistance: 'See text',
+          text:             `This spell functions like ***[prismatic wall](http://www.d20srd.org/srd/spells/prismaticWall.htm)***, except you conjure up an immobile, opaque globe of shimmering, multicolored light that surrounds you and protects you from all forms of attack. The sphere flashes in all colors of the visible spectrum.
+                             The sphere’s blindness effect on creatures with less than 8 HD lasts [[10*2d4]] minutes.
+                             You can pass into and out of the prismatic sphere and remain near it without harm. However, when you’re inside it, the sphere blocks any attempt to project something through the sphere (including spells). Other creatures that attempt to attack you or pass through suffer the effects of each color, one at a time.
+                             Typically, only the upper hemisphere of the globe will exist, since you are at the center of the sphere, so the lower half is usually excluded by the floor surface you are standing on.
+                             The colors of the sphere have the same effects as the colors of a ***[prismatic wall](http://www.d20srd.org/srd/spells/prismaticWall.htm)***.
+                             Prismatic sphere can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`
         },
         'prismatic spray': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/prismaticSpray.htm',
+          school:           'Evocation',
+          level:            'Sor/Wiz 7, Wmg 7',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped burst',
+          duration:         'Instantaneous',
+          saving_throw:     'See text',
+          spell_resistance: 'Yes',
+          text:             `This spell causes seven shimmering, intertwined, multicolored beams of light to spray from your hand. Each beam has a different power. Creatures in the area of the spell with 8 HD or less are automatically blinded for [[2d4]] rounds. Every creature in the area is randomly struck by one or more beams, which have additional effects.
+                             ◦ 1d8 **Color of Beam** Effect
+                             • 1 **Red** 20 points fire damage (Reflex half)
+                             • 2 **Orange**  40 points acid damage (Reflex half)
+                             • 3 **Yellow**  80 points electricity damage (Reflex half)
+                             • 4 **Green** Poison (Kills; Fortitude partial, take 1d6 points of Con damage instead)
+                             • 5 **Blue**  Turned to stone (Fortitude negates)
+                             • 6 **Indigo**  Insane, as insanity spell (Will negates)
+                             • 7 **Violet**  Sent to another plane (Will negates)
+                             • 8 Struck by two rays; roll twice more, ignoring any “8” results.`
         },
         'prismatic wall': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/prismaticWall.htm',
+          school:           'Abjuration',
+          level:            'Sor/Wiz 8, Wmg 8',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'Wall [[4*?{Casting Level}]] ft. wide, [[2*?{Casting Level}]] ft. high',
+          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'See text',
+          spell_resistance: 'See text',
+          text:             `Prismatic wall creates a vertical, opaque wall—a shimmering, multicolored plane of light that protects you from all forms of attack. The wall flashes with seven colors, each of which has a distinct power and purpose. The wall is immobile, and you can pass through and remain near the wall without harm. However, any other creature with less than 8 HD that is within 20 feet of the wall is blinded for [[2d4]] rounds by the colors if it looks at the wall.
+                             The wall’s maximum proportions are 4 feet wide per caster level and 2 feet high per caster level. A prismatic wall spell cast to materialize in a space occupied by a creature is disrupted, and the spell is wasted.
+                             Each color in the wall has a special effect. The accompanying table shows the seven colors of the wall, the order in which they appear, their effects on creatures trying to attack you or pass through the wall, and the magic needed to negate each color.
+                             The wall can be destroyed, color by color, in consecutive order, by various magical effects; however, the first color must be brought down before the second can be affected, and so on. A rod of cancellation or a ***[mage’s disjunction](http://www.d20srd.org/srd/spells/magesDisjunction.htm)*** spell destroys a prismatic wall, but an ***[antimagic field](http://www.d20srd.org/srd/specialAbilities.htm#antimagic)*** fails to penetrate it. ***[Dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm)*** and ***[greater dispel magic](http://www.d20srd.org/srd/spells/dispelMagicGreater.htm)*** cannot dispel the wall or anything beyond it. Spell resistance is effective against a prismatic wall, but the caster level check must be repeated for each color present.
+                             Prismatic wall can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.
+
+                             ◦ Color **Order** Effect of Color ***Negated By***
+                             • Red **1st** Stops nonmagical ranged weapons. Deals 20 points of fire damage (Reflex half). ***[Cone of cold](http://www.d20srd.org/srd/spells/coneOfCold.htm)***
+                             • Orange  2nd Stops magical ranged weapons. Deals 40 points of acid damage (Reflex half). ***[Gust of wind](http://www.d20srd.org/srd/spells/gustOfWind.htm)***
+                             • Yellow  3rd Stops poisons, gases, and petrification. Deals 80 points of electricity damage (Reflex half). ***[Disintegrate](http://www.d20srd.org/srd/spells/disintegrate.htm)***
+                             • Green 4th Stops breath weapons. Poison (Kills; Fortitude partial for [[1d6]] points of Con damage instead). ***[Passwall](http://www.d20srd.org/srd/spells/passwall.htm)***
+                             • Blue  5th Stops divination and mental attacks. Turned to stone (Fortitude negates). ***[Magic missile](http://www.d20srd.org/srd/spells/magicMissile.htm)***
+                             • Indigo  6th Stops all spells. Will save or become insane (as ***[insanity](http://www.d20srd.org/srd/spells/insanity.htm)*** spell). ***[Daylight](http://www.d20srd.org/srd/spells/daylight.htm)***
+                             • Violet  7th Energy field destroys all objects and effects.† Creatures sent to another plane (Will negates). ***[Dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm)***
+                             † The violet effect makes the special effects of the other six colors redundant, but these six effects are included here because certain magic items can create prismatic effects one color at a time, and spell resistance might render some colors ineffective (see above).`
         },
         'probe thoughts': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              'http://www.d20srd.org/srd/psionic/spells/probeThoughts.htm',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/psionic/spells/probeThoughts.htm',
+          school:           'Divination [Mind-Affecting]',
+          level:            'Mind 6, Sor/Wiz 6',
+          components:       'V, S',
+          casting_time:     '1 minute',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One living creature',
+          duration:         'Concentration',
+          saving_throw:     'Fortitude negates; see text',
+          spell_resistance: 'Yes',
+          text:             `All the subject’s memories and knowledge are accessible to you, ranging from memories deep below the surface to those still easily called to mind. You can learn the answer to one question per round, to the best of the subject’s knowledge. You can also probe a sleeping subject, though the subject may make a Will save against the DC of the probe thoughts spell to wake after each question. Subjects who do not wish to be probed can attempt to move beyond the power’s range, unless somehow hindered. You pose the questions telepathically, and the answers to those questions are imparted directly to your mind. You and the target do not need to speak the same language, though less intelligent creatures may yield up only appropriate visual images in answer to your questions.`,
+          other_versions:   'Complete Divine on page 176, Defenders of the Faith on page 88, Lords of Madness on page 212'
         },
         'produce flame': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/produceFlame.htm',
+          school:           'Evocation [Fire]',
+          level:            'Arc 1, Blg 2, Drd 1, Fire 2, Orc 2, Shu 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '0 ft.',
+          target_type:      'Effect',
+          target:           'Flame in your palm',
+          duration:         '[[?{Casting Leel}]] minute(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `Flames as bright as a torch appear in your open hand. The flames harm neither you nor your equipment.
+                             In addition to providing illumination, the flames can be hurled or used to touch enemies. You can strike an opponent with a melee touch attack, dealing fire damage equal to [[1d6+{?{Casting Level},5}kl1]]. Alternatively, you can hurl the flames up to 120 feet as a thrown weapon. When doing so, you attack with a ranged touch attack (with no range penalty) and deal the same damage as with the melee attack. No sooner do you hurl the flames than a new set appears in your hand. Each attack you make reduces the remaining duration by 1 minute. If an attack reduces the remaining duration to 0 minutes or less, the spell ends after the attack resolves.
+                             This spell does not function underwater.`
         },
         'programmed image': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/programmedImage.htm',
+          school:           'Illusion (Figment)',
+          level:            'Arc 7, Brd 6, Shu 7, Sor/Wiz 6, Wuj 6',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_long_',
+          target_type:      'Effect',
+          target:           'Visual figment that cannot extend beyond a 20-ft. cube + [[?{Casting Level}]] 10-ft. cube(s) (S)',
+          duration:         'Permanent until triggered, then [[?{Casting Level}]] round(s)',
+          saving_throw:     'Will disbelief (if interacted with)',
+          spell_resistance: 'No',
+          text:             `This spell functions like ***[silent image](http://www.d20srd.org/srd/spells/silentImage.htm)***, except that this spell’s figment activates when a specific condition occurs. The figment includes visual, auditory, olfactory, and thermal elements, including intelligible speech.
+                             You set the triggering condition (which may be a special word) when casting the spell. The event that triggers the illusion can be as general or as specific and detailed as desired but must be based on an audible, tactile, olfactory, or visual trigger. The trigger cannot be based on some quality not normally obvious to the senses, such as alignment. (See ***[magic mouth](http://www.d20srd.org/srd/spells/magicMouth.htm)*** for more details about such triggers.)`,
+          component_details:'Material Component: A bit of fleece and jade dust worth 25 gp.'
         },
         'project image': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/projectImage.htm',
+          school:           'Illusion (Shadow)',
+          level:            'Beguiler 7, Brd 6, Illusion 7, Sor/Wiz 7',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'One shadow duplicate',
+          duration:         '[[?{Casting Level}]] round(s) (D)',
+          saving_throw:     'Will disbelief (if interacted with)',
+          spell_resistance: 'No',
+          text:             `You tap energy from the Plane of Shadow to create a quasi-real, illusory version of yourself. The projected image looks, sounds, and smells like you but is intangible. The projected image mimics your actions (including speech) unless you direct it to act differently (which is a move action).
+                             You can see through its eyes and hear through its ears as if you were standing where it is, and during your turn you can switch from using its senses to using your own, or back again, as a free action. While you are using its senses, your body is considered blinded and deafened.
+                             If you desire, any spell you cast whose range is touch or greater can originate from the projected image instead of from you. The projected image can’t cast any spells on itself except for illusion spells. The spells affect other targets normally, despite originating from the projected image.
+                             Objects are affected by the projected image as if they had succeeded on their Will save.
+                             You must maintain line of effect to the projected image at all times. If your line of effect is obstructed, the spell ends. If you use ***[dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm)***, ***[teleport](http://www.d20srd.org/srd/spells/teleport.htm)***, ***[plane shift](http://www.d20srd.org/srd/spells/planeShift.htm)***, or a similar spell that breaks your line of effect, even momentarily, the spell ends.`,
+          component_details:'Material Component: A small replica of you (a doll), which costs 5 gp to create.'
         },
         'protection from arrows': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/protectionFromArrows.htm',
+          school:           'Abjuration',
+          level:            'HB 2, Sor/Wiz 2, Wuj 2',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] hour(s) or until discharged',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The warded creature gains resistance to ranged weapons. The subject gains damage reduction 10/magic against ranged weapons. (This spell doesn’t grant you the ability to damage creatures with similar damage reduction.) Once the spell has prevented a total of [[10*{?{Casting Level},10}kl1]] points of damage, it is discharged.`,
+          component_details:'Focus: A piece of shell from a tortoise or a turtle.'
         },
         'protection from chaos': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/protectionFromChaos.htm',
+          school:           'Abjuration [Lawful]',
+          level:            'Adp 1, Arc 1, Clr 1, EmBarachiel 1, HB 1, Law 1, Pal 1, Sor/Wiz 1, Wuj 1',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'No; see text',
+          text:             `This spell wards a creature from attacks by chaotic creatures, from mental control, and from summoned creatures. It creates a magical barrier around the subject at a distance of 1 foot. The barrier moves with the subject and has three major effects.
+                             First, the subject gains a **+2 deflection bonus** to AC and a **+2 resistance bonus** on saves. Both these bonuses apply against attacks made or effects created by chaotic creatures.
+                             Second, the barrier blocks any attempt to possess the warded creature (by a ***[magic jar](http://www.d20srd.org/srd/spells/magicJar.htm)*** attack, for example) or to exercise mental control over the creature (including enchantment (charm) effects and enchantment (compulsion) effects that grant the caster ongoing control over the subject, such as ***[dominate person](http://www.d20srd.org/srd/spells/dominatePerson.htm)***). The protection does not prevent such effects from targeting the protected creature, but it suppresses the effect for the duration of the protection from chaotic effect. If the protection from chaotic effect ends before the effect granting mental control does, the would-be controller would then be able to mentally command the controlled creature. Likewise, the barrier keeps out a possessing life force but does not expel one if it is in place before the spell is cast. This second effect works regardless of alignment.
+                             Third, the spell prevents bodily contact by summoned creatures. This causes the natural weapon attacks of such creatures to fail and the creatures to recoil if such attacks require touching the warded creature. Lawful summoned creatures are immune to this effect. The protection against contact by summoned creatures ends if the warded creature makes an attack against or tries to force the barrier against the blocked creature. Spell resistance can allow a creature to overcome this protection and touch the warded creature.`,
+          component_details:'Arcane Material Component: A little powdered silver with which you trace a 3-foot-diameter circle on the floor (or ground) around the creature to be warded.'
         },
         'protection from energy': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/protectionFromEnergy.htm',
+          school:           'Abjuration',
+          level:            'APeace 3, Arc 3, Blg 3, Blk 3, Clr 3, Dem 2, Drd 3, Duskblade 3, HB 3, Hoard 3, HotD 3, KotC 3, Luck 3, Protection 3, Rgr 2, Shu 3, Sor/Wiz 3, Vassal of Bahamut 3, Wuj 3',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[10*?{Casting Level}]] minute(s) or until discharged',
+          saving_throw:     'Fortitude negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `Protection from energy grants temporary immunity to the type of energy you specify when you cast it (acid, cold, electricity, fire, or sonic). When the spell absorbs [[12*{?{Casting Level},10}kl1]] points of energy damage, it is discharged.
+                            *Note*: Protection from energy overlaps (and does not stack with) ***[resist energy](http://www.d20srd.org/srd/spells/resistEnergy.htm)***. If a character is warded by protection from energy and ***[resist energy](http://www.d20srd.org/srd/spells/resistEnergy.htm)***, the protection spell absorbs damage until its power is exhausted.`
         },
         'protection from evil': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/protectionFromEvil.htm',
+          school:           'Abjuration [Good]',
+          level:            'Adp 1, APeace 1, Arc 1, ChamGwyn 1, Clr 1, Dem 1, EmBarachiel 1, Exorcism 1, Good 1, HB 1, Hlr 1, KotC 1, Pal 1, Sor/Wiz 1, Vassal of Bahamut 1, Wuj 1',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'No; see text',
+          text:             `This spell wards a creature from attacks by evil creatures, from mental control, and from summoned creatures. It creates a magical barrier around the subject at a distance of 1 foot. The barrier moves with the subject and has three major effects.
+                             First, the subject gains a **+2 deflection bonus** to AC and a **+2 resistance bonus** on saves. Both these bonuses apply against attacks made or effects created by evil creatures.
+                             Second, the barrier blocks any attempt to possess the warded creature (by a ***[magic jar](http://www.d20srd.org/srd/spells/magicJar.htm)*** attack, for example) or to exercise mental control over the creature (including enchantment (charm) effects and enchantment (compulsion) effects that grant the caster ongoing control over the subject, such as ***[dominate person](http://www.d20srd.org/srd/spells/dominatePerson.htm)***). The protection does not prevent such effects from targeting the protected creature, but it suppresses the effect for the duration of the protection from evil effect. If the protection from evil effect ends before the effect granting mental control does, the would-be controller would then be able to mentally command the controlled creature. Likewise, the barrier keeps out a possessing life force but does not expel one if it is in place before the spell is cast. This second effect works regardless of alignment.
+                             Third, the spell prevents bodily contact by summoned creatures. This causes the natural weapon attacks of such creatures to fail and the creatures to recoil if such attacks require touching the warded creature. Good summoned creatures are immune to this effect. The protection against contact by summoned creatures ends if the warded creature makes an attack against or tries to force the barrier against the blocked creature. Spell resistance can allow a creature to overcome this protection and touch the warded creature.`,
+          component_details:'Arcane Material Component: A little powdered silver with which you trace a 3-foot-diameter circle on the floor (or ground) around the creature to be warded.'
         },
         'protection from good': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/protectionFromGood.htm',
+          school:           'Abjuration [Evil]',
+          level:            'Adp 1, Arc 1, Clr 1, Dem 1, Evil 1, HB 1, MH 1, Sor/Wiz 1, Wuj 1',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'No; see text',
+          text:             `This spell wards a creature from attacks by good creatures, from mental control, and from summoned creatures. It creates a magical barrier around the subject at a distance of 1 foot. The barrier moves with the subject and has three major effects.
+                             First, the subject gains a **+2 deflection bonus** to AC and a **+2 resistance bonus** on saves. Both these bonuses apply against attacks made or effects created by good creatures.
+                             Second, the barrier blocks any attempt to possess the warded creature (by a ***[magic jar](http://www.d20srd.org/srd/spells/magicJar.htm)*** attack, for example) or to exercise mental control over the creature (including enchantment (charm) effects and enchantment (compulsion) effects that grant the caster ongoing control over the subject, such as ***[dominate person](http://www.d20srd.org/srd/spells/dominatePerson.htm)***). The protection does not prevent such effects from targeting the protected creature, but it suppresses the effect for the duration of the protection from good effect. If the protection from good effect ends before the effect granting mental control does, the would-be controller would then be able to mentally command the controlled creature. Likewise, the barrier keeps out a possessing life force but does not expel one if it is in place before the spell is cast. This second effect works regardless of alignment.
+                             Third, the spell prevents bodily contact by summoned creatures. This causes the natural weapon attacks of such creatures to fail and the creatures to recoil if such attacks require touching the warded creature. Evil summoned creatures are immune to this effect. The protection against contact by summoned creatures ends if the warded creature makes an attack against or tries to force the barrier against the blocked creature. Spell resistance can allow a creature to overcome this protection and touch the warded creature.`,
+          component_details:'Arcane Material Component: A little powdered silver with which you trace a 3-foot-diameter circle on the floor (or ground) around the creature to be warded.'
         },
         'protection from law': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/protectionFromLaw.htm',
+          school:           'Abjuration [Chaotic]',
+          level:            'Adp 1, Arc 1, Chaos 1, Clr 1, HB 1, Sor/Wiz 1, Wuj 1',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'No; see text',
+          text:             `This spell wards a creature from attacks by lawful creatures, from mental control, and from summoned creatures. It creates a magical barrier around the subject at a distance of 1 foot. The barrier moves with the subject and has three major effects.
+                             First, the subject gains a **+2 deflection bonus** to AC and a **+2 resistance bonus** on saves. Both these bonuses apply against attacks made or effects created by lawful creatures.
+                             Second, the barrier blocks any attempt to possess the warded creature (by a ***[magic jar](http://www.d20srd.org/srd/spells/magicJar.htm)*** attack, for example) or to exercise mental control over the creature (including enchantment (charm) effects and enchantment (compulsion) effects that grant the caster ongoing control over the subject, such as ***[dominate person](http://www.d20srd.org/srd/spells/dominatePerson.htm)***). The protection does not prevent such effects from targeting the protected creature, but it suppresses the effect for the duration of the protection from lawful effect. If the protection from lawful effect ends before the effect granting mental control does, the would-be controller would then be able to mentally command the controlled creature. Likewise, the barrier keeps out a possessing life force but does not expel one if it is in place before the spell is cast. This second effect works regardless of alignment.
+                             Third, the spell prevents bodily contact by summoned creatures. This causes the natural weapon attacks of such creatures to fail and the creatures to recoil if such attacks require touching the warded creature. Chaotic summoned creatures are immune to this effect. The protection against contact by summoned creatures ends if the warded creature makes an attack against or tries to force the barrier against the blocked creature. Spell resistance can allow a creature to overcome this protection and touch the warded creature.`,
+          component_details:'Arcane Material Component: A little powdered silver with which you trace a 3-foot-diameter circle on the floor (or ground) around the creature to be warded.'
         },
         'protection from spells': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/protectionFromSpells.htm',
+          school:           'Abjuration',
+          level:            'Arc 8, Balance 8, Dwarf 8, Family 8, Magic 8, Shu 8, Sor/Wiz 8',
+          components:       'V, S, M, F',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Targets',
+          target:           'Up to [[floor(?{Casting Level}/4)]] creature(s) touched',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The subject(s) gains a **+8 resistance bonus** on saving throws against spells and spell-like abilities (but not against supernatural and extraordinary abilities).`,
+          component_details:`Material Component: A diamond of at least 500 gp value, which must be crushed and sprinkled over the targets.
+                             Focus: One 1,000 gp diamond per creature to be granted the protection. Each subject must carry one such gem for the duration of the spell. If a subject loses the gem, the spell ceases to affect him.`
         },
         'prying eyes': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
+        // ↲’‹›«»◦•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -8065,7 +8173,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  component_details:null
         },
         'psychic turmoil': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
+        // ↲’‹›«»◦•×†‡ %28Spell%29
         //  ref:              'http://www.d20srd.org/srd/psionic/spells/psychicTurmoil.htm',
         //  school:           '',
         //  level:            '',
@@ -8081,7 +8189,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  component_details:null
         },
         'purify food and drink': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
+        // ↲’‹›«»◦•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -8097,7 +8205,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  component_details:null
         },
         'pyrotechnics': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
+        // ↲’‹›«»◦•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -8125,7 +8233,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
 
         //'': {
-        //// ↲’‹›«»•×†‡ %28Spell%29
+        //// ↲’‹›«»◦•×†‡ %28Spell%29
         //  ref:              '',
         //  school:           '',
         //  level:            '',
@@ -8565,40 +8673,40 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'owl\'s wisdom':                   { recharge: '5 minutes' },
         'pass without trace':              { recharge: '6 hours' },
         'passwall':                        { recharge: '6 hours' },
-        'permanency':                      { recharge: '' },
-        'permanent image':                 { recharge: '' },
-        'persistent image':                { recharge: '' },
-        'phantasmal killer':               { recharge: '' },
-        'phantom steed':                   { recharge: '' },
-        'phantom trap':                    { recharge: '' },
-        'phase door':                      { recharge: '' },
-        'planar ally':                     { recharge: '' },
-        'planar binding':                  { recharge: '' },
-        'plane shift':                     { recharge: '' },
-        'plant growth':                    { recharge: '' },
-        'poison':                          { recharge: '' },
-        'polar ray':                       { recharge: '' },
-        'polymorph':                       { recharge: '' },
-        'polymorph any object':            { recharge: '' },
-        'power word blind':                { recharge: '' },
-        'power word kill':                 { recharge: '' },
-        'power word stun':                 { recharge: '' },
-        'prayer':                          { recharge: '' },
-        'prestidigitation':                { recharge: '' },
-        'prismatic sphere':                { recharge: '' },
-        'prismatic spray':                 { recharge: '' },
-        'prismatic wall':                  { recharge: '' },
-        'probe thoughts':                  { recharge: '' },
-        'produce flame':                   { recharge: '' },
-        'programmed image':                { recharge: '' },
-        'project image':                   { recharge: '' },
-        'protection from arrows':          { recharge: '' },
-        'protection from chaos':           { recharge: '' },
-        'protection from energy':          { recharge: '' },
-        'protection from evil':            { recharge: '' },
-        'protection from good':            { recharge: '' },
-        'protection from law':             { recharge: '' },
-        'protection from spells':          { recharge: '' },
+        'permanency':                      { recharge: 'General' },
+        'permanent image':                 { recharge: '24 hours' },
+        'persistent image':                { recharge: '30 minutes' },
+        'phantasmal killer':               { recharge: 'General' },
+        'phantom steed':                   { recharge: '6 hours' },
+        'phantom trap':                    { recharge: '24 hours' },
+        'phase door':                      { recharge: '12 hours' },
+        'planar ally':                     { recharge: '24 hours' },
+        'planar binding':                  { recharge: '24 hours' },
+        'plane shift':                     { recharge: 'General' },
+        'plant growth':                    { recharge: '24 hours' },
+        'poison':                          { recharge: 'General' },
+        'polar ray':                       { recharge: 'General' },
+        'polymorph':                       { recharge: '30 minutes' },
+        'polymorph any object':            { recharge: '12 hours' },
+        'power word blind':                { recharge: 'General' },
+        'power word kill':                 { recharge: 'General' },
+        'power word stun':                 { recharge: 'General' },
+        'prayer':                          { recharge: '5 minutes' },
+        'prestidigitation':                { recharge: 'General' },
+        'prismatic sphere':                { recharge: 'General' },
+        'prismatic spray':                 { recharge: 'General' },
+        'prismatic wall':                  { recharge: 'General' },
+        'probe thoughts':                  { recharge: 'General' },
+        'produce flame':                   { recharge: 'General' },
+        'programmed image':                { recharge: '12 hours' },
+        'project image':                   { recharge: 'General' },
+        'protection from arrows':          { recharge: '6 hours' },
+        'protection from chaos':           { recharge: '5 minutes' },
+        'protection from energy':          { recharge: '1 hour' },
+        'protection from evil':            { recharge: '5 minutes' },
+        'protection from good':            { recharge: '5 minutes' },
+        'protection from law':             { recharge: '5 minutes' },
+        'protection from spells':          { recharge: '4 hours' },
         'prying eyes':                     { recharge: '' },
         'psychic turmoil':                 { recharge: '' },
         'purify food and drink':           { recharge: '' },
