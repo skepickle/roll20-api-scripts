@@ -8157,68 +8157,74 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Focus: One 1,000 gp diamond per creature to be granted the protection. Each subject must carry one such gem for the duration of the spell. If a subject loses the gem, the spell ceases to affect him.`
         },
         'prying eyes': {
-        // ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/pryingEyes.htm',
+          school:           'Divination',
+          level:            'Darkness 6, Orc 5, Sor/Wiz 5',
+          components:       'V, S, M',
+          casting_time:     '1 minute',
+          range:            'One mile',
+          target_type:      'Effect',
+          target:           'Ten or more levitating eyes',
+          duration:         '[[?{Casting Level}]] hour(s); see text (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You create [[1d4+?{Casting Level}]] semitangible, visible magical orbs (called “eyes”). These eyes move out, scout around, and return as you direct them when casting the spell. Each eye can see 120 feet (normal vision only) in all directions.
+                             While the individual eyes are quite fragile, they’re small and difficult to spot. Each eye is a Fine construct, about the size of a small apple, that has 1 hit point, AC 18 (+8 bonus for its size), flies at a speed of 30 feet with perfect maneuverability, and has a +16 Hide modifier. It has a Spot modifier equal to [[{?{Casting Level},15}kl1]] and is subject to illusions, darkness, fog, and any other factors that would affect your ability to receive visual information about your surroundings. An eye traveling through darkness must find its way by touch.
+                             When you create the eyes, you specify instructions you want them to follow in a command of no more than twenty-five words. Any knowledge you possess is known by the eyes as well.
+                             In order to report their findings, the eyes must return to your hand. Each replays in your mind all it has seen during its existence. It takes an eye 1 round to replay 1 hour of recorded images. After relaying its findings, an eye disappears.
+                             If an eye ever gets more than 1 mile away from you, it instantly ceases to exist. However, your link with the eye is such that you won’t know if the eye was destroyed because it wandered out of range or because of some other event.
+                             The eyes exist for up to [[?{Casting Level}]] hour(s) or until they return to you. ***[Dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm)*** can destroy eyes. Roll separately for each eye caught in an area dispel. Of course, if an eye is sent into darkness, it could hit a wall or similar obstacle and destroy itself.`,
+          component_details:'Material Component: A handful of crystal marbles.'
         },
         'psychic turmoil': {
-        // ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              'http://www.d20srd.org/srd/psionic/spells/psychicTurmoil.htm',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/psionic/spells/psychicTurmoil.htm',
+          school:           'Abjuration',
+          level:            'Arc 5, Clr 5, Sor/Wiz 5',
+          components:       ' V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Area',
+          target:           '40-ft.-radius emanation centered on a point in space',
+          duration:         '[[?{Casting Level}]] round(s)',
+          saving_throw:     'Will partial; see text',
+          spell_resistance: 'Yes',
+          text:             `With this spell, you create an invisible field that leeches away the power points of psionic characters standing within the emanation. Nonpsionic characters are unaffected.
+                             When the spell is cast and at the beginning of each of your subsequent turns, psionic creatures within the area of the psychic turmoil lose 1 power point per manifester level they have. Characters who succeed on a Will save when they first come into contact with the emanation lose only half as many power points (round down) each round. Characters get only one save attempt against any particular psychic turmoil effect, even if they leave the spell’s area and later return.`,
+          component_details:'Material Component: Five playing cards, which are torn in half when the spell is cast.'
         },
         'purify food and drink': {
-        // ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/purifyFoodAndDrink.htm',
+          school:           'Transmutation',
+          level:            'Adp 0, APeace 0, Arc 0, Clr 0, Drd 0, Hlr 0, Shu 0',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '10 ft.',
+          target_type:      'Target',
+          target:           '[[?{Casting Level}]] cu. ft. of contaminated food and water',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates (object)',
+          spell_resistance: 'Yes (object)',
+          text:             `This spell makes spoiled, rotten, poisonous, or otherwise contaminated food and water pure and suitable for eating and drinking. This spell does not prevent subsequent natural decay or spoilage. Unholy water and similar food and drink of significance is spoiled by purify food and drink, but the spell has no effect on creatures of any type nor upon magic potions.
+                             *Note*: Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.`
         },
         'pyrotechnics': {
-        // ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/pyrotechnics.htm',
+          school:           'Transmutation',
+          level:            'Brd 2, HB 2, Sor/Wiz 2, Wmg 2, Wuj 2',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_long_',
+          target_type:      'Target',
+          target:           'One fire source, up to a 20-ft. cube',
+          duration:         '1d4+1 rounds, or 1d4+1 rounds after creatures leave the smoke cloud; see text',
+          saving_throw:     'Will negates or Fortitude negates; see text',
+          spell_resistance: 'Yes or No; see text',
+          text:             `Pyrotechnics turns a fire into either a burst of blinding fireworks or a thick cloud of choking smoke, depending on the version you choose.
+                             **Fireworks**
+                             The fireworks are a flashing, fiery, momentary burst of glowing, colored aerial lights. This effect causes creatures within 120 feet of the fire source to become blinded for [[1d4+1]] rounds (Will negates). These creatures must have line of sight to the fire to be affected. Spell resistance can prevent blindness.
+                             **Smoke Cloud**
+                             A writhing stream of smoke billows out from the source, forming a choking cloud. The cloud spreads 20 feet in all directions and lasts for [[?{Casting Level}]] round(s). All sight, even darkvision, is ineffective in or through the cloud. All within the cloud take **-4 penalties** to Strength and Dexterity (Fortitude negates). These effects last for [[1d4+1]] rounds after the cloud dissipates or after the creature leaves the area of the cloud. Spell resistance does not apply.`,
+          component_details:'Material Component: The spell uses one fire source, which is immediately extinguished. A fire so large that it exceeds a 20-foot cube is only partly extinguished. Magical fires are not extinguished, although a fire-based creature used as a source takes 1 point of damage per caster level.'
         },
         // Spells that start with Q
         // Spells that start with R
@@ -8707,10 +8713,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'protection from good':            { recharge: '5 minutes' },
         'protection from law':             { recharge: '5 minutes' },
         'protection from spells':          { recharge: '4 hours' },
-        'prying eyes':                     { recharge: '' },
-        'psychic turmoil':                 { recharge: '' },
-        'purify food and drink':           { recharge: '' },
-        'pyrotechnics':                    { recharge: '' },
+        'prying eyes':                     { recharge: 'General' },
+        'psychic turmoil':                 { recharge: 'General' },
+        'purify food and drink':           { recharge: '5 minutes' },
+        'pyrotechnics':                    { recharge: 'General' },
         //RECHARGES
         //'': { recharge: 'General' },
       }
