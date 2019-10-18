@@ -2925,7 +2925,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *[Slowed](http://www.d20srd.org/srd/spells/slow.htm):* The creature is *slowed*, as by the [slow](http://www.d20srd.org/srd/spells/slow.htm) spell, for [[2d4]] rounds.
                              *[Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed):* The creature is [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and [helpless](http://www.d20srd.org/srd/conditionSummary.htm#helpless) for [[1d10]] minutes.
                              *[Killed](http://www.d20srd.org/srd/conditionSummary.htm#dead):* Living creatures die. [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures are destroyed.
-                             Furthermore, if you are on your home plane when you cast this spell, nonlawful extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *dictum*. The banishment effect allows a Will save (at a -4 \`\`penalty\`\`) to negate.
+                             Furthermore, if you are on your home plane when you cast this spell, nonlawful extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *dictum*. The banishment effect allows a Will save (at a -4 penalty) to negate.
                              Creatures whose HD exceed your caster level are unaffected by *dictum*.`,
           component_details:null
         },
@@ -3044,7 +3044,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s) (D)',
           text:             `You make yourself—including clothing, armor, weapons, and equipment—look different. You can seem 1 foot shorter or taller, thin, fat, or in between. You cannot change your body type. Otherwise, the extent of the apparent change is up to you. You could add or obscure a minor feature or look like an entirely different person.
                              The spell does not provide the abilities or mannerisms of the chosen form, nor does it alter the perceived tactile (touch) or audible (sound) properties of you or your equipment.
-                             If you use this spell to create a disguise, you get a +10 \`\`bonus\`\` on the Disguise check.
+                             If you use this spell to create a disguise, you get a +10 bonus on the Disguise check.
                              A creature that interacts with the glamer gets a Will save to recognize it as an illusion.`,
           component_details:null
         },
@@ -3094,7 +3094,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `You are surrounded by constant, blue, lawful energy.
-                             First, you gain a +4 \`\`deflection bonus\`\` to AC against attacks by [chaotic creatures](https://www.dandwiki.com/wiki/SRD:Chaotic_Creatures).
+                             First, you gain a +4 deflection bonus to AC against attacks by [chaotic creatures](https://www.dandwiki.com/wiki/SRD:Chaotic_Creatures).
                              Second, on making a successful melee touch attack against an [chaotic creature](https://www.dandwiki.com/wiki/SRD:Chaotic_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
                              Third, with a touch you can automatically dispel any one enchantment spell cast by an chaotic creature or any one chaotic spell. *Exception:* Spells that can’t be dispelled by [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) also can’t be dispelled by *dispel chaos*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
           component_details:null
@@ -3112,7 +3112,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `Shimmering, white, holy energy surrounds you. This power has three effects.
-                             First, you gain a +4 \`\`deflection bonus\`\` to AC against attacks by [evil creatures](https://www.dandwiki.com/wiki/SRD:Evil_Creatures).
+                             First, you gain a +4 deflection bonus to AC against attacks by [evil creatures](https://www.dandwiki.com/wiki/SRD:Evil_Creatures).
                              Second, on making a successful melee touch attack against an [evil creature](https://www.dandwiki.com/wiki/SRD:Evil_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
                              Third, with a touch you can automatically dispel any one enchantment spell cast by an evil creature or any one evil spell. *Exception:* Spells that can’t be dispelled by [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) also can’t be dispelled by *dispel evil*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
           component_details:null
@@ -3130,7 +3130,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `You are surrounded by dark, wavering, unholy energy.
-                             First, you gain a +4 \`\`deflection bonus\`\` to AC against attacks by [good creatures](https://www.dandwiki.com/wiki/SRD:Good_Creatures).
+                             First, you gain a +4 deflection bonus to AC against attacks by [good creatures](https://www.dandwiki.com/wiki/SRD:Good_Creatures).
                              Second, on making a successful melee touch attack against an [good creature](https://www.dandwiki.com/wiki/SRD:Good_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
                              Third, with a touch you can automatically dispel any one enchantment spell cast by an good creature or any one good spell. *Exception:* Spells that can’t be dispelled by [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) also can’t be dispelled by *dispel good*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
           component_details:null
@@ -3148,7 +3148,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `You are surrounded by flickering, yellow, chaotic energy.
-                             First, you gain a +4 \`\`deflection bonus\`\` to AC against attacks by [lawful creatures](https://www.dandwiki.com/wiki/SRD:Lawful_Creatures).
+                             First, you gain a +4 deflection bonus to AC against attacks by [lawful creatures](https://www.dandwiki.com/wiki/SRD:Lawful_Creatures).
                              Second, on making a successful melee touch attack against an [lawful creature](https://www.dandwiki.com/wiki/SRD:Lawful_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
                              Third, with a touch you can automatically dispel any one enchantment spell cast by an lawful creature or any one lawful spell. *Exception:* Spells that can’t be dispelled by [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) also can’t be dispelled by *dispel law*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
           component_details:null
@@ -3264,7 +3264,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target_type:      'Target',
           target:           'You',
           duration:         '[[?{Casting Level}]] round(s)',
-          text:             `Calling upon the divine power of your patron, you imbue yourself with strength and skill in combat. Your base attack bonus becomes equal to your character level (which may give you additional attacks), you gain a +6 \`\`enhancement bonus\`\` to Strength, and you gain [[?{Casting Level}]] temporary hit point(s).`,
+          text:             `Calling upon the divine power of your patron, you imbue yourself with strength and skill in combat. Your base attack bonus becomes equal to your character level (which may give you additional attacks), you gain a +6 enhancement bonus to Strength, and you gain [[?{Casting Level}]] temporary hit point(s).`,
           component_details:null
         },
         'dominate animal': {
@@ -3300,7 +3300,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Once you have given a *dominated* creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject’s behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
                              Changing your instructions or giving a *dominated* creature a new command is the equivalent of redirecting a spell, so it is a move action.
                              By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can’t communicate with you. You can’t actually see through the subject’s eyes, so it’s not as good as being there yourself, but you still get a good idea of what’s going on.
-                             Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a +2 \`\`bonus\`\`. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
+                             Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a +2 bonus. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
                              If you don’t spend at least 1 round concentrating on the spell each day, the subject receives a new saving throw to throw off the domination.
                              [Protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`,
           component_details:null
@@ -3322,7 +3322,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Once you have given a *dominated* creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject’s behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
                              Changing your instructions or giving a *dominated* creature a new command is the equivalent of redirecting a spell, so it is a move action.
                              By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can’t communicate with you. You can’t actually see through the subject’s eyes, so it’s not as good as being there yourself, but you still get a good idea of what’s going on.
-                             Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a +2 \`\`bonus\`\`. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
+                             Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a +2 bonus. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
                              If you don’t spend at least 1 round concentrating on the spell each day, the subject receives a new saving throw to throw off the domination.
                              [Protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`,
           component_details:null
@@ -3413,7 +3413,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The transmuted creature becomes more poised, articulate, and personally forceful. The spell grants a +4 \`\`enhancement bonus\`\` to Charisma, adding the usual benefits to Charisma-based skill checks and other uses of the Charisma modifier. Sorcerers and bards (and other spellcasters who rely on Charisma) affected by this spell do not gain any additional bonus spells for the increased Charisma, but the save DCs for spells they cast while under this spell’s effect do increase.`,
+          text:             `The transmuted creature becomes more poised, articulate, and personally forceful. The spell grants a +4 enhancement bonus to Charisma, adding the usual benefits to Charisma-based skill checks and other uses of the Charisma modifier. Sorcerers and bards (and other spellcasters who rely on Charisma) affected by this spell do not gain any additional bonus spells for the increased Charisma, but the save DCs for spells they cast while under this spell’s effect do increase.`,
           component_details:'Arcane Material Component: A few feathers or a pinch of droppings from an eagle.',
           other_versions:   'Forgotten Realms Campaign Setting on page 68, Tome and Blood on page 87'
         },
@@ -3487,7 +3487,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None; see text',
           spell_resistance: 'Yes',
           text:             `You point your finger and utter the incantation, releasing a black ray of crackling negative energy that suppresses the life force of any living creature it strikes. You must make a ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) to hit. If the attack succeeds, the subject gains [[2d4]] negative levels.
-                             If the subject has at least as many negative levels as HD, it dies. Each negative level gives a creature a -1 \`\`penalty\`\` on attack rolls, saving throws, skill checks, ability checks, and effective level (for determining the power, duration, DC, and other details of spells or special abilities).
+                             If the subject has at least as many negative levels as HD, it dies. Each negative level gives a creature a -1 penalty on attack rolls, saving throws, skill checks, ability checks, and effective level (for determining the power, duration, DC, and other details of spells or special abilities).
                              Additionally, a spellcaster loses one spell or spell slot from his or her highest available level. Negative levels stack.
                              There is no saving throw to avoid gaining the negative levels, but 24 hours after gaining them, the subject must make a Fortitude saving throw (DC=energy drain spell’s save DC) for each negative level. If the save succeeds, that negative level is removed. If it fails, the negative level also goes away, but one of the subject’s character levels is permanently drained.
                              An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature struck by the ray gains [[2d4*5]] temporary hit points for 1 hour.`,
@@ -3506,7 +3506,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `You point your finger and utter the incantation, releasing a black ray of crackling negative energy that suppresses the life force of any living creature it strikes. You must make a ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) to hit. If the attack succeeds, the subject gains [[1d4]] negative levels.
-                             If the subject has at least as many negative levels as HD, it dies. Each negative level gives a creature a -1 \`\`penalty\`\` on attack rolls, saving throws, skill checks, ability checks, and effective level (for determining the power, duration, DC, and other details of spells or special abilities).
+                             If the subject has at least as many negative levels as HD, it dies. Each negative level gives a creature a -1 penalty on attack rolls, saving throws, skill checks, ability checks, and effective level (for determining the power, duration, DC, and other details of spells or special abilities).
                              Additionally, a spellcaster loses one spell or spell slot from his or her highest available level. Negative levels stack.
                              Assuming the subject survives, it regains lost levels after a number of hours equal to your caster level (maximum 15 hours). Usually, negative levels have a chance of permanently draining the victim’s levels, but the negative levels from *enervation* don’t last long enough to do so.
                              An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature struck by the ray gains [[1d4*5]] temporary hit points for 1 hour.`,
@@ -3524,7 +3524,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s) (D)',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
-          text:             `This spell causes instant growth of a humanoid creature, doubling its height and multiplying its weight by 8. This increase changes the creature’s [size category](https://www.dandwiki.com/wiki/SRD:Size_Category) to the next larger one. The target gains a +2 \`\`size bonus\`\` to Strength, a -2 \`\`size penalty\`\` to Dexterity (to a minimum of 1), and a -1 \`\`penalty\`\` on attack rolls and AC due to its increased size.
+          text:             `This spell causes instant growth of a humanoid creature, doubling its height and multiplying its weight by 8. This increase changes the creature’s [size category](https://www.dandwiki.com/wiki/SRD:Size_Category) to the next larger one. The target gains a +2 size bonus to Strength, a -2 size penalty to Dexterity (to a minimum of 1), and a -1 penalty on attack rolls and AC due to its increased size.
                              A humanoid creature whose size increases to Large has a space of 10 feet and a natural reach of 10 feet. This spell does not change the target’s speed.
                              If insufficient room is available for the desired growth, the creature attains the maximum possible size and may make a Strength check (using its increased Strength) to burst any enclosures in the process. If it fails, it is constrained without harm by the materials enclosing it— the spell cannot be used to crush a creature by increasing its size.
                              All equipment worn or carried by a creature is similarly enlarged by the spell. Melee and projectile weapons affected by this spell deal more damage. Other magical properties are not affected by this spell. Any *enlarged* item that leaves an *enlarged* creature’s possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage, and projectiles deal damage based on the size of the weapon that fired them. Magical properties of *enlarged* items are not increased by this spell.
@@ -3562,7 +3562,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '1 hour or less',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `If you have the attention of a group of creatures, you can use this spell to hold them spellbound. To cast the spell, you must speak or sing without interruption for 1 full round. Thereafter, those affected give you their undivided attention, ignoring their surroundings. They are considered to have an attitude of friendly while under the effect of the spell. Any potentially affected creature of a race or religion unfriendly to yours gets a +4 \`\`bonus\`\` on the saving throw.
+          text:             `If you have the attention of a group of creatures, you can use this spell to hold them spellbound. To cast the spell, you must speak or sing without interruption for 1 full round. Thereafter, those affected give you their undivided attention, ignoring their surroundings. They are considered to have an attitude of friendly while under the effect of the spell. Any potentially affected creature of a race or religion unfriendly to yours gets a +4 bonus on the saving throw.
                              A creature with 4 or more HD or with a Wisdom score of 16 or higher remains aware of its surroundings and has an attitude of indifferent. It gains a new saving throw if it witnesses actions that it opposes.
                              The effect lasts as long as you speak or sing, to a maximum of 1 hour. Those *enthralled* by your words take no action while you speak or sing and for [[1d3]] rounds thereafter while they discuss the topic or performance. Those entering the area during the performance must also successfully save or become *enthralled*. The speech ends (but the 1d3-round delay still applies) if you lose concentration or do anything other than speak or sing.
                              If those not *enthralled* have unfriendly or hostile attitudes toward you, they can collectively make a Charisma check to try to end the spell by jeering and heckling. For this check, use the Charisma bonus of the creature with the highest Charisma in the group; others may make Charisma checks to assist. The heckling ends the spell if this check result beats your Charisma check result. Only one such challenge is allowed per use of the spell.
@@ -3684,7 +3684,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              4 or less Comatose, panicked, sickened
 
                              The effects are cumulative and concurrent.
-                             *[Sickened](https://www.dandwiki.com/wiki/SRD:Sickened):* Sudden pain and fever sweeps over the subject’s body. A [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) creature takes a -2 \`\`penalty\`\` on attack rolls, weapon damage rolls, saving throws, skill checks, and ability checks. A creature affected by this spell remains [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) for [[10*?{Casting Level}]] minutes. The effects cannot be negated by a [remove disease](https://www.dandwiki.com/wiki/SRD:Remove_Disease) or [heal](https://www.dandwiki.com/wiki/SRD:Heal) spell, but a [remove curse](http://www.d20srd.org/srd/spells/bestowCurse.htm) is effective.
+                             *[Sickened](https://www.dandwiki.com/wiki/SRD:Sickened):* Sudden pain and fever sweeps over the subject’s body. A [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) creature takes a -2 penalty on attack rolls, weapon damage rolls, saving throws, skill checks, and ability checks. A creature affected by this spell remains [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) for [[10*?{Casting Level}]] minutes. The effects cannot be negated by a [remove disease](https://www.dandwiki.com/wiki/SRD:Remove_Disease) or [heal](https://www.dandwiki.com/wiki/SRD:Heal) spell, but a [remove curse](http://www.d20srd.org/srd/spells/bestowCurse.htm) is effective.
                              *[Panicked](http://www.d20srd.org/srd/conditionSummary.htm#panicked):* The subject becomes [panicked](http://www.d20srd.org/srd/conditionSummary.htm#panicked) for [[1d4]] rounds. Even after the panic ends, the creature remains [shaken](http://www.d20srd.org/srd/conditionSummary.htm#shaken) for [[10*?{Casting Level}]] minutes, and it automatically becomes [panicked](http://www.d20srd.org/srd/conditionSummary.htm#panicked) again if it comes within sight of you during that time. This is a fear effect.
                              *Comatose:* The subject falls into a catatonic coma for [[10*?{Casting Level}]] minutes. During this time, it cannot be awakened by any means short of dispelling the effect. This is not a [sleep](https://www.dandwiki.com/wiki/SRD:Sleep) effect, and thus elves are not immune to it.
                              You must spend a move action each round after the first to target a foe.`,
@@ -3797,7 +3797,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `If the target creature fails a Will saving throw, its Intelligence and Charisma scores each drop to 1. The affected creature is unable to use Intelligence- or Charisma-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a [heal](https://www.dandwiki.com/wiki/SRD:Heal), [limited wish](http://www.d20srd.org/srd/spells/limitedWish.htm), [miracle](http://www.d20srd.org/srd/spells/miracle.htm), or [wish](http://www.d20srd.org/srd/spells/wish.htm) spell is used to cancel the effect of the *feeblemind*. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a -4 \`\`penalty\`\` on its saving throw.`,
+          text:             `If the target creature fails a Will saving throw, its Intelligence and Charisma scores each drop to 1. The affected creature is unable to use Intelligence- or Charisma-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a [heal](https://www.dandwiki.com/wiki/SRD:Heal), [limited wish](http://www.d20srd.org/srd/spells/limitedWish.htm), [miracle](http://www.d20srd.org/srd/spells/miracle.htm), or [wish](http://www.d20srd.org/srd/spells/wish.htm) spell is used to cancel the effect of the *feeblemind*. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a -4 penalty on its saving throw.`,
           component_details:'Material Component: A handful of clay, crystal, glass, or mineral spheres.'
         },
         'find traps': {
@@ -4129,7 +4129,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round(s) (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `This spell functions like [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm), except that the *forceful hand* pursues and pushes away the opponent that you designate. Treat this attack as a [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) with a +14 \`\`bonus\`\` on the Strength check (+8 for Strength 27, +4 for being Large, and a +2 bonus for charging, which it always gets). The hand always moves with the opponent to push that target back the full distance allowed, and it has no speed limit. Directing the spell to a new target is a move action.
+          text:             `This spell functions like [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm), except that the *forceful hand* pursues and pushes away the opponent that you designate. Treat this attack as a [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) with a +14 bonus on the Strength check (+8 for Strength 27, +4 for being Large, and a +2 bonus for charging, which it always gets). The hand always moves with the opponent to push that target back the full distance allowed, and it has no speed limit. Directing the spell to a new target is a move action.
                              A very strong creature could not push the hand out of its way because the latter would instantly reposition itself between the creature and you, but an opponent could push the hand up against you by successfully bull rushing it.`,
           component_details:'Focus: A sturdy glove made of leather or heavy cloth.'
         },
@@ -4145,7 +4145,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s)',
           saving_throw:     'None or Will negates (harmless)',
           spell_resistance: 'No or Yes (harmless)',
-          text:             `This spell grants you a powerful sixth sense in relation to yourself or another. Once *foresight* is cast, you receive instantaneous warnings of impending danger or harm to the subject of the spell. You are never surprised or flat-footed. In addition, the spell gives you a general idea of what action you might take to best protect yourself and gives you a +2 \`\`insight bonus\`\` to AC and Reflex saves. This insight bonus is lost whenever you would lose a Dexterity bonus to AC.
+          text:             `This spell grants you a powerful sixth sense in relation to yourself or another. Once *foresight* is cast, you receive instantaneous warnings of impending danger or harm to the subject of the spell. You are never surprised or flat-footed. In addition, the spell gives you a general idea of what action you might take to best protect yourself and gives you a +2 insight bonus to AC and Reflex saves. This insight bonus is lost whenever you would lose a Dexterity bonus to AC.
                              When another creature is the subject of the spell, you receive warnings about that creature. You must communicate what you learn to the other creature for the warning to be useful, and the creature can be caught unprepared in the absence of such a warning. Shouting a warning, yanking a person back, and even telepathically communicating (via an appropriate spell) can all be accomplished before some danger befalls the subject, provided you act on the warning without delay. The subject, however, does not gain the insight bonus to AC and Reflex saves.`,
           component_details:'Arcane Material Component: A hummingbird’s feather.'
         },
@@ -4161,7 +4161,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The transmuted creature becomes smarter. The spell grants a +4 \`\`enhancement bonus\`\` to Intelligence, adding the usual benefits to Intelligence-based skill checks and other uses of the Intelligence modifier. Wizards (and other spellcasters who rely on Intelligence) affected by this spell do not gain any additional bonus spells for the increased Intelligence, but the save DCs for spells they cast while under this spell’s effect do increase. This spell doesn’t grant extra skill points.`,
+          text:             `The transmuted creature becomes smarter. The spell grants a +4 enhancement bonus to Intelligence, adding the usual benefits to Intelligence-based skill checks and other uses of the Intelligence modifier. Wizards (and other spellcasters who rely on Intelligence) affected by this spell do not gain any additional bonus spells for the increased Intelligence, but the save DCs for spells they cast while under this spell’s effect do increase. This spell doesn’t grant extra skill points.`,
           component_details:'Arcane Material Component: A few hairs, or a pinch of dung, from a fox.',
           other_versions:   'Savage Species on page 66, Tome and Blood on page 89'
         },
@@ -4383,7 +4383,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target_type:      'Target',
           target:           'You',
           duration:         '[[10*?{Casting Level}]] minute(s) (D)',
-          text:             `Your speech becomes fluent and more believable. You gain a +30 \`\`bonus\`\` on Bluff checks made to convince another of the truth of your words. (This bonus doesn’t apply to other uses of the Bluff skill, such as feinting in combat, creating a diversion to hide, or communicating a hidden message via innuendo.)
+          text:             `Your speech becomes fluent and more believable. You gain a +30 bonus on Bluff checks made to convince another of the truth of your words. (This bonus doesn’t apply to other uses of the Bluff skill, such as feinting in combat, creating a diversion to hide, or communicating a hidden message via innuendo.)
                              If a magical effect is used against you that would detect your lies or force you to speak the truth the user of the effect must succeed on a caster level check (1d20 + caster level) against a DC of [[15+?{Casting Level}]] to succeed. Failure means the effect does not detect your lies or force you to speak only the truth.`,
           component_details:null
         },
@@ -4400,7 +4400,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates (blinding only)',
           spell_resistance: 'No',
           text:             `A cloud of golden particles covers everyone and everything in the area, causing creatures to become [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded) and visibly outlining [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) things for the duration of the spell. All within the area are covered by the dust, which cannot be removed and continues to sparkle until it fades.
-                             Any creature covered by the dust takes a -40 \`\`penalty\`\` on Hide checks.`,
+                             Any creature covered by the dust takes a -40 penalty on Hide checks.`,
           component_details:'Material Component: Ground mica.'
         },
         'globe of invulnerability': {
@@ -4432,7 +4432,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude partial; see text',
           spell_resistance: 'Yes',
-          text:             `You utter shrieks of nonsense and gibberish that thinking creatures find distracting and confusing. The spell affects only creatures with Intelligence scores of 3 or higher. Any such creatures within the spell’s area must succeed on Fortitude saves or be [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for 1 round (if they have Intelligence scores of 20 or higher), [dazed](http://www.d20srd.org/srd/conditionSummary.htm#dazed) for 1 round (if they have Intelligence scores between 10 and 19), or [shaken](http://www.d20srd.org/srd/conditionSummary.htm#shaken) for 1 round (if they have Intelligence scores between 3 and 9). In addition, a creature within the spell’s area loses any psionic focus it might have had and takes a -4 \`\`penalty\`\` on Concentration checks for 1 round. These effects happen whether or not the creature succeeded on its save.`,
+          text:             `You utter shrieks of nonsense and gibberish that thinking creatures find distracting and confusing. The spell affects only creatures with Intelligence scores of 3 or higher. Any such creatures within the spell’s area must succeed on Fortitude saves or be [stunned](http://www.d20srd.org/srd/conditionSummary.htm#stunned) for 1 round (if they have Intelligence scores of 20 or higher), [dazed](http://www.d20srd.org/srd/conditionSummary.htm#dazed) for 1 round (if they have Intelligence scores between 10 and 19), or [shaken](http://www.d20srd.org/srd/conditionSummary.htm#shaken) for 1 round (if they have Intelligence scores between 3 and 9). In addition, a creature within the spell’s area loses any psionic focus it might have had and takes a -4 penalty on Concentration checks for 1 round. These effects happen whether or not the creature succeeded on its save.`,
           component_details:null
         },
         'glyph of warding': {
@@ -4469,7 +4469,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `This spell instills powerful hope in the subjects. Each affected creature gains a +2 \`\`morale bonus\`\` on saving throws, attack rolls, ability checks, skill checks, and weapon damage rolls.
+          text:             `This spell instills powerful hope in the subjects. Each affected creature gains a +2 morale bonus on saving throws, attack rolls, ability checks, skill checks, and weapon damage rolls.
                              *Good hope* counters and dispels *crushing despair*.`,
           component_details:null
         },
@@ -4503,7 +4503,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `This spell functions like [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm), except the hand can also [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) one opponent that you select. The *grasping hand* gets one [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) attack per round.
                              Its attack bonus to make contact equals your caster level + your Intelligence, Wisdom, or Charisma modifier (for a wizard, cleric, or sorcerer, respectively), +10 for the hand’s Strength score (31), -1 for being Large. Its grapple bonus is this same figure, except with a +4 modifier for being Large instead of -1. The hand holds but does not harm creatures it grapples.
                              Directing the spell to a new target is a move action.
-                             The *grasping hand* can also bull rush an opponent as [forceful hand](http://www.d20srd.org/srd/spells/forcefulHand.htm) does, but at a +16 \`\`bonus\`\` on the Strength check (+10 for Strength 31, +4 for being Large, and a +2 \`\`bonus\`\` for charging, which it always gets), or interpose itself as [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm) does.
+                             The *grasping hand* can also bull rush an opponent as [forceful hand](http://www.d20srd.org/srd/spells/forcefulHand.htm) does, but at a +16 bonus on the Strength check (+10 for Strength 31, +4 for being Large, and a +2 bonus for charging, which it always gets), or interpose itself as [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm) does.
                              Clerics who cast this spell name it for their deities.`,
           component_details:'Arcane Focus: A leather glove.'
         },
@@ -4520,7 +4520,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'No',
           text:             `A *grease* spell covers a solid surface with a layer of slippery grease. Any creature in the area when the spell is cast must make a successful Reflex save or fall. This save is repeated on your turn each round that the creature remains within the area. A creature can walk within or through the area of grease at half normal speed with a DC 10 Balance check. Failure means it can’t move that round (and must then make a Reflex save or fall), while failure by 5 or more means it falls (see the Balance skill for details).
-                             The spell can also be used to create a greasy coating on an item. Material objects not in use are always affected by this spell, while an object wielded or employed by a creature receives a Reflex saving throw to avoid the effect. If the initial saving throw fails, the creature immediately drops the item. A saving throw must be made in each round that the creature attempts to pick up or use the *greased* item. A creature wearing *greased* armor or clothing gains a +10 \`\`circumstance bonus\`\` on Escape Artist checks and on grapple checks made to resist or escape a grapple or to escape a pin.`,
+                             The spell can also be used to create a greasy coating on an item. Material objects not in use are always affected by this spell, while an object wielded or employed by a creature receives a Reflex saving throw to avoid the effect. If the initial saving throw fails, the creature immediately drops the item. A saving throw must be made in each round that the creature attempts to pick up or use the *greased* item. A creature wearing *greased* armor or clothing gains a +10 circumstance bonus on Escape Artist checks and on grapple checks made to resist or escape a grapple or to escape a pin.`,
           component_details:'Material Component: A bit of pork rind or butter.'
         },
         'greater arcane sight': {
@@ -4625,7 +4625,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `This spell functions like [heroism](https://www.dandwiki.com/wiki/SRD:Heroism), except the creature gains a +4 \`\`morale bonus\`\` on attack rolls, saves, and skill checks, immunity to fear effects, and [[{?{Casting Level},20}kl1]] temporary hit points.`,
+          text:             `This spell functions like [heroism](https://www.dandwiki.com/wiki/SRD:Heroism), except the creature gains a +4 morale bonus on attack rolls, saves, and skill checks, immunity to fear effects, and [[{?{Casting Level},20}kl1]] temporary hit points.`,
           component_details:null
         },
         'greater invisibility': {
@@ -4657,8 +4657,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hour(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `*Greater magic fang* gives one natural weapon of the subject a +[[{floor(?{Casting Level}/4),5}kl1]] \`\`enhancement bonus\`\` on attack and damage rolls. The spell can affect a slam attack, fist, bite, or other natural weapon. (The spell does not change an unarmed strike’s damage from nonlethal damage to lethal damage.)
-                             Alternatively, you may imbue all of the creature’s natural weapons with a +1 \`\`enhancement bonus\`\` (regardless of your caster level).
+          text:             `*Greater magic fang* gives one natural weapon of the subject a \`\`+[[{floor(?{Casting Level}/4),5}kl1]] enhancement bonus\`\` on attack and damage rolls. The spell can affect a slam attack, fist, bite, or other natural weapon. (The spell does not change an unarmed strike’s damage from nonlethal damage to lethal damage.)
+                             Alternatively, you may imbue all of the creature’s natural weapons with a +1 enhancement bonus (regardless of your caster level).
                              *Greater magic fang* can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
           component_details:null
         },
@@ -4674,7 +4674,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hour(s)',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
-          text:             `*Greater magic weapon* gives a weapon a +[[{floor(?{Casting Level}/4),5}kl1]] \`\`enhancement bonus\`\` on attack and damage rolls. (An enhancement bonus does not stack with a masterwork weapon’s +1 bonus on attack rolls.)
+          text:             `*Greater magic weapon* gives a weapon a \`\`+[[{floor(?{Casting Level}/4),5}kl1]] enhancement bonus\`\` on attack and damage rolls. (An enhancement bonus does not stack with a masterwork weapon’s +1 bonus on attack rolls.)
                              You can’t cast this spell on a natural weapon, such as an unarmed strike (instead, see [greater magic fang](https://www.dandwiki.com/wiki/SRD:Greater_Magic_Fang)). A monk’s unarmed strike is considered a weapon, and thus it can be enhanced by this spell.
                              Alternatively, you can affect as many as fifty arrows, bolts, or bullets. The projectiles must be of the same kind, and they have to be together (in the same quiver or other container). Projectiles, but not thrown weapons, lose their transmutation when used. (Treat shuriken as projectiles, rather than as thrown weapons, for the purpose of this spell.)`,
           component_details:'Arcane Material Component: Powdered lime and carbon.'
@@ -4787,7 +4787,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hour(s)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `You can see and hear some creature, which may be at any distance. If the subject succeeds on a Will save, the scrying attempt simply fails. The difficulty of the save depends on how well you know the subject and what sort of physical connection (if any) you have to that creature. Furthermore, if the subject is on another plane, it gets a +5 \`\`bonus\`\` on its Will save.
+          text:             `You can see and hear some creature, which may be at any distance. If the subject succeeds on a Will save, the scrying attempt simply fails. The difficulty of the save depends on how well you know the subject and what sort of physical connection (if any) you have to that creature. Furthermore, if the subject is on another plane, it gets a +5 bonus on its Will save.
 
                              **Will Save Modifier based on Knowledge**
                              • +10, None†
@@ -4957,7 +4957,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '1 minute or until discharged',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `This spell imbues the subject with a touch of divine guidance. The creature gets a +1 \`\`competence bonus\`\` on a single attack roll, saving throw, or skill check. It must choose to use the bonus before making the roll to which it applies.`,
+          text:             `This spell imbues the subject with a touch of divine guidance. The creature gets a +1 competence bonus on a single attack roll, saving throw, or skill check. It must choose to use the bonus before making the roll to which it applies.`,
           component_details:null
         },
         'gust of wind': {
@@ -4978,7 +4978,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Medium creatures are unable to move forward against the force of the wind, or if flying are blown back ‹1d6×5|[[5*1d6]]› feet.
                              Large or larger creatures may move normally within a *gust of wind* effect.
                              A *gust of wind* can’t move a creature beyond the limit of its range.
-                             Any creature, regardless of size, takes a -4 \`\`penalty\`\` on ranged attacks and Listen checks in the area of a *gust of wind*.
+                             Any creature, regardless of size, takes a -4 penalty on ranged attacks and Listen checks in the area of a *gust of wind*.
                              The force of the gust automatically extinguishes candles, torches, and similar unprotected flames. It causes protected flames, such as those of lanterns, to dance wildly and has a 50% chance to extinguish those lights.
                              In addition to the effects noted, a *gust of wind* can do anything that a sudden blast of wind would be expected to do. It can create a stinging spray of sand or dust, fan a large fire, overturn delicate awnings or hangings, heel over a small boat, and blow gases or vapors to the edge of its range.
                              *Gust of wind* can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
@@ -4999,7 +4999,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'See text',
           text:             `*Hallow* makes a particular site, building, or structure a holy site. This has four major effects.
                              First, the site or structure is guarded by a [magic circle against evil](http://www.d20srd.org/srd/spells/magicCircleAgainstEvil.htm) effect.
-                             Second, all Charisma checks made to turn [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) gain a +4 \`\`sacred bonus\`\`, and Charisma checks to command [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) take a -4 \`\`penalty\`\`. Spell resistance does not apply to this effect. (This provision does not apply to the druid version of the spell.)
+                             Second, all Charisma checks made to turn [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) gain a +4 sacred bonus, and Charisma checks to command [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) take a -4 penalty. Spell resistance does not apply to this effect. (This provision does not apply to the druid version of the spell.)
                              Third, any [dead](http://www.d20srd.org/srd/conditionSummary.htm#dead) body interred in a *hallowed* site cannot be [turned](https://www.dandwiki.com/wiki/SRD:Turned) into an undead creature.
                              Finally, you may choose to fix a single spell effect to the *hallowed* site. The spell effect lasts for one year and functions throughout the entire site, regardless of the normal duration and area or effect. You may designate whether the effect applies to all creatures, creatures who share your faith or alignment, or creatures who adhere to another faith or alignment. At the end of the year, the chosen effect lapses, but it can be renewed or replaced simply by casting *hallow* again.
                              Spell effects that may be tied to a *hallowed* site include [aid](https://www.dandwiki.com/wiki/SRD:Aid), [bane](http://www.d20srd.org/srd/spells/bane.htm), [bless](http://www.d20srd.org/srd/spells/bless.htm), [cause fear](http://www.d20srd.org/srd/spells/causeFear.htm), [darkness](http://www.d20srd.org/srd/spells/darkness.htm), [daylight](http://www.d20srd.org/srd/spells/daylight.htm), [death ward](http://www.d20srd.org/srd/spells/deathWard.htm), [deeper darkness](http://www.d20srd.org/srd/spells/deeperDarkness.htm), [detect evil](https://www.dandwiki.com/wiki/SRD:Detect_Evil), [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm), [dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm), [discern lies](https://www.dandwiki.com/wiki/SRD:Discern_Lies), [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm), [endure elements](https://www.dandwiki.com/wiki/SRD:Endure_Elements), [freedom of movement](https://www.dandwiki.com/wiki/SRD:Freedom_of_Movement), [invisibility purge](https://www.dandwiki.com/wiki/SRD:Invisibility_Purge), [protection from energy](https://www.dandwiki.com/wiki/SRD:Protection_from_Energy), [remove fear](http://www.d20srd.org/srd/spells/removeFear.htm), [resist energy](https://www.dandwiki.com/wiki/SRD:Resist_Energy), [silence](http://www.d20srd.org/srd/spells/silence.htm), [tongues](https://www.dandwiki.com/wiki/SRD:Tongues), and [zone of truth](https://www.dandwiki.com/wiki/SRD:Zone_of_Truth). Saving throws and spell resistance might apply to these spells’ effects. (See the individual spell descriptions for details.)
@@ -5084,7 +5084,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes (harmless)',
           text:             `The transmuted creatures move and act more quickly than normal. This extra speed has several effects.
                              When making a full attack action, a hasted creature may make one extra attack with any weapon he is holding. The attack is made using the creature’s full base attack bonus, plus any modifiers appropriate to the situation. (This effect is not cumulative with similar effects, such as that provided by a weapon of speed, nor does it actually grant an extra action, so you can’t use it to cast a second spell or otherwise take an extra action in the round.)
-                             A *hasted* creature gains a +1 \`\`bonus\`\` on attack rolls and a +1 \`\`dodge bonus\`\` to AC and Reflex saves. Any condition that makes you lose your Dexterity bonus to Armor Class (if any) also makes you lose dodge bonuses.
+                             A *hasted* creature gains a +1 bonus on attack rolls and a +1 dodge bonus to AC and Reflex saves. Any condition that makes you lose your Dexterity bonus to Armor Class (if any) also makes you lose dodge bonuses.
                              All of the *hasted* creature’s modes of movement (including land movement, burrow, climb, fly, and swim) increase by 30 feet, to a maximum of twice the subject’s normal speed using that form of movement. This increase counts as an enhancement bonus, and it affects the creature’s jumping distance as normal for increased speed.
                              Multiple *haste* effects don’t stack. *Haste* dispels and counters [slow](http://www.d20srd.org/srd/spells/slow.htm).`,
           component_details:'Material Component: A shaving of licorice root.'
@@ -5208,7 +5208,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minute(s)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `This spell imbues a single creature with great bravery and morale in battle. The target gains a +2 \`\`morale bonus\`\` on attack rolls, saves, and skill checks.`,
+          text:             `This spell imbues a single creature with great bravery and morale in battle. The target gains a +2 morale bonus on attack rolls, saves, and skill checks.`,
           component_details:null
         },
         'hide from animals': {
@@ -5254,7 +5254,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This spell afflicts the subject with uncontrollable laughter. It collapses into gales of manic laughter, falling [prone](http://www.d20srd.org/srd/conditionSummary.htm#prone). The subject can take no actions while laughing, but is not considered [helpless](http://www.d20srd.org/srd/conditionSummary.htm#helpless). After the spell ends, it can act normally.
-                             A creature with an Intelligence score of 2 or lower is not affected. A creature whose type is different from the caster’s receives a +4 \`\`bonus\`\` on its saving throw, because humor doesn’t “translate” well.`,
+                             A creature with an Intelligence score of 2 or lower is not affected. A creature whose type is different from the caster’s receives a +4 bonus on its saving throw, because humor doesn’t “translate” well.`,
           component_details:'Material Component: Tiny tarts that are thrown at the target and a feather that is waved in the air.'
         },
         'hold animal': {
@@ -5334,7 +5334,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'Yes (harmless)',
           text:             `A brilliant divine radiance surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by [evil creatures](https://www.dandwiki.com/wiki/SRD:Evil_Subtype), and causing evil creatures to become [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded) when they strike the subjects. This abjuration has four effects.
-                             First, each warded creature gains a +4 \`\`deflection bonus\`\` to AC and a +4 \`\`resistance bonus\`\` on saves. Unlike [protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm), this benefit applies against all attacks, not just against attacks by evil creatures.
+                             First, each warded creature gains a +4 deflection bonus to AC and a +4 resistance bonus on saves. Unlike [protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm), this benefit applies against all attacks, not just against attacks by evil creatures.
                              Second, each warded creature gains spell resistance 25 against evil spells and spells cast by evil creatures.
                              Third, the abjuration blocks possession and mental influence, just as *protection from evil* does.
                              Finally, if an evil creature succeeds on a melee attack against a warded creature, the offending attacker is [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded) (Fortitude save negates, as [blindness/deafness](http://www.d20srd.org/srd/spells/blindnessDeafness.htm), but against *holy aura*’s save DC).`,
@@ -5369,7 +5369,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round(s)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `This spell allows you to channel holy power into your sword, or any other melee weapon you choose. The weapon acts as a +5 *holy weapon* (+5 \`\`enhancement bonus\`\` on attack and damage rolls, extra ‹2d6› damage against evil opponents). It also emits a [magic circle against evil](http://www.d20srd.org/srd/spells/magicCircleAgainstEvil.htm) effect (as the spell). If the *magic circle* ends, the sword creates a new one on your turn as a free action. The spell is automatically canceled 1 round after the weapon leaves your hand. You cannot have more than one *holy sword* at a time.
+          text:             `This spell allows you to channel holy power into your sword, or any other melee weapon you choose. The weapon acts as a +5 *holy weapon* (+5 enhancement bonus on attack and damage rolls, extra ‹2d6› damage against evil opponents). It also emits a [magic circle against evil](http://www.d20srd.org/srd/spells/magicCircleAgainstEvil.htm) effect (as the spell). If the *magic circle* ends, the sword creates a new one on your turn as a free action. The spell is automatically canceled 1 round after the weapon leaves your hand. You cannot have more than one *holy sword* at a time.
                              If this spell is cast on a magic weapon, the powers of the spell supersede any that the weapon normally has, rendering the normal enhancement bonus and powers of the weapon inoperative for the duration of the spell. This spell is not cumulative with [bless weapon](http://www.d20srd.org/srd/spells/blessWeapon.htm) or any other spell that might modify the weapon in any way.
                              This spell does not work on artifacts.
                              *Note:* A masterwork weapon’s bonus to attack does not stack with an enhancement bonus to attack.`,
@@ -5399,7 +5399,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *[Blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded):* The creature is [blinded](http://www.d20srd.org/srd/conditionSummary.htm#blinded) for ‹2d4› rounds.
                              *[Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed):* The creature is [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and [helpless](http://www.d20srd.org/srd/conditionSummary.htm#helpless) for ‹1d10› minutes.
                              *[Killed](http://www.d20srd.org/srd/conditionSummary.htm#dead):* Living creatures die. [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures are destroyed.
-                             Furthermore, if you are on your home plane when you cast this spell, nongood extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *holy word*. The banishment effect allows a Will save (at a -4 \`\`penalty\`\`) to negate.
+                             Furthermore, if you are on your home plane when you cast this spell, nongood extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *holy word*. The banishment effect allows a Will save (at a -4 penalty) to negate.
                              Creatures whose HD exceed your caster level are unaffected by *holy word*.`,
           component_details:null
         },
@@ -5447,7 +5447,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `Your gestures and droning incantation [fascinate](http://www.d20srd.org/srd/conditionSummary.htm#fascinated) nearby creatures, causing them to stop and stare blankly at you. In addition, you can use their rapt attention to make your suggestions and requests seem more plausible. [[2d4]] Hit Dice of creatures are affected. Creatures with fewer HD are affected before creatures with more HD. Only creatures that can see or hear you are affected, but they do not need to understand you to be [fascinated](http://www.d20srd.org/srd/conditionSummary.htm#fascinated).
-                             If you use this spell in combat, each target gains a +2 \`\`bonus\`\` on its saving throw. If the spell affects only a single creature not in combat at the time, the saving throw has a \`\`penalty\`\` of -2.
+                             If you use this spell in combat, each target gains a +2 bonus on its saving throw. If the spell affects only a single creature not in combat at the time, the saving throw has a \`\`penalty of -2\`\`.
                              While the subject is [fascinated](http://www.d20srd.org/srd/conditionSummary.htm#fascinated) by this spell, it reacts as though it were two steps more friendly in attitude. This allows you to make a single request of the affected creature (provided you can communicate with it). The request must be brief and reasonable. Even after the spell ends, the creature retains its new attitude toward you, but only with respect to that particular request.
                              A creature that fails its saving throw does not remember that you enspelled it.`,
           component_details:null
@@ -5465,7 +5465,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '1 full round',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `Great magical hailstones pound down for 1 full round, dealing [[3d6]] points of bludgeoning damage and [[2d6]] points of cold damage to every creature in the area. A -4 \`\`penalty\`\` applies to each Listen check made within the *ice storm*’s effect, and all land movement within its area is at half speed. At the end of the duration, the hail disappears, leaving no aftereffects (other than the damage dealt).`,
+          text:             `Great magical hailstones pound down for 1 full round, dealing [[3d6]] points of bludgeoning damage and [[2d6]] points of cold damage to every creature in the area. A -4 penalty applies to each Listen check made within the *ice storm*’s effect, and all land movement within its area is at half speed. At the end of the duration, the hail disappears, leaving no aftereffects (other than the damage dealt).`,
           component_details:'Arcane Material Component: A pinch of dust and a few drops of water.'
         },
         'identify': {
@@ -5568,7 +5568,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `When you cast *imprisonment* and touch a creature, it is entombed in a state of suspended animation (see the [temporal stasis](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis) spell) in a small sphere far beneath the surface of the earth. The subject remains there unless a *freedom* spell is cast at the locale where the imprisonment took place. Magical search by a *crystal ball*, a [locate object](https://www.dandwiki.com/wiki/SRD:Locate_Object) spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but [discern location](https://www.dandwiki.com/wiki/SRD:Discern_Location) does. A [wish](http://www.d20srd.org/srd/spells/wish.htm) or [miracle](http://www.d20srd.org/srd/spells/miracle.htm) spell will not free the recipient, but will reveal where it is entombed. If you know the target’s name and some facts about its life, the target takes a -4 \`\`penalty\`\` on its save.`,
+          text:             `When you cast *imprisonment* and touch a creature, it is entombed in a state of suspended animation (see the [temporal stasis](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis) spell) in a small sphere far beneath the surface of the earth. The subject remains there unless a *freedom* spell is cast at the locale where the imprisonment took place. Magical search by a *crystal ball*, a [locate object](https://www.dandwiki.com/wiki/SRD:Locate_Object) spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but [discern location](https://www.dandwiki.com/wiki/SRD:Discern_Location) does. A [wish](http://www.d20srd.org/srd/spells/wish.htm) or [miracle](http://www.d20srd.org/srd/spells/miracle.htm) spell will not free the recipient, but will reveal where it is entombed. If you know the target’s name and some facts about its life, the target takes a -4 penalty on its save.`,
           component_details:null
         },
         'incendiary cloud': {
@@ -5800,7 +5800,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s) (D)',
           text:             `This spell transforms your body into living iron, which grants you several powerful resistances and abilities.
                              You gain damage reduction 15/adamantine. You are immune to [blindness](http://www.d20srd.org/srd/spells/blindnessDeafness.htm), critical hits, ability score damage, [deafness](http://www.d20srd.org/srd/conditionSummary.htm#deafened), [disease](http://www.d20srd.org/srd/specialAbilities.htm#disease), drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect. You take only half damage from acid and fire of all kinds. However, you also become vulnerable to all special attacks that affect iron golems.
-                             You gain a +6 \`\`enhancement bonus\`\` to your Strength score, but you take a -6 \`\`penalty\`\` to Dexterity as well (to a minimum Dexterity score of 1), and your speed is reduced to half normal. You have an arcane spell failure chance of 50% and a -8 armor check penalty, just as if you were clad in full plate armor. You cannot drink (and thus can’t use potions) or play wind instruments.
+                             You gain a +6 enhancement bonus to your Strength score, but you take a -6 penalty to Dexterity as well (to a minimum Dexterity score of 1), and your speed is reduced to half normal. You have an arcane spell failure chance of 50% and a -8 armor check penalty, just as if you were clad in full plate armor. You cannot drink (and thus can’t use potions) or play wind instruments.
                              Your unarmed attacks deal damage equal to a [club](https://www.dandwiki.com/wiki/SRD:Club) sized for you (‹1d4› for Small characters or ‹1d6› for Medium characters), and you are considered armed when making unarmed attacks.
                              Your weight increases by a factor of ten, causing you to sink in water like a stone. However, you could survive the crushing pressure and lack of air at the bottom of the ocean—at least until the spell duration expires.`,
           component_details:'Arcane Material Component: A small piece of iron that was once part of either an iron golem, a hero’s armor, or a war machine.'
@@ -5818,7 +5818,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `*Ironwood* is a magical substance created by druids from normal wood. While remaining natural wood in almost every way, *ironwood* is as strong, heavy, and resistant to fire as steel. Spells that affect metal or iron do not function on *ironwood*. Spells that affect wood do affect *ironwood*, although *ironwood* does not burn. Using this spell with *wood shape* or a wood-related Craft check, you can fashion wooden items that function as steel items. Thus, wooden plate armor and wooden swords can be created that are as durable as their normal steel counterparts. These items are freely usable by druids.
-                             Further, if you make only half as much *ironwood* as the spell would normally allow, any weapon, shield, or suit of armor so created is treated as a magic item with a +1 \`\`enhancement bonus\`\`.`,
+                             Further, if you make only half as much *ironwood* as the spell would normally allow, any weapon, shield, or suit of armor so created is treated as a magic item with a +1 enhancement bonus.`,
           component_details:'Material Component: Wood shaped into the form of the intended *ironwood* object.'
         },
         'irresistible dance': {
@@ -5833,7 +5833,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[1d4+1]] rounds',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `The subject feels an undeniable urge to dance and begins doing so, complete with foot shuffling and tapping. The spell effect makes it impossible for the subject to do anything other than caper and prance in place. The effect imposes a -4 \`\`penalty\`\` to Armor Class and a -10 \`\`penalty\`\` on Reflex saves, and it negates any AC bonus granted by a shield the target holds. The dancing subject provokes attacks of opportunity each round on its turn.`,
+          text:             `The subject feels an undeniable urge to dance and begins doing so, complete with foot shuffling and tapping. The spell effect makes it impossible for the subject to do anything other than caper and prance in place. The effect imposes a -4 penalty to Armor Class and a -10 penalty on Reflex saves, and it negates any AC bonus granted by a shield the target holds. The dancing subject provokes attacks of opportunity each round on its turn.`,
           component_details:null
         },
         // Spells that start with J
@@ -5849,7 +5849,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minute(s) (D)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The subject gets a +10 \`\`enhancement bonus\`\` on Jump checks. The enhancement bonus increases to +20 at caster level 5th, and to +30 (the maximum) at caster level 9th.`,
+          text:             `The subject gets a +10 enhancement bonus on Jump checks. The enhancement bonus increases to +20 at caster level 5th, and to +30 (the maximum) at caster level 9th.`,
           component_details:'Material Component: A grasshopper’s hind leg, which you break when the spell is cast.'
         },
         // Spells that start with K
@@ -5946,7 +5946,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `A *lesser geas* places a magical command on a creature to carry out some service or to refrain from some action or course of activity, as desired by you. The creature must have 7 or fewer Hit Dice and be able to understand you. While a geas cannot compel a creature to kill itself or perform acts that would result in certain death, it can cause almost any other course of activity.
                              The *geased* creature must follow the given instructions until the *geas* is completed, no matter how long it takes.
                              If the instructions involve some open-ended task that the recipient cannot complete through his own actions the spell remains in effect for a maximum of one day per caster level. A clever recipient can subvert some instructions:
-                             If the subject is prevented from obeying the *lesser geas* for 24 hours, it takes a -2 \`\`penalty\`\` to each of its ability scores. Each day, another -2 \`\`penalty\`\` accumulates, up to a total of -8. No ability score can be reduced to less than 1 by this effect. The ability score penalties are removed 24 hours after the subject resumes obeying the *lesser geas*.
+                             If the subject is prevented from obeying the *lesser geas* for 24 hours, it takes a -2 penalty to each of its ability scores. Each day, another -2 penalty accumulates, up to a total of -8. No ability score can be reduced to less than 1 by this effect. The ability score penalties are removed 24 hours after the subject resumes obeying the *lesser geas*.
                              A *lesser geas* (and all ability score penalties) can be ended by [break enchantment](http://www.d20srd.org/srd/spells/breakEnchantment.htm), [limited wish](http://www.d20srd.org/srd/spells/limitedWish.htm), [remove curse](http://www.d20srd.org/srd/spells/bestowCurse.htm), [miracle](http://www.d20srd.org/srd/spells/miracle.htm), or [wish](http://www.d20srd.org/srd/spells/wish.htm). [Dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) does not affect a *lesser geas*.`,
           component_details:null
         },
@@ -6052,7 +6052,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `*Levitate* allows you to move yourself, another creature, or an object up and down as you wish. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. You can mentally direct the recipient to move up or down as much as 20 feet each round; doing so is a move action. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its base land speed).
-                             A *levitating* creature that attacks with a melee or ranged weapon finds itself increasingly unstable; the first attack has a -1 \`\`penalty\`\` on attack rolls, the second -2, and so on, to a maximum penalty of -5. A full round spent stabilizing allows the creature to begin again at -1.`,
+                             A *levitating* creature that attacks with a melee or ranged weapon finds itself increasingly unstable; the first attack has a -1 penalty on attack rolls, the second -2, and so on, to a maximum penalty of -5. A full round spent stabilizing allows the creature to begin again at -1.`,
           component_details:'Focus: Either a small leather loop or a piece of golden wire bent into a cup shape with a long shank on one end.'
         },
         'light': {
@@ -6105,7 +6105,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • Duplicate any sorcerer/wizard spell of 5th level or lower, even if it’s of a prohibited school.
                              • Duplicate any other spell of 4th level or lower, even if it’s of a prohibited school.
                              • Undo the harmful effects of many spells, such as [geas/quest](https://www.dandwiki.com/wiki/SRD:Geas/Quest) or [insanity](https://www.dandwiki.com/wiki/SRD:Insanity).
-                             • Produce any other effect whose power level is in line with the above effects, such as a single creature automatically hitting on its next attack or taking a -7 \`\`penalty\`\` on its next saving throw.
+                             • Produce any other effect whose power level is in line with the above effects, such as a single creature automatically hitting on its next attack or taking a -7 penalty on its next saving throw.
                              A duplicated spell allows saving throws and spell resistance as normal (but the save DC is for a 7th-level spell). When a *limited wish* duplicates a spell that has an XP cost, you must pay that cost or 300 XP, whichever is more. When a *limited wish* spell duplicates a spell with a material component that costs more than 1,000 gp, you must provide that component.`,
           component_details:'XP Cost: 300 XP or more (see above).'
         },
@@ -6186,7 +6186,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Concentration + [[?{Casting Level}]] round(s) (D)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `Any creature within the area that fails a Will save becomes drowsy and inattentive, taking a -5 \`\`penalty\`\` on Listen and Spot checks and a -2 \`\`penalty\`\` on Will saves against *sleep* effects while the *lullaby* is in effect. *Lullaby* lasts for as long as the caster concentrates, plus up to 1 round per caster level thereafter.`,
+          text:             `Any creature within the area that fails a Will save becomes drowsy and inattentive, taking a -5 penalty on Listen and Spot checks and a -2 penalty on Will saves against *sleep* effects while the *lullaby* is in effect. *Lullaby* lasts for as long as the caster concentrates, plus up to 1 round per caster level thereafter.`,
           component_details:null
         },
         //END REVIEW MARKER
