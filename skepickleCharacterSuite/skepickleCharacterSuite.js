@@ -8280,69 +8280,69 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Focus: A crystal prism.`
         },
         'raise dead': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/raiseDead.htm',
+          school:           'Conjuration (Healing)',
+          level:            'Adp 5, APeace 5, Arc 5, Clr 5, Hlr 5, SaveLife 5',
+          components:       'V, S, M, DF',
+          casting_time:     '1 minute',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Dead creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'None; see text',
+          spell_resistance: 'Yes (harmless)',
+          text:             `You restore life to a deceased creature. You can raise a creature that has been dead for no longer than one day per caster level. In addition, the subject’s soul must be free and willing to return. If the subject’s soul is not willing to return, the spell does not work; therefore, a subject that wants to return receives no saving throw.
+                             Coming back from the dead is an ordeal. The subject of the spell loses one level (or 1 Hit Die) when it is raised, just as if it had lost a level or a Hit Die to an energy-draining creature. If the subject is 1st level, it loses 2 points of Constitution instead (if this would reduce its Con to 0 or less, it can’t be raised). This level/HD loss or Constitution loss cannot be repaired by any means. A character who died with spells prepared has a 50% chance of losing any given spell upon being raised, in addition to losing spells for losing a level. A spellcasting creature that doesn’t prepare spells (such as a sorcerer) has a 50% chance of losing any given unused spell slot as if it had been used to cast a spell, in addition to losing spell slots for losing a level.
+                             A raised creature has a number of hit points equal to its current Hit Dice. Any ability scores damaged to 0 are raised to 1. Normal poison and normal disease are cured in the process of raising the subject, but magical diseases and curses are not undone. While the spell closes mortal wounds and repairs lethal damage of most kinds, the body of the creature to be raised must be whole. Otherwise, missing parts are still missing when the creature is brought back to life. None of the dead creature’s equipment or possessions are affected in any way by this spell.
+                             A creature who has been turned into an undead creature or killed by a death effect can’t be raised by this spell. Constructs, elementals, outsiders, and undead creatures can’t be raised. The spell cannot bring back a creature that has died of old age.`,
+          component_details:'Material Component: Diamonds worth a total of least 5,000 gp.'
         },
         //Epic Spell: raise island
         'ray of enfeeblement': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/rayOfEnfeeblement.htm',
+          school:           'Necromancy',
+          level:            'Arc 1, Blg 1, Decay 2, Duskblade 1, Necro 1, Sin-E 2, Sor/Wiz 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'Ray',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `A coruscating ray springs from your hand. You must succeed on a ranged touch attack to strike a target. The subject takes a **-[[1d6+{[[floor(?{Casting Level}/2)]],5}kl1]] penalty** to Strength. The subject’s Strength score cannot drop below 1.`
         },
         'ray of exhaustion': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/rayOfExhaustion.htm',
+          school:           'Necromancy',
+          level:            'Duskblade 3, Sor/Wiz 3',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'Ray',
+          duration:         '[[?{Casting Level}]] minute(s)',
+          saving_throw:     'Fortitude partial; see text',
+          spell_resistance: 'Yes',
+          text:             `A black ray projects from your pointing finger. You must succeed on a ranged touch attack with the ray to strike a target.
+                             The subject is immediately exhausted for the spell’s duration. A successful Fortitude save means the creature is only fatigued.
+                             A character that is already fatigued instead becomes exhausted.
+                             This spell has no effect on a creature that is already exhausted. Unlike normal exhaustion or fatigue, the effect ends as soon as the spell’s duration expires.`,
+          component_details:'Material Component: A drop of sweat.'
         },
         'ray of frost': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/rayOfFrost.htm',
+          school:           'Evocation [Cold]',
+          level:            'Duskblade 0, Sor/Wiz 0, Wmg 0, Wuj 0',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'Ray',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `A ray of freezing air and ice projects from your pointing finger. You must succeed on a ranged touch attack with the ray to deal damage to a target. The ray deals [[1d3]] points of cold damage.`
         },
         'read magic': {
         //// ↲’‹›«»◦•×†‡ %28Spell%29
@@ -9221,10 +9221,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'quench':                          { recharge: 'General' },
         'rage':                            { recharge: '5 minutes' },
         'rainbow pattern':                 { recharge: 'General' },
-        'raise dead':                      { recharge: '' },
-        'ray of enfeeblement':             { recharge: '' },
-        'ray of exhaustion':               { recharge: '' },
-        'ray of frost':                    { recharge: '' },
+        'raise dead':                      { recharge: 'General' },
+        'ray of enfeeblement':             { recharge: 'General' },
+        'ray of exhaustion':               { recharge: 'General' },
+        'ray of frost':                    { recharge: 'General' },
         'read magic':                      { recharge: '' },
         'reduce animal':                   { recharge: '' },
         'reduce person':                   { recharge: '' },
