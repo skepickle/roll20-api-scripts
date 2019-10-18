@@ -5783,7 +5783,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates (harmless) or Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless) or Yes (harmless, object)',
           text:             `This spell confers invisibility upon all creatures within 10 feet of the recipient. The center of the effect is mobile with the recipient.
-                             The creature or object included becomes [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible), vanishing from sight, even from darkvision. If the recipient is a creature carrying gear, that vanishes, too. Those affected by this spell can see each other and themselves as if unaffected by the spell. Any affected creature moving out of the area becomes visible, but creatures moving into the area after the spell is cast do not become [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible). Affected creatures (other than the recipient) who attack negate the invisibility only for themselves. If the spell recipient attacks, the [*invisibility sphere*]() ends.
+                             The creature or object included becomes [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible), vanishing from sight, even from darkvision. If the recipient is a creature carrying gear, that vanishes, too. Those affected by this spell can see each other and themselves as if unaffected by the spell. Any affected creature moving out of the area becomes visible, but creatures moving into the area after the spell is cast do not become [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible). Affected creatures (other than the recipient) who attack negate the invisibility only for themselves. If the spell recipient attacks, the invisibility sphere ends.
                              Items dropped or put down by an [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) creature become visible; items picked up disappear if tucked into the clothing or pouches worn by the creature. Light, however, never becomes [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible), although a source of light can become so (thus, the effect is that of a light with no visible source). Any part of an item that the subject carries but that extends more than 10 feet from it becomes visible.
                              Of course, the subject is not magically [*silenced*](http://www.d20srd.org/srd/spells/silence.htm), and certain other conditions can render the recipient detectable (such as stepping in a puddle). The spell ends if the subject attacks any creature. For purposes of this spell, an attack includes any spell targeting a foe or whose area or effect includes a foe. (Exactly who is a foe depends on the [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) character’s perceptions.) Actions directed at unattended objects do not break the spell. Causing harm indirectly is not an attack. Thus, an [invisible](http://www.d20srd.org/srd/conditionSummary.htm#invisible) being can open doors, talk, eat, climb stairs, summon monsters and have them attack, cut the ropes holding a rope bridge while enemies are on the bridge, remotely trigger traps, open a portcullis to release attack dogs, and so forth. If the subject attacks directly, however, it immediately becomes visible along with all its gear. Spells such as *bless* that specifically affect allies but not foes are not attacks for this purpose, even when they include foes in their area.`,
           component_details:'Arcane Material Component: An eyelash encased in a bit of gum arabic.'
@@ -5947,7 +5947,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              The *geased* creature must follow the given instructions until the *geas* is completed, no matter how long it takes.
                              If the instructions involve some open-ended task that the recipient cannot complete through his own actions the spell remains in effect for a maximum of one day per caster level. A clever recipient can subvert some instructions:
                              If the subject is prevented from obeying the *lesser geas* for 24 hours, it takes a -2 \`\`penalty\`\` to each of its ability scores. Each day, another -2 \`\`penalty\`\` accumulates, up to a total of -8. No ability score can be reduced to less than 1 by this effect. The ability score penalties are removed 24 hours after the subject resumes obeying the *lesser geas*.
-                             A *lesser geas* (and all ability score penalties) can be ended by [*break enchantment*]()http://www.d20srd.org/srd/spells/breakEnchantment.htm, [*limited wish*](http://www.d20srd.org/srd/spells/limitedWish.htm), [*remove curse*](http://www.d20srd.org/srd/spells/bestowCurse.htm), [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm), or [*wish*](http://www.d20srd.org/srd/spells/wish.htm). [*Dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm) does not affect a *lesser geas*.`,
+                             A *lesser geas* (and all ability score penalties) can be ended by [*break enchantment*](http://www.d20srd.org/srd/spells/breakEnchantment.htm), [*limited wish*](http://www.d20srd.org/srd/spells/limitedWish.htm), [*remove curse*](http://www.d20srd.org/srd/spells/bestowCurse.htm), [*miracle*](http://www.d20srd.org/srd/spells/miracle.htm), or [*wish*](http://www.d20srd.org/srd/spells/wish.htm). [*Dispel magic*](http://www.d20srd.org/srd/spells/dispelMagic.htm) does not affect a *lesser geas*.`,
           component_details:null
         },
         'lesser globe of invulnerability': {
@@ -6020,7 +6020,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `*Lesser restoration8 dispels any magical effects reducing one of the subject’s ability scores or cures 1d4 points of temporary [ability damage](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Damage) to one of the subject’s ability scores. It also eliminates any [fatigue](https://www.dandwiki.com/wiki/SRD:Fatigued) suffered by the character, and improves an [exhausted condition](https://www.dandwiki.com/wiki/SRD:Exhausted) to [fatigued](https://www.dandwiki.com/wiki/SRD:Fatigued). It does not restore permanent [ability drain](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Drain).`,
+          text:             `*Lesser restoration* dispels any magical effects reducing one of the subject’s ability scores or cures 1d4 points of temporary [ability damage](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Damage) to one of the subject’s ability scores. It also eliminates any [fatigue](https://www.dandwiki.com/wiki/SRD:Fatigued) suffered by the character, and improves an [exhausted condition](https://www.dandwiki.com/wiki/SRD:Exhausted) to [fatigued](https://www.dandwiki.com/wiki/SRD:Fatigued). It does not restore permanent [ability drain](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Drain).`,
           component_details:null
         },
         'lesser telepathic bond': {
@@ -8084,7 +8084,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Fortitude negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `Protection from energy grants temporary immunity to the type of energy you specify when you cast it (acid, cold, electricity, fire, or sonic). When the spell absorbs [[12*{?{Casting Level},10}kl1]] points of energy damage, it is discharged.
-                            *Note*: Protection from energy overlaps (and does not stack with) ***[resist energy](http://www.d20srd.org/srd/spells/resistEnergy.htm)***. If a character is warded by protection from energy and ***[resist energy](http://www.d20srd.org/srd/spells/resistEnergy.htm)***, the protection spell absorbs damage until its power is exhausted.`
+                            *Note:* Protection from energy overlaps (and does not stack with) ***[resist energy](http://www.d20srd.org/srd/spells/resistEnergy.htm)***. If a character is warded by protection from energy and ***[resist energy](http://www.d20srd.org/srd/spells/resistEnergy.htm)***, the protection spell absorbs damage until its power is exhausted.`
         },
         'protection from evil': {
           ref:              'http://www.d20srd.org/srd/spells/protectionFromEvil.htm',
@@ -8205,7 +8205,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates (object)',
           spell_resistance: 'Yes (object)',
           text:             `This spell makes spoiled, rotten, poisonous, or otherwise contaminated food and water pure and suitable for eating and drinking. This spell does not prevent subsequent natural decay or spoilage. Unholy water and similar food and drink of significance is spoiled by purify food and drink, but the spell has no effect on creatures of any type nor upon magic potions.
-                             *Note*: Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.`
+                             *Note:* Water weighs about 8 pounds per gallon. One cubic foot of water contains roughly 8 gallons and weighs about 60 pounds.`
         },
         'pyrotechnics': {
           ref:              'http://www.d20srd.org/srd/spells/pyrotechnics.htm',
@@ -8345,389 +8345,413 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `A ray of freezing air and ice projects from your pointing finger. You must succeed on a ranged touch attack with the ray to deal damage to a target. The ray deals [[1d3]] points of cold damage.`
         },
         'read magic': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/readMagic.htm',
+          school:           'Divination',
+          level:            'Adp 0, APeace 0, Arc 0, Beguiler 0, Blg 0, Brd 0, ChamGwyn 1, Clr 0, Drd 0, Duskblade 0, HB 1, Hlr 0, Hoard 1, Pal 1, Rgr 1, Shu 0, Sor/Wiz 0, Wuj 0',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[10*?{Casting Level}]] minute(s)',
+          text:             `By means of read magic, you can decipher magical inscriptions on objects—books, scrolls, weapons, and the like—that would otherwise be unintelligible. This deciphering does not normally invoke the magic contained in the writing, although it may do so in the case of a cursed scroll. Furthermore, once the spell is cast and you have read the magical inscription, you are thereafter able to read that particular writing without recourse to the use of read magic. You can read at the rate of one page (250 words) per minute. The spell allows you to identify a **[glyph of warding](http://www.d20srd.org/srd/spells/glyphOfWarding.htm)*** with a DC 13 Spellcraft check, a ***[greater glyph of warding](http://www.d20srd.org/srd/spells/glyphOfWardingGreater.htm)*** with a DC 16 Spellcraft check, or any symbol spell with a Spellcraft check (DC 10 + spell level).
+                             Read magic can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`,
+          component_details:'Focus: A clear crystal or mineral prism.'
         },
         'reduce animal': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/reduceAnimal.htm',
+          school:           'Transmutation',
+          level:            'Arc 2, Drd 2, Rgr 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'One willing animal of Small, Medium, Large, or Huge size',
+          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like reduce person, except that it affects a single willing animal. Reduce the damage dealt by the animal’s natural attacks as appropriate for its new size.`
         },
         'reduce person': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/reducePerson.htm',
+          school:           'Transmutation',
+          level:            'Sor/Wiz 1',
+          components:       'V, S, M',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One humanoid creature',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Fortitude negates',
+          spell_resistance: 'Yes',
+          text:             `This spell causes instant diminution of a humanoid creature, halving its height, length, and width and dividing its weight by 8. This decrease changes the creature’s size category to the next smaller one. The target gains a **+2 size bonus** to Dexterity, a **-2 size penalty** to Strength (to a minimum of 1), and a **+1 bonus** on attack rolls and AC due to its reduced size.
+                             A Small humanoid creature whose size decreases to Tiny has a space of 2½ feet and a natural reach of 0 feet (meaning that it must enter an opponent’s square to attack). A Large humanoid creature whose size decreases to Medium has a space of 5 feet and a natural reach of 5 feet. This spell doesn’t change the target’s speed.
+                             All equipment worn or carried by a creature is similarly reduced by the spell.
+                             Melee and projectile weapons deal less damage. Other magical properties are not affected by this spell. Any reduced item that leaves the reduced creature’s possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage (projectiles deal damage based on the size of the weapon that fired them).
+                             Multiple magical effects that reduce size do not stack.
+                             Reduce person counters and dispels ***[enlarge person](http://www.d20srd.org/srd/spells/enlargePerson.htm)***.
+                             Reduce person can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`,
+          component_details:'Material Component: A pinch of powdered iron.'
         },
         'refuge': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/refuge.htm',
+          school:           'Conjuration (Teleportation)',
+          level:            'APeace 7, Arc 7, Clr 7, Commerce 7, Community 7, Family 7, Liberation 7, Sin-L 7, Sor/Wiz 9',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Object touched',
+          duration:         'Permanent until discharged',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You create powerful magic in some specially prepared object. This object contains the power to instantly transport its possessor across any distance within the same plane to your abode. Once the item is transmuted, you must give it willingly to a creature and at the same time inform it of a command word to be spoken when the item is used. To make use of the item, the subject speaks the command word at the same time that it rends or breaks the item (a standard action). When this is done, the individual and all objects it is wearing and carrying (to a maximum of the character’s heavy load) are instantly transported to your abode. No other creatures are affected (aside from a familiar that is touching the subject).
+                             You can alter the spell when casting it so that it transports you to within 10 feet of the possessor of the item when it is broken and the command word spoken. You will have a general idea of the location and situation of the item possessor at the time the refuge spell is discharged, but once you decide to alter the spell in this fashion, you have no choice whether or not to be transported.`,
+          component_details:'Material Component: The specially prepared object, whose construction requires gems worth 1,500 gp.'
         },
         'regenerate': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/regenerate.htm',
+          school:           'Conjuration (Healing)',
+          level:            'APeace 7, Arc 7, Clr 7, Competition 7, Drd 9, Healing 7, Hlr 6, Life 7, Shu 8',
+          components:       'V, S, DF',
+          casting_time:     '3 full rounds',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Living creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The subject’s severed body members (fingers, toes, hands, feet, arms, legs, tails, or even heads of multiheaded creatures), broken bones, and ruined organs grow back. After the spell is cast, the physical regeneration is complete in 1 round if the severed members are present and touching the creature. It takes [[2d10]] rounds otherwise.
+                             Regenerate also cures  [[4d8+{?{Casting Level},35}kl1]] points of damage, rids the subject of exhaustion and/or fatigue, and eliminates all nonlethal damage the subject has taken. It has no effect on nonliving creatures (including undead).`
         },
         'reincarnate': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/reincarnate.htm',
+          school:           'Transmutation',
+          level:            'Arc 4, Drd 4, Renewal 4',
+          components:       'V, S, M, DF',
+          casting_time:     '10 minutes',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Dead creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'None; see text',
+          spell_resistance: 'Yes (harmless)',
+          text:             `With this spell, you bring back a dead creature in another body, provided that its death occurred no more than one week before the casting of the spell and the subject’s soul is free and willing to return. If the subject’s soul is not willing to return, the spell does not work; therefore, a subject that wants to return receives no saving throw.
+                             Since the dead creature is returning in a new body, all physical ills and afflictions are repaired. The condition of the remains is not a factor. So long as some small portion of the creature’s body still exists, it can be reincarnated, but the portion receiving the spell must have been part of the creature’s body at the time of death. The magic of the spell creates an entirely new young adult body for the soul to inhabit from the natural elements at hand. This process takes 1 hour to complete. When the body is ready, the subject is reincarnated.
+                             A reincarnated creature recalls the majority of its former life and form. It retains any class abilities, feats, or skill ranks it formerly possessed. Its class, base attack bonus, base save bonuses, and hit points are unchanged. Strength, Dexterity, and Constitution scores depend partly on the new body. First eliminate the subject’s racial adjustments (since it is no longer of his previous race) and then apply the adjustments found below to its remaining ability scores. The subject’s level (or Hit Dice) is reduced by 1. If the subject was 1st level, its new Constitution score is reduced by 2. (If this reduction would put its Con at 0 or lower, it can’t be reincarnated). This level/HD loss or Constitution loss cannot be repaired by any means.
+                             It’s possible for the change in the subject’s ability scores to make it difficult for it to pursue its previous character class. If this is the case, the subject is well advised to become a multiclass character.
+                             For a humanoid creature, the new incarnation is determined using the following table. For nonhumanoid creatures, a similar table of creatures of the same type should be created.
+
+                             ◦ **d%**, Incarnation (Str Dex Con)
+                             • **01**, [Bugbear](http://www.d20srd.org/srd/monsters/bugbear.htm) (+4 +2 +2)
+                             • **02-13**, Dwarf (+0 +0 +2)
+                             • **14-25**, Elf (+0 +2 -2)
+                             • **26**, [Gnoll](http://www.d20srd.org/srd/monsters/gnoll.htm) (+4 +0 +2)
+                             • **27-38**, Gnome (-2 +0 +2)
+                             • **39-42**, [Goblin](http://www.d20srd.org/srd/monsters/goblin.htm) (-2 +2 +0)
+                             • **43-52**, Half-elf (+0 +0 +0)
+                             • **53-62**, Half-orc (+2 +0 +0)
+                             • **63-74**, Halfling (-2 +2 +0)
+                             • **75-89**, Human (+0 +0 +0)
+                             • **90-93**, [Kobold](http://www.d20srd.org/srd/monsters/kobold.htm) (-4 +2 -2)
+                             • **94**, [Lizardfolk](http://www.d20srd.org/srd/monsters/lizardfolk.htm) (+2 +0 +2)
+                             • **95-98**, [Orc](http://www.d20srd.org/srd/monsters/orc.htm) (+4 +0 +0)
+                             • **99**, [Troglodyte](http://www.d20srd.org/srd/monsters/troglodyte.htm) (+0 -2 +4)
+                             • **100**, Other (? ? ?)
+
+                             A creature that has been turned into an undead creature or killed by a death effect can’t be returned to life by this spell. Constructs, elementals, outsiders, and undead creatures can’t be reincarnated. The spell cannot bring back a creature who has died of old age.
+                             The reincarnated creature gains all abilities associated with its new form, including forms of movement and speeds, natural armor, natural attacks, extraordinary abilities, and the like, but it doesn’t automatically speak the language of the new form.
+                             A ***[wish](http://www.d20srd.org/srd/spells/wish.htm)*** or a ***[miracle](http://www.d20srd.org/srd/spells/miracle.htm)*** spell can restore a reincarnated character to his or her original form.`,
+          component_details:'Material Component: Rare oils and unguents worth a total of least 1,000 gp, spread over the remains.'
         },
         'remove blindness/deafness': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/removeBlindnessDeafness.htm',
+          school:           'Conjuration (Healing)',
+          level:            'APeace 3, Arc 3, ChamGwyn 3, Clr 3, Hlr 2, Pal 3, Shu 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `Remove blindness/deafness cures blindness or deafness (your choice), whether the effect is normal or magical in nature. The spell does not restore ears or eyes that have been lost, but it repairs them if they are damaged.
+                             Remove blindness/deafness counters and dispels ***[blindness/deafness](http://www.d20srd.org/srd/spells/blindnessDeafness.htm)***.`
         },
         'remove curse': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/removeCurse.htm',
+          school:           'Abjuration',
+          level:            'Adp 3, APeace 3, Arc 3, Brd 3, ChamGwyn 3, Clr 3, EmBarachiel 3, Exorcism 3, Hlr 3, Pal 3, Shu 3, Sor/Wiz 4, Wuj 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature or item touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `Remove curse instantaneously removes all curses on an object or a creature. Remove curse does not remove the curse from a cursed shield, weapon, or suit of armor, although the spell typically enables the creature afflicted with any such cursed item to remove and get rid of it. Certain special curses may not be countered by this spell or may be countered only by a caster of a certain level or higher.
+                             Remove curse counters and dispels ***[bestow curse](http://www.d20srd.org/srd/spells/bestowCurse.htm)***.`
         },
         'remove disease': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/removeDisease.htm',
+          school:           'Conjuration (Healing)',
+          level:            'Adp 3, APeace 3, Arc 3, BVal 3, Clr 3, Drd 3, Hlr 2, Renewal 3, Rgr 3, Shu 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `Remove disease cures all diseases that the subject is suffering from. The spell also kills parasites, including green slime and others. Certain special diseases may not be countered by this spell or may be countered only by a caster of a certain level or higher.
+                             *Note:* Since the spell’s duration is instantaneous, it does not prevent reinfection after a new exposure to the same disease at a later date.`
         },
         'remove fear': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/removeFear.htm',
+          school:           'Abjuration',
+          level:            'APeace 1, Arc 1, Brd 1, ChamGwyn 1, Clr 1, Competition 1, Courage 1, Hlr 1, HotD 1, KotC 1, Pleasure 1, Shu 1',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Targets',
+          target:           '[[1+floor(?{Casting Level}/4)]] creature plus one additional creature per four levels, no two of which can be more than 30 ft. apart',
+          duration:         '10 minutes; see text',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `You instill courage in the subject, granting it a **+4 morale bonus** against fear effects for 10 minutes. If the subject is under the influence of a fear effect when receiving the spell, that effect is suppressed for the duration of the spell.
+                             Remove fear counters and dispels ***[cause fear](http://www.d20srd.org/srd/spells/causeFear.htm)***.`
         },
         'remove paralysis': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/removeParalysis.htm',
+          school:           'Conjuration (Healing)',
+          level:            'APeace 2, Arc 2, ChamGwyn 2, Clr 2, Hlr 1, HotD 2, Pal 2, Shu 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Targets',
+          target:           'Up to four creatures, no two of which can be more than 30 ft. apart',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `You can free one or more creatures from the effects of any temporary paralysis or related magic, including a ghoul’s touch or a slow spell. If the spell is cast on one creature, the paralysis is negated. If cast on two creatures, each receives another save with a **+4 resistance bonus** against the effect that afflicts it. If cast on three or four creatures, each receives another save with a **+2 resistance bonus**.
+                             The spell does not restore ability scores reduced by penalties, damage, or drain.`
         },
         'repel metal or stone': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/repelMetalOrStone.htm',
+          school:           'Abjuration [Earth]',
+          level:            'Arc 7, Blg 7, Drd 8, Metal 9, Wuj 8',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           '60-ft. line from you',
+          duration:         '[[?{Casting Level}]] round(s) (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `Like ***[repel wood](http://www.d20srd.org/srd/spells/repelWood.htm)***, this spell creates waves of invisible and intangible energy that roll forth from you. All metal or stone objects in the path of the spell are pushed away from you to the limit of the range. Fixed metal or stone objects larger than 3 inches in diameter and loose objects weighing more than 500 pounds are not affected. Anything else, including animated objects, small boulders, and creatures in metal armor, moves back. Fixed objects 3 inches in diameter or smaller bend or break, and the pieces move with the wave of energy. Objects affected by the spell are repelled at the rate of 40 feet per round.
+                             Objects such as metal armor, swords, and the like are pushed back, dragging their bearers with them. Even magic items with metal components are repelled, although an antimagic field blocks the effects.
+                             The waves of energy continue to sweep down the set path for the spell’s duration. After you cast the spell, the path is set, and you can then do other things or go elsewhere without affecting the spell’s power.`
         },
         'repel vermin': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/repelVermin.htm',
+          school:           'Abjuration',
+          level:            'APeace 4, Arc 4, Blg 4, Brd 4, Clr 4, Drd 4, HB 3, Rgr 3',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '10 ft.',
+          target_type:      'Area',
+          target:           '10-ft.-radius emanation centered on you',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
+          saving_throw:     'None or Will negates; see text',
+          spell_resistance: 'Yes',
+          text:             `An invisible barrier holds back vermin. A vermin with Hit Dice of less than [[floor(?{Casting Level}/3)]] cannot penetrate the barrier.
+                             A vermin with Hit Dice of [[floor(?{Casting Level}/3)]] or more can penetrate the barrier if it succeeds on a Will save. Even so, crossing the barrier deals the vermin [[2d6]] points of damage, and pressing against the barrier causes pain, which deters most vermin.`
         },
         'repel wood': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/repelWood.htm',
+          school:           'Transmutation',
+          level:            'Arc 5, Blg 5, Drd 6, Plant 6, Wuj 6',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '60 ft.',
+          target_type:      '60-ft. line-shaped emanation from you',
+          target:           '[[?{Casting Level}]] minute(s) (D)',
+          duration:         'None',
+          saving_throw:     'No',
+          spell_resistance: '',
+          text:             `Waves of energy roll forth from you, moving in the direction that you determine, causing all wooden objects in the path of the spell to be pushed away from you to the limit of the range. Wooden objects larger than 3 inches in diameter that are fixed firmly are not affected, but loose objects are. Objects 3 inches in diameter or smaller that are fixed in place splinter and break, and the pieces move with the wave of energy. Objects affected by the spell are repelled at the rate of 40 feet per round.
+                             Objects such as wooden shields, spears, wooden weapon shafts and hafts, and arrows and bolts are pushed back, dragging those carrying them along. (A creature being dragged by an item it is carrying can let go. A creature being dragged by a shield can loose it as a move action and drop it as a free action.) If a spear is planted (set) to prevent this forced movement, it splinters. Even magic items with wooden sections are repelled, although an antimagic field blocks the effects.
+                             The waves of energy continue to sweep down the set path for the spell’s duration. After you cast the spell, the path is set, and you can then do other things or go elsewhere without affecting the spell’s power.`
         },
         'repulsion': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/repulsion.htm',
+          school:           'Abjuration',
+          level:            'APeace 7, Arc 7, Beguiler 6, Blg 7, Clr 7, Force 6, Hlr 7, Nobility 7, Protection 7, Sor/Wiz 6, Wuj 6',
+          components:       'V, S, F/DF',
+          casting_time:     '1 standard action',
+          range:            'Up to [[10*?{Casting Level}]] ft.',
+          target_type:      'Area',
+          target:           'Up to [[10*?{Casting Level}]]-ft.-radius emanation centered on you',
+          duration:         '[[?{Casting Level}]] round(s) (D)',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `An invisible, mobile field surrounds you and prevents creatures from approaching you. You decide how big the field is at the time of casting (to the limit your level allows). Any creature within or entering the field must attempt a save. If it fails, it becomes unable to move toward you for the duration of the spell. Repelled creatures’ actions are not otherwise restricted.
+                             They can fight other creatures and can cast spells and attack you with ranged weapons. If you move closer to an affected creature, nothing happens. (The creature is not forced back.) The creature is free to make melee attacks against you if you come within reach. If a repelled creature moves away from you and then tries to turn back toward you, it cannot move any closer if it is still within the spell’s area.`,
+          component_details:'Arcane Focus: A pair of small iron bars attached to two small canine statuettes, one black and one white, the whole array worth 50 gp.'
         },
         'resilient sphere': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/resilientSphere.htm',
+          school:           'Evocation [Force]',
+          level:            'Force 4, Sor/Wiz 4',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           '[[?{Casting Level}]]-ft.-diameter sphere, centered around a creature',
+          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          saving_throw:     'Reflex negates',
+          spell_resistance: 'Yes',
+          text:             `A globe of shimmering force encloses a creature, provided the creature is small enough to fit within the diameter of the sphere. The sphere contains its subject for the spell’s duration. The sphere is not subject to damage of any sort except from a rod of cancellation, a rod of negation, a ***[disintegrate])(http://www.d20srd.org/srd/spells/disintegrate.htm)*** spell, or a targeted ***[dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm)*** spell. These effects destroy the sphere without harm to the subject. Nothing can pass through the sphere, inside or out, though the subject can breathe normally.
+                             The subject may struggle, but the sphere cannot be physically moved either by people outside it or by the struggles of those within.`,
+          component_details:'Material Component: A hemispherical piece of clear crystal and a matching hemispherical piece of gum arabic.'
         },
         'resistance': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/resistance.htm',
+          school:           'Abjuration',
+          level:            'APeace 0, Arc 0, Brd 0, ChamGwyn 1, Clr 0, Drd 0, Pal 1, Shu 0, Sor/Wiz 0, Wuj 0',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '1 minute',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `You imbue the subject with magical energy that protects it from harm, granting it a **+1 resistance bonus** on saves.
+                             Resistance can be made permanent with a ***[permanency](http://www.d20srd.org/srd/spells/permanency.htm)*** spell.`,
+          component_details:'Arcane Material Component: A miniature cloak.'
         },
         'resist energy': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/resistEnergy.htm',
+          school:           'Abjuration',
+          level:            'Adp 2, APeace 2, Arc 2, Blg 2, ChamGwyn 2, Clr 2, Dragon 2, Drd 2, Duskblade 1, Fire 3, HB 2, Hoard 2, KotC 2, Pal 2, Rgr 1, Shu 2, Sor/Wiz 2, Vassal of Bahamut 2, Wuj 2',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[10*?{Casting Level}]] minutes',
+          saving_throw:     'Fortitude negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `This abjuration grants a creature limited protection from damage of whichever one of five energy types you select: acid, cold, electricity, fire, or sonic. The subject gains energy resistance 10 against the energy type chosen, meaning that each time the creature is subjected to such damage (whether from a natural or magical source), that damage is reduced by 10 points before being applied to the creature’s hit points. The value of the energy resistance granted increases to 20 points at 7th level and to a maximum of 30 points at 11th level. The spell protects the recipient’s equipment as well.
+                             Resist energy absorbs only damage. The subject could still suffer unfortunate side effects.
+                             *Note:* Resist energy overlaps (and does not stack with) ***[protection from energy](http://www.d20srd.org/srd/spells/protectionFromEnergy.htm)***. If a character is warded by ***[protection from energy](http://www.d20srd.org/srd/spells/protectionFromEnergy.htm)*** and resist energy, the protection spell absorbs damage until its power is exhausted.`
         },
         'restoration': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/restoration.htm',
+          school:           'Conjuration (Healing)',
+          level:            'Adp 4, APeace 4, Arc 4, BVal 4, ChamGwyn 4, Clr 4, Hlr 3, HotD 4, Pal 4, Shu 4',
+          components:       'V, S, M',
+          casting_time:     '3 rounds',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `This spell functions like ***[lesser restoration](http://www.d20srd.org/srd/spells/restorationLesser.htm)***, except that it also dispels negative levels and restores one experience level to a creature who has had a level drained. The drained level is restored only if the time since the creature lost the level is equal to or less than one day per caster level. A character who has a level restored by restoration has exactly the minimum number of experience points necessary to restore him or her to his or her previous level.
+                             Restoration cures all temporary ability damage, and it restores all points permanently drained from a single ability score (your choice if more than one is drained). It also eliminates any fatigue or exhaustion suffered by the target.
+                             Restoration does not restore levels or Constitution points lost due to death.`,
+          component_details:'Material Component: Diamond dust worth 100 gp that is sprinkled over the target.'
         },
         'resurrection': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/resurrection.htm',
+          school:           'Conjuration (Healing)',
+          level:            'APeace 7, Arc 7, Clr 7, Hlr 7, SaveLife 7, Shu 7',
+          components:       'V, S, M, DF',
+          casting_time:     '10 minutes',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Dead creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'None; see text',
+          spell_resistance: 'Yes (harmless)',
+          text:             `This spell functions like ***[raise dead](http://www.d20srd.org/srd/spells/raiseDead.htm)***, except that you are able to restore life and complete strength to any deceased creature.
+                             The condition of the remains is not a factor. So long as some small portion of the creature’s body still exists, it can be resurrected, but the portion receiving the spell must have been part of the creature’s body at the time of death. (The remains of a creature hit by a ***[disintegrate](http://www.d20srd.org/srd/spells/disintegrate.htm)*** spell count as a small portion of its body.) The creature can have been dead no longer than 10 years per caster level.
+                             Upon completion of the spell, the creature is immediately restored to full hit points, vigor, and health, with no loss of prepared spells. However, the subject loses one level, or 2 points of Constitution if the subject was 1st level. (If this reduction would bring its Con to 0 or lower, it can’t be resurrected). This level loss or Constitution loss cannot be repaired by any means.
+                             You can resurrect someone killed by a death effect or someone who has been turned into an undead creature and then destroyed. You cannot resurrect someone who has died of old age. Constructs, elementals, outsiders, and undead creatures can’t be resurrected.`,
+          component_details:'Material Component: A sprinkle of holy water and diamonds worth a total of at least 10,000 gp.'
         },
         'reverse gravity': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+        // ↲’‹›«»◦•×†‡ %28Spell%29
+          ref:              'http://www.d20srd.org/srd/spells/reverseGravity.htm',
+          school:           'Transmutation',
+          level:            'Arc 8, Drd 8, Sky 7, Sor/Wiz 7',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Area',
+          target:           'Up to [[floor(?{Casting Level}/2)]] × 10-ft. cubes (S)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None; see text',
+          spell_resistance: 'No',
+          text:             `This spell reverses gravity in an area, causing all unattached objects and creatures within that area to fall upward and reach the top of the area in 1 round. If some solid object (such as a ceiling) is encountered in this fall, falling objects and creatures strike it in the same manner as they would during a normal downward fall. If an object or creature reaches the top of the area without striking anything, it remains there, oscillating slightly, until the spell ends. At the end of the spell duration, affected objects and creatures fall downward.
+                             Provided it has something to hold onto, a creature caught in the area can attempt a Reflex save to secure itself when the spell strikes. Creatures who can fly or levitate can keep themselves from falling.`,
+          component_details:'Arcane Material Component: A lodestone and iron filings.'
         },
         'righteous might': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/righteousMight.htm',
+          school:           'Transmutation',
+          level:            'Arc 5, Clr 5, Competition 5, Hatred 5, Mysticism 5, Shu 5, Sin-W 5, Strength 5, Wrath 5',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          text:             `This spell causes you to grow, doubling your height and multiplying your weight by 8. This increase changes your size category to the next larger one, and you gain a **+4 size bonus** to Strength and a **+2 size bonus** to Constitution. You gain a **+2 enhancement bonus** to your natural armor. You gain damage reduction 3/evil (if you normally channel positive energy) or damage reduction 3/good (if you normally channel negative energy). At 12th level this damage reduction becomes 6/evil or 6/good, and at 15th level it becomes 9/evil or 9/good (the maximum). Your size modifier for AC and attacks changes as appropriate to your new size category. This spell doesn’t change your speed. Determine space and reach as appropriate to your new size.
+                             If insufficient room is available for the desired growth, you attain the maximum possible size and may make a Strength check (using your increased Strength) to burst any enclosures in the process. If you fail, you are constrained without harm by the materials enclosing you— the spell cannot crush you by increasing your size.
+                             All equipment you wear or carry is similarly enlarged by the spell. Melee and projectile weapons deal more damage. Other magical properties are not affected by this spell. Any enlarged item that leaves your possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage (projectiles deal damage based on the size of the weapon that fired them).
+                             Multiple magical effects that increase size do not stack.`
         },
         'rope trick': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/ropeTrick.htm',
+          school:           'Transmutation',
+          level:            'Sor/Wiz 2, Wuj 2',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'One touched piece of rope from 5 ft. to 30 ft. long',
+          duration:         '[[?{Casting Level}]] hours (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `When this spell is cast upon a piece of rope from 5 to 30 feet long, one end of the rope rises into the air until the whole rope hangs perpendicular to the ground, as if affixed at the upper end. The upper end is, in fact, fastened to an extradimensional space that is outside the multiverse of extradimensional spaces (“planes”). Creatures in the extradimensional space are hidden, beyond the reach of spells (including divinations), unless those spells work across planes. The space holds as many as eight creatures (of any size). Creatures in the space can pull the rope up into the space, making the rope “disappear.” In that case, the rope counts as one of the eight creatures that can fit in the space. The rope can support up to 16,000 pounds. A weight greater than that can pull the rope free.
+                             Spells cannot be cast across the extradimensional interface, nor can area effects cross it. Those in the extradimensional space can see out of it as if a 3-foot by 5-foot window were centered on the rope. The window is present on the Material Plane, but it’s invisible, and even creatures that can see the window can’t see through it. Anything inside the extradimensional space drops out when the spell ends. The rope can be climbed by only one person at a time. The rope trick spell enables climbers to reach a normal place if they do not climb all the way to the extradimensional space.
+                             *Note:* It is hazardous to create an extradimensional space within an existing extradimensional space or to take an extradimensional space into an existing one.`,
+          component_details:'Material Component: Powdered corn extract and a twisted loop of parchment.'
         },
         //Epic Spell: ruin
         'rusting grasp': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/rustingGrasp.htm',
+          school:           'Transmutation',
+          level:            'Arc 4, Artificer 4, Blg 4, Drd 4, Metal 4, Slime 4, Wuj 4',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'One nonmagical ferrous object (or the volume of the object within 3 ft. of the touched point) or one ferrous creature',
+          duration:         'See text',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `Any iron or iron alloy item you touch becomes instantaneously rusted, pitted, and worthless, effectively destroyed. If the item is so large that it cannot fit within a 3-foot radius a 3-foot-radius volume of the metal is rusted and destroyed. Magic items made of metal are immune to this spell.
+                             You may employ rusting grasp in combat with a successful melee touch attack. Rusting grasp used in this way instantaneously destroys ‹1d6|Rusting Grasp destroys [[1d6]] points of Armor Class› points of Armor Class gained from metal armor (to the maximum amount of protection the armor offered) through corrosion.
+                             Weapons in use by an opponent targeted by the spell are more difficult to grasp. You must succeed on a melee touch attack against the weapon. A metal weapon that is hit is destroyed.
+                             *Note:* Striking at an opponent’s weapon provokes an attack of opportunity. Also, you must touch the weapon and not the other way around.
+                             Against a ferrous creature, rusting grasp instantaneously deals [[3d6+{?{Casting Level},15}kl1]] points of damage per successful attack. The spell lasts for [[?{Casting Level}]] round(s), and you can make one melee touch attack per round.`
         },
         // Spells that start with S
         // Spells that start with T
@@ -9225,30 +9249,30 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'ray of enfeeblement':             { recharge: 'General' },
         'ray of exhaustion':               { recharge: 'General' },
         'ray of frost':                    { recharge: 'General' },
-        'read magic':                      { recharge: '' },
-        'reduce animal':                   { recharge: '' },
-        'reduce person':                   { recharge: '' },
-        'refuge':                          { recharge: '' },
-        'regenerate':                      { recharge: '' },
-        'reincarnate':                     { recharge: '' },
-        'remove blindness/deafness':       { recharge: '' },
-        'remove curse':                    { recharge: '' },
-        'remove disease':                  { recharge: '' },
-        'remove fear':                     { recharge: '' },
-        'remove paralysis':                { recharge: '' },
-        'repel metal or stone':            { recharge: '' },
-        'repel vermin':                    { recharge: '' },
-        'repel wood':                      { recharge: '' },
-        'repulsion':                       { recharge: '' },
-        'resilient sphere':                { recharge: '' },
-        'resistance':                      { recharge: '' },
-        'resist energy':                   { recharge: '' },
-        'restoration':                     { recharge: '' },
-        'resurrection':                    { recharge: '' },
-        'reverse gravity':                 { recharge: '' },
-        'righteous might':                 { recharge: '' },
-        'rope trick':                      { recharge: '' },
-        'rusting grasp':                   { recharge: '' },
+        'read magic':                      { recharge: 'General' },
+        'reduce animal':                   { recharge: '6 hours' },
+        'reduce person':                   { recharge: '30 minutes' },
+        'refuge':                          { recharge: 'General' },
+        'regenerate':                      { recharge: 'General' },
+        'reincarnate':                     { recharge: 'General' },
+        'remove blindness/deafness':       { recharge: 'General' },
+        'remove curse':                    { recharge: 'General' },
+        'remove disease':                  { recharge: 'General' },
+        'remove fear':                     { recharge: 'General' },
+        'remove paralysis':                { recharge: 'General' },
+        'repel metal or stone':            { recharge: 'General' },
+        'repel vermin':                    { recharge: '4 hours' },
+        'repel wood':                      { recharge: 'General' },
+        'repulsion':                       { recharge: 'General' },
+        'resilient sphere':                { recharge: 'General' },
+        'resistance':                      { recharge: '5 minutes' },
+        'resist energy':                   { recharge: '1 hour' },
+        'restoration':                     { recharge: 'General' },
+        'resurrection':                    { recharge: 'General' },
+        'reverse gravity':                 { recharge: 'General' },
+        'righteous might':                 { recharge: '5 minutes' },
+        'rope trick':                      { recharge: '6 hours' },
+        'rusting grasp':                   { recharge: '5 minutes' },
         //RECHARGES
         //'': { recharge: 'General' },
       }
