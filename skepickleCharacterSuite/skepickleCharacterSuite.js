@@ -224,10 +224,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_long_',
           target_type:      'Effect',
           target:           'One arrow of acid',
-          duration:         '[[1+floor([[?{Casting Level}/3]])]] round(s)',
+          duration:         '[[1+floor([[?{Casting Level}/3]])]] rounds',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `A magical arrow of acid springs from your hand and speeds to its target. You must succeed on a ranged touch attack to hit your target. The arrow deals [[2d4]] points of acid damage with no splash damage. The acid, unless somehow neutralized, lasts for another [[floor({?{Casting Level},18}kl1/3)]] round(s), dealing another ‹2d4|[[2d4]] points of damage› points of damage each round.`,
+          text:             `A magical arrow of acid springs from your hand and speeds to its target. You must succeed on a ranged touch attack to hit your target. The arrow deals [[2d4]] points of acid damage with no splash damage. The acid, unless somehow neutralized, lasts for another [[floor({?{Casting Level},18}kl1/3)]] rounds, dealing another ‹2d4|[[2d4]] points of damage› points of damage each round.`,
           component_details:`Material Component: Powdered rhubarb leaf and an adder’s stomach.
                              Focus: A dart.`
         },
@@ -240,7 +240,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           'Fog spreads in 20-ft. radius, 20 ft. high',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `Acid fog creates a billowing mass of misty vapors similar to that produced by a [solid fog](http://www.d20srd.org/srd/spells/solidFog.htm) spell. In addition to slowing creatures down and obscuring sight, this spell’s vapors are highly acidic. Each round on your turn, starting when you cast the spell, the fog deals ‹2d6|[[2d6]] points of acid damage› points of acid damage to each creature and object within it.`,
@@ -248,6 +248,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'acid splash': {
           ref:              'http://www.d20srd.org/srd/spells/acidSplash.htm',
+          other_versions:   'Magic of Faerun on page 76',
           school:           'Conjuration (Creation) [Acid]',
           level:            'Duskblade 0, Sor/Wiz 0, Wmg 0',
           components:       'V, S',
@@ -258,8 +259,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             'You fire a small orb of acid at the target. You must succeed on a ranged touch attack to hit your target. The orb deals [[1d3]] points of acid damage.',
-          other_versions:   'Magic of Faerun on page 76'
+          text:             'You fire a small orb of acid at the target. You must succeed on a ranged touch attack to hit your target. The orb deals [[1d3]] points of acid damage.'
         },
         'aid': {
           ref:              'http://www.d20srd.org/srd/spells/aid.htm',
@@ -270,7 +270,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           targer_type:      'Target',
           target:           'Living creature touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'Yes (harmless)',
           text:             'Aid grants the target a +1 morale bonus on attack rolls and saves against fear effects, plus \`\`[[1d8+[[{?{Casting Level},10}kl1]]]] temporary hit points\`\`.'
@@ -284,12 +284,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature (Gargantuan or smaller) touched',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'Yes (harmless)',
           text:             `The subject can tread on air as if walking on solid ground. Moving upward is similar to walking up a hill. The maximum upward or downward angle possible is 45 degrees, at a rate equal to one-half the air walker’s normal speed.
                              A strong wind (21+ mph) can push the subject along or hold it back. At the end of its turn each round, the wind blows the air walker 5 feet for each 5 miles per hour of wind speed. The creature may be subject to additional penalties in exceptionally strong or turbulent winds, such as loss of control over movement or physical damage from being buffeted about.
-                             Should the spell duration expire while the subject is still aloft, the magic fails slowly. The subject floats downward 60 feet per round for ‹1d6|The subject floats downward 60 feet per round for [[1d6]] round(s)› rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking «1d6|The subject takes [[[[floor(?{Falling Distance (Feet)}/10)]]d6]] points of damage» points of damage per 10 feet of fall. Since dispelling a spell effectively ends it, the subject also descends in this way if the air walk spell is dispelled, but not if it is negated by an antimagic field.
+                             Should the spell duration expire while the subject is still aloft, the magic fails slowly. The subject floats downward 60 feet per round for ‹1d6|The subject floats downward 60 feet per round for [[1d6]] rounds› rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking «1d6|The subject takes [[[[floor(?{Falling Distance (Feet)}/10)]]d6]] points of damage» points of damage per 10 feet of fall. Since dispelling a spell effectively ends it, the subject also descends in this way if the air walk spell is dispelled, but not if it is negated by an antimagic field.
                              You can cast air walk on a specially trained mount so it can be ridden through the air. You can train a mount to move with the aid of air walk (counts as a trick; see Handle Animal skill) with one week of work and a DC 25 Handle Animal check.`
         },
         'alarm': {
@@ -301,7 +301,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Area',
           target:           '20-ft.-radius emanation centered on a point in space',
-          duration:         '[[2*?{Casting Level}]] hour(s) (D)',
+          duration:         '[[2*?{Casting Level}]] hours (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `Alarm sounds a mental or audible alarm each time a creature of Tiny or larger size enters the warded area or touches it. A creature that speaks the password (determined by you at the time of casting) does not set off the alarm. You decide at the time of casting whether the alarm will be mental or audible.
@@ -321,7 +321,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Weapon touched or fifty projectiles (all of which must be in contact with each other at the time of casting)',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
           text:             `Align weapon makes a weapon good, evil, lawful, or chaotic, as you choose. A weapon that is aligned can bypass the damage reduction of certain creatures. This spell has no effect on a weapon that already has an alignment.
@@ -330,6 +330,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'alter self': {
           ref:              'http://www.d20srd.org/srd/spells/alterSelf.htm',
+          other_versions:   'Tome and Blood on page 95',
           school:           'Transmutation',
           level:            'Asn 2, Brd 2, HB 2, Slayer of Domiel 2, Sor/Wiz 2, Transformation 2, Vassal of Bahamut 2, Wuj 2',
           components:       'V, S',
@@ -337,7 +338,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           text:             `You assume the form of a creature of the same type as your normal form. The new form must be within one size category of your normal size. The maximum HD of an assumed form is equal to your caster level, to a maximum of 5 HD at 5th level. You can change into a member of your own kind or even into yourself.
                              You retain your own ability scores. Your class and level, hit points, alignment, base attack bonus, and base save bonuses all remain the same. You retain all supernatural and spell-like special attacks and qualities of your normal form, except for those requiring a body part that the new form does not have (such as a mouth for a breath weapon or eyes for a gaze attack).
                              You keep all extraordinary special attacks and qualities derived from class levels, but you lose any from your normal form that are not derived from class levels.
@@ -346,8 +347,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              You do not gain any extraordinary special attacks or special qualities not noted above under physical qualities, such as darkvision, low-light vision, blindsense, blindsight, fast healing, regeneration, scent, and so forth.
                              You do not gain any supernatural special attacks, special qualities, or spell-like abilities of the new form. Your creature type and subtype (if any) remain the same regardless of your new form. You cannot take the form of any creature with a template, even if that template doesn’t change the creature type or subtype.
                              You can freely designate the new form’s minor physical qualities (such as hair color, hair texture, and skin color) within the normal ranges for a creature of that kind. The new form’s significant physical qualities (such as height, weight, and gender) are also under your control, but they must fall within the norms for the new form’s kind. You are effectively disguised as an average member of the new form’s race. If you use this spell to create a disguise, you get a +10 bonus on your Disguise check.
-                             When the change occurs, your equipment, if any, either remains worn or held by the new form (if it is capable of wearing or holding the item), or melds into the new form and becomes nonfunctional. When you revert to your true form, any objects previously melded into the new form reappear in the same location on your body they previously occupied and are once again functional. Any new items you wore in the assumed form and can’t wear in your normal form fall off and land at your feet; any that you could wear in either form or carry in a body part common to both forms at the time of reversion are still held in the same way. Any part of the body or piece of equipment that is separated from the whole reverts to its true form.`,
-          other_versions:    'Tome and Blood on page 95'
+                             When the change occurs, your equipment, if any, either remains worn or held by the new form (if it is capable of wearing or holding the item), or melds into the new form and becomes nonfunctional. When you revert to your true form, any objects previously melded into the new form reappear in the same location on your body they previously occupied and are once again functional. Any new items you wore in the assumed form and can’t wear in your normal form fall off and land at your feet; any that you could wear in either form or carry in a body part common to both forms at the time of reversion are still held in the same way. Any part of the body or piece of equipment that is separated from the whole reverts to its true form.`
         },
         'analyze dweomer': {
           ref:              'http://www.d20srd.org/srd/spells/analyzeDweomer.htm',
@@ -357,8 +357,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] object(s) or creature(s)',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          target:           '[[?{Casting Level}]] objects or creatures',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None or Will negates; see text',
           spell_resistance: 'No',
           text:             `You discern all spells and magical properties present in a number of creatures or objects. Each round, you may examine a single creature or object that you can see as a free action. In the case of a magic item, you learn its functions, how to activate its functions (if appropriate), and how many charges are left (if it uses charges). In the case of an object or creature with active spells cast upon it, you learn each spell, its effect, and its caster level.
@@ -374,8 +374,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_medium_',
           target_type:      'Targets',
-          target:           'Up to [[floor(?{Casting Level}/2)]] animal(s) (Gargantuan or smaller), no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          target:           'Up to [[floor(?{Casting Level}/2)]] animals (Gargantuan or smaller), no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
           text:             `A number of animals grow to twice their normal size and eight times their normal weight. This alteration changes each animal’s size category to the next largest, grants it a +8 size bonus to Strength and a +4 size bonus to Constitution (and thus an extra 2 hit points per HD), and imposes a -2 size penalty to Dexterity. The creature’s existing natural armor bonus increases by 2. The size change also affects the animal’s modifier to AC and attack rolls and its base damage. The animal’s space and reach change as appropriate to the new size, but its speed does not change.
@@ -394,7 +394,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One Tiny animal',
-          duration:         '[[?{Casting Level}]] day(s)',
+          duration:         '[[?{Casting Level}]] days',
           saving_throw:     'None; see text',
           spell_resistance: 'Yes',
           text:             `You compel a Tiny animal to go to a spot you designate. The most common use for this spell is to get an animal to carry a message to your allies. The animal cannot be one tamed or trained by someone else, including such creatures as familiars and animal companions.
@@ -410,8 +410,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           'Up to [[?{Casting Level}]] willing creature(s), all within 30 ft. of each other',
-          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          target:           'Up to [[?{Casting Level}]] willing creatures, all within 30 ft. of each other',
+          duration:         '[[?{Casting Level}]] hours (D)',
           saving_throw:     'None; see text',
           spell_resistance: 'Yes (harmless)',
           text:             'You transform up to one willing creature per caster level into an animal of your choice; the spell has no effect on unwilling creatures. Use the alternate form special ability to determine each target’s new abilities. All creatures must take the same kind of animal form. Recipients remain in the animal form until the spell expires or until you dismiss it for all recipients. In addition, an individual subject may choose to resume its normal form as a full-round action; doing so ends the spell for that subject alone. The maximum HD of an assumed form is equal to the subject’s HD or your caster level, whichever is lower, to a maximum of 20 HD at 20th level.'
@@ -459,8 +459,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_medium_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] Small object(s); see text',
-          duration:         '[[?{Casting Level}]] round(s)',
+          target:           '[[?{Casting Level}]] Small objects; see text',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You imbue inanimate objects with mobility and a semblance of life. Each such animated object then immediately attacks whomever or whatever you initially designate.
@@ -476,8 +476,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[floor(?{Casting Level}/3)]] Large plant(s) or all plants within range; see text',
-          duration:         '[[?{Casting Level}]] round(s) or [[?{Casting Level}]] hour(s); see text',
+          target:           '[[floor(?{Casting Level}/3)]] Large plants or all plants within range; see text',
+          duration:         '[[?{Casting Level}]] rounds or [[?{Casting Level}]] hours; see text',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You imbue inanimate plants with mobility and a semblance of life. Each animated plant then immediately attacks whomever or whatever you initially designate as though it were an animated object of the appropriate size category. You may animate one Large or smaller plant, or an equivalent number of larger plants, per three caster levels. A Huge plant counts as two Large or smaller plants, a Gargantuan plant as four, and a Colossal plant as eight. You can change the designated target or targets as a move action, as if directing an active spell.
@@ -494,7 +494,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Target',
           target:           'One ropelike object, length up to [[50+(5*?{Casting Level})]] ft.; see text',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You can animate a nonliving ropelike object. The maximum length assumes a rope with a 1-inch diameter.
@@ -516,7 +516,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '10 ft.',
           target_type:      'Area',
           target:           '10-ft.-radius emanation, centered on you',
-          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `You bring into being a mobile, hemispherical energy field that prevents the entrance of most types of living creatures.
@@ -532,7 +532,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '10 ft.',
           target_type:      'Area',
           target:           '10-ft.-radius emanation, centered on you',
-          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'See text',
           text:             `An invisible barrier surrounds you and moves with you. The space within this barrier is impervious to most magical effects, including spells, spell-like abilities, and supernatural abilities. Likewise, it prevents the functioning of any magic items or spells within its confines.
@@ -552,7 +552,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One location (up to [[?{Casting Level}]] 10-ft. cubes) or one object',
-          duration:         '[[2*?{Casting Level}]] hour(s) (D)',
+          duration:         '[[2*?{Casting Level}]] hours (D)',
           saving_throw:     'Will partial',
           spell_resistance: 'Yes',
           text:             `You cause an object or location to emanate magical vibrations that repel either a specific kind of intelligent creature or creatures of a particular alignment, as defined by you. The kind of creature to be affected must be named specifically. A creature subtype is not specific enough. Likewise, the specific alignment to be repelled must be named.
@@ -570,7 +570,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '10 ft.',
           target_type:      'Area',
           target:           '10-ft.-radius emanation, centered on you',
-          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `The antiplant shell spell creates an invisible, mobile barrier that keeps all creatures within the shell protected from attacks by plant creatures or animated plants. As with many abjuration spells, forcing the barrier against creatures that the spell keeps at bay strains and collapses the field.`
@@ -584,7 +584,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Unlimited',
           target_type:      'Effect',
           target:           'Magical sensor',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You create an invisible magical sensor that sends you visual information. You can create the arcane eye at any point you can see, but it can then travel outside your line of sight without hindrance. An arcane eye travels at 30 feet per round (300 feet per minute) if viewing an area ahead as a human would (primarily looking at the floor) or 10 feet per round (100 feet per minute) if examining the ceiling and walls as well as the floor ahead. It sees exactly as you would see if you were there.
@@ -626,6 +626,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'arcane sight': {
           ref:              'http://www.d20srd.org/srd/spells/arcaneSight.htm',
+          other_versions:   'Tome and Blood on page 85',
           school:           'Divination',
           level:            'Beguiler 3, HB 3, Hoard 3, Sor/Wiz 3',
           components:       'V, S',
@@ -633,15 +634,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           text:             `This spell makes your eyes glow blue and allows you to see magical auras within 120 feet of you. The effect is similar to that of a [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm) spell, but arcane sight does not require concentration and discerns aura location and power more quickly.
                              You know the location and power of all magical auras within your sight. An aura’s power depends on a spell’s functioning level or an item’s caster level, as noted in the description of the [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm) spell. If the items or creatures bearing the auras are in line of sight, you can make Spellcraft skill checks to determine the school of magic involved in each. (Make one check per aura; DC 15 + spell level, or 15 + one-half caster level for a nonspell effect.)
                              If you concentrate on a specific creature within 120 feet of you as a standard action, you can determine whether it has any spellcasting or spell-like abilities, whether these are arcane or divine (spell-like abilities register as arcane), and the strength of the most powerful spell or spell-like ability the creature currently has available for use.
-                             Arcane sight can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
-          other_versions:   'Tome and Blood on page 85'
+                             Arcane sight can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`
         },
         'armor of darkness': {
           ref:              'http://www.d20srd.org/srd/divine/spells/armorOfDarkness.htm',
+          other_versions:   'Forgotten Realms Campaign Setting on page 67, Spell Compendium on page 15',
           school:           'Abjuration [Darkness]',
           level:            'Darkness 4',
           components:       'V, S, DF',
@@ -649,11 +650,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `The spell envelops the warded creature in a shroud of shadows. The shroud can, if the caster desires, conceal the wearer’s features. In any case, it grants the recipient a **[[{3+[[floor(?{Casting Level}/4)]],8}kl1]] deflection bonus** to Armor Class. The subject can see through the armor as if it did not exist and is also afforded darkvision with a range of 60 feet. Finally, the subject gains a +2 bonus on saving throws against any holy, good, or light spells or effects. Undead creatures that are subjects of armor of darkness also gain +4 turn resistance.`,
-          other_versions:   'Forgotten Realms Campaign Setting on page 67, Spell Compendium on page 15'
+          text:             `The spell envelops the warded creature in a shroud of shadows. The shroud can, if the caster desires, conceal the wearer’s features. In any case, it grants the recipient a **[[{3+[[floor(?{Casting Level}/4)]],8}kl1]] deflection bonus** to Armor Class. The subject can see through the armor as if it did not exist and is also afforded darkvision with a range of 60 feet. Finally, the subject gains a +2 bonus on saving throws against any holy, good, or light spells or effects. Undead creatures that are subjects of armor of darkness also gain +4 turn resistance.`
         },
         'astral projection': {
           ref:              'http://www.d20srd.org/srd/spells/astralProjection.htm',
@@ -663,7 +663,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '30 minutes',
           range:            'Touch',
           target_type:      'Targets',
-          target:           'You plus [[floor(?{Casting Level}/2)]] additional willing creature(s) touched',
+          target:           'You plus [[floor(?{Casting Level}/2)]] additional willing creatures touched',
           duration:         'See text',
           saving_throw:     'None',
           spell_resistance: 'Yes',
@@ -774,7 +774,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '50 ft.',
           target_type:      'Area',
           target:           'All enemies within 50 ft.',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `Bane fills your enemies with fear and doubt. Each affected creature takes a -1 penalty on attack rolls and a -1 penalty on saving throws against fear effects.
@@ -806,7 +806,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Living creature touched',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'Yes (harmless)',
           text:             `Barkskin toughens a creature’s skin. The effect grants a \`\`+[[2+{[[floor({(?{Casting Level}-3)/3,0}kh1)]],3}kl1]] enhancement bonus\`\` to the creature’s existing natural armor bonus.
@@ -821,7 +821,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
           text:             `The affected creature gains greater vitality and stamina. The spell grants the subject a +4 enhancement bonus to Constitution, which adds the usual benefits to hit points, Fortitude saves, Constitution checks, and so forth.
@@ -882,7 +882,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Area',
           target:           '20-ft.-radius spread',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell conjures a field of rubbery black tentacles, each 10 feet long. These waving members seem to spring forth from the earth, floor, or whatever surface is underfoot—including water. They grasp and entwine around creatures that enter the area, holding them fast and crushing them with great strength.
@@ -893,6 +893,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'blacklight': {
           ref:              'http://www.d20srd.org/srd/divine/spells/blacklight.htm',
+          other_versions:   'Forgotten Realms Campaign Setting on page 67, Spell Compendium on page 30',
           school:           'Evocation [Darkness]',
           level:            'Darkness 3, Sor/Wiz 3',
           components:       'V, S, M',
@@ -900,13 +901,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Area',
           target:           'A 20-ft.-radius emanation centered on a creature, object, or point in space',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'Will negates or none (object)',
           spell_resistance: 'Yes or no (object)',
           text:             `The caster creates an area of total darkness. The darkness is impenetrable to normal vision and darkvision, but the caster can see normally within the blacklit area. Creatures outside the spell’s area, even the caster, cannot see through it.
                              The spell can be cast on a point in space, but the effect is stationary when cast on a mobile object. A character can cast the spell on a creature, and the effect then radiates from the creature and moves as it moves. Unattended objects and points in space do not get saving throws or benefit from spell resistance.
-                             Blacklight counters or dispels any light spell of equal or lower level. The 3rd-level cleric spell [daylight](http://www.d20srd.org/srd/spells/daylight.htm) counters or dispels blacklight.`,
-          other_versions:   'Forgotten Realms Campaign Setting on page 67, Spell Compendium on page 30'
+                             Blacklight counters or dispels any light spell of equal or lower level. The 3rd-level cleric spell [daylight](http://www.d20srd.org/srd/spells/daylight.htm) counters or dispels blacklight.`
         },
         'blade barrier': {
           ref:              'http://www.d20srd.org/srd/spells/bladeBarrier.htm',
@@ -917,7 +917,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           'Wall of whirling blades up to [[20*?{Casting Level}]] ft. long, or a ringed wall of whirling blades with a radius of up to [[5*floor(?{Casting Level}/2)]] ft.; either form 20 ft. high',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Reflex half or Reflex negates; see text',
           spell_resistance: 'Yes',
           text:             `An immobile, vertical curtain of whirling blades shaped of pure force springs into existence. Any creature passing through the wall takes 1d6 points of ‹damage|[[[[{?{Casting Level},15}kl1]]d6]]› per caster level (maximum 15d6), with a Reflex save for half damage.
@@ -961,7 +961,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '50 ft.',
           target_type:      'Area',
           target:           'The caster and all allies within a 50-ft. burst, centered on the caster',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'Yes (harmless)',
           text:             `Bless fills your allies with courage. Each ally gains a +1 morale bonus on attack rolls and on saving throws against fear effects.
@@ -991,7 +991,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Weapon touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This transmutation makes a weapon strike true against evil foes. The weapon is treated as having a +1 enhancement bonus for the purpose of bypassing the damage reduction of evil creatures or striking evil incorporeal creatures (though the spell doesn’t grant an actual enhancement bonus). The weapon also becomes good, which means it can bypass the damage reduction of certain creatures. (This effect overrides and suppresses any other alignment the weapon might have.) Individual arrows or bolts can be transmuted, but affected projectile weapons (such as bows) don’t confer the benefit to the projectiles they shoot.
@@ -999,6 +999,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'blight': {
           ref:              'http://www.d20srd.org/srd/spells/blight.htm',
+          other_versions:   'Defenders of the Faith on page 81, Masters of the Wild on page 84',
           school:           'Necromancy',
           level:            'Arc 4, Blg 4, Decay 5, Drd 4, Sor/Wiz 5',
           components:       'V, S, DF',
@@ -1010,8 +1011,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Fortitude half; see text',
           spell_resistance: 'Yes',
           text:             `This spell withers a single plant of any size. An affected plant creature takes [[[[{?{Casting Level},15}kl1]]d6]] points of damage and may attempt a Fortitude saving throw for half damage. A plant that isn’t a creature doesn’t receive a save and immediately withers and dies.
-                             This spell has no effect on the soil or surrounding plant life.`,
-          other_versions:   'Defenders of the Faith on page 81, Masters of the Wild on page 84'
+                             This spell has no effect on the soil or surrounding plant life.`
         },
         'blindness/deafness': {
           ref:              'http://www.d20srd.org/srd/spells/blindnessDeafness.htm',
@@ -1036,7 +1036,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           text:             `You “blink” back and forth between the Material Plane and the Ethereal Plane. You look as though you’re winking in and out of reality very quickly and at random.
                              Blinking has several effects, as follows.
                              Physical attacks against you have a 50% miss chance, and the [Blind-Fight](http://www.d20srd.org/srd/feats.htm#blindFight) feat doesn’t help opponents, since you’re ethereal and not merely invisible. If the attack is capable of striking ethereal creatures, the miss chance is only 20% (for concealment).
@@ -1059,7 +1059,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The subject’s outline appears blurred, shifting and wavering. This distortion grants the subject [concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment) (20% miss chance).
@@ -1068,6 +1068,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'bolt of glory': {
           ref:              'http://www.d20srd.org/srd/divine/spells/boltOfGlory.htm',
+          other_versions:   'Book of Exalted Deeds on page 92, Complete Divine on page 155, Defenders of the Faith on page 81, Draconomicon on page 109, Spell Compendium on page 35',
           school:           'Evocation [Good]',
           level:            'Arc 6, Clr 6, Exalted Arcanist 6, Glory 6',
           components:       'V, S, DF',
@@ -1081,11 +1082,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `This spell projects a bolt of energy from the Positive Energy Plane against one creature. The caster must succeed at a ranged touch attack to strike the target. A creature struck suffers varying damage, depending on its nature and home plane of existence:
                              ‹Material Plane↲Elemental Plane↲neutral outsider|[[[[{floor(?{Casting Level}/2),7}kl1]]d6]]›
                              ‹Negative Energy Plane↲evil outsider↲undead creature|[[[[{?{Casting Level},15}kl1]]d6]]›
-                             ‹Positive Energy Plane↲good outsider|—›`,
-          other_versions:   'Book of Exalted Deeds on page 92, Complete Divine on page 155, Defenders of the Faith on page 81, Draconomicon on page 109, Spell Compendium on page 35'
+                             ‹Positive Energy Plane↲good outsider|—›`
         },
         'bolts of bedevilment': {
           ref:              'http://www.d20srd.org/srd/divine/spells/boltsOfBedevilment.htm',
+          other_versions:   'Complete Divine on page 155, Defenders of the Faith on page 82, Eberron Campaign Setting on page 109, Lords of Madness on page 209, Spell Compendium on page 37',
           school:           'Enchantment [Mind-Affecting]',
           level:            'Brd 5, Madness 5',
           components:       'V, S',
@@ -1093,14 +1094,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           'Ray',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This spell grants the caster the ability to make one ray attack per round. The ray dazes one living creature, clouding its mind so that it takes no action for [[1d3]] rounds. The creature is not stunned (so attackers get no special advantage against it), but it can’t move, cast spells, use mental abilities, and so on.`,
-          other_versions:   'Complete Divine on page 155, Defenders of the Faith on page 82, Eberron Campaign Setting on page 109, Lords of Madness on page 209, Spell Compendium on page 37'
+          text:             `This spell grants the caster the ability to make one ray attack per round. The ray dazes one living creature, clouding its mind so that it takes no action for [[1d3]] rounds. The creature is not stunned (so attackers get no special advantage against it), but it can’t move, cast spells, use mental abilities, and so on.`
         },
         'brain spider': {
           ref:              'http://www.d20srd.org/srd/psionic/spells/brainSpider.htm',
+          other_versions:   'Complete Divine on page 156, Defenders of the Faith on page 82, Lords of Madness on page 209, Spell Compendium on page 38',
           school:           'Divination [Mind-Affecting]',
           level:            'Arc 7, Clr 7, Mind 7',
           components:       'V, S, M, DF',
@@ -1108,7 +1109,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_long_',
           target_type:      'Targets',
           target:           'Up to eight living creatures',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This spell allows you to eavesdrop as a standard action on the thoughts of up to eight other creatures at once, hearing as desired:
@@ -1119,8 +1120,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
                              Once per round, if you do not perform a detailed study of one creature’s mind, you can attempt (as a standard action) to implant a [suggestion](http://www.d20srd.org/srd/spells/suggestion.htm) in the mind of any one of the affected creatures. The creature can make another Will saving throw to resist the suggestion, using the save DC of the brain spider spell. (Creatures with special resistance to enchantment spells can use this resistance to keep from being affected by the suggestion.) Success on this saving throw does not negate the other effects of the brain spider spell for that creature.
                              You can affect all intelligent beings of your choice within range (up to the limit of eight), beginning with known or named beings. Language is not a barrier, and you need not personally know the beings. The spell cannot reach those who make a successful Will save.`,
-          component_details:'Material Component: A spider of any size or kind. It can be dead, but must still have all eight legs.',
-          other_versions:   'Complete Divine on page 156, Defenders of the Faith on page 82, Lords of Madness on page 209, Spell Compendium on page 38'
+          component_details:'Material Component: A spider of any size or kind. It can be dead, but must still have all eight legs.'
         },
         'break enchantment': {
           ref:              'http://www.d20srd.org/srd/spells/breakEnchantment.htm',
@@ -1130,7 +1130,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 minute',
           range:            '_close_',
           target_type:      'Targets',
-          target:           'Up to [[?{Casting Level}]] creature(s), all within 30 ft. of each other',
+          target:           'Up to [[?{Casting Level}]] creatures, all within 30 ft. of each other',
           duration:         'Instantaneous',
           saving_throw:     'See text',
           spell_resistance: 'No',
@@ -1147,7 +1147,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The subject becomes stronger. The spell grants a +4 enhancement bonus to Strength, adding the usual benefits to melee attack rolls, melee damage rolls, and other uses of the Strength modifier.`,
@@ -1177,7 +1177,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           'One or more 30-ft.-long vertical lines of lightning',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
           text:             `Immediately upon completion of the spell, and once per round thereafter, you may call down a 5-foot-wide, 30-foot-long, vertical bolt of lightning that deals ‹3d6› points of electricity damage. The bolt of lightning flashes down in a vertical stroke at whatever target point you choose within the spell’s range (measured from your position at the time). Any creature in the target square or in the path of the bolt is affected.
@@ -1194,7 +1194,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_long_',
           target_type:      'Effect',
           target:           'One or more 30-ft.-long vertical lines of lightning',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
           text:             `Immediately upon completion of the spell, and once per round thereafter, you may call down a 5-foot-wide, 30-foot-long, vertical bolt of lightning that deals ‹5d6› points of electricity damage. The bolt of lightning flashes down in a vertical stroke at whatever target point you choose within the spell’s range (measured from your position at the time). Any creature in the target square or in the path of the bolt is affected.
@@ -1211,7 +1211,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Targets',
           target:           'Animals within 30 ft. of each other',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates, see text',
           spell_resistance: 'Yes',
           text:             `This spell soothes and quiets animals, rendering them docile and harmless. Only ordinary animals (those with Intelligence scores of 1 or 2) can be affected by this spell. All the subjects must be of the same kind, and no two may be more than 30 feet apart. The maximum number of Hit Dice of animals you can affect is equal to 2d4 + caster level: [[2d4+?{Casting Level}]]. A dire animal or an animal trained to attack or guard is allowed a saving throw; other animals are not.
@@ -1226,7 +1226,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Area',
           target:           'Creatures in a 20-ft.-radius spread',
-          duration:         'Concentration, up to [[?{Casting Level}]] round(s) (D)',
+          duration:         'Concentration, up to [[?{Casting Level}]] rounds (D)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This spell calms agitated creatures. You have no control over the affected creatures, but *calm emotions* can stop raging creatures from fighting or joyous ones from reveling. Creatures so affected cannot take violent actions (although they can defend themselves) or do anything destructive. Any aggressive action against or damage dealt to a calmed creature immediately breaks the spell on all calmed creatures.
@@ -1241,7 +1241,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
           text:             `The transmuted creature becomes more graceful, agile, and coordinated. The spell grants a +4 enhancement bonus to Dexterity, adding the usual benefits to AC, Reflex saves, and other uses of the Dexterity modifier.`,
@@ -1270,7 +1270,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_long_',
           target_type:      'Targets',
-          target:           'One primary target, plus [[?{Casting Level}]] secondary target(s) (each of which must be within 30 ft. of the primary target)',
+          target:           'One primary target, plus [[?{Casting Level}]] secondary targets (each of which must be within 30 ft. of the primary target)',
           duration:         'Instantaneous',
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
@@ -1288,7 +1288,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Your touched staff',
-          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          duration:         '[[?{Casting Level}]] hours (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You change a specially prepared quarterstaff into a Huge treantlike creature, about 24 feet tall. When you plant the end of the staff in the ground and speak a special command to conclude the casting of the spell, your staff turns into a creature that looks and fights just like a treant. The staff-treant defends you and obeys any spoken commands. However, it is by no means a true treant; it cannot converse with actual treants or control trees. If the staff-treant is reduced to 0 or fewer hit points, it crumbles to powder and the staff is destroyed. Otherwise, the staff returns to its normal form when the spell duration expires (or when the spell is dismissed), and it can be used as the focus for another casting of the spell. The staff-treant is always at full strength when created, despite any wounds it may have incurred the last time it appeared.`,
@@ -1320,7 +1320,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One animal',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This charm makes an animal regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the animal is currently being threatened or attacked by you or your allies, however, it receives a +5 bonus on its saving throw.
@@ -1335,7 +1335,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One living creature',
-          duration:         '[[?{Casting Level}]] day(s)',
+          duration:         '[[?{Casting Level}]] days',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This charm makes a creature regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a +5 bonus on its saving throw.
@@ -1350,7 +1350,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One humanoid creature',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This charm makes a humanoid creature regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a +5 bonus on its saving throw.
@@ -1364,7 +1364,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Target',
-          target:           'Metal equipment of [[floor(?{Casting Level}/2)]] creature(s), no two of which can be more than 30 ft. apart; or [[25*?{Casting Level}]] lb. of metal, none of which can be more than 30 ft. away from any of the rest',
+          target:           'Metal equipment of [[floor(?{Casting Level}/2)]] creatures, no two of which can be more than 30 ft. apart; or [[25*?{Casting Level}]] lb. of metal, none of which can be more than 30 ft. away from any of the rest',
           duration:         '7 rounds',
           saving_throw:     'Will negates (object)',
           spell_resistance: 'Yes (object)',
@@ -1393,8 +1393,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude partial or Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `A touch from your hand, which glows with blue energy, disrupts the life force of living creatures. Each touch channels negative energy that deals [[1d6]] points of damage. The touched creature also takes 1 point of Strength damage unless it makes a successful Fortitude saving throw. You can use this melee touch attack up to [[?{Casting Level}]] time(s).
-                             An undead creature you touch takes no damage of either sort, but it must make a successful Will saving throw or flee as if panicked for 1d4 rounds +1 round per caster level: [[1d4+?{Casting Level}]] round(s).`
+          text:             `A touch from your hand, which glows with blue energy, disrupts the life force of living creatures. Each touch channels negative energy that deals [[1d6]] points of damage. The touched creature also takes 1 point of Strength damage unless it makes a successful Fortitude saving throw. You can use this melee touch attack up to [[?{Casting Level}]] times.
+                             An undead creature you touch takes no damage of either sort, but it must make a successful Will saving throw or flee as if panicked for 1d4 rounds +1 round per caster level: [[1d4+?{Casting Level}]] rounds.`
         },
         'circle of death': {
           ref:              'http://www.d20srd.org/srd/spells/circleOfDeath.htm',
@@ -1421,7 +1421,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_long_',
           target_type:      'Effect',
           target:           'Magical sensor',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `Clairaudience/clairvoyance creates an invisible magical sensor at a specific location that enables you to hear or see (your choice) almost as if you were there. You don’t need line of sight or line of effect, but the locale must be known—a place familiar to you or an obvious one. Once you have selected the locale, the sensor doesn’t move, but you can rotate it in all directions to view the area as desired. Unlike other scrying spells, this spell does not allow magically or supernaturally enhanced senses to work through it. If the chosen locale is magically dark, you see nothing. If it is naturally pitch black, you can see in a 10-foot radius around the center of the spell’s effect. Clairaudience/clairvoyance functions only on the plane of existence you are currently occupying.`,
@@ -1436,7 +1436,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           '10-ft. hand',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `This spell functions like [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm), except that the hand can interpose itself, push, or strike one opponent that you select. The floating hand can move as far as 60 feet and can attack in the same round. Since this hand is directed by you, its ability to notice or attack invisible or concealed creatures is no better than yours.
@@ -1453,8 +1453,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '20 ft.',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s) in a 20-ft.-radius burst centered on you',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          target:           '[[?{Casting Level}]] creatures in a 20-ft.-radius burst centered on you',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'See text',
           spell_resistance: 'Yes (harmless)',
           text:             `A random pattern of color surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by lawful creatures, and causing lawful creatures that strike the subjects to become confused. This abjuration has four effects.
@@ -1493,7 +1493,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           'Cloud spreads in 20-ft. radius, 20 ft. high',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Fortitude partial; see text',
           spell_resistance: 'No',
           text:             `This spell generates a bank of fog, similar to a [fog cloud](http://www.d20srd.org/srd/spells/fogCloud.htm), except that its vapors are yellowish green and poisonous. These vapors automatically kill any living creature with 3 or fewer HD (no save). A living creature with 4 to 6 HD is slain unless it succeeds on a Fortitude save (in which case it takes ‹1d4› points of Constitution damage on your turn each round while in the cloud).
@@ -1551,7 +1551,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Targets',
           target:           'Up to [[2*?{Casting Level}]] HD of plant creatures, no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] day(s)',
+          duration:         '[[?{Casting Level}]] days',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This spell allows you some degree of control over one or more plant creatures. Affected plant creatures can understand you, and they perceive your words and actions in the most favorable way (treat their attitude as friendly). They will not attack you while the spell lasts. You can try to give a subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) A commanded plant never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing.
@@ -1559,6 +1559,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'command undead': {
           ref:              'http://www.d20srd.org/srd/spells/commandUndead.htm',
+          other_versions:   'Tome and Blood on page 86',
           school:           'Necromancy',
           level:            'Arc 3, Drd 4, Plant 4, Rgr 3, Wuj 4',
           components:       'V, S, M',
@@ -1566,15 +1567,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Targets',
           target:           'One undead creature',
-          duration:         '[[?{Casting Level}]] day(s)',
+          duration:         '[[?{Casting Level}]] days',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
           text:             `This spell allows you some degree of control over an undead creature. Assuming the subject is intelligent, it perceives your words and actions in the most favorable way (treat its attitude as friendly). It will not attack you while the spell lasts. You can try to give the subject orders, but you must win an opposed Charisma check to convince it to do anything it wouldn’t ordinarily do. (Retries are not allowed.) An intelligent commanded undead never obeys suicidal or obviously harmful orders, but it might be convinced that something very dangerous is worth doing.
                              A nonintelligent undead creature gets no saving throw against this spell. When you control a mindless being, you can communicate only basic commands, such as “come here,” “go there,” “fight,” “stand still,” and so on. Nonintelligent undead won’t resist suicidal or obviously harmful orders.
                              Any act by you or your apparent allies that threatens the commanded undead (regardless of its Intelligence) breaks the spell.
                              Your commands are not telepathic. The undead creature must be able to hear you.`,
-          component_details:'Material Component: A shred of raw meat and a splinter of bone.',
-          other_versions:   'Tome and Blood on page 86'
+          component_details:'Material Component: A shred of raw meat and a splinter of bone.'
         },
         'commune': {
           ref:              'http://www.d20srd.org/srd/spells/commune.htm',
@@ -1585,7 +1585,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           text:             `You contact your deity—or agents thereof —and ask questions that can be answered by a simple yes or no. (A cleric of no particular deity contacts a philosophically allied deity.) You are allowed one such question per caster level. The answers given are correct within the limits of the entity’s knowledge. “Unclear” is a legitimate answer, because powerful beings of the Outer Planes are not necessarily omniscient. In cases where a one-word answer would be misleading or contrary to the deity’s interests, a short phrase (five words or less) may be given as an answer instead.
                              The spell, at best, provides information to aid character decisions. The entities contacted structure their answers to further their own purposes. If you lag, discuss the answers, or go off to do anything else, the spell ends.`,
           component_details:`Material Component: Holy (or unholy) water and incense.
@@ -1613,7 +1613,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           text:             `You can understand the spoken words of creatures or read otherwise incomprehensible written messages. In either case, you must touch the creature or the writing. The ability to read does not necessarily impart insight into the material, merely its literal meaning. The spell enables you to understand or read an unknown language, not speak or write it.
                              Written material can be read at the rate of one page (250 words) per minute. Magical writing cannot be read, though the spell reveals that it is magical. This spell can be foiled by certain warding magic (such as the [secret page](http://www.d20srd.org/srd/spells/secretPage.htm) and [illusory script](http://www.d20srd.org/srd/spells/illusoryScript.htm) spells). It does not decipher codes or reveal messages concealed in otherwise normal text.
                              Comprehend languages can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
@@ -1643,7 +1643,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Target',
           target:           'All creatures in a 15-ft. radius burst',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This spell causes the targets to become confused, making them unable to independently determine what they will do.
@@ -1667,7 +1667,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Area',
           target:           '20-ft.-radius emanation',
-          duration:         '[[2*?{Casting Level}]] hour(s)',
+          duration:         '[[2*?{Casting Level}]] hours',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell blesses an area with positive energy. Each Charisma check made to turn undead within this area gains a +3 sacred bonus. Every undead creature entering a consecrated area suffers minor disruption, giving it a -1 penalty on attack rolls, damage rolls, and saves. Undead cannot be created within or summoned into a consecrated area.
@@ -1786,7 +1786,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] day(s) (D) or until discharged',
+          duration:         '[[?{Casting Level}]] days (D) or until discharged',
           text:             `You can place another spell upon your person so that it comes into effect under some condition you dictate when casting contingency. The contingency spell and the companion spell are cast at the same time. The 10-minute casting time is the minimum total for both castings; if the companion spell has a casting time longer than 10 minutes, use that instead.
                              The spell to be brought into effect by the contingency must be one that affects your person and be of a spell level no higher than one-third your caster level (rounded down, maximum 6th level).
                              The conditions needed to bring the spell into effect must be clear, although they can be general. In all cases, the contingency immediately brings into effect the companion spell, the latter being “cast” instantaneously when the prescribed circumstances occur. If complicated or convoluted conditions are prescribed, the whole spell combination (contingency and the companion magic) may fail when called on. The companion spell occurs based solely on the stated conditions, regardless of whether you want it to.
@@ -1820,7 +1820,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Targets',
           target:           'Up to [[2*?{Casting Level}]] HD of plant creatures, no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates',
           spell_resistance: 'No',
           text:             `This spell enables you to control the actions of one or more plant creatures for a short period of time. You command the creatures by voice and they understand you, no matter what language you speak. Even if vocal communication is impossible the controlled plants do not attack you. At the end of the spell, the subjects revert to their normal behavior.
@@ -1835,7 +1835,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Targets',
           target:           'Up to [[2*?{Casting Level}]] HD of undead creatures, no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This spell enables you to command undead creatures for a short period of time. You command them by voice and they understand you, no matter what language you speak. Even if vocal communication is impossible the controlled undead do not attack you. At the end of the spell, the subjects revert to their normal behavior.
@@ -1851,7 +1851,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_long_',
           target_type:      'Area',
           target:           'Water in a volume of [[10*?{Casting Level}]] ft. by [[10*?{Casting Level}]] ft. by [[2*?{Casting Level}]] ft. (D)',
-          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None; see text',
           spell_resistance: 'No',
           text:             `Depending on the version you choose, the control water spell raises or lowers water.
@@ -1908,7 +1908,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '[[40*?{Casting Level}]] ft.',
           target_type:      'Area',
           target:           '[[40*?{Casting Level}]] ft. radius cylinder 40 ft. high',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'No',
           text:             `You alter wind force in the area surrounding you. You can make the wind blow in a certain direction or manner, increase its strength, or decrease its strength. The new wind direction and strength persist until the spell ends or until you choose to alter your handiwork, which requires concentration. You may create an “eye” of calm air up to 80 feet in diameter at the center of the area if you so desire, and you may choose to limit the area to any cylindrical area less than your full limit.
@@ -1933,7 +1933,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Weapon touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This transmutation makes a weapon strike true against good foes. The weapon is treated as having a +1 enhancement bonus for the purpose of bypassing the damage reduction of good creatures or striking good incorporeal creatures (though the spell doesn’t grant an actual enhancement bonus). The weapon also becomes evil, which means it can bypass the damage reduction of certain creatures. (This effect overrides and suppresses any other alignment the weapon might have.) Individual arrows or bolts can be transmuted, but affected projectile weapons (such as bows) don’t confer the benefit to the projectiles they shoot.
@@ -1947,7 +1947,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '10 minutes',
           range:            '_close_',
           target_type:      'Effect',
-          target:           'Food and water to sustain [[3*?{Casting Level}]] human(s) or [[?{Casting Level}]] horse(s) for 24 hours',
+          target:           'Food and water to sustain [[3*?{Casting Level}]] humans or [[?{Casting Level}]] horses for 24 hours',
           duration:         '24 hours; see text',
           saving_throw:     'None',
           spell_resistance: 'No',
@@ -2032,7 +2032,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Close ([[25+(5*floor([[?{Casting Level}/2]]))]]) / 100 ft.; see text',
           target_type:      'Effect',
           target:           '[[floor(?{Casting Level}/2)]] swarm of centipedes',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `When you utter the spell of creeping doom, you call forth a[mass of centipede swarms (one per two caster levels, to a maximum of ten swarms at 20th level), which need not appear adjacent to one another.
@@ -2040,6 +2040,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'crown of glory': {
           ref:              'http://www.d20srd.org/srd/divine/spells/crownOfGlory.htm',
+          other_versions:   'Book of Exalted Deeds on page 95, Complete Divine on page 160, Defenders of the Faith on page 84, Draconomicon on page 110',
           school:           'Evocation',
           level:            'Glory 8, Herald 8',
           components:       'V, S, M, DF',
@@ -2047,14 +2048,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Area',
           target:           '120-ft.-radius emanation centered on you',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `The caster is imbued with an aura of celestial authority, inspiring awe in all lesser creatures.
                              The caster gains a +4 enhancement bonus to his or her Charisma score for the duration of the spell. All creatures with fewer than 8 HD or levels cease whatever they are doing and are compelled to pay attention to the caster. Any such creature that wants to take hostile action against the caster must make a successful Will save to do so. Any creature that does not make this saving throw the first time it attempts a hostile action is enthralled for the duration of the spell (as the [enthrall](http://www.d20srd.org/srd/spells/enthrall.htm) spell), as long as it is in the spell’s area, nor will it try to leave the area on its own. Creatures with 8 HD or more may pay attention to the caster, but are not affected by this spell.
                              When the caster speaks, all listeners telepathically understand him or her, even if they do not understand the language. While the spell lasts, the caster can make up to three suggestions to creatures of fewer than 8 HD in range, as if using the [mass suggestion](http://www.d20srd.org/srd/spells/suggestionMass.htm) spell (Will save negates); creatures with 8 HD or more aren’t affected by this power. Only creatures within range at the time a [suggestion](http://www.d20srd.org/srd/spells/suggestion.htm) is given are subject to it.`,
-          component_details:'Material Component: worth at least 200 gp.',
-          other_versions:   'Book of Exalted Deeds on page 95, Complete Divine on page 160, Defenders of the Faith on page 84, Draconomicon on page 110'
+          component_details:'Material Component: worth at least 200 gp.'
         },
         //Epic Spell: crown of vermin
         'crushing despair': {
@@ -2066,7 +2066,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '30 ft.',
           target_type:      'Area',
           target:           'Cone-shaped burst',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `An invisible cone of despair causes great sadness in the subjects. Each affected creature takes a -2 penalty on attack rolls, saving throws, ability checks, skill checks, and weapon damage rolls.
@@ -2082,7 +2082,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           '10-ft. hand',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `This spell functions like [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm), except that the hand can interpose itself, push, or crush one opponent that you select.
@@ -2209,7 +2209,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Object touched',
-          duration:         '[[10*?{Casting Level}]] level(s) (D)',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell causes an object to radiate shadowy illumination out to a 20-foot radius. All creatures in the area gain [concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment) (20% miss chance). Even creatures that can normally see in such conditions (such as with darkvision or low-light vision) have the miss chance in an area shrouded in magical darkness.
@@ -2227,7 +2227,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The subject gains the ability to see 60 feet even in total darkness. Darkvision is black and white only but otherwise like normal sight. Darkvision does not grant one the ability to see in magical darkness.
@@ -2243,7 +2243,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Object touched',
-          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `The object touched sheds light as bright as full daylight in a 60-foot radius, and dim light for an additional 60 feet beyond that. Creatures that take penalties in bright light also take them while within the radius of this magical light. Despite its name, this spell is not the equivalent of daylight for the purposes of creatures that are damaged or destroyed by bright light.
@@ -2304,7 +2304,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Living creature touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The subject is immune to all death spells, magical death effects, energy drain, and any negative energy effects.
@@ -2320,7 +2320,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '30 ft.',
           target_type:      'Area',
           target:           'Cone-shaped emanation',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `Using the foul sight granted by the powers of unlife, you can determine the condition of creatures near death within the spell’s range. You instantly know whether each creature within the area is dead, fragile (alive and wounded, with 3 or fewer hit points left), fighting off death (alive with 4 or more hit points), undead, or neither alive nor dead (such as a construct).
@@ -2335,7 +2335,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Area',
           target:           'One or more living creatures within a 10-ft.-radius burst',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `A deep slumber spell causes a magical slumber to come upon 10 Hit Dice of creatures. Creatures with the fewest HD are affected first.
@@ -2353,7 +2353,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Object touched',
-          duration:         '[[?{Casting Level}]] day(s) (D)',
+          duration:         '[[?{Casting Level}]] days (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell causes an object to radiate shadowy illumination out to a 60-foot radius. All creatures in the area gain concealment (20% miss chance). Even creatures that can normally see in such conditions (such as with darkvision or low-light vision) have the miss chance in an area shrouded in magical deeper darkness.
@@ -2371,7 +2371,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Fortitude negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The subject becomes temporarily immune to poison. Any poison in its system or any poison to which it is exposed during the spell’s duration does not affect the subject until the spell’s duration has expired. Delay poison does not cure any damage that poison may have already done.`
@@ -2422,7 +2422,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Area',
           target:           '20-ft.-radius emanation',
-          duration:         '[[2*?{Casting Level}]] hour(s)',
+          duration:         '[[2*?{Casting Level}]] hours',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `This spell imbues an area with negative energy. Each Charisma check made to turn undead within this area takes a -3 profane penalty, and every undead creature entering a desecrated area gains a +1 profane bonus on attack rolls, damage rolls, and saving throws. An undead creature created within or summoned into such an area gains +1 hit points per HD.
@@ -2456,7 +2456,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_long_',
           target_type:      'Area',
           target:           'Cone-shaped emanation',
-          duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
+          duration:         'Concentration, up to [[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You can detect a particular kind of animal or plant in a cone emanating out from you in whatever direction you face. You must think of a kind of animal or plant when using the spell, but you can change the animal or plant kind each round. The amount of information revealed depends on how long you search a particular area or focus on a specific kind of animal or plant.
@@ -2481,7 +2481,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '60 ft.',
           target_type:      'Area',
           target:           'Cone-shaped emanation',
-          duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
+          duration:         'Concentration, up to [[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You can sense the presence of chaos. The amount of information revealed depends on how long you study a particular area or subject.
@@ -2522,13 +2522,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Lingering Aura:* A chaos aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect chaos* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
-                             -- Duration of Lingering Aura: [[1d6]] round(s)
+                             -- Duration of Lingering Aura: [[1d6]] rounds
                              • Original Strength 'Moderate':
-                             -- Duration of Lingering Aura: [[1d6]] minute(s)
+                             -- Duration of Lingering Aura: [[1d6]] minutes
                              • Original Strength 'Strong':
-                             -- Duration of Lingering Aura: [[10*1d6]] minute(s)
+                             -- Duration of Lingering Aura: [[10*1d6]] minutes
                              • Original Strength 'Overwhelming':
-                             -- Duration of Lingering Aura: [[1d6]] day(s)
+                             -- Duration of Lingering Aura: [[1d6]] days
 
                              [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not chaos, and as such this spell does not detect them.
                              Each round, you can turn to *detect chaos* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
@@ -2543,7 +2543,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '60 ft.',
           target_type:      'Area',
           target:           'Cone-shaped emanation',
-          duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
+          duration:         'Concentration, up to [[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You can sense the presence of evil. The amount of information revealed depends on how long you study a particular area or subject.
@@ -2584,13 +2584,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Lingering Aura:* A evil aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect evil* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
-                             -- Duration of Lingering Aura: [[1d6]] round(s)
+                             -- Duration of Lingering Aura: [[1d6]] rounds
                              • Original Strength 'Moderate':
-                             -- Duration of Lingering Aura: [[1d6]] minute(s)
+                             -- Duration of Lingering Aura: [[1d6]] minutes
                              • Original Strength 'Strong':
-                             -- Duration of Lingering Aura: [[10*1d6]] minute(s)
+                             -- Duration of Lingering Aura: [[10*1d6]] minutes
                              • Original Strength 'Overwhelming':
-                             -- Duration of Lingering Aura: [[1d6]] day(s)
+                             -- Duration of Lingering Aura: [[1d6]] days
 
                              [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not evil, and as such this spell does not detect them.
                              Each round, you can turn to *detect evil* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
@@ -2605,7 +2605,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '60 ft.',
           target_type:      'Area',
           target:           'Cone-shaped emanation',
-          duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
+          duration:         'Concentration, up to [[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You can sense the presence of good. The amount of information revealed depends on how long you study a particular area or subject.
@@ -2646,13 +2646,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Lingering Aura:* A good aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect good* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
-                             -- Duration of Lingering Aura: [[1d6]] round(s)
+                             -- Duration of Lingering Aura: [[1d6]] rounds
                              • Original Strength 'Moderate':
-                             -- Duration of Lingering Aura: [[1d6]] minute(s)
+                             -- Duration of Lingering Aura: [[1d6]] minutes
                              • Original Strength 'Strong':
-                             -- Duration of Lingering Aura: [[10*1d6]] minute(s)
+                             -- Duration of Lingering Aura: [[10*1d6]] minutes
                              • Original Strength 'Overwhelming':
-                             -- Duration of Lingering Aura: [[1d6]] day(s)
+                             -- Duration of Lingering Aura: [[1d6]] days
 
                              [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not good, and as such this spell does not detect them.
                              Each round, you can turn to *detect good* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
@@ -2667,7 +2667,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '60 ft.',
           target_type:      'Area',
           target:           'Cone-shaped emanation',
-          duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
+          duration:         'Concentration, up to [[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You can sense the presence of lawful. The amount of information revealed depends on how long you study a particular area or subject.
@@ -2708,13 +2708,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Lingering Aura:* A lawful aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect law* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
-                             -- Duration of Lingering Aura: [[1d6]] round(s)
+                             -- Duration of Lingering Aura: [[1d6]] rounds
                              • Original Strength 'Moderate':
-                             -- Duration of Lingering Aura: [[1d6]] minute(s)
+                             -- Duration of Lingering Aura: [[1d6]] minutes
                              • Original Strength 'Strong':
-                             -- Duration of Lingering Aura: [[10*1d6]] minute(s)
+                             -- Duration of Lingering Aura: [[10*1d6]] minutes
                              • Original Strength 'Overwhelming':
-                             -- Duration of Lingering Aura: [[1d6]] day(s)
+                             -- Duration of Lingering Aura: [[1d6]] days
 
                              [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not lawful, and as such this spell does not detect them.
                              Each round, you can turn to *detect law* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
@@ -2729,7 +2729,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '60 ft.',
           target_type:      'Area',
           target:           'Cone-shaped emanation',
-          duration:         'Concentration, up to [[?{Casting Level}]] minute(s) (D)',
+          duration:         'Concentration, up to [[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You detect magical auras. The amount of information revealed depends on how long you study a particular area or subject.
@@ -2753,13 +2753,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Lingering Aura:* A magical aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a magic item). If *detect magic* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
-                             -- Duration of Lingering Aura: [[1d6]] round(s)
+                             -- Duration of Lingering Aura: [[1d6]] rounds
                              • Original Strength 'Moderate':
-                             -- Duration of Lingering Aura: [[1d6]] minute(s)
+                             -- Duration of Lingering Aura: [[1d6]] minutes
                              • Original Strength 'Strong':
-                             -- Duration of Lingering Aura: [[10*1d6]] minute(s)
+                             -- Duration of Lingering Aura: [[10*1d6]] minutes
                              • Original Strength 'Overwhelming':
-                             -- Duration of Lingering Aura: [[1d6]] day(s)
+                             -- Duration of Lingering Aura: [[1d6]] days
 
                              [Outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type) and [elementals](https://www.dandwiki.com/wiki/SRD:Elemental_Type) are not magical in themselves, but if they are summoned, the conjuration spell registers.
                              Each round, you can turn to *detect magic* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.
@@ -2807,7 +2807,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '60 ft.',
           target_type:      'Area',
           target:           'Cone-shaped emanation',
-          duration:         'Concentration, up to [[?{Casting Level}]] minute(s) (D)',
+          duration:         'Concentration, up to [[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You can detect secret doors, compartments, caches, and so forth. Only passages, doors, or openings that have been specifically constructed to escape detection are detected by this spell. The amount of information revealed depends on how long you study a particular area or subject.
@@ -2825,7 +2825,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '60 ft.',
           target_type:      'Area',
           target:           'Cone-shaped emanation',
-          duration:         'Concentration, up to [[10*?{Casting Level}]] minute(s) (D)',
+          duration:         'Concentration, up to [[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You can detect simple pits, deadfalls, and snares as well as mechanical [traps](https://www.dandwiki.com/wiki/SRD:Traps) constructed of natural materials. The spell does not detect complex traps, including trapdoor traps.
@@ -2846,7 +2846,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '60 ft.',
           target_type:      'Area',
           target:           'Cone-shaped emanation',
-          duration:         'Concentration, up to [[?{Casting Level}]] minute(s) (D)',
+          duration:         'Concentration, up to [[?{Casting Level}]] minutes (D)',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'No',
           text:             `You detect surface thoughts. The amount of information revealed depends on how long you study a particular area or subject.
@@ -2865,7 +2865,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '60 ft.',
           target_type:      'Area',
           target:           'Cone-shaped emanation',
-          duration:         'Concentration, up to [[?{Casting Level}]] minute(s) (D)',
+          duration:         'Concentration, up to [[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You can detect the aura that surrounds [undead creatures](https://www.dandwiki.com/wiki/SRD:Undead_Type). The amount of information revealed depends on how long you study a particular area.
@@ -2886,13 +2886,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Lingering Aura:* An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) aura lingers after its original source is destroyed. If *detect undead* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
-                             -- Duration of Lingering Aura: [[1d6]] round(s)
+                             -- Duration of Lingering Aura: [[1d6]] rounds
                              • Original Strength 'Moderate'
-                             -- Duration of Lingering Aura: [[1d6]] minute(s)
+                             -- Duration of Lingering Aura: [[1d6]] minutes
                              • Original Strength 'Strong'
-                             -- Duration of Lingering Aura: [[10*1d6]] minutes(s)
+                             -- Duration of Lingering Aura: [[10*1d6]] minutess
                              • Original Strength 'Overwhelming'
-                             -- Duration of Lingering Aura: [[1d6]] day(s)
+                             -- Duration of Lingering Aura: [[1d6]] days
 
                              Each round, you can turn to *detect undead* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
           component_details:'Arcane Material Component: A bit of earth from a grave.'
@@ -2955,7 +2955,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           'Ray',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'Yes (object)',
           text:             `A green ray springs from your outstretched hand. You must make a ranged touch attack to hit the target. Any creature or object struck by the ray is covered with a shimmering emerald field that completely blocks extradimensional travel. Forms of movement barred by a *dimensional anchor* include [astral projection](http://www.d20srd.org/srd/spells/astralProjection.htm), [blink](http://www.d20srd.org/srd/spells/blink.htm), [dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm), [ethereal jaunt](https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt), [etherealness](http://www.d20srd.org/srd/spells/etherealness.htm), [gate](http://www.d20srd.org/srd/spells/gate.htm), [maze](https://www.dandwiki.com/wiki/SRD:Maze), [plane shift](http://www.d20srd.org/srd/spells/planeShift.htm), [shadow walk](http://www.d20srd.org/srd/spells/shadowWalk.htm), [teleport](http://www.d20srd.org/srd/spells/teleport.htm), and similar spell-like or psionic abilities. The spell also prevents the use of a [gate](http://www.d20srd.org/srd/spells/gate.htm) or [teleportation circle](http://www.d20srd.org/srd/spells/teleportationCircle.htm) for the duration of the spell.
@@ -2971,7 +2971,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Area',
           target:           '20-ft.-radius emanation centered on a point in space',
-          duration:         '[[?{Casting Level}]] day(s)',
+          duration:         '[[?{Casting Level}]] days',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `You create a shimmering emerald barrier that completely blocks extradimensional travel. Forms of movement barred include [astral projection](http://www.d20srd.org/srd/spells/astralProjection.htm), [blink](http://www.d20srd.org/srd/spells/blink.htm), [dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm), [ethereal jaunt](https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt), [etherealness](http://www.d20srd.org/srd/spells/etherealness.htm), [gate](http://www.d20srd.org/srd/spells/gate.htm), [maze](https://www.dandwiki.com/wiki/SRD:Maze), [plane shift](http://www.d20srd.org/srd/spells/planeShift.htm), [shadow walk](http://www.d20srd.org/srd/spells/shadowWalk.htm), [teleport](http://www.d20srd.org/srd/spells/teleport.htm), and similar spell-like or psionic abilities. Once *dimensional lock* is in place, extradimensional travel into or out of the area is not possible.
@@ -3008,8 +3008,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
-          duration:         'Concentration, up to [[?{Casting Level}]] round(s)',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
+          duration:         'Concentration, up to [[?{Casting Level}]] rounds',
           saving_throw:     'Will negates',
           spell_resistance: 'No',
           text:             `Each round, you concentrate on one subject, who must be within range. You know if the subject deliberately and knowingly speaks a lie by discerning disturbances in its aura caused by lying. The spell does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
@@ -3041,7 +3041,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           text:             `You make yourself—including clothing, armor, weapons, and equipment—look different. You can seem 1 foot shorter or taller, thin, fat, or in between. You cannot change your body type. Otherwise, the extent of the apparent change is up to you. You could add or obscure a minor feature or look like an entirely different person.
                              The spell does not provide the abilities or mannerisms of the chosen form, nor does it alter the perceived tactile (touch) or audible (sound) properties of you or your equipment.
                              If you use this spell to create a disguise, you get a +10 bonus on the Disguise check.
@@ -3090,7 +3090,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Targets',
           target:           'You and a touched chaotic creature from another plane; or you and an enchantment or chaotic spell on a touched creature or object',
-          duration:         '[[?{Casting Level}]] round(s) or until discharged, whichever comes first',
+          duration:         '[[?{Casting Level}]] rounds or until discharged, whichever comes first',
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `You are surrounded by constant, blue, lawful energy.
@@ -3108,7 +3108,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Targets',
           target:           'You and a touched evil creature from another plane; or you and an enchantment or evil spell on a touched creature or object',
-          duration:         '[[?{Casting Level}]] round(s) or until discharged, whichever comes first',
+          duration:         '[[?{Casting Level}]] rounds or until discharged, whichever comes first',
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `Shimmering, white, holy energy surrounds you. This power has three effects.
@@ -3126,7 +3126,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Targets',
           target:           'You and a touched good creature from another plane; or you and an enchantment or good spell on a touched creature or object',
-          duration:         '[[?{Casting Level}]] round(s) or until discharged, whichever comes first',
+          duration:         '[[?{Casting Level}]] rounds or until discharged, whichever comes first',
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `You are surrounded by dark, wavering, unholy energy.
@@ -3144,7 +3144,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Targets',
           target:           'You and a touched lawful creature from another plane; or you and an enchantment or lawful spell on a touched creature or object',
-          duration:         '[[?{Casting Level}]] round(s) or until discharged, whichever comes first',
+          duration:         '[[?{Casting Level}]] rounds or until discharged, whichever comes first',
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `You are surrounded by flickering, yellow, chaotic energy.
@@ -3191,7 +3191,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The subject of this spell appears to be about 2 feet away from its true location. The creature benefits from a 50% miss chance as if it had [total concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment). However, unlike actual total concealment, *displacement* does not prevent enemies from targeting the creature normally. [True seeing](http://www.d20srd.org/srd/spells/trueSeeing.htm) reveals its true location.`,
@@ -3221,7 +3221,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Targets',
           target:           'One melee weapon',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will negates (harmless, object); see text',
           spell_resistance: 'Yes (harmless, object)',
           text:             `This spell makes a melee weapon deadly to [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type). Any [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature with HD equal to or less than your caster level must succeed on a Will save or be destroyed utterly if struck in combat with this weapon. Spell resistance does not apply against the destruction effect.`,
@@ -3263,8 +3263,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] round(s)',
-          text:             `Calling upon the divine power of your patron, you imbue yourself with strength and skill in combat. Your base attack bonus becomes equal to your character level (which may give you additional attacks), you gain a +6 enhancement bonus to Strength, and you gain [[?{Casting Level}]] temporary hit point(s).`,
+          duration:         '[[?{Casting Level}]] rounds',
+          text:             `Calling upon the divine power of your patron, you imbue yourself with strength and skill in combat. Your base attack bonus becomes equal to your character level (which may give you additional attacks), you gain a +6 enhancement bonus to Strength, and you gain [[?{Casting Level}]] temporary hit points.`,
           component_details:null
         },
         'dominate animal': {
@@ -3276,7 +3276,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type)',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `You can enchant an animal and direct it with simple commands such as “Attack,” “Run,” and “Fetch.” Suicidal or self-destructive commands (including an order to attack a creature two or more size categories larger than the *dominated* animal) are simply ignored.
@@ -3292,7 +3292,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One creature',
-          duration:         '[[?{Casting Level}]] day(s)',
+          duration:         '[[?{Casting Level}]] days',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `You can control the actions of any creature through a telepathic link that you establish with the subject’s mind.
@@ -3314,7 +3314,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One [humanoid](https://www.dandwiki.com/wiki/SRD:Humanoid_Type)',
-          duration:         '[[?{Casting Level}]] day(s)',
+          duration:         '[[?{Casting Level}]] days',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `You can control the actions of any humanoid creature through a telepathic link that you establish with the subject’s mind.
@@ -3336,7 +3336,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Target',
           target:           'One living creature',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This spell fills a single subject with a feeling of horrible dread that causes it to become shaken.`,
@@ -3373,7 +3373,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One willing psionic creature',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `With this spell, you form a radiating corona around the head of a psionic ally, then convert some of your spells into psionic [power points](https://www.dandwiki.com/wiki/SRD:Power_Points). When you finish casting *dweomer of transference*, a red-orange glow surrounds the psionic creature’s head. For the duration of the spell, any spells cast at the subject don’t have their usual effect, instead converting themselves harmlessly into psionic energy that the subject can use as energy for psionic powers. You can cast any spell you like at the subject, even area spells, effect spells, and spells for whom the subject would ordinarily not be a legitimate target. The spells don’t do anything other than provide the subject with power points, but you must still cast them normally, obeying the component and range requirements listed in the description of each spell.
@@ -3403,6 +3403,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // Spells that start with E
         'eagle\'s splendor': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Eagle%27s_Splendor',
+          other_versions:   'Forgotten Realms Campaign Setting on page 68, Tome and Blood on page 87',
           school:           'Transmutation',
           level:            'Blg 2, Brd 2, Clr 2, Pal 2, Sor/Wiz 2',
           components:       'V, S, M/DF',
@@ -3410,12 +3411,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
           text:             `The transmuted creature becomes more poised, articulate, and personally forceful. The spell grants a +4 enhancement bonus to Charisma, adding the usual benefits to Charisma-based skill checks and other uses of the Charisma modifier. Sorcerers and bards (and other spellcasters who rely on Charisma) affected by this spell do not gain any additional bonus spells for the increased Charisma, but the save DCs for spells they cast while under this spell’s effect do increase.`,
-          component_details:'Arcane Material Component: A few feathers or a pinch of droppings from an eagle.',
-          other_versions:   'Forgotten Realms Campaign Setting on page 68, Tome and Blood on page 87'
+          component_details:'Arcane Material Component: A few feathers or a pinch of droppings from an eagle.'
         },
         'earthquake': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Earthquake',
@@ -3449,7 +3449,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           'Two or more summoned creatures, no two of which can be more than 30 ft. apart',
-          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell opens a portal to an Elemental Plane and summons [elementals](https://www.dandwiki.com/wiki/SRD:Elemental) from it. A druid can choose the plane (Air, Earth, Fire, or Water); a cleric opens a portal to the plane matching his domain.
@@ -3521,7 +3521,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One [humanoid](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) creature',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
           text:             `This spell causes instant growth of a humanoid creature, doubling its height and multiplying its weight by 8. This increase changes the creature’s [size category](https://www.dandwiki.com/wiki/SRD:Size_Category) to the next larger one. The target gains a +2 size bonus to Strength, a -2 size penalty to Dexterity (to a minimum of 1), and a -1 penalty on attack rolls and AC due to its increased size.
@@ -3543,7 +3543,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_long_',
           target_type:      'Area',
           target:           '[Plants](https://www.dandwiki.com/wiki/SRD:Plant_Type) in a 40-ft.-radius spread',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Reflex partial; see text',
           spell_resistance: 'No',
           text:             `Grasses, weeds, bushes, and even trees wrap, twist, and entwine about creatures in the area or those that enter the area, holding them fast and causing them to become entangled. The creature can break free and move half its normal speed by using a full-round action to make a DC 20 Strength check or a DC 20 Escape Artist check. A creature that succeeds on a Reflex save is not entangled but can still move at only half speed through the area. Each round on your turn, the [plants](https://www.dandwiki.com/wiki/SRD:Plant_Type) once again attempt to entangle all creatures that have avoided or escaped entanglement.
@@ -3577,7 +3577,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            'Personal',
           target:           'You',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           text:             `A magical field appears around you, glowing with a chaotic blast of multicolored hues. This field deflects incoming arrows, rays, and other ranged attacks. Each ranged attack directed at you for which the attacker must make an attack roll has a 20% miss chance (similar to the effects of concealment). Other attacks that simply work at a distance are not affected.`,
           component_details:null
         },
@@ -3611,7 +3611,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           text:             `You become ethereal, along with your equipment. For the duration of the spell, you are in a place called the [Ethereal Plane](https://www.dandwiki.com/wiki/SRD:Ethereal_Plane), which overlaps the normal, physical, [Material Plane](https://www.dandwiki.com/wiki/SRD:Material_Plane). When the spell expires, you return to material existence.
                              An ethereal creature is invisible, insubstantial, and capable of moving in any direction, even up or down, albeit at half normal speed. As an insubstantial creature, you can move through solid objects, including living creatures. An ethereal creature can see and hear on the Material Plane, but everything looks gray and ephemeral. Sight and hearing onto the Material Plane are limited to 60 feet.
                              Force effects and abjurations affect an ethereal creature normally. Their effects extend onto the Ethereal Plane from the Material Plane, but not vice versa. An ethereal creature can’t attack material creatures, and spells you cast while ethereal affect only other ethereal things. Certain material creatures or objects have attacks or effects that work on the Ethereal Plane.
@@ -3627,8 +3627,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            'Touch; see text',
           target_type:      'Targets',
-          target:           'You and [[floor(?{Casting Level}/3)]] other touched creature(s)',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          target:           'You and [[floor(?{Casting Level}/3)]] other touched creatures',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           spell_resistance: 'Yes',
           text:             `This spell functions like [ethereal jaunt](https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt), except that you and other willing creatures joined by linked hands (along with their equipment) become ethereal. Besides yourself, you can bring one creature per three caster levels to the Ethereal Plane. Once ethereal, the subjects need not stay together.
                              When the spell expires, all affected creatures on the [Ethereal Plane](https://www.dandwiki.com/wiki/SRD:Ethereal_Plane) return to material existence.`,
@@ -3643,7 +3643,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           text:             `This spell increases your base land speed by 30 feet. (This adjustment is treated as an enhancement bonus.) There is no effect on other modes of movement, such as burrow, climb, fly, or swim. As with any effect that increases your speed, this spell affects your jumping distance (see the Jump skill).`,
           component_details:null
         },
@@ -3673,7 +3673,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One living creature',
-          duration:         '[[floor(?{Casting Level}/3)]] round(s); see text',
+          duration:         '[[floor(?{Casting Level}/3)]] rounds; see text',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
           text:             `Each round, you may target a single living creature, striking it with waves of evil power. Depending on the target’s HD, this attack has as many as three effects.
@@ -3717,7 +3717,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_long_',
           target_type:      'Area',
           target:           'Creatures and objects within a 5-ft.-radius burst',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `A pale glow surrounds and outlines the subjects. Outlined subjects shed light as candles. Outlined creatures do not benefit from the [concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment) normally provided by darkness (though a 2nd-level or higher magical [darkness](http://www.d20srd.org/srd/spells/darkness.htm) effect functions normally), [blur](http://www.d20srd.org/srd/spells/blur.htm), [displacement](https://www.dandwiki.com/wiki/SRD:Displacement), invisibility or dark-dwelling creatures vulnerable to light. The *faerie fire* can be blue, green, or violet, according to your choice at the time of casting. The *faerie fire* does not cause any harm to the objects or creatures thus outlined.`,
@@ -3732,7 +3732,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] hour(s) or until discharged; see text',
+          duration:         '[[?{Casting Level}]] hours or until discharged; see text',
           text:             `You harness the power of unlife to grant yourself a limited ability to avoid death. While this spell is in effect, you gain temporary hit points equal to [[1d10+{?{Casting Level},10}kl1]].`,
           component_details:'Material Component: A small amount of alcohol or distilled spirits, which you use to trace certain sigils on your body during casting. These sigils cannot be seen once the alcohol or spirits evaporate.'
         },
@@ -3745,7 +3745,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Area',
           target:           '40-ft.-radius emanation',
-          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          duration:         '[[?{Casting Level}]] hours (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `Any divination (scrying) spell used to view anything within the area of this spell instead receives a false image (as the [major image](https://www.dandwiki.com/wiki/Major_Image) spell), as defined by you at the time of casting. As long as the duration lasts, you can concentrate to change the image as desired. While you aren’t concentrating, the image remains static.`,
@@ -3774,8 +3774,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 free action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] Medium or smaller freefalling object(s) or creature(s), no two of which may be more than 20 ft. apart',
-          duration:         'Until landing or [[?{Casting Level}]] round(s)',
+          target:           '[[?{Casting Level}]] Medium or smaller freefalling objects or creatures, no two of which may be more than 20 ft. apart',
+          duration:         'Until landing or [[?{Casting Level}]] rounds',
           saving_throw:     'Will negates (harmless) or Will negates (object)',
           spell_resistance: 'Yes (object)',
           text:             `The affected creatures or objects fall slowly. *Feather fall* instantly changes the rate at which the targets fall to a mere 60 feet per round (equivalent to the end of a fall from a few feet), and the subjects take no damage upon landing while the spell is in effect. However, when the spell duration expires, a normal rate of falling resumes.
@@ -3809,7 +3809,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           text:             `You gain intuitive insight into the workings of traps. You can use the Search skill to detect traps just as a rogue can. In addition, you gain +[[{floor(?{Casting Level}/2),10}kl1]] [insight bonus](https://www.dandwiki.com/wiki/Insight_bonus) on Search checks made to find traps while the spell is in effect.
                              Note that *find traps* grants no ability to disable the traps that you may find.`,
           component_details:null
@@ -3823,7 +3823,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal or touch',
           target_type:      'Target',
           target:           'You or creature touched',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None or Will negates (harmless)',
           spell_resistance: 'No or Yes (harmless)',
           text:             `The recipient of this spell can find the shortest, most direct physical route to a specified destination, be it the way into or out of a locale. The locale can be outdoors, underground, or even inside a [maze](https://www.dandwiki.com/wiki/SRD:Maze) spell. *Find the path* works with respect to locations, not objects or creatures at a locale. The location must be on the same plane as you are at the time of casting.
@@ -3856,7 +3856,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Targets',
           target:           'Up to four touched acorns or up to eight touched holly berries',
-          duration:         '[[10*?{Casting Level}]] minute(s) or until used',
+          duration:         '[[10*?{Casting Level}]] minutes or until used',
           saving_throw:     'None or Reflex half; see text',
           spell_resistance: 'No',
           text:             `Depending on the version of *fire seeds* you choose, you turn acorns into splash weapons that you or another character can throw, or you turn holly berries into bombs that you can detonate on command.
@@ -3874,7 +3874,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           text:             `This spell wreathes you in flame and causes damage to each creature that attacks you in melee. The flames also protect you from either cold-based or fire-based attacks (your choice).
                              Any creature striking you with its body or a handheld weapon deals normal damage, but at the same time the attacker takes [[1d6+{?{Casting Level},15}kl1]] points of damage. This damage is either cold damage (if the *shield* protects against fire-based attacks) or fire damage (if the *shield* protects against cold-based attacks). If the attacker has spell resistance, it applies to this effect. Creatures wielding weapons with exceptional reach are not subject to this damage if they attack you.
                              When casting this spell, you appear to immolate yourself, but the flames are thin and wispy, giving off light equal to only half the illumination of a normal torch (10 feet). The color of the flames is determined randomly (50% chance of either color)—blue or green if the *chill shield* is cast, violet or blue if the *warm shield* is employed. The special powers of each version are as follows.
@@ -3944,7 +3944,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'Fifty projectiles, all of which must be in contact with each other at the time of casting',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You turn ammunition (such as arrows, bolts, shuriken, and stones) into fiery projectiles. Each piece of ammunition deals an extra ‹1d6› points of fire damage to any target it hits. A flaming projectile can easily ignite a flammable object or structure, but it won’t ignite a creature it strikes.`,
@@ -3959,7 +3959,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '0 ft.',
           target_type:      'Effect',
           target:           'Sword-like beam',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `A 3-foot-long, blazing beam of red-hot fire springs forth from your hand. You wield this bladelike beam as if it were a scimitar. Attacks with the *flame blade* are melee [touch attacks](https://www.dandwiki.com/wiki/SRD:Touch_Attack). The blade deals [[1d8+[[{?{Casting Level},10}kl1]]]] points of fire damage. Since the blade is immaterial, your Strength modifier does not apply to the damage. A *flame blade* can ignite combustible materials such as parchment, straw, dry sticks, and cloth.
@@ -3990,7 +3990,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           '5-ft.-diameter sphere',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Reflex negates',
           spell_resistance: 'Yes',
           text:             `A burning globe of fire rolls in whichever direction you point and burns those it strikes. It moves 30 feet per round. As part of this movement, it can ascend or jump up to 30 feet to strike a target. If it enters a space with a creature, it stops moving for the round and deals ‹2d6› points of fire damage to that creature, though a successful Reflex save negates that damage. A *flaming sphere* rolls over barriers less than 4 feet tall. It ignites flammable substances it touches and illuminates the same area as a torch would.
@@ -4037,7 +4037,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Effect',
           target:           '3-ft.-diameter disk of force',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You create a slightly concave, circular plane of force that follows you about and carries loads for you. The disk is 3 feet in diameter and 1 inch deep at its center. It can hold [[100*?{Casting Level}]] pounds of weight. (If used to transport a liquid, its capacity is 2 gallons.) The disk floats approximately 3 feet above the ground at all times and remains level. It floats along horizontally within spell range and will accompany you at a rate of no more than your normal speed each round. If not otherwise directed, it maintains a constant interval of 5 feet between itself and you. The disk winks out of existence when the spell duration expires. The disk also winks out if you move beyond range or try to take the disk more than 3 feet away from the surface beneath it. When the disk winks out, whatever it was supporting falls to the surface beneath it.`,
@@ -4052,7 +4052,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The subject can fly at a speed of 60 feet (or 40 feet if it wears medium or heavy armor, or if it carries a medium or heavy load). It can ascend at half speed and descend at double speed, and its maneuverability is good. Using a *fly* spell requires only as much concentration as walking, so the subject can attack or cast spells normally. The subject of a *fly* spell can charge but not run, and it cannot carry aloft more weight than its maximum load, plus any armor it wears.
@@ -4068,7 +4068,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           'Fog spreads in 20-ft. radius, 20 ft. high',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `A bank of fog billows out from the point you designate. The fog obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has [concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment) (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker can’t use sight to locate the target).
@@ -4107,7 +4107,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Area',
           target:           'Barred cage (20-ft. cube) or windowless cell (10-ft. cube)',
-          duration:         '[[2*?{Casting Level}]] hour(s) (D)',
+          duration:         '[[2*?{Casting Level}]] hours (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This powerful spell brings into being an immobile, invisible cubical prison composed of either bars of force or solid walls of force (your choice).
@@ -4126,7 +4126,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           '10-ft. hand',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `This spell functions like [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm), except that the *forceful hand* pursues and pushes away the opponent that you designate. Treat this attack as a [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) with a +14 bonus on the Strength check (+8 for Strength 27, +4 for being Large, and a +2 bonus for charging, which it always gets). The hand always moves with the opponent to push that target back the full distance allowed, and it has no speed limit. Directing the spell to a new target is a move action.
@@ -4142,7 +4142,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal or touch',
           target_type:      'Target',
           target:           'See text',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None or Will negates (harmless)',
           spell_resistance: 'No or Yes (harmless)',
           text:             `This spell grants you a powerful sixth sense in relation to yourself or another. Once *foresight* is cast, you receive instantaneous warnings of impending danger or harm to the subject of the spell. You are never surprised or flat-footed. In addition, the spell gives you a general idea of what action you might take to best protect yourself and gives you a +2 insight bonus to AC and Reflex saves. This insight bonus is lost whenever you would lose a Dexterity bonus to AC.
@@ -4151,6 +4151,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'fox\'s cunning': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Fox%27s_Cunning',
+          other_versions:   'Savage Species on page 66, Tome and Blood on page 89',
           school:           'Transmutation',
           level:            'Asn 2, Brd 2, Sor/Wiz 2',
           components:       'V, S, M/DF',
@@ -4158,12 +4159,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
           text:             `The transmuted creature becomes smarter. The spell grants a +4 enhancement bonus to Intelligence, adding the usual benefits to Intelligence-based skill checks and other uses of the Intelligence modifier. Wizards (and other spellcasters who rely on Intelligence) affected by this spell do not gain any additional bonus spells for the increased Intelligence, but the save DCs for spells they cast while under this spell’s effect do increase. This spell doesn’t grant extra skill points.`,
-          component_details:'Arcane Material Component: A few hairs, or a pinch of dung, from a fox.',
-          other_versions:   'Savage Species on page 66, Tome and Blood on page 89'
+          component_details:'Arcane Material Component: A few hairs, or a pinch of dung, from a fox.'
         },
         'freedom': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Freedom',
@@ -4189,7 +4189,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal or touch',
           target_type:      'Target',
           target:           'You or creature touched',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `This spell enables you or a creature you touch to move and attack normally for the duration of the spell, even under the influence of magic that usually impedes movement, such as [paralysis](https://www.dandwiki.com/wiki/SRD:Paralysis), [solid fog](https://www.dandwiki.com/wiki/SRD:Solid_Fog), [slow](http://www.d20srd.org/srd/spells/slow.htm), and [web](https://www.dandwiki.com/wiki/SRD:Web). The subject automatically succeeds on any [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) check made to resist a grapple attempt, as well as on grapple checks or Escape Artist checks made to escape a grapple or a pin.
@@ -4205,12 +4205,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_long_',
           target_type:      'Target, Effect, or Area',
           target:           'See text',
-          duration:         'Instantaneous or [[?{Casting Level}]] round(s); see text',
+          duration:         'Instantaneous or [[?{Casting Level}]] rounds; see text',
           saving_throw:     'Reflex half; see text',
           spell_resistance: 'Yes',
           text:             `*Freezing sphere* creates a frigid globe of cold energy that streaks from your fingertips to the location you select, where it explodes in a 10-foot-radius burst, dealing [[[[{?{Casting Level},15}kl1]]d6]] points of cold damage to each creature in the area. An elemental (water) creature instead takes [[[[{?{Casting Level},15}kl1]]d8]] points of cold damage.
-                             If the *freezing sphere* strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area equal to [[100*[[{?{Casting Level},15}kl1]]]] square feet. This ice lasts for [[?{Casting Level}]] round(s). Creatures that were swimming on the surface of frozen water become trapped in the ice. Attempting to break free is a full-round action. A trapped creature must make a DC 25 Strength check or a DC 25 Escape Artist check to do so.
-                             You can refrain from firing the globe after completing the spell, if you wish. Treat this as a touch spell for which you are holding the charge. You can hold the charge for as long as [[?{Casting Level}]] round(s), at the end of which time the *freezing sphere* bursts centered on you (and you receive no saving throw to resist its effect). Firing the globe in a later round is a standard action.`,
+                             If the *freezing sphere* strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area equal to [[100*[[{?{Casting Level},15}kl1]]]] square feet. This ice lasts for [[?{Casting Level}]] rounds. Creatures that were swimming on the surface of frozen water become trapped in the ice. Attempting to break free is a full-round action. A trapped creature must make a DC 25 Strength check or a DC 25 Escape Artist check to do so.
+                             You can refrain from firing the globe after completing the spell, if you wish. Treat this as a touch spell for which you are holding the charge. You can hold the charge for as long as [[?{Casting Level}]] rounds, at the end of which time the *freezing sphere* bursts centered on you (and you receive no saving throw to resist its effect). Firing the globe in a later round is a standard action.`,
           component_details:'Focus: A small crystal sphere.'
         },
         // Spells that start with G
@@ -4223,7 +4223,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Willing corporeal creature touched',
-          duration:         '[[2*?{Casting Level}]] minute(s) (D)',
+          duration:         '[[2*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `The subject and all its gear become insubstantial, misty, and translucent. Its material armor (including natural armor) becomes worthless, though its size, Dexterity, deflection bonuses, and armor bonuses from force effects still apply. The subject gains damage reduction 10/magic and becomes immune to poison and critical hits. It can’t attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. (This does not rule out the use of certain spells that the subject may have prepared using the feats [Silent Spell](https://www.dandwiki.com/wiki/SRD:Silent_Spell), [Still Spell](https://www.dandwiki.com/wiki/SRD:Still_Spell), and [Eschew Materials](https://www.dandwiki.com/wiki/SRD:Eschew_Materials).) The subject also loses supernatural abilities while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the *gaseous form* spell takes effect.
@@ -4239,7 +4239,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           'See text',
-          duration:         'Instantaneous or concentration (up to [[?{Casting Level}]] round(s)); see text',
+          duration:         'Instantaneous or concentration (up to [[?{Casting Level}]] rounds); see text',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `Casting a *gate* spell has two effects. First, it creates an interdimensional connection between your plane of existence and a plane you specify, allowing travel between those two planes in either direction.
@@ -4266,7 +4266,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One living creature',
-          duration:         '[[?{Casting Level}]] day(s) or until discharged (D)',
+          duration:         '[[?{Casting Level}]] days or until discharged (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `A *geas* places a magical command on a creature to carry out some service or to refrain from some action or course of activity, as desired by you. The creature must be able to understand you. While a *geas* cannot compel a creature to kill itself or perform acts that would result in certain death, it can cause almost any other course of activity.
@@ -4305,7 +4305,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Corpse touched',
-          duration:         '[[?{Casting Level}]] day(s)',
+          duration:         '[[?{Casting Level}]] days',
           saving_throw:     'Will negates (object)',
           spell_resistance: 'Yes (object)',
           text:             `You preserve the remains of a dead creature so that they do not decay. Doing so effectively extends the time limit on raising that creature from the dead (see [raise dead](https://www.dandwiki.com/wiki/SRD:Raise_Dead)). Days spent under the influence of this spell don’t count against the time limit. Additionally, this spell makes transporting a fallen comrade more pleasant.
@@ -4321,7 +4321,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Effect',
           target:           'Illusory sounds',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'Will disbelief (if interacted with)',
           spell_resistance: 'No',
           text:             `*Ghost sound* allows you to create a volume of sound that rises, recedes, approaches, or remains at a fixed place. You choose what type of sound *ghost sound* creates when casting it and cannot thereafter change the sound’s basic character.
@@ -4355,7 +4355,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Targets',
           target:           'Up to three vermin, no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `You turn three normal-sized [centipedes](https://www.dandwiki.com/wiki/SRD:Monstrous_Centipede), two normal-sized [spiders](https://www.dandwiki.com/wiki/SRD:Monstrous_Spider), or a single normal-sized [scorpion](https://www.dandwiki.com/wiki/SRD:Monstrous_Scorpion) into larger forms. Only one type of vermin can be transmuted (so a single casting cannot affect both a centipede and a spider), and all must be grown to the same size. The size to which the vermin can be grown depends on your level; see the table below.
@@ -4382,7 +4382,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           text:             `Your speech becomes fluent and more believable. You gain a +30 bonus on Bluff checks made to convince another of the truth of your words. (This bonus doesn’t apply to other uses of the Bluff skill, such as feinting in combat, creating a diversion to hide, or communicating a hidden message via innuendo.)
                              If a magical effect is used against you that would detect your lies or force you to speak the truth the user of the effect must succeed on a caster level check (1d20 + caster level) against a DC of [[15+?{Casting Level}]] to succeed. Failure means the effect does not detect your lies or force you to speak only the truth.`,
           component_details:null
@@ -4396,7 +4396,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Area',
           target:           'Creatures and objects within 10-ft.-radius spread',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will negates (blinding only)',
           spell_resistance: 'No',
           text:             `A cloud of golden particles covers everyone and everything in the area, causing creatures to become blinded and visibly outlining invisible things for the duration of the spell. All within the area are covered by the dust, which cannot be removed and continues to sparkle until it fades.
@@ -4412,7 +4412,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '10 ft.',
           target_type:      'Area',
           target:           '10-ft.-radius spherical emanation, centered on you',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `An immobile, faintly shimmering magical sphere surrounds you and excludes all spell effects of 4th level or lower. The area or effect of any such spells does not include the area of the *globe of invulnerability*. Such spells fail to affect any target located within the globe. Excluded effects include spell-like abilities and spells or spell-like effects from items. However, any type of spell can be cast through or out of the magical globe. Spells of 5th level and higher are not affected by the globe, nor are spells already in effect when the globe is cast. The globe can be brought down by a targeted [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell, but not by an area *dispel magic*. You can leave and return to the globe without penalty.
@@ -4465,8 +4465,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_medium_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] living creature(s), no two of which may be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          target:           '[[?{Casting Level}]] living creatures, no two of which may be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `This spell instills powerful hope in the subjects. Each affected creature gains a +2 morale bonus on saving throws, attack rolls, ability checks, skill checks, and weapon damage rolls.
@@ -4482,7 +4482,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Targets',
           target:           '[[2d4]] fresh berries touched',
-          duration:         '[[?{Casting Level}]] day(s)',
+          duration:         '[[?{Casting Level}]] days',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `Casting *goodberry* upon a handful of freshly picked berries makes 2d4 of them magical. You (as well as any other druid of 3rd or higher level) can immediately discern which berries are affected. Each transmuted berry provides nourishment as if it were a normal meal for a Medium creature. The berry also cures 1 point of damage when eaten, subject to a maximum of 8 points of such curing in any 24-hour period.`,
@@ -4497,7 +4497,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           '10-ft. hand',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `This spell functions like [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm), except the hand can also [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) one opponent that you select. The *grasping hand* gets one [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) attack per round.
@@ -4516,7 +4516,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target, or Area',
           target:           'One object or a 10-ft. square',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'See text',
           spell_resistance: 'No',
           text:             `A *grease* spell covers a solid surface with a layer of slippery grease. Any creature in the area when the spell is cast must make a successful Reflex save or fall. This save is repeated on your turn each round that the creature remains within the area. A creature can walk within or through the area of grease at half normal speed with a DC 10 Balance check. Failure means it can’t move that round (and must then make a Reflex save or fall), while failure by 5 or more means it falls (see the Balance skill for details).
@@ -4532,7 +4532,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           text:             `This spell makes your eyes glow blue and allows you to see magical auras within 120 feet of you. The effect is similar to that of a [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm) spell, but *greater arcane sight* does not require concentration and discerns aura location immediately.
                              You know the location and power of all magical auras within your sight. An aura’s power depends on a spell’s functioning level or an item’s caster level, as noted in the description of the detect magic spell. If the items or creatures bearing the auras are in line of sight, you automatically know which spells or magical effects are active upon any individual or object you see.
                              If you concentrate on a specific creature within 120 feet of you as a standard action, you can determine whether it has any spellcasting or spell-like abilities, whether these are arcane or divine (spell-like abilities register as arcane), and the strength of the most powerful spell or spell-like ability the creature currently has available for use.
@@ -4548,8 +4548,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] round(s)',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `You give creatures a single command, which they obey to the best of their ability at their earliest opportunity. You may select from the following options. At the start of each commanded creature’s action after the first, it gets another Will save to attempt to break free from the spell. Each creature must receive the same command.
@@ -4622,7 +4622,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `This spell functions like [heroism](https://www.dandwiki.com/wiki/SRD:Heroism), except the creature gains a +4 morale bonus on attack rolls, saves, and skill checks, immunity to fear effects, and [[{?{Casting Level},20}kl1]] temporary hit points.`,
@@ -4637,7 +4637,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal or touch',
           target_type:      'Target',
           target:           'You or creature touched',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless) or Yes (harmless, object)',
           text:             `The creature or object touched becomes invisible, vanishing from sight, even from darkvision. If the recipient is a creature carrying gear, that vanishes, too. If you cast the spell on someone else, neither you nor your allies can see the subject, unless you can normally see invisible things or you employ magic to do so.
@@ -4654,7 +4654,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One living creature',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `*Greater magic fang* gives one natural weapon of the subject a \`\`+[[{floor(?{Casting Level}/4),5}kl1]] enhancement bonus\`\` on attack and damage rolls. The spell can affect a slam attack, fist, bite, or other natural weapon. (The spell does not change an unarmed strike’s damage from nonlethal damage to lethal damage.)
@@ -4671,7 +4671,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One weapon or fifty projectiles (all of which must be in contact with each other at the time of casting)',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
           text:             `*Greater magic weapon* gives a weapon a \`\`+[[{floor(?{Casting Level}/4),5}kl1]] enhancement bonus\`\` on attack and damage rolls. (An enhancement bonus does not stack with a masterwork weapon’s +1 bonus on attack rolls.)
@@ -4730,7 +4730,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'One mile',
           target_type:      'Effect',
           target:           'Ten or more levitating eyes',
-          duration:         '[[?{Casting Level}]] hour(s); see text (D)',
+          duration:         '[[?{Casting Level}]] hours; see text (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You create [[1d4+?{Casting Level}]] semitangible, visible magical orbs (called “eyes”). These eyes move out, scout around, and return as you direct them when casting the spell. Each eye can see all things as they actually are, just as if they had [true seeing](http://www.d20srd.org/srd/spells/trueSeeing.htm) with a range of 120 feet in all directions. Thus, they can navigate darkened areas at full normal speed.
@@ -4750,7 +4750,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Area',
           target:           '40-ft.-radius emanation centered on a point in space',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will partial; see text',
           spell_resistance: 'Yes',
           text:             `With this spell, you create an invisible field that leeches away the [power points](https://www.dandwiki.com/wiki/SRD:Power_Points) of psionic characters standing within the emanation. Nonpsionic characters are unaffected.
@@ -4784,7 +4784,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'See text',
           target_type:      'Effect',
           target:           'Magical sensor',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `You can see and hear some creature, which may be at any distance. If the subject succeeds on a Will save, the scrying attempt simply fails. The difficulty of the save depends on how well you know the subject and what sort of physical connection (if any) you have to that creature. Furthermore, if the subject is on another plane, it gets a +5 bonus on its Will save.
@@ -4871,7 +4871,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The warded creature is immune to the effects of one specified spell for every four levels you have. The spells must be of 8th level or lower. The warded creature effectively has unbeatable spell resistance regarding the specified spell or spells. Naturally, that immunity doesn’t protect a creature from spells for which spell resistance doesn’t apply. *Greater spell immunity* protects against spells, spell-like effects of magic items, and innate spell-like abilities of creatures. It does not protect against supernatural or extraordinary abilities, such as breath weapons or gaze attacks.
@@ -4888,8 +4888,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            'Touch',
           target_type:      'Targets',
-          target:           '[[floor(?{Casting Level}/3)]] creature(s) touched',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          target:           '[[floor(?{Casting Level}/3)]] creatures touched',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `When you need to keep track of comrades who may get separated, *greater status* allows you to mentally monitor their relative positions and general condition. You are aware of direction and distance to the creatures and any conditions affecting them: unharmed, wounded, [disabled](https://www.dandwiki.com/wiki/SRD:Disabled), [staggered](https://www.dandwiki.com/wiki/SRD:Staggered), unconscious, [dying](https://www.dandwiki.com/wiki/SRD:Dying), [nauseated](https://www.dandwiki.com/wiki/SRD:Nauseated), panicked, stunned, [poisoned](https://www.dandwiki.com/wiki/SRD:Poison), diseased, confused, or the like. Once the spell has been cast upon the subjects, the distance between them and the caster does not affect the spell as long as they are on the same plane of existence. If a subject leaves the plane, or if it dies, the spell ceases to function for it.
@@ -5014,8 +5014,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '10 minutes',
           range:            '_long_',
           target_type:      'Area',
-          target:           '[[?{Casting Level}]] 30-ft. cube(s) (S)',
-          duration:         '[[2*?{Casting Level}]] hour(s) (D)',
+          target:           '[[?{Casting Level}]] 30-ft. cubes (S)',
+          duration:         '[[2*?{Casting Level}]] hours (D)',
           saving_throw:     'Will disbelief (if interacted with)',
           spell_resistance: 'No',
           text:             `You make natural terrain look, sound, and smell like some other sort of natural terrain. Structures, equipment, and creatures within the area are not hidden or changed in appearance.`,
@@ -5030,7 +5030,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Targets',
           target:           'Up to three [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures, no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will negates (see text)',
           spell_resistance: 'Yes',
           text:             `This spell renders as many as three [undead creatures](https://www.dandwiki.com/wiki/SRD:Undead_Type) immobile. A nonintelligent undead creature gets no saving throw; an intelligent undead creature does. If the spell is successful, it renders the undead creature immobile for the duration of the spell (similar to the effect of [hold person](https://www.dandwiki.com/wiki/SRD:Hold_Person) on a living creature). The effect is broken if the *halted* creatures are attacked or take damage.`,
@@ -5078,8 +5078,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] round(s)',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Fortitude negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The transmuted creatures move and act more quickly than normal. This extra speed has several effects.
@@ -5131,7 +5131,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Target',
-          target:           'Metal equipment of [[floor(?{Casting Level}/2)]] creature(s), no two of which can be more than 30 ft. apart; or [[25*?{Casting Level}]] lb. of metal, all of which must be within a 30-ft. circle',
+          target:           'Metal equipment of [[floor(?{Casting Level}/2)]] creatures, no two of which can be more than 30 ft. apart; or [[25*?{Casting Level}]] lb. of metal, all of which must be within a 30-ft. circle',
           duration:         '7 rounds',
           saving_throw:     'Will negates (object)',
           spell_resistance: 'Yes (object)',
@@ -5159,7 +5159,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '5 miles',
           target_type:      'Effect',
           target:           'Ghostly hand',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You create the ghostly image of a hand, which you can send to find a creature within 5 miles. The hand then beckons to that creature and leads it to you if the creature is willing to follow.
@@ -5188,7 +5188,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '10 minutes',
           range:            '_close_',
           target_type:      'Effect',
-          target:           'Feast for [[?{Casting Level}]] creature(s)',
+          target:           'Feast for [[?{Casting Level}]] creatures',
           duration:         '1 hour plus 12 hours; see text',
           saving_throw:     'None',
           spell_resistance: 'No',
@@ -5205,7 +5205,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `This spell imbues a single creature with great bravery and morale in battle. The target gains a +2 morale bonus on attack rolls, saves, and skill checks.`,
@@ -5219,8 +5219,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            'Touch',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s) touched',
-          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          target:           '[[?{Casting Level}]] creatures touched',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
           text:             `[Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type) cannot see, hear, or smell the warded creatures. Even extraordinary or supernatural sensory capabilities, such as blindsense, blindsight, scent, and tremorsense, cannot detect or locate warded creatures. Animals simply act as though the warded creatures are not there. If a warded character touches an animal or attacks any creature, even with a spell, the spell ends for all recipients.`,
@@ -5234,8 +5234,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            'Touch',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s) touched',
-          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          target:           '[[?{Casting Level}]] creatures touched',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'Will negates (harmless); see text',
           spell_resistance: 'Yes',
           text:             `[Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) cannot see, hear, or smell the warded creatures. Even extraordinary or supernatural sensory capabilities, such as blindsense, blindsight, scent, and tremorsense, cannot detect or locate warded creatures. Nonintelligent undead creatures are automatically affected and act as though the warded creatures are not there. An intelligent undead creature gets a single Will saving throw. If it fails, the subject can’t see any of the warded creatures. However, if it has reason to believe unseen opponents are present, it can attempt to find or strike them. If a warded creature attempts to turn or command undead, touches an undead creature, or attacks any creature (even with a spell), the spell ends for all recipients.`,
@@ -5250,7 +5250,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One creature; see text',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This spell afflicts the subject with uncontrollable laughter. It collapses into gales of manic laughter, falling prone. The subject can take no actions while laughing, but is not considered helpless. After the spell ends, it can act normally.
@@ -5266,7 +5266,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Target',
           target:           'One animal',
-          duration:         '[[?{Casting Level}]] round(s) (D); see text',
+          duration:         '[[?{Casting Level}]] rounds (D); see text',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
           text:             `The subject becomes [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and freezes in place. It is aware and breathes normally but cannot take any actions, even speech. Each round on its turn, the subject may attempt a new saving throw to end the effect. (This is a full-round action that does not provoke attacks of opportunity.)
@@ -5282,7 +5282,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Target',
           target:           'One living creature',
-          duration:         '[[?{Casting Level}]] round(s) (D); see text',
+          duration:         '[[?{Casting Level}]] rounds (D); see text',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
           text:             `The subject becomes [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and freezes in place. It is aware and breathes normally but cannot take any actions, even speech. Each round on its turn, the subject may attempt a new saving throw to end the effect. (This is a full-round action that does not provoke attacks of opportunity.)
@@ -5298,7 +5298,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Target',
           target:           'One [humanoid](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) creature',
-          duration:         '[[?{Casting Level}]] round(s) (D); see text',
+          duration:         '[[?{Casting Level}]] rounds (D); see text',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
           text:             `The subject becomes [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and freezes in place. It is aware and breathes normally but cannot take any actions, even speech. Each round on its turn, the subject may attempt a new saving throw to end the effect. (This is a full-round action that does not provoke attacks of opportunity.)
@@ -5314,7 +5314,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Target',
           target:           'One portal, up to [[20*?{Casting Level}]] sq. ft.',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'no',
           text:             `This spell magically holds shut a door, gate, window, or shutter of wood, metal, or stone. The magic affects the portal just as if it were securely closed and normally locked. A [knock](http://www.d20srd.org/srd/spells/knock.htm) spell or a successful [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell can negate a *hold portal* spell.
@@ -5329,8 +5329,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '20 ft.',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s) in a 20-ft.-radius burst centered on you',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          target:           '[[?{Casting Level}]] creatures in a 20-ft.-radius burst centered on you',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'See text',
           spell_resistance: 'Yes (harmless)',
           text:             `A brilliant divine radiance surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by [evil creatures](https://www.dandwiki.com/wiki/SRD:Evil_Subtype), and causing evil creatures to become blinded when they strike the subjects. This abjuration has four effects.
@@ -5366,7 +5366,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Melee weapon touched',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell allows you to channel holy power into your sword, or any other melee weapon you choose. The weapon acts as a +5 *holy weapon* (+5 enhancement bonus on attack and damage rolls, extra ‹2d6› damage against evil opponents). It also emits a [magic circle against evil](http://www.d20srd.org/srd/spells/magicCircleAgainstEvil.htm) effect (as the spell). If the *magic circle* ends, the sword creates a new one on your turn as a free action. The spell is automatically canceled 1 round after the weapon leaves your hand. You cannot have more than one *holy sword* at a time.
@@ -5493,7 +5493,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'One touched object weighing no more than 10 lb.',
-          duration:         '[[?{Casting Level}]] day(s) (D)',
+          duration:         '[[?{Casting Level}]] days (D)',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
           text:             `You write instructions or other information on parchment, paper, or any suitable writing material. The *illusory script* appears to be some form of foreign or magical writing. Only the person (or people) designated by you at the time of the casting are able to read the writing; it’s unintelligible to any other character, although an illusionist recognizes it as *illusory script*.
@@ -5547,7 +5547,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] corporeal creature(s)',
+          target:           '[[?{Casting Level}]] corporeal creatures',
           duration:         'Concentration (up to 4 rounds)',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
@@ -5580,7 +5580,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           'Cloud spreads in 20-ft. radius, 20 ft. high',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Reflex half; see text',
           spell_resistance: 'No',
           text:             `An *incendiary cloud* spell creates a cloud of roiling smoke shot through with white-hot embers. The smoke obscures all sight as a [fog cloud](http://www.d20srd.org/srd/spells/fogCloud.htm) does. In addition, the white-hot embers within the cloud deal ‹4d6› points of fire damage to everything within the cloud on your turn each round. All targets can make Reflex saves each round to take half damage.
@@ -5692,8 +5692,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 round',
           range:            '_long_',
           target_type:      'Effect',
-          target:           '[[{floor(?{Casting Level}/3),6}kl1]] swarm(s) of locusts, each of which must be adjacent to at least one other swarm',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          target:           '[[{floor(?{Casting Level}/3),6}kl1]] swarms of locusts, each of which must be adjacent to at least one other swarm',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You summon a number of [swarms of locusts](https://www.dandwiki.com/wiki/SRD:Locust_Swarm). The swarms must be summoned so that each one is adjacent to at least one other swarm (that is, the swarms must fill one contiguous area). You may summon the locust swarms so that they share the area of other creatures. Each swarm attacks any creatures occupying its area. The swarms are stationary after being summoned, and won’t pursue creatures that flee.`,
@@ -5727,7 +5727,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           '10-ft. hand',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `*Interposing hand* creates a Large magic hand that appears between you and one opponent. This floating, disembodied hand then moves to remain between the two of you, regardless of where you move or how the opponent tries to get around it, providing [cover](https://www.dandwiki.com/wiki/SRD:Cover) (+4 AC) for you against that opponent. Nothing can fool the hand—it sticks with the selected opponent in spite of darkness, invisibility, polymorphing, or any other attempt at hiding or disguise. The hand does not pursue an opponent, however.
@@ -5747,7 +5747,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal or touch',
           target_type:      'Target',
           target:           'You or a creature or object weighing no more than [[100*?{Casting Level}]] lb.',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Will negates (harmless) or Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless) or Yes (harmless, object)',
           text:             `The creature or object touched becomes invisible, vanishing from sight, even from darkvision. If the recipient is a creature carrying gear, that vanishes, too. If you cast the spell on someone else, neither you nor your allies can see the subject, unless you can normally see invisible things or you employ magic to do so.
@@ -5765,7 +5765,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           text:             `You surround yourself with a sphere of power with a radius of [[5*?{Casting Level}]] feet that negates all forms of invisibility.
                              Anything invisible becomes visible while in the area.`,
           component_details:null
@@ -5779,7 +5779,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal or touch',
           target_type:      'Area',
           target:           '10-ft.-radius emanation around the creature or object touched',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Will negates (harmless) or Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless) or Yes (harmless, object)',
           text:             `This spell confers invisibility upon all creatures within 10 feet of the recipient. The center of the effect is mobile with the recipient.
@@ -5797,7 +5797,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           text:             `This spell transforms your body into living iron, which grants you several powerful resistances and abilities.
                              You gain damage reduction 15/adamantine. You are immune to [blindness](http://www.d20srd.org/srd/spells/blindnessDeafness.htm), critical hits, ability score damage, deafness, disease, drowning, electricity, poison, stunning, and all spells or attacks that affect your physiology or respiration, because you have no physiology or respiration while this spell is in effect. You take only half damage from acid and fire of all kinds. However, you also become vulnerable to all special attacks that affect iron golems.
                              You gain a +6 enhancement bonus to your Strength score, but you take a -6 penalty to Dexterity as well (to a minimum Dexterity score of 1), and your speed is reduced to half normal. You have an arcane spell failure chance of 50% and a -8 armor check penalty, just as if you were clad in full plate armor. You cannot drink (and thus can’t use potions) or play wind instruments.
@@ -5814,7 +5814,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '0 ft.',
           target_type:      'Effect',
           target:           'An *ironwood* object weighing up to [[5*?{Casting Level}]] lb.',
-          duration:         '[[?{Casting Level}]] day(s) (D)',
+          duration:         '[[?{Casting Level}]] days (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `*Ironwood* is a magical substance created by druids from normal wood. While remaining natural wood in almost every way, *ironwood* is as strong, heavy, and resistant to fire as steel. Spells that affect metal or iron do not function on *ironwood*. Spells that affect wood do affect *ironwood*, although *ironwood* does not burn. Using this spell with *wood shape* or a wood-related Craft check, you can fashion wooden items that function as steel items. Thus, wooden plate armor and wooden swords can be created that are as durable as their normal steel counterparts. These items are freely usable by druids.
@@ -5846,7 +5846,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
           text:             `The subject gets a +10 enhancement bonus on Jump checks. The enhancement bonus increases to +20 at caster level 5th, and to +30 (the maximum) at caster level 9th.`,
@@ -5862,7 +5862,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Targets',
           target:           'One weapon or fifty projectiles, all of which must be in contact with each other at the time of casting',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
           text:             `This spell makes a weapon magically keen, improving its ability to deal telling blows. This transmutation doubles the threat range of the weapon. A threat range of 20 becomes 19–20, a threat range of 19–20 becomes 17–20, and a threat range of 18–20 becomes 15–20. The spell can be cast only on piercing or slashing weapons. If cast on arrows or crossbow bolts, the *keen edge* on a particular projectile ends after one use, whether or not the missile strikes its intended target. (Treat shuriken as arrows, rather than as thrown weapons, for the purpose of this spell.)
@@ -5940,7 +5940,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One living creature with 7 HD or less',
-          duration:         '[[?{Casting Level}]] day(s) or until discharged (D)',
+          duration:         '[[?{Casting Level}]] days or until discharged (D)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `A *lesser geas* places a magical command on a creature to carry out some service or to refrain from some action or course of activity, as desired by you. The creature must have 7 or fewer Hit Dice and be able to understand you. While a geas cannot compel a creature to kill itself or perform acts that would result in certain death, it can cause almost any other course of activity.
@@ -5959,7 +5959,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '10 ft.',
           target_type:      'Area',
           target:           '10-ft.-radius spherical emanation, centered on you',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `An immobile, faintly shimmering magical sphere surrounds you and excludes all spell effects of 3rd level or lower. The area or effect of any such spells does not include the area of the *lesser globe of invulnerability*. Such spells fail to affect any target located within the globe. Excluded effects include spell-like abilities and spells or spell-like effects from items. However, any type of spell can be cast through or out of the magical globe. Spells of 4th level and higher are not affected by the globe, nor are spells already in effect when the globe is cast. The globe can be brought down by a targeted [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell, but not by an area *dispel magic*. You can leave and return to the globe without penalty.
@@ -6032,7 +6032,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '30 ft.',
           target_type:      'Targets',
           target:           'You and one willing creature within 30 ft.',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You forge a telepathic bond with another creature with an Intelligence score of 6 or higher. The bond can be established only with a willing subject. You can communicate telepathically through the bond regardless of language. No special power or influence is established as a result of the bond. Once the bond is formed, it works over any distance (although not from one plane to another).`,
@@ -6048,7 +6048,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal or close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.)',
           target_type:      'Target',
           target:           'You or one willing creature or one object (total weight up to [[100*?{Casting Level}]] lb.)',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `*Levitate* allows you to move yourself, another creature, or an object up and down as you wish. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. You can mentally direct the recipient to move up or down as much as 20 feet each round; doing so is a move action. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its base land speed).
@@ -6064,7 +6064,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Object touched',
-          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell causes an object to glow like a torch, shedding bright light in a 20-foot radius (and dim light for an additional 20 feet) from the point you touch. The effect is immobile, but it can be cast on a movable object. Light taken into an area of magical *darkness* does not function.
@@ -6118,7 +6118,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Tree touched',
-          duration:         '[[?{Casting Level}]] day(s) (D)',
+          duration:         '[[?{Casting Level}]] days (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell turns an oak tree into a protector or guardian. The spell can be cast on only a single tree at a time; while *liveoak* is in effect, you can’t cast it again on another tree. The tree on which the spell is cast must be within 10 feet of your dwelling place, within a place sacred to you, or within 300 feet of something that you wish to guard or protect.
@@ -6136,7 +6136,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_long_',
           target_type:      'Area',
           target:           'Circle, centered on you, with a radius of [[400+(40*[[?{Casting Level}]])]] ft.',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You slowly turn and sense when you are facing in the direction of the creature to be located, provided it is within range. You also know in which direction the creature is moving, if any.
@@ -6153,7 +6153,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_long_',
           target_type:      'Area',
           target:           'Circle, centered on you, with a radius of [[400+(40*[[?{Casting Level}]])]] ft.',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You sense the direction of a well-known or clearly visualized object. You can search for general items, in which case you locate the nearest one of its kind if more than one is within range. Attempting to find a certain item requires a specific and accurate mental image; if the image is not close enough to the actual object, the spell fails. You cannot specify a unique item unless you have observed that particular item firsthand (not through divination).
@@ -6169,7 +6169,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          duration:         '[[?{Casting Level}]] hours (D)',
           text:             `This spell increases your base land speed by 10 feet. (This adjustment counts as an \`\`enhancement bonus\`\`.) It has no effect on other modes of movement, such as burrow, climb, fly, or swim.`,
           component_details:'Material Component: A pinch of dirt.'
         },
@@ -6183,7 +6183,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Area',
           target:           'Living creatures within a 10-ft.-radius burst',
-          duration:         'Concentration + [[?{Casting Level}]] round(s) (D)',
+          duration:         'Concentration + [[?{Casting Level}]] rounds (D)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `Any creature within the area that fails a Will save becomes drowsy and inattentive, taking a -5 penalty on Listen and Spot checks and a -2 penalty on Will saves against *sleep* effects while the *lullaby* is in effect. *Lullaby* lasts for as long as the caster concentrates, plus up to 1 round per caster level thereafter.`,
@@ -6193,6 +6193,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // Spells that start with M
         'maddening scream': {
           ref:              'http://www.d20srd.org/srd/divine/spells/maddeningScream.htm',
+          other_versions:   'Complete Divine on page 168, Defenders of the Faith on page 87, Eberron Campaign Setting on page 113, Lords of Madness on page 212, Spell Compendium on page 135',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
           level:            'Sor/Wiz 8, Madness 8',
           components:       'V',
@@ -6204,8 +6205,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `The subject cannot keep him or herself from behaving as though completely mad. This spell makes it impossible for the victim to do anything other than race about caterwauling.
-                             The effect worsens the Armor Class of the creature by 4, makes Reflex saving throws impossible except on a roll of 20, and makes it impossible to use a shield.`,
-          other_versions:   'Complete Divine on page 168, Defenders of the Faith on page 87, Eberron Campaign Setting on page 113, Lords of Madness on page 212, Spell Compendium on page 135'
+                             The effect worsens the Armor Class of the creature by 4, makes Reflex saving throws impossible except on a roll of 20, and makes it impossible to use a shield.`
         },
         'mage armor': {
           ref:              'http://www.d20srd.org/srd/spells/mageArmor.htm',
@@ -6216,7 +6216,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          duration:         '[[?{Casting Level}]] hours (D)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'No',
           text:             `An invisible but tangible field of force surrounds the subject of a mage armor spell, providing a +4 armor bonus to AC.
@@ -6263,7 +6263,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Effect',
           target:           'Phantom watchdog',
-          duration:         '[[?{Casting Level}]] hour(s) or until discharged, then [[?{Casting Level}]] round(s); see text',
+          duration:         '[[?{Casting Level}]] hours or until discharged, then [[?{Casting Level}]] rounds; see text',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You conjure up a phantom watchdog that is invisible to everyone but yourself. It then guards the area where it was conjured (it does not move). The hound immediately starts barking loudly if any Small or larger creature approaches within 30 feet of it. (Those within 30 feet of the hound when it is conjured may move about in the area, but if they leave and return, they activate the barking.) The hound sees invisible and ethereal creatures. It does not react to figments, but it does react to shadow illusions.
@@ -6310,7 +6310,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '10 minutes',
           range:            '_close_',
           target_type:      'Area',
-          target:           '[[?{Casting Level}]] × 30-ft. cube(s) (S)',
+          target:           '[[?{Casting Level}]] × 30-ft. cubes (S)',
           duration:         '24 hours (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
@@ -6329,7 +6329,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Effect',
           target:           'One sword',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `This spell brings into being a shimmering, swordlike plane of force. The sword strikes at any opponent within its range, as you desire, starting in the round that you cast the spell. The sword attacks its designated target once each round on your turn. Its attack bonus is equal to your caster level + your Intelligence bonus or your Charisma bonus (for wizards or sorcerers, respectively) with an additional +3 enhancement bonus. As a force effect, it can strike ethereal and incorporeal creatures. It deals ‹4d6+3› points of force damage, with a threat range of 19–20 and a critical multiplier of ×2.
@@ -6348,7 +6348,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'One touched object weighing up to [[5*?{Casting Level}]] lb.',
-          duration:         '[[?{Casting Level}]] day(s) (D)',
+          duration:         '[[?{Casting Level}]] days (D)',
           saving_throw:     'None; see text',
           spell_resistance: 'No',
           text:             `You alter an item’s aura so that it registers to detect spells (and spells with similar capabilities) as though it were nonmagical, or a magic item of a kind you specify, or the subject of a spell you specify.
@@ -6366,7 +6366,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Area',
           target:           '10-ft.-radius emanation from touched creature',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'No; see text',
           text:             `All creatures within the area gain the effects of a [protection from chaos](http://www.d20srd.org/srd/spells/protectionFromChaos.htm) spell, and no nonlawful summoned creatures can enter the area either. You must overcome a creature’s spell resistance in order to keep it at bay (as in the third function of [protection from chaos](http://www.d20srd.org/srd/spells/protectionFromChaos.htm)), but the deflection and resistance bonuses and the protection from mental control apply regardless of enemies’ spell resistance.
@@ -6386,7 +6386,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Area',
           target:           '10-ft.-radius emanation from touched creature',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'No; see text',
           text:             `All creatures within the area gain the effects of a [protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm) spell, and no nongood summoned creatures can enter the area either. You must overcome a creature’s spell resistance in order to keep it at bay (as in the third function of [protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm)), but the deflection and resistance bonuses and the protection from mental control apply regardless of enemies’ spell resistance.
@@ -6406,7 +6406,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Area',
           target:           '10-ft.-radius emanation from touched creature',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'No; see text',
           text:             `All creatures within the area gain the effects of a [protection from good](http://www.d20srd.org/srd/spells/protectionFromGood.htm) spell, and no nonevil summoned creatures can enter the area either. You must overcome a creature’s spell resistance in order to keep it at bay (as in the third function of [protection from good](http://www.d20srd.org/srd/spells/protectionFromGood.htm)), but the deflection and resistance bonuses and the protection from mental control apply regardless of enemies’ spell resistance.
@@ -6426,7 +6426,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Area',
           target:           '10-ft.-radius emanation from touched creature',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'No; see text',
           text:             `All creatures within the area gain the effects of a [protection from law](http://www.d20srd.org/srd/spells/protectionFromLaw.htm) spell, and no nonchaotic summoned creatures can enter the area either. You must overcome a creature’s spell resistance in order to keep it at bay (as in the third function of [protection from law](http://www.d20srd.org/srd/spells/protectionFromLaw.htm)), but the deflection and resistance bonuses and the protection from mental control apply regardless of enemies’ spell resistance.
@@ -6446,7 +6446,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Living creature touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `Magic fang gives one natural weapon of the subject a +1 enhancement bonus on attack and damage rolls. The spell can affect a slam attack, fist, bite, or other natural weapon. (The spell does not change an unarmed strike’s damage from nonlethal damage to lethal damage.)
@@ -6461,7 +6461,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Target',
           target:           'One creature',
-          duration:         '[[?{Casting Level}]] hour(s) or until you return to your body',
+          duration:         '[[?{Casting Level}]] hours or until you return to your body',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
           text:             `By casting magic jar, you place your soul in a gem or large crystal (known as the magic jar), leaving your body lifeless. Then you can attempt to take control of a nearby body, forcing its soul into the magic jar. You may move back to the jar (thereby returning the trapped soul to its body) and attempt to possess another body. The spell ends when you send your soul back to your own body, leaving the receptacle empty.
@@ -6487,7 +6487,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `[[{floor((1+?{Casting Level})/2),5}kl1]] missile(s) of magical energy darts forth from your fingertip and strikes their target(s), each dealing ‹1d4+1› points of force damage.
+          text:             `[[{floor((1+?{Casting Level})/2),5}kl1]] missiles of magical energy darts forth from your fingertip and strikes their targets, each dealing ‹1d4+1› points of force damage.
                              The missile strikes unerringly, even if the target is in melee combat or has less than [total cover](http://www.d20srd.org/srd/combat/combatModifiers.htm#totalCover) or [total concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment). Specific parts of a creature can’t be singled out. Inanimate objects are not damaged by the spell.
                              If you shoot multiple missiles, you can have them strike a single creature or several creatures. A single missile can strike only one creature. You must designate targets before you check for spell resistance or roll damage.`
         },
@@ -6532,7 +6532,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Armor or shield touched',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
           text:             `You imbue a suit of armor or a shield with a \`\`+[[{?{Casting Level}/4,5}kl1]] enhancement bonus\`\`.
@@ -6547,7 +6547,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Weapon touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
           text:             `Magic weapon gives a weapon a +1 enhancement bonus on attack and damage rolls. (An enhancement bonus does not stack with a masterwork weapon’s +1 bonus on attack rolls.)
@@ -6570,11 +6570,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              You can also create an object of mineral nature: stone, crystal, metal, or the like. The duration of the created item varies with its relative hardness and rarity, as indicated on the following table.
 
                              Hardness and Rarity Examples  Duration
-                             • **Vegetable matter** [[2*?{Casting Level}]] hour(s)
-                             • **Stone, crystal, base metals** [[?{Casting Level}]] hour(s)
-                             • *Precious metals* [[20*?{Casting Level}]] minute(s)
-                             • **Gems** [[10*?{Casting Level}]] minute(s)
-                             • **Rare metal†** [[?{Casting Level}]] round(s)
+                             • **Vegetable matter** [[2*?{Casting Level}]] hours
+                             • **Stone, crystal, base metals** [[?{Casting Level}]] hours
+                             • *Precious metals* [[20*?{Casting Level}]] minutes
+                             • **Gems** [[10*?{Casting Level}]] minutes
+                             • **Rare metal†** [[?{Casting Level}]] rounds
                              † Includes adamantine, alchemical silver, and Mithral. You can’t use major creation to create a cold iron item.`,
           component_details:'Material Component: A tiny piece of matter of the same sort of item you plan to create with major creation.'
         },
@@ -6632,11 +6632,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The affected creature(s) gains greater vitality and stamina. The spell grants the subject(s) a +4 enhancement bonus to Constitution, which adds the usual benefits to hit points, Fortitude saves, Constitution checks, and so forth.
+          text:             `The affected creatures gains greater vitality and stamina. The spell grants the subjects a +4 enhancement bonus to Constitution, which adds the usual benefits to hit points, Fortitude saves, Constitution checks, and so forth.
                              Hit points gained by a temporary increase in Constitution score are not temporary hit points. They go away when the subject’s Constitution drops back to normal. They are not lost first as temporary hit points are.`
         },
         'mass bull\'s strength': {
@@ -6647,8 +6647,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The subjects becomes stronger. The spell grants a +4 enhancement bonus to Strength, adding the usual benefits to melee attack rolls, melee damage rolls, and other uses of the Strength modifier.`,
@@ -6662,8 +6662,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
           text:             `The transmuted creatures becomes more graceful, agile, and coordinated. The spell grants a +4 enhancement bonus to Dexterity, adding the usual benefits to AC, Reflex saves, and other uses of the Dexterity modifier.`,
@@ -6678,7 +6678,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Targets',
           target:           'One or more creatures, no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] day(s)',
+          duration:         '[[?{Casting Level}]] days',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This charm makes a creature regard you as its trusted friend and ally (treat the target’s attitude as friendly). If the creature is currently being threatened or attacked by you or your allies, however, it receives a +5 bonus on its saving throw.
@@ -6693,7 +6693,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
           duration:         'Instantaneous',
           saving_throw:     'Will half (harmless) or Will half; see text',
           spell_resistance: 'Yes (harmless) or Yes; see text',
@@ -6708,7 +6708,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
           duration:         'Instantaneous',
           saving_throw:     'Will half (harmless) or Will half; see text',
           spell_resistance: 'Yes (harmless) or Yes; see text',
@@ -6723,7 +6723,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
           duration:         'Instantaneous',
           saving_throw:     'Will half (harmless) or Will half; see text',
           spell_resistance: 'Yes (harmless) or Yes; see text',
@@ -6738,7 +6738,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
           duration:         'Instantaneous',
           saving_throw:     'Will half (harmless) or Will half; see text',
           spell_resistance: 'Yes (harmless) or Yes; see text',
@@ -6753,8 +6753,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
           text:             `The transmuted creatures becomes more poised, articulate, and personally forceful. The spell grants a +4 enhancement bonus to Charisma, adding the usual benefits to Charisma-based skill checks and other uses of the Charisma modifier. Sorcerers and bards (and other spellcasters who rely on Charisma) affected by this spell do not gain any additional bonus spells for the increased Charisma, but the save DCs for spells they cast while under this spell’s effect do increase.`,
@@ -6768,8 +6768,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 round',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] humanoid creature(s), no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          target:           '[[?{Casting Level}]] humanoid creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
           text:             `This spell causes instant growth of humanoid creatures, doubling their height and multiplying their weight by 8. This increase changes the creatures' size category to the next larger one. The targets gains a +2 size bonus to Strength, a -2 size penalty to Dexterity (to a minimum of 1), and a -1 penalty on attack rolls and AC due to their increased size.
@@ -6788,8 +6788,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
           text:             `The transmuted creatures becomes smarter. The spell grants a +4 enhancement bonus to Intelligence, adding the usual benefits to Intelligence-based skill checks and other uses of the Intelligence modifier. Wizards (and other spellcasters who rely on Intelligence) affected by this spell do not gain any additional bonus spells for the increased Intelligence, but the save DCs for spells they cast while under this spell’s effect do increase. This spell doesn’t grant extra skill points.`,
@@ -6821,7 +6821,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Targets',
           target:           'One or more creatures, no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] round(s) (D); see text',
+          duration:         '[[?{Casting Level}]] rounds (D); see text',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
           text:             `The subject becomes paralyzed and freezes in place. It is aware and breathes normally but cannot take any actions, even speech. Each round on its turn, the subject may attempt a new saving throw to end the effect. (This is a full-round action that does not provoke attacks of opportunity.)
@@ -6837,7 +6837,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Targets',
           target:           'One or more humanoid creatures, no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] round(s) (D); see text',
+          duration:         '[[?{Casting Level}]] rounds (D); see text',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
           text:             `The subjects becomes paralyzed and freezes in place. It is aware and breathes normally but cannot take any actions, even speech. Each round on its turn, the subject may attempt a new saving throw to end the effect. (This is a full-round action that does not provoke attacks of opportunity.)
@@ -6852,7 +6852,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
           duration:         'Instantaneous',
           saving_throw:     'Will half',
           spell_resistance: 'Yes',
@@ -6867,7 +6867,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
           duration:         'Instantaneous',
           saving_throw:     'Will half',
           spell_resistance: 'Yes',
@@ -6882,7 +6882,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
           duration:         'Instantaneous',
           saving_throw:     'Will half',
           spell_resistance: 'Yes',
@@ -6897,7 +6897,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
           duration:         'Instantaneous',
           saving_throw:     'Will half',
           spell_resistance: 'Yes',
@@ -6913,7 +6913,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_long_',
           target_type:      'Targets',
           target:           'Any number of creatures, no two of which can be more than 180 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Will negates (harmless) or Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless) or Yes (harmless, object)',
           text:             `This spell functions like [invisibility](http://www.d20srd.org/srd/spells/invisibility.htm), except that the effect is mobile with the group and is broken when anyone in the group attacks. Individuals in the group cannot see each other. The spell is broken for any individual who moves more than 180 feet from the nearest member of the group. (If only two individuals are affected, the one moving away from the other one loses its invisibility. If both are moving away from each other, they both become visible when the distance between them exceeds 180 feet.)`,
@@ -6927,8 +6927,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
           text:             `The transmuted creatures become wiser. The spell grants a +4 enhancement bonus to Wisdom, adding the usual benefit to Wisdom-related skills. Clerics, druids, paladins, and rangers (and other Wisdom-based spellcasters) who receive owl’s wisdom do not gain any additional bonus spells for the increased Wisdom, but the save DCs for their spells increase.`,
@@ -6942,8 +6942,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 round',
           range:            '_close_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] humanoid creature(s), no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          target:           '[[?{Casting Level}]] humanoid creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
           text:             `This spell causes instant diminution of humanoid creatures, halving their height, length, and width and dividing their weight by 8. This decrease changes the creatures’ size category to the next smaller one. The targets gain a +2 size bonus to Dexterity, a -2 size penalty to Strength (to a minimum of 1), and a +1 bonus on attack rolls and AC due to its reduced size.
@@ -6963,8 +6963,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_medium_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s), no two of which can be more than 30 ft. apart',
-          duration:         '[[?{Casting Level}]] hour(s) or until completed',
+          target:           '[[?{Casting Level}]] creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] hours or until completed',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `You influence the actions of the target creatures by suggesting a course of activity (limited to a sentence or two). The suggestion must be worded in such a manner as to make the activity sound reasonable. Asking the creatures to do some obviously harmful act automatically negates the effect of the spell.
@@ -6996,7 +6996,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           text:             `Meld into stone enables you to meld your body and possessions into a single block of stone. The stone must be large enough to accommodate your body in all three dimensions. When the casting is complete, you and not more than 100 pounds of nonliving gear merge with the stone. If either condition is violated, the spell fails and is wasted.
                              While in the stone, you remain in contact, however tenuous, with the face of the stone through which you melded. You remain aware of the passage of time and can cast spells on yourself while hiding in the stone. Nothing that goes on outside the stone can be seen, but you can still hear what happens around you. Minor physical damage to the stone does not harm you, but its partial destruction (to the extent that you no longer fit within it) expels you and deals you ‹5d6|[[5d6]] points of damage› points of damage. The stone’s complete destruction expels you and slays you instantly unless you make a DC 18 Fortitude save.
                              Any time before the duration expires, you can step out of the stone through the surface that you entered. If the spell’s duration expires or the effect is dispelled before you voluntarily exit the stone, you are violently expelled and take ‹5d6|[[5d6]] points of damage› points of damage.
@@ -7026,7 +7026,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           text:             `For a brief time, you achieve the mental dominance of a powerful psion, able to lash out at enemies using only the power of your mind. Your revel in your new mental powers to the point that you disdain using spells, even in the form of effects from magic items. You gain a +4 enhancement bonus to Intelligence and Wisdom, [[3*?{Casting Level}]] power points, and access to the following powers.
                              [Mind Thrust](http://www.d20srd.org/srd/psionic/powers/mindThrust.htm): Deal ‹1d10|[[1d10]] damage› damage.
                              [Ego Whip](http://www.d20srd.org/srd/psionic/powers/egoWhip.htm): Deal ‹1d4|[[1d4]] Cha damage› Cha damage and daze for 1 round.
@@ -7045,8 +7045,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_medium_',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s)',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          target:           '[[?{Casting Level}]] creatures',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You can whisper messages and receive whispered replies with little chance of being overheard. You point your finger at each creature you want to receive the message. When you whisper, the whispered message is audible to all targeted creatures within range. Magical silence, 1 foot of stone, 1 inch of common metal (or a thin sheet of lead), or 3 feet of wood or dirt blocks the spell. The message does not have to travel in a straight line. It can circumvent a barrier if there is an open path between you and the subject, and the path’s entire length lies within the spell’s range. The creatures that receive the message can whisper a reply that you hear. The spell transmits sound, not meaning. It doesn’t transcend language barriers.
@@ -7108,7 +7108,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '0 ft.',
           target_type:      'Effect',
           target:           'Unattended, nonmagical object of nonliving plant matter, up to [[?{Casting Level}]] cu. ft.',
-          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          duration:         '[[?{Casting Level}]] hours (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You create a nonmagical, unattended object of nonliving, vegetable matter. The volume of the item created cannot exceed 1 cubic foot per caster level. You must succeed on an appropriate skill check to make a complex item.
@@ -7169,8 +7169,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_long_',
           target_type:      'Area',
-          target:           '[[?{Casting Level}]] 20-ft. cube(s) (S)',
-          duration:         'Concentration + [[?{Casting Level}]] hour(s) (D)',
+          target:           '[[?{Casting Level}]] 20-ft. cubes (S)',
+          duration:         'Concentration + [[?{Casting Level}]] hours (D)',
           saving_throw:     'Will disbelief (if interacted with)',
           spell_resistance: 'No',
           text:             `This spell functions like [hallucinatory terrain](http://www.d20srd.org/srd/spells/hallucinatoryTerrain.htm), except that it enables you to make any area appear to be something other than it is. The illusion includes audible, visual, tactile, and olfactory elements. Unlike [hallucinatory terrain](http://www.d20srd.org/srd/spells/hallucinatoryTerrain.htm), the spell can alter the appearance of structures (or add them where none are present). Still, it can’t disguise, conceal, or add creatures (though creatures within the area might hide themselves within the illusion just as they can hide themselves within a real location).`
@@ -7184,7 +7184,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal; see text',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           text:             `Several illusory duplicates of you pop into being, making it difficult for enemies to know which target to attack. The figments stay near you and disappear when struck.
                              Mirror image creates [[{[[1d4+?{Casting Level}]],8}kl1]] images. These figments separate from you and remain in a cluster, each within 5 feet of at least one other figment or you. You can move into and through a mirror image. When you and the mirror image separate, observers can’t use vision or hearing to tell which one is you and which the image. The figments may also move through each other. The figments mimic your actions, pretending to cast spells when you cast a spell, drink potions when you drink a potion, levitate when you levitate, and so on.
                              Enemies attempting to attack you or cast spells at you must select from among indistinguishable targets. Generally, roll randomly to see whether the selected target is real or a figment. Any successful attack against an image destroys it. An image’s AC is 10 + your size modifier + your Dex modifier. Figments seem to react normally to area spells (such as looking like they’re burned or dead after being hit by a [fireball](http://www.d20srd.org/srd/spells/fireball.htm)).
@@ -7200,7 +7200,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One creature or object, up to a 10-ft. cube in size',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'None or Will negates; see text',
           spell_resistance: 'No',
           text:             `By means of this spell, you misdirect the information from divination spells that reveal auras ([detect evil](http://www.d20srd.org/srd/spells/detectEvil.htm), [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm), [discern lies](http://www.d20srd.org/srd/spells/discernLies.htm), and the like). On casting the spell, you choose another object within range. For the duration of the spell, the subject of misdirection is detected as if it were the other object. (Neither the subject nor the other object gets a saving throw against this effect.) Detection spells provide information based on the second object rather than on the actual target of the detection unless the caster of the detection succeeds on a Will save. For instance, you could make yourself detect as a tree if one were within range at casting: not evil, not lying, not magical, neutral in alignment, and so forth. This spell does not affect other types of divination magic ([augury](http://www.d20srd.org/srd/spells/augury.htm), [detect thoughts](http://www.d20srd.org/srd/spells/detectThoughts.htm), [clairaudience/clairvoyance](http://www.d20srd.org/srd/spells/clairaudienceClairvoyance.htm), and the like).`
@@ -7214,7 +7214,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target/Effect',
           target:           'You/one illusory double',
-          duration:         '[[?{Casting Level}]] round(s) (D) and concentration + 3 rounds; see text',
+          duration:         '[[?{Casting Level}]] rounds (D) and concentration + 3 rounds; see text',
           saving_throw:     'None or Will disbelief (if interacted with); see text',
           spell_resistance: 'No',
           text:             `You become invisible (as [greater invisibility](http://www.d20srd.org/srd/spells/invisibilityGreater.htm), a glamer), and at the same time, an illusory double of you (as [major image](http://www.d20srd.org/srd/spells/majorImage.htm), a figment) appears. You are then free to go elsewhere while your double moves away. The double appears within range but thereafter moves as you direct it (which requires concentration beginning on the first round after the casting). You can make the figment appear superimposed perfectly over your own body so that observers don’t notice an image appearing and you turning invisible. You and the figment can then move in different directions. The double moves at your speed and can talk and gesture as if it were real, but it cannot attack or cast spells, though it can pretend to do so.
@@ -7266,7 +7266,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] hour(s) or until discharged',
+          duration:         '[[?{Casting Level}]] hours or until discharged',
           text:             `This spell grants you a powerful sixth sense in relation to yourself. Once during the spell’s duration, you may choose to use its effect. This spell grants you a \`\`+[[{?{Casting Level},25}kl1]] insight bonus\`\` on any single attack roll, opposed ability or skill check, or saving throw. Alternatively, you can apply the insight bonus to your AC against a single attack (even if flat-footed). Activating the effect doesn’t take an action; you can even activate it on another character’s turn if needed. You must choose to use the moment of prescience before you make the roll it is to modify. Once used, the spell ends.
                              You can’t have more than one moment of prescience active on you at the same time.`
         },
@@ -7317,7 +7317,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature or object of up to [[?{Casting Level}]] cu. ft. touched',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
           text:             `You detoxify any sort of venom in the creature or object touched. A poisoned creature suffers no additional effects from the poison, and any temporary effects are ended, but the spell does not reverse instantaneous effects, such as hit point damage, temporary ability damage, or effects that don’t go away on their own.
@@ -7366,7 +7366,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature or object touched',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
           text:             `The warded creature or object becomes difficult to detect by divination spells such as [clairaudience/clairvoyance](http://www.d20srd.org/srd/spells/clairaudienceClairvoyance.htm), [locate object](http://www.d20srd.org/srd/spells/locateObject.htm), and detect spells. Nondetection also prevents location by such magic items as crystal balls. If a divination is attempted against the warded creature or item, the caster of the divination must succeed on a caster level check (1d20 + caster level) against a DC of 11 + the caster level of the spellcaster who cast nondetection. If you cast nondetection on yourself or on an item currently in your possession, the DC is 15 + your caster level.
@@ -7398,7 +7398,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '20 ft.',
           target_type:      'Effect',
           target:           'Cloud spreads in 20-ft. radius from you, 20 ft. high',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `A misty vapor arises around you. It is stationary once created. The vapor obscures all sight, including darkvision, beyond 5 feet. A creature 5 feet away has concealment (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker cannot use sight to locate the target).
@@ -7446,13 +7446,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Casting Level}]] hour(s)',
+          duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `This spell functions like a [fly](http://www.d20srd.org/srd/spells/fly.htm) spell, except you can fly at a speed of 40 feet (30 feet if wearing medium or heavy armor, or if carrying a medium or heavy load) with average maneuverability. When using this spell for long-distance movement, you can hustle without taking nonlethal damage (a forced march still requires Constitution checks). This means you can cover 64 miles in an eight-hour period of flight (or 48 miles at a speed of 30 feet).`
         },
         'owl\'s wisdom': {
           ref:              'http://www.d20srd.org/srd/spells/owlsWisdom.htm',
+          other_versions:   'Tome and Blood on page 94',
           school:           'Transmutation',
           level:            'APeace 2, Arc 2, Artificer 2, BVal 2, ChamGwyn 2, Clr 2, Drd 2, Meditation 2, Pal 2, Rgr 2, Sor/Wiz 2',
           components:       'V, S, M/DF',
@@ -7460,12 +7461,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
           text:             `The transmuted creature becomes wiser. The spell grants a +4 enhancement bonus to Wisdom, adding the usual benefit to Wisdom-related skills. Clerics, druids, paladins, and rangers (and other Wisdom-based spellcasters) who receive owl’s wisdom do not gain any additional bonus spells for the increased Wisdom, but the save DCs for their spells increase.`,
-          component_details:'Arcane Material Component: A few feathers, or a pinch of droppings, from an owl.',
-          other_versions:   'Tome and Blood on page 94'
+          component_details:'Arcane Material Component: A few feathers, or a pinch of droppings, from an owl.'
         },
         // Spells that start with P
         'pass without trace': {
@@ -7476,8 +7476,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            'Touch',
           target_type:      'Targets',
-          target:           '[[?{Casting Level}]] creature(s) touched',
-          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          target:           '[[?{Casting Level}]] creatures touched',
+          duration:         '[[?{Casting Level}]] hours (D)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The subject or subjects can move through any type of terrain and leave neither footprints nor scent. Tracking the subjects is impossible by nonmagical means.`
@@ -7491,7 +7491,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Effect',
           target:           '5 ft. by 8 ft. opening, [[10+(5*floor([[{[[{[[?{Casting Level}-9]],0}kh1]],9}kl1]]/3))]] ft. deep',
-          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          duration:         '[[?{Casting Level}]] hours (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You create a passage through wooden, plaster, or stone walls, but not through metal or other harder materials. The passage is 10 feet deep plus an additional 5 feet deep per three caster levels above 9th (15 feet at 12th, 20 feet at 15th, and a maximum of 25 feet deep at 18th level). If the wall’s thickness is more than the depth of the passage created, then a single passwall simply makes a niche or short tunnel. Several passwall spells can then form a continuing passage to breach very thick walls. When passwall ends, creatures within the passage are ejected out the nearest exit. If someone dispels the passwall or you dismiss it, creatures in the passage are ejected out the far exit, if there is one, or out the sole exit if there is only one.`,
@@ -7576,7 +7576,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_long_',
           target_type:      'Effect',
-          target:           'Figment that cannot extend beyond a 20-ft. cube + [[?{Casting Level}]] × 10-ft. cube(s) (S)',
+          target:           'Figment that cannot extend beyond a 20-ft. cube + [[?{Casting Level}]] × 10-ft. cubes (S)',
           duration:         'Permanent (D)',
           saving_throw:     'Will disbelief (if interacted with)',
           spell_resistance: 'No',
@@ -7593,7 +7593,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_long_',
           target_type:      'Effect',
           target:           'Visual figment that cannot extend beyond [[4+?{Casting Level}]] 10-ft. cubes (S)',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Will disbelief (if interacted with)',
           spell_resistance: 'No',
           text:             `This spell functions like [silent image](http://www.d20srd.org/srd/spells/silentImage.htm), except that the figment includes visual, auditory, olfactory, and thermal components, and the figment follows a script determined by you. The figment follows that script without your having to concentrate on it. The illusion can include intelligible speech if you wish.`,
@@ -7624,7 +7624,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '0 ft.',
           target_type:      'Effect',
           target:           'One quasi-real, horselike creature',
-          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          duration:         '[[?{Casting Level}]] hours (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You conjure a Large, quasi-real, horselike creature. The steed can be ridden only by you or by the one person for whom you specifically created the mount. A phantom steed has a black head and body, gray mane and tail, and smoke-colored, insubstantial hooves that make no sound. It has what seems to be a saddle, bit, and bridle. It does not fight, but animals shun it and refuse to attack it.
@@ -7660,7 +7660,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '0 ft.',
           target_type:      'Effect',
           target:           'Ethereal 5 ft. by 8 ft. opening, [[10+[[5*floor(?{Casting Level}/3)]]]] ft. deep',
-          duration:         '[[floor(?{Casting Level}/2)]] usage(s)',
+          duration:         '[[floor(?{Casting Level}/2)]] usages',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell creates an ethereal passage through wooden, plaster, or stone walls, but not other materials. The phase door is invisible and inaccessible to all creatures except you, and only you can use the passage. You disappear when you enter the phase door and appear when you exit. If you desire, you can take one other creature (Medium or smaller) through the door. This counts as two uses of the door. The door does not allow light, sound, or spell effects through it, nor can you see through it without using it. Thus, the spell can provide an escape route, though certain creatures, such as [phase spiders](http://www.d20srd.org/srd/monsters/phaseSpider.htm), can follow with ease. A gem of [true seeing](http://www.d20srd.org/srd/spells/trueSeeing.htm) or similar magic reveals the presence of a phase door but does not allow its use.
@@ -7670,7 +7670,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'planar ally': {
           ref:              'http://www.d20srd.org/srd/spells/planarAlly.htm',
-          school:           'Conjuration (Calling) [see text for [lesser planar ally](http://www.d20srd.org/srd/spells/planarAllyLesser.htm)]',
+          school:           'Conjuration (Calling) &#91;see text for [lesser planar ally](http://www.d20srd.org/srd/spells/planarAllyLesser.htm)]',
           level:            'APeace 6, Arc 6, Clr 6, DrgBlw 6, Exalted Arcanist 6, Hth 6, Summoner 6',
           components:       'V, S, DF, XP',
           casting_time:     '10 minutes',
@@ -7685,7 +7685,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'planar binding': {
           ref:              'http://www.d20srd.org/srd/spells/planarBinding.htm',
-          school:           'Conjuration (Calling) [see text for [lesser planar binding](http://www.d20srd.org/srd/spells/planarBindingLesser.htm)]',
+          school:           'Conjuration (Calling) &#91;see text for [lesser planar binding](http://www.d20srd.org/srd/spells/planarBindingLesser.htm)]',
           level:            'Dem 4, Demonic 6, Diabolic 6, Hth 6, Sor/Wiz 6',
           components:       'V, S',
           casting_time:     '10 minutes',
@@ -7776,7 +7776,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Willing living creature touched',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell functions like [alter self](http://www.d20srd.org/srd/spells/alterSelf.htm), except that you change the willing subject into another form of living creature. The new form may be of the same type as the subject or any of the following types: aberration, animal, dragon, fey, giant, humanoid, magical beast, monstrous humanoid, ooze, plant, or vermin. The assumed form can’t have more than [[?{Casting Level}]] Hit Dice (or the subject’s HD, whichever is lower), to a maximum of 15 HD at 15th level. You can’t cause a subject to assume a form smaller than Fine, nor can you cause a subject to assume an incorporeal or gaseous form. The subject’s creature type and subtype (if any) change to match the new form.
@@ -7787,6 +7787,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'polymorph any object': {
           ref:              'http://www.d20srd.org/srd/spells/polymorphAnyObject.htm',
+          other_versions:   'Tome and Blood on page 94',
           school:           'Transmutation',
           level:            'Commerce 9, Renewal 8, Sor/Wiz 8, Transformation 8, Trickery 8, Wuj 8',
           components:       'V, S, M/DF',
@@ -7821,8 +7822,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              A nonmagical object cannot be made into a magic item with this spell. Magic items aren’t affected by this spell.
                              This spell cannot create material of great intrinsic value, such as copper, silver, gems, silk, gold, platinum, mithral, or adamantine. It also cannot reproduce the special properties of cold iron in order to overcome the damage reduction of certain creatures.
                              This spell can also be used to duplicate the effects of [baleful polymorph](http://www.d20srd.org/srd/spells/balefulPolymorph.htm), [polymorph](http://www.d20srd.org/srd/spells/polymorph.htm), [flesh to stone](http://www.d20srd.org/srd/spells/fleshToStone.htm), [stone to flesh](http://www.d20srd.org/srd/spells/stoneToFlesh.htm), [transmute mud to rock](http://www.d20srd.org/srd/spells/transmuteMudToRock.htm), [transmute metal to wood](http://www.d20srd.org/srd/spells/transmuteMetalToWood.htm), or [transmute rock to mud](http://www.d20srd.org/srd/spells/transmuteRockToMud.htm).`,
-          component_details:'Arcane Material Component: Mercury, gum arabic, and smoke.',
-          other_versions:   'Tome and Blood on page 94'
+          component_details:'Arcane Material Component: Mercury, gum arabic, and smoke.'
         },
         'power word blind': {
           ref:              'http://www.d20srd.org/srd/spells/powerWordBlind.htm',
@@ -7883,7 +7883,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '40 ft.',
           target_type:      'Area',
           target:           'All allies and foes within a 40-ft.-radius burst centered on you',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `You bring special favor upon yourself and your allies while bringing disfavor to your enemies. You and your each of your allies gain a +1 luck bonus on attack rolls, weapon damage rolls, saves, and skill checks, while each of your foes takes a -1 penalty on such rolls.`
@@ -7911,7 +7911,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '10 ft.',
           target_type:      'Effect',
           target:           '10-ft.-radius sphere centered on you',
-          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `This spell functions like [prismatic wall](http://www.d20srd.org/srd/spells/prismaticWall.htm), except you conjure up an immobile, opaque globe of shimmering, multicolored light that surrounds you and protects you from all forms of attack. The sphere flashes in all colors of the visible spectrum.
@@ -7953,7 +7953,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Effect',
           target:           'Wall [[4*?{Casting Level}]] ft. wide, [[2*?{Casting Level}]] ft. high',
-          duration:         '[[10*?{Casting Level}]] minute(s) (D)',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `Prismatic wall creates a vertical, opaque wall—a shimmering, multicolored plane of light that protects you from all forms of attack. The wall flashes with seven colors, each of which has a distinct power and purpose. The wall is immobile, and you can pass through and remain near the wall without harm. However, any other creature with less than 8 HD that is within 20 feet of the wall is blinded for [[2d4]] rounds by the colors if it looks at the wall.
@@ -7974,6 +7974,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'probe thoughts': {
           ref:              'http://www.d20srd.org/srd/psionic/spells/probeThoughts.htm',
+          other_versions:   'Complete Divine on page 176, Defenders of the Faith on page 88, Lords of Madness on page 212',
           school:           'Divination [Mind-Affecting]',
           level:            'Mind 6, Sor/Wiz 6',
           components:       'V, S',
@@ -7984,8 +7985,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Concentration',
           saving_throw:     'Fortitude negates; see text',
           spell_resistance: 'Yes',
-          text:             `All the subject’s memories and knowledge are accessible to you, ranging from memories deep below the surface to those still easily called to mind. You can learn the answer to one question per round, to the best of the subject’s knowledge. You can also probe a sleeping subject, though the subject may make a Will save against the DC of the probe thoughts spell to wake after each question. Subjects who do not wish to be probed can attempt to move beyond the power’s range, unless somehow hindered. You pose the questions telepathically, and the answers to those questions are imparted directly to your mind. You and the target do not need to speak the same language, though less intelligent creatures may yield up only appropriate visual images in answer to your questions.`,
-          other_versions:   'Complete Divine on page 176, Defenders of the Faith on page 88, Lords of Madness on page 212'
+          text:             `All the subject’s memories and knowledge are accessible to you, ranging from memories deep below the surface to those still easily called to mind. You can learn the answer to one question per round, to the best of the subject’s knowledge. You can also probe a sleeping subject, though the subject may make a Will save against the DC of the probe thoughts spell to wake after each question. Subjects who do not wish to be probed can attempt to move beyond the power’s range, unless somehow hindered. You pose the questions telepathically, and the answers to those questions are imparted directly to your mind. You and the target do not need to speak the same language, though less intelligent creatures may yield up only appropriate visual images in answer to your questions.`
         },
         'produce flame': {
           ref:              'http://www.d20srd.org/srd/spells/produceFlame.htm',
@@ -7996,7 +7996,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '0 ft.',
           target_type:      'Effect',
           target:           'Flame in your palm',
-          duration:         '[[?{Casting Leel}]] minute(s) (D)',
+          duration:         '[[?{Casting Leel}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `Flames as bright as a torch appear in your open hand. The flames harm neither you nor your equipment.
@@ -8011,8 +8011,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_long_',
           target_type:      'Effect',
-          target:           'Visual figment that cannot extend beyond a 20-ft. cube + [[?{Casting Level}]] 10-ft. cube(s) (S)',
-          duration:         'Permanent until triggered, then [[?{Casting Level}]] round(s)',
+          target:           'Visual figment that cannot extend beyond a 20-ft. cube + [[?{Casting Level}]] 10-ft. cubes (S)',
+          duration:         'Permanent until triggered, then [[?{Casting Level}]] rounds',
           saving_throw:     'Will disbelief (if interacted with)',
           spell_resistance: 'No',
           text:             `This spell functions like [silent image](http://www.d20srd.org/srd/spells/silentImage.htm), except that this spell’s figment activates when a specific condition occurs. The figment includes visual, auditory, olfactory, and thermal elements, including intelligible speech.
@@ -8028,7 +8028,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           'One shadow duplicate',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'Will disbelief (if interacted with)',
           spell_resistance: 'No',
           text:             `You tap energy from the Plane of Shadow to create a quasi-real, illusory version of yourself. The projected image looks, sounds, and smells like you but is intangible. The projected image mimics your actions (including speech) unless you direct it to act differently (which is a move action).
@@ -8047,7 +8047,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] hour(s) or until discharged',
+          duration:         '[[?{Casting Level}]] hours or until discharged',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The warded creature gains resistance to ranged weapons. The subject gains damage reduction 10/magic against ranged weapons. (This spell doesn’t grant you the ability to damage creatures with similar damage reduction.) Once the spell has prevented a total of [[10*{?{Casting Level},10}kl1]] points of damage, it is discharged.`,
@@ -8062,7 +8062,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'No; see text',
           text:             `This spell wards a creature from attacks by chaotic creatures, from mental control, and from summoned creatures. It creates a magical barrier around the subject at a distance of 1 foot. The barrier moves with the subject and has three major effects.
@@ -8080,7 +8080,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[10*?{Casting Level}]] minute(s) or until discharged',
+          duration:         '[[10*?{Casting Level}]] minutes or until discharged',
           saving_throw:     'Fortitude negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `Protection from energy grants temporary immunity to the type of energy you specify when you cast it (acid, cold, electricity, fire, or sonic). When the spell absorbs [[12*{?{Casting Level},10}kl1]] points of energy damage, it is discharged.
@@ -8095,7 +8095,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'No; see text',
           text:             `This spell wards a creature from attacks by evil creatures, from mental control, and from summoned creatures. It creates a magical barrier around the subject at a distance of 1 foot. The barrier moves with the subject and has three major effects.
@@ -8113,7 +8113,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'No; see text',
           text:             `This spell wards a creature from attacks by good creatures, from mental control, and from summoned creatures. It creates a magical barrier around the subject at a distance of 1 foot. The barrier moves with the subject and has three major effects.
@@ -8131,7 +8131,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'No; see text',
           text:             `This spell wards a creature from attacks by lawful creatures, from mental control, and from summoned creatures. It creates a magical barrier around the subject at a distance of 1 foot. The barrier moves with the subject and has three major effects.
@@ -8148,11 +8148,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            'Touch',
           target_type:      'Targets',
-          target:           'Up to [[floor(?{Casting Level}/4)]] creature(s) touched',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          target:           'Up to [[floor(?{Casting Level}/4)]] creatures touched',
+          duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `The subject(s) gains a +8 resistance bonus on saving throws against spells and spell-like abilities (but not against supernatural and extraordinary abilities).`,
+          text:             `The subjects gains a +8 resistance bonus on saving throws against spells and spell-like abilities (but not against supernatural and extraordinary abilities).`,
           component_details:`Material Component: A diamond of at least 500 gp value, which must be crushed and sprinkled over the targets.
                              Focus: One 1,000 gp diamond per creature to be granted the protection. Each subject must carry one such gem for the duration of the spell. If a subject loses the gem, the spell ceases to affect him.`
         },
@@ -8165,7 +8165,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'One mile',
           target_type:      'Effect',
           target:           'Ten or more levitating eyes',
-          duration:         '[[?{Casting Level}]] hour(s); see text (D)',
+          duration:         '[[?{Casting Level}]] hours; see text (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You create [[1d4+?{Casting Level}]] semitangible, visible magical orbs (called “eyes”). These eyes move out, scout around, and return as you direct them when casting the spell. Each eye can see 120 feet (normal vision only) in all directions.
@@ -8173,7 +8173,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              When you create the eyes, you specify instructions you want them to follow in a command of no more than twenty-five words. Any knowledge you possess is known by the eyes as well.
                              In order to report their findings, the eyes must return to your hand. Each replays in your mind all it has seen during its existence. It takes an eye 1 round to replay 1 hour of recorded images. After relaying its findings, an eye disappears.
                              If an eye ever gets more than 1 mile away from you, it instantly ceases to exist. However, your link with the eye is such that you won’t know if the eye was destroyed because it wandered out of range or because of some other event.
-                             The eyes exist for up to [[?{Casting Level}]] hour(s) or until they return to you. [Dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) can destroy eyes. Roll separately for each eye caught in an area dispel. Of course, if an eye is sent into darkness, it could hit a wall or similar obstacle and destroy itself.`,
+                             The eyes exist for up to [[?{Casting Level}]] hours or until they return to you. [Dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) can destroy eyes. Roll separately for each eye caught in an area dispel. Of course, if an eye is sent into darkness, it could hit a wall or similar obstacle and destroy itself.`,
           component_details:'Material Component: A handful of crystal marbles.'
         },
         'psychic turmoil': {
@@ -8185,7 +8185,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Area',
           target:           '40-ft.-radius emanation centered on a point in space',
-          duration:         '[[?{Casting Level}]] round(s)',
+          duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will partial; see text',
           spell_resistance: 'Yes',
           text:             `With this spell, you create an invisible field that leeches away the power points of psionic characters standing within the emanation. Nonpsionic characters are unaffected.
@@ -8223,7 +8223,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              **Fireworks**
                              The fireworks are a flashing, fiery, momentary burst of glowing, colored aerial lights. This effect causes creatures within 120 feet of the fire source to become blinded for [[1d4+1]] rounds (Will negates). These creatures must have line of sight to the fire to be affected. Spell resistance can prevent blindness.
                              **Smoke Cloud**
-                             A writhing stream of smoke billows out from the source, forming a choking cloud. The cloud spreads 20 feet in all directions and lasts for [[?{Casting Level}]] round(s). All sight, even darkvision, is ineffective in or through the cloud. All within the cloud take -4 penalties to Strength and Dexterity (Fortitude negates). These effects last for [[1d4+1]] rounds after the cloud dissipates or after the creature leaves the area of the cloud. Spell resistance does not apply.`,
+                             A writhing stream of smoke billows out from the source, forming a choking cloud. The cloud spreads 20 feet in all directions and lasts for [[?{Casting Level}]] rounds. All sight, even darkvision, is ineffective in or through the cloud. All within the cloud take -4 penalties to Strength and Dexterity (Fortitude negates). These effects last for [[1d4+1]] rounds after the cloud dissipates or after the creature leaves the area of the cloud. Spell resistance does not apply.`,
           component_details:'Material Component: The spell uses one fire source, which is immediately extinguished. A fire so large that it exceeds a 20-foot cube is only partly extinguished. Magical fires are not extinguished, although a fire-based creature used as a source takes 1 point of damage per caster level.'
         },
         // Spells that start with Q
@@ -8235,7 +8235,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '_medium_',
           target_type:      'Area or Target',
-          target:           '[[?{Casting Level}]] 20-ft. cube(s) (S) or one fire-based magic item',
+          target:           '[[?{Casting Level}]] 20-ft. cubes (S) or one fire-based magic item',
           duration:         'Instantaneous',
           saving_throw:     'None or Will negates (object)',
           spell_resistance: 'No or Yes (object)',
@@ -8246,18 +8246,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // Spells that start with R
         'rage': {
           ref:              'http://www.d20srd.org/srd/spells/rage.htm',
+          other_versions:   'Defenders of the Faith on page 88',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
           level:            'Brd 2, HB 2, Liberation 3, Madness 3, Sin-W 3, Sor/Wiz 3',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
           target_type:      'Targets',
-          target:           '[[floor(?{Casting Level}/3)]] willing living creature(s), no two of which may be more than 30 ft. apart',
-          duration:         'Concentration + [[?{Casting Level}]] round(s) (D)',
+          target:           '[[floor(?{Casting Level}/3)]] willing living creatures, no two of which may be more than 30 ft. apart',
+          duration:         'Concentration + [[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `Each affected creature gains a +2 morale bonus to Strength and Constitution, a +1 morale bonus on Will saves, and a -2 penalty to AC. The effect is otherwise identical with a barbarian’s rage except that the subjects aren’t fatigued at the end of the rage.`,
-          other_versions:   'Defenders of the Faith on page 88'
+          text:             `Each affected creature gains a +2 morale bonus to Strength and Constitution, a +1 morale bonus on Will saves, and a -2 penalty to AC. The effect is otherwise identical with a barbarian’s rage except that the subjects aren’t fatigued at the end of the rage.`
         },
         //Epic Spell: rain of fire
         'rainbow pattern': {
@@ -8269,7 +8269,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           'Colorful lights with a 20-ft.-radius spread',
-          duration:         'Concentration + [[?{Casting Level}]] round(s) (D)',
+          duration:         'Concentration + [[?{Casting Level}]] rounds (D)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `A glowing, rainbow-hued pattern of interweaving colors fascinates those within it. Rainbow pattern fascinates a maximum of 24 Hit Dice of creatures. Creatures with the fewest HD are affected first. Among creatures with equal HD, those who are closest to the spell’s point of origin are affected first. An affected creature that fails its saves is fascinated by the pattern.
@@ -8307,7 +8307,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Effect',
           target:           'Ray',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `A coruscating ray springs from your hand. You must succeed on a ranged touch attack to strike a target. The subject takes a \`\`-[[1d6+{[[floor(?{Casting Level}/2)]],5}kl1]] penalty\`\` to Strength. The subject’s Strength score cannot drop below 1.`
@@ -8321,7 +8321,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Effect',
           target:           'Ray',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Fortitude partial; see text',
           spell_resistance: 'Yes',
           text:             `A black ray projects from your pointing finger. You must succeed on a ranged touch attack with the ray to strike a target.
@@ -8353,7 +8353,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[10*?{Casting Level}]] minute(s)',
+          duration:         '[[10*?{Casting Level}]] minutes',
           text:             `By means of read magic, you can decipher magical inscriptions on objects—books, scrolls, weapons, and the like—that would otherwise be unintelligible. This deciphering does not normally invoke the magic contained in the writing, although it may do so in the case of a cursed scroll. Furthermore, once the spell is cast and you have read the magical inscription, you are thereafter able to read that particular writing without recourse to the use of read magic. You can read at the rate of one page (250 words) per minute. The spell allows you to identify a [glyph of warding](http://www.d20srd.org/srd/spells/glyphOfWarding.htm) with a DC 13 Spellcraft check, a [greater glyph of warding](http://www.d20srd.org/srd/spells/glyphOfWardingGreater.htm) with a DC 16 Spellcraft check, or any symbol spell with a Spellcraft check (DC 10 + spell level).
                              Read magic can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
           component_details:'Focus: A clear crystal or mineral prism.'
@@ -8367,7 +8367,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'One willing animal of Small, Medium, Large, or Huge size',
-          duration:         '[[?{Casting Level}]] hour(s) (D)',
+          duration:         '[[?{Casting Level}]] hours (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell functions like reduce person, except that it affects a single willing animal. Reduce the damage dealt by the animal’s natural attacks as appropriate for its new size.`
@@ -8381,7 +8381,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One humanoid creature',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
           text:             `This spell causes instant diminution of a humanoid creature, halving its height, length, and width and dividing its weight by 8. This decrease changes the creature’s size category to the next smaller one. The target gains a +2 size bonus to Dexterity, a -2 size penalty to Strength (to a minimum of 1), and a +1 bonus on attack rolls and AC due to its reduced size.
@@ -8548,7 +8548,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '60 ft.',
           target_type:      'Area',
           target:           '60-ft. line from you',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `Like [repel wood](http://www.d20srd.org/srd/spells/repelWood.htm), this spell creates waves of invisible and intangible energy that roll forth from you. All metal or stone objects in the path of the spell are pushed away from you to the limit of the range. Fixed metal or stone objects larger than 3 inches in diameter and loose objects weighing more than 500 pounds are not affected. Anything else, including animated objects, small boulders, and creatures in metal armor, moves back. Fixed objects 3 inches in diameter or smaller bend or break, and the pieces move with the wave of energy. Objects affected by the spell are repelled at the rate of 40 feet per round.
@@ -8578,7 +8578,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           casting_time:     '1 standard action',
           range:            '60 ft.',
           target_type:      '60-ft. line-shaped emanation from you',
-          target:           '[[?{Casting Level}]] minute(s) (D)',
+          target:           '[[?{Casting Level}]] minutes (D)',
           duration:         'None',
           saving_throw:     'No',
           spell_resistance: '',
@@ -8595,7 +8595,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Up to [[10*?{Casting Level}]] ft.',
           target_type:      'Area',
           target:           'Up to [[10*?{Casting Level}]]-ft.-radius emanation centered on you',
-          duration:         '[[?{Casting Level}]] round(s) (D)',
+          duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `An invisible, mobile field surrounds you and prevents creatures from approaching you. You decide how big the field is at the time of casting (to the limit your level allows). Any creature within or entering the field must attempt a save. If it fails, it becomes unable to move toward you for the duration of the spell. Repelled creatures’ actions are not otherwise restricted.
@@ -8611,7 +8611,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Effect',
           target:           '[[?{Casting Level}]]-ft.-diameter sphere, centered around a creature',
-          duration:         '[[?{Casting Level}]] minute(s) (D)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Reflex negates',
           spell_resistance: 'Yes',
           text:             `A globe of shimmering force encloses a creature, provided the creature is small enough to fit within the diameter of the sphere. The sphere contains its subject for the spell’s duration. The sphere is not subject to damage of any sort except from a rod of cancellation, a rod of negation, a [disintegrate](http://www.d20srd.org/srd/spells/disintegrate.htm) spell, or a targeted [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell. These effects destroy the sphere without harm to the subject. Nothing can pass through the sphere, inside or out, though the subject can breathe normally.
@@ -8750,7 +8750,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              You may employ rusting grasp in combat with a successful melee touch attack. Rusting grasp used in this way instantaneously destroys ‹1d6|Rusting Grasp destroys [[1d6]] points of Armor Class› points of Armor Class gained from metal armor (to the maximum amount of protection the armor offered) through corrosion.
                              Weapons in use by an opponent targeted by the spell are more difficult to grasp. You must succeed on a melee touch attack against the weapon. A metal weapon that is hit is destroyed.
                              *Note:* Striking at an opponent’s weapon provokes an attack of opportunity. Also, you must touch the weapon and not the other way around.
-                             Against a ferrous creature, rusting grasp instantaneously deals [[3d6+{?{Casting Level},15}kl1]] points of damage per successful attack. The spell lasts for [[?{Casting Level}]] round(s), and you can make one melee touch attack per round.`
+                             Against a ferrous creature, rusting grasp instantaneously deals [[3d6+{?{Casting Level},15}kl1]] points of damage per successful attack. The spell lasts for [[?{Casting Level}]] rounds, and you can make one melee touch attack per round.`
         },
         // Spells that start with S
         // Epic Spell: safe time
@@ -8844,7 +8844,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'See text',
           target_type:      'Effect',
           target:           'Magical sensor',
-          duration:         '[[?{Casting Level}]] minute(s)',
+          duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `You can see and hear some creature, which may be at any distance. If the subject succeeds on a Will save, the scrying attempt simply fails. The difficulty of the save depends on how well you know the subject and what sort of physical connection (if any) you have to that creature. Furthermore, if the subject is on another plane, it gets a +5 bonus on its Will save.
@@ -9437,6 +9437,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         'song of discord': {
           ref:              'http://www.d20srd.org/srd/spells/songOfDiscord.htm',
+          other_versions:   'Song and Silence on page 95',
           school:           'Enchantment (Compulsion) [Mind-Affecting, Sonic]',
           level:            'Brd 5, Hatred 4, Passion 7, Sin-W 6',
           components:       'V, S',
@@ -9448,8 +9449,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `This spell causes those within the area to turn on each other rather than attack their foes. Each affected creature has a 50% chance to attack the nearest target each round. (Roll to determine each creature’s behavior every round at the beginning of its turn.) A creature that does not attack its nearest neighbor is free to act normally for that round.
-                             Creatures forced by a song of discord to attack their fellows employ all methods at their disposal, choosing their deadliest spells and most advantageous combat tactics. They do not, however, harm targets that have fallen unconscious.`,
-          other_versions:   'Song and Silence on page 95'
+                             Creatures forced by a song of discord to attack their fellows employ all methods at their disposal, choosing their deadliest spells and most advantageous combat tactics. They do not, however, harm targets that have fallen unconscious.`
         },
         'soul bind': {
           ref:              'http://www.d20srd.org/srd/spells/soulBind.htm',
@@ -9664,325 +9664,524 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *Note:* Magic traps such as spike stones are hard to detect. A rogue (only) can use the Search skill to find spike stones. The DC is 25 + spell level, or DC 29 for spike stones.`
         },
         'spiritual weapon': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/spiritualWeapon.htm',
+          school:           'Evocation [Force]',
+          level:            'Arc 2, Clr 2, KotC 2, Mysticism 2, War 2',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'Magic weapon of force',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `A weapon made of pure force springs into existence and attacks opponents at a distance, as you direct it, dealing 1d8 force ‹damage|[[1d8+{[[floor(?{Casting Level}/3)]],5}kl1]]› per hit, +1 point per three caster levels (maximum +5 at 15th level). The weapon takes the shape of a weapon favored by your deity or a weapon with some spiritual significance or symbolism to you (see below) and has the same threat range and critical multipliers as a real weapon of its form. It strikes the opponent you designate, starting with one attack in the round the spell is cast and continuing each round thereafter on your turn. It uses your base attack bonus (possibly allowing it multiple attacks per round in subsequent rounds) plus your Wisdom modifier as its attack bonus. It strikes as a spell, not as a weapon, so, for example, it can damage creatures that have damage reduction. As a force effect, it can strike incorporeal creatures without the normal miss chance associated with incorporeality. The weapon always strikes from your direction. It does not get a flanking bonus or help a combatant get one. Your feats or combat actions do not affect the weapon. If the weapon goes beyond the spell range, if it goes out of your sight, or if you are not directing it, the weapon returns to you and hovers.
+                             Each round after the first, you can use a move action to redirect the weapon to a new target. If you do not, the weapon continues to attack the previous round’s target. On any round that the weapon switches targets, it gets one attack. Subsequent rounds of attacking that target allow the weapon to make multiple attacks if your base attack bonus would allow it to. Even if the spiritual weapon is a ranged weapon, use the spell’s range, not the weapon’s normal range increment, and switching targets still is a move action.
+                             A spiritual weapon cannot be attacked or harmed by physical attacks, but [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm), [disintegrate](http://www.d20srd.org/srd/spells/disintegrate.htm), a sphere of annihilation, or a rod of cancellation affects it. A spiritual weapon’s AC against touch attacks is 12 (10 + size bonus for Tiny object).
+                             If an attacked creature has spell resistance, you make a caster level check (1d20 + caster level) against that spell resistance the first time the spiritual weapon strikes it. If the weapon is successfully resisted, the spell is dispelled. If not, the weapon has its normal full effect on that creature for the duration of the spell.
+                             The weapon that you get is often a force replica of your deity’s own personal weapon. A cleric without a deity gets a weapon based on his alignment. A neutral cleric without a deity can create a spiritual weapon of any alignment, provided he is acting at least generally in accord with that alignment at the time. The weapons associated with each alignment are as follows.
+
+                             *Chaos*
+                             Battleaxe
+
+                             *Evil*
+                             Flail
+
+                             *Good*
+                             Warhammer
+
+                             *Law*
+                             Longsword`
         },
         'statue': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/statue.htm',
+          school:           'Transmutation',
+          level:            'Arc 7, Shu 7, Sor/Wiz 7, Wuj 7',
+          components:       'V, S, M',
+          casting_time:     '1 round',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Casting Level}]] hours (D)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `A statue spell turns the subject to solid stone, along with any garments and equipment worn or carried. In statue form, the subject gains hardness 8. The subject retains its own hit points.
+                             The subject can see, hear, and smell normally, but it does not need to eat or breathe. Feeling is limited to those sensations that can affect the granite-hard substance of the individual’s body. Chipping is equal to a mere scratch, but breaking off one of the statue’s arms constitutes serious damage.
+                             The subject of a statue spell can return to its normal state, act, and then return instantly to the statue state (a free action) if it so desires, as long as the spell duration is in effect.`,
+          component_details:'Material Component: Lime, sand, and a drop of water stirred by an iron bar, such as a nail or spike.'
         },
         'status': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/status.htm',
+          school:           'Divination',
+          level:            'APeace 2, Arc 2, Clr 2, Community 2, Hlr 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Targets',
+          target:           '[[floor(?{Casting Level}/3)]] living creatures touched',
+          duration:         '[[?{Casting Level}]] hours',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `When you need to keep track of comrades who may get separated, status allows you to mentally monitor their relative positions and general condition. You are aware of direction and distance to the creatures and any conditions affecting them: unharmed, wounded, disabled, staggered, unconscious, dying, nauseated, panicked, stunned, poisoned, diseased, confused, or the like. Once the spell has been cast upon the subjects, the distance between them and the caster does not affect the spell as long as they are on the same plane of existence. If a subject leaves the plane, or if it dies, the spell ceases to function for it.`
         },
         'stinking cloud': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/stinkingCloud.htm',
+          school:           'Conjuration (Creation)',
+          level:            'Arc 3, Blg 3, HB 3, Sor/Wiz 3, Wmg 3, Wuj 3',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'Cloud spreads in 20-ft. radius, 20 ft. high',
+          duration:         '[[?{Casting Level}]] rounds',
+          saving_throw:     'Fortitude negates; see text',
+          spell_resistance: 'No',
+          text:             `Stinking cloud creates a bank of fog like that created by [fog cloud](http://www.d20srd.org/srd/spells/fogCloud.htm), except that the vapors are nauseating. Living creatures in the cloud become nauseated. This condition lasts as long as the creature is in the cloud and for ‹1d4+1|[[1d4+1]] rounds› rounds after it leaves. (Roll separately for each nauseated character.) Any creature that succeeds on its save but remains in the cloud must continue to save each round on your turn.
+                             Stinking cloud can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell. A permanent stinking cloud dispersed by wind reforms in 10 minutes.`,
+          component_details:'Material Component: A rotten egg or several skunk cabbage leaves.'
         },
         'stone shape': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/stoneShape.htm',
+          school:           'Transmutation [Earth]',
+          level:            'Arc 3, Artifice 3, Clr 3, Craft 3, Drd 3, Earth 3, Shu 3, Sor/Wiz 4, Wuj 5',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Stone or stone object touched, up to [[10+?{Casting Level}]] cu. ft.',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You can form an existing piece of stone into any shape that suits your purpose. While it’s possible to make crude coffers, doors, and so forth with stone shape, fine detail isn’t possible. There is a 30% chance that any shape including moving parts simply doesn’t work.`,
+          component_details:'Arcane Material Component: Soft clay, which must be worked into roughly the desired shape of the stone object and then touched to the stone while the verbal component is uttered.'
         },
         'stone tell': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/stoneTell.htm',
+          school:           'Divination',
+          level:            'Arc 6, Drd 6, Dwarf 6, Shu 6',
+          components:       'V, S, DF',
+          casting_time:     '10 minutes',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] minutes',
+          text:             `You gain the ability to speak with stones, which relate to you who or what has touched them as well as revealing what is covered or concealed behind or under them. The stones relate complete descriptions if asked. A stone’s perspective, perception, and knowledge may prevent the stone from providing the details you are looking for.
+                             You can speak with natural or worked stone.`
         },
         'stone to flesh': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/stoneToFlesh.htm',
+          school:           'Transmutation',
+          level:            'Arc 5, Hlr 5, Sin-G 7, Sor/Wiz 6, Wuj 6',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One petrified creature or a cylinder of stone from 1 ft. to 3 ft. in diameter and up to 10 ft. long',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude negates (object); see text',
+          spell_resistance: 'Yes',
+          text:             `This spell restores a petrified creature to its normal state, restoring life and goods. The creature must make a DC 15 Fortitude save to survive the process. Any petrified creature, regardless of size, can be restored.
+                             The spell also can convert a mass of stone into a fleshy substance. Such flesh is inert and lacking a vital life force unless a life force or magical energy is available. (For example, this spell would turn a stone golem into a flesh golem, but an ordinary statue would become a corpse.) You can affect an object that fits within a cylinder from 1 foot to 3 feet in diameter and up to 10 feet long or a cylinder of up to those dimensions in a larger mass of stone.`,
+          component_details:'Material Component: A pinch of earth and a drop of blood.'
         },
         'stoneskin': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/stoneskin.htm',
+          school:           'Abjuration',
+          level:            'Adp 4, Arc 4, Dragon 6, Drd 5, Earth 6, Endurance 5, Shu 6, Sor/Wiz 4, Strength 6, Wuj 4',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[10*?{Casting Level}]] minutes or until discharged',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The warded creature gains resistance to blows, cuts, stabs, and slashes. The subject gains damage reduction 10/adamantine. (It ignores the first 10 points of damage each time it takes damage from a weapon, though an adamantine weapon bypasses the reduction.) Once the spell has prevented a total of [[10*{?{Casting Level},15}kl1]] points of damage, it is discharged.`,
+          component_details:'Material Component: Granite and 250 gp worth of diamond dust sprinkled on the target’s skin.'
         },
         'storm of vengeance': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/stormOfVengeance.htm',
+          school:           'Conjuration (Summoning)',
+          level:            'Arc 9, Blg 9, Clr 9, Drd 9, Nobility 9, Retribution 9, Shu 9, Sin-W 9, Storm 9, Summer 9, Wrath 9',
+          components:       'V, S',
+          casting_time:     '1 round',
+          range:            '_long_',
+          target_type:      'Effect',
+          target:           '360-ft.-radius storm cloud',
+          duration:         'Concentration (maximum 10 rounds) (D)',
+          saving_throw:     'See text',
+          spell_resistance: 'Yes',
+          text:             `This spell creates an enormous black storm cloud. Lightning and crashing claps of thunder appear within the storm. Each creature beneath the cloud must succeed on a Fortitude save or be deafened for [[10*1d4]] minutes.
+                             If you do not maintain concentration on the spell after casting it, the spell ends. If you continue to concentrate, the spell generates additional effects in each following round, as noted below. Each effect occurs during your turn.
+
+                             *2nd Round*
+                             Acid rains down in the area, dealing ‹1d6|[[1d6]] points of acid damage› points of acid damage (no save).
+
+                             *3rd Round*
+                             You call six bolts of lightning down from the cloud. You decide where the bolts strike. No two bolts may be directed at the same target. Each bolt deals ‹10d6|[[10d6]] points of electricity damage› points of electricity damage. A creature struck can attempt a Reflex save for half damage.
+
+                             *4th Round*
+                             Hailstones rain down in the area, dealing ‹5d6|[[5d6]] points of bludgeoning damage› points of bludgeoning damage (no save).
+
+                             *5th through 10th Rounds*
+                             Violent rain and wind gusts reduce visibility. The rain obscures all sight, including darkvision, beyond 5 feet. A creature 5 feet away has concealment (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker cannot use sight to locate the target). Speed is reduced by three-quarters.
+
+                             Ranged attacks within the area of the storm are impossible. Spells cast within the area are disrupted unless the caster succeeds on a Concentration check against a DC equal to the storm of vengeance’s save DC + the level of the spell the caster is trying to cast.`
         },
         'suggestion': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/suggestion.htm',
+          school:           'Enchantment (Compulsion) [Language-Dependent, Mind-Affecting]',
+          level:            'Beguiler 3, Brd 2, Charm 3, Domination 3, Drow 3, EmBarachiel 2, HB 2, MH 3, Sor/Wiz 3, Wuj 3',
+          components:       'V, M',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One living creature',
+          duration:         '[[?{Casting Level}]] hours or until completed',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `You influence the actions of the target creature by suggesting a course of activity (limited to a sentence or two). The suggestion must be worded in such a manner as to make the activity sound reasonable. Asking the creature to do some obviously harmful act automatically negates the effect of the spell.
+                             The suggested course of activity can continue for the entire duration. If the suggested activity can be completed in a shorter time, the spell ends when the subject finishes what it was asked to do. You can instead specify conditions that will trigger a special activity during the duration. If the condition is not met before the spell duration expires, the activity is not performed.
+                             A very reasonable suggestion causes the save to be made with a penalty (such as -1 or -2).`,
+          component_details:'Material Component: A snake’s tongue and either a bit of honeycomb or a drop of sweet oil.'
         },
         // Epic Spell: summon behemoth
         'summon instrument': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonInstrument.htm',
+          other_versions:   'Song and Silence on page 95',
+          school:           'Conjuration (Summoning)',
+          level:            'Brd 0',
+          components:       'V, S',
+          casting_time:     '1 round',
+          range:            '0 ft.',
+          target_type:      'Effect',
+          target:           'One summoned handheld musical instrument',
+          duration:         '[[?{Casting Level}]] minutes (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell summons one handheld musical instrument of your choice. This instrument appears in your hands or at your feet (your choice). The instrument is typical for its type. Only one instrument appears per casting, and it will play only for you. You can’t summon an instrument too large to be held in two hands.`
         },
         'summon monster i': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonMonsterI.htm',
+          school:           'Conjuration (Summoning) [see text]',
+          level:            'Arc 1, Blk 1, Brd 1, Clr 1, Dem 1, KotC 1, Portal 1, Sor/Wiz 1, Summoner 1, Wuj 1',
+          components:       'V, S, F/DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One summoned creature',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell summons an extraplanar creature (typically an outsider, elemental, or magical beast native to another plane). It appears where you designate and acts immediately, on your turn. It attacks your opponents to the best of its ability. If you can communicate with the creature, you can direct it not to attack, to attack particular enemies, or to perform other actions.
+                             The spell conjures one of the creatures from the 1st-level list on the accompanying Summon Monster table. You choose which kind of creature to summon, and you can change that choice each time you cast the spell.
+
+                             **1st-Level List**
+                             ◦ **Monster** Alignment
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [dog](http://www.d20srd.org/srd/monsters/dog.htm) LG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [owl](http://www.d20srd.org/srd/monsters/owl.htm) LG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [giant fire beetle](http://www.d20srd.org/srd/monsters/giantFireBeetle.htm) NG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [porpoise](http://www.d20srd.org/srd/monsters/porpoise.htm)† NG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [badger](http://www.d20srd.org/srd/monsters/badger.htm) CG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [monkey](http://www.d20srd.org/srd/monsters/monkey.htm) CG
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [dire rat](http://www.d20srd.org/srd/monsters/direRat.htm) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [raven](http://www.d20srd.org/srd/monsters/raven.htm) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous centipede, Medium](http://www.d20srd.org/srd/monsters/monstrousCentipede.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous scorpion, Small](http://www.d20srd.org/srd/monsters/monstrousScorpion.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [hawk](http://www.d20srd.org/srd/monsters/hawk.htm) CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous spider, Small](http://www.d20srd.org/srd/monsters/monstrousSpider.htm) CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [octopus](http://www.d20srd.org/srd/monsters/octopus.htm)† CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [snake, Small viper](http://www.d20srd.org/srd/monsters/snake.htm#viperSnake) CE
+                             †May be summoned only into an aquatic or watery environment.
+
+                             A summoned monster cannot summon or otherwise conjure another creature, nor can it use any teleportation or planar travel abilities. Creatures cannot be summoned into an environment that cannot support them.
+                             When you use a summoning spell to summon an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.`,
+          component_details:'Arcane Focus: A tiny bag and a small (not necessarily lit) candle.'
         },
         'summon monster ii': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonMonsterII.htm',
+          school:           'Conjuration (Summoning) &#91;see text for [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm)]',
+          level:            'Arc 2, Blk 2, Brd 2, Clr 2, Dem 2, KotC 2, Sor/Wiz 2, Summoner 2, Wuj 2',
+          components:       'V, S, F/DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more summoned creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm), except that you can summon one creature from the 2nd-level list or ‹1d3› creatures of the same kind from the [1st-level list](http://www.d20srd.org/srd/spells/summonMonsterI.htm).
+
+                             **2nd-Level List**
+                             ◦ **Monster** Alignment
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [giant bee](http://www.d20srd.org/srd/monsters/giantBee.htm) LG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [giant bombardier beetle](http://www.d20srd.org/srd/monsters/giantBombardierBeetle.htm) NG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [riding dog](http://www.d20srd.org/srd/monsters/dogRiding.htm) NG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [eagle](http://www.d20srd.org/srd/monsters/eagle.htm) CG
+                             • [Lemure (devil)](http://www.d20srd.org/srd/monsters/devil.htm#lemure) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [squid](http://www.d20srd.org/srd/monsters/squid.htm)† LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [wolf](http://www.d20srd.org/srd/monsters/wolf.htm) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous centipede, Large](http://www.d20srd.org/srd/monsters/monstrousCentipede.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous scorpion, Medium](http://www.d20srd.org/srd/monsters/monstrousScorpion.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [shark, Medium](http://www.d20srd.org/srd/monsters/shark.htm)† NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous spider, Medium](http://www.d20srd.org/srd/monsters/monstrousSpider.htm) CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [snake, Medium viper](http://www.d20srd.org/srd/monsters/snake.htm#viperSnake) CE
+                             †May be summoned only into an aquatic or watery environment.`,
+          component_details:'Arcane Focus: A tiny bag and a small (not necessarily lit) candle.'
         },
         'summon monster iii': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonMonsterIII.htm',
+          school:           'Conjuration (Summoning) &#91;see text for [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm)]',
+          level:            'Arc 3, Blk 3, Brd 3, Clr 3, Dem 3, KotC 3, Sor/Wiz 3, Summoner 3, Wuj 3',
+          components:       'V, S, F/DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more summoned creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm), except that you can summon one creature from the 3rd-level list, ‹1d3› creatures of the same kind from the [2nd-level list](http://www.d20srd.org/srd/spells/summonMonsterII.htm), or ‹1d4+1› creatures of the same kind from the [1st-level list](http://www.d20srd.org/srd/spells/summonMonsterI.htm).
+
+                             **3rd-Level List**
+                             ◦ **Monster** Alignment
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [black bear](http://www.d20srd.org/srd/monsters/bearBlack.htm) LG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [bison](http://www.d20srd.org/srd/monsters/bison.htm) NG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [dire badger](http://www.d20srd.org/srd/monsters/direBadger.htm) CG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [hippogriff](http://www.d20srd.org/srd/monsters/hippogriff.htm) CG
+                             • [Elemental, Small (any)](http://www.d20srd.org/srd/monsters/elemental.htm) N
+                             • [Fiendish ape](http://www.d20srd.org/srd/monsters/ape.htm) LE
+                             • [Fiendish dire weasel](http://www.d20srd.org/srd/monsters/direWeasel.htm) LE
+                             • [Hell hound](http://www.d20srd.org/srd/monsters/hellHound.htm) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [snake, constrictor](http://www.d20srd.org/srd/monsters/snake.htm#constrictorSnake) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [boar](http://www.d20srd.org/srd/monsters/boar.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [dire bat](http://www.d20srd.org/srd/monsters/direBat.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous centipede, Huge](http://www.d20srd.org/srd/monsters/monstrousCentipede.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [crocodile](http://www.d20srd.org/srd/monsters/crocodile.htm) CE
+                             • [Dretch (demon)](http://www.d20srd.org/srd/monsters/demon.htm#dretch) CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [snake, Large viper](http://www.d20srd.org/srd/monsters/snake.htm#viperSnake) CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [wolverine](http://www.d20srd.org/srd/monsters/wolverine.htm) CE`,
+          component_details:'Arcane Focus: A tiny bag and a small (not necessarily lit) candle.'
         },
         'summon monster iv': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonMonsterIV.htm',
+          school:           'Conjuration (Summoning) &#91;see text for [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm)]',
+          level:            'Arc 4, Blk 4, Brd 4, Clr 4, Dem 4, Sor/Wiz 4, Wuj 4',
+          components:       'V, S, F/DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more summoned creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm), except that you can summon one creature from the 4th-level list, ‹1d3› creatures of the same kind from the [3rd-level list](http://www.d20srd.org/srd/spells/summonMonsterIII.htm), or ‹1d4+1› creatures of the same kind from a lower-level list.
+                             [2nd-level list](http://www.d20srd.org/srd/spells/summonMonsterII.htm)
+                             [1st-level list](http://www.d20srd.org/srd/spells/summonMonsterI.htm)
+
+                             **4th-Level List**
+                             ◦ **Monster** Alignment
+                             • [Archon, lantern](http://www.d20srd.org/srd/monsters/archon.htm#lanternArchon) LG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [giant owl](http://www.d20srd.org/srd/monsters/owlGiant.htm) LG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [giant eagle](http://www.d20srd.org/srd/monsters/eagleGiant.htm) CG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [lion](http://www.d20srd.org/srd/monsters/lion.htm) CG
+                             • [Mephit (any)](http://www.d20srd.org/srd/monsters/mephit.htm) N
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [dire wolf](http://www.d20srd.org/srd/monsters/direWolf.htm) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [giant wasp](http://www.d20srd.org/srd/monsters/giantWasp.htm) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [giant praying mantis](http://www.d20srd.org/srd/monsters/giantPrayingMantis.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [shark, Large](http://www.d20srd.org/srd/monsters/shark.htm)† NE
+                             • [Yeth hound](http://www.d20srd.org/srd/monsters/yethHound.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous spider, Large](http://www.d20srd.org/srd/monsters/monstrousSpider.htm) CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [snake, Huge viper](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) CE
+                             • [Howler](http://www.d20srd.org/srd/monsters/howler.htm) CE
+                             †May be summoned only into an aquatic or watery environment.`,
+          component_details:'Arcane Focus: A tiny bag and a small (not necessarily lit) candle.'
         },
         'summon monster v': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonMonsterV.htm',
+          school:           'Conjuration (Summoning) &#91;see text for [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm)]',
+          level:            'Arc 5, Brd 5, Clr 5, Sor/Wiz 5, Summoner 5, Wuj 5',
+          components:       'V, S, F/DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more summoned creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm), except that you can summon one creature from the 5th-level list, ‹1d3› creatures of the same kind from the [4th-level list](http://www.d20srd.org/srd/spells/summonMonsterIV.htm), or ‹1d4+1› creatures of the same kind from a lower-level list.
+                             [3rd-level list](http://www.d20srd.org/srd/spells/summonMonsterIII.htm)
+                             [2nd-level list](http://www.d20srd.org/srd/spells/summonMonsterII.htm)
+                             [1st-level list](http://www.d20srd.org/srd/spells/summonMonsterI.htm)
+
+                             **5th-Level List**
+                             ◦ **Monster** Alignment
+                             • [Archon, hound](http://www.d20srd.org/srd/monsters/archon.htm#houndArchon) LG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [brown bear](http://www.d20srd.org/srd/monsters/bearBrown.htm) LG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [giant stag beetle](http://www.d20srd.org/srd/monsters/giantStagBeetle.htm) NG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [sea cat](http://www.d20srd.org/srd/monsters/seaCat.htm)† NG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [griffon](http://www.d20srd.org/srd/monsters/griffon.htm) CG
+                             • [Elemental, Medium (any)](http://www.d20srd.org/srd/monsters/elemental.htm) N
+                             • [Achaierai](http://www.d20srd.org/srd/monsters/achaierai.htm) LE
+                             • [Devil, bearded](http://www.d20srd.org/srd/monsters/devil.htm#beardedDevilBarbazu) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [deinonychus](http://www.d20srd.org/srd/monsters/dinosaur.htm#deinonychus) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [dire ape](http://www.d20srd.org/srd/monsters/direApe.htm) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [dire boar](http://www.d20srd.org/srd/monsters/direBoar.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [shark, Huge](http://www.d20srd.org/srd/monsters/shark.htm)† NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous scorpion, Large](http://www.d20srd.org/srd/monsters/monstrousScorpion.htm) NE
+                             • [Shadow mastiff](http://www.d20srd.org/srd/monsters/shadowMastiff.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [dire wolverine](http://www.d20srd.org/srd/monsters/direWolverine.htm) CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [giant crocodile](http://www.d20srd.org/srd/monsters/crocodileGiant.htm) CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [tiger](http://www.d20srd.org/srd/monsters/tiger.htm) CE
+                             †May be summoned only into an aquatic or watery environment.`,
+          component_details:'Arcane Focus: A tiny bag and a small (not necessarily lit) candle.'
         },
         'summon monster vi': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonMonsterVI.htm',
+          school:           'Conjuration (Summoning) &#91;see text for [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm)]',
+          level:            'Arc 6, Brd 6, Clr 6, Sor/Wiz 6, Wuj 6',
+          components:       'V, S, F/DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more summoned creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm), except you can summon one creature from the 6th-level list, ‹1d3› creatures of the same kind from the [5th-level list](http://www.d20srd.org/srd/spells/summonMonsterV.htm), or ‹1d4+1› creatures of the same kind from a lower-level list.
+                             [4th-level list](http://www.d20srd.org/srd/spells/summonMonsterIV.htm)
+                             [3rd-level list](http://www.d20srd.org/srd/spells/summonMonsterIII.htm)
+                             [2nd-level list](http://www.d20srd.org/srd/spells/summonMonsterII.htm)
+                             [1st-level list](http://www.d20srd.org/srd/spells/summonMonsterI.htm)
+
+                             **6th-Level List**
+                             ◦ **Monster** Alignment
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [polar bear](http://www.d20srd.org/srd/monsters/bearPolar.htm) LG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [orca whale](http://www.d20srd.org/srd/monsters/whale.htm#orca)† NG
+                             • [Bralani (eladrin)](http://www.d20srd.org/srd/monsters/bralani.htm) CG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [dire lion](http://www.d20srd.org/srd/monsters/direLion.htm) CG
+                             • [Elemental, Large (any)](http://www.d20srd.org/srd/monsters/elemental.htm) N
+                             • [Janni (genie)](http://www.d20srd.org/srd/monsters/genie.htm#janni) N
+                             • [Chaos beast](http://www.d20srd.org/srd/monsters/chaosBeast.htm) CN
+                             • [Devil, chain](http://www.d20srd.org/srd/monsters/devil.htm#chainDevilKyton) LE
+                             • [Xill](http://www.d20srd.org/srd/monsters/xill.htm) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous centipede, Gargantuan](http://www.d20srd.org/srd/monsters/monstrousCentipede.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [rhinoceros](http://www.d20srd.org/srd/monsters/rhinoceros.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [elasmosaurus](http://www.d20srd.org/srd/monsters/dinosaur.htm#elasmosaurus)† CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous spider, Huge](http://www.d20srd.org/srd/monsters/monstrousSpider.htm) CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [snake, giant constrictor](http://www.d20srd.org/srd/monsters/snake.htm#constrictorSnakeGiant) CE
+                             †May be summoned only into an aquatic or watery environment.`,
+          component_details:'Arcane Focus: A tiny bag and a small (not necessarily lit) candle.'
         },
         'summon monster vii': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonMonsterVII.htm',
+          school:           'Conjuration (Summoning) &#91;see text for [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm)]',
+          level:            'Arc 7, Clr 7, Sor/Wiz 7, Summoner 7, Wuj 7',
+          components:       'V, S, F/DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more summoned creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm), except that you can summon one creature from the 7th-level list, ‹1d3› creatures of the same kind from the [6th-level list](http://www.d20srd.org/srd/spells/summonMonsterVI.htm), or ‹1d4+1› creatures of the same kind from a lower-level list.
+                             [5th-level list](http://www.d20srd.org/srd/spells/summonMonsterV.htm)
+                             [4th-level list](http://www.d20srd.org/srd/spells/summonMonsterIV.htm)
+                             [3rd-level list](http://www.d20srd.org/srd/spells/summonMonsterIII.htm)
+                             [2nd-level list](http://www.d20srd.org/srd/spells/summonMonsterII.htm)
+                             [1st-level list](http://www.d20srd.org/srd/spells/summonMonsterI.htm)
+
+                             **7th-Level List**
+                             ◦ **Monster** Alignment
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [elephant](http://www.d20srd.org/srd/monsters/elephant.htm) LG
+                             • [Avoral (guardinal)](http://www.d20srd.org/srd/monsters/avoral.htm) NG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [baleen whale](http://www.d20srd.org/srd/monsters/whale.htm#baleenWhale)† NG
+                             • [Djinni (genie)](http://www.d20srd.org/srd/monsters/genie.htm#djinni) CG
+                             • [Elemental, Huge (any)](http://www.d20srd.org/srd/monsters/elemental.htm) N
+                             • [Invisible stalker](http://www.d20srd.org/srd/monsters/invisibleStalker.htm) N
+                             • [Devil, bone](http://www.d20srd.org/srd/monsters/devil.htm#boneDevilOsyluth) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [megaraptor](http://www.d20srd.org/srd/monsters/dinosaur.htm#megaraptor) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous scorpion, Huge](http://www.d20srd.org/srd/monsters/monstrousScorpion.htm) NE
+                             • [Babau (demon)](http://www.d20srd.org/srd/monsters/demon.htm#babau) CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [giant octopus](http://www.d20srd.org/srd/monsters/octopusGiant.htm)† CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [girallon](http://www.d20srd.org/srd/monsters/girallon.htm) CE
+                             †May be summoned only into an aquatic or watery environment.`,
+          component_details:'Arcane Focus: A tiny bag and a small (not necessarily lit) candle.'
         },
         'summon monster viii': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonMonsterVIII.htm',
+          school:           'Conjuration (Summoning) &#91;see text for [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm)]',
+          level:            'Arc 8, Clr 8, Sor/Wiz 8, Wuj 8',
+          components:       'V, S, F/DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more summoned creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm), except that you can summon one creature from the 8th-level list, ‹1d3› creatures of the same kind from the [7th-level list](http://www.d20srd.org/srd/spells/summonMonsterVII.htm), or ‹1d4+1› creatures of the same kind from a lower-level list.
+                             [6th-level list](http://www.d20srd.org/srd/spells/summonMonsterVI.htm)
+                             [5th-level list](http://www.d20srd.org/srd/spells/summonMonsterV.htm)
+                             [4th-level list](http://www.d20srd.org/srd/spells/summonMonsterIV.htm)
+                             [3rd-level list](http://www.d20srd.org/srd/spells/summonMonsterIII.htm)
+                             [2nd-level list](http://www.d20srd.org/srd/spells/summonMonsterII.htm)
+                             [1st-level list](http://www.d20srd.org/srd/spells/summonMonsterI.htm)
+
+                             **8th-Level List**
+                             ◦ **Monster** Alignment
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [dire bear](http://www.d20srd.org/srd/monsters/direBear.htm) LG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [cachalot whale](http://www.d20srd.org/srd/monsters/whale.htm#cachalotWhale)† NG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [triceratops](http://www.d20srd.org/srd/monsters/dinosaur.htm#triceratops) NG
+                             • [Lillend](http://www.d20srd.org/srd/monsters/lillend.htm) CG
+                             • [Elemental, greater (any)](http://www.d20srd.org/srd/monsters/elemental.htm) N
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [giant squid](http://www.d20srd.org/srd/monsters/squidGiant.htm)† LE
+                             • [Hellcat](http://www.d20srd.org/srd/monsters/devil.htm#hellcatBezekira) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous centipede, Colossal](http://www.d20srd.org/srd/monsters/monstrousCentipede.htm) NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [dire tiger](http://www.d20srd.org/srd/monsters/direTiger.htm) CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous spider, Gargantuan](http://www.d20srd.org/srd/monsters/monstrousSpider.htm) CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [tyrannosaurus](http://www.d20srd.org/srd/monsters/dinosaur.htm#tyrannosaurus) CE
+                             • [Vrock (demon)](http://www.d20srd.org/srd/monsters/demon.htm#vrock) CE
+                             †May be summoned only into an aquatic or watery environment.`,
+          component_details:'Arcane Focus: A tiny bag and a small (not necessarily lit) candle.'
         },
         'summon monster ix': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonMonsterIX.htm',
+          school:           'Conjuration (Summoning) &#91;see text for [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm)]',
+          level:            'Arc 9, Chaos 9, Clr 9, Evil 9, Good 9, Law 9, Sor/Wiz 9, Wuj 9',
+          components:       'V, S, F/DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more summoned creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon monster I](http://www.d20srd.org/srd/spells/summonMonsterI.htm), except that you can summon one 9th-level creature, ‹1d3› [8th-level](http://www.d20srd.org/srd/spells/summonMonsterVIII.htm) creatures of the same kind, or ‹1d4+1› lower-level creatures of the same kind.
+                             [7th-level list](http://www.d20srd.org/srd/spells/summonMonsterVII.htm)
+                             [6th-level list](http://www.d20srd.org/srd/spells/summonMonsterVI.htm)
+                             [5th-level list](http://www.d20srd.org/srd/spells/summonMonsterV.htm)
+                             [4th-level list](http://www.d20srd.org/srd/spells/summonMonsterIV.htm)
+                             [3rd-level list](http://www.d20srd.org/srd/spells/summonMonsterIII.htm)
+                             [2nd-level list](http://www.d20srd.org/srd/spells/summonMonsterII.htm)
+                             [1st-level list](http://www.d20srd.org/srd/spells/summonMonsterI.htm)
+
+                             **9th-Level List**
+                             ◦ **Monster** Alignment
+                             • [Couatl](http://www.d20srd.org/srd/monsters/couatl.htm) LG
+                             • [Leonal (guardinal)](http://www.d20srd.org/srd/monsters/leonal.htm) NG
+                             • [Celestial](http://www.d20srd.org/srd/monsters/celestialCreature.htm) [roc](http://www.d20srd.org/srd/monsters/roc.htm) CG
+                             • [Elemental, elder (any)](http://www.d20srd.org/srd/monsters/elemental.htm) N
+                             • [Devil, barbed](http://www.d20srd.org/srd/monsters/devil.htm#barbedDevilHamatula) LE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [dire shark](http://www.d20srd.org/srd/monsters/direShark.htm)† NE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous scorpion, Gargantuan](http://www.d20srd.org/srd/monsters/monstrousScorpion.htm) NE
+                             • [Night hag](http://www.d20srd.org/srd/monsters/nightHag.htm) NE
+                             • [Bebilith (demon)](http://www.d20srd.org/srd/monsters/demon.htm#bebilith) CE
+                             • [Fiendish](http://www.d20srd.org/srd/monsters/fiendishCreature.htm) [monstrous spider, Colossal](http://www.d20srd.org/srd/monsters/monstrousSpider.htm) CE
+                             • [Hezrou (demon)](http://www.d20srd.org/srd/monsters/demon.htm#hezrou) CE
+                             †May be summoned only into an aquatic or watery environment.`,
+          component_details:'Arcane Focus: A tiny bag and a small (not necessarily lit) candle.'
         },
         'summon nature\'s ally i': {
         //// ↲’‹›«»◦•×†‡ %28Spell%29
@@ -10388,7 +10587,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Effect',
           target:           'Opaque sheet of flame up to [[20*?{Casting Level}]] ft. long or a ring of fire with radius of up to [[5*floor([[?{Casting Level}/2]])]] ft.; either form 20 ft. high',
-          duration:         'Concentration + [[?{Casting Level}]] round(s)',
+          duration:         'Concentration + [[?{Casting Level}]] rounds',
           saving_throw:     'None',
           spell_resistance: 'Yes',
           text:             `An immobile, blazing curtain of shimmering violet fire springs into existence. One side of the wall, selected by you, sends forth waves of heat, dealing ‹2d4› points of fire damage to creatures within 10 feet and ‹1d4› points of fire damage to those past 10 feet but within 20 feet. The wall deals this damage when it appears and on your turn each round to all creatures in the area. In addition, the wall deals 2d6 points of fire damage +1 point of fire damage per caster level (maximum +20) to any creature ‹passing through|[[2d6+[[{?{Casting Level},20}kl1]]]]› it. The wall deals double damage to undead creatures.
@@ -10927,26 +11126,26 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'spider climb':                    { recharge: '1 hour' },
         'spike growth':                    { recharge: '6 hours' },
         'spike stones':                    { recharge: '6 hours' },
-        'spiritual weapon':                { recharge: '' },
-        'statue':                          { recharge: '' },
-        'status':                          { recharge: '' },
-        'stinking cloud':                  { recharge: '' },
-        'stone shape':                     { recharge: '' },
-        'stone tell':                      { recharge: '' },
-        'stone to flesh':                  { recharge: '' },
-        'stoneskin':                       { recharge: '' },
-        'storm of vengeance':              { recharge: '' },
-        'suggestion':                      { recharge: '' },
-        'summon instrument':               { recharge: '' },
-        'summon monster i':                { recharge: '' },
-        'summon monster ii':               { recharge: '' },
-        'summon monster iii':              { recharge: '' },
-        'summon monster iv':               { recharge: '' },
-        'summon monster v':                { recharge: '' },
-        'summon monster vi':               { recharge: '' },
-        'summon monster vii':              { recharge: '' },
-        'summon monster viii':             { recharge: '' },
-        'summon monster ix':               { recharge: '' },
+        'spiritual weapon':                { recharge: 'General' },
+        'statue':                          { recharge: '6 hours' },
+        'status':                          { recharge: '24 hours' },
+        'stinking cloud':                  { recharge: 'General' },
+        'stone shape':                     { recharge: '6 hours' },
+        'stone tell':                      { recharge: '30 minutes' },
+        'stone to flesh':                  { recharge: 'General' },
+        'stoneskin':                       { recharge: 'General' },
+        'storm of vengeance':              { recharge: 'General' },
+        'suggestion':                      { recharge: '30 minutes' },
+        'summon instrument':               { recharge: 'General' },
+        'summon monster i':                { recharge: 'General' },
+        'summon monster ii':               { recharge: 'General' },
+        'summon monster iii':              { recharge: 'General' },
+        'summon monster iv':               { recharge: 'General' },
+        'summon monster v':                { recharge: 'General' },
+        'summon monster vi':               { recharge: 'General' },
+        'summon monster vii':              { recharge: 'General' },
+        'summon monster viii':             { recharge: 'General' },
+        'summon monster ix':               { recharge: 'General' },
         'summon nature\'s ally i':         { recharge: '' },
         'summon nature\'s ally ii':        { recharge: '' },
         'summon nature\'s ally iii':       { recharge: '' },
