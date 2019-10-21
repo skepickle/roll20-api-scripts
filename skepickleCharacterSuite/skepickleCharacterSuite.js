@@ -10184,148 +10184,282 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Arcane Focus: A tiny bag and a small (not necessarily lit) candle.'
         },
         'summon nature\'s ally i': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm',
+          school:           'Conjuration (Summoning)',
+          level:            'Arc 1, BVal 1, Drd 1, Rgr 1',
+          components:       'V, S, DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One summoned creature',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell summons a natural creature. It appears where you designate and acts immediately, on your turn. It attacks your opponents to the best of its ability. If you can communicate with the creature, you can direct it not to attack, to attack particular enemies, or to perform other actions.
+                             A summoned monster cannot summon or otherwise conjure another creature, nor can it use any teleportation or planar travel abilities. Creatures cannot be summoned into an environment that cannot support them.
+                             The spell conjures one of the creatures from the 1st-level list on the accompanying Summon Nature’s Ally table. You choose which kind of creature to summon, and you can change that choice each time you cast the spell. All the creatures on the table are neutral unless otherwise noted.
+
+                             ◦ **1st-level Summoned Creature**
+                             • [Dire rat](http://www.d20srd.org/srd/monsters/direRat.htm)
+                             • [Eagle](http://www.d20srd.org/srd/monsters/eagle.htm) (animal)
+                             • [Monkey](http://www.d20srd.org/srd/monsters/monkey.htm) (animal)
+                             • [Octopus](http://www.d20srd.org/srd/monsters/octopus.htm)† (animal)
+                             • [Owl](http://www.d20srd.org/srd/monsters/owl.htm) (animal)
+                             • [Porpoise](http://www.d20srd.org/srd/monsters/porpoise.htm)† (animal)
+                             • [Snake, Small viper](http://www.d20srd.org/srd/monsters/snake.htm#viperSnake) (animal)
+                             • [Wolf](http://www.d20srd.org/srd/monsters/wolf.htm) (animal)
+                             †May be summoned only into an aquatic or watery environment.`
         },
         'summon nature\'s ally ii': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonNaturesAllyII.htm',
+          school:           'Conjuration (Summoning) [see text]',
+          level:            'Arc 2, BVal 2, Drd 2, Rgr 2',
+          components:       'V, S, DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon nature’s ally I](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm), except that you can summon one 2nd-level creature or ‹1d3› [1st-level creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm) of the same kind.
+
+                             ◦ **2nd-level Summoned Creature**
+                             • [Bear, black](http://www.d20srd.org/srd/monsters/bearBlack.htm) (animal)
+                             • [Crocodile](http://www.d20srd.org/srd/monsters/crocodile.htm) (animal)
+                             • [Dire badger](http://www.d20srd.org/srd/monsters/direBadger.htm)
+                             • [Dire bat](http://www.d20srd.org/srd/monsters/direBat.htm)
+                             • [Elemental, Small](http://www.d20srd.org/srd/monsters/elemental.htm) (any)
+                             • [Hippogriff](http://www.d20srd.org/srd/monsters/hippogriff.htm)
+                             • [Shark, Medium](http://www.d20srd.org/srd/monsters/shark.htm)† (animal)
+                             • [Snake, Medium viper](http://www.d20srd.org/srd/monsters/snake.htm#viperSnake) (animal)
+                             • [Squid](http://www.d20srd.org/srd/monsters/squid.htm)† (animal)
+                             • [Wolverine](http://www.d20srd.org/srd/monsters/wolverine.htm) (animal)
+                             †May be summoned only into an aquatic or watery environment.`
         },
         'summon nature\'s ally iii': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonNaturesAllyIII.htm',
+          school:           'Conjuration (Summoning) [see text]',
+          level:            'Arc 3, BVal 3, Drd 3, Rgr 3, Shu 3',
+          components:       'V, S, DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon nature’s ally I](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm), except that you can summon one 3rd-level creature, 1d3 [2nd-level creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyII.htm) of the same kind, or 1d4+1 [1st-level creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm) of the same kind.
+                             When you use a summoning spell to summon an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.
+
+                             ◦ **3rd-level Summoned Creature**
+                             • [Ape](http://www.d20srd.org/srd/monsters/ape.htm) (animal)
+                             • [Dire weasel](http://www.d20srd.org/srd/monsters/direWeasel.htm)
+                             • [Dire wolf](http://www.d20srd.org/srd/monsters/direWolf.htm)
+                             • [Eagle, giant](http://www.d20srd.org/srd/monsters/eagleGiant.htm) [NG]
+                             • [Lion](http://www.d20srd.org/srd/monsters/lion.htm)
+                             • [Owl, giant](http://www.d20srd.org/srd/monsters/owlGiant.htm) [NG]
+                             • [Satyr](http://www.d20srd.org/srd/monsters/satyr.htm) [CN; without pipes]
+                             • [Shark, Large](http://www.d20srd.org/srd/monsters/shark.htm)† (animal)
+                             • [Snake, constrictor](http://www.d20srd.org/srd/monsters/snake.htm#constrictorSnake) (animal)
+                             • [Snake, Large viper](http://www.d20srd.org/srd/monsters/snake.htm#viperSnake) (animal)
+                             • [Thoqqua](http://www.d20srd.org/srd/monsters/thoqqua.htm)
+                             †May be summoned only into an aquatic or watery environment.`
         },
         'summon nature\'s ally iv': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonNaturesAllyIV.htm',
+          school:           'Conjuration (Summoning) [see text]',
+          level:            'Animal 4, Arc 4, BVal 4, Drd 4, Rgr 4',
+          components:       'V, S, DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon nature’s ally I](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm), except that you can summon one 4th-level creature, ‹1d3› [3rd-level creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyIII.htm) of the same kind, or ‹1d4+1› lower-level creatures of the same kind.
+                             [2nd-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyII.htm)
+                             [1st-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm)
+                             When you use a summoning spell to summon an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.
+
+                             ◦ **4th-level Summoned Creature**
+                             • [Arrowhawk, juvenile](http://www.d20srd.org/srd/monsters/arrowhawk.htm)
+                             • [Bear, brown](http://www.d20srd.org/srd/monsters/bearBrown.htm) (animal)
+                             • [Crocodile, giant](http://www.d20srd.org/srd/monsters/crocodileGiant.htm) (animal)
+                             • [Deinonychus](http://www.d20srd.org/srd/monsters/dinosaur.htm#deinonychus) (dinosaur)
+                             • [Dire ape](http://www.d20srd.org/srd/monsters/direApe.htm)
+                             • [Dire boar](http://www.d20srd.org/srd/monsters/direBoar.htm)
+                             • [Dire wolverine](http://www.d20srd.org/srd/monsters/direWolverine.htm)
+                             • [Elemental, Medium](http://www.d20srd.org/srd/monsters/elemental.htm) (any)
+                             • [Salamander, flamebrother](http://www.d20srd.org/srd/monsters/salamander.htm) [NE]
+                             • [Sea cat](http://www.d20srd.org/srd/monsters/seaCat.htm)†
+                             • [Shark, Huge](http://www.d20srd.org/srd/monsters/shark.htm)† (animal)
+                             • [Snake, Huge viper](http://www.d20srd.org/srd/monsters/snake.htm#viperSnake) (animal)
+                             • [Tiger](http://www.d20srd.org/srd/monsters/tiger.htm) (animal)
+                             • [Tojanida, juvenile](http://www.d20srd.org/srd/monsters/tojanida.htm)†
+                             • [Unicorn](http://www.d20srd.org/srd/monsters/unicorn.htm) [CG]
+                             • [Xorn, minor](http://www.d20srd.org/srd/monsters/xorn.htm)
+                             †May be summoned only into an aquatic or watery environment.`
         },
         'summon nature\'s ally v': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonNaturesAllyV.htm',
+          school:           'Conjuration (Summoning) [see text]',
+          level:            'Arc 5, Drd 5, Shu 5',
+          components:       'V, S, DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon nature’s ally I](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm), except that you can summon one 5th-level creature, ‹1d3› [4th-level creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyIV.htm) of the same kind, or ‹1d4+1› lower-level creatures of the same kind.
+                             [3rd-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyIII.htm)
+                             [2nd-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyII.htm)
+                             [1st-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm)
+                             When you use a summoning spell to summon an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.
+
+                             ◦ **5th-level Summoned Creature**
+                             • [Arrowhawk, adult](http://www.d20srd.org/srd/monsters/arrowhawk.htm)
+                             • [Bear, polar](http://www.d20srd.org/srd/monsters/bearPolar.htm) (animal)
+                             • [Dire lion](http://www.d20srd.org/srd/monsters/direLion.htm)
+                             • [Elasmosaurus](http://www.d20srd.org/srd/monsters/dinosaur.htm#elasmosaurus)† (dinosaur)
+                             • [Elemental, Large](http://www.d20srd.org/srd/monsters/elemental.htm) (any)
+                             • [Griffon](http://www.d20srd.org/srd/monsters/griffon.htm)
+                             • [Janni](http://www.d20srd.org/srd/monsters/genie.htm#janni) (genie)
+                             • [Rhinoceros](http://www.d20srd.org/srd/monsters/rhinoceros.htm) (animal)
+                             • [Satyr](http://www.d20srd.org/srd/monsters/satyr.htm) [CN; with pipes]
+                             • [Snake, giant constrictor](http://www.d20srd.org/srd/monsters/snake.htm#constrictorSnakeGiant) (animal)
+                             • [Nixie](http://www.d20srd.org/srd/monsters/sprite.htm#nixie) (sprite)
+                             • [Tojanida, adult](http://www.d20srd.org/srd/monsters/tojanida.htm)†
+                             • [Whale, orca](http://www.d20srd.org/srd/monsters/whale.htm#orca)† (animal)
+                             †May be summoned only into an aquatic or watery environment.`
         },
         'summon nature\'s ally vi': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonNaturesAllyVI.htm',
+          school:           'Conjuration (Summoning) [see text]',
+          level:            'Arc 6, Drd 6, Shu 6',
+          components:       'V, S, DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon nature’s ally I](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm), except that you can summon one 6th-level creature, ‹1d3› [5th-level creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyV.htm) of the same kind, or ‹1d4+1› lower-level creatures of the same kind.
+                             [4th-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyIV.htm)
+                             [3rd-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyIII.htm)
+                             [2nd-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyII.htm)
+                             [1st-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm)
+                             When you use a summoning spell to summon an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.
+
+                             ◦ **6th-level Summoned Creature**
+                             • [Dire bear](http://www.d20srd.org/srd/monsters/direBear.htm)
+                             • [Elemental, Huge](http://www.d20srd.org/srd/monsters/elemental.htm) (any)
+                             • [Elephant](http://www.d20srd.org/srd/monsters/elephant.htm) (animal)
+                             • [Girallon](http://www.d20srd.org/srd/monsters/girallon.htm)
+                             • [Megaraptor](http://www.d20srd.org/srd/monsters/dinosaur.htm#megaraptor) (dinosaur)
+                             • [Octopus, giant](http://www.d20srd.org/srd/monsters/octopusGiant.htm)† (animal)
+                             • [Pixie](http://www.d20srd.org/srd/monsters/sprite.htm#pixie)‡ (sprite) [NG; no special arrows]
+                             • [Salamander, average](http://www.d20srd.org/srd/monsters/salamander.htm) [NE]
+                             • [Whale, baleen](http://www.d20srd.org/srd/monsters/whale.htm#baleenWhale)†
+                             • [Xorn, average](http://www.d20srd.org/srd/monsters/xorn.htm)
+                             †May be summoned only into an aquatic or watery environment.
+                             ‡Can't cast [irresistible dance](http://www.d20srd.org/srd/spells/irresistibleDance.htm).`
         },
         'summon nature\'s ally vii': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonNaturesAllyVII.htm',
+          school:           'Conjuration (Summoning) [see text]',
+          level:            'Arc 7, Drd 7, Shu 7',
+          components:       'V, S, DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon nature’s ally I](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm), except that you can summon one 7th-level creature, ‹1d3› [6th-level creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyVI.htm) of the same kind, or ‹1d4+1› lower-level creatures of the same kind.
+                             [5th-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyV.htm)
+                             [4th-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyIV.htm)
+                             [3rd-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyIII.htm)
+                             [2nd-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyII.htm)
+                             [1st-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm)
+                             When you use a summoning spell to summon an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.
+
+                             ◦ **7th-level Summoned Creature**
+                             • [Arrowhawk, elder](http://www.d20srd.org/srd/monsters/arrowhawk.htm)
+                             • [Dire tiger](http://www.d20srd.org/srd/monsters/direTiger.htm)
+                             • [Elemental, greater](http://www.d20srd.org/srd/monsters/elemental.htm) (any)
+                             • [Djinni](http://www.d20srd.org/srd/monsters/genie.htm#djinni) (genie) [NG]
+                             • [Invisible stalker](http://www.d20srd.org/srd/monsters/invisibleStalker.htm)
+                             • [Pixie](http://www.d20srd.org/srd/monsters/sprite.htm#pixie)‡ (sprite) [NG; with sleep arrows]
+                             • [Squid, giant](http://www.d20srd.org/srd/monsters/squidGiant.htm)† (animal)
+                             • [Triceratops](http://www.d20srd.org/srd/monsters/dinosaur.htm#triceratops) (dinosaur)
+                             • [Tyrannosaurus](http://www.d20srd.org/srd/monsters/dinosaur.htm#tyrannosaurus) (dinosaur)
+                             • [Whale, cachalot](http://www.d20srd.org/srd/monsters/whale.htm#cachalotWhale)† (animal)
+                             • [Xorn, elder](http://www.d20srd.org/srd/monsters/xorn.htm)
+                             †May be summoned only into an aquatic or watery environment.
+                             ‡Can't cast [irresistible dance](http://www.d20srd.org/srd/spells/irresistibleDance.htm).`
         },
         'summon nature\'s ally viii': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonNaturesAllyVIII.htm',
+          school:           'Conjuration (Summoning) [see text]',
+          level:            'Animal 8, Arc 8, Drd 8, Shu 8',
+          components:       'V, S, DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon nature’s ally I](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm), except that you can summon one 8th-level creature, ‹1d3› [7th-level creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyVII.htm) of the same kind, or ‹1d4+1› lower-level creatures of the same kind.
+                             [6th-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyVI.htm)
+                             [5th-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyV.htm)
+                             [4th-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyIV.htm)
+                             [3rd-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyIII.htm)
+                             [2nd-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyII.htm)
+                             [1st-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm)
+                             When you use a summoning spell to summon an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.
+
+                             ◦ **8th-level Summoned Creature**
+                             • [Dire shark](http://www.d20srd.org/srd/monsters/direShark.htm)†
+                             • [Roc](http://www.d20srd.org/srd/monsters/roc.htm)
+                             • [Salamander, noble](http://www.d20srd.org/srd/monsters/salamander.htm) [NE]
+                             • [Tojanida, elder](http://www.d20srd.org/srd/monsters/tojanida.htm)
+                             †May be summoned only into an aquatic or watery environment.`
         },
         'summon nature\'s ally ix': {
-        //// ↲’‹›«»◦•×†‡ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/summonNaturesAllyIX.htm',
+          school:           'Conjuration (Summoning) [see text]',
+          level:            'Arc 9, Drd 9, Fey 9, Gnome 9, Shu 9',
+          components:       'V, S, DF',
+          casting_time:     '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One or more creatures, no two of which can be more than 30 ft. apart',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `This spell functions like [summon nature’s ally I](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm), except that you can summon one 9th-level creature, ‹1d3› [8th-level creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyVIII.htm) of the same kind, or ‹1d4+1› lower-level creatures of the same kind.
+                             [7th-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyVII.htm)
+                             [6th-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyVI.htm)
+                             [5th-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyV.htm)
+                             [4th-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyIV.htm)
+                             [3rd-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyIII.htm)
+                             [2nd-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyII.htm)
+                             [1st-level Creatures](http://www.d20srd.org/srd/spells/summonNaturesAllyI.htm)
+                             When you use a summoning spell to summon an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.
+
+                             ◦ **9th-level Summoned Creature**
+                             • [Elemental, elder](http://www.d20srd.org/srd/monsters/elemental.htm)
+                             • [Grig](http://www.d20srd.org/srd/monsters/sprite.htm#grig) (sprite) [NG; with fiddle]
+                             • [Pixie](http://www.d20srd.org/srd/monsters/sprite.htm#pixie)‡ (sprite) [NG; with sleep and memory loss arrows]
+                             • [Unicorn, celestial charger](http://www.d20srd.org/srd/monsters/unicorn.htm#celestialCharger) [CG]
+                             ‡**Can** cast [irresistible dance](http://www.d20srd.org/srd/spells/irresistibleDance.htm).`
         },
         'summon swarm': {
         //// ↲’‹›«»◦•×†‡ %28Spell%29
@@ -11146,15 +11280,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'summon monster vii':              { recharge: 'General' },
         'summon monster viii':             { recharge: 'General' },
         'summon monster ix':               { recharge: 'General' },
-        'summon nature\'s ally i':         { recharge: '' },
-        'summon nature\'s ally ii':        { recharge: '' },
-        'summon nature\'s ally iii':       { recharge: '' },
-        'summon nature\'s ally iv':        { recharge: '' },
-        'summon nature\'s ally v':         { recharge: '' },
-        'summon nature\'s ally vi':        { recharge: '' },
-        'summon nature\'s ally vii':       { recharge: '' },
-        'summon nature\'s ally viii':      { recharge: '' },
-        'summon nature\'s ally ix':        { recharge: '' },
+        'summon nature\'s ally i':         { recharge: 'General' },
+        'summon nature\'s ally ii':        { recharge: 'General' },
+        'summon nature\'s ally iii':       { recharge: 'General' },
+        'summon nature\'s ally iv':        { recharge: 'General' },
+        'summon nature\'s ally v':         { recharge: 'General' },
+        'summon nature\'s ally vi':        { recharge: 'General' },
+        'summon nature\'s ally vii':       { recharge: 'General' },
+        'summon nature\'s ally viii':      { recharge: 'General' },
+        'summon nature\'s ally ix':        { recharge: 'General' },
         'summon swarm':                    { recharge: '' },
         'sunbeam':                         { recharge: '' },
         'sunburst':                        { recharge: '' },
