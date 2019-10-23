@@ -11344,6 +11344,372 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              XP Cost: 100 XP.`
         },
         // Spells that start with W
+        'wail of the banshee': {
+          ref:              'http://www.d20srd.org/srd/spells/wailOfTheBanshee.htm',
+          school:           'Necromancy [Death, Sonic]',
+          level:            'Death 9, Deathbound 9, Hatred 9, Repose 9, Sor/Wiz 9, Wmg 9',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Area',
+          target:           '[[?{Casting Level}]] living creatures within a 40-ft.-radius spread',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude negates',
+          spell_resistance: 'Yes',
+          text:             `You emit a terrible scream that kills creatures that hear it (except for yourself). Creatures closest to the point of origin are affected first.`
+        },
+        'wall of fire': {
+          ref:              'http://www.d20srd.org/srd/spells/wallOfFire.htm',
+          school:           'Evocation [Fire]',
+          level:            'Adp 4, Arc 4, Blg 4, Drd 5, Fire 4, Shu 4, Sor/Wiz 4, Wmg 4, Wuj 4',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'Opaque sheet of flame up to [[20*?{Casting Level}]] ft. long or a ring of fire with radius of up to [[5*floor([[?{Casting Level}/2]])]] ft.; either form 20 ft. high',
+          duration:         'Concentration + [[?{Casting Level}]] rounds',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `An immobile, blazing curtain of shimmering violet fire springs into existence. One side of the wall, selected by you, sends forth waves of heat, dealing 2d4 points of fire damage to creatures ‹within 10 feet|[[2d4]] points of fire damage› and 1d4 points of fire damage to those past 10 feet but ‹within 20 feet|[[1d4]] points of fire damage›. The wall deals this damage when it appears and on your turn each round to all creatures in the area. In addition, the wall deals 2d6 points of fire damage +1 point of fire damage per caster level (maximum +20) to any creature ‹passing through|[[2d6+[[{?{Casting Level},20}kl1]]]]› it. The wall deals double damage to undead creatures.
+                             If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that length goes out. (Do not divide cold damage by 4, as normal for objects.)
+                             Wall of fire can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell. A permanent wall of fire that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.`,
+          component_details:'Arcane Material Component: A small piece of phosphorus.'
+        },
+        'wall of force': {
+          ref:              'http://www.d20srd.org/srd/spells/wallOfForce.htm',
+          school:           'Evocation [Force]',
+          level:            'Artificer 5, Force 5, Sor/Wiz 5, VDarkness 6, Wuj 5',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'Wall whose area is up to [[?{Casting Level}]] × 10-ft. squares',
+          duration:         '[[?{Casting Level}]] (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `A wall of force spell creates an invisible wall of force. The wall cannot move, it is immune to damage of all kinds, and it is unaffected by most spells, including [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm). However, [disintegrate](http://www.d20srd.org/srd/spells/disintegrate.htm) immediately destroys it, as does a rod of cancellation, a sphere of annihilation, or a [mage’s disjunction](http://www.d20srd.org/srd/spells/magesDisjunction.htm) spell. Breath weapons and spells cannot pass through the wall in either direction, although [dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm), [teleport](http://www.d20srd.org/srd/spells/teleport.htm), and similar effects can bypass the barrier. It blocks ethereal creatures as well as material ones (though ethereal creatures can usually get around the wall by floating under or over it through material floors and ceilings). Gaze attacks can operate through a wall of force.
+                             The caster can form the wall into a flat, vertical plane whose area is up to one 10-foot square per level. The wall must be continuous and unbroken when formed. If its surface is broken by any object or creature, the spell fails.
+                             Wall of force can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
+          component_details:'Material Component: A pinch of powder made from a clear gem.'
+        },
+        'wall of ice': {
+          ref:              'http://www.d20srd.org/srd/spells/wallOfIce.htm',
+          school:           'Evocation [Cold]',
+          level:            'Arc 5, Cold 5, Ocean 5, Shu 5, Sor/Wiz 4, Wuj 4',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'Anchored plane of ice, up to [[?{Casting Level}]] × 10-ft. squares, or hemisphere of ice with a radius of up to [[3+?{Casting Level}]] ft.',
+          duration:         '[[?{Casting Level}]] minutes',
+          saving_throw:     'Reflex negates; see text',
+          spell_resistance: 'Yes',
+          text:             `This spell creates an anchored plane of ice or a hemisphere of ice, depending on the version selected. A wall of ice cannot form in an area occupied by physical objects or creatures. Its surface must be smooth and unbroken when created. Any creature adjacent to the wall when it is created may attempt a Reflex save to disrupt the wall as it is being formed. A successful save indicates that the spell automatically fails. Fire can melt a wall of ice, and it deals full damage to the wall (instead of the normal half damage taken by objects). Suddenly melting a wall of ice creates a great cloud of steamy fog that lasts for 10 minutes.
+
+                             Ice Plane
+                             A sheet of strong, hard ice appears. The wall is [[?{Casting Level}]] inches thick. It covers up to [[?{Casting Level}]] × 10-foot-square area (so a 10th-level wizard can create a wall of ice 100 feet long and 10 feet high, a wall 50 feet long and 20 feet high, or some other combination of length and height that does not exceed 1,000 square feet). The plane can be oriented in any fashion as long as it is anchored. A vertical wall need only be anchored on the floor, while a horizontal or slanting wall must be anchored on two opposite sides.
+                             Each 10-foot square of wall has 3 hit points per inch of thickness. Creatures can hit the wall automatically. A section of wall whose hit points drop to 0 is breached. If a creature tries to break through the wall with a single attack, the DC for the Strength check is 15 + caster level.
+                             Even when the ice has been broken through, a sheet of frigid air remains. Any creature ‹stepping through|[[1d6+?{Casting Level}]] points of cold damage› it (including the one who broke through the wall) takes 1d6 points of cold damage +1 point per caster level (no save).
+
+                             Hemisphere
+                             The wall takes the form of a hemisphere whose maximum radius is [[3+?{Casting Level}]] feet. The hemisphere is as hard to break through as the ice plane form, but it does not deal damage to those who go through a breach.`,
+          component_details:'Material Component: A small piece of quartz or similar rock crystal.'
+        },
+        'wall of iron': {
+          ref:              'http://www.d20srd.org/srd/spells/wallOfIron.htm',
+          school:           'Conjuration (Creation)',
+          level:            'Arc 5, Artificer 6, Metal 5, Shu 5, Sor/Wiz 6, Wuj 6',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'Iron wall whose area is up to [[?{Casting Level}]] × 5-ft. squares; see text',
+          duration:         'Instantaneous',
+          saving_throw:     'See text',
+          spell_resistance: 'No',
+          text:             `You cause a flat, vertical iron wall to spring into being. The wall inserts itself into any surrounding nonliving material if its area is sufficient to do so. The wall cannot be conjured so that it occupies the same space as a creature or another object. It must always be a flat plane, though you can shape its edges to fit the available space.
+                             A wall of iron is [[floor(?{Casting Level}/4)]] inches thick. You can double the wall’s area by halving its thickness. Each 5-foot square of the wall has 30 hit points per inch of thickness and hardness 10. A section of wall whose hit points drop to 0 is breached. If a creature tries to break through the wall with a single attack, the DC for the Strength check is 25 + 2 per inch of thickness.
+                             If you desire, the wall can be created vertically resting on a flat surface but not attached to the surface, so that it can be tipped over to fall on and crush creatures beneath it. The wall is 50% likely to tip in either direction if left unpushed. Creatures can push the wall in one direction rather than letting it fall randomly. A creature must make a DC 40 Strength check to push the wall over. Creatures with room to flee the falling wall may do so by making successful Reflex saves. Any Large or smaller creature that fails takes 10d6 points of damage. The wall cannot crush Huge and larger creatures.
+                             Like any iron wall, this wall is subject to rust, perforation, and other natural phenomena.`,
+          component_details:'Material Component: A small piece of sheet iron plus gold dust worth 50 gp (1 pound of gold dust).'
+        },
+        'wall of stone': {
+          ref:              'http://www.d20srd.org/srd/spells/wallOfStone.htm',
+          school:           'Conjuration (Creation) [Earth]',
+          level:            'Adp 5, APeace 5, Arc 5, Artificer 5, Clr 5, Craft 5, Drd 6, Earth 5, Shu 5, Sor/Wiz 5, Wuj 5',
+          components:       ' V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'Stone wall whose area is up to [[?{Casting Level}]] × 5-ft. squares (S)',
+          duration:         'Instantaneous',
+          saving_throw:     'See text',
+          spell_resistance: 'No',
+          text:             `This spell creates a wall of rock that merges into adjoining rock surfaces. A wall of stone is [[floor(?{Casting Level}/4)]] inches thick and composed of up to [[?{Casting Level}]] × 5-foot squares. You can double the wall’s area by halving its thickness. The wall cannot be conjured so that it occupies the same space as a creature or another object.
+                             Unlike a wall of iron, you can create a wall of stone in almost any shape you desire. The wall created need not be vertical, nor rest upon any firm foundation; however, it must merge with and be solidly supported by existing stone. It can be used to bridge a chasm, for instance, or as a ramp. For this use, if the span is more than 20 feet, the wall must be arched and buttressed. This requirement reduces the spell’s area by half. The wall can be crudely shaped to allow crenellations, battlements, and so forth by likewise reducing the area.
+                             Like any other stone wall, this one can be destroyed by a [disintegrate](http://www.d20srd.org/srd/spells/disintegrate.htm) spell or by normal means such as breaking and chipping. Each 5-foot square of the wall has 15 hit points per inch of thickness and hardness 8. A section of wall whose hit points drop to 0 is breached. If a creature tries to break through the wall with a single attack, the DC for the Strength check is 20 + 2 per inch of thickness.
+                             It is possible, but difficult, to trap mobile opponents within or under a wall of stone, provided the wall is shaped so it can hold the creatures. Creatures can avoid entrapment with successful Reflex saves.`,
+          component_details:'Arcane Material Component: A small block of granite.'
+        },
+        'wall of thorns': {
+          ref:              'http://www.d20srd.org/srd/spells/wallOfThorns.htm',
+          school:           'Conjuration (Creation)',
+          level:            'Arc 5, Drd 5, Plant 5',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'Wall of thorny brush, up to [[?{Casting Level}]] × 10-ft. cubes (S)',
+          duration:         '[[?{Casting Level}]] minutes (D)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `A wall of thorns spell creates a barrier of very tough, pliable, tangled brush bearing needle-sharp thorns as long as a human’s finger. Any creature forced into or attempting to move through a wall of thorns takes slashing damage per round of movement equal to 25 minus the creature’s AC. Dexterity and dodge bonuses to AC do not count for this calculation. (Creatures with an Armor Class of 25 or higher, without considering Dexterity and dodge bonuses, take no damage from contact with the wall.)
+                             You can make the wall as thin as 5 feet thick, which allows you to shape the wall as a number of 10-by-10-by-5-foot blocks equal to [[2*?{Casting Level}]]. This has no effect on the damage dealt by the thorns, but any creature attempting to break through takes that much less time to force its way through the barrier.
+                             Creatures can force their way slowly through the wall by making a Strength check as a full-round action. For every 5 points by which the check exceeds 20, a creature moves 5 feet (up to a maximum distance equal to its normal land speed). Of course, moving or attempting to move through the thorns incurs damage as described above. A creature trapped in the thorns can choose to remain motionless in order to avoid taking any more damage.
+                             Any creature within the area of the spell when it is cast takes damage as if it had moved into the wall and is caught inside. In order to escape, it must attempt to push its way free, or it can wait until the spell ends. Creatures with the ability to pass through overgrown areas unhindered can pass through a wall of thorns at normal speed without taking damage.
+                             A wall of thorns can be breached by slow work with edged weapons. Chopping away at the wall creates a safe passage 1 foot deep for every 10 minutes of work. Normal fire cannot harm the barrier, but magical fire burns it away in 10 minutes.
+                             Despite its appearance, a wall of thorns is not actually a living plant, and thus is unaffected by spells that affect plants.`
+        },
+        'warp wood': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'water breathing': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'water walk': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'waves of exhaustion': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'waves of fatigue': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'web': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'weird': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'whirlwind': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'whispering wind': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'wind walk': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'wind wall': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'wish': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'wood shape': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'word of chaos': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
+        'word of recall': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  ref:              '',
+        //  school:           '',
+        //  level:            '',
+        //  components:       '',
+        //  casting_time:     '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  spell_resistance: '',
+        //  text:             ``,
+        //  component_details:null
+        },
         // Spells that start with X
         // Spells that start with Y
         // Spells that start with Z
@@ -11366,23 +11732,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  component_details:null
         //},
         /////////////////////////////////////
-        'wall of fire': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Wall_of_Fire',
-          school:           'Evocation [Fire]',
-          level:            'Druid 5, Fire 4, Sor/Wiz 4',
-          components:       'V, S, M/DF',
-          casting_time:     '1 standard action',
-          range:            '_medium_',
-          target_type:      'Effect',
-          target:           'Opaque sheet of flame up to [[20*?{Casting Level}]] ft. long or a ring of fire with radius of up to [[5*floor([[?{Casting Level}/2]])]] ft.; either form 20 ft. high',
-          duration:         'Concentration + [[?{Casting Level}]] rounds',
-          saving_throw:     'None',
-          spell_resistance: 'Yes',
-          text:             `An immobile, blazing curtain of shimmering violet fire springs into existence. One side of the wall, selected by you, sends forth waves of heat, dealing ‹2d4› points of fire damage to creatures within 10 feet and ‹1d4› points of fire damage to those past 10 feet but within 20 feet. The wall deals this damage when it appears and on your turn each round to all creatures in the area. In addition, the wall deals 2d6 points of fire damage +1 point of fire damage per caster level (maximum +20) to any creature ‹passing through|[[2d6+[[{?{Casting Level},20}kl1]]]]› it. The wall deals double damage to undead creatures.
-                             If you evoke the wall so that it appears where creatures are, each creature takes damage as if passing through the wall. If any 5-foot length of wall takes 20 points of cold damage or more in 1 round, that length goes out. (Do not divide cold damage by 4, as normal for objects.)
-                             *Wall of fire* can be made permanent with a *permanency* spell. A permanent *wall of fire* that is extinguished by cold damage becomes inactive for 10 minutes, then reforms at normal strength.`,
-          component_details:'Arcane Material Component: A small piece of phosphorus.'
-        }
       },
       spell_ranges: {
         '_close_':    'Close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.)',
@@ -11993,6 +12342,28 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'ventriloquism':                   { recharge: '5 minutes' },
         'virtue':                          { recharge: '5 minutes' },
         'vision':                          { recharge: '6 hours' },
+        'wail of the banshee':             { recharge: 'General' },
+        'wall of fire':                    { recharge: 'General' },
+        'wall of force':                   { recharge: 'General' },
+        'wall of ice':                     { recharge: 'General' },
+        'wall of iron':                    { recharge: '12 hours' },
+        'wall of stone':                   { recharge: '12 hours' },
+        'wall of thorns':                  { recharge: 'General' },
+        'warp wood':                       { recharge: '' },
+        'water breathing':                 { recharge: '' },
+        'water walk':                      { recharge: '' },
+        'waves of exhaustion':             { recharge: '' },
+        'waves of fatigue':                { recharge: '' },
+        'web':                             { recharge: '' },
+        'weird':                           { recharge: '' },
+        'whirlwind':                       { recharge: '' },
+        'whispering wind':                 { recharge: '' },
+        'wind walk':                       { recharge: '' },
+        'wind wall':                       { recharge: '' },
+        'wish':                            { recharge: '' },
+        'wood shape':                      { recharge: '' },
+        'word of chaos':                   { recharge: '' },
+        'word of recall':                  { recharge: '' },
         //RECHARGES
         //'': { recharge: 'General' },
       }
