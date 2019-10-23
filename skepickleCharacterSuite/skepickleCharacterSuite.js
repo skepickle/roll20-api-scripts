@@ -11266,6 +11266,83 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: A piece of string and a bit of wood.'
         },
         // Spells that start with V
+        'vampiric touch': {
+          ref:              'http://www.d20srd.org/srd/spells/vampiricTouch.htm',
+          school:           'Necromancy',
+          level:            'Arc 3, Blg 3, Duskblade 3, HB 3, Necro 3, Sin-E 4, Sin-G 4, Sor/Wiz 3',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Living creature touched',
+          duration:         'Instantaneous/1 hour; see text',
+          saving_throw:     'None',
+          spell_resistance: 'Yes',
+          text:             `You must succeed on a melee touch attack. Your touch deals [[[[{[[floor(?{Casting Level}/2)]],10}kl1]]d6]] points of damage. You gain temporary hit points equal to the damage you deal. However, you can’t gain more than the subject’s current hit points +10, which is enough to kill the subject. The temporary hit points disappear 1 hour later.`
+        },
+        'veil': {
+          ref:              'http://www.d20srd.org/srd/spells/veil.htm',
+          school:           'Illusion (Glamer)',
+          level:            'Arc 6, Beguiler 6, Brd 6, Shu 6, Sor/Wiz 6, Wuj 6',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_long_',
+          target_type:      'Targets',
+          target:           'One or more creatures, no two of which can be more than 30 ft. apart',
+          duration:         'Concentration + 1 hour/level (D)',
+          saving_throw:     'Will negates; see text',
+          spell_resistance: 'Yes; see text',
+          text:             `You instantly change the appearance of the subjects and then maintain that appearance for the spell’s duration. You can make the subjects appear to be anything you wish. The subjects look, feel, and smell just like the creatures the spell makes them resemble. Affected creatures resume their normal appearances if slain. You must succeed on a Disguise check to duplicate the appearance of a specific individual. This spell gives you a +10 bonus on the check.
+                             Unwilling targets can negate the spell’s effect on them by making Will saves or with spell resistance. Those who interact with the subjects can attempt Will disbelief saves to see through the glamer, but spell resistance doesn’t help.`
+        },
+        // Epic Spell: vengeful gaze of god
+        'ventriloquism': {
+          ref:              'http://www.d20srd.org/srd/spells/ventriloquism.htm',
+          school:           'Illusion (Figment)',
+          level:            'Brd 1, EmBarachiel 1, Sor/Wiz 1, Wuj 1',
+          components:       'V, F',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'Intelligible sound, usually speech',
+          duration:         '[[?{Casting Level}]] minutes (D)',
+          saving_throw:     'Will disbelief (if interacted with)',
+          spell_resistance: 'No',
+          text:             `You can make your voice (or any sound that you can normally make vocally) seem to issue from someplace else. You can speak in any language you know. With respect to such voices and sounds, anyone who hears the sound and rolls a successful save recognizes it as illusory (but still hears it).`,
+          component_details:'Focus: A parchment rolled up into a small cone.'
+        },
+        // Epic Spell: verdigris
+        // Epic Spell: verdigris tsunami
+        'virtue': {
+          ref:              'http://www.d20srd.org/srd/spells/virtue.htm',
+          school:           'Transmutation',
+          level:            'APeace 0, Arc 0, ChamGwyn 1, Clr 0, Drd 0, Pal 1, Shu 0',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '1 minute',
+          saving_throw:     'Fortitude negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The subject gains 1 temporary hit point.`
+        },
+        'vision': {
+          ref:              'http://www.d20srd.org/srd/spells/vision.htm',
+          school:           'Divination',
+          level:            'Fate 7, Sor/Wiz 7',
+          components:       'V, S, M, XP',
+          casting_time:     '1 standard action',
+          range:            '',
+          target_type:      '',
+          target:           '',
+          duration:         '',
+          saving_throw:     '',
+          spell_resistance: '',
+          text:             `This spell functions like [legend lore](http://www.d20srd.org/srd/spells/legendLore.htm), except that it works more quickly but produces some strain on you. You pose a question about some person, place, or object, then cast the spell. If the person or object is at hand or if you are in the place in question, you receive a vision about it by succeeding on a caster level check (1d20 +1 per caster level; maximum +25) against DC 20. If only detailed information on the person, place, or object is known, the DC is 25, and the information gained is incomplete. If only rumors are known, the DC is 30, and the information gained is vague.`,
+          component_details:`Material Component: Incense worth at least 250 gp.
+                             XP Cost: 100 XP.`
+        },
         // Spells that start with W
         // Spells that start with X
         // Spells that start with Y
@@ -11911,6 +11988,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'unholy aura':                     { recharge: 'General' },
         'unholy blight':                   { recharge: 'General' },
         'unseen servant':                  { recharge: '6 hours' },
+        'vampiric touch':                  { recharge: 'General' },
+        'veil':                            { recharge: '12 hours' },
+        'ventriloquism':                   { recharge: '5 minutes' },
+        'virtue':                          { recharge: '5 minutes' },
+        'vision':                          { recharge: '6 hours' },
         //RECHARGES
         //'': { recharge: 'General' },
       }
