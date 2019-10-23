@@ -8797,9 +8797,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `A twisting pattern of discordant, coruscating colors weaves through the air, affecting creatures within it. The spell affects a total of [[{?{Casting Level},20}kl1]] Hit Dice of creatures. Creatures with the fewest HD are affected first; and, among creatures with equal HD, those who are closest to the spell’s point of origin are affected first. Hit Dice that are not sufficient to affect a creature are wasted. The spell affects each subject according to its Hit Dice.
 
-                             *6 or less HD* -> [[ 0 : Unconscious for [[1d4]] rounds, then stunned for [[1d4]] rounds, and then confused for [[1d4]] rounds. (Treat an unconscious result as stunned for nonliving creatures.) ]]🖱️
-                             *7 to 12 HD* -> [[ 0 : Stunned for [[1d4]] rounds, then confused for [[1d4]] rounds. ]]🖱️
-                             *13 or more HD* -> [[ 0 : Confused for [[1d4]] rounds. ]]🖱️
+                             ‹6 or less HD|Unconscious for [[1d4]] rounds, then stunned for [[1d4]] rounds, and then confused for [[1d4]] rounds. (Treat an unconscious result as stunned for nonliving creatures.)›
+                             ‹7 to 12 HD|Stunned for [[1d4]] rounds, then confused for [[1d4]] rounds.›
+                             ‹13 or more HD|Confused for [[1d4]] rounds.›
 
                              Sightless creatures are not affected by scintillating pattern.`,
           component_details:'Material Component: A small crystal prism.'
@@ -10768,7 +10768,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: Pieces of eggshell from two different kinds of creatures.'
         },
         'teleport': {
-        // ↲’‹›«»◦•×†‡🖱️ %28Spell%29
           ref:              'http://www.d20srd.org/srd/spells/teleport.htm',
           school:           'Conjuration (Teleportation)',
           level:            'Arc 6, Portal 5, Shu 6, Sor/Wiz 5, Travel 5, Wuj 5',
@@ -11162,6 +11161,110 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Focus: A small wooden replica of an archery target.'
         },
         // Spells that start with U
+        'undeath to death': {
+          ref:              'http://www.d20srd.org/srd/spells/undeathToDeath.htm',
+          other_versions:   'Faiths and Pantheons on page 220, Ghostwalk on page 60, Magic of Faerun on page 130, Tome and Blood on page 96',
+          school:           'Necromancy',
+          level:            'Arc 6, Clr 6, Repose 6, Sor/Wiz 6',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Area',
+          target:           'Several undead creatures within a 40-ft.-radius burst',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `This spell functions like [circle of death](http://www.d20srd.org/srd/spells/circleOfDeath.htm), except that it destroys undead creatures as noted above.`,
+          component_details:'Material Component: The powder of a crushed diamond worth at least 500 gp.'
+        },
+        'undetectable alignment': {
+          ref:              'http://www.d20srd.org/srd/spells/undetectableAlignment.htm',
+          school:           'Abjuration',
+          level:            'Arc 2, Asn 2, Beguiler 1, Brd 1, Clr 2, HB 1, KotC 2, Liberation 2, Pal 2, Vassal of Bahamut 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature or object',
+          duration:         '24 hours',
+          saving_throw:     'Will negates (object)',
+          spell_resistance: 'Yes (object)',
+          text:             `An undetectable alignment spell conceals the alignment of an object or a creature from all forms of divination.`
+        },
+        'unhallow': {
+          ref:              'http://www.d20srd.org/srd/spells/unhallow.htm',
+          school:           'Evocation [Evil]',
+          level:            'Arc 5, Blg 4, Clr 5, Drd 5',
+          components:       'V, S, M',
+          casting_time:     '24 hours',
+          range:            'Touch',
+          target_type:      'Area',
+          target:           '40-ft. radius emanating from the touched point',
+          duration:         'Instantaneous',
+          saving_throw:     'See text',
+          spell_resistance: 'See text',
+          text:             `Unhallow makes a particular site, building, or structure an unholy site. This has three major effects.
+                             First, the site or structure is guarded by a [magic circle against good](http://www.d20srd.org/srd/spells/magicCircleAgainstGood.htm) effect.
+                             Second, all turning checks made to turn undead take a -4 penalty, and turning checks to rebuke undead gain a +4 profane bonus. Spell resistance does not apply to this effect. (This provision does not apply to the druid version of the spell.)
+                             Finally, you may choose to fix a single spell effect to the unhallowed site. The spell effect lasts for one year and functions throughout the entire site, regardless of its normal duration and area or effect. You may designate whether the effect applies to all creatures, creatures that share your faith or alignment, or creatures that adhere to another faith or alignment. At the end of the year, the chosen effect lapses, but it can be renewed or replaced simply by casting unhallow again.
+                             Spell effects that may be tied to an unhallowed site include [aid](http://www.d20srd.org/srd/spells/aid.htm), [bane](http://www.d20srd.org/srd/spells/bane.htm), [bless](http://www.d20srd.org/srd/spells/bless.htm), [cause fear](http://www.d20srd.org/srd/spells/causeFear.htm), [darkness](http://www.d20srd.org/srd/spells/darkness.htm), [daylight](http://www.d20srd.org/srd/spells/daylight.htm), [death ward](http://www.d20srd.org/srd/spells/deathWard.htm), [deeper darkness](http://www.d20srd.org/srd/spells/deeperDarkness.htm), [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm), [detect good](http://www.d20srd.org/srd/spells/detectGood.htm), [dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm), [discern lies](http://www.d20srd.org/srd/spells/discernLies.htm), [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm), [endure elements](http://www.d20srd.org/srd/spells/endureElements.htm), [freedom of movement](http://www.d20srd.org/srd/spells/freedomOfMovement.htm), [invisibility purge](http://www.d20srd.org/srd/spells/invisibilityPurge.htm), [protection from energy](http://www.d20srd.org/srd/spells/protectionFromEnergy.htm), [remove fear](http://www.d20srd.org/srd/spells/removeFear.htm), [resist energy](http://www.d20srd.org/srd/spells/resistEnergy.htm), [silence](http://www.d20srd.org/srd/spells/silence.htm), [tongues](http://www.d20srd.org/srd/spells/tongues.htm), and [zone of truth](http://www.d20srd.org/srd/spells/zoneOfTruth.htm).
+                             Saving throws and spell resistance might apply to these spells’ effects. (See the individual spell descriptions for details.)
+                             An area can receive only one unhallow spell (and its associated spell effect) at a time.
+                             Unhallow counters but does not dispel [hallow](http://www.d20srd.org/srd/spells/hallow.htm).`,
+          component_details:'Material Component: Herbs, oils, and incense worth at least 1,000 gp, plus 1,000 gp per level of the spell to be tied to the unhallowed area.'
+        },
+        'unholy aura': {
+          ref:              'http://www.d20srd.org/srd/spells/unholyAura.htm',
+          school:           'Abjuration [Evil]',
+          level:            'Arc 8, Clr 8, Evil 8, Mysticism 8',
+          components:       'V, S, F',
+          casting_time:     '1 standard action',
+          range:            '20 ft.',
+          target_type:      'Targets',
+          target:           '[[?{Casting Level}]] creatures in a 20-ft.-radius burst centered on you',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'See text',
+          spell_resistance: 'Yes (harmless)',
+          text:             `A malevolent darkness surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by good creatures, and weakening good creatures when they strike the subjects. This abjuration has four effects.
+                             First, each warded creature gains a +4 deflection bonus to AC and a +4 resistance bonus on saves. Unlike the effect of [protection from good](http://www.d20srd.org/srd/spells/protectionFromGood.htm), this benefit applies against all attacks, not just against attacks by good creatures.
+                             Second, a warded creature gains spell resistance 25 against good spells and spells cast by good creatures.
+                             Third, the abjuration blocks possession and mental influence, just as [protection from good](http://www.d20srd.org/srd/spells/protectionFromGood.htm) does.
+                             Finally, if a good creature succeeds on a melee attack against a warded creature, the offending attacker takes 1d6 points of temporary Strength damage (Fortitude negates).`,
+          component_details:'Focus: A tiny reliquary containing some sacred relic, such as a piece of parchment from an unholy text. The reliquary costs at least 500 gp.'
+        },
+        'unholy blight': {
+          ref:              'http://www.d20srd.org/srd/spells/unholyBlight.htm',
+          school:           'Evocation [Evil]',
+          level:            'Evil 4',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Area',
+          target:           '20-ft.-radius spread',
+          duration:         'Instantaneous (1d4 rounds); see text',
+          saving_throw:     'Will partial',
+          spell_resistance: 'Yes',
+          text:             `You call up unholy power to smite your enemies. The power takes the form of a cold, cloying miasma of greasy darkness.
+                             Only good and neutral (not evil) creatures are harmed by the spell.
+                             The spell deals [[[[{[[floor(?{Casting Level}/2)]],5}kl1]]d8]] points of damage to a good creature (or [[[[{?{Casting Level},10}kl1]]d6]] to a good outsider) and causes it to be sickened for [[1d4]] rounds. A successful Will save reduces damage to half and negates the sickened effect. The effects cannot be negated by [remove disease](http://www.d20srd.org/srd/spells/removeDisease.htm) or [heal](http://www.d20srd.org/srd/spells/heal.htm), but [remove curse](http://www.d20srd.org/srd/spells/removeCurse.htm) is effective.
+                             The spell deals only half damage to creatures who are neither evil nor good, and they are not sickened. Such a creature can reduce the damage in half again (down to one-quarter) with a successful Will save.`
+        },
+        'unseen servant': {
+          ref:              'http://www.d20srd.org/srd/spells/unseenServant.htm',
+          school:           'Conjuration (Creation)',
+          level:            'Brd 1, HB 1, Hoard 1, Sin-S 2, Sor/Wiz 1, Wuj 1',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One invisible, mindless, shapeless servant',
+          duration:         '[[?{Casting Level}]] hours',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `An unseen servant is an invisible, mindless, shapeless force that performs simple tasks at your command. It can run and fetch things, open unstuck doors, and hold chairs, as well as clean and mend. The servant can perform only one activity at a time, but it repeats the same activity over and over again if told to do so as long as you remain within range. It can open only normal doors, drawers, lids, and the like. It has an effective Strength score of 2 (so it can lift 20 pounds or drag 100 pounds). It can trigger traps and such, but it can exert only 20 pounds of force, which is not enough to activate certain pressure plates and other devices. It can’t perform any task that requires a skill check with a DC higher than 10 or that requires a check using a skill that can’t be used untrained. Its speed is 15 feet.
+                             The servant cannot attack in any way; it is never allowed an attack roll. It cannot be killed, but it dissipates if it takes 6 points of damage from area attacks. (It gets no saves against attacks.) If you attempt to send it beyond the spell’s range (measured from your current position), the servant ceases to exist.`,
+          component_details:'Material Component: A piece of string and a bit of wood.'
+        },
         // Spells that start with V
         // Spells that start with W
         // Spells that start with X
@@ -11802,6 +11905,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'true resurrection':               { recharge: 'General' },
         'true seeing':                     { recharge: 'General' },
         'true strike':                     { recharge: '5 minutes' },
+        'undeath to death':                { recharge: 'General' },
+        'undetectable alignment':          { recharge: '24 hours' },
+        'unhallow':                        { recharge: 'General' },
+        'unholy aura':                     { recharge: 'General' },
+        'unholy blight':                   { recharge: 'General' },
+        'unseen servant':                  { recharge: '6 hours' },
         //RECHARGES
         //'': { recharge: 'General' },
       }
