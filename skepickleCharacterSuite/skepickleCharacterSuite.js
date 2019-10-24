@@ -2471,11 +2471,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              If a creature falls into more than one category, the spell indicates the weaker of the two.
                              Each round you can turn to detect a kind of animal or plant in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`
         },
-        //BEGIN REVIEW MARKER
         'detect chaos': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Chaos',
+          ref:              'http://www.d20srd.org/srd/spells/detectChaos.htm',
           school:           'Divination',
-          level:            'Clr 1',
+          level:            'Adp 1, Arc 1, Clr 1, Inquisition 1, KotC 1, Wuj 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '60 ft.',
@@ -2489,24 +2488,24 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *2nd Round:* Number of chaotic auras (creatures, objects, or spells) in the area and the power of the most potent chaos aura present.
                              If you are of lawful alignment, and the strongest chaos aura’s power is overwhelming (see below), and the HD or level of the aura’s source is at least twice your character level, you are stunned for 1 round and the spell ends.
                              *3rd Round:* The power and location of each aura. If an aura is outside your line of sight, then you discern its direction but not its exact location.
-                             *Aura Power:* An chaos aura’s power depends on the type of chaos creature or object that you’re detecting and its HD, caster level, or (in the case of a [cleric](https://www.dandwiki.com/wiki/SRD:Cleric)) class level; see the accompanying table. If an aura falls into more than one strength category, the spell indicates the stronger of the two.
+                             *Aura Power:* An chaos aura’s power depends on the type of chaos creature or object that you’re detecting and its HD, caster level, or (in the case of a cleric) class level; see the accompanying table. If an aura falls into more than one strength category, the spell indicates the stronger of the two.
 
                              • Chaotic creature†(HD)
                              -- **Faint:** 10 or lower
                              -- **Moderate:** 11-25
                              -- **Strong:** 26-50
                              -- **Overwhelming:** 51 or higher
-                             • [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) (HD)
+                             • Undead (HD)
                              -- **Faint:** 2 or lower
                              -- **Moderate:** 3-8
                              -- **Strong:** 9-20
                              -- **Overwhelming:** 21 or higher
-                             • Chaotic [outsider](https://www.dandwiki.com/wiki/SRD:Outsider_Type) (HD)
+                             • Chaotic outsider (HD)
                              -- **Faint:** 1 or lower
                              -- **Moderate:** 2-4
                              -- **Strong:** 5-10
                              -- **Overwhelming:** 11 or higher
-                             • [Cleric](https://www.dandwiki.com/wiki/SRD:Cleric) of a chaos deity‡(class levels)
+                             • Cleric of a chaos deity‡(class levels)
                              -- **Faint:** 1
                              -- **Moderate:** 2-4
                              -- **Strong:** 5-10
@@ -2516,10 +2515,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              -- **Moderate:** 3rd-8th
                              -- **Strong:** 9th-20th
                              -- **Overwhelming:** 21st or higher
-                             † Except for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) and [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type), which have their own entries on the table.
-                             ‡ Some characters who are not [clerics](https://www.dandwiki.com/wiki/SRD:Cleric) may radiate an aura of equivalent power. The class description will indicate whether this applies.
+                             † Except for undead and outsiders, which have their own entries on the table.
+                             ‡ Some characters who are not clerics may radiate an aura of equivalent power. The class description will indicate whether this applies.
 
-                             *Lingering Aura:* A chaos aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect chaos* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
+                             *Lingering Aura:* A chaos aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If detect chaos is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
                              -- Duration of Lingering Aura: [[1d6]] rounds
@@ -2530,14 +2529,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • Original Strength 'Overwhelming':
                              -- Duration of Lingering Aura: [[1d6]] days
 
-                             [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not chaos, and as such this spell does not detect them.
-                             Each round, you can turn to *detect chaos* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
-          component_details:null
+                             Animals, traps, poisons, and other potential perils are not chaos, and as such this spell does not detect them.
+                             Each round, you can turn to detect chaos in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`
         },
         'detect evil': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Evil',
+          ref:              'http://www.d20srd.org/srd/spells/detectEvil.htm',
           school:           'Divination',
-          level:            'Clr 1',
+          level:            'Adp 1, APeace 1, Arc 1, Clr 1, KotC 1, Wuj 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '60 ft.',
@@ -2551,24 +2549,24 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *2nd Round:* Number of evil auras (creatures, objects, or spells) in the area and the power of the most potent evil aura present.
                              If you are of good alignment, and the strongest evil aura’s power is overwhelming (see below), and the HD or level of the aura’s source is at least twice your character level, you are stunned for 1 round and the spell ends.
                              *3rd Round:* The power and location of each aura. If an aura is outside your line of sight, then you discern its direction but not its exact location.
-                             *Aura Power:* An evil aura’s power depends on the type of evil creature or object that you’re detecting and its HD, caster level, or (in the case of a [cleric](https://www.dandwiki.com/wiki/SRD:Cleric)) class level; see the accompanying table. If an aura falls into more than one strength category, the spell indicates the stronger of the two.
+                             *Aura Power:* An evil aura’s power depends on the type of evil creature or object that you’re detecting and its HD, caster level, or (in the case of a cleric) class level; see the accompanying table. If an aura falls into more than one strength category, the spell indicates the stronger of the two.
 
                              • Evil creature†(HD)
                              -- **Faint:** 10 or lower
                              -- **Moderate:** 11-25
                              -- **Strong:** 26-50
                              -- **Overwhelming:** 51 or higher
-                             • [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) (HD)
+                             • Undead (HD)
                              -- **Faint:** 2 or lower
                              -- **Moderate:** 3-8
                              -- **Strong:** 9-20
                              -- **Overwhelming:** 21 or higher
-                             • Evil [outsider](https://www.dandwiki.com/wiki/SRD:Outsider_Type) (HD)
+                             • Evil outsider (HD)
                              -- **Faint:** 1 or lower
                              -- **Moderate:** 2-4
                              -- **Strong:** 5-10
                              -- **Overwhelming:** 11 or higher
-                             • [Cleric](https://www.dandwiki.com/wiki/SRD:Cleric) of a evil deity‡(class levels)
+                             • Cleric of a evil deity‡(class levels)
                              -- **Faint:** 1
                              -- **Moderate:** 2-4
                              -- **Strong:** 5-10
@@ -2578,10 +2576,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              -- **Moderate:** 3rd-8th
                              -- **Strong:** 9th-20th
                              -- **Overwhelming:** 21st or higher
-                             † Except for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) and [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type), which have their own entries on the table.
-                             ‡ Some characters who are not [clerics](https://www.dandwiki.com/wiki/SRD:Cleric) may radiate an aura of equivalent power. The class description will indicate whether this applies.
+                             † Except for undead and outsiders, which have their own entries on the table.
+                             ‡ Some characters who are not clerics may radiate an aura of equivalent power. The class description will indicate whether this applies.
 
-                             *Lingering Aura:* A evil aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect evil* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
+                             *Lingering Aura:* A evil aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If detect evil is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
                              -- Duration of Lingering Aura: [[1d6]] rounds
@@ -2592,14 +2590,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • Original Strength 'Overwhelming':
                              -- Duration of Lingering Aura: [[1d6]] days
 
-                             [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not evil, and as such this spell does not detect them.
-                             Each round, you can turn to *detect evil* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
-          component_details:null
+                             Animals, traps, poisons, and other potential perils are not evil, and as such this spell does not detect them.
+                             Each round, you can turn to detect evil in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`
         },
         'detect good': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Good',
+          ref:              'http://www.d20srd.org/srd/spells/detectGood.htm',
           school:           'Divination',
-          level:            'Clr 1',
+          level:            'Adp 1, Arc 1, Clr 1, MH 1, Wuj 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '60 ft.',
@@ -2613,24 +2610,24 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *2nd Round:* Number of good auras (creatures, objects, or spells) in the area and the power of the most potent good aura present.
                              If you are of evil alignment, and the strongest good aura’s power is overwhelming (see below), and the HD or level of the aura’s source is at least twice your character level, you are stunned for 1 round and the spell ends.
                              *3rd Round:* The power and location of each aura. If an aura is outside your line of sight, then you discern its direction but not its exact location.
-                             *Aura Power:* An good aura’s power depends on the type of good creature or object that you’re detecting and its HD, caster level, or (in the case of a [cleric](https://www.dandwiki.com/wiki/SRD:Cleric)) class level; see the accompanying table. If an aura falls into more than one strength category, the spell indicates the stronger of the two.
+                             *Aura Power:* An good aura’s power depends on the type of good creature or object that you’re detecting and its HD, caster level, or (in the case of a cleric) class level; see the accompanying table. If an aura falls into more than one strength category, the spell indicates the stronger of the two.
 
                              • Good creature†(HD)
                              -- **Faint:** 10 or lower
                              -- **Moderate:** 11-25
                              -- **Strong:** 26-50
                              -- **Overwhelming:** 51 or higher
-                             • [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) (HD)
+                             • Undead (HD)
                              -- **Faint:** 2 or lower
                              -- **Moderate:** 3-8
                              -- **Strong:** 9-20
                              -- **Overwhelming:** 21 or higher
-                             • Good [outsider](https://www.dandwiki.com/wiki/SRD:Outsider_Type) (HD)
+                             • Good outsider (HD)
                              -- **Faint:** 1 or lower
                              -- **Moderate:** 2-4
                              -- **Strong:** 5-10
                              -- **Overwhelming:** 11 or higher
-                             • [Cleric](https://www.dandwiki.com/wiki/SRD:Cleric) of a good deity‡(class levels)
+                             • Cleric of a good deity‡(class levels)
                              -- **Faint:** 1
                              -- **Moderate:** 2-4
                              -- **Strong:** 5-10
@@ -2640,10 +2637,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              -- **Moderate:** 3rd-8th
                              -- **Strong:** 9th-20th
                              -- **Overwhelming:** 21st or higher
-                             † Except for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) and [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type), which have their own entries on the table.
-                             ‡ Some characters who are not [clerics](https://www.dandwiki.com/wiki/SRD:Cleric) may radiate an aura of equivalent power. The class description will indicate whether this applies.
+                             † Except for undead and outsiders, which have their own entries on the table.
+                             ‡ Some characters who are not clerics may radiate an aura of equivalent power. The class description will indicate whether this applies.
 
-                             *Lingering Aura:* A good aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect good* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
+                             *Lingering Aura:* A good aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If detect good is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
                              -- Duration of Lingering Aura: [[1d6]] rounds
@@ -2654,14 +2651,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • Original Strength 'Overwhelming':
                              -- Duration of Lingering Aura: [[1d6]] days
 
-                             [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not good, and as such this spell does not detect them.
-                             Each round, you can turn to *detect good* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
-          component_details:null
+                             Animals, traps, poisons, and other potential perils are not good, and as such this spell does not detect them.
+                             Each round, you can turn to detect good in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`
         },
         'detect law': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Law',
+          ref:              'http://www.d20srd.org/srd/spells/detectLaw.htm',
           school:           'Divination',
-          level:            'Clr 1',
+          level:            'Adp 1, Arc 1, Clr 1, Wuj 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '60 ft.',
@@ -2675,24 +2671,24 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *2nd Round:* Number of lawful auras (creatures, objects, or spells) in the area and the power of the most potent lawful aura present.
                              If you are of chaotic alignment, and the strongest lawful aura’s power is overwhelming (see below), and the HD or level of the aura’s source is at least twice your character level, you are stunned for 1 round and the spell ends.
                              *3rd Round:* The power and location of each aura. If an aura is outside your line of sight, then you discern its direction but not its exact location.
-                             *Aura Power:* An lawful aura’s power depends on the type of lawful creature or object that you’re detecting and its HD, caster level, or (in the case of a [cleric](https://www.dandwiki.com/wiki/SRD:Cleric)) class level; see the accompanying table. If an aura falls into more than one strength category, the spell indicates the stronger of the two.
+                             *Aura Power:* An lawful aura’s power depends on the type of lawful creature or object that you’re detecting and its HD, caster level, or (in the case of a cleric) class level; see the accompanying table. If an aura falls into more than one strength category, the spell indicates the stronger of the two.
 
                              • Lawful creature†(HD)
                              -- **Faint:** 10 or lower
                              -- **Moderate:** 11-25
                              -- **Strong:** 26-50
                              -- **Overwhelming:** 51 or higher
-                             • [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) (HD)
+                             • Undead (HD)
                              -- **Faint:** 2 or lower
                              -- **Moderate:** 3-8
                              -- **Strong:** 9-20
                              -- **Overwhelming:** 21 or higher
-                             • Lawful [outsider](https://www.dandwiki.com/wiki/SRD:Outsider_Type) (HD)
+                             • Lawful outsider (HD)
                              -- **Faint:** 1 or lower
                              -- **Moderate:** 2-4
                              -- **Strong:** 5-10
                              -- **Overwhelming:** 11 or higher
-                             • [Cleric](https://www.dandwiki.com/wiki/SRD:Cleric) of a lawful deity‡(class levels)
+                             • Cleric of a lawful deity‡(class levels)
                              -- **Faint:** 1
                              -- **Moderate:** 2-4
                              -- **Strong:** 5-10
@@ -2702,10 +2698,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              -- **Moderate:** 3rd-8th
                              -- **Strong:** 9th-20th
                              -- **Overwhelming:** 21st or higher
-                             † Except for [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) and [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type), which have their own entries on the table.
-                             ‡ Some characters who are not [clerics](https://www.dandwiki.com/wiki/SRD:Cleric) may radiate an aura of equivalent power. The class description will indicate whether this applies.
+                             † Except for undead and outsiders, which have their own entries on the table.
+                             ‡ Some characters who are not clerics may radiate an aura of equivalent power. The class description will indicate whether this applies.
 
-                             *Lingering Aura:* A lawful aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If *detect law* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
+                             *Lingering Aura:* A lawful aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a creature or magic item). If detect law is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
                              -- Duration of Lingering Aura: [[1d6]] rounds
@@ -2716,14 +2712,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • Original Strength 'Overwhelming':
                              -- Duration of Lingering Aura: [[1d6]] days
 
-                             [Animals](https://www.dandwiki.com/wiki/SRD:Animal_Type), [traps](https://www.dandwiki.com/wiki/SRD:Traps), [poisons](https://www.dandwiki.com/wiki/SRD:Poisons), and other potential perils are not lawful, and as such this spell does not detect them.
-                             Each round, you can turn to *detect law* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
-          component_details:null
+                             Animals, traps, poisons, and other potential perils are not lawful, and as such this spell does not detect them.
+                             Each round, you can turn to detect law in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`
         },
         'detect magic': {
           ref:              'http://www.d20srd.org/srd/spells/detectMagic.htm',
           school:           'Divination',
-          level:            'Brd 0, Clr 0, Drd 0, Sor/Wiz 0',
+          level:            'Adp 0, APeace 0, Arc 0, Beguiler 0, Blg 0, Brd 0, Clr 0, Drd 0, Duskblade 0, HB 1, Hlr 0, Hoard 1, Shu 0, Sor/Wiz 0, Wuj 0',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '60 ft.',
@@ -2737,7 +2732,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *2nd Round:* Number of different magical auras and the power of the most potent aura.
                              *3rd Round:* The strength and location of each aura. If the items or creatures bearing the auras are in line of sight, you can make Spellcraft skill checks to determine the school of magic involved in each. (Make one check per aura; DC 15 + spell level, or 15 + half caster level for a nonspell effect.)
                              Magical areas, multiple types of magic, or strong local magical emanations may distort or conceal weaker auras.
-                             *Aura Strength:* An aura’s power depends on a spell’s functioning spell level or an item’s caster level. If an aura falls into more than one category, *detect magic* indicates the stronger of the two.
+                             *Aura Strength:* An aura’s power depends on a spell’s functioning spell level or an item’s caster level. If an aura falls into more than one category, detect magic indicates the stronger of the two.
 
                              • Functioning spell (spell level)
                              -- **Faint:** 3rd or lower
@@ -2750,7 +2745,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              -- **Strong:** 12th-20th
                              -- **Overwhelming:** 21st+ (artifact)
 
-                             *Lingering Aura:* A magical aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a magic item). If *detect magic* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
+                             *Lingering Aura:* A magical aura lingers after its original source dissipates (in the case of a spell) or is destroyed (in the case of a magic item). If detect magic is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
                              • Original Strength 'Faint'
                              -- Duration of Lingering Aura: [[1d6]] rounds
@@ -2761,15 +2756,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • Original Strength 'Overwhelming':
                              -- Duration of Lingering Aura: [[1d6]] days
 
-                             [Outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type) and [elementals](https://www.dandwiki.com/wiki/SRD:Elemental_Type) are not magical in themselves, but if they are summoned, the conjuration spell registers.
-                             Each round, you can turn to *detect magic* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.
-                             *Detect magic* can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
-          component_details:null
+                             Outsiders and elementals are not magical in themselves, but if they are summoned, the conjuration spell registers.
+                             Each round, you can turn to detect magic in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.
+                             Detect magic can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`
         },
         'detect poison': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Poison',
+          ref:              'http://www.d20srd.org/srd/spells/detectPoison.htm',
           school:           'Divination',
-          level:            'Asn 1, Clr 0, Drd 0, Pal 1, Rgr 1, Sor/Wiz 0',
+          level:            'APeace 0, Arc 0, Asn 1, Blg 0, BVal 1, ChamGwyn 1, Clr 0, Drd 0, Hlr 0, Pal 1, Rgr 1, Shu 0, Sor/Wiz 0, Wuj 0',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -2779,13 +2773,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You determine whether a creature, object, or area has been poisoned or is poisonous. You can determine the exact type of poison with a DC 20 Wisdom check. A character with the Craft (alchemy) skill may try a DC 20 Craft (alchemy) check if the Wisdom check fails, or may try the Craft (alchemy) check prior to the Wisdom check.
-                             The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
-          component_details:null
+                             The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`
         },
         'detect scrying': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Scrying',
+          ref:              'http://www.d20srd.org/srd/spells/detectScrying.htm',
           school:           'Divination',
-          level:            'Brd 4, Sor/Wiz 4',
+          level:            'Arc 4, Brd 4, HB 4, Planning 5, Shu 4, Sor/Wiz 4, Wealth 4',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '40 ft.',
@@ -2794,14 +2787,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '24 hours',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `You immediately become aware of any attempt to observe you by means of a [divination (scrying)](https://www.dandwiki.com/wiki/SRD:Scrying_Subschool) spell or effect. The spell’s area radiates from you and moves as you move. You know the location of every magical sensor within the spell’s area.
+          text:             `You immediately become aware of any attempt to observe you by means of a divination (scrying) spell or effect. The spell’s area radiates from you and moves as you move. You know the location of every magical sensor within the spell’s area.
                              If the scrying attempt originates within the area, you also know its location; otherwise, you and the scrier immediately make opposed caster level checks (1d20 + caster level). If you at least match the scrier’s result, you get a visual image of the scrier and an accurate sense of his or her direction and distance from you.`,
           component_details:'Material Component: A small piece of mirror and a miniature brass hearing trumpet.'
         },
         'detect secret doors': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Secret_Doors',
+          ref:              'http://www.d20srd.org/srd/spells/detectSecretDoors.htm',
           school:           'Divination',
-          level:            'Brd 1, Knowledge 1, Sor/Wiz 1',
+          level:            'Beguiler 1, Brd 1, Cavern 1, Hoard 1, Knowledge 1, Sor/Wiz 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '60 ft.',
@@ -2813,9 +2806,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `You can detect secret doors, compartments, caches, and so forth. Only passages, doors, or openings that have been specifically constructed to escape detection are detected by this spell. The amount of information revealed depends on how long you study a particular area or subject.
                              *1st Round:* Presence or absence of secret doors.
                              *2nd Round:* Number of secret doors and the location of each. If an aura is outside your line of sight, then you discern its direction but not its exact location.
-                             *Each Additional Round:* The mechanism or trigger for one particular secret portal closely examined by you. Each round, you can turn to *detect secret doors* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
-          component_details:null
+                             *Each Additional Round:* The mechanism or trigger for one particular secret portal closely examined by you. Each round, you can turn to detect secret doors in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`
         },
+        //BEGIN REVIEW MARKER
         'detect snares and pits': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Snares_and_Pits',
           school:           'Divination',
