@@ -2808,11 +2808,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              *2nd Round:* Number of secret doors and the location of each. If an aura is outside your line of sight, then you discern its direction but not its exact location.
                              *Each Additional Round:* The mechanism or trigger for one particular secret portal closely examined by you. Each round, you can turn to detect secret doors in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`
         },
-        //BEGIN REVIEW MARKER
         'detect snares and pits': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Snares_and_Pits',
+          ref:              'http://www.d20srd.org/srd/spells/detectSnaresAndPits.htm',
           school:           'Divination',
-          level:            'Drd 1, Rgr 1',
+          level:            'Arc 1, BVal 1, Drd 1, Rgr 1, Shu 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '60 ft.',
@@ -2821,19 +2820,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Concentration, up to [[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `You can detect simple pits, deadfalls, and snares as well as mechanical [traps](https://www.dandwiki.com/wiki/SRD:Traps) constructed of natural materials. The spell does not detect complex traps, including trapdoor traps.
-                             *Detect snares and pits* does detect certain natural hazards—quicksand (a snare), a sinkhole (a pit), or unsafe walls of natural rock (a deadfall). However, it does not reveal other potentially dangerous conditions. The spell does not detect magic traps (except those that operate by pit, deadfall, or snaring; see the spell [snare](https://www.dandwiki.com/wiki/SRD:Snare)), nor mechanically complex ones, nor those that have been rendered safe or inactive.
+          text:             `You can detect simple pits, deadfalls, and snares as well as mechanical traps constructed of natural materials. The spell does not detect complex traps, including trapdoor traps.
+                             Detect snares and pits does detect certain natural hazards—quicksand (a snare), a sinkhole (a pit), or unsafe walls of natural rock (a deadfall). However, it does not reveal other potentially dangerous conditions. The spell does not detect magic traps (except those that operate by pit, deadfall, or snaring; see the spell snare), nor mechanically complex ones, nor those that have been rendered safe or inactive.
                              The amount of information revealed depends on how long you study a particular area.
                              *1st Round:* Presence or absence of hazards.
                              *2nd Round:* Number of hazards and the location of each. If a hazard is outside your line of sight, then you discern its direction but not its exact location.
                              *Each Additional Round:* The general type and trigger for one particular hazard closely examined by you.
-                             Each round, you can turn to *detect snares* and pits in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
-          component_details:null
+                             Each round, you can turn to *detect snares* and pits in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`
         },
         'detect thoughts': {
           ref:              'http://www.d20srd.org/srd/spells/detectThoughts.htm',
           school:           'Divination [Mind-Affecting]',
-          level:            'Brd 2, Knowledge 2, Mind 2, Sor/Wiz 2',
+          level:            'Arc 2, Beguiler 2, Brd 2, EmBarachiel 2, Inquisition 3, Knowledge 2, Mental 2, MH 2, Mind 2, Shu 2, Sor/Wiz 2, Truth 1, Wuj 2',
           components:       'V, S, F/DF',
           casting_time:     '1 standard action',
           range:            '60 ft.',
@@ -2845,14 +2843,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `You detect surface thoughts. The amount of information revealed depends on how long you study a particular area or subject.
                              *1st Round:* Presence or absence of thoughts (from conscious creatures with Intelligence scores of 1 or higher).
                              *2nd Round:* Number of thinking minds and the Intelligence score of each. If the highest Intelligence is 26 or higher (and at least 10 points higher than your own Intelligence score), you are stunned for 1 round and the spell ends. This spell does not let you determine the location of the thinking minds if you can’t see the creatures whose thoughts you are detecting.
-                             *3rd Round:* Surface thoughts of any mind in the area. A target’s Will save prevents you from reading its thoughts, and you must cast detect thoughts again to have another chance. Creatures of [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type) intelligence (Int 1 or 2) have simple, instinctual thoughts that you can pick up.
-                             Each round, you can turn to *detect thoughts* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
+                             *3rd Round:* Surface thoughts of any mind in the area. A target’s Will save prevents you from reading its thoughts, and you must cast detect thoughts again to have another chance. Creatures of animal intelligence (Int 1 or 2) have simple, instinctual thoughts that you can pick up.
+                             Each round, you can turn to detect thoughts in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
           component_details:'Arcane Focus: A copper piece.'
         },
         'detect undead': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Detect_Undead',
+          ref:              'http://www.d20srd.org/srd/spells/detectUndead.htm',
           school:           'Divination',
-          level:            'Clr 1, Pal 1, Sor/Wiz 1',
+          level:            'APeace 1, Arc 1, Blg 1, ChamGwyn 1, Clr 1, Deathless 1, Pal 1, Sor/Wiz 1, Undeath 1',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            '60 ft.',
@@ -2861,39 +2859,33 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Concentration, up to [[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `You can detect the aura that surrounds [undead creatures](https://www.dandwiki.com/wiki/SRD:Undead_Type). The amount of information revealed depends on how long you study a particular area.
-                             *1st Round:* Presence or absence of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) auras.
-                             *2nd Round:* Number of [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) auras in the area and the strength of the strongest [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) aura present. If you are of good alignment, and the strongest [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) aura’s strength is overwhelming (see below), and the creature has HD of at least twice your character level, you are stunned for 1 round and the spell ends.
-                             *3rd Round:* The strength and location of each [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) aura. If an aura is outside your line of sight, then you discern its direction but not its exact location.
-                             *Aura Strength:* The strength of an [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) aura is determined by the HD of the [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature, as given on the following table:
+          text:             `You can detect the aura that surrounds undead creatures. The amount of information revealed depends on how long you study a particular area.
+                             *1st Round:* Presence or absence of undead auras.
+                             *2nd Round:* Number of undead auras in the area and the strength of the strongest undead aura present. If you are of good alignment, and the strongest undead aura’s strength is overwhelming (see below), and the creature has HD of at least twice your character level, you are stunned for 1 round and the spell ends.
+                             *3rd Round:* The strength and location of each undead aura. If an aura is outside your line of sight, then you discern its direction but not its exact location.
+                             *Aura Strength:* The strength of an undead aura is determined by the HD of the undead creature, as given on the following table:
 
-                             • 1 or lower HD
-                             -- Faint
-                             • 2-4 HD
-                             -- Moderate
-                             • 5-10 HD
-                             -- Strong
-                             • 11 or higher HD
-                             -- OVerwhelming
+                             ◦ **HD**: Strength
+                             • **1 or lower**: Faint
+                             • **2-4**: Moderate
+                             • **5-10**: Strong
+                             • **11 or higher**: Overwhelming
 
-                             *Lingering Aura:* An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) aura lingers after its original source is destroyed. If *detect undead* is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
+                             *Lingering Aura:* An undead aura lingers after its original source is destroyed. If detect undead is cast and directed at such a location, the spell indicates an aura strength of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original power:
 
-                             • Original Strength 'Faint'
-                             -- Duration of Lingering Aura: [[1d6]] rounds
-                             • Original Strength 'Moderate'
-                             -- Duration of Lingering Aura: [[1d6]] minutes
-                             • Original Strength 'Strong'
-                             -- Duration of Lingering Aura: [[10*1d6]] minutess
-                             • Original Strength 'Overwhelming'
-                             -- Duration of Lingering Aura: [[1d6]] days
+                             ◦ **Original Strength**: Duration of Lingering Aura
+                             • **Faint**: ‹1d6|[[1d6]] rounds› rounds
+                             • **Moderate**: ‹1d6|[[1d6]] minutes› minutes
+                             • **Strong**: ‹1d6×10|[[10*1d6]] minutes› minutes
+                             • **Overwhelming**: ‹1d6|[[1d6]] days› days
 
-                             Each round, you can turn to *detect undead* in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
+                             Each round, you can turn to detect undead in a new area. The spell can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`,
           component_details:'Arcane Material Component: A bit of earth from a grave.'
         },
         'dictum': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dictum',
+          ref:              'http://www.d20srd.org/srd/spells/dictum.htm',
           school:           'Evocation [Lawful, Sonic]',
-          level:            'Clr 7, Law 7',
+          level:            'Arc 7, Clr 7, Dwarf 7, Inquisition 7, Law 7',
           components:       'V',
           casting_time:     '1 standard action',
           range:            '40 ft.',
@@ -2902,30 +2894,35 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None or Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `Any nonlawful creature within the area of a *dictum* spell suffers the following ill effects.
+          text:             `Any nonlawful creature within the area of a dictum spell suffers the following ill effects.
 
-                             • HD Equal to caster level
-                             -- Deafened
-                             • HD Up to caster level - 1
-                             -- [Slowed](http://www.d20srd.org/srd/spells/slow.htm),deafened
-                             • HD Up to caster level - 5
-                             -- [Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed),[slowed](http://www.d20srd.org/srd/spells/slow.htm),deafened
-                             • HD Up to caster level - 10
-                             -- Killed,[paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed),[slowed](http://www.d20srd.org/srd/spells/slow.htm),deafened
+                             ◦ **HD**: Effect
+                             • **Equal to caster level**: Deafened
+                             • **Up to caster level - 1**: Slowed,deafened
+                             • **Up to caster level - 5**: Paralyzed,slowed,deafened
+                             • **Up to caster level - 10**: Killed,paralyzed,slowed,deafened
 
                              The effects are cumulative and concurrent. No saving throw is allowed against these effects.
-                             *Deafened:* The creature is deafened for [[1d4]] rounds.
-                             *[Slowed](http://www.d20srd.org/srd/spells/slow.htm):* The creature is *slowed*, as by the [slow](http://www.d20srd.org/srd/spells/slow.htm) spell, for [[2d4]] rounds.
-                             *[Paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed):* The creature is [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) and helpless for [[1d10]] minutes.
-                             *Killed:* Living creatures die. [Undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creatures are destroyed.
-                             Furthermore, if you are on your home plane when you cast this spell, nonlawful extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the *dictum*. The banishment effect allows a Will save (at a -4 penalty) to negate.
-                             Creatures whose HD exceed your caster level are unaffected by *dictum*.`,
-          component_details:null
+
+                             *Deafened*
+                             The creature is deafened for [[1d4]] rounds.
+
+                             *Slowed*
+                             The creature is slowed, as by the [slow](http://www.d20srd.org/srd/spells/slow.htm) spell, for [[2d4]] rounds.
+
+                             *Paralyzed*
+                             The creature is paralyzed and helpless for [[1d10]] minutes.
+
+                             *Killed*
+                             Living creatures die. Undead creatures are destroyed.
+
+                             Furthermore, if you are on your home plane when you cast this spell, nonlawful extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the dictum. The banishment effect allows a Will save (at a -4 penalty) to negate.
+                             Creatures whose HD exceed your caster level are unaffected by dictum.`
         },
         'dimension door': {
           ref:              'http://www.d20srd.org/srd/spells/dimensionDoor.htm',
           school:           'Conjuration (Teleportation)',
-          level:            'Asn 4, Brd 4, Sor/Wiz 4, Travel 4',
+          level:            'Arc 5, Asn 4, Brd 4, Duskblade 4, HB 4, Hoard 4, Portal 4, Portal (alt) 4, Shu 5, Slayer of Domiel 4, Sor/Wiz 4, Travel 4, Wuj 4',
           components:       'V',
           casting_time:     '1 standard action',
           range:            '_long_',
@@ -2936,13 +2933,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'No and Yes (object)',
           text:             `You instantly transfer yourself from your current location to any other spot within range. You always arrive at exactly the spot desired—whether by simply visualizing the area or by stating direction. After using this spell, you can’t take any other actions until your next turn. You can bring along objects as long as their weight doesn’t exceed your maximum load. You may also bring one additional willing Medium or smaller creature (carrying gear or objects up to its maximum load) or its equivalent per three caster levels. A Large creature counts as two Medium creatures, a Huge creature counts as two Large creatures, and so forth. All creatures to be transported must be in contact with one another, and at least one of those creatures must be in contact with you.
                              If you arrive in a place that is already occupied by a solid body, you and each creature traveling with you take [[1d6]] points of damage and are shunted to a random open space on a suitable surface within 100 feet of the intended location.
-                             If there is no free space within 100 feet, you and each creature traveling with you take an additional [[2d6]] points of damage and are shunted to a free space within 1,000 feet. If there is no free space within 1,000 feet, you and each creature travelling with you take an additional [[4d6]] points of damage and the spell simply fails.`,
-          component_details:null
+                             If there is no free space within 100 feet, you and each creature traveling with you take an additional [[2d6]] points of damage and are shunted to a free space within 1,000 feet. If there is no free space within 1,000 feet, you and each creature travelling with you take an additional [[4d6]] points of damage and the spell simply fails.`
         },
         'dimensional anchor': {
           ref:              'http://www.d20srd.org/srd/spells/dimensionalAnchor.htm',
           school:           'Abjuration',
-          level:            'Clr 4, Sor/Wiz 4',
+          level:            'Arc 4, Clr 4, Dem 3, Demonic 4, KotC 4, Portal 3, Shu 4, Sor/Wiz 4',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -2951,14 +2947,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'Yes (object)',
-          text:             `A green ray springs from your outstretched hand. You must make a ranged touch attack to hit the target. Any creature or object struck by the ray is covered with a shimmering emerald field that completely blocks extradimensional travel. Forms of movement barred by a *dimensional anchor* include [astral projection](http://www.d20srd.org/srd/spells/astralProjection.htm), [blink](http://www.d20srd.org/srd/spells/blink.htm), [dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm), [ethereal jaunt](https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt), [etherealness](http://www.d20srd.org/srd/spells/etherealness.htm), [gate](http://www.d20srd.org/srd/spells/gate.htm), [maze](https://www.dandwiki.com/wiki/SRD:Maze), [plane shift](http://www.d20srd.org/srd/spells/planeShift.htm), [shadow walk](http://www.d20srd.org/srd/spells/shadowWalk.htm), [teleport](http://www.d20srd.org/srd/spells/teleport.htm), and similar spell-like or psionic abilities. The spell also prevents the use of a [gate](http://www.d20srd.org/srd/spells/gate.htm) or [teleportation circle](http://www.d20srd.org/srd/spells/teleportationCircle.htm) for the duration of the spell.
-                             A *dimensional anchor* does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms. Also, *dimensional anchor* does not prevent summoned creatures from disappearing at the end of a summoning spell.`,
-          component_details:null
+          text:             `A green ray springs from your outstretched hand. You must make a ranged touch attack to hit the target. Any creature or object struck by the ray is covered with a shimmering emerald field that completely blocks extradimensional travel. Forms of movement barred by a dimensional anchor include [astral projection](http://www.d20srd.org/srd/spells/astralProjection.htm), [blink](http://www.d20srd.org/srd/spells/blink.htm), [dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm), [ethereal jaunt](http://www.d20srd.org/srd/spells/etherealJaunt.htm), [etherealness](http://www.d20srd.org/srd/spells/etherealness.htm), [gate](http://www.d20srd.org/srd/spells/gate.htm), [maze](http://www.d20srd.org/srd/spells/maze.htm), [plane shift](http://www.d20srd.org/srd/spells/planeShift.htm), [shadow walk](http://www.d20srd.org/srd/spells/shadowWalk.htm), [teleport](http://www.d20srd.org/srd/spells/teleport.htm), and similar spell-like or psionic abilities. The spell also prevents the use of a [gate](http://www.d20srd.org/srd/spells/gate.htm) or [teleportation circle](http://www.d20srd.org/srd/spells/teleportationCircle.htm) for the duration of the spell.
+                             A dimensional anchor does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms. Also, dimensional anchor does not prevent summoned creatures from disappearing at the end of a summoning spell.`
         },
         'dimensional lock': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dimensional_Lock',
+          ref:              'http://www.d20srd.org/srd/spells/maze.htm',
+          other_versions:   'Magic of Faerun on page 89, Tome and Blood on page 87',
           school:           'Abjuration',
-          level:            'Clr 8, Sor/Wiz 8',
+          level:            'Arc 8, Clr 8, Portal 8, Sor/Wiz 8',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -2967,14 +2963,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] days',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `You create a shimmering emerald barrier that completely blocks extradimensional travel. Forms of movement barred include [astral projection](http://www.d20srd.org/srd/spells/astralProjection.htm), [blink](http://www.d20srd.org/srd/spells/blink.htm), [dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm), [ethereal jaunt](https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt), [etherealness](http://www.d20srd.org/srd/spells/etherealness.htm), [gate](http://www.d20srd.org/srd/spells/gate.htm), [maze](https://www.dandwiki.com/wiki/SRD:Maze), [plane shift](http://www.d20srd.org/srd/spells/planeShift.htm), [shadow walk](http://www.d20srd.org/srd/spells/shadowWalk.htm), [teleport](http://www.d20srd.org/srd/spells/teleport.htm), and similar spell-like or psionic abilities. Once *dimensional lock* is in place, extradimensional travel into or out of the area is not possible.
-                             A *dimensional lock* does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms. Also, the spell does not prevent summoned creatures from disappearing at the end of a summoning spell.`,
-          component_details:null
+          text:             `You create a shimmering emerald barrier that completely blocks extradimensional travel. Forms of movement barred include [astral projection](http://www.d20srd.org/srd/spells/astralProjection.htm), [blink](http://www.d20srd.org/srd/spells/blink.htm), [dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm), [ethereal jaunt](http://www.d20srd.org/srd/spells/etherealJaunt.htm), [etherealness](http://www.d20srd.org/srd/spells/etherealness.htm), [gate](http://www.d20srd.org/srd/spells/gate.htm), [maze](http://www.d20srd.org/srd/spells/maze.htm), [plane shift](http://www.d20srd.org/srd/spells/planeShift.htm), [shadow walk](http://www.d20srd.org/srd/spells/shadowWalk.htm), [teleport](http://www.d20srd.org/srd/spells/teleport.htm), and similar spell-like or psionic abilities. Once dimensional lock is in place, extradimensional travel into or out of the area is not possible.
+                             A dimensional lock does not interfere with the movement of creatures already in ethereal or astral form when the spell is cast, nor does it block extradimensional perception or attack forms. Also, the spell does not prevent summoned creatures from disappearing at the end of a summoning spell.`
         },
         'diminish plants': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Diminish_Plants',
+          ref:              'http://www.d20srd.org/srd/spells/diminishPlants.htm',
           school:           'Transmutation',
-          level:            'Drd 3, Rgr 3',
+          level:            'Arc 3, Blg 3, Drd 3, Rgr 3',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'See text',
@@ -2984,19 +2979,23 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `This spell has two versions.
-                             *Prune Growth:* This version causes normal vegetation within [[400+(40*[[?{Casting Level}]])]] ft. to shrink to about one-third of their normal size, becoming untangled and less bushy. The affected vegetation appears to have been carefully pruned and trimmed.
+
+                             *Prune Growth*
+                             This version causes normal vegetation within [[400+(40*[[?{Casting Level}]])]] ft. to shrink to about one-third of their normal size, becoming untangled and less bushy. The affected vegetation appears to have been carefully pruned and trimmed.
                              At your option, the area can be a 100-foot-radius circle, a 150-foot-radius semicircle, or a 200-foot-radius quarter-circle.
                              You may also designate portions of the area that are not affected.
-                             *Stunt Growth:* This version targets normal plants within a range of 1/2 mile, reducing their potential productivity over the course of the following year to one third below normal.
-                             *Diminish plants* counters *plant growth*.
-                             This spell has no effect on [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) creatures.`,
-          component_details:null
+
+                             *Stunt Growth*
+                             This version targets normal plants within a range of 1/2 mile, reducing their potential productivity over the course of the following year to one third below normal.
+
+                             Diminish plants counters [plant growth](http://www.d20srd.org/srd/spells/plantGrowth.htm).
+                             This spell has no effect on plant creatures.`
         },
         //Epic Spell: dire winter
         'discern lies': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Discern_Lies',
+          ref:              'http://www.d20srd.org/srd/spells/discernLies.htm',
           school:           'Divination',
-          level:            'Clr 4, Mind 4, Nobility 4, Pal 3',
+          level:            'APeace 4, Arc 4, BVal 3, ChamGwyn 3, Clr 4, Drow 4, Inquisition 4, KotC 4, Mind 4, Nobility 4, Pal 3, Shu 4, Truth 4, Tyranny 3, Vassal of Bahamut 3',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -3006,13 +3005,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           spell_resistance: 'No',
           text:             `Each round, you concentrate on one subject, who must be within range. You know if the subject deliberately and knowingly speaks a lie by discerning disturbances in its aura caused by lying. The spell does not reveal the truth, uncover unintentional inaccuracies, or necessarily reveal evasions.
-                             Each round, you may concentrate on a different subject.`,
-          component_details:null
+                             Each round, you may concentrate on a different subject.`
         },
         'discern location': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Discern_Location',
+          ref:              'http://www.d20srd.org/srd/spells/discernLocation.htm',
           school:           'Divination',
-          level:            'Clr 8, Knowledge 8, Sor/Wiz 8',
+          level:            'APeace 8, Arc 8, Beguiler 8, Clr 8, Hlr 8, Knowledge 8, Oracle 8, Planning 8, Retribution 8, Shu 8, Sin-A 8, Sor/Wiz 8, Trade 9, Truth 8, Wealth 8',
           components:       'V, S, DF',
           casting_time:     '10 minutes',
           range:            'Unlimited',
@@ -3021,10 +3019,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `A *discern location* spell is among the most powerful means of locating creatures or objects. Nothing short of a [mind blank](https://www.dandwiki.com/wiki/SRD:Mind_Blank) spell or the direct intervention of a deity keeps you from learning the exact location of a single individual or object. *Discern location* circumvents normal means of protection from scrying or location. The spell reveals the name of the creature or object’s location (place, name, business name, building name, or the like), community, county (or similar political division), country, continent, and the plane of existence where the target lies.
-                             To find a creature with the spell, you must have seen the creature or have some item that once belonged to it. To find an object, you must have touched it at least once.`,
-          component_details:null
+          text:             `A discern location spell is among the most powerful means of locating creatures or objects. Nothing short of a [mind blank](http://www.d20srd.org/srd/spells/mindBlank.htm) spell or the direct intervention of a deity keeps you from learning the exact location of a single individual or object. Discern location circumvents normal means of protection from scrying or location. The spell reveals the name of the creature or object’s location (place, name, business name, building name, or the like), community, county (or similar political division), country, continent, and the plane of existence where the target lies.
+                             To find a creature with the spell, you must have seen the creature or have some item that once belonged to it. To find an object, you must have touched it at least once.`
         },
+        //BEGIN REVIEW MARKER
         'disguise self': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Disguise_Self',
           school:           'Illusion (Glamer)',
@@ -3596,7 +3594,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         //Epic Spell: eternal freedom
         'ethereal jaunt': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt',
+          ref:              'http://www.d20srd.org/srd/spells/etherealJaunt.htm',
           school:           'Transmutation',
           level:            'Clr 7, Sor/Wiz 7',
           components:       'V, S',
@@ -3623,7 +3621,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You and [[floor(?{Casting Level}/3)]] other touched creatures',
           duration:         '[[?{Casting Level}]] minutes (D)',
           spell_resistance: 'Yes',
-          text:             `This spell functions like [ethereal jaunt](https://www.dandwiki.com/wiki/SRD:Ethereal_Jaunt), except that you and other willing creatures joined by linked hands (along with their equipment) become ethereal. Besides yourself, you can bring one creature per three caster levels to the Ethereal Plane. Once ethereal, the subjects need not stay together.
+          text:             `This spell functions like [ethereal jaunt](http://www.d20srd.org/srd/spells/etherealJaunt.htm), except that you and other willing creatures joined by linked hands (along with their equipment) become ethereal. Besides yourself, you can bring one creature per three caster levels to the Ethereal Plane. Once ethereal, the subjects need not stay together.
                              When the spell expires, all affected creatures on the [Ethereal Plane](https://www.dandwiki.com/wiki/SRD:Ethereal_Plane) return to material existence.`,
           component_details:null
         },
@@ -3819,8 +3817,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None or Will negates (harmless)',
           spell_resistance: 'No or Yes (harmless)',
-          text:             `The recipient of this spell can find the shortest, most direct physical route to a specified destination, be it the way into or out of a locale. The locale can be outdoors, underground, or even inside a [maze](https://www.dandwiki.com/wiki/SRD:Maze) spell. *Find the path* works with respect to locations, not objects or creatures at a locale. The location must be on the same plane as you are at the time of casting.
-                             The spell enables the subject to sense the correct direction that will eventually lead it to its destination, indicating at appropriate times the exact path to follow or physical actions to take. For example, the spell enables the subject to sense trip wires or the proper word to bypass a [glyph of warding](https://www.dandwiki.com/wiki/SRD:Glyph_of_Warding). The spell ends when the destination is reached or the duration expires, whichever comes first. *Find the path* can be used to remove the subject and its companions from the effect of a [maze](https://www.dandwiki.com/wiki/SRD:Maze) spell in a single round.
+          text:             `The recipient of this spell can find the shortest, most direct physical route to a specified destination, be it the way into or out of a locale. The locale can be outdoors, underground, or even inside a [maze](http://www.d20srd.org/srd/spells/maze.htm) spell. *Find the path* works with respect to locations, not objects or creatures at a locale. The location must be on the same plane as you are at the time of casting.
+                             The spell enables the subject to sense the correct direction that will eventually lead it to its destination, indicating at appropriate times the exact path to follow or physical actions to take. For example, the spell enables the subject to sense trip wires or the proper word to bypass a [glyph of warding](https://www.dandwiki.com/wiki/SRD:Glyph_of_Warding). The spell ends when the destination is reached or the duration expires, whichever comes first. *Find the path* can be used to remove the subject and its companions from the effect of a [maze](http://www.d20srd.org/srd/spells/maze.htm) spell in a single round.
                              This divination is keyed to the recipient, not its companions, and its effect does not predict or allow for the actions of creatures (including guardians).`,
           component_details:'Focus: A set of divination counters of the sort you favor.'
         },
@@ -4170,7 +4168,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The subject is freed from spells and effects that restrict its movement, including [binding](http://www.d20srd.org/srd/spells/binding.htm), [entangle](https://www.dandwiki.com/wiki/SRD:Entangle), [grappling](https://www.dandwiki.com/wiki/SRD:Grapple), [imprisonment](https://www.dandwiki.com/wiki/SRD:Imprisonment), [maze](https://www.dandwiki.com/wiki/SRD:Maze), [paralysis](https://www.dandwiki.com/wiki/SRD:Paralysis), [petrification](https://www.dandwiki.com/wiki/SRD:Flesh_to_Stone), [pinning](https://www.dandwiki.com/wiki/SRD:Grapple), [sleep](https://www.dandwiki.com/wiki/SRD:Sleep), [slow](http://www.d20srd.org/srd/spells/slow.htm), stunning, [temporal stasis](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis), and [web](https://www.dandwiki.com/wiki/SRD:Web). To free a creature from *imprisonment* or *maze*, you must know its name and background, and you must cast this spell at the spot where it was entombed or banished into the *maze*.`,
+          text:             `The subject is freed from spells and effects that restrict its movement, including [binding](http://www.d20srd.org/srd/spells/binding.htm), [entangle](https://www.dandwiki.com/wiki/SRD:Entangle), [grappling](https://www.dandwiki.com/wiki/SRD:Grapple), [imprisonment](https://www.dandwiki.com/wiki/SRD:Imprisonment), [maze](http://www.d20srd.org/srd/spells/maze.htm), [paralysis](https://www.dandwiki.com/wiki/SRD:Paralysis), [petrification](https://www.dandwiki.com/wiki/SRD:Flesh_to_Stone), [pinning](https://www.dandwiki.com/wiki/SRD:Grapple), [sleep](https://www.dandwiki.com/wiki/SRD:Sleep), [slow](http://www.d20srd.org/srd/spells/slow.htm), stunning, [temporal stasis](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis), and [web](https://www.dandwiki.com/wiki/SRD:Web). To free a creature from *imprisonment* or *maze*, you must know its name and background, and you must cast this spell at the spot where it was entombed or banished into the *maze*.`,
           component_details:null
         },
         'freedom of movement': {
@@ -4995,7 +4993,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Second, all Charisma checks made to turn [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) gain a +4 sacred bonus, and Charisma checks to command [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) take a -4 penalty. Spell resistance does not apply to this effect. (This provision does not apply to the druid version of the spell.)
                              Third, any dead body interred in a *hallowed* site cannot be [turned](https://www.dandwiki.com/wiki/SRD:Turned) into an undead creature.
                              Finally, you may choose to fix a single spell effect to the *hallowed* site. The spell effect lasts for one year and functions throughout the entire site, regardless of the normal duration and area or effect. You may designate whether the effect applies to all creatures, creatures who share your faith or alignment, or creatures who adhere to another faith or alignment. At the end of the year, the chosen effect lapses, but it can be renewed or replaced simply by casting *hallow* again.
-                             Spell effects that may be tied to a *hallowed* site include [aid](https://www.dandwiki.com/wiki/SRD:Aid), [bane](http://www.d20srd.org/srd/spells/bane.htm), [bless](http://www.d20srd.org/srd/spells/bless.htm), [cause fear](http://www.d20srd.org/srd/spells/causeFear.htm), [darkness](http://www.d20srd.org/srd/spells/darkness.htm), [daylight](http://www.d20srd.org/srd/spells/daylight.htm), [death ward](http://www.d20srd.org/srd/spells/deathWard.htm), [deeper darkness](http://www.d20srd.org/srd/spells/deeperDarkness.htm), [detect evil](https://www.dandwiki.com/wiki/SRD:Detect_Evil), [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm), [dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm), [discern lies](https://www.dandwiki.com/wiki/SRD:Discern_Lies), [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm), [endure elements](https://www.dandwiki.com/wiki/SRD:Endure_Elements), [freedom of movement](https://www.dandwiki.com/wiki/SRD:Freedom_of_Movement), [invisibility purge](https://www.dandwiki.com/wiki/SRD:Invisibility_Purge), [protection from energy](https://www.dandwiki.com/wiki/SRD:Protection_from_Energy), [remove fear](http://www.d20srd.org/srd/spells/removeFear.htm), [resist energy](https://www.dandwiki.com/wiki/SRD:Resist_Energy), [silence](http://www.d20srd.org/srd/spells/silence.htm), [tongues](https://www.dandwiki.com/wiki/SRD:Tongues), and [zone of truth](https://www.dandwiki.com/wiki/SRD:Zone_of_Truth). Saving throws and spell resistance might apply to these spells’ effects. (See the individual spell descriptions for details.)
+                             Spell effects that may be tied to a *hallowed* site include [aid](https://www.dandwiki.com/wiki/SRD:Aid), [bane](http://www.d20srd.org/srd/spells/bane.htm), [bless](http://www.d20srd.org/srd/spells/bless.htm), [cause fear](http://www.d20srd.org/srd/spells/causeFear.htm), [darkness](http://www.d20srd.org/srd/spells/darkness.htm), [daylight](http://www.d20srd.org/srd/spells/daylight.htm), [death ward](http://www.d20srd.org/srd/spells/deathWard.htm), [deeper darkness](http://www.d20srd.org/srd/spells/deeperDarkness.htm), [detect evil](https://www.dandwiki.com/wiki/SRD:Detect_Evil), [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm), [dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm), [discern lies](http://www.d20srd.org/srd/spells/discernLies.htm), [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm), [endure elements](https://www.dandwiki.com/wiki/SRD:Endure_Elements), [freedom of movement](https://www.dandwiki.com/wiki/SRD:Freedom_of_Movement), [invisibility purge](https://www.dandwiki.com/wiki/SRD:Invisibility_Purge), [protection from energy](https://www.dandwiki.com/wiki/SRD:Protection_from_Energy), [remove fear](http://www.d20srd.org/srd/spells/removeFear.htm), [resist energy](https://www.dandwiki.com/wiki/SRD:Resist_Energy), [silence](http://www.d20srd.org/srd/spells/silence.htm), [tongues](https://www.dandwiki.com/wiki/SRD:Tongues), and [zone of truth](https://www.dandwiki.com/wiki/SRD:Zone_of_Truth). Saving throws and spell resistance might apply to these spells’ effects. (See the individual spell descriptions for details.)
                              An area can receive only one *hallow* spell (and its associated spell effect) at a time. Hallow counters but does not dispel [unhallow](https://www.dandwiki.com/wiki/SRD:Unhallow).`,
           component_details:'Material Component: Herbs, oils, and incense worth at least 1,000 gp, plus 1,000 gp per level of the spell to be included in the *hallowed* area.'
         },
@@ -5561,7 +5559,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `When you cast *imprisonment* and touch a creature, it is entombed in a state of suspended animation (see the [temporal stasis](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis) spell) in a small sphere far beneath the surface of the earth. The subject remains there unless a *freedom* spell is cast at the locale where the imprisonment took place. Magical search by a *crystal ball*, a [locate object](https://www.dandwiki.com/wiki/SRD:Locate_Object) spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but [discern location](https://www.dandwiki.com/wiki/SRD:Discern_Location) does. A [wish](http://www.d20srd.org/srd/spells/wish.htm) or [miracle](http://www.d20srd.org/srd/spells/miracle.htm) spell will not free the recipient, but will reveal where it is entombed. If you know the target’s name and some facts about its life, the target takes a -4 penalty on its save.`,
+          text:             `When you cast *imprisonment* and touch a creature, it is entombed in a state of suspended animation (see the [temporal stasis](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis) spell) in a small sphere far beneath the surface of the earth. The subject remains there unless a *freedom* spell is cast at the locale where the imprisonment took place. Magical search by a *crystal ball*, a [locate object](https://www.dandwiki.com/wiki/SRD:Locate_Object) spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but [discern location](http://www.d20srd.org/srd/spells/discernLocation.htm) does. A [wish](http://www.d20srd.org/srd/spells/wish.htm) or [miracle](http://www.d20srd.org/srd/spells/miracle.htm) spell will not free the recipient, but will reveal where it is entombed. If you know the target’s name and some facts about its life, the target takes a -4 penalty on its save.`,
           component_details:null
         },
         'incendiary cloud': {
@@ -11924,6 +11922,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'detect scrying':                  { recharge: 'General' },
         'detect secret doors':             { recharge: 'General' },
         'detect snares and pits':          { recharge: 'General' },
+        'detect thoughts':                 { recharge: 'General' },
         'detect undead':                   { recharge: 'General' },
         'dictum':                          { recharge: 'General' },
         'dimension door':                  { recharge: 'General' },
