@@ -11471,249 +11471,306 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Despite its appearance, a wall of thorns is not actually a living plant, and thus is unaffected by spells that affect plants.`
         },
         'warp wood': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/warpWood.htm',
+          school:           'Transmutation',
+          level:            'Arc 2, Blg 2, Drd 2, Wuj 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           '[[?{Casting Level}]] Small wooden objects, all within a 20-ft. radius',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates (object)',
+          spell_resistance: 'Yes (object)',
+          text:             `You cause wood to bend and warp, permanently destroying its straightness, form, and strength. A warped door springs open (or becomes stuck, requiring a Strength check to open, at your option). A boat or ship springs a leak. Warped ranged weapons are useless. A warped melee weapon causes a -4 penalty on attack rolls.
+                             You may warp [[?{Casting Level}]] Small or smaller objects or its equivalent. A Medium object counts as two Small objects, a Large object as four, a Huge object as eight, a Gargantuan object as sixteen, and a Colossal object as thirty-two.
+                             Alternatively, you can unwarp wood (effectively warping it back to normal) with this spell, straightening wood that has been warped by this spell or by other means. [Make whole](http://www.d20srd.org/srd/spells/makeWhole.htm), on the other hand, does no good in repairing a warped item.
+                             You can combine multiple consecutive warp wood spells to warp (or unwarp) an object that is too large for you to warp with a single spell.
+                             Until the object is completely warped, it suffers no ill effects.`
         },
         'water breathing': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/waterBreathing.htm',
+          school:           'Transmutation',
+          level:            'APeace 3, Arc 3, Clr 3, Drd 3, Ocean 3, Shu 3, Sor/Wiz 3, Water 3, Wuj 3',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Living creatures touched',
+          duration:         '[[2*?{Casting Level}]] hours; see text',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The transmuted creatures can breathe water freely. Divide the duration evenly among all the creatures you touch.
+                             The spell does not make creatures unable to breathe air.`,
+          component_details:'Arcane Material Component: A short reed or piece of straw.'
         },
         'water walk': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/waterWalk.htm',
+          school:           'Transmutation [Water]',
+          level:            'APeace 3, Arc 3, BVal 3, Clr 3, Rgr 3, Shu 3',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Targets',
+          target:           '[[?{Cating Level}]] touched creatures',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
+          saving_throw:     'Will negates (harmless)',
+          spell_resistance: 'Yes (harmless)',
+          text:             `The transmuted creatures can tread on any liquid as if it were firm ground. Mud, oil, snow, quicksand, running water, ice, and even lava can be traversed easily, since the subjects’ feet hover an inch or two above the surface. (Creatures crossing molten lava still take damage from the heat because they are near it.) The subjects can walk, run, charge, or otherwise move across the surface as if it were normal ground.
+                             If the spell is cast underwater (or while the subjects are partially or wholly submerged in whatever liquid they are in), the subjects are borne toward the surface at 60 feet per round until they can stand on it.`
         },
         'waves of exhaustion': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/wavesOfExhaustion.htm',
+          school:           'Necromancy',
+          level:            'Arc 8, Blg 8, Sin-S 8, Sor/Wiz 7, Suffering 7, Wmg 7',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped burst',
+          duration:         'Instantaneous',
+          saving_throw:     'No',
+          spell_resistance: 'Yes',
+          text:             `Waves of negative energy cause all living creatures in the spell’s area to become exhausted. This spell has no effect on a creature that is already exhausted.`
         },
         'waves of fatigue': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/wavesOfFatigue.htm',
+          school:           'Necromancy',
+          level:            'Arc 5, Blg 5, Duskblade 5, Necro 5, Sin-S 6, Sor/Wiz 5',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '30 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped burst',
+          duration:         'Instantaneous',
+          saving_throw:     'No',
+          spell_resistance: 'Yes',
+          text:             `Waves of negative energy render all living creatures in the spell’s area fatigued. This spell has no effect on a creature that is already fatigued.`
         },
         'web': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/web.htm',
+          school:           'Conjuration (Creation)',
+          level:            'Adp 2, Arc 2, MH 2, Sor/Wiz 2',
+          components:       'V, S, M',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'Webs in a 20-ft.-radius spread',
+          duration:         '[[10*?{Casting Level}]] minutes (D)',
+          saving_throw:     'Reflex negates; see text',
+          spell_resistance: 'No',
+          text:             `Web creates a many-layered mass of strong, sticky strands. These strands trap those caught in them. The strands are similar to spider webs but far larger and tougher. These masses must be anchored to two or more solid and diametrically opposed points or else the web collapses upon itself and disappears. Creatures caught within a web become entangled among the gluey fibers. Attacking a creature in a web won’t cause you to become entangled.
+                             Anyone in the effect’s area when the spell is cast must make a Reflex save. If this save succeeds, the creature is entangled, but not prevented from moving, though moving is more difficult than normal for being entangled (see below). If the save fails, the creature is entangled and can’t move from its space, but can break loose by spending 1 round and making a DC 20 Strength check or a DC 25 Escape Artist check. Once loose (either by making the initial Reflex save or a later Strength check or Escape Artist check), a creature remains entangled, but may move through the web very slowly. Each round devoted to moving allows the creature to make a new Strength check or Escape Artist check. The creature moves 5 feet for each full 5 points by which the check result exceeds 10.
+                             If you have at least 5 feet of web between you and an opponent, it provides cover. If you have at least 20 feet of web between you, it provides total cover.
+                             The strands of a web spell are flammable. A magic flaming sword can slash them away as easily as a hand brushes away cobwebs. Any fire can set the webs alight and burn away 5 square feet in 1 round. All creatures ‹within flaming webs|[[2d4]] points of fire damage› take 2d4 points of fire damage from the flames.
+                             Web can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell. A permanent web that is damaged (but not destroyed) regrows in 10 minutes.`,
+          component_details:'Material Component: A bit of spider web.'
         },
         'weird': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/weird.htm',
+          school:           'Illusion (Phantasm) [Fear, Mind-Affecting]',
+          level:            'Dream 9, Illusion 9, Madness 9, Mind 9, Sor/Wiz 9, Wmg 9',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Targets',
+          target:           'Any number of creatures, no two of which can be more than 30 ft. apart',
+          duration:         'Instantaneous',
+          saving_throw:     'Will disbelief (if interacted with), then Fortitude partial; see text',
+          spell_resistance: 'Yes',
+          text:             `This spell functions like [phantasmal killer](http://www.d20srd.org/srd/spells/phantasmalKiller.htm), except it can affect more than one creature. Only the affected creatures see the phantasmal creatures attacking them, though you see the attackers as shadowy shapes.
+                             If a subject’s Fortitude save succeeds, it still takes [[3d6]] points of damage and is stunned for 1 round. The subject also takes [[1d4]] points of temporary Strength damage.`
         },
         'whirlwind': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/whirlwind.htm',
+          school:           'Evocation [Air]',
+          level:            'Air 8, Arc 8, Drd 8, Shu 8, Storm 8, Weather 8, Wuj 8',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '_long_',
+          target_type:      'Effect',
+          target:           'Cyclone 10 ft. wide at base, 30 ft. wide at top, and 30 ft. tall',
+          duration:         '[[?{Casting Level}]] rounds (D)',
+          saving_throw:     'Reflex negates; see text',
+          spell_resistance: 'Yes',
+          text:             `This spell creates a powerful cyclone of raging wind that moves through the air, along the ground, or over water at a speed of 60 feet per round. You can concentrate on controlling the cyclone’s every movement or specify a simple program. Directing the cyclone’s movement or changing its programmed movement is a standard action for you. The cyclone always moves during your turn. If the cyclone exceeds the spell’s range, it moves in a random, uncontrolled fashion for ‹1d3|[[1d3]] rounds› rounds and then dissipates. (You can’t regain control of the cyclone, even if comes back within range.)
+                             Any Large or smaller creature that comes in contact with the spell effect must succeed on a Reflex save or take ‹3d6|[[3d6]] points of damage› points of damage. A Medium or smaller creature that fails its first save must succeed on a second one or be picked up bodily by the cyclone and held suspended in its powerful winds, taking ‹1d8|[[1d8]] points of damage› points of damage each round on your turn with no save allowed. You may direct the cyclone to eject any carried creatures whenever you wish, depositing the hapless souls wherever the cyclone happens to be when they are released.`
         },
         'whispering wind': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/whisperingWind.htm',
+          school:           'Transmutation [Air]',
+          level:            'Brd 2, EmBarachiel 2, Sor/Wiz 2, Wuj 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            '[[?{Casting Level}]] miles',
+          target_type:      'Area',
+          target:           '10-ft.-radius spread',
+          duration:         'No more than [[?{Casting Level}]] hours or until discharged (destination is reached)',
+          saving_throw:     'None',
+          spell_resistance: 'No',
+          text:             `You send a message or sound on the wind to a designated spot. The whispering wind travels to a specific location within range that is familiar to you, provided that it can find a way to the location. A whispering wind is as gentle and unnoticed as a zephyr until it reaches the location. It then delivers its whisper-quiet message or other sound. Note that the message is delivered regardless of whether anyone is present to hear it. The wind then dissipates.
+                             You can prepare the spell to bear a message of no more than twenty-five words, cause the spell to deliver other sounds for 1 round, or merely have the whispering wind seem to be a faint stirring of the air. You can likewise cause the whispering wind to move as slowly as 1 mile per hour or as quickly as 1 mile per 10 minutes.
+                             When the spell reaches its objective, it swirls and remains in place until the message is delivered. As with [magic mouth](http://www.d20srd.org/srd/spells/magicMouth.htm), whispering wind cannot speak verbal components, use command words, or activate magical effects.`
         },
         'wind walk': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/windWalk.htm',
+          school:           'Transmutation [Air]',
+          level:            'APeace 6, Arc 6, Celerity 6, Clr 6, Drd 7, Shu 6, Sky 6s',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Targets',
+          target:           'You and [[floor(?{Casting Level}/3)]] touched creatures',
+          duration:         '[[?{Casting Level}]] hours (D); see text',
+          saving_throw:     'No and Will negates (harmless)',
+          spell_resistance: 'No and Yes (harmless)',
+          text:             `You alter the substance of your body to a cloudlike vapor (as the [gaseous form](http://www.d20srd.org/srd/spells/gaseousForm.htm) spell) and move through the air, possibly at great speed. You can take other creatures with you, each of which acts independently.
+                             Normally, a wind walker flies at a speed of 10 feet with perfect maneuverability. If desired by the subject, a magical wind wafts a wind walker along at up to 600 feet per round (60 mph) with poor maneuverability. Wind walkers are not invisible but rather appear misty and translucent. If fully clothed in white, they are 80% likely to be mistaken for clouds, fog, vapors, or the like.
+                             A wind walker can regain its physical form as desired and later resume the cloud form. Each change to and from vaporous form takes 5 rounds, which counts toward the duration of the spell (as does any time spent in physical form). As noted above, you can dismiss the spell, and you can even dismiss it for individual wind walkers and not others.
+                             For the last minute of the spell’s duration, a wind walker in cloud form automatically descends 60 feet per round (for a total of 600 feet), though it may descend faster if it wishes. This descent serves as a warning that the spell is about to end.`
         },
         'wind wall': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/windWall.htm',
+          school:           'Evocation [Air]',
+          level:            'Air 2, APeace 3, Arc 3, Clr 3, Drd 3, HB 3, Rgr 2, Shu 3, Sor/Wiz 3',
+          components:       'V, S, M/DF',
+          casting_time:     '1 standard action',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'Wall up to [[10*?{Casting Level}]] ft. long and [[5*?{Casting Level}]] ft. high (S)',
+          duration:         '[[?{Casting Level}]] rounds',
+          saving_throw:     'None; see text',
+          spell_resistance: 'Yes',
+          text:             `An invisible vertical curtain of wind appears. It is 2 feet thick and of considerable strength. It is a roaring blast sufficient to blow away any bird smaller than an eagle, or tear papers and similar materials from unsuspecting hands. (A Reflex save allows a creature to maintain its grasp on an object.) Tiny and Small flying creatures cannot pass through the barrier. Loose materials and cloth garments fly upward when caught in a wind wall. Arrows and bolts are deflected upward and miss, while any other normal ranged weapon passing through the wall has a 30% miss chance. (A giant-thrown boulder, a siege engine projectile, and other massive ranged weapons are not affected.) Gases, most gaseous breath weapons, and creatures in gaseous form cannot pass through the wall (although it is no barrier to incorporeal creatures).
+                             While the wall must be vertical, you can shape it in any continuous path along the ground that you like. It is possible to create cylindrical or square wind walls to enclose specific points.`,
+          component_details:'Arcane Material Component: A tiny fan and a feather of exotic origin.'
         },
         'wish': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/wish.htm',
+          school:           'Universal',
+          level:            'Sin-E 9, Sor/Wiz 9, Wuj 9',
+          components:       'V, XP',
+          casting_time:     '1 standard action',
+          range:            'See text',
+          target_type:      'Target, Effect, or Area',
+          target:           'See text',
+          duration:         'See text',
+          saving_throw:     'See text',
+          spell_resistance: 'Yes',
+          text:             `Wish is the mightiest spell a wizard or sorcerer can cast. By simply speaking aloud, you can alter reality to better suit you.
+                             Even wish, however, has its limits.
+                             A wish can produce any one of the following effects.
+
+                             • Duplicate any wizard or sorcerer spell of 8th level or lower, provided the spell is not of a school prohibited to you.
+                             • Duplicate any other spell of 6th level or lower, provided the spell is not of a school prohibited to you.
+                             • Duplicate any wizard or sorcerer spell of 7th level or lower even if it’s of a prohibited school.
+                             • Duplicate any other spell of 5th level or lower even if it’s of a prohibited school.
+                             • Undo the harmful effects of many other spells, such as [geas/quest](http://www.d20srd.org/srd/spells/geasQuest.htm) or [insanity](http://www.d20srd.org/srd/spells/insanity.htm).
+                             • Create a nonmagical item of up to 25,000 gp in value.
+                             • Create a magic item, or add to the powers of an existing magic item.
+                             • Grant a creature a +1 inherent bonus to an ability score. Two to five wish spells cast in immediate succession can grant a creature a +2 to +5 inherent bonus to an ability score (two wishes for a +2 inherent bonus, three for a +3 inherent bonus, and so on). Inherent bonuses are instantaneous, so they cannot be dispelled. Note: An inherent bonus may not exceed +5 for a single ability score, and inherent bonuses to a particular ability score do not stack, so only the best one applies.
+                             • Remove injuries and afflictions. A single wish can aid one creature per caster level, and all subjects are cured of the same kind of affliction. For example, you could heal all the damage you and your companions have taken, or remove all poison effects from everyone in the party, but not do both with the same wish. A wish can never restore the experience point loss from casting a spell or the level or Constitution loss from being raised from the dead.
+                             • Revive the dead. A wish can bring a dead creature back to life by duplicating a [resurrection](http://www.d20srd.org/srd/spells/resurrection.htm) spell. A wish can revive a dead creature whose body has been destroyed, but the task takes two wishes, one to recreate the body and another to infuse the body with life again. A wish cannot prevent a character who was brought back to life from losing an experience level.
+                             • Transport travelers. A wish can lift one creature per caster level from anywhere on any plane and place those creatures anywhere else on any plane regardless of local conditions. An unwilling target gets a Will save to negate the effect, and spell resistance (if any) applies.
+                             • Undo misfortune. A wish can undo a single recent event. The wish forces a reroll of any roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. For example, a wish could undo an opponent’s successful save, a foe’s successful critical hit (either the attack roll or the critical roll), a friend’s failed save, and so on. The reroll, however, may be as bad as or worse than the original roll. An unwilling target gets a Will save to negate the effect, and spell resistance (if any) applies.
+
+                             You may try to use a wish to produce greater effects than these, but doing so is dangerous. (The wish may pervert your intent into a literal but undesirable fulfillment or only a partial fulfillment.)
+                             Duplicated spells allow saves and spell resistance as normal (but save DCs are for 9th-level spells).`,
+          component_details:`Material Component: When a wish duplicates a spell with a material component that costs more than 10,000 gp, you must provide that component.
+                             XP Cost: The minimum XP cost for casting wish is 5,000 XP. When a wish duplicates a spell that has an XP cost, you must pay 5,000 XP or that cost, whichever is more. When a wish creates or improves a magic item, you must pay twice the normal XP cost for crafting or improving the item, plus an additional 5,000 XP.`
         },
         'wood shape': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/woodShape.htm',
+          school:           'Transmutation',
+          level:            'Arc 2, Artifice 2, Craft 2, Drd 2, Wuj 2',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'One touched piece of wood no larger than [[10+?{Casting Level}]] cu. ft.',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates (object)',
+          spell_resistance: 'Yes (object)',
+          text:             `Wood shape enables you to form one existing piece of wood into any shape that suits your purpose. While it is possible to make crude coffers, doors, and so forth, fine detail isn’t possible. There is a 30% chance that any shape that includes moving parts simply doesn’t work.`
         },
         'word of chaos': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/wordOfChaos.htm',
+          school:           'Evocation [Chaotic, Sonic]',
+          level:            'Arc 7, Chaos 7, Clr 7, Drow 7',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            '40 ft.',
+          target_type:      'Area',
+          target:           'Nonchaotic creatures in a 40-ft.- radius spread centered on you',
+          duration:         'Instantaneous',
+          saving_throw:     'None or Will negates; see text',
+          spell_resistance: 'Yes',
+          text:             `Any nonchaotic creature within the area who hears the word of chaos suffers the following ill effects.
+                             The effects are cumulative and concurrent. No saving throw is allowed against these effects.
+
+                             ◦ **HD**: Effect
+                             • **Equal to caster level**: Deafened
+                             • **Up to caster level -1**: Stunned, deafened
+                             • **Up to caster level -5**: Confused, stunned, deafened
+                             • **Up to caster level -10**:  Killed, confused, stunned, deafened
+
+                             *Deafened*
+                             The creature is deafened for ‹1d4|[[1d4]] rounds› rounds.
+
+                             *Stunned*
+                             The creature is stunned for 1 round.
+
+                             *Confused*
+                             The creature is confused, as by the confusion spell, for ‹1d10|[[1d10]] minutes› minutes. This is a mind-affecting enchantment effect.
+
+                             *Killed*
+                             Living creatures die. Undead creatures are destroyed.
+                             Furthermore, if you are on your home plane when you cast this spell, nonchaotic extraplanar creatures within the area are instantly banished back to their home planes. Creatures so banished cannot return for at least 24 hours. This effect takes place regardless of whether the creatures hear the word of chaos. The banishment effect allows a Will save (at a -4 penalty) to negate.
+                             Creatures whose HD exceed your caster level are unaffected by word of chaos.`
         },
         'word of recall': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  ref:              '',
-        //  school:           '',
-        //  level:            '',
-        //  components:       '',
-        //  casting_time:     '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  spell_resistance: '',
-        //  text:             ``,
-        //  component_details:null
+          ref:              'http://www.d20srd.org/srd/spells/wordOfRecall.htm',
+          school:           'Conjuration (Teleportation)',
+          level:            'APeace 6, Arc 6, Clr 6, Drd 8, Halfling 8',
+          components:       'V',
+          casting_time:     '1 standard action',
+          range:            'Unlimited',
+          target_type:      'Target',
+          target:           'You and touched objects or other willing creatures',
+          duration:         'Instantaneous',
+          saving_throw:     'None or Will negates (harmless, object)',
+          spell_resistance: 'No or Yes (harmless, object)',
+          text:             `Word of recall teleports you instantly back to your sanctuary when the word is uttered. You must designate the sanctuary when you prepare the spell, and it must be a very familiar place. The actual point of arrival is a designated area no larger than 10 feet by 10 feet. You can be transported any distance within a plane but cannot travel between planes. You can transport, in addition to yourself, any objects you carry, as long as their weight doesn’t exceed your maximum load. You may also bring [[floor(?{Casting Level}/3)]] additional willing Medium or smaller creature (carrying gear or objects up to its maximum load) or its equivalent. A Large creature counts as two Medium creatures, a Huge creature counts as two Large creatures, and so forth. All creatures to be transported must be in contact with one another, and at least one of those creatures must be in contact with you. Exceeding this limit causes the spell to fail.
+                             An unwilling creature can’t be teleported by word of recall. Likewise, a creature’s Will save (or spell resistance) prevents items in its possession from being teleported. Unattended, nonmagical objects receive no saving throw.`
         },
-        // Spells that start with X
-        // Spells that start with Y
         // Spells that start with Z
-
+        'zone of silence': {
+          ref:              'http://www.d20srd.org/srd/spells/zoneOfSilence.htm',
+          other_versions:   'Song and Silence on page 96',
+          school:           'Illusion (Glamer)',
+          level:            'Beguiler 3, Brd 4',
+          components:       'V, S',
+          casting_time:     '1 round',
+          range:            'Personal',
+          target_type:      'Area',
+          target:           '5-ft.-radius emanation centered on you',
+          duration:         '[[?{Casting Level}]] hours (D)',
+          text:             `By casting zone of silence, you manipulate sound waves in your immediate vicinity so that you and those within the spell’s area can converse normally, yet no one outside can hear your voices or any other noises from within, including language-dependent or sonic spell effects. This effect is centered on you and moves with you. Anyone who enters the zone immediately becomes subject to its effects, but those who leave are no longer affected. Note, however, that a successful Spot check to read lips can still reveal what’s said inside a zone of silence.`
+        },
+        'zone of truth': {
+          ref:              'http://www.d20srd.org/srd/spells/zoneOfTruth.htm',
+          school:           'Enchantment (Compulsion) [Mind-Affecting]',
+          level:            'APeace 2, Arc 2, BVal 2, Clr 2, Commerce 2, Exalted Arcanist 2, Inquisition 2, Pal 2, Truth 2',
+          components:       'V, S, DF',
+          casting_time:     '1 standard action',
+          range:            '_close_',
+          target_type:      'Area',
+          target:           '20-ft.-radius emanation',
+          duration:         '[[?{Casting Level}]] minutes',
+          saving_throw:     'Will negates',
+          spell_resistance: 'Yes',
+          text:             `Creatures within the emanation area (or those who enter it) can’t speak any deliberate and intentional lies. Each potentially affected creature is allowed a save to avoid the effects when the spell is cast or when the creature first enters the emanation area. Affected creatures are aware of this enchantment. Therefore, they may avoid answering questions to which they would normally respond with a lie, or they may be evasive as long as they remain within the boundaries of the truth. Creatures who leave the area are free to speak as they choose.`
+        }
 
         //'': {
         //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
@@ -12349,21 +12406,24 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'wall of iron':                    { recharge: '12 hours' },
         'wall of stone':                   { recharge: '12 hours' },
         'wall of thorns':                  { recharge: 'General' },
-        'warp wood':                       { recharge: '' },
-        'water breathing':                 { recharge: '' },
-        'water walk':                      { recharge: '' },
-        'waves of exhaustion':             { recharge: '' },
-        'waves of fatigue':                { recharge: '' },
-        'web':                             { recharge: '' },
-        'weird':                           { recharge: '' },
-        'whirlwind':                       { recharge: '' },
-        'whispering wind':                 { recharge: '' },
-        'wind walk':                       { recharge: '' },
-        'wind wall':                       { recharge: '' },
-        'wish':                            { recharge: '' },
-        'wood shape':                      { recharge: '' },
-        'word of chaos':                   { recharge: '' },
-        'word of recall':                  { recharge: '' },
+        'warp wood':                       { recharge: '5 minutes' },
+        'water breathing':                 { recharge: '4 hours' },
+        'water walk':                      { recharge: '4 hours' },
+        'waves of exhaustion':             { recharge: 'General' },
+        'waves of fatigue':                { recharge: 'General' },
+        'web':                             { recharge: '5 minutes' },
+        'weird':                           { recharge: 'General' },
+        'whirlwind':                       { recharge: 'General' },
+        'whispering wind':                 { recharge: '30 minutes' },
+        'wind walk':                       { recharge: '24 hours' },
+        'wind wall':                       { recharge: 'General' },
+        'wish':                            { recharge: 'General' },
+        'wood shape':                      { recharge: '6 hours' },
+        'word of chaos':                   { recharge: 'General' },
+        'word of recall':                  { recharge: 'General' },
+        'zone of silence':                 { recharge: '24 hours' },
+        'zone of truth':                   { recharge: '30 minutes' },
+
         //RECHARGES
         //'': { recharge: 'General' },
       }
