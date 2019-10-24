@@ -709,7 +709,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         'Instantaneous',
           text:             `An augury can tell you whether a particular action will bring good or bad results for you in the immediate future.
-                             The base chance for receiving a meaningful reply is [[{[[70+?{Casting Level}]],90}kl1]]; this roll is made secretly. A question may be so straightforward that a successful result is automatic, or so vague as to have no chance of success. If the augury succeeds, you get one of four results:
+                             The base chance for receiving a meaningful reply is [[{[[70+?{Casting Level}]],90}kl1]]%; this roll is made secretly. A question may be so straightforward that a successful result is automatic, or so vague as to have no chance of success. If the augury succeeds, you get one of four results:
                              • Weal (if the action will probably bring good results).
                              • Woe (for bad results).
                              • Weal and woe (for both).
@@ -2074,7 +2074,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: A vial of tears.'
         },
         'crushing hand': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Crushing_Hand',
+          ref:              'http://www.d20srd.org/srd/spells/crushingHand.htm',
           school:           'Evocation [Force]',
           level:            'Force 9, Sor/Wiz 9, Strength 9',
           components:       'V, S, M, F/DF',
@@ -3022,11 +3022,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `A discern location spell is among the most powerful means of locating creatures or objects. Nothing short of a [mind blank](http://www.d20srd.org/srd/spells/mindBlank.htm) spell or the direct intervention of a deity keeps you from learning the exact location of a single individual or object. Discern location circumvents normal means of protection from scrying or location. The spell reveals the name of the creature or object’s location (place, name, business name, building name, or the like), community, county (or similar political division), country, continent, and the plane of existence where the target lies.
                              To find a creature with the spell, you must have seen the creature or have some item that once belonged to it. To find an object, you must have touched it at least once.`
         },
-        //BEGIN REVIEW MARKER
         'disguise self': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Disguise_Self',
+          ref:              'http://www.d20srd.org/srd/spells/disguiseSelf.htm',
           school:           'Illusion (Glamer)',
-          level:            'Asn 1, Brd 1, Sor/Wiz 1, Trickery 1',
+          level:            'Arc 1, Asn 1, Beguiler 1, Brd 1, HB 1, Shu 1, Sin-E 1, Slayer of Domiel 1, Sor/Wiz 1, Trickery 1, Wuj 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Personal',
@@ -3036,13 +3035,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `You make yourself—including clothing, armor, weapons, and equipment—look different. You can seem 1 foot shorter or taller, thin, fat, or in between. You cannot change your body type. Otherwise, the extent of the apparent change is up to you. You could add or obscure a minor feature or look like an entirely different person.
                              The spell does not provide the abilities or mannerisms of the chosen form, nor does it alter the perceived tactile (touch) or audible (sound) properties of you or your equipment.
                              If you use this spell to create a disguise, you get a +10 bonus on the Disguise check.
-                             A creature that interacts with the glamer gets a Will save to recognize it as an illusion.`,
-          component_details:null
+                             A creature that interacts with the glamer gets a Will save to recognize it as an illusion.`
         },
         'disintegrate': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Disintegrate',
+          ref:              'http://www.d20srd.org/srd/spells/disintegrate.htm',
           school:           'Transmutation',
-          level:            'Destruction 7, Sor/Wiz 6',
+          level:            'Arc 7, Destruction 7, Duskblade 5, Shu 7, Sor/Wiz 6, Wmg 6, Wuj 7',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -3051,8 +3049,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude partial (object)',
           spell_resistance: 'Yes',
-          text:             `A thin, green ray springs from your pointing finger. You must make a successful ranged touch attack to hit. Any creature struck by the ray takes 2d6 points of damage per caster level (to a maximum of 40d6): [[[[{2*?{Casting Level},40}kl1]]d6]]. Any creature reduced to 0 or fewer hit points by this spell is entirely disintegrated, leaving behind only a trace of fine dust. A disintegrated creature’s equipment is unaffected, though Mage's disjunction might.
-                             When used against an object, the ray simply disintegrates as much as one 10-foot cube of nonliving matter. Thus, the spell disintegrates only part of any very large object or structure targeted. The ray affects even objects constructed entirely of force, such as [forceful hand](http://www.d20srd.org/srd/spells/forcefulHand.htm) or a [wall of force](http://www.d20srd.org/srd/spells/wallOfForce.htm), but not magical effects such as a [globe of invulnerability](https://www.dandwiki.com/wiki/SRD:Globe_of_Invulnerability) or an antimagic field.
+          text:             `A thin, green ray springs from your pointing finger. You must make a successful ranged touch attack to hit. Any creature struck by the ray takes [[[[{2*?{Casting Level},40}kl1]]d6]] points of damage. Any creature reduced to 0 or fewer hit points by this spell is entirely disintegrated, leaving behind only a trace of fine dust. A disintegrated creature’s equipment is unaffected, though Mage's disjunction might.
+                             When used against an object, the ray simply disintegrates as much as one 10-foot cube of nonliving matter. Thus, the spell disintegrates only part of any very large object or structure targeted. The ray affects even objects constructed entirely of force, such as [forceful hand](http://www.d20srd.org/srd/spells/forcefulHand.htm) or a [wall of force](http://www.d20srd.org/srd/spells/wallOfForce.htm), but not magical effects such as a [globe of invulnerability](http://www.d20srd.org/srd/spells/globeOfInvulnerability.htm) or an [antimagic field](http://www.d20srd.org/srd/spells/antimagicField.htm).
                              A creature or object that makes a successful Fortitude save is partially affected, taking only [[5d6]] points of damage. If this damage reduces the creature or object to 0 or fewer hit points, it is entirely disintegrated.
                              Only the first creature or object struck can be affected; that is, the ray affects only one target per casting.`,
           component_details:'Arcane Material Component: A lodestone and a pinch of dust.'
@@ -3060,7 +3058,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'dismissal': {
           ref:              'http://www.d20srd.org/srd/spells/dismissal.htm',
           school:           'Abjuration',
-          level:            'Clr 4, Sor/Wiz 5',
+          level:            'APeace 4, Arc 4, Balance 4, Clr 4, Dem 4, Exorcism 4, KotC 4, Shu 4, Sor/Wiz 5, Wuj 4',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -3069,13 +3067,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `This spell forces an [extraplanar](https://www.dandwiki.com/wiki/SRD:Outsider_Type) creature back to its proper plane if it fails a special Will save (DC=spell’s save DC - creature’s HD + your caster level). If the spell is successful, the creature is instantly whisked away, but there is a 20% chance of actually sending the subject to a plane other than its own.`,
-          component_details:null
+          text:             `This spell forces an extraplanar creature back to its proper plane if it fails a special Will save (DC=spell’s save DC - creature’s HD + your caster level). If the spell is successful, the creature is instantly whisked away, but there is a 20% chance of actually sending the subject to a plane other than its own.`
         },
         'dispel chaos': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dispel_Chaos',
+          ref:              'http://www.d20srd.org/srd/spells/dispelChaos.htm',
           school:           'Abjuration [Lawful]',
-          level:            'Clr 5, Law 5, Pal 4',
+          level:            'Arc 5, Clr 5, Law 5, Pal 4',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -3085,15 +3082,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `You are surrounded by constant, blue, lawful energy.
-                             First, you gain a +4 deflection bonus to AC against attacks by [chaotic creatures](https://www.dandwiki.com/wiki/SRD:Chaotic_Creatures).
-                             Second, on making a successful melee touch attack against an [chaotic creature](https://www.dandwiki.com/wiki/SRD:Chaotic_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
-                             Third, with a touch you can automatically dispel any one enchantment spell cast by an chaotic creature or any one chaotic spell. *Exception:* Spells that can’t be dispelled by [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) also can’t be dispelled by *dispel chaos*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
-          component_details:null
+                             First, you gain a +4 deflection bonus to AC against attacks by chaotic creatures.
+                             Second, on making a successful melee touch attack against an chaotic creature from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
+                             Third, with a touch you can automatically dispel any one enchantment spell cast by an chaotic creature or any one chaotic spell. *Exception:* Spells that can’t be dispelled by [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) also can’t be dispelled by dispel chaos. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`
         },
         'dispel evil': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dispel_Evil',
+          ref:              'http://www.d20srd.org/srd/spells/dispelEvil.htm',
           school:           'Abjuration [Good]',
-          level:            'Clr 5, Good 5, Pal 4',
+          level:            'APeace 5, Arc 5, BVal 4, ChamGwyn 4, Clr 5, Exorcism 5, Good 5, KotC 4, Pal 4, Vassal of Bahamut 4',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -3103,15 +3099,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `Shimmering, white, holy energy surrounds you. This power has three effects.
-                             First, you gain a +4 deflection bonus to AC against attacks by [evil creatures](https://www.dandwiki.com/wiki/SRD:Evil_Creatures).
-                             Second, on making a successful melee touch attack against an [evil creature](https://www.dandwiki.com/wiki/SRD:Evil_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
-                             Third, with a touch you can automatically dispel any one enchantment spell cast by an evil creature or any one evil spell. *Exception:* Spells that can’t be dispelled by [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) also can’t be dispelled by *dispel evil*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
-          component_details:null
+                             First, you gain a +4 deflection bonus to AC against attacks by evil creatures.
+                             Second, on making a successful melee touch attack against an evil creature from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
+                             Third, with a touch you can automatically dispel any one enchantment spell cast by an evil creature or any one evil spell. *Exception:* Spells that can’t be dispelled by [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) also can’t be dispelled by dispel evil. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`
         },
         'dispel good': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dispel_Good',
+          ref:              'http://www.d20srd.org/srd/spells/detectGood.htm',
           school:           'Abjuration [Evil]',
-          level:            'Clr 5, Evil 5',
+          level:            'Arc 5, Clr 5, Evil 5',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -3121,15 +3116,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `You are surrounded by dark, wavering, unholy energy.
-                             First, you gain a +4 deflection bonus to AC against attacks by [good creatures](https://www.dandwiki.com/wiki/SRD:Good_Creatures).
-                             Second, on making a successful melee touch attack against an [good creature](https://www.dandwiki.com/wiki/SRD:Good_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
-                             Third, with a touch you can automatically dispel any one enchantment spell cast by an good creature or any one good spell. *Exception:* Spells that can’t be dispelled by [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) also can’t be dispelled by *dispel good*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
-          component_details:null
+                             First, you gain a +4 deflection bonus to AC against attacks by good creatures.
+                             Second, on making a successful melee touch attack against an good creature from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
+                             Third, with a touch you can automatically dispel any one enchantment spell cast by an good creature or any one good spell. *Exception:* Spells that can’t be dispelled by [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) also can’t be dispelled by dispel good. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`
         },
         'dispel law': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dispel_Law',
+          ref:              'http://www.d20srd.org/srd/spells/dispelLaw.htm',
           school:           'Abjuration [Chaotic]',
-          level:            'Chaos 5, Clr 5',
+          level:            'Arc 5, Chaos 5, Clr 5',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -3139,15 +3133,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'See text',
           spell_resistance: 'See text',
           text:             `You are surrounded by flickering, yellow, chaotic energy.
-                             First, you gain a +4 deflection bonus to AC against attacks by [lawful creatures](https://www.dandwiki.com/wiki/SRD:Lawful_Creatures).
-                             Second, on making a successful melee touch attack against an [lawful creature](https://www.dandwiki.com/wiki/SRD:Lawful_Creatures) from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
-                             Third, with a touch you can automatically dispel any one enchantment spell cast by an lawful creature or any one lawful spell. *Exception:* Spells that can’t be dispelled by [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) also can’t be dispelled by *dispel law*. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`,
-          component_details:null
+                             First, you gain a +4 deflection bonus to AC against attacks by lawful creatures.
+                             Second, on making a successful melee touch attack against an lawful creature from another plane, you can choose to drive that creature back to its home plane. The creature can negate the effects with a successful Will save (spell resistance applies). This use discharges and ends the spell.
+                             Third, with a touch you can automatically dispel any one enchantment spell cast by an lawful creature or any one lawful spell. *Exception:* Spells that can’t be dispelled by [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) also can’t be dispelled by dispel law. Saving throws and spell resistance do not apply to this effect. This use discharges and ends the spell.`
         },
         'dispel magic': {
           ref:              'http://www.d20srd.org/srd/spells/dispelMagic.htm',
           school:           'Abjuration',
-          level:            'Brd 3, Clr 3, Drd 4, Magic 3, Pal 3, Sor/Wiz 3',
+          level:            'APeace 3, Arc 3, Beguiler 3, Blg 3, Brd 3, ChamGwyn 3, Clr 3, Drd 4, Duskblade 4, EmBarachiel 3, HB 3, Hoard 3, KotC 3, Magic 3, Pal 3, Shu 3, Sor/Wiz 3, Wuj 3',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -3156,27 +3149,29 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `You can use *dispel magic* to end ongoing spells that have been cast on a creature or object, to temporarily suppress the magical abilities of a magic item, to end ongoing spells (or at least their effects) within an area, or to counter another spellcaster’s spell. A dispelled spell ends as if its duration had expired. Some spells, as detailed in their descriptions, can’t be defeated by *dispel magic*. *Dispel magic* can dispel (but not counter) spell-like effects just as it does spells.
-                             *Note:* The effect of a spell with an instantaneous duration can’t be dispelled, because the magical effect is already over before the *dispel magic* can take effect.
-                             You choose to use *dispel magic* in one of three ways: a targeted dispel, an area dispel, or a counterspell:
-                             *Targeted Dispel:* One object, creature, or spell is the target of the *dispel magic* spell. You make a dispel check (1d20 + your caster level, maximum +10) against the spell or against each ongoing spell currently in effect on the object or creature. The DC for this dispel check is 11 + the spell’s caster level. If you succeed on a particular check, that spell is dispelled; if you fail, that spell remains in effect.
-                             If you target an object or creature that is the effect of an ongoing spell (such as a monster summoned by [monster summoning](https://www.dandwiki.com/wiki/SRD:Summon_Monster_I)), you make a dispel check to end the spell that conjured the object or creature.
-                             If the object that you target is a magic item, you make a dispel check against the item’s caster level. If you succeed, all the item’s magical properties are suppressed for 1d4 rounds, after which the item recovers on its own. A suppressed item becomes nonmagical for the duration of the effect. An interdimensional interface (such as a *bag of holding*) is temporarily closed. A magic item’s physical properties are unchanged: A suppressed magic sword is still a sword (a masterwork sword, in fact). Artifacts and deities are unaffected by mortal magic such as this.
+          text:             `You can use dispel magic to end ongoing spells that have been cast on a creature or object, to temporarily suppress the magical abilities of a magic item, to end ongoing spells (or at least their effects) within an area, or to counter another spellcaster’s spell. A dispelled spell ends as if its duration had expired. Some spells, as detailed in their descriptions, can’t be defeated by dispel magic. Dispel magic can dispel (but not counter) spell-like effects just as it does spells.
+                             *Note:* The effect of a spell with an instantaneous duration can’t be dispelled, because the magical effect is already over before the dispel magic can take effect.
+                             You choose to use dispel magic in one of three ways: a targeted dispel, an area dispel, or a counterspell:
+
+                             *Targeted Dispel:* One object, creature, or spell is the target of the dispel magic spell. You make a dispel check (1d20 + your caster level, maximum +10) against the spell or against each ongoing spell currently in effect on the object or creature. The DC for this dispel check is 11 + the spell’s caster level. If you succeed on a particular check, that spell is dispelled; if you fail, that spell remains in effect.
+                             If you target an object or creature that is the effect of an ongoing spell (such as a monster summoned by monster summoning), you make a dispel check to end the spell that conjured the object or creature.
+                             If the object that you target is a magic item, you make a dispel check against the item’s caster level. If you succeed, all the item’s magical properties are suppressed for [[1d4]] rounds, after which the item recovers on its own. A suppressed item becomes nonmagical for the duration of the effect. An interdimensional interface (such as a bag of holding) is temporarily closed. A magic item’s physical properties are unchanged: A suppressed magic sword is still a sword (a masterwork sword, in fact). Artifacts and deities are unaffected by mortal magic such as this.
                              You automatically succeed on your dispel check against any spell that you cast yourself.
-                             *Area Dispel:* When *dispel magic* is used in this way, the spell affects everything within a 20-foot radius.
-                             For each creature within the area that is the subject of one or more spells, you make a dispel check against the spell with the highest caster level. If that check fails, you make dispel checks against progressively weaker spells until you dispel one spell (which discharges the *dispel magic* spell so far as that target is concerned) or until you fail all your checks. The creature’s magic items are not affected.
+
+                             *Area Dispel:* When dispel magic is used in this way, the spell affects everything within a 20-foot radius.
+                             For each creature within the area that is the subject of one or more spells, you make a dispel check against the spell with the highest caster level. If that check fails, you make dispel checks against progressively weaker spells until you dispel one spell (which discharges the dispel magic spell so far as that target is concerned) or until you fail all your checks. The creature’s magic items are not affected.
                              For each object within the area that is the target of one or more spells, you make dispel checks as with creatures. Magic items are not affected by an area dispel.
-                             For each ongoing area or effect spell whose point of origin is within the area of the *dispel magic* spell, you can make a dispel check to dispel the spell.
-                             For each ongoing spell whose area overlaps that of the *dispel magic* spell, you can make a dispel check to end the effect, but only within the overlapping area.
-                             If an object or creature that is the effect of an ongoing spell (such as a monster summoned by [monster summoning](https://www.dandwiki.com/wiki/SRD:Summon_Monster_I)) is in the area, you can make a dispel check to end the spell that conjured that object or creature (returning it whence it came) in addition to attempting to dispel spells targeting the creature or object.
+                             For each ongoing area or effect spell whose point of origin is within the area of the dispel magic spell, you can make a dispel check to dispel the spell.
+                             For each ongoing spell whose area overlaps that of the dispel magic spell, you can make a dispel check to end the effect, but only within the overlapping area.
+                             If an object or creature that is the effect of an ongoing spell (such as a monster summoned by monster summoning) is in the area, you can make a dispel check to end the spell that conjured that object or creature (returning it whence it came) in addition to attempting to dispel spells targeting the creature or object.
                              You may choose to automatically succeed on dispel checks against any spell that you have cast.
-                             *Counterspell:* When dispel magic* is used in this way, the spell targets a spellcaster and is cast as a counterspell. Unlike a true counterspell, however, *dispel magic* may not work; you must make a dispel check to counter the other spellcaster’s spell.`,
-          component_details:null
+
+                             *Counterspell:* When dispel magic is used in this way, the spell targets a spellcaster and is cast as a counterspell. Unlike a true counterspell, however, dispel magic may not work; you must make a dispel check to counter the other spellcaster’s spell.`
         },
         'displacement': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Displacement',
+          ref:              'http://www.d20srd.org/srd/spells/displacement.htm',
           school:           'Illusion (Glamer)',
-          level:            'Brd 3, Sor/Wiz 3',
+          level:            'Beguiler 3, Brd 3, Illusion 3, Sor/Wiz 3, Wuj 3',
           components:       'V, M',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -3185,13 +3180,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `The subject of this spell appears to be about 2 feet away from its true location. The creature benefits from a 50% miss chance as if it had [total concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment). However, unlike actual total concealment, *displacement* does not prevent enemies from targeting the creature normally. [True seeing](http://www.d20srd.org/srd/spells/trueSeeing.htm) reveals its true location.`,
+          text:             `The subject of this spell appears to be about 2 feet away from its true location. The creature benefits from a 50% miss chance as if it had [total concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment). However, unlike actual total concealment, displacement does not prevent enemies from targeting the creature normally. [True seeing](http://www.d20srd.org/srd/spells/trueSeeing.htm) reveals its true location.`,
           component_details:'Material Component: A small strip of leather twisted into a loop.'
         },
         'disrupt undead': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Disrupt_Undead',
+          ref:              'http://www.d20srd.org/srd/spells/disruptUndead.htm',
           school:           'Necromancy',
-          level:            'Glory 1, Sor/Wiz 0',
+          level:            'Arc 0, Duskblade 0, Glory 1, Shu 0, Sor/Wiz 0, Wmg 0, Wuj 0',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -3200,13 +3195,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `You direct a ray of positive energy. You must make a ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) to hit, and if the ray hits an [undead creature](https://www.dandwiki.com/wiki/SRD:Undead_Type), it deals [[1d6]] points of damage to it.`,
-          component_details:null
+          text:             `You direct a ray of positive energy. You must make a ranged touch attack to hit, and if the ray hits an undead creature, it deals [[1d6]] points of damage to it.`
         },
         'disrupting weapon': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Disrupting_Weapon',
+          ref:              'http://www.d20srd.org/srd/spells/disruptingWeapon.htm',
           school:           'Transmutation',
-          level:            'Clr 5',
+          level:            'Arc 5, Artificer 5, Clr 5, HotD 4, Life 5',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -3215,69 +3209,65 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will negates (harmless, object); see text',
           spell_resistance: 'Yes (harmless, object)',
-          text:             `This spell makes a melee weapon deadly to [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type). Any [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature with HD equal to or less than your caster level must succeed on a Will save or be destroyed utterly if struck in combat with this weapon. Spell resistance does not apply against the destruction effect.`,
-          component_details:null
+          text:             `This spell makes a melee weapon deadly to undead. Any undead creature with HD equal to or less than your caster level must succeed on a Will save or be destroyed utterly if struck in combat with this weapon. Spell resistance does not apply against the destruction effect.`
         },
         'divination': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Divination',
+          ref:              'http://www.d20srd.org/srd/spells/divination.htm',
           school:           'Divination',
-          level:            'Clr 4, Knowledge 4',
+          level:            'APeace 4, Arc 4, Clr 4, Fate 4, Knowledge 4, Oracle 3, Pact 4, Vassal of Bahamut 4',
           components:       'V, S, M',
           casting_time:     '10 minutes',
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
           duration:         'Instantaneous',
-          text:             `Similar to [augury](http://www.d20srd.org/srd/spells/augury.htm) but more powerful, a *divination* spell can provide you with a useful piece of advice in reply to a question concerning a specific goal, event, or activity that is to occur within one week. The advice can be as simple as a short phrase, or it might take the form of a cryptic rhyme or omen. If your party doesn’t act on the information, the conditions may change so that the information is no longer useful. The base chance for a correct *divination* is 70% + 1% per caster level, to a maximum of 90%. If the dice roll fails, you know the spell failed, unless specific magic yielding false information is at work.
-                             As with *augury*, multiple *divinations* about the same topic by the same caster use the same dice result as the first *divination* spell and yield the same answer each time.`,
+          text:             `Similar to [augury](http://www.d20srd.org/srd/spells/augury.htm) but more powerful, a divination spell can provide you with a useful piece of advice in reply to a question concerning a specific goal, event, or activity that is to occur within one week. The advice can be as simple as a short phrase, or it might take the form of a cryptic rhyme or omen. If your party doesn’t act on the information, the conditions may change so that the information is no longer useful. The base chance for a correct divination is [[{[[70+?{Casting Level}]],90}kl1]]%. If the dice roll fails, you know the spell failed, unless specific magic yielding false information is at work.
+                             As with [augury](http://www.d20srd.org/srd/spells/augury.htm), multiple divinations about the same topic by the same caster use the same dice result as the first divination spell and yield the same answer each time.`,
           component_details:'Material Component: Incense and a sacrificial offering appropriate to your religion, together worth at least 25 gp.'
         },
         'divine favor': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Divine_Favor',
+          ref:              'http://www.d20srd.org/srd/spells/divineFavor.htm',
           school:           'Evocation',
-          level:            'Clr 1, Nobility 1, Pal 1',
+          level:            'Arc 1, ChamGwyn 1, Clr 1, KotC 1, Mysticism 1, Nobility 1, Pal 1, Slayer of Domiel 1, Vassal of Bahamut 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
           duration:         '1 minute',
-          text:             `Calling upon the strength and wisdom of a deity, you gain a +[[{[[{[[floor(?{Casting Level}/3)]],1}kh1]],3}kl1]] luck bonus on attack and weapon damage rolls. The bonus doesn’t apply to spell damage.`,
-          component_details:null
+          text:             `Calling upon the strength and wisdom of a deity, you gain a +[[{[[{[[floor(?{Casting Level}/3)]],1}kh1]],3}kl1]] luck bonus on attack and weapon damage rolls. The bonus doesn’t apply to spell damage.`
         },
         'divine power': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Divine_Power',
+          ref:              'http://www.d20srd.org/srd/spells/divinePower.htm',
           school:           'Evocation',
-          level:            'Clr 4, War 4',
+          level:            'Arc 4, Clr 4, Competition 4, Orc 4, Sin-P 4, Vassal of Bahamut 4, War 4',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
           duration:         '[[?{Casting Level}]] rounds',
-          text:             `Calling upon the divine power of your patron, you imbue yourself with strength and skill in combat. Your base attack bonus becomes equal to your character level (which may give you additional attacks), you gain a +6 enhancement bonus to Strength, and you gain [[?{Casting Level}]] temporary hit points.`,
-          component_details:null
+          text:             `Calling upon the divine power of your patron, you imbue yourself with strength and skill in combat. Your base attack bonus becomes equal to your character level (which may give you additional attacks), you gain a +6 enhancement bonus to Strength, and you gain [[?{Casting Level}]] temporary hit points.`
         },
         'dominate animal': {
           ref:              'http://www.d20srd.org/srd/spells/dominateAnimal.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Animal 3, Drd 3',
+          level:            'Animal 3, Arc 3, Drd 3',
           components:       'V, S',
           casting_time:     '1 round',
           range:            '_close_',
           target_type:      'Target',
-          target:           'One [animal](https://www.dandwiki.com/wiki/SRD:Animal_Type)',
+          target:           'One animal',
           duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `You can enchant an animal and direct it with simple commands such as “Attack,” “Run,” and “Fetch.” Suicidal or self-destructive commands (including an order to attack a creature two or more size categories larger than the *dominated* animal) are simply ignored.
-                             *Dominate animal* establishes a mental link between you and the subject creature. The animal can be directed by silent mental command as long as it remains in range. You need not see the creature to control it. You do not receive direct sensory input from the creature, but you know what it is experiencing. Because you are directing the animal with your own intelligence, it may be able to undertake actions normally beyond its own comprehension. You need not concentrate exclusively on controlling the creature unless you are trying to direct it to do something it normally couldn’t do. Changing your instructions or giving a *dominated* creature a new command is the equivalent of redirecting a spell, so it is a move action.`,
-          component_details:null
+          text:             `You can enchant an animal and direct it with simple commands such as “Attack,” “Run,” and “Fetch.” Suicidal or self-destructive commands (including an order to attack a creature two or more size categories larger than the dominated animal) are simply ignored.
+                             Dominate animal establishes a mental link between you and the subject creature. The animal can be directed by silent mental command as long as it remains in range. You need not see the creature to control it. You do not receive direct sensory input from the creature, but you know what it is experiencing. Because you are directing the animal with your own intelligence, it may be able to undertake actions normally beyond its own comprehension. You need not concentrate exclusively on controlling the creature unless you are trying to direct it to do something it normally couldn’t do. Changing your instructions or giving a dominated creature a new command is the equivalent of redirecting a spell, so it is a move action.`
         },
         'dominate monster': {
           ref:              'http://www.d20srd.org/srd/spells/dominateMonster.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Charm 9, Sor/Wiz 9',
+          level:            'Beguiler 9, Charm 9, Dragon 9, Passion 9, Sor/Wiz 9, Tyranny 9, Wuj 9',
           components:       'V, S',
           casting_time:     '1 round',
           range:            '_close_',
@@ -3288,40 +3278,38 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `You can control the actions of any creature through a telepathic link that you establish with the subject’s mind.
                              If you and the subject have a common language, you can generally force the subject to perform as you desire, within the limits of its abilities. If no common language exists, you can communicate only basic commands, such as “Come here,” “Go there,” “Fight,” and “Stand still.” You know what the subject is experiencing, but you do not receive direct sensory input from it, nor can it communicate with you telepathically.
-                             Once you have given a *dominated* creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject’s behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
-                             Changing your instructions or giving a *dominated* creature a new command is the equivalent of redirecting a spell, so it is a move action.
+                             Once you have given a dominated creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject’s behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
+                             Changing your instructions or giving a dominated creature a new command is the equivalent of redirecting a spell, so it is a move action.
                              By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can’t communicate with you. You can’t actually see through the subject’s eyes, so it’s not as good as being there yourself, but you still get a good idea of what’s going on.
                              Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a +2 bonus. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
                              If you don’t spend at least 1 round concentrating on the spell each day, the subject receives a new saving throw to throw off the domination.
-                             [Protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`,
-          component_details:null
+                             [Protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`
         },
         'dominate person': {
           ref:              'http://www.d20srd.org/srd/spells/dominatePerson.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Brd 4, Sor/Wiz 5',
+          level:            'Beguiler 5, Brd 4, Domination 4, HB 4, Sor/Wiz 5, Wuj 5',
           components:       'V, S',
           casting_time:     '1 round',
           range:            '_close_',
           target_type:      'Target',
-          target:           'One [humanoid](https://www.dandwiki.com/wiki/SRD:Humanoid_Type)',
+          target:           'One humanoid',
           duration:         '[[?{Casting Level}]] days',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `You can control the actions of any humanoid creature through a telepathic link that you establish with the subject’s mind.
                              If you and the subject have a common language, you can generally force the subject to perform as you desire, within the limits of its abilities. If no common language exists, you can communicate only basic commands, such as “Come here,” “Go there,” “Fight,” and “Stand still.” You know what the subject is experiencing, but you do not receive direct sensory input from it, nor can it communicate with you telepathically.
-                             Once you have given a *dominated* creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject’s behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
-                             Changing your instructions or giving a *dominated* creature a new command is the equivalent of redirecting a spell, so it is a move action.
+                             Once you have given a dominated creature a command, it continues to attempt to carry out that command to the exclusion of all other activities except those necessary for day-to-day survival (such as sleeping, eating, and so forth). Because of this limited range of activity, a Sense Motive check against DC 15 (rather than DC 25) can determine that the subject’s behavior is being influenced by an enchantment effect (see the Sense Motive skill description).
+                             Changing your instructions or giving a dominated creature a new command is the equivalent of redirecting a spell, so it is a move action.
                              By concentrating fully on the spell (a standard action), you can receive full sensory input as interpreted by the mind of the subject, though it still can’t communicate with you. You can’t actually see through the subject’s eyes, so it’s not as good as being there yourself, but you still get a good idea of what’s going on.
                              Subjects resist this control, and any subject forced to take actions against its nature receives a new saving throw with a +2 bonus. Obviously self-destructive orders are not carried out. Once control is established, the range at which it can be exercised is unlimited, as long as you and the subject are on the same plane. You need not see the subject to control it.
                              If you don’t spend at least 1 round concentrating on the spell each day, the subject receives a new saving throw to throw off the domination.
-                             [Protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`,
-          component_details:null
+                             [Protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm) or a similar spell can prevent you from exercising control or using the telepathic link while the subject is so warded, but such an effect neither prevents the establishment of domination nor dispels it.`
         },
         'doom': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Doom',
+          ref:              'http://www.d20srd.org/srd/spells/doom.htm',
           school:           'Necromancy [Fear, Mind-Affecting]',
-          level:            'Blg 1, Clr 1',
+          level:            'Arc 1, Blg 1, Blk 1, Clr 1, Corruption 1, Decay 1, Dem 1, Hatred 1, KotC 1, Pestilence 1, Wrath 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -3330,15 +3318,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This spell fills a single subject with a feeling of horrible dread that causes it to become shaken.`,
-          component_details:null
+          text:             `This spell fills a single subject with a feeling of horrible dread that causes it to become shaken.`
         },
         //Epic Spell: dragon knight (ritual)
         //Epic Spell: dragon strike (ritual)
         'dream': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dream',
+          ref:              'http://www.d20srd.org/srd/spells/dream.htm',
           school:           'Illusion (Phantasm) [Mind-Affecting]',
-          level:            'Brd 5, Sor/Wiz 5',
+          level:            'Brd 5, EmBarachiel 4, Herald 6, Sor/Wiz 5, Wuj 5',
           components:       'V, S',
           casting_time:     '1 minute',
           range:            'Unlimited',
@@ -3351,14 +3338,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Once the message is delivered, the messenger’s mind returns instantly to its body. The duration of the spell is the time required for the messenger to enter the recipient’s dream and deliver the message.
                              If the recipient is awake when the spell begins, the messenger can choose to wake up (ending the spell) or remain in the trance. The messenger can remain in the trance until the recipient goes to sleep, then enter the recipient’s dream and deliver the message as normal. A messenger that is disturbed during the trance comes awake, ending the spell.
                              Creatures who don’t sleep (such as elves, but not half-elves) or don’t dream cannot be contacted by this spell.
-                             The messenger is unaware of its own surroundings or of the activities around it while in the trance. It is defenseless both physically and mentally (always fails any saving throw) while in the trance.`,
-          component_details:null
+                             The messenger is unaware of its own surroundings or of the activities around it while in the trance. It is defenseless both physically and mentally (always fails any saving throw) while in the trance.`
         },
         //Epic Spell: dreamscape
         'dweomer of transference': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Dweomer_of_Transference',
+          ref:              'http://www.d20srd.org/srd/psionic/spells/dweomerOfTransference.htm',
           school:           'Evocation',
-          level:            'Clr 4, Sor/Wiz 4',
+          level:            'Arc 4, Clr 4, Sor/Wiz 4',
           components:       'V, S',
           casting_time:     '1 minute',
           range:            '_close_',
@@ -3367,36 +3353,27 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `With this spell, you form a radiating corona around the head of a psionic ally, then convert some of your spells into psionic [power points](https://www.dandwiki.com/wiki/SRD:Power_Points). When you finish casting *dweomer of transference*, a red-orange glow surrounds the psionic creature’s head. For the duration of the spell, any spells cast at the subject don’t have their usual effect, instead converting themselves harmlessly into psionic energy that the subject can use as energy for psionic powers. You can cast any spell you like at the subject, even area spells, effect spells, and spells for whom the subject would ordinarily not be a legitimate target. The spells don’t do anything other than provide the subject with power points, but you must still cast them normally, obeying the component and range requirements listed in the description of each spell.
-                             For each spell you cast into the *dweomer of transference*, the psionic creature gets temporary power points, according to the following table. The transference isn’t perfectly efficient. The temporary power points acquired through a *dweomer of transference* dissipate after 1 hour if they haven’t already been spent.
-                             • Spell Level 0
-                             -- 0 Power Points Acquired
-                             • Spell Level 1st
-                             -- 1 Power Points Acquired
-                             • Spell Level 2nd
-                             -- 2 Power Points Acquired
-                             • Spell Level 3rd
-                             -- 4 Power Points Acquired
-                             • Spell Level 4th
-                             -- 6 Power Points Acquired
-                             • Spell Level 5th
-                             -- 8 Power Points Acquired
-                             • Spell Level 6th
-                             -- 10 Power Points Acquired
-                             • Spell Level 7th
-                             -- 12 Power Points Acquired
-                             • Spell Level 8th
-                             -- 14 Power Points Acquired
-                             • Spell Level 9th
-                             -- 16 Power Points Acquired`,
-          component_details:null
+          text:             `With this spell, you form a radiating corona around the head of a psionic ally, then convert some of your spells into psionic power points. When you finish casting dweomer of transference, a red-orange glow surrounds the psionic creature’s head. For the duration of the spell, any spells cast at the subject don’t have their usual effect, instead converting themselves harmlessly into psionic energy that the subject can use as energy for psionic powers. You can cast any spell you like at the subject, even area spells, effect spells, and spells for whom the subject would ordinarily not be a legitimate target. The spells don’t do anything other than provide the subject with power points, but you must still cast them normally, obeying the component and range requirements listed in the description of each spell.
+                             For each spell you cast into the dweomer of transference, the psionic creature gets temporary power points, according to the following table. The transference isn’t perfectly efficient. The temporary power points acquired through a dweomer of transference dissipate after 1 hour if they haven’t already been spent.
+
+                             ◦ **Spell Level**: Power Points Acquired
+                             • **0**:0
+                             • **1st**:1
+                             • **2nd**:2
+                             • **3rd**:4
+                             • **4th**:6
+                             • **5th**:8
+                             • **6th**:10
+                             • **7th**:12
+                             • **8th**:14
+                             • **9th**:16`
         },
         // Spells that start with E
         'eagle\'s splendor': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Eagle%27s_Splendor',
+          ref:              'http://www.d20srd.org/srd/spells/eaglesSplendor.htm',
           other_versions:   'Forgotten Realms Campaign Setting on page 68, Tome and Blood on page 87',
           school:           'Transmutation',
-          level:            'Blg 2, Brd 2, Clr 2, Pal 2, Sor/Wiz 2',
+          level:            'APeace 2, Arc 2, Artificer 2, Blk 2, Brd 2, BVal 2, ChamGwyn 2, Clr 2, EmBarachiel 2, HB 2, Pal 2, Sin-P 2, Sor/Wiz 2, Trade 3',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -3409,9 +3386,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Arcane Material Component: A few feathers or a pinch of droppings from an eagle.'
         },
         'earthquake': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Earthquake',
+          ref:              'http://www.d20srd.org/srd/spells/earthquake.htm',
           school:           'Evocation [Earth]',
-          level:            'Clr 8, Destruction 8, Drd 8, Earth 7',
+          level:            'Arc 8, Blg 7, Cavern 8, Clr 8, Destruction 8, Drd 8, Earth 7, Shu 8, Wmg 7, Wuj 8',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_long_',
@@ -3420,21 +3397,26 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '1 round',
           saving_throw:     'See text',
           spell_resistance: 'No',
-          text:             `When you cast *earthquake*, an intense but highly localized tremor rips the ground. The shock knocks creatures down, collapses structures, opens cracks in the ground, and more. The effect lasts for 1 round, during which time creatures on the ground can’t move or attack. A spellcaster on the ground must make a Concentration check (DC 20 + spell level) or lose any spell he or she tries to cast. The earthquake affects all terrain, vegetation, structures, and creatures in the area. The specific effect of an *earthquake* spell depends on the nature of the terrain where it is cast.
-                             *Cave, Cavern, or Tunnel:* The spell collapses the roof, dealing ‹8d6› points of bludgeoning damage to any creature caught under the cave-in (Reflex DC 15 half) and pinning that creature beneath the rubble (see below). An *earthquake* cast on the roof of a very large cavern could also endanger those outside the actual area but below the falling debris.
-                             *Cliffs:* *Earthquake* causes a cliff to crumble, creating a landslide that travels horizontally as far as it fell vertically. Any creature in the path takes ‹8d6› points of bludgeoning damage (Reflex DC 15 half) and is pinned beneath the rubble (see below).
-                             *Open Ground:* Each creature standing in the area must make a DC 15 Reflex save or fall down. Fissures open in the earth, and every creature on the ground has a ‹25%|[[{1d100}<25]]› chance to fall into one (Reflex DC 20 to avoid a fissure). At the end of the spell, all fissures grind shut, killing any creatures still trapped within.
-                             *Structure:* Any structure standing on open ground takes 100 points of damage, enough to collapse a typical wooden or masonry building, but not a structure built of stone or reinforced masonry. Hardness does not reduce this damage, nor is it halved as damage dealt to objects normally is. Any creature caught inside a collapsing structure takes ‹8d6› points of bludgeoning damage (Reflex DC 15 half) and is pinned beneath the rubble (see below).
+          text:             `When you cast earthquake, an intense but highly localized tremor rips the ground. The shock knocks creatures down, collapses structures, opens cracks in the ground, and more. The effect lasts for 1 round, during which time creatures on the ground can’t move or attack. A spellcaster on the ground must make a Concentration check (DC 20 + spell level) or lose any spell he or she tries to cast. The earthquake affects all terrain, vegetation, structures, and creatures in the area. The specific effect of an earthquake spell depends on the nature of the terrain where it is cast.
+
+                             *Cave, Cavern, or Tunnel:* The spell collapses the roof, dealing ‹8d6|[[8d6]] points of bludgeoning damage› points of bludgeoning damage to any creature caught under the cave-in (Reflex DC 15 half) and pinning that creature beneath the rubble (see below). An earthquake cast on the roof of a very large cavern could also endanger those outside the actual area but below the falling debris.
+
+                             *Cliffs:* Earthquake causes a cliff to crumble, creating a landslide that travels horizontally as far as it fell vertically. Any creature in the path takes ‹8d6|[[8d6]] points of bludgeoning damage› points of bludgeoning damage (Reflex DC 15 half) and is pinned beneath the rubble (see below).
+
+                             *Open Ground:* Each creature standing in the area must make a DC 15 Reflex save or fall down. Fissures open in the earth, and every creature on the ground has a 25% chance to fall into one (Reflex DC 20 to avoid a fissure). At the end of the spell, all fissures grind shut, killing any creatures still trapped within.
+
+                             *Structure:* Any structure standing on open ground takes 100 points of damage, enough to collapse a typical wooden or masonry building, but not a structure built of stone or reinforced masonry. Hardness does not reduce this damage, nor is it halved as damage dealt to objects normally is. Any creature caught inside a collapsing structure takes ‹8d6|[[d86]] points of bludgeoning damage› points of bludgeoning damage (Reflex DC 15 half) and is pinned beneath the rubble (see below).
+
                              *River, Lake, or Marsh:* Fissures open underneath the water, draining away the water from that area and forming muddy ground. Soggy marsh or swampland becomes quicksand for the duration of the spell, sucking down creatures and structures. Each creature in the area must make a DC 15 Reflex save or sink down in the mud and quicksand. At the end of the spell, the rest of the body of water rushes in to replace the drained water, possibly drowning those caught in the mud.
-                             *Pinned beneath Rubble:* Any creature pinned beneath rubble takes ‹1d6› points of nonlethal damage per minute while pinned. If a pinned character falls unconscious, he or she must make a DC 15 Constitution check or take ‹1d6› points of lethal damage each minute thereafter until freed or dead.`,
-          component_details:null
+
+                             *Pinned beneath Rubble:* Any creature pinned beneath rubble takes ‹1d6|[[1d6]] points of nonlethal damage› points of nonlethal damage per minute while pinned. If a pinned character falls unconscious, he or she must make a DC 15 Constitution check or take ‹1d6|[[1d6]] points of lethal damage› points of lethal damage each minute thereafter until freed or dead.`
         },
         //Epic Spell: eclipse
         //Epic Spell: eidolon
         'elemental swarm': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Elemental_Swarm',
+          ref:              'http://www.d20srd.org/srd/spells/elementalSwarm.htm',
           school:           'Conjuration (Summoning) [see text]',
-          level:            'Air 9, Drd 9, Earth 9, Fire 9, Water 9',
+          level:            'Air 9, Arc 9, Drd 9, Dwarf 9, Earth 9, Fire 9, Ocean 9, Shu 9, Water 9, Wmg 9',
           components:       'V, S',
           casting_time:     '10 minutes',
           range:            '_medium_',
@@ -3443,16 +3425,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `This spell opens a portal to an Elemental Plane and summons [elementals](https://www.dandwiki.com/wiki/SRD:Elemental) from it. A druid can choose the plane (Air, Earth, Fire, or Water); a cleric opens a portal to the plane matching his domain.
-                             When the spell is complete, [[2d4]] Large elementals appear. Ten minutes later, [[1d4]] Huge elementals appear. Ten minutes after that, one greater elemental appears. Each elemental has maximum hit points per HD. Once these creatures appear, they serve you for the duration of the spell.
+          text:             `This spell opens a portal to an Elemental Plane and summons elementals from it. A druid can choose the plane (Air, Earth, Fire, or Water); a cleric opens a portal to the plane matching his domain.
+                             When the spell is complete, [[2d4]] Large elementals appear. Ten minutes later, ‹1d4|[[1d4]] Huge elementals› Huge elementals appear. Ten minutes after that, [[1]] greater elemental appears. Each elemental has maximum hit points per HD. Once these creatures appear, they serve you for the duration of the spell.
                              The elementals obey you explicitly and never attack you, even if someone else manages to gain control over them. You do not need to concentrate to maintain control over the elementals. You can dismiss them singly or in groups at any time.
-                             When you use a summoning spell to summon an air, earth, fire, or water creature, it is a spell of that type.`,
-          component_details:null
+                             When you use a summoning spell to summon an air, earth, fire, or water creature, it is a spell of that type.`
         },
         'endure elements': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Endure_Elements',
+          ref:              'http://www.d20srd.org/srd/spells/endureElements.htm',
           school:           'Abjuration',
-          level:            'Clr 1, Drd 1, Pal 1, Rgr 1, Sor/Wiz 1, Sun 1',
+          level:            'Adp 1, APeace 1, Arc 1, Blg 1, ChamGwyn 1, Clr 1, Drd 1, Endurance 1, KotC 1, Ocean 1, Pal 1, Rgr 1, Shu 1, Sor/Wiz 1, Sun 1, Vassal of Bahamut 1, Wuj 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -3461,14 +3442,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '24 hours',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `A creature protected by *endure elements* suffers no harm from being in a hot or cold environment. It can exist comfortably in conditions between -50 and 140 degrees Fahrenheit without having to make Fortitude saves). The creature’s equipment is likewise protected.
-                             *Endure elements* doesn’t provide any protection from fire or cold damage, nor does it protect against other environmental hazards such as smoke, lack of air, and so forth.`,
-          component_details:null
+          text:             `A creature protected by endure elements suffers no harm from being in a hot or cold environment. It can exist comfortably in conditions between -50 and 140 degrees Fahrenheit without having to make Fortitude saves). The creature’s equipment is likewise protected.
+                             Endure elements doesn’t provide any protection from fire or cold damage, nor does it protect against other environmental hazards such as smoke, lack of air, and so forth.`
         },
         'energy drain': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Energy_Drain_%28Spell%29',
+          ref:              'http://www.d20srd.org/srd/spells/energyDrain.htm',
           school:           'Necromancy',
-          level:            'Clr 9, Sor/Wiz 9',
+          level:            'Arc 9, Clr 9, Decay 9, Hunger 9, Necro 9, Sor/Wiz 9, Suffering 9, Thirst 9, Undeath 9',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -3477,17 +3457,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None; see text',
           spell_resistance: 'Yes',
-          text:             `You point your finger and utter the incantation, releasing a black ray of crackling negative energy that suppresses the life force of any living creature it strikes. You must make a ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) to hit. If the attack succeeds, the subject gains [[2d4]] negative levels.
+          text:             `You point your finger and utter the incantation, releasing a black ray of crackling negative energy that suppresses the life force of any living creature it strikes. You must make a ranged touch attack to hit. If the attack succeeds, the subject gains [[2d4]] negative levels.
                              If the subject has at least as many negative levels as HD, it dies. Each negative level gives a creature a -1 penalty on attack rolls, saving throws, skill checks, ability checks, and effective level (for determining the power, duration, DC, and other details of spells or special abilities).
                              Additionally, a spellcaster loses one spell or spell slot from his or her highest available level. Negative levels stack.
                              There is no saving throw to avoid gaining the negative levels, but 24 hours after gaining them, the subject must make a Fortitude saving throw (DC=energy drain spell’s save DC) for each negative level. If the save succeeds, that negative level is removed. If it fails, the negative level also goes away, but one of the subject’s character levels is permanently drained.
-                             An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature struck by the ray gains [[2d4*5]] temporary hit points for 1 hour.`,
-          component_details:null
+                             An undead creature struck by the ray gains [[2d4*5]] temporary hit points for 1 hour.`
         },
         'enervation': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Enervation',
+          ref:              'http://www.d20srd.org/srd/spells/enervation.htm',
           school:           'Necromancy',
-          level:            'Sor/Wiz 4',
+          level:            'Decay 4, Duskblade 4, HB 4, Hunger 4, Necro 4, Sor/Wiz 4, Suffering 4',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -3496,35 +3475,35 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `You point your finger and utter the incantation, releasing a black ray of crackling negative energy that suppresses the life force of any living creature it strikes. You must make a ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) to hit. If the attack succeeds, the subject gains [[1d4]] negative levels.
+          text:             `You point your finger and utter the incantation, releasing a black ray of crackling negative energy that suppresses the life force of any living creature it strikes. You must make a ranged touch attack to hit. If the attack succeeds, the subject gains [[1d4]] negative levels.
                              If the subject has at least as many negative levels as HD, it dies. Each negative level gives a creature a -1 penalty on attack rolls, saving throws, skill checks, ability checks, and effective level (for determining the power, duration, DC, and other details of spells or special abilities).
                              Additionally, a spellcaster loses one spell or spell slot from his or her highest available level. Negative levels stack.
-                             Assuming the subject survives, it regains lost levels after a number of hours equal to your caster level (maximum 15 hours). Usually, negative levels have a chance of permanently draining the victim’s levels, but the negative levels from *enervation* don’t last long enough to do so.
-                             An [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) creature struck by the ray gains [[1d4*5]] temporary hit points for 1 hour.`,
-          component_details:null
+                             Assuming the subject survives, it regains lost levels after a number of hours equal to your caster level (maximum 15 hours). Usually, negative levels have a chance of permanently draining the victim’s levels, but the negative levels from enervation don’t last long enough to do so.
+                             An undead creature struck by the ray gains [[1d4*5]] temporary hit points for 1 hour.`
         },
         'enlarge person': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Enlarge_Person',
+          ref:              'http://www.d20srd.org/srd/spells/enlargePerson.htm',
           school:           'Transmutation',
-          level:            'Sor/Wiz 1, Strength 1',
+          level:            'Sor/Wiz 1, Strength 1, Transformation 1',
           components:       'V, S, M',
           casting_time:     '1 round',
           range:            '_close_',
           target_type:      'Target',
-          target:           'One [humanoid](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) creature',
+          target:           'One humanoid creature',
           duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
-          text:             `This spell causes instant growth of a humanoid creature, doubling its height and multiplying its weight by 8. This increase changes the creature’s [size category](https://www.dandwiki.com/wiki/SRD:Size_Category) to the next larger one. The target gains a +2 size bonus to Strength, a -2 size penalty to Dexterity (to a minimum of 1), and a -1 penalty on attack rolls and AC due to its increased size.
+          text:             `This spell causes instant growth of a humanoid creature, doubling its height and multiplying its weight by 8. This increase changes the creature’s size category to the next larger one. The target gains a +2 size bonus to Strength, a -2 size penalty to Dexterity (to a minimum of 1), and a -1 penalty on attack rolls and AC due to its increased size.
                              A humanoid creature whose size increases to Large has a space of 10 feet and a natural reach of 10 feet. This spell does not change the target’s speed.
                              If insufficient room is available for the desired growth, the creature attains the maximum possible size and may make a Strength check (using its increased Strength) to burst any enclosures in the process. If it fails, it is constrained without harm by the materials enclosing it— the spell cannot be used to crush a creature by increasing its size.
-                             All equipment worn or carried by a creature is similarly enlarged by the spell. Melee and projectile weapons affected by this spell deal more damage. Other magical properties are not affected by this spell. Any *enlarged* item that leaves an *enlarged* creature’s possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage, and projectiles deal damage based on the size of the weapon that fired them. Magical properties of *enlarged* items are not increased by this spell.
+                             All equipment worn or carried by a creature is similarly enlarged by the spell. Melee and projectile weapons affected by this spell deal more damage. Other magical properties are not affected by this spell. Any enlarged item that leaves an enlarged creature’s possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage, and projectiles deal damage based on the size of the weapon that fired them. Magical properties of enlarged items are not increased by this spell.
                              Multiple magical effects that increase size do not stack.
-                             *Enlarge person* counters and dispels *reduce person*.
-                             *Enlarge person* can be made permanent with a *permanency* spell.`,
+                             Enlarge person counters and dispels [reduce person](http://www.d20srd.org/srd/spells/reducePerson.htm).
+                             Enlarge person can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
           component_details:'Material Component: A pinch of powdered iron.'
         },
         //Epic Spell: enslave (ritual)
+        //BEGIN REVIEW MARKER
         'entangle': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Entangle',
           school:           'Transmutation',
@@ -5724,7 +5703,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `*Interposing hand* creates a Large magic hand that appears between you and one opponent. This floating, disembodied hand then moves to remain between the two of you, regardless of where you move or how the opponent tries to get around it, providing [cover](https://www.dandwiki.com/wiki/SRD:Cover) (+4 AC) for you against that opponent. Nothing can fool the hand—it sticks with the selected opponent in spite of darkness, invisibility, polymorphing, or any other attempt at hiding or disguise. The hand does not pursue an opponent, however.
                              An *interposing hand* is 10 feet long and about that wide with its fingers outstretched. It has as many hit points as you do when you’re undamaged, and its AC is 20 (-1 size, +11 natural). It takes damage as a normal creature, but most magical effects that don’t cause damage do not affect it, though Mage's disjunction might.
                              The hand never provokes attacks of opportunity from opponents. It cannot push through a [wall of force](http://www.d20srd.org/srd/spells/wallOfForce.htm) or enter an antimagic field, but it suffers the full effect of a [prismatic wall](http://www.d20srd.org/srd/spells/prismaticWall.htm) or [prismatic sphere](http://www.d20srd.org/srd/spells/prismaticSphere.htm). The hand makes saving throws as its caster.
-                             [Disintegrate](https://www.dandwiki.com/wiki/SRD:Disintegrate) or a successful [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) destroys it.
+                             [Disintegrate](http://www.d20srd.org/srd/spells/disintegrate.htm) or a successful [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) destroys it.
                              Any creature weighing 2,000 pounds or less that tries to push past the hand is slowed to half its normal speed. The hand cannot reduce the speed of a creature weighing more than 2,000 pounds, but it still affects the creature’s attacks.
                              Directing the spell to a new target is a move action.`,
           component_details:'Focus: A soft glove.'
