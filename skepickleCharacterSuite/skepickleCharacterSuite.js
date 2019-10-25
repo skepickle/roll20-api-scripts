@@ -122,18 +122,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
   var dnd35 = {
     all_source_texts: {
-      SRD:     "System Reference Document",
+      SRD:     "System Reference Document", // The following link indicates the source books that have OGL content included in SRD: http://www.d20srd.org/faq.htm#faq05 
       UA:      "Unearthed Arcana",
-      PHB:     "Player's Handbook",
-      MM:      "Monster Manual",
-      XPH:     "Expanded Psionics Handbook",
+      MH:      "Miniatures Handbook",
       ToB:     "Tome of Battle",
       BoED:    "Book of Exalted Deeds",
       MoF:     "Magic of Faerun",
       OA:      "Oriental Adventures",
       unknown: "Unknown Text"
     },
-    enabled_source_texts: ['SRD','UA','MM','XPH'],
+    enabled_source_texts: ['SRD','UA'],
     source_text_SRD: {
       movement_modes:      ['burrow','climb','fly','swim'],
       fly_maneuverability: ['perfect','good','average','poor','clumsy'],
@@ -156,6 +154,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'bluff':                    {base: 'bluff',                    attrib: 'bluff',                                             trained_only:false },
         'climb':                    {base: 'climb',                    attrib: 'climb',                                             trained_only:false },
         'concentration':            {base: 'concentration',            attrib: 'concentration',                                     trained_only:false },
+        'control shape':            {base: 'control shape',            attrib: '',                  default_ability_mod: 'wis-mod', trained_only:false },
         'craft()':                  {base: 'craft',                    attrib: 'craft#',            default_ability_mod: 'int-mod', trained_only:false },
         'decipher script':          {base: 'decipher script',          attrib: 'decipherscript',                                    trained_only:true  },
         'diplomacy':                {base: 'diplomacy',                attrib: 'diplomacy',                                         trained_only:false },
@@ -1168,7 +1167,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `A cone of searing flame shoots from your fingertips. Any creature in the area of the flames takes [[[[{?{Casting Level},5}kl1]]d4]] points of fire damage. Flammable materials burn if the flames touch them. A character can extinguish burning items as a full-round action.`
         },
-        // C Spell
+        // Spells that start with C
         'call lightning': {
           ref:              'http://www.d20srd.org/srd/spells/callLightning.htm',
           school:           'Evocation [Electricity]',
@@ -1215,7 +1214,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates, see text',
           spell_resistance: 'Yes',
-          text:             `This spell soothes and quiets animals, rendering them docile and harmless. Only ordinary animals (those with Intelligence scores of 1 or 2) can be affected by this spell. All the subjects must be of the same kind, and no two may be more than 30 feet apart. The maximum number of Hit Dice of animals you can affect is equal to 2d4 + caster level: [[2d4+?{Casting Level}]]. A dire animal or an animal trained to attack or guard is allowed a saving throw; other animals are not.
+          text:             `This spell soothes and quiets animals, rendering them docile and harmless. Only ordinary animals (those with Intelligence scores of 1 or 2) can be affected by this spell. All the subjects must be of the same kind, and no two may be more than 30 feet apart. The maximum number of Hit Dice of animals you can affect is equal [[2d4+?{Casting Level}]]. A dire animal or an animal trained to attack or guard is allowed a saving throw; other animals are not.
                              The affected creatures remain where they are and do not attack or flee. They are not helpless and defend themselves normally if attacked. Any threat breaks the spell on the threatened creatures.`
         },
         'calm emotions': {
@@ -1230,7 +1229,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Concentration, up to [[?{Casting Level}]] rounds (D)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `This spell calms agitated creatures. You have no control over the affected creatures, but *calm emotions* can stop raging creatures from fighting or joyous ones from reveling. Creatures so affected cannot take violent actions (although they can defend themselves) or do anything destructive. Any aggressive action against or damage dealt to a calmed creature immediately breaks the spell on all calmed creatures.
+          text:             `This spell calms agitated creatures. You have no control over the affected creatures, but calm emotions can stop raging creatures from fighting or joyous ones from reveling. Creatures so affected cannot take violent actions (although they can defend themselves) or do anything destructive. Any aggressive action against or damage dealt to a calmed creature immediately breaks the spell on all calmed creatures.
                              This spell automatically suppresses (but does not dispel) any morale bonuses granted by spells such as [bless](http://www.d20srd.org/srd/spells/bless.htm), [good hope](http://www.d20srd.org/srd/spells/goodHope.htm), and [rage](http://www.d20srd.org/srd/spells/rage.htm), as well as negating a bard’s ability to inspire courage or a barbarian’s rage ability. It also suppresses any fear effects and removes the confused condition from all targets. While the spell lasts, a suppressed spell or effect has no effect. When the calm emotions spell ends, the original spell or effect takes hold of the creature again, provided that its duration has not expired in the meantime.`
         },
         'cat\'s grace': {
@@ -12392,13 +12391,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //RECHARGES
         //'': { recharge: 'General' },
       }
-    },
-    source_text_PHB: {
-    },
-    source_text_MM: {
-      skills: { 'control shape':            {base: 'control shape',            attrib: '',                  default_ability_mod: 'wis-mod', trained_only:false } }
-    },
-    source_text_XPH: {
     },
     source_text_ToB: {
       skills: { 'martial lore':             {base: 'martial lore',             attrib: '',                  default_ability_mod: 'int-mod', trained_only:true  } }
