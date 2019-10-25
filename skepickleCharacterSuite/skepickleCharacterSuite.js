@@ -653,7 +653,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `The spell envelops the warded creature in a shroud of shadows. The shroud can, if the caster desires, conceal the wearer’s features. In any case, it grants the recipient a **[[{3+[[floor(?{Casting Level}/4)]],8}kl1]] deflection bonus** to Armor Class. The subject can see through the armor as if it did not exist and is also afforded darkvision with a range of 60 feet. Finally, the subject gains a +2 bonus on saving throws against any holy, good, or light spells or effects. Undead creatures that are subjects of armor of darkness also gain +4 turn resistance.`
+          text:             `The spell envelops the warded creature in a shroud of shadows. The shroud can, if the caster desires, conceal the wearer’s features. In any case, it grants the recipient a \`\`[[{3+[[floor(?{Casting Level}/4)]],8}kl1]] deflection bonus\`\` to Armor Class. The subject can see through the armor as if it did not exist and is also afforded darkvision with a range of 60 feet. Finally, the subject gains a +2 bonus on saving throws against any holy, good, or light spells or effects. Undead creatures that are subjects of armor of darkness also gain +4 turn resistance.`
         },
         'astral projection': {
           ref:              'http://www.d20srd.org/srd/spells/astralProjection.htm',
@@ -3235,7 +3235,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target_type:      'Target',
           target:           'You',
           duration:         '1 minute',
-          text:             `Calling upon the strength and wisdom of a deity, you gain a +[[{[[{[[floor(?{Casting Level}/3)]],1}kh1]],3}kl1]] luck bonus on attack and weapon damage rolls. The bonus doesn’t apply to spell damage.`
+          text:             `Calling upon the strength and wisdom of a deity, you gain a \`\`+[[{[[{[[floor(?{Casting Level}/3)]],1}kh1]],3}kl1]] luck bonus\`\` on attack and weapon damage rolls. The bonus doesn’t apply to spell damage.`
         },
         'divine power': {
           ref:              'http://www.d20srd.org/srd/spells/divinePower.htm',
@@ -3793,7 +3793,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target_type:      'Target',
           target:           'You',
           duration:         '[[?{Casting Level}]] minutes',
-          text:             `You gain intuitive insight into the workings of traps. You can use the Search skill to detect traps just as a rogue can. In addition, you gain +[[{floor(?{Casting Level}/2),10}kl1]] insight bonus on Search checks made to find traps while the spell is in effect.
+          text:             `You gain intuitive insight into the workings of traps. You can use the Search skill to detect traps just as a rogue can. In addition, you gain \`\`+[[{floor(?{Casting Level}/2),10}kl1]] insight bonus\`\` on Search checks made to find traps while the spell is in effect.
                              Note that find traps grants no ability to disable the traps that you may find.`
         },
         'finger of death': {
@@ -3826,11 +3826,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `Depending on the version of fire seeds you choose, you turn acorns into splash weapons that you or another character can throw, or you turn holly berries into bombs that you can detonate on command.
 
                              *Acorn Grenades*
-                             As many as four acorns turn into special splash weapons that can be hurled as far as 100 feet. A ranged touch attack roll is required to strike the intended target. Together, the acorns are capable of dealing [[[[{?{Casting Level},20}kl1]]d6]] points of fire damage, divided up among the acorns as you wish.
-                             Each acorn explodes upon striking any hard surface. In addition to its regular fire damage, it deals [[{?{Casting Level},20}kl1]] point of splash damage per die, and it ignites any combustible materials within 10 feet. A creature within this area that makes a successful Reflex saving throw takes only half damage; a creature struck directly is not allowed a saving throw.
+                             As many as four acorns turn into special splash weapons that can be hurled as far as 100 feet. A ranged touch attack roll is required to strike the intended target. Together, the acorns are capable of dealing [[{?{Casting Level},20}kl1]]d6 points of fire damage, divided up among the acorns as you wish.
+                             Each acorn explodes upon striking any hard surface. In addition to its regular fire damage, it deals [[{?{Casting Level},20}kl1]] point of splash damage, and it ignites any combustible materials within 10 feet. A creature within this area that makes a successful Reflex saving throw takes only half damage; a creature struck directly is not allowed a saving throw.
 
                              *Holly Berry Bombs*
-                             You turn as many as eight holly berries into special bombs. The holly berries are usually placed by hand, since they are too light to make effective thrown weapons (they can be tossed only 5 feet). If you are within 200 feet and speak a word of command, each berry instantly bursts into flame, causing [[1d8+?{Casting Level}]] points of fire damage to every creature in a 5-foot radius burst and igniting any combustible materials within 5 feet. A creature in the area that makes a successful Reflex saving throw takes only half damage.`,
+                             You turn as many as eight holly berries into special bombs. The holly berries are usually placed by hand, since they are too light to make effective thrown weapons (they can be tossed only 5 feet). If you are within 200 feet and speak a word of command, each berry instantly bursts into flame, causing ‹1d8+lvl|[[1d8+?{Casting Level}]] points of fire damage› points of fire damage to every creature in a 5-foot radius burst and igniting any combustible materials within 5 feet. A creature in the area that makes a successful Reflex saving throw takes only half damage.`,
           component_details:'Material Component: The acorns or holly berries.'
         },
         'fire shield': {
@@ -3844,7 +3844,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         '[[?{Casting Level}]] rounds (D)',
           text:             `This spell wreathes you in flame and causes damage to each creature that attacks you in melee. The flames also protect you from either cold-based or fire-based attacks (your choice).
-                             Any creature striking you with its body or a handheld weapon deals normal damage, but at the same time the attacker takes [[1d6+{?{Casting Level},15}kl1]] points of damage. This damage is either cold damage (if the shield protects against fire-based attacks) or fire damage (if the shield protects against cold-based attacks). If the attacker has spell resistance, it applies to this effect. Creatures wielding weapons with exceptional reach are not subject to this damage if they attack you.
+                             Any creature striking you with its body or a handheld weapon deals normal damage, but at the same time the attacker takes ‹1d6+lvl|[[1d6+{?{Casting Level},15}kl1]] points of damage› points of damage. This damage is either cold damage (if the shield protects against fire-based attacks) or fire damage (if the shield protects against cold-based attacks). If the attacker has spell resistance, it applies to this effect. Creatures wielding weapons with exceptional reach are not subject to this damage if they attack you.
                              When casting this spell, you appear to immolate yourself, but the flames are thin and wispy, giving off light equal to only half the illumination of a normal torch (10 feet). The color of the flames is determined randomly (50% chance of either color)—blue or green if the *chill shield* is cast, violet or blue if the *warm shield* is employed. The special powers of each version are as follows.
 
                              *Warm Shield*
@@ -3881,7 +3881,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Reflex half; see text',
           spell_resistance: 'Yes',
           text:             `Fire trap creates a fiery explosion when an intruder opens the item that the trap protects. A fire trap can ward any object that can be opened and closed.
-                             When casting fire trap, you select a point on the object as the spell’s center. When someone other than you opens the object, a fiery explosion fills the area within a 5-foot radius around the spell’s center. The flames deal [[1d4+[[{?{Casting Level},20}kl1]]]] points of fire damage. The item protected by the trap is not harmed by this explosion.
+                             When casting fire trap, you select a point on the object as the spell’s center. When someone other than you opens the object, a fiery explosion fills the area within a 5-foot radius around the spell’s center. The flames deal ‹1d4+lvl|[[1d4+[[{?{Casting Level},20}kl1]]]] points of fire damage› points of fire damage. The item protected by the trap is not harmed by this explosion.
                              A fire trapped item cannot have a second closure or warding spell placed on it.
                              A [knock](http://www.d20srd.org/srd/spells/knock.htm) spell does not bypass a fire trap. An unsuccessful [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell does not detonate the spell.
                              Underwater, this ward deals half damage and creates a large cloud of steam.
@@ -3933,7 +3933,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `A 3-foot-long, blazing beam of red-hot fire springs forth from your hand. You wield this bladelike beam as if it were a scimitar. Attacks with the flame blade are melee touch attacks. The blade deals [[1d8+[[{?{Casting Level},10}kl1]]]] points of fire damage. Since the blade is immaterial, your Strength modifier does not apply to the damage. A flame blade can ignite combustible materials such as parchment, straw, dry sticks, and cloth.
+          text:             `A 3-foot-long, blazing beam of red-hot fire springs forth from your hand. You wield this bladelike beam as if it were a scimitar. Attacks with the flame blade are melee touch attacks. The blade deals ‹1d8+lvl|[[1d8+[[{?{Casting Level},10}kl1]]]] points of fire damage› points of fire damage. Since the blade is immaterial, your Strength modifier does not apply to the damage. A flame blade can ignite combustible materials such as parchment, straw, dry sticks, and cloth.
                              The spell does not function underwater.`
         },
         'flame strike': {
@@ -3962,7 +3962,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Reflex negates',
           spell_resistance: 'Yes',
-          text:             `A burning globe of fire rolls in whichever direction you point and burns those it strikes. It moves 30 feet per round. As part of this movement, it can ascend or jump up to 30 feet to strike a target. If it enters a space with a creature, it stops moving for the round and deals ‹2d6› points of fire damage to that creature, though a successful Reflex save negates that damage. A flaming sphere rolls over barriers less than 4 feet tall. It ignites flammable substances it touches and illuminates the same area as a torch would.
+          text:             `A burning globe of fire rolls in whichever direction you point and burns those it strikes. It moves 30 feet per round. As part of this movement, it can ascend or jump up to 30 feet to strike a target. If it enters a space with a creature, it stops moving for the round and deals ‹2d6|[[2d6]] points of fire damage› points of fire damage to that creature, though a successful Reflex save negates that damage. A flaming sphere rolls over barriers less than 4 feet tall. It ignites flammable substances it touches and illuminates the same area as a torch would.
                              The sphere moves as long as you actively direct it (a move action for you); otherwise, it merely stays at rest and burns. It can be extinguished by any means that would put out a normal fire of its size. The surface of the sphere has a spongy, yielding consistency and so does not cause damage except by its flame. It cannot push aside unwilling creatures or batter down large obstacles. A flaming sphere winks out if it exceeds the spell’s range.`,
           component_details:'Arcane Material Component: A bit of tallow, a pinch of brimstone, and a dusting of powdered iron.'
         },
@@ -4024,7 +4024,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `The subject can fly at a speed of 60 feet (or 40 feet if it wears medium or heavy armor, or if it carries a medium or heavy load). It can ascend at half speed and descend at double speed, and its maneuverability is good. Using a fly spell requires only as much concentration as walking, so the subject can attack or cast spells normally. The subject of a fly spell can charge but not run, and it cannot carry aloft more weight than its maximum load, plus any armor it wears.
-                             Should the spell duration expire while the subject is still aloft, the magic fails slowly. The subject floats downward 60 feet per round for 1d6 rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking 1d6 points of damage per 10 feet of fall. Since dispelling a spell effectively ends it, the subject also descends in this way if the fly spell is dispelled, but not if it is negated by an antimagic field.`,
+                             Should the spell duration expire while the subject is still aloft, the magic fails slowly. The subject floats downward 60 feet per round for ‹1d6|[[1d6]] rounds› rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking ‹1d6|[[1d6]] points of damage› points of damage per 10 feet of fall. Since dispelling a spell effectively ends it, the subject also descends in this way if the fly spell is dispelled, but not if it is negated by an antimagic field.`,
           component_details:'Arcane Focus: A wing feather from any bird.'
         },
         'fog cloud': {
@@ -4069,7 +4069,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
                              At your option, the abjuration can include a password, in which case creatures of alignments different from yours can avoid the damage by speaking the password as they enter the area. You must select this option (and the password) at the time of casting.
                              [Dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) does not dispel a forbiddance effect unless the dispeller’s level is at least as high as your caster level.
-                             You can’t have multiple overlapping *forbiddance* effects. In such a case, the more recent effect stops at the boundary of the older effect.`,
+                             You can’t have multiple overlapping forbiddance effects. In such a case, the more recent effect stops at the boundary of the older effect.`,
           component_details:'Material Component: A sprinkling of holy water and rare incenses worth at least 1,500 gp, plus 1,500 gp per 60-foot cube. If a password is desired, this requires the burning of additional rare incenses worth at least 1,000 gp, plus 1,000 gp per 60-foot cube.'
         },
         'forcecage': {
@@ -4187,7 +4187,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `Freezing sphere creates a frigid globe of cold energy that streaks from your fingertips to the location you select, where it explodes in a 10-foot-radius burst, dealing [[[[{?{Casting Level},15}kl1]]d6]] points of cold damage to each creature in the area. An elemental (water) creature instead takes [[[[{?{Casting Level},15}kl1]]d8]] points of cold damage.
                              If the freezing sphere strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area equal to [[100*[[{?{Casting Level},15}kl1]]]] square feet. This ice lasts for [[?{Casting Level}]] rounds. Creatures that were swimming on the surface of frozen water become trapped in the ice. Attempting to break free is a full-round action. A trapped creature must make a DC 25 Strength check or a DC 25 Escape Artist check to do so.
-                             You can refrain from firing the globe after completing the spell, if you wish. Treat this as a touch spell for which you are holding the charge. You can hold the charge for as long as [[?{Casting Level}]] rounds, at the end of which time the *freezing sphere* bursts centered on you (and you receive no saving throw to resist its effect). Firing the globe in a later round is a standard action.`,
+                             You can refrain from firing the globe after completing the spell, if you wish. Treat this as a touch spell for which you are holding the charge. You can hold the charge for as long as [[?{Casting Level}]] rounds, at the end of which time the freezing sphere bursts centered on you (and you receive no saving throw to resist its effect). Firing the globe in a later round is a standard action.`,
           component_details:'Focus: A small crystal sphere.'
         },
         // Spells that start with G
@@ -10916,7 +10916,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `With a touch, you reduce the target’s mental faculties. Your successful melee touch attack applies a ‹1d6|[[1d6]] penalty› penalty to the target’s Intelligence, Wisdom, and Charisma scores. This penalty can’t reduce any of these scores below 1.
+          text:             `With a touch, you reduce the target’s mental faculties. Your successful melee touch attack applies a ‹1d6|\`\`-[[1d6]] penalty\`\` to the target’s Intelligence, Wisdom, and Charisma scores› penalty to the target’s Intelligence, Wisdom, and Charisma scores. This penalty can’t reduce any of these scores below 1.
                              This spell’s effect may make it impossible for the target to cast some or all of its spells, if the requisite ability score drops below the minimum required to cast spells of that level.`
         },
         'touch of madness': {
@@ -12631,6 +12631,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                  .replace(/\&/g,  '&amp;')
                                  .replace(/\)/g,  '&#41;')
                                  .replace(/\*/g,  '&#42;')
+                                 .replace(/\`\`/g,"&#96;&#96;")
                                  .replace(/\[\[/g,"&#91;&#91;")
                                  .replace(/\{\{/g,"&#123;&#123;")
                                  .replace(/\]\]/g,"&#93;&#93;")
@@ -12647,6 +12648,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                  .replace(/\@{/g, "&#64;{")
                                  .replace(/\%{/g, "&#37;{")
                                  .replace(/\?{/g, "&#63;{")
+                                 .replace(/\`\`/g,"&#96;&#96;")
                                  .replace(/\[\[/g,"&#91;&#91;")
                                  .replace(/\{\{/g,"&#123;&#123;")
                                  .replace(/\]\]/g,"&#93;&#93;")
