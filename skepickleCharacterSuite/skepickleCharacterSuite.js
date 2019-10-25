@@ -4192,11 +4192,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Focus: A small crystal sphere.'
         },
         // Spells that start with G
-        //BEGIN REVIEW MARKER
         'gaseous form': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Gaseous_Form_%28Spell%29',
+          ref:              'http://www.d20srd.org/srd/spells/gaseousForm.htm',
           school:           'Transmutation',
-          level:            'Air 3, Brd 3, Sor/Wiz 3',
+          level:            'Air 3, Brd 3, Sor/Wiz 3, Transformation 3, Wuj 3',
           components:       'S, M/DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -4205,14 +4204,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[2*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `The subject and all its gear become insubstantial, misty, and translucent. Its material armor (including natural armor) becomes worthless, though its size, Dexterity, deflection bonuses, and armor bonuses from force effects still apply. The subject gains damage reduction 10/magic and becomes immune to poison and critical hits. It can’t attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. (This does not rule out the use of certain spells that the subject may have prepared using the feats [Silent Spell](https://www.dandwiki.com/wiki/SRD:Silent_Spell), [Still Spell](https://www.dandwiki.com/wiki/SRD:Still_Spell), and [Eschew Materials](https://www.dandwiki.com/wiki/SRD:Eschew_Materials).) The subject also loses supernatural abilities while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the *gaseous form* spell takes effect.
+          text:             `The subject and all its gear become insubstantial, misty, and translucent. Its material armor (including natural armor) becomes worthless, though its size, Dexterity, deflection bonuses, and armor bonuses from force effects still apply. The subject gains damage reduction 10/magic and becomes immune to poison and critical hits. It can’t attack or cast spells with verbal, somatic, material, or focus components while in gaseous form. (This does not rule out the use of certain spells that the subject may have prepared using the feats Silent Spell, Still Spell, and Eschew Materials.) The subject also loses supernatural abilities while in gaseous form. If it has a touch spell ready to use, that spell is discharged harmlessly when the gaseous form spell takes effect.
                              A gaseous creature can’t run, but it can fly at a speed of 10 feet (maneuverability perfect). It can pass through small holes or narrow openings, even mere cracks, with all it was wearing or holding in its hands, as long as the spell persists. The creature is subject to the effects of wind, and it can’t enter water or other liquid. It also can’t manipulate objects or activate items, even those carried along with its gaseous form. Continuously active items remain active, though in some cases their effects may be moot.`,
           component_details:'Arcane Material Component: A bit of gauze and a wisp of smoke.'
         },
         'gate': {
           ref:              'http://www.d20srd.org/srd/spells/gate.htm',
           school:           'Conjuration (Creation or Calling)',
-          level:            'Clr 9, Glory 9, Sor/Wiz 9',
+          level:            'APeace 9, Arc 9, Celestial 9, Clr 9, Demonic 9, Diabolic 9, DrgBlw 9, Drow 9, Glory 9, Hlr 9, Pact 9, Portal 9, Portal (alt) 9, Sor/Wiz 9, Summoner 9, Wuj 9',
           components:       'V, S, XP; see text',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -4221,25 +4220,29 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous or concentration (up to [[?{Casting Level}]] rounds); see text',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `Casting a *gate* spell has two effects. First, it creates an interdimensional connection between your plane of existence and a plane you specify, allowing travel between those two planes in either direction.
-                             Second, you may then call a particular individual or kind of being through the *gate*.
-                             The *gate* itself is a circular hoop or disk from 5 to 20 feet in diameter (caster’s choice), oriented in the direction you desire when it comes into existence (typically vertical and facing you). It is a two-dimensional window looking into the plane you specified when casting the spell, and anyone or anything that moves through is shunted instantly to the other side.
-                             A *gate* has a front and a back. Creatures moving through the *gate* from the front are transported to the other plane; creatures moving through it from the back are not.
-                             *Planar Travel:* As a mode of planar travel, a *gate* spell functions much like a [plane shift](http://www.d20srd.org/srd/spells/planeShift.htm) spell, except that the gate opens precisely at the point you desire (a creation effect). Deities and other beings who rule a planar realm can prevent a *gate* from opening in their presence or personal demesnes if they so desire. Travelers need not join hands with you—anyone who chooses to step through the portal is transported. A *gate* cannot be opened to another point on the same plane; the spell works only for interplanar travel.
-                             You may hold the *gate* open only for a brief time (no more than 1 round per caster level), and you must concentrate on doing so, or else the interplanar connection is severed.
-                             *Calling Creatures:* The second effect of the *gate* spell is to call an extraplanar creature to your aid (a calling effect). By naming a particular being or kind of being as you cast the spell, you cause the *gate* to open in the immediate vicinity of the desired creature and pull the subject through, willing or unwilling. Deities and unique beings are under no compulsion to come through the *gate*, although they may choose to do so of their own accord. This use of the spell creates a *gate* that remains open just long enough to transport the called creatures. This use of the spell has an XP cost (see below).
-                             If you choose to call a kind of creature instead of a known individual you may call either a single creature (of any HD) or several creatures. You can call and control several creatures as long as their HD total does not exceed your caster level. In the case of a single creature, you can control it if its HD do not exceed twice your caster level. A single creature with more HD than twice your caster level can’t be controlled. Deities and unique beings cannot be controlled in any event. An uncontrolled being acts as it pleases, making the calling of such creatures rather dangerous. An uncontrolled being may return to its home plane at any time.
-                             A controlled creature can be commanded to perform a service for you. Such services fall into two categories: immediate tasks and contractual service. Fighting for you in a single battle or taking any other actions that can be accomplished within 1 round per caster level counts as an immediate task; you need not make any agreement or pay any reward for the creature’s help. The creature departs at the end of the spell.
-                             If you choose to exact a longer or more involved form of service from a called creature, you must offer some fair trade in return for that service. The service exacted must be reasonable with respect to the promised favor or reward; see the [lesser planar ally](https://www.dandwiki.com/wiki/SRD:Lesser_Planar_Ally) spell for appropriate rewards. (Some creatures may want their payment in “livestock” rather than in coin, which could involve complications.) Immediately upon completion of the service, the being is transported to your vicinity, and you must then and there turn over the promised reward. After this is done, the creature is instantly freed to return to its own plane.
+          text:             `Casting a gate spell has two effects. First, it creates an interdimensional connection between your plane of existence and a plane you specify, allowing travel between those two planes in either direction.
+                             Second, you may then call a particular individual or kind of being through the gate.
+                             The gate itself is a circular hoop or disk from 5 to 20 feet in diameter (caster’s choice), oriented in the direction you desire when it comes into existence (typically vertical and facing you). It is a two-dimensional window looking into the plane you specified when casting the spell, and anyone or anything that moves through is shunted instantly to the other side.
+                             A gate has a front and a back. Creatures moving through the gate from the front are transported to the other plane; creatures moving through it from the back are not.
+
+                             *Planar Travel*
+                             As a mode of planar travel, a gate spell functions much like a [plane shift](http://www.d20srd.org/srd/spells/planeShift.htm) spell, except that the gate opens precisely at the point you desire (a creation effect). Deities and other beings who rule a planar realm can prevent a gate from opening in their presence or personal demesnes if they so desire. Travelers need not join hands with you—anyone who chooses to step through the portal is transported. A gate cannot be opened to another point on the same plane; the spell works only for interplanar travel.
+                             You may hold the gate open only for a brief time (no more than [[?{Casting Level}]] rounds), and you must concentrate on doing so, or else the interplanar connection is severed.
+
+                             *Calling Creatures*
+                             The second effect of the gate spell is to call an extraplanar creature to your aid (a calling effect). By naming a particular being or kind of being as you cast the spell, you cause the gate to open in the immediate vicinity of the desired creature and pull the subject through, willing or unwilling. Deities and unique beings are under no compulsion to come through the gate, although they may choose to do so of their own accord. This use of the spell creates a gate that remains open just long enough to transport the called creatures. This use of the spell has an XP cost (see below).
+                             If you choose to call a kind of creature instead of a known individual you may call either a single creature (of any HD) or several creatures. You can call and control several creatures as long as their HD total does not exceed [[?{Casting Level}]]. In the case of a single creature, you can control it if its HD do not exceed [[2*?{Casting Level}]]. A single creature with more HD than [[2*?{Casting Level}]] can’t be controlled. Deities and unique beings cannot be controlled in any event. An uncontrolled being acts as it pleases, making the calling of such creatures rather dangerous. An uncontrolled being may return to its home plane at any time.
+                             A controlled creature can be commanded to perform a service for you. Such services fall into two categories: immediate tasks and contractual service. Fighting for you in a single battle or taking any other actions that can be accomplished within [[?{Casting Level}]] rounds counts as an immediate task; you need not make any agreement or pay any reward for the creature’s help. The creature departs at the end of the spell.
+                             If you choose to exact a longer or more involved form of service from a called creature, you must offer some fair trade in return for that service. The service exacted must be reasonable with respect to the promised favor or reward; see the [lesser planar ally](http://www.d20srd.org/srd/spells/planarAllyLesser.htm) spell for appropriate rewards. (Some creatures may want their payment in “livestock” rather than in coin, which could involve complications.) Immediately upon completion of the service, the being is transported to your vicinity, and you must then and there turn over the promised reward. After this is done, the creature is instantly freed to return to its own plane.
                              Failure to fulfill the promise to the letter results in your being subjected to service by the creature or by its liege and master, at the very least. At worst, the creature or its kin may attack you.
-                             *Note:* When you use a calling spell such as *gate* to call an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.`,
+                             *Note:* When you use a calling spell such as gate to call an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.`,
           component_details:'XP Cost: 1,000 XP (only for the *calling creatures* function).'
         },
         //Epic Spell: gathering of maggots
         'geas/quest': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Geas/Quest',
+          ref:              'http://www.d20srd.org/srd/spells/geasQuest.htm',
           school:           'Enchantment (Compulsion) [Language-Dependent, Mind-Affecting]',
-          level:            'Brd 6, Charm 6, Clr 6, Nobility 6, Sor/Wiz 6',
+          level:            'APeace 6, Arc 6, Brd 6, Charm 6, Clr 6, Domination 6, Fate 6, Inquisition 6, Nobility 6, Sor/Wiz 6, Tyranny 6, Wuj 6',
           components:       'V',
           casting_time:     '10 minutes',
           range:            '_close_',
@@ -4248,16 +4251,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] days or until discharged (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `A *geas* places a magical command on a creature to carry out some service or to refrain from some action or course of activity, as desired by you. The creature must be able to understand you. While a *geas* cannot compel a creature to kill itself or perform acts that would result in certain death, it can cause almost any other course of activity.
-                             The *geased* creature must follow the given instructions until the *geas* is completed, no matter how long it takes.
-                             If the instructions involve some open-ended task that the recipient cannot complete through his own actions the spell remains in effect for a maximum of one day per caster level. A clever recipient can subvert some instructions:
-                             If the subject is prevented from obeying the *geas* for 24 hours, the subject takes 3d6 points of damage each day it does not attempt to follow the *geas/quest*. Additionally, each day it must make a Fortitude saving throw or become [sickened](https://www.dandwiki.com/wiki/SRD:Sickened). These effects end 24 hours after the creature attempts to resume the *geas/quest*.
-                             A [remove curse](http://www.d20srd.org/srd/spells/bestowCurse.htm) spell ends a *geas/quest* spell only if its caster level is at least two higher than your caster level. [Break enchantment](http://www.d20srd.org/srd/spells/breakEnchantment.htm) does not end a *geas/quest*, but [limited wish](http://www.d20srd.org/srd/spells/limitedWish.htm), [miracle](http://www.d20srd.org/srd/spells/miracle.htm), and [wish](http://www.d20srd.org/srd/spells/wish.htm) do.
-                             Bards, sorcerers, and wizards usually refer to this spell as *geas*, while clerics call the same spell *quest*.`,
-          component_details:null
+          text:             `A geas places a magical command on a creature to carry out some service or to refrain from some action or course of activity, as desired by you. The creature must be able to understand you. While a geas cannot compel a creature to kill itself or perform acts that would result in certain death, it can cause almost any other course of activity.
+                             The geased creature must follow the given instructions until the geas is completed, no matter how long it takes.
+                             If the instructions involve some open-ended task that the recipient cannot complete through his own actions the spell remains in effect for a maximum of [[?{Casting Level}]] days. A clever recipient can subvert some instructions:
+                             If the subject is prevented from obeying the geas for 24 hours, the subject takes ‹3d6|[[3d6]] points of damage› points of damage each day it does not attempt to follow the geas/quest. Additionally, each day it must make a Fortitude saving throw or become sickened. These effects end 24 hours after the creature attempts to resume the geas/quest.
+                             A [remove curse](http://www.d20srd.org/srd/spells/removeCurse.htm) spell ends a geas/quest spell only if its caster level is at least two higher than your caster level. [Break enchantment](http://www.d20srd.org/srd/spells/breakEnchantment.htm) does not end a geas/quest, but [limited wish](http://www.d20srd.org/srd/spells/limitedWish.htm), [miracle](http://www.d20srd.org/srd/spells/miracle.htm), and [wish](http://www.d20srd.org/srd/spells/wish.htm) do.
+                             Bards, sorcerers, and wizards usually refer to this spell as geas, while clerics call the same spell quest.`
         },
         'genesis': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Genesis',
+          ref:              'http://www.d20srd.org/srd/epic/spells/genesis.htm',
+          other_versions:   'Defenders of the Faith on page 86',
           school:           'Conjuration (Creation)',
           level:            'Creation 9',
           components:       'V, S, M, XP',
@@ -4270,15 +4273,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'No',
           text:             `This spell creates an immobile, finite plane with limited access—a demi-plane.
                              Demiplanes created by this power are very small, minor planes. A character can cast this spell only on the Ethereal Plane. When he or she casts it, a local density fluctuation precipitates the creation of a demiplane. At first, the demiplane grows at a rate of a 1-foot-radius per day to an initial maximum radius of 180 feet as the fledgling plane draws substance from surrounding ethereal vapors and protomatter or astral ectoplasm.
-                             The character determines the environment in the demiplane when he or she first casts *genesis*, reflecting most any desire he or she can visualize. The caster determines factors such as atmosphere, water, temperature, and the shape of the general terrain. However, the spell cannot create life, nor can it create construction. If desired, these must be brought in by some other fashion.
+                             The character determines the environment in the demiplane when he or she first casts genesis, reflecting most any desire he or she can visualize. The caster determines factors such as atmosphere, water, temperature, and the shape of the general terrain. However, the spell cannot create life, nor can it create construction. If desired, these must be brought in by some other fashion.
                              Once the basic demiplane reaches its maximum size, the character can continue to cast this spell to enlarge the demiplane if he or she is inside the boundaries of the demiplane. In such a case, the radius of the demiplane increases by 60 feet for each subsequent casting.
                              If the spell is cast again while outside an existing demi-plane, the casting creates a separate bubble that does not touch or overlap any previously created demiplane.`,
-          component_details:'XP Cost: 5,000 XP.'
+          component_details:`Material Component: A crystalline sphere
+                             XP Cost: 5,000 XP.`
         },
         'gentle repose': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Gentle_Repose',
+          ref:              'http://www.d20srd.org/srd/spells/gentleRepose.htm',
           school:           'Necromancy',
-          level:            'Clr 2, Repose 2, Sor/Wiz 3',
+          level:            'Arc 2, Clr 2, Hlr 2, Repose 2, Slayer of Domiel 2, Sor/Wiz 3, Time 2',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -4287,14 +4291,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] days',
           saving_throw:     'Will negates (object)',
           spell_resistance: 'Yes (object)',
-          text:             `You preserve the remains of a dead creature so that they do not decay. Doing so effectively extends the time limit on raising that creature from the dead (see [raise dead](https://www.dandwiki.com/wiki/SRD:Raise_Dead)). Days spent under the influence of this spell don’t count against the time limit. Additionally, this spell makes transporting a fallen comrade more pleasant.
+          text:             `You preserve the remains of a dead creature so that they do not decay. Doing so effectively extends the time limit on raising that creature from the dead (see [raise dead](http://www.d20srd.org/srd/spells/raiseDead.htm)). Days spent under the influence of this spell don’t count against the time limit. Additionally, this spell makes transporting a fallen comrade more pleasant.
                              The spell also works on severed body parts and the like.`,
           component_details:'Arcane Material Component: A pinch of salt, and a copper piece for each eye the corpse has (or had).'
         },
         'ghost sound': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Ghost_Sound',
+          ref:              'http://www.d20srd.org/srd/spells/ghostSound.htm',
           school:           'Illusion (Figment)',
-          level:            'Asn 1, Brd 0, Sor/Wiz 0',
+          level:            'Adp 0, Arc 0, Asn 1, Beguiler 0, Blg 0, Brd 0, Duskblade 0, Hoard 1, Shu 0, Slayer of Domiel 1, Sor/Wiz 0, Wuj 0',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -4303,32 +4307,32 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'Will disbelief (if interacted with)',
           spell_resistance: 'No',
-          text:             `*Ghost sound* allows you to create a volume of sound that rises, recedes, approaches, or remains at a fixed place. You choose what type of sound *ghost sound* creates when casting it and cannot thereafter change the sound’s basic character.
-                             The volume of sound created depends on your level. You can produce as much noise as [[{[[4*?{Casting Level}]],20}kl1]] normal humans. Thus, talking, singing, shouting, walking, marching, or running sounds can be created. The noise a *ghost sound* spell produces can be virtually any type of sound within the volume limit. A horde of rats running and squeaking is about the same volume as eight humans running and shouting. A roaring lion is equal to the noise from sixteen humans, while a roaring dire tiger is equal to the noise from twenty humans.
-                             *Ghost sound* can enhance the effectiveness of a [silent image](https://www.dandwiki.com/wiki/SRD:Silent_Image) spell.
-                             *Ghost sound* can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
+          text:             `Ghost sound allows you to create a volume of sound that rises, recedes, approaches, or remains at a fixed place. You choose what type of sound ghost sound creates when casting it and cannot thereafter change the sound’s basic character.
+                             The volume of sound created depends on your level. You can produce as much noise as [[{[[4*?{Casting Level}]],20}kl1]] normal humans. Thus, talking, singing, shouting, walking, marching, or running sounds can be created. The noise a ghost sound spell produces can be virtually any type of sound within the volume limit. A horde of rats running and squeaking is about the same volume as eight humans running and shouting. A roaring lion is equal to the noise from sixteen humans, while a roaring dire tiger is equal to the noise from twenty humans.
+                             Ghost sound can enhance the effectiveness of a [silent image](http://www.d20srd.org/srd/spells/silentImage.htm) spell.
+                             Ghost sound can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
           component_details:'Material Component: A bit of wool or a small lump of wax.'
         },
         'ghoul touch': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Ghoul_Touch',
+          ref:              'http://www.d20srd.org/srd/spells/ghoulTouch.htm',
           school:           'Necromancy',
-          level:            'Sor/Wiz 2',
+          level:            'Duskblade 2, Sor/Wiz 2',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            'Touch',
           target_type:      'Target',
-          target:           'Living [humanoid](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) touched',
+          target:           'Living humanoid touched',
           duration:         '[[1d6+2]] rounds',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
-          text:             `Imbuing you with negative energy, this spell allows you to paralyze a single living [humanoid](https://www.dandwiki.com/wiki/SRD:Humanoid_Type) for the duration of the spell with a successful melee [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack).
-                             Additionally, the [paralyzed](https://www.dandwiki.com/wiki/SRD:Paralyzed) subject exudes a carrion stench that causes all living creatures (except you) in a 10-foot-radius spread to become [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) (Fortitude negates). A [neutralize poison](https://www.dandwiki.com/wiki/SRD:Neutralize_Poison) spell removes the effect from a [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) creature, and creatures immune to poison are unaffected by the stench.`,
+          text:             `Imbuing you with negative energy, this spell allows you to paralyze a single living humanoid for the duration of the spell with a successful melee touch attack.
+                             Additionally, the paralyzed subject exudes a carrion stench that causes all living creatures (except you) in a 10-foot-radius spread to become sickened (Fortitude negates). A [neutralize poison](http://www.d20srd.org/srd/spells/neutralizePoison.htm) spell removes the effect from a sickened creature, and creatures immune to poison are unaffected by the stench.`,
           component_details:'Material Component: A small scrap of cloth taken from clothing worn by a ghoul, or a pinch of earth from a ghoul’s lair.'
         },
         'giant vermin': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Giant_Vermin',
+          ref:              'http://www.d20srd.org/srd/spells/giantVermin.htm',
           school:           'Transmutation',
-          level:            'Clr 4, Drd 4',
+          level:            'Arc 4, Clr 4, Drd 4, Spider 4',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -4337,7 +4341,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `You turn three normal-sized [centipedes](https://www.dandwiki.com/wiki/SRD:Monstrous_Centipede), two normal-sized [spiders](https://www.dandwiki.com/wiki/SRD:Monstrous_Spider), or a single normal-sized [scorpion](https://www.dandwiki.com/wiki/SRD:Monstrous_Scorpion) into larger forms. Only one type of vermin can be transmuted (so a single casting cannot affect both a centipede and a spider), and all must be grown to the same size. The size to which the vermin can be grown depends on your level; see the table below.
+          text:             `You turn three normal-sized centipedes, two normal-sized spiders, or a single normal-sized scorpion into larger forms. Only one type of vermin can be transmuted (so a single casting cannot affect both a centipede and a spider), and all must be grown to the same size. The size to which the vermin can be grown depends on your level; see the table below.
                              Any giant vermin created by this spell do not attempt to harm you, but your control of such creatures is limited to simple commands (“Attack,” “Defend,” “Stop,” and so forth). Orders to attack a certain creature when it appears or guard against a particular occurrence are too complex for the vermin to understand. Unless commanded to do otherwise, the giant vermin attack whoever or whatever is near them.
 
                              • Caster Level 9th or lower
@@ -4349,13 +4353,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • Caster Level 18th–19th
                              -- Vermin Size: Gargantuan
                              • Caster Level 20th or higher
-                             -- Vermin Size: Colossal`,
-          component_details:null
+                             -- Vermin Size: Colossal`
         },
         'glibness': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Glibness',
+          ref:              'http://www.d20srd.org/srd/spells/glibness.htm',
           school:           'Transmutation',
-          level:            'Asn 4, Brd 3',
+          level:            'Asn 4, Beguiler 3, Brd 3, Commerce 4',
           components:       'S',
           casting_time:     '1 standard action',
           range:            'Personal',
@@ -4363,13 +4366,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         '[[10*?{Casting Level}]] minutes (D)',
           text:             `Your speech becomes fluent and more believable. You gain a +30 bonus on Bluff checks made to convince another of the truth of your words. (This bonus doesn’t apply to other uses of the Bluff skill, such as feinting in combat, creating a diversion to hide, or communicating a hidden message via innuendo.)
-                             If a magical effect is used against you that would detect your lies or force you to speak the truth the user of the effect must succeed on a caster level check (1d20 + caster level) against a DC of [[15+?{Casting Level}]] to succeed. Failure means the effect does not detect your lies or force you to speak only the truth.`,
-          component_details:null
+                             If a magical effect is used against you that would detect your lies or force you to speak the truth the user of the effect must succeed on a caster level check (1d20 + caster level) against a DC of [[15+?{Casting Level}]] to succeed. Failure means the effect does not detect your lies or force you to speak only the truth.`
         },
         'glitterdust': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Glitterdust',
+          ref:              'http://www.d20srd.org/srd/spells/glitterdust.htm',
           school:           'Conjuration (Creation)',
-          level:            'Brd 2, Sor/Wiz 2',
+          level:            'Arc 2, Beguiler 2, Brd 2, EmBarachiel 2, HB 2, Shu 2, Sor/Wiz 2',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -4383,9 +4385,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: Ground mica.'
         },
         'globe of invulnerability': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Globe_of_Invulnerability',
+          ref:              'http://www.d20srd.org/srd/spells/globeOfInvulnerability.htm',
           school:           'Abjuration',
-          level:            'Sor/Wiz 6',
+          level:            'Artificer 6, Endurance 7, Sor/Wiz 6, Wuj 6',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '10 ft.',
@@ -4394,13 +4396,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `An immobile, faintly shimmering magical sphere surrounds you and excludes all spell effects of 4th level or lower. The area or effect of any such spells does not include the area of the *globe of invulnerability*. Such spells fail to affect any target located within the globe. Excluded effects include spell-like abilities and spells or spell-like effects from items. However, any type of spell can be cast through or out of the magical globe. Spells of 5th level and higher are not affected by the globe, nor are spells already in effect when the globe is cast. The globe can be brought down by a targeted [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell, but not by an area *dispel magic*. You can leave and return to the globe without penalty.
+          text:             `An immobile, faintly shimmering magical sphere surrounds you and excludes all spell effects of 4th level or lower. The area or effect of any such spells does not include the area of the *globe of invulnerability*. Such spells fail to affect any target located within the globe. Excluded effects include spell-like abilities and spells or spell-like effects from items. However, any type of spell can be cast through or out of the magical globe. Spells of 5th level and higher are not affected by the globe, nor are spells already in effect when the globe is cast. The globe can be brought down by a targeted [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell, but not by an area [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm). You can leave and return to the globe without penalty.
                              Note that spell effects are not disrupted unless their effects enter the globe, and even then they are merely suppressed, not dispelled.
-                             If a given spell has more than one level depending on which character class is casting it, use the level appropriate to the caster to determine whether *globe of invulnerability* stops it.`,
+                             If a given spell has more than one level depending on which character class is casting it, use the level appropriate to the caster to determine whether globe of invulnerability stops it.`,
           component_details:'Material Component: A glass or crystal bead that shatters at the expiration of the spell.'
         },
         'glossolalia': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Glossolalia',
+          ref:              'http://www.d20srd.org/srd/psionic/spells/glossolalia.htm',
           school:           'Evocation [Sonic, Mind-Affecting]',
           level:            'Bard 2',
           components:       'V',
@@ -4411,13 +4413,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude partial; see text',
           spell_resistance: 'Yes',
-          text:             `You utter shrieks of nonsense and gibberish that thinking creatures find distracting and confusing. The spell affects only creatures with Intelligence scores of 3 or higher. Any such creatures within the spell’s area must succeed on Fortitude saves or be stunned for 1 round (if they have Intelligence scores of 20 or higher), dazed for 1 round (if they have Intelligence scores between 10 and 19), or shaken for 1 round (if they have Intelligence scores between 3 and 9). In addition, a creature within the spell’s area loses any psionic focus it might have had and takes a -4 penalty on Concentration checks for 1 round. These effects happen whether or not the creature succeeded on its save.`,
-          component_details:null
+          text:             `You utter shrieks of nonsense and gibberish that thinking creatures find distracting and confusing. The spell affects only creatures with Intelligence scores of 3 or higher. Any such creatures within the spell’s area must succeed on Fortitude saves or be stunned for 1 round (if they have Intelligence scores of 20 or higher), dazed for 1 round (if they have Intelligence scores between 10 and 19), or shaken for 1 round (if they have Intelligence scores between 3 and 9). In addition, a creature within the spell’s area loses any psionic focus it might have had and takes a -4 penalty on Concentration checks for 1 round. These effects happen whether or not the creature succeeded on its save.`
         },
         'glyph of warding': {
           ref:              'http://www.d20srd.org/srd/spells/glyphOfWarding.htm',
           school:           'Abjuration',
-          level:            'Clr 3, Rune 3',
+          level:            'Arc 3, Clr 3, Dwarf 3, Rune 3, Shu 3, Wealth 3',
           components:       'V, S, M',
           casting_time:     '10 minutes',
           range:            'Touch',
@@ -4426,20 +4427,24 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Permanent until discharged (D)',
           saving_throw:     'See text',
           spell_resistance: 'No (object) and Yes; see text',
-          text:             `This powerful inscription harms those who enter, pass, or open the warded area or object. A *glyph of warding* can guard a bridge or passage, ward a portal, trap a chest or box, and so on.
-                             You set the conditions of the ward. Typically, any creature entering the warded area or opening the warded object without speaking a password (which you set when casting the spell) is subject to the magic it stores. Alternatively or in addition to a password trigger, *glyphs* can be set according to physical characteristics (such as height or weight) or creature type, subtype, or kind. *Glyphs* can also be set with respect to good, evil, law, or chaos, or to pass those of your religion. They cannot be set according to class, Hit Dice, or level. *Glyphs* respond to invisible creatures normally but are not triggered by those who travel past them [Ethereal](https://www.dandwiki.com/wiki/SRD:Etherealness). Multiple *glyphs* cannot be cast on the same area. However, if a cabinet has three drawers, each can be separately warded.
-                             When casting the spell, you weave a tracery of faintly glowing lines around the warding sigil. A *glyph* can be placed to conform to any shape up to the limitations of your total square footage. When the spell is completed, the *glyph* and tracery become nearly invisible.
-                             *Glyphs* cannot be affected or bypassed by such means as physical or magical probing, though they can be dispelled. [Mislead](https://www.dandwiki.com/wiki/SRD:Mislead), [polymorph](https://www.dandwiki.com/wiki/SRD:Polymorph_%28Spell%29), and [nondetection](https://www.dandwiki.com/wiki/SRD:Nondetection) (and similar magical effects) can fool a *glyph*, though nonmagical disguises and the like can’t. [Read magic](http://www.d20srd.org/srd/spells/readMagic.htm) allows you to identify a *glyph of warding* with a DC 13 Spellcraft check. Identifying the *glyph* does not discharge it and allows you to know the basic nature of the *glyph* (version, type of damage caused, what spell is stored).
-                             *Note:* Magic traps such as *glyph of warding* are hard to detect and disable. A rogue (only) can use the Search skill to find the *glyph* and Disable Device to thwart it. The DC in each case is 25 + spell level, or 28 for *glyph of warding*.
-                             Depending on the version selected, a *glyph* either blasts the intruder or activates a spell.
-                             *Blast Glyph:* A *blast glyph* deals 1d8 points of ‹damage|[[[[{?{Casting Level}/2,5}kl1]]d8]]› per two caster levels (maximum 5d8) to the intruder and to all within 5 feet of him or her. This damage is acid, cold, fire, electricity, or sonic (caster’s choice, made at time of casting). Each creature affected can attempt a Reflex save to take half damage. Spell resistance applies against this effect.
-                             *Spell Glyph:* You can store any harmful spell of 3rd level or lower that you know. All level-dependent features of the spell are based on your caster level at the time of casting the *glyph*. If the spell has a target, it targets the intruder. If the spell has an area or an amorphous effect the area or effect is centered on the intruder. If the spell summons creatures, they appear as close as possible to the intruder and attack. Saving throws and spell resistance operate as normal, except that the DC is based on the level of the spell stored in the *glyph*.`,
+          text:             `This powerful inscription harms those who enter, pass, or open the warded area or object. A glyph of warding can guard a bridge or passage, ward a portal, trap a chest or box, and so on.
+                             You set the conditions of the ward. Typically, any creature entering the warded area or opening the warded object without speaking a password (which you set when casting the spell) is subject to the magic it stores. Alternatively or in addition to a password trigger, glyphs can be set according to physical characteristics (such as height or weight) or creature type, subtype, or kind. Glyphs can also be set with respect to good, evil, law, or chaos, or to pass those of your religion. They cannot be set according to class, Hit Dice, or level. Glyphs respond to invisible creatures normally but are not triggered by those who travel past them Ethereal. Multiple glyphs cannot be cast on the same area. However, if a cabinet has three drawers, each can be separately warded.
+                             When casting the spell, you weave a tracery of faintly glowing lines around the warding sigil. A glyph can be placed to conform to any shape up to the limitations of your total square footage. When the spell is completed, the glyph and tracery become nearly invisible.
+                             Glyphs cannot be affected or bypassed by such means as physical or magical probing, though they can be dispelled. [Mislead](http://www.d20srd.org/srd/spells/mislead.htm), [polymorph](http://www.d20srd.org/srd/spells/polymorph.htm), and [nondetection](http://www.d20srd.org/srd/spells/nondetection.htm) (and similar magical effects) can fool a glyph, though nonmagical disguises and the like can’t. [Read magic](http://www.d20srd.org/srd/spells/readMagic.htm) allows you to identify a glyph of warding with a DC 13 Spellcraft check. Identifying the glyph does not discharge it and allows you to know the basic nature of the glyph (version, type of damage caused, what spell is stored).
+                             *Note:* Magic traps such as glyph of warding are hard to detect and disable. A rogue (only) can use the Search skill to find the glyph and Disable Device to thwart it. The DC in each case is 25 + spell level, or 28 for glyph of warding.
+                             Depending on the version selected, a glyph either blasts the intruder or activates a spell.
+
+                             *Blast Glyph*
+                             A blast glyph deals ‹{lvl/2}d8|[[[[{?{Casting Level}/2,5}kl1]]d8]] points of damage› points of damage to the intruder and to all within 5 feet of him or her. This damage is acid, cold, fire, electricity, or sonic (caster’s choice, made at time of casting). Each creature affected can attempt a Reflex save to take half damage. Spell resistance applies against this effect.
+
+                             *Spell Glyph*
+                             You can store any harmful spell of 3rd level or lower that you know. All level-dependent features of the spell are based on your caster level at the time of casting the glyph. If the spell has a target, it targets the intruder. If the spell has an area or an amorphous effect the area or effect is centered on the intruder. If the spell summons creatures, they appear as close as possible to the intruder and attack. Saving throws and spell resistance operate as normal, except that the DC is based on the level of the spell stored in the glyph.`,
           component_details:'Material Component: You trace the glyph with incense, which must first be sprinkled with powdered diamond worth at least 200 gp.'
         },
         'good hope': {
           ref:              'http://www.d20srd.org/srd/spells/goodHope.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Brd 3',
+          level:            'APeace 4, Arc 4, Brd 3, Charm 4, EmBarachiel 3, Joy 4, Moon 4, Wuj 4',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -4449,13 +4454,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
           text:             `This spell instills powerful hope in the subjects. Each affected creature gains a +2 morale bonus on saving throws, attack rolls, ability checks, skill checks, and weapon damage rolls.
-                             *Good hope* counters and dispels *crushing despair*.`,
-          component_details:null
+                             Good hope counters and dispels [crushing despair](http://www.d20srd.org/srd/spells/crushingDespair.htm).`
         },
         'goodberry': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Goodberry',
+          ref:              'http://www.d20srd.org/srd/spells/goodberry.htm',
           school:           'Transmutation',
-          level:            'Drd 1',
+          level:            'Arc 1, Drd 1, Feast 1, Hlr 1, Sin-G 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -4464,13 +4468,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] days',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `Casting *goodberry* upon a handful of freshly picked berries makes 2d4 of them magical. You (as well as any other druid of 3rd or higher level) can immediately discern which berries are affected. Each transmuted berry provides nourishment as if it were a normal meal for a Medium creature. The berry also cures 1 point of damage when eaten, subject to a maximum of 8 points of such curing in any 24-hour period.`,
-          component_details:null
+          text:             `Casting goodberry upon a handful of freshly picked berries makes 2d4 of them magical. You (as well as any other druid of 3rd or higher level) can immediately discern which berries are affected. Each transmuted berry provides nourishment as if it were a normal meal for a Medium creature. The berry also cures 1 point of damage when eaten, subject to a maximum of 8 points of such curing in any 24-hour period.`
         },
         'grasping hand': {
           ref:              'http://www.d20srd.org/srd/spells/graspingHand.htm',
           school:           'Evocation [Force]',
-          level:            'Sor/Wiz 7, Strength 7',
+          level:            'Sor/Wiz 7, Strength 7, Tyranny 7',
           components:       'V, S, F/DF',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -4479,17 +4482,17 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `This spell functions like [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm), except the hand can also [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) one opponent that you select. The *grasping hand* gets one [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) attack per round.
+          text:             `This spell functions like [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm), except the hand can also grapple one opponent that you select. The grasping hand gets one grapple attack per round.
                              Its attack bonus to make contact equals your caster level + your Intelligence, Wisdom, or Charisma modifier (for a wizard, cleric, or sorcerer, respectively), +10 for the hand’s Strength score (31), -1 for being Large. Its grapple bonus is this same figure, except with a +4 modifier for being Large instead of -1. The hand holds but does not harm creatures it grapples.
                              Directing the spell to a new target is a move action.
-                             The *grasping hand* can also bull rush an opponent as [forceful hand](http://www.d20srd.org/srd/spells/forcefulHand.htm) does, but at a +16 bonus on the Strength check (+10 for Strength 31, +4 for being Large, and a +2 bonus for charging, which it always gets), or interpose itself as [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm) does.
+                             The grasping hand can also bull rush an opponent as [forceful hand](http://www.d20srd.org/srd/spells/forcefulHand.htm) does, but at a +16 bonus on the Strength check (+10 for Strength 31, +4 for being Large, and a +2 bonus for charging, which it always gets), or interpose itself as [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm) does.
                              Clerics who cast this spell name it for their deities.`,
           component_details:'Arcane Focus: A leather glove.'
         },
         'grease': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Grease',
+          ref:              'http://www.d20srd.org/srd/spells/grease.htm',
           school:           'Conjuration (Creation)',
-          level:            'Brd 1, Sor/Wiz 1',
+          level:            'Brd 1, Slime 1, Sor/Wiz 1',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -4498,31 +4501,30 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'See text',
           spell_resistance: 'No',
-          text:             `A *grease* spell covers a solid surface with a layer of slippery grease. Any creature in the area when the spell is cast must make a successful Reflex save or fall. This save is repeated on your turn each round that the creature remains within the area. A creature can walk within or through the area of grease at half normal speed with a DC 10 Balance check. Failure means it can’t move that round (and must then make a Reflex save or fall), while failure by 5 or more means it falls (see the Balance skill for details).
-                             The spell can also be used to create a greasy coating on an item. Material objects not in use are always affected by this spell, while an object wielded or employed by a creature receives a Reflex saving throw to avoid the effect. If the initial saving throw fails, the creature immediately drops the item. A saving throw must be made in each round that the creature attempts to pick up or use the *greased* item. A creature wearing *greased* armor or clothing gains a +10 circumstance bonus on Escape Artist checks and on grapple checks made to resist or escape a grapple or to escape a pin.`,
+          text:             `A grease spell covers a solid surface with a layer of slippery grease. Any creature in the area when the spell is cast must make a successful Reflex save or fall. This save is repeated on your turn each round that the creature remains within the area. A creature can walk within or through the area of grease at half normal speed with a DC 10 Balance check. Failure means it can’t move that round (and must then make a Reflex save or fall), while failure by 5 or more means it falls (see the Balance skill for details).
+                             The spell can also be used to create a greasy coating on an item. Material objects not in use are always affected by this spell, while an object wielded or employed by a creature receives a Reflex saving throw to avoid the effect. If the initial saving throw fails, the creature immediately drops the item. A saving throw must be made in each round that the creature attempts to pick up or use the greased item. A creature wearing greased armor or clothing gains a +10 circumstance bonus on Escape Artist checks and on grapple checks made to resist or escape a grapple or to escape a pin.`,
           component_details:'Material Component: A bit of pork rind or butter.'
         },
         'greater arcane sight': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Arcane_Sight',
+          ref:              'http://www.d20srd.org/srd/spells/arcaneSightGreater.htm',
           school:           'Divination',
-          level:            'Sor/Wiz 7',
+          level:            'Beguiler 7, Sor/Wiz 7',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
           duration:         '[[?{Casting Level}]] minutes (D)',
-          text:             `This spell makes your eyes glow blue and allows you to see magical auras within 120 feet of you. The effect is similar to that of a [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm) spell, but *greater arcane sight* does not require concentration and discerns aura location immediately.
+          text:             `This spell makes your eyes glow blue and allows you to see magical auras within 120 feet of you. The effect is similar to that of a [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm) spell, but greater arcane sight does not require concentration and discerns aura location immediately.
                              You know the location and power of all magical auras within your sight. An aura’s power depends on a spell’s functioning level or an item’s caster level, as noted in the description of the detect magic spell. If the items or creatures bearing the auras are in line of sight, you automatically know which spells or magical effects are active upon any individual or object you see.
                              If you concentrate on a specific creature within 120 feet of you as a standard action, you can determine whether it has any spellcasting or spell-like abilities, whether these are arcane or divine (spell-like abilities register as arcane), and the strength of the most powerful spell or spell-like ability the creature currently has available for use.
-                             *Greater arcane sight* doesn’t let you identify magic items.
-                             Unlike *arcane sight*, this spell cannot be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
-          component_details:null
+                             Greater arcane sight doesn’t let you identify magic items.
+                             Unlike arcane sight, this spell cannot be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`
         },
         'greater command': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Command',
+          ref:              'http://www.d20srd.org/srd/spells/commandGreater.htm',
           school:           'Enchantment (Compulsion) [Language-Dependent, Mind-Affecting]',
-          level:            'Clr 5, Nobility 5',
+          level:            'APeace 5, Arc 5, Clr 5, Domination 5, Herald 5, Nobility 5, Passion 5, Tyranny 5',
           components:       'V',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -4532,18 +4534,28 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
           text:             `You give creatures a single command, which they obey to the best of their ability at their earliest opportunity. You may select from the following options. At the start of each commanded creature’s action after the first, it gets another Will save to attempt to break free from the spell. Each creature must receive the same command.
-                             Approach: On its turn, the subject moves toward you as quickly and directly as possible for 1 round. The creature may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
-                             *Drop:* On its turn, the subject drops whatever it is holding. It can’t pick up any dropped item until its next turn.
-                             *Fall:* On its turn, the subject falls to the ground and remains prone for 1 round. It may act normally while prone but takes any appropriate penalties.
-                             *Flee:* On its turn, the subject moves away from you as quickly as possible for 1 round. It may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
-                             *Halt:* The subject stands in place for 1 round. It may not take any actions but is not considered helpless.
-                             If the subject can’t carry out your command on its next turn, the spell automatically fails.`,
-          component_details:null
+
+                             *Approach*
+                             On its turn, the subject moves toward you as quickly and directly as possible for 1 round. The creature may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
+
+                             *Drop*
+                             On its turn, the subject drops whatever it is holding. It can’t pick up any dropped item until its next turn.
+
+                             *Fall*
+                             On its turn, the subject falls to the ground and remains prone for 1 round. It may act normally while prone but takes any appropriate penalties.
+
+                             *Flee*
+                             On its turn, the subject moves away from you as quickly as possible for 1 round. It may do nothing but move during its turn, and it provokes attacks of opportunity for this movement as normal.
+
+                             *Halt*
+                             The subject stands in place for 1 round. It may not take any actions but is not considered helpless.
+
+                             If the subject can’t carry out your command on its next turn, the spell automatically fails.`
         },
         'greater dispel magic': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Dispel_Magic',
+          ref:              'http://www.d20srd.org/srd/spells/dispelMagicGreater.htm',
           school:           'Abjuration',
-          level:            'Brd 5, Clr 6, Drd 6, Liberation, 6, Sor/Wiz 6',
+          level:            'APeace 6, Arc 6, Beguiler 6, Blg 6, Brd 5, Clr 6, Drd 6, Drow 6, Liberation 6, Shu 6, Sor/Wiz 6, Wuj 6',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -4552,28 +4564,34 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `You can use *greater dispel magic* to end ongoing spells that have been cast on a creature or object, to temporarily suppress the magical abilities of a magic item, to end ongoing spells (or at least their effects) within an area, or to counter another spellcaster’s spell. A dispelled spell ends as if its duration had expired. Some spells, as detailed in their descriptions, can’t be defeated by *greater dispel magic*. *Greater dispel magic* can dispel (but not counter) spell-like effects just as it does spells.
-                             Note: The effect of a spell with an instantaneous duration can’t be dispelled, because the magical effect is already over before the *greater dispel magic* can take effect.
-                             You choose to use *greater dispel magic* in one of three ways: a targeted dispel, an area dispel, or a counterspell:
-                             *Targeted Dispel:* One object, creature, or spell is the target of the *greater dispel magic* spell. You make a dispel check (1d20 + your caster level, maximum +20) against the spell or against each ongoing spell currently in effect on the object or creature. The DC for this dispel check is 11 + the spell’s caster level. If you succeed on a particular check, that spell is dispelled; if you fail, that spell remains in effect.
-                             If you target an object or creature that is the effect of an ongoing spell (such as a monster summoned by [monster summoning](https://www.dandwiki.com/wiki/SRD:Summon_Monster_I)), you make a dispel check to end the spell that conjured the object or creature.
+          text:             `You can use greater dispel magic to end ongoing spells that have been cast on a creature or object, to temporarily suppress the magical abilities of a magic item, to end ongoing spells (or at least their effects) within an area, or to counter another spellcaster’s spell. A dispelled spell ends as if its duration had expired. Some spells, as detailed in their descriptions, can’t be defeated by greater dispel magic. Greater dispel magic can dispel (but not counter) spell-like effects just as it does spells.
+                             *Note:* The effect of a spell with an instantaneous duration can’t be dispelled, because the magical effect is already over before the greater dispel magic can take effect.
+                             You choose to use greater dispel magic in one of three ways: a targeted dispel, an area dispel, or a counterspell:
+
+                             *Targeted Dispel*
+                             One object, creature, or spell is the target of the greater dispel magic spell. You make a dispel check (1d20 + your caster level, maximum +20) against the spell or against each ongoing spell currently in effect on the object or creature. The DC for this dispel check is 11 + the spell’s caster level. If you succeed on a particular check, that spell is dispelled; if you fail, that spell remains in effect.
+                             If you target an object or creature that is the effect of an ongoing spell (such as a monster summoned by monster summoning), you make a dispel check to end the spell that conjured the object or creature.
                              If the object that you target is a magic item, you make a dispel check against the item’s caster level. If you succeed, all the item’s magical properties are suppressed for 1d4 rounds, after which the item recovers on its own. A suppressed item becomes nonmagical for the duration of the effect. An interdimensional interface (such as a bag of holding) is temporarily closed. A magic item’s physical properties are unchanged: A suppressed magic sword is still a sword (a masterwork sword, in fact). Artifacts and deities are unaffected by mortal magic such as this.
                              You automatically succeed on your dispel check against any spell that you cast yourself.
-                             *Area Dispel:* When *greater dispel magic* is used in this way, the spell affects everything within a 20-foot radius.
-                             For each creature within the area that is the subject of one or more spells, you make a dispel check against the spell with the highest caster level. If that check fails, you make dispel checks against progressively weaker spells until you dispel one spell (which discharges the *greater dispel magic* spell so far as that target is concerned) or until you fail all your checks. The creature’s magic items are not affected.
+
+                             *Area Dispel*
+                             When greater dispel magic is used in this way, the spell affects everything within a 20-foot radius.
+                             For each creature within the area that is the subject of one or more spells, you make a dispel check against the spell with the highest caster level. If that check fails, you make dispel checks against progressively weaker spells until you dispel one spell (which discharges the greater dispel magic spell so far as that target is concerned) or until you fail all your checks. The creature’s magic items are not affected.
                              For each object within the area that is the target of one or more spells, you make dispel checks as with creatures. Magic items are not affected by an area dispel.
-                             For each ongoing area or effect spell whose point of origin is within the area of the *greater dispel magic* spell, you can make a dispel check to dispel the spell.
-                             For each ongoing spell whose area overlaps that of the *greater dispel magic* spell, you can make a dispel check to end the effect, but only within the overlapping area.
-                             If an object or creature that is the effect of an ongoing spell (such as a monster summoned by [monster summoning](https://www.dandwiki.com/wiki/SRD:Summon_Monster_I)) is in the area, you can make a dispel check to end the spell that conjured that object or creature (returning it whence it came) in addition to attempting to dispel spells targeting the creature or object.
+                             For each ongoing area or effect spell whose point of origin is within the area of the greater dispel magic spell, you can make a dispel check to dispel the spell.
+                             For each ongoing spell whose area overlaps that of the greater dispel magic spell, you can make a dispel check to end the effect, but only within the overlapping area.
+                             If an object or creature that is the effect of an ongoing spell (such as a monster summoned by monster summoning) is in the area, you can make a dispel check to end the spell that conjured that object or creature (returning it whence it came) in addition to attempting to dispel spells targeting the creature or object.
                              You may choose to automatically succeed on dispel checks against any spell that you have cast.
-                             *Counterspell:* When *greater dispel magic* is used in this way, the spell targets a spellcaster and is cast as a counterspell. Unlike a true counterspell, however, *greater dispel magic* may not work; you must make a dispel check to counter the other spellcaster’s spell.
-                             Additionally, greater *greater dispel magic* has a chance to dispel any effect that [remove curse](http://www.d20srd.org/srd/spells/bestowCurse.htm) can remove, even if *dispel magic* can’t dispel that effect.`,
-          component_details:null
+
+                             *Counterspell*
+                             When greater dispel magic is used in this way, the spell targets a spellcaster and is cast as a counterspell. Unlike a true counterspell, however, greater dispel magic may not work; you must make a dispel check to counter the other spellcaster’s spell.
+
+                             Additionally, greater greater dispel magic has a chance to dispel any effect that [remove curse](http://www.d20srd.org/srd/spells/bestowCurse.htm) can remove, even if [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) can’t dispel that effect.`
         },
         'greater glyph of warding': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Glyph_of_Warding',
+          ref:              'http://www.d20srd.org/srd/spells/glyphOfWardingGreater.htm',
           school:           'Abjuration',
-          level:            'Clr 6, Rune 6',
+          level:            'Arc 6, Clr 6, Rune 6, Shu 6',
           components:       'V, S, M',
           casting_time:     '10 minutes',
           range:            'Touch',
@@ -4582,20 +4600,24 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Permanent until discharged (D)',
           saving_throw:     'See text',
           spell_resistance: 'No (object) and Yes; see text',
-          text:             `This powerful inscription harms those who enter, pass, or open the warded area or object. A *greater glyph of warding* can guard a bridge or passage, ward a portal, trap a chest or box, and so on.
-                             You set the conditions of the ward. Typically, any creature entering the warded area or opening the warded object without speaking a password (which you set when casting the spell) is subject to the magic it stores. Alternatively or in addition to a password trigger, *glyphs* can be set according to physical characteristics (such as height or weight) or creature type, subtype, or kind. *Glyphs* can also be set with respect to good, evil, law, or chaos, or to pass those of your religion. They cannot be set according to class, Hit Dice, or level. *Glyphs* respond to invisible creatures normally but are not triggered by those who travel past them [Ethereal](https://www.dandwiki.com/wiki/SRD:Etherealness). Multiple *glyphs* cannot be cast on the same area. However, if a cabinet has three drawers, each can be separately warded.
-                             When casting the spell, you weave a tracery of faintly glowing lines around the warding sigil. A *glyph* can be placed to conform to any shape up to the limitations of your total square footage. When the spell is completed, the *glyph* and tracery become nearly invisible.
-                             *Glyphs* cannot be affected or bypassed by such means as physical or magical probing, though they can be dispelled. [Mislead](https://www.dandwiki.com/wiki/SRD:Mislead), [polymorph](https://www.dandwiki.com/wiki/SRD:Polymorph_%28Spell%29), and [nondetection](https://www.dandwiki.com/wiki/SRD:Nondetection) (and similar magical effects) can fool a *glyph*, though nonmagical disguises and the like can’t. [Read magic](http://www.d20srd.org/srd/spells/readMagic.htm) allows you to identify a *greater glyph of warding* with a DC 13 Spellcraft check. Identifying the *glyph* does not discharge it and allows you to know the basic nature of the *glyph* (version, type of damage caused, what spell is stored).
-                             *Note:* Magic traps such as *greater glyph of warding* are hard to detect and disable. A rogue (only) can use the Search skill to find the *glyph* and Disable Device to thwart it. The DC in each case is 25 + spell level, or 28 for *greater glyph of warding*.
-                             Depending on the version selected, a *glyph* either blasts the intruder or activates a spell.
-                             *Greater Blast Glyph:* A *greater blast glyph* deals 1d8 points of ‹damage|[[[[{?{Casting Level}/2,10}kl1]]d8]]› per two caster levels (maximum 10d8) to the intruder and to all within 5 feet of him or her. This damage is acid, cold, fire, electricity, or sonic (caster’s choice, made at time of casting). Each creature affected can attempt a Reflex save to take half damage. Spell resistance applies against this effect.
-                             *Greater Spell Glyph:* You can store any harmful spell of 6th level or lower that you know. All level-dependent features of the spell are based on your caster level at the time of casting the *glyph*. If the spell has a target, it targets the intruder. If the spell has an area or an amorphous effect the area or effect is centered on the intruder. If the spell summons creatures, they appear as close as possible to the intruder and attack. Saving throws and spell resistance operate as normal, except that the DC is based on the level of the spell stored in the *glyph*.`,
-          component_details:'Material Component: You trace the *glyph* with incense, which must first be sprinkled with powdered diamond worth at least 400 gp.'
+          text:             `This powerful inscription harms those who enter, pass, or open the warded area or object. A greater glyph of warding can guard a bridge or passage, ward a portal, trap a chest or box, and so on.
+                             You set the conditions of the ward. Typically, any creature entering the warded area or opening the warded object without speaking a password (which you set when casting the spell) is subject to the magic it stores. Alternatively or in addition to a password trigger, glyphs can be set according to physical characteristics (such as height or weight) or creature type, subtype, or kind. Glyphs can also be set with respect to good, evil, law, or chaos, or to pass those of your religion. They cannot be set according to class, Hit Dice, or level. Glyphs respond to invisible creatures normally but are not triggered by those who travel past them ethereally. Multiple glyphs cannot be cast on the same area. However, if a cabinet has three drawers, each can be separately warded.
+                             When casting the spell, you weave a tracery of faintly glowing lines around the warding sigil. A glyph can be placed to conform to any shape up to the limitations of your total square footage. When the spell is completed, the glyph and tracery become nearly invisible.
+                             Glyphs cannot be affected or bypassed by such means as physical or magical probing, though they can be dispelled. [Mislead](http://www.d20srd.org/srd/spells/mislead.htm), [polymorph](http://www.d20srd.org/srd/spells/polymorph.htm), and [nondetection](http://www.d20srd.org/srd/spells/nondetection.htm) (and similar magical effects) can fool a glyph, though nonmagical disguises and the like can’t. [Read magic](http://www.d20srd.org/srd/spells/readMagic.htm) allows you to identify a greater glyph of warding with a DC 13 Spellcraft check. Identifying the glyph does not discharge it and allows you to know the basic nature of the glyph (version, type of damage caused, what spell is stored).
+                             *Note:* Magic traps such as greater glyph of warding are hard to detect and disable. A rogue (only) can use the Search skill to find the glyph and Disable Device to thwart it. The DC in each case is 25 + spell level, or 28 for greater glyph of warding.
+                             Depending on the version selected, a glyph either blasts the intruder or activates a spell.
+
+                             *Greater Blast Glyph*
+                             A greater blast glyph deals ‹{lvl/2}d8|[[[[{?{Casting Level}/2,10}kl1]]d8]] points of damage› points of damage to the intruder and to all within 5 feet of him or her. This damage is acid, cold, fire, electricity, or sonic (caster’s choice, made at time of casting). Each creature affected can attempt a Reflex save to take half damage. Spell resistance applies against this effect.
+
+                             *Greater Spell Glyph*
+                             You can store any harmful spell of 6th level or lower that you know. All level-dependent features of the spell are based on your caster level at the time of casting the glyph. If the spell has a target, it targets the intruder. If the spell has an area or an amorphous effect the area or effect is centered on the intruder. If the spell summons creatures, they appear as close as possible to the intruder and attack. Saving throws and spell resistance operate as normal, except that the DC is based on the level of the spell stored in the glyph.`,
+          component_details:'Material Component: You trace the glyph with incense, which must first be sprinkled with powdered diamond worth at least 400 gp.'
         },
         'greater heroism': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Heroism',
+          ref:              'http://www.d20srd.org/srd/spells/heroismGreater.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Brd 5, Sor/Wiz 6',
+          level:            'Brd 5, Courage 7, Joy 6, Passion 6, Sin-P 7, Sor/Wiz 6',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -4604,13 +4626,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `This spell functions like [heroism](https://www.dandwiki.com/wiki/SRD:Heroism), except the creature gains a +4 morale bonus on attack rolls, saves, and skill checks, immunity to fear effects, and [[{?{Casting Level},20}kl1]] temporary hit points.`,
-          component_details:null
+          text:             `This spell functions like [heroism](http://www.d20srd.org/srd/spells/heroism.htm), except the creature gains a +4 morale bonus on attack rolls, saves, and skill checks, immunity to fear effects, and [[{?{Casting Level},20}kl1]] temporary hit points.`
         },
         'greater invisibility': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Invisibility',
+          ref:              'http://www.d20srd.org/srd/spells/invisibilityGreater.htm',
           school:           'Illusion (Glamer)',
-          level:            'Asn 4, Brd 4, Sor/Wiz 4',
+          level:            'Arc 5, Asn 4, Beguiler 4, Brd 4, HB 4, Shu 5, Slayer of Domiel 4, Sor/Wiz 4, Wuj 4',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Personal or touch',
@@ -4621,13 +4642,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes (harmless) or Yes (harmless, object)',
           text:             `The creature or object touched becomes invisible, vanishing from sight, even from darkvision. If the recipient is a creature carrying gear, that vanishes, too. If you cast the spell on someone else, neither you nor your allies can see the subject, unless you can normally see invisible things or you employ magic to do so.
                              Items dropped or put down by an invisible creature become visible; items picked up disappear if tucked into the clothing or pouches worn by the creature. Light, however, never becomes invisible, although a source of light can become so (thus, the effect is that of a light with no visible source). Any part of an item that the subject carries but that extends more than 10 feet from it becomes visible.
-                             Of course, the subject is not magically [silenced](http://www.d20srd.org/srd/spells/silence.htm), and certain other conditions can render the recipient detectable (such as stepping in a puddle).`,
-          component_details:null
+                             Of course, the subject is not magically [silenced](http://www.d20srd.org/srd/spells/silence.htm), and certain other conditions can render the recipient detectable (such as stepping in a puddle).`
         },
         'greater magic fang': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Magic_Fang',
+          ref:              'http://www.d20srd.org/srd/spells/magicFangGreater.htm',
           school:           'Transmutation',
-          level:            'Drd 3, Rgr 3, Scalykind 3',
+          level:            'Arc 3, Bestial 3, Dragon 3, Drd 3, Rgr 3, Scalykind 3',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -4636,15 +4656,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `*Greater magic fang* gives one natural weapon of the subject a \`\`+[[{floor(?{Casting Level}/4),5}kl1]] enhancement bonus\`\` on attack and damage rolls. The spell can affect a slam attack, fist, bite, or other natural weapon. (The spell does not change an unarmed strike’s damage from nonlethal damage to lethal damage.)
+          text:             `Greater magic fang gives one natural weapon of the subject a \`\`+[[{floor(?{Casting Level}/4),5}kl1]] enhancement bonus\`\` on attack and damage rolls. The spell can affect a slam attack, fist, bite, or other natural weapon. (The spell does not change an unarmed strike’s damage from nonlethal damage to lethal damage.)
                              Alternatively, you may imbue all of the creature’s natural weapons with a +1 enhancement bonus (regardless of your caster level).
-                             *Greater magic fang* can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
-          component_details:null
+                             Greater magic fang can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`
         },
         'greater magic weapon': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Magic_Weapon',
+          ref:              'http://www.d20srd.org/srd/spells/magicWeaponGreater.htm',
           school:           'Transmutation',
-          level:            'Clr 4, Pal 3, Sor/Wiz 3',
+          level:            'Arc 4, Artificer 3, Clr 4, Duskblade 3, Dwarf 4, HB 3, KotC 4, Pal 3, Shu 3, Sor/Wiz 3, Wuj 3',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -4653,20 +4672,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
-          text:             `*Greater magic weapon* gives a weapon a \`\`+[[{floor(?{Casting Level}/4),5}kl1]] enhancement bonus\`\` on attack and damage rolls. (An enhancement bonus does not stack with a masterwork weapon’s +1 bonus on attack rolls.)
-                             You can’t cast this spell on a natural weapon, such as an unarmed strike (instead, see [greater magic fang](https://www.dandwiki.com/wiki/SRD:Greater_Magic_Fang)). A monk’s unarmed strike is considered a weapon, and thus it can be enhanced by this spell.
+          text:             `Greater magic weapon gives a weapon a \`\`+[[{floor(?{Casting Level}/4),5}kl1]] enhancement bonus\`\` on attack and damage rolls. (An enhancement bonus does not stack with a masterwork weapon’s +1 bonus on attack rolls.)
+                             You can’t cast this spell on a natural weapon, such as an unarmed strike (instead, see [greater magic fang](http://www.d20srd.org/srd/spells/magicFangGreater.htm)). A monk’s unarmed strike is considered a weapon, and thus it can be enhanced by this spell.
                              Alternatively, you can affect as many as fifty arrows, bolts, or bullets. The projectiles must be of the same kind, and they have to be together (in the same quiver or other container). Projectiles, but not thrown weapons, lose their transmutation when used. (Treat shuriken as projectiles, rather than as thrown weapons, for the purpose of this spell.)`,
           component_details:'Arcane Material Component: Powdered lime and carbon.'
         },
         'greater planar ally': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Planar_Ally',
+          ref:              'http://www.d20srd.org/srd/spells/planarAllyGreater.htm',
           school:           'Conjuration (Calling) [see text]',
-          level:            'Clr 8',
+          level:            'APeace 8, Arc 8, Clr 8, DrgBlw 8, Drow 8, Exalted Arcanist 8, Summoner 8',
           components:       'V, S, DF, XP',
           casting_time:     '10 minutes',
           range:            '_close_',
           target_type:      'Effect',
-          target:           'Up to three called [elementals](https://www.dandwiki.com/wiki/SRD:Elemental_Type) or [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type), totaling no more than 18 HD, no two of which can be more than 30 ft. apart when they appear.',
+          target:           'Up to three called elementals or outsiders, totaling no more than 18 HD, no two of which can be more than 30 ft. apart when they appear.',
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'No',
@@ -4682,12 +4701,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'greater planar binding': {
           ref:              'http://www.d20srd.org/srd/spells/planarBindingGreater.htm',
           school:           'Conjuration (Calling) [see text]',
-          level:            'Sor/Wiz 8',
+          level:            'Hth 8, Sor/Wiz 8',
           components:       'V, S',
           casting_time:     '10 minutes',
           range:            'Close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.); see text',
           target_type:      'Targets',
-          target:           'Up to three [elementals](https://www.dandwiki.com/wiki/SRD:Elemental_Type) or [outsiders](https://www.dandwiki.com/wiki/SRD:Outsider_Type), totaling no more than 18 HD, no two of which can be more than 30 ft. apart when they appear.',
+          target:           'Up to three elementals or outsiders, totaling no more than 18 HD, no two of which can be more than 30 ft. apart when they appear.',
           duration:         'Instantaneous',
           saving_throw:     'Will negates',
           spell_resistance: 'No and Yes; see text',
@@ -4697,11 +4716,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              If the creature does not break free of the trap, you can keep it bound for as long as you dare. You can attempt to compel the creature to perform a service by describing the service and perhaps offering some sort of reward. You make a Charisma check opposed by the creature’s Charisma check. The check is assigned a bonus of +0 to +6 based on the nature of the service and the reward. If the creature wins the opposed check, it refuses service. New offers, bribes, and the like can be made or the old ones reoffered every 24 hours. This process can be repeated until the creature promises to serve, until it breaks free, or until you decide to get rid of it by means of some other spell. Impossible demands or unreasonable commands are never agreed to. If you roll a 1 on the Charisma check, the creature breaks free of the binding and can escape or attack you.
                              Each creature gets a saving throw, makes independent attempts to escape, and must be persuaded to aid you individually.
                              Once the requested service is completed, the creature need only so inform you to be instantly sent back whence it came. The creature might later seek revenge. If you assign some open-ended task that the creature cannot complete though its own actions the spell remains in effect for a maximum of one day per caster level, and the creature gains an immediate chance to break free. Note that a clever recipient can subvert some instructions.
-                             *Note:* When you use a calling spell such as gate to call an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.`,
-          component_details:null
+                             *Note:* When you use a calling spell such as gate to call an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.`
         },
         'greater prying eyes': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Prying_Eyes',
+          ref:              'http://www.d20srd.org/srd/spells/pryingEyesGreater.htm',
           school:           'Divination',
           level:            'Sor/Wiz 8',
           components:       'V, S, M',
@@ -4713,7 +4731,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You create [[1d4+?{Casting Level}]] semitangible, visible magical orbs (called “eyes”). These eyes move out, scout around, and return as you direct them when casting the spell. Each eye can see all things as they actually are, just as if they had [true seeing](http://www.d20srd.org/srd/spells/trueSeeing.htm) with a range of 120 feet in all directions. Thus, they can navigate darkened areas at full normal speed.
-                             While the individual eyes are quite fragile, they’re small and difficult to spot. Each eye is a Fine [construct](https://www.dandwiki.com/wiki/SRD:Construct_Type), about the size of a small apple, that has 1 hit point, AC 18 (+8 bonus for its size), flies at a speed of 30 feet with perfect maneuverability, and has a +16 Hide modifier. It has a Spot modifier equal to [[{?{Casting Level},25}kl1]] and is subject to illusions, darkness, fog, and any other factors that would affect your ability to receive visual information about your surroundings. An eye traveling through darkness must find its way by touch.
+                             While the individual eyes are quite fragile, they’re small and difficult to spot. Each eye is a Fine construct, about the size of a small apple, that has 1 hit point, AC 18 (+8 bonus for its size), flies at a speed of 30 feet with perfect maneuverability, and has a +16 Hide modifier. It has a Spot modifier equal to [[{?{Casting Level},25}kl1]] and is subject to illusions, darkness, fog, and any other factors that would affect your ability to receive visual information about your surroundings. An eye traveling through darkness must find its way by touch.
                              When you create the eyes, you specify instructions you want them to follow in a command of no more than twenty-five words. Any knowledge you possess is known by the eyes as well.
                              In order to report their findings, the eyes must return to your hand. Each replays in your mind all it has seen during its existence. It takes an eye 1 round to replay 1 hour of recorded images. After relaying its findings, an eye disappears.
                              If an eye ever gets more than 1 mile away from you, it instantly ceases to exist. However, your link with the eye is such that you won’t know if the eye was destroyed because it wandered out of range or because of some other event.
@@ -4721,9 +4739,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: A handful of crystal marbles.'
         },
         'greater psychic turmoil': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Psychic_Turmoil',
+          ref:              'http://www.d20srd.org/srd/psionic/spells/psychicTurmoilGreater.htm',
           school:           'Abjuration',
-          level:            'Cleric 7, Sorcerer/Wizard 7',
+          level:            'Arc 7, Clr 7, Sor/Wiz 7',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -4732,15 +4750,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Will partial; see text',
           spell_resistance: 'Yes',
-          text:             `With this spell, you create an invisible field that leeches away the [power points](https://www.dandwiki.com/wiki/SRD:Power_Points) of psionic characters standing within the emanation. Nonpsionic characters are unaffected.
-                             When the spell is cast and at the beginning of each of your subsequent turns, psionic creatures within the area of the *greater psychic turmoil* lose 1 [power point](https://www.dandwiki.com/wiki/SRD:Power_Points) per manifester level they have. Characters who succeed on a Will save when they first come into contact with the emanation lose only half as many power points (round down) each round. Characters get only one save attempt against any particular *greater psychic turmoil* effect, even if they leave the spell’s area and later return.
+          text:             `With this spell, you create an invisible field that leeches away the power points of psionic characters standing within the emanation. Nonpsionic characters are unaffected.
+                             When the spell is cast and at the beginning of each of your subsequent turns, psionic creatures within the area of the greater psychic turmoil lose 1 power point per manifester level they have. Characters who succeed on a Will save when they first come into contact with the emanation lose only half as many power points (round down) each round. Characters get only one save attempt against any particular greater psychic turmoil effect, even if they leave the spell’s area and later return.
                              You gain 1 temporary hit point for each power point the spell takes from a psionic creature. The temporary hit points last for 1 hour.`,
           component_details:'Material Component: Five playing cards, which are torn in half when the spell is cast.'
         },
         'greater restoration': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Restoration',
+          ref:              'http://www.d20srd.org/srd/spells/restorationGreater.htm',
           school:           'Conjuration (Healing)',
-          level:            'Clr 7',
+          level:            'APeace 7, Arc 7, Clr 7, Hlr 6, Renewal 7, Shu 7',
           components:       'V, S, XP',
           casting_time:     '10 minutes',
           range:            'Touch',
@@ -4749,15 +4767,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `*Greater restoration* dispels all negative levels afflicting the healed creature. This effect also reverses [level drains](https://www.dandwiki.com/wiki/Energy_Drain,_Negative_Levels,_and_Level_Loss_(SRD_Special_Ability)#Level_Loss) by a force or creature, restoring the creature to the highest level it had previously attained. The drained levels are restored only if the time since the creature lost the level is no more than one week per caster level.
-                             *Greater restoration* also dispels all magical effects penalizing the creature’s abilities, cures all temporary [ability damage](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Damage), and restores all points permanently drained from all ability scores. It also eliminates [fatigue](https://www.dandwiki.com/wiki/SRD:Fatigued) and [exhaustion](https://www.dandwiki.com/wiki/SRD:Exhausted), and removes all forms of [insanity](https://www.dandwiki.com/wiki/SRD:Insanity), [confusion](http://www.d20srd.org/srd/spells/confusion.htm), and similar mental effects. *Greater restoration* does not restore levels or Constitution points lost due to death.`,
+          text:             `Greater restoration dispels all negative levels afflicting the healed creature. This effect also reverses level drains by a force or creature, restoring the creature to the highest level it had previously attained. The drained levels are restored only if the time since the creature lost the level is no more than [[?{Casting Level}]] weeks.
+                             Greater restoration also dispels all magical effects penalizing the creature’s abilities, cures all temporary ability damage, and restores all points permanently drained from all ability scores. It also eliminates fatigue and exhaustion, and removes all forms of insanity, confusion, and similar mental effects. Greater restoration does not restore levels or Constitution points lost due to death.`,
           component_details:'XP Cost: 500 XP.'
         },
         //Epic Spell: greater ruin
         'greater scrying': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Scrying',
+          ref:              'http://www.d20srd.org/srd/spells/scryingGreater.htm',
           school:           'Divination (Scrying)',
-          level:            'Brd 6, Clr 7, Drd 7, Sor/Wiz 7',
+          level:            'APeace 7, Arc 7, Brd 6, Clr 7, Drd 7, Dream 7, Oracle 7, Planning 7, Shu 7, Sor/Wiz 7, Wuj 7',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'See text',
@@ -4781,14 +4799,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • -10 Body part, lock of hair, bit of nail, etc.
 
                              If the save fails, you can see and hear the subject and the subject’s immediate surroundings (approximately 10 feet in all directions of the subject). If the subject moves, the sensor follows at a speed of up to 150 feet.
-                             As with all divination (scrying) spells, the sensor has your full visual acuity, including any magical effects. In addition, all of the following spells function reliably through the sensor: [detect chaos](https://www.dandwiki.com/wiki/SRD:Detect_Chaos), [detect evil](https://www.dandwiki.com/wiki/SRD:Detect_Evil), [detect good](https://www.dandwiki.com/wiki/SRD:Detect_Good), [detect law](https://www.dandwiki.com/wiki/SRD:Detect_Law), [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm), [message](http://www.d20srd.org/srd/spells/message.htm), [read magic](http://www.d20srd.org/srd/spells/readMagic.htm), and [tongues](https://www.dandwiki.com/wiki/SRD:Tongues).
-                             If the save succeeds, you can’t attempt to scry on that subject again for at least 24 hours.`,
-          component_details:null
+                             As with all divination (scrying) spells, the sensor has your full visual acuity, including any magical effects. In addition, all of the following spells function reliably through the sensor: [detect chaos](http://www.d20srd.org/srd/spells/detectChaos.htm), [detect evil](http://www.d20srd.org/srd/spells/detectEvil.htm), [detect good](http://www.d20srd.org/srd/spells/detectGood.htm), [detect law](http://www.d20srd.org/srd/spells/detectLaw.htm), [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm), [message](http://www.d20srd.org/srd/spells/message.htm), [read magic](http://www.d20srd.org/srd/spells/readMagic.htm), and [tongues](http://www.d20srd.org/srd/spells/tongues.htm).
+                             If the save succeeds, you can’t attempt to scry on that subject again for at least 24 hours.`
         },
         'greater shadow conjuration': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Shadow_Conjuration',
+          ref:              'http://www.d20srd.org/srd/spells/shadowConjurationGreater.htm',
           school:           'Illusion (Shadow)',
-          level:            'Sor/Wiz 7',
+          level:            'Shadow 7, Sor/Wiz 7',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'See text',
@@ -4797,20 +4814,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'See text',
           saving_throw:     'Will disbelief (if interacted with); varies; see text',
           spell_resistance: 'Yes; see text',
-          text:             `You use material from the [Plane of Shadow](https://www.dandwiki.com/wiki/SRD:Plane_of_Shadow) to shape quasi-real illusions of one or more creatures, objects, or forces. *Greater shadow conjuration* can mimic any sorcerer or wizard conjuration (summoning) or conjuration (creation) spell of 6th level or lower.
-                             *Greater shadow conjurations* are actually one-fifth (20%) as strong as the real things, though creatures who believe the *greater shadow conjurations* to be real are affected by them at full strength.
+          text:             `You use material from the Plane of Shadow to shape quasi-real illusions of one or more creatures, objects, or forces. Greater shadow conjuration can mimic any sorcerer or wizard conjuration (summoning) or conjuration (creation) spell of 6th level or lower.
+                             Greater shadow conjurations are actually one-fifth (20%) as strong as the real things, though creatures who believe the greater shadow conjurations to be real are affected by them at full strength.
                              Any creature that interacts with the conjured object, force, or creature can make a Will save to recognize its true nature.
-                             Spells that deal damage have normal effects unless the affected creature succeeds on a Will save. Each disbelieving creature takes only one-fifth (20%) damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is only 60% likely to occur. Regardless of the result of the save to disbelieve, an affected creature is also allowed any save that the spell being simulated allows, but the save DC is set according to *greater shadow conjuration*’s level (7th) rather than the spell’s normal level. In addition, any effect created by *greater shadow conjuration* allows spell resistance, even if the spell it is simulating does not. Shadow objects or substances have normal effects except against those who disbelieve them.
-                             Against disbelievers, they are 20% likely to work.
+                             Spells that deal damage have normal effects unless the affected creature succeeds on a Will save. Each disbelieving creature takes only three-fifth (60%) damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is only 20% likely to occur. Regardless of the result of the save to disbelieve, an affected creature is also allowed any save that the spell being simulated allows, but the save DC is set according to greater shadow conjuration’s level (7th) rather than the spell’s normal level. In addition, any effect created by greater shadow conjuration allows spell resistance, even if the spell it is simulating does not. Shadow objects or substances have normal effects except against those who disbelieve them.
+                             Against disbelievers, they are 60% likely to work.
                              A shadow creature has one-fifth the hit points of a normal creature of its kind (regardless of whether it’s recognized as shadowy). It deals normal damage and has all normal abilities and weaknesses. Against a creature that recognizes it as a shadow creature, however, the shadow creature’s damage is three-fifths (60%) normal, and all special abilities that do not deal lethal damage are only 20% likely to work. (Roll for each use and each affected character separately.) Furthermore, the shadow creature’s AC bonuses are one-fifth as large.
-                             A creature that succeeds on its save sees the *greater shadow conjurations* as transparent images superimposed on vague, shadowy forms.
-                             Objects automatically succeed on their Will saves against this spell.`,
-          component_details:null
+                             A creature that succeeds on its save sees the greater shadow conjurations as transparent images superimposed on vague, shadowy forms.
+                             Objects automatically succeed on their Will saves against this spell.`
         },
         'greater shadow evocation': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Shadow_Evocation',
+          ref:              'http://www.d20srd.org/srd/spells/shadowEvocationGreater.htm',
           school:           'Illusion (Shadow)',
-          level:            'Sor/Wiz 8',
+          level:            'Shadow 8, Sor/Wiz 8',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'See text',
@@ -4819,16 +4835,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'See text',
           saving_throw:     'Will disbelief (if interacted with)',
           spell_resistance: 'Yes',
-          text:             `You tap energy from the [Plane of Shadow](https://www.dandwiki.com/wiki/SRD:Plane_of_Shadow) to cast a quasi-real, illusory version of a sorcerer or wizard evocation spell of 7th level or lower. (For a spell with more than one level, use the best one applicable to you.)
-                             Spells that deal damage have normal effects unless an affected creature succeeds on a Will save. Each disbelieving creature takes only three-fifths damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is one-fifth as strong (if applicable) or only 20% likely to occur. If recognized as a *greater shadow evocation*, a damaging spell deals only three-fifths (60%) damage. Regardless of the result of the save to disbelieve, an affected creature is also allowed any save (or spell resistance) that the spell being simulated allows, but the save DC is set according to *graeter shadow evocation*’s level (8th) rather than the spell’s normal level.
+          text:             `You tap energy from the Plane of Shadow to cast a quasi-real, illusory version of a sorcerer or wizard evocation spell of 7th level or lower. (For a spell with more than one level, use the best one applicable to you.)
+                             Spells that deal damage have normal effects unless an affected creature succeeds on a Will save. Each disbelieving creature takes only three-fifths damage from the attack. If the disbelieved attack has a special effect other than damage, that effect is one-fifth as strong (if applicable) or only 20% likely to occur. If recognized as a greater shadow evocation, a damaging spell deals only three-fifths (60%) damage. Regardless of the result of the save to disbelieve, an affected creature is also allowed any save (or spell resistance) that the spell being simulated allows, but the save DC is set according to greater shadow evocation’s level (8th) rather than the spell’s normal level.
                              Nondamaging effects have normal effects except against those who disbelieve them. Against disbelievers, they have no effect.
-                             Objects automatically succeed on their Will saves against this spell.`,
-          component_details:null
+                             Objects automatically succeed on their Will saves against this spell.`
         },
         'greater shout': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Shout',
+          ref:              'http://www.d20srd.org/srd/spells/shoutGreater.htm',
+          other_versions:   'Forgotten Realms Campaign Setting on page 70, Tome and Blood on page 90',
           school:           'Evocation [Sonic]',
-          level:            'Brd 6, Sor/Wiz 8',
+          level:            'Brd 6, Sin-W 8, Sor/Wiz 8, Wmg 8',
           components:       'V, S, F',
           casting_time:     '1 standard action',
           range:            '60 ft.',
@@ -4838,13 +4854,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Fortitude partial or Reflex negates (object); see text',
           spell_resistance: 'Yes (object)',
           text:             `You emit an ear-splitting yell that deafens and damages creatures in its path. Any creature within the area is stunned for 1 round and deafened for [[4d6]] rounds, and takes [[10d6]] points of sonic damage (or [[[[{?{Casting Level},20}kl1]]d6]] points of sonic damage against exposed brittle or crystalline objects or crystalline creatures). A creature in the area of the cone can negate the stunning and halve both the damage and the duration of the deafness with a successful Fortitude save. A creature holding vulnerable objects can attempt a Reflex save to negate the damage to those objects.
-                             A *shout* spell cannot penetrate a [silence](http://www.d20srd.org/srd/spells/silence.htm) spell.`,
+                             A shout spell cannot penetrate a [silence](http://www.d20srd.org/srd/spells/silence.htm) spell.`,
           component_details:'Arcane Focus: A small metal or ivory horn.'
         },
         'greater spell immunity': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Spell_Immunity',
+          ref:              'http://www.d20srd.org/srd/spells/spellImmunityGreater.htm',
           school:           'Abjuration',
-          level:            'Clr 8',
+          level:            'Arc 8, Clr 8, Sin-P 8',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -4855,14 +4871,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes (harmless)',
           text:             `The warded creature is immune to the effects of one specified spell for every four levels you have. The spells must be of 8th level or lower. The warded creature effectively has unbeatable spell resistance regarding the specified spell or spells. Naturally, that immunity doesn’t protect a creature from spells for which spell resistance doesn’t apply. *Greater spell immunity* protects against spells, spell-like effects of magic items, and innate spell-like abilities of creatures. It does not protect against supernatural or extraordinary abilities, such as breath weapons or gaze attacks.
                              Only a particular spell can be protected against, not a certain domain or school of spells or a group of spells that are similar in effect.
-                             A creature can have only one [spell immunity](https://www.dandwiki.com/wiki/SRD:Spell_Immunity) or *greater spell immunity* spell in effect on it at a time.`,
-          component_details:null
+                             A creature can have only one [spell immunity](http://www.d20srd.org/srd/spells/spellImmunity.htm) or greater spell immunity spell in effect on it at a time.`
         },
         //Epic Spell: greater spell resistance
         'greater status': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Status',
+          ref:              'http://www.d20srd.org/srd/divine/spells/statusGreater.htm',
+          other_versions:   'Book of Exalted Deeds on page 100, Eberron Campaign Setting on page 116, Heroes of Battle on page 128',
           school:           'Divination',
-          level:            'Community 4',
+          level:            'APeace 4, Arc 4, Clr 4, Community 4',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -4871,19 +4887,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hours',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `When you need to keep track of comrades who may get separated, *greater status* allows you to mentally monitor their relative positions and general condition. You are aware of direction and distance to the creatures and any conditions affecting them: unharmed, wounded, [disabled](https://www.dandwiki.com/wiki/SRD:Disabled), [staggered](https://www.dandwiki.com/wiki/SRD:Staggered), unconscious, [dying](https://www.dandwiki.com/wiki/SRD:Dying), [nauseated](https://www.dandwiki.com/wiki/SRD:Nauseated), panicked, stunned, [poisoned](https://www.dandwiki.com/wiki/SRD:Poison), diseased, confused, or the like. Once the spell has been cast upon the subjects, the distance between them and the caster does not affect the spell as long as they are on the same plane of existence. If a subject leaves the plane, or if it dies, the spell ceases to function for it.
+          text:             `When you need to keep track of comrades who may get separated, greater status allows you to mentally monitor their relative positions and general condition. You are aware of direction and distance to the creatures and any conditions affecting them: unharmed, wounded, disabled, staggered, unconscious, dying, nauseated, panicked, stunned, poisoned, diseased, confused, or the like. Once the spell has been cast upon the subjects, the distance between them and the caster does not affect the spell as long as they are on the same plane of existence. If a subject leaves the plane, or if it dies, the spell ceases to function for it.
                              You can also cast a limited selection of spells through the link, as if you were touching the target. You can cast any spell that meets the following conditions:
                              • **Level:** 0, 1st, or 2nd
                              • **Range:** Touch
                              • **Target:** Creature touched
                              • **Saving Throw:** harmless
-                             For example, if you become aware (through the *greater status* spell) that one of your linked companions is [dying](https://www.dandwiki.com/wiki/SRD:Dying), you can cast [cure moderate wounds](https://www.dandwiki.com/wiki/SRD:Cure_Moderate_Wounds) to try to revive her.`,
-          component_details:null
+                             For example, if you become aware (through the greater status spell) that one of your linked companions is dying, you can cast [cure moderate wounds](http://www.d20srd.org/srd/spells/cureModerateWounds.htm) to try to revive her.`
         },
         'greater teleport': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Greater_Teleport',
+          ref:              'http://www.d20srd.org/srd/spells/teleportGreater.htm',
           school:           'Conjuration (Teleportation)',
-          level:            'Sor/Wiz 7, Travel 7',
+          level:            'Arc 8, Shu 8, Sor/Wiz 7, Travel 7, Wuj 7',
           components:       'V',
           casting_time:     '1 standard action',
           range:            'Personal and touch',
@@ -4892,14 +4907,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None and Will negates (object)',
           spell_resistance: 'No and Yes (object)',
-          text:             `This spell instantly transports you to a designated destination. Interplanar travel is not possible. You can bring along objects as long as their weight doesn’t exceed your maximum load. You may also bring one additional willing Medium or smaller creature (carrying gear or objects up to its maximum load) or its equivalent (see below) per three caster levels. A Large creature counts as two Medium creatures, a Huge creature counts as two Large creatures, and so forth. All creatures to be transported must be in contact with one another, and at least one of those creatures must be in contact with you. As with all spells where the range is personal and the target is you, you need not make a saving throw, nor is spell resistance applicable to you. Only objects held or in use (attended) by another person receive saving throws and spell resistance.
-                             You must have some clear idea of the location and layout of the destination or a reliable description of the place to which you are teleporting. If you attempt to teleport with insufficient information (or with misleading information), you disappear and simply reappear in your original location.`,
-          component_details:null
+          text:             `This spell functions like [teleport](http://www.d20srd.org/srd/spells/teleport.htm), except that there is no range limit and there is no chance you arrive off target. In addition, you need not have seen the destination, but in that case you must have at least a reliable description of the place to which you are teleporting. If you attempt to teleport with insufficient information (or with misleading information), you disappear and simply reappear in your original location. Interplanar travel is not possible.`
         },
         'guards and wards': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Guards_and_Wards',
+          ref:              'http://www.d20srd.org/srd/spells/guardsAndWards.htm',
           school:           'Abjuration',
-          level:            'Sor/Wiz 6',
+          level:            'Greed 6, Sor/Wiz 6',
           components:       'V, S, M, F',
           casting_time:     '30 minutes',
           range:            'Anywhere within the area to be warded',
@@ -4908,26 +4921,37 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[2*?{Casting Level}]] hours (D)',
           saving_throw:     'See text',
           spell_resistance: 'See text',
-          text:             `This powerful spell is primarily used to defend your stronghold. The ward protects 200 square feet per caster level. The warded area can be as much as 20 feet high, and shaped as you desire. You can ward several stories of a stronghold by dividing the area among them; you must be somewhere within the area to be warded to cast the spell. The spell creates the following magical effects within the warded area.
-                             *Fog:* Fog fills all corridors, obscuring all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker cannot use sight to locate the target). Saving Throw: None. Spell Resistance: No.
-                             *Arcane Locks:* All doors in the warded area are [arcane locked](http://www.d20srd.org/srd/spells/arcaneLock.htm). Saving Throw: None. Spell Resistance: No.
-                             *Webs:* Webs fill all stairs from top to bottom. These strands are identical with those created by the [web](http://www.d20srd.org/srd/spells/web.htm) spell, except that they regrow in 10 minutes if they are burned or torn away while the *guards and wards* spell lasts. Saving Throw: Reflex negates; see text for web. Spell Resistance: No.
-                             *Confusion:* Where there are choices in direction—such as a corridor intersection or side passage—a minor confusion-type effect functions so as to make it 50% probable that intruders believe they are going in the opposite direction from the one they actually chose. This is an enchantment, mind-affecting effect. Saving Throw: None. Spell Resistance: Yes.
-                             *Lost Doors:* One door per caster level is covered by a [silent image](https://www.dandwiki.com/wiki/SRD:Silent_Image) to appear as if it were a plain wall. Saving Throw: Will disbelief (if interacted with). Spell Resistance: No.
+          text:             `This powerful spell is primarily used to defend your stronghold. The ward protects [[200*?{Casting Level}]] square feet. The warded area can be as much as 20 feet high, and shaped as you desire. You can ward several stories of a stronghold by dividing the area among them; you must be somewhere within the area to be warded to cast the spell. The spell creates the following magical effects within the warded area.
+
+                             *Fog*
+                             Fog fills all corridors, obscuring all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker cannot use sight to locate the target). Saving Throw: None. Spell Resistance: No.
+
+                             *Arcane Locks*
+                             All doors in the warded area are [arcane locked](http://www.d20srd.org/srd/spells/arcaneLock.htm). Saving Throw: None. Spell Resistance: No.
+
+                             *Webs*
+                             Webs fill all stairs from top to bottom. These strands are identical with those created by the [web](http://www.d20srd.org/srd/spells/web.htm) spell, except that they regrow in 10 minutes if they are burned or torn away while the guards and wards spell lasts. Saving Throw: Reflex negates; see text for web. Spell Resistance: No.
+
+                             *Confusion*
+                             Where there are choices in direction—such as a corridor intersection or side passage—a minor confusion-type effect functions so as to make it 50% probable that intruders believe they are going in the opposite direction from the one they actually chose. This is an enchantment, mind-affecting effect. Saving Throw: None. Spell Resistance: Yes.
+
+                             *Lost Doors*
+                             One door per caster level is covered by a [silent image](http://www.d20srd.org/srd/spells/silentImage.htm) to appear as if it were a plain wall. Saving Throw: Will disbelief (if interacted with). Spell Resistance: No.
+
                              In addition, you can place your choice of one of the following five magical effects.
-                             1. [Dancing lights](http://www.d20srd.org/srd/spells/dancingLights.htm) in four corridors. You can designate a simple program that causes the lights to repeat as long as the *guards and wards* spell lasts. Saving Throw: None. Spell Resistance: No.
+                             1. [Dancing lights](http://www.d20srd.org/srd/spells/dancingLights.htm) in four corridors. You can designate a simple program that causes the lights to repeat as long as the guards and wards spell lasts. Saving Throw: None. Spell Resistance: No.
                              2. A [magic mouth](http://www.d20srd.org/srd/spells/magicMouth.htm) in two places. Saving Throw: None. Spell Resistance: No.
-                             3. A [stinking cloud](https://www.dandwiki.com/wiki/SRD:Stinking_Cloud) in two places. The vapors appear in the places you designate; they return within 10 minutes if dispersed by wind while the *guards and wards* spell lasts. Saving Throw: Fortitude negates; see text for [stinking cloud](https://www.dandwiki.com/wiki/SRD:Stinking_Cloud). Spell Resistance: No.
-                             4. A [gust of wind](https://www.dandwiki.com/wiki/SRD:Gust_of_Wind) in one corridor or room. Saving Throw: Fortitude negates. Spell Resistance: Yes.
-                             5. A [suggestion](http://www.d20srd.org/srd/spells/suggestion.htm) in one place. You select an area of up to 5 feet square, and any creature who enters or passes through the area receives the *suggestion* mentally. Saving Throw: Will negates. Spell Resistance: Yes.
-                             The whole warded area radiates strong magic of the abjuration school. A [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) cast on a specific effect, if successful, removes only that effect. A successful [Mage’s disjunction](http://www.d20srd.org/srd/spells/magesDisjunction.htm) destroys the entire *guards and wards* effect.`,
+                             3. A [stinking cloud](http://www.d20srd.org/srd/spells/stinkingCloud.htm) in two places. The vapors appear in the places you designate; they return within 10 minutes if dispersed by wind while the guards and wards spell lasts. Saving Throw: Fortitude negates; see text for [stinking cloud](http://www.d20srd.org/srd/spells/stinkingCloud.htm). Spell Resistance: No.
+                             4. A [gust of wind](http://www.d20srd.org/srd/spells/gustOfWind.htm) in one corridor or room. Saving Throw: Fortitude negates. Spell Resistance: Yes.
+                             5. A [suggestion](http://www.d20srd.org/srd/spells/suggestion.htm) in one place. You select an area of up to 5 feet square, and any creature who enters or passes through the area receives the [suggestion](http://www.d20srd.org/srd/spells/suggestion.htm) mentally. Saving Throw: Will negates. Spell Resistance: Yes.
+                             The whole warded area radiates strong magic of the abjuration school. A [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) cast on a specific effect, if successful, removes only that effect. A successful [Mage’s disjunction](http://www.d20srd.org/srd/spells/magesDisjunction.htm) destroys the entire guards and wards effect.`,
           component_details:`Material Component: Burning incense, a small measure of brimstone and oil, a knotted string, and a small amount of blood.
                              Focus: A small silver rod.`
         },
         'guidance': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Guidance',
+          ref:              'http://www.d20srd.org/srd/spells/guidance.htm',
           school:           'Divination',
-          level:            'Clr 0, Drd 0',
+          level:            'Adp 0, APeace 0, Arc 0, Clr 0, Drd 0, Shu 0',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -4936,13 +4960,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '1 minute or until discharged',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `This spell imbues the subject with a touch of divine guidance. The creature gets a +1 competence bonus on a single attack roll, saving throw, or skill check. It must choose to use the bonus before making the roll to which it applies.`,
-          component_details:null
+          text:             `This spell imbues the subject with a touch of divine guidance. The creature gets a +1 competence bonus on a single attack roll, saving throw, or skill check. It must choose to use the bonus before making the roll to which it applies.`
         },
         'gust of wind': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Gust_of_Wind',
+          ref:              'http://www.d20srd.org/srd/spells/gustOfWind.htm',
           school:           'Evocation [Air]',
-          level:            'Drd 2, Sor/Wiz 2',
+          level:            'Arc 2, Drd 2, Shu 3, Sor/Wiz 2, Storm 2, Weather 2, Wmg 3',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '60 ft.',
@@ -4952,18 +4975,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
           text:             `This spell creates a severe blast of air (approximately 50 mph) that originates from you, affecting all creatures in its path.
-                             A Tiny or smaller creature on the ground is [knocked down](http://www.d20srd.org/srd/spells/knock.htmed_Down) and rolled ‹1d4×10|[[10*1d4]]› feet, taking ‹1d4› points of nonlethal damage per 10 feet. If flying, a Tiny or smaller creature is blown back ‹2d6×10|[[10*2d6]]› feet and takes ‹2d6› points of nonlethal damage due to battering and buffeting.
-                             Small creatures are knocked prone by the force of the wind, or if flying are blown back ‹1d6×10|[[10*1d6]]› feet.
-                             Medium creatures are unable to move forward against the force of the wind, or if flying are blown back ‹1d6×5|[[5*1d6]]› feet.
-                             Large or larger creatures may move normally within a *gust of wind* effect.
-                             A *gust of wind* can’t move a creature beyond the limit of its range.
-                             Any creature, regardless of size, takes a -4 penalty on ranged attacks and Listen checks in the area of a *gust of wind*.
+                             A Tiny or smaller creature on the ground is knocked down and rolled ‹1d4×10|rolled [[10*1d4]] feet› feet, taking ‹1d4|[[1d4]] points of nonlethal damage› points of nonlethal damage per 10 feet. If flying, a Tiny or smaller creature is blown back ‹2d6×10|blown back [[10*2d6]] feet› feet and takes ‹2d6|[[2d6]] points of nonlethal damage› points of nonlethal damage due to battering and buffeting.
+                             Small creatures are knocked prone by the force of the wind, or if flying are blown back ‹1d6×10|blown back [[10*1d6]] feet› feet.
+                             Medium creatures are unable to move forward against the force of the wind, or if flying are blown back ‹1d6×5|blown back [[5*1d6]] feet› feet.
+                             Large or larger creatures may move normally within a gust of wind effect.
+                             A gust of wind can’t move a creature beyond the limit of its range.
+                             Any creature, regardless of size, takes a -4 penalty on ranged attacks and Listen checks in the area of a gust of wind.
                              The force of the gust automatically extinguishes candles, torches, and similar unprotected flames. It causes protected flames, such as those of lanterns, to dance wildly and has a 50% chance to extinguish those lights.
-                             In addition to the effects noted, a *gust of wind* can do anything that a sudden blast of wind would be expected to do. It can create a stinging spray of sand or dust, fan a large fire, overturn delicate awnings or hangings, heel over a small boat, and blow gases or vapors to the edge of its range.
-                             *Gust of wind* can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`,
-          component_details:null
+                             In addition to the effects noted, a gust of wind can do anything that a sudden blast of wind would be expected to do. It can create a stinging spray of sand or dust, fan a large fire, overturn delicate awnings or hangings, heel over a small boat, and blow gases or vapors to the edge of its range.
+                             Gust of wind can be made permanent with a [permanency](http://www.d20srd.org/srd/spells/permanency.htm) spell.`
         },
         // Spells that start with H
+        //BEGIN REVIEW MARKER
         'hallow': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Hallow',
           school:           'Evocation [Good]',
@@ -4981,7 +5004,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Second, all Charisma checks made to turn [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) gain a +4 sacred bonus, and Charisma checks to command [undead](https://www.dandwiki.com/wiki/SRD:Undead_Type) take a -4 penalty. Spell resistance does not apply to this effect. (This provision does not apply to the druid version of the spell.)
                              Third, any dead body interred in a *hallowed* site cannot be [turned](https://www.dandwiki.com/wiki/SRD:Turned) into an undead creature.
                              Finally, you may choose to fix a single spell effect to the *hallowed* site. The spell effect lasts for one year and functions throughout the entire site, regardless of the normal duration and area or effect. You may designate whether the effect applies to all creatures, creatures who share your faith or alignment, or creatures who adhere to another faith or alignment. At the end of the year, the chosen effect lapses, but it can be renewed or replaced simply by casting *hallow* again.
-                             Spell effects that may be tied to a *hallowed* site include [aid](https://www.dandwiki.com/wiki/SRD:Aid), [bane](http://www.d20srd.org/srd/spells/bane.htm), [bless](http://www.d20srd.org/srd/spells/bless.htm), [cause fear](http://www.d20srd.org/srd/spells/causeFear.htm), [darkness](http://www.d20srd.org/srd/spells/darkness.htm), [daylight](http://www.d20srd.org/srd/spells/daylight.htm), [death ward](http://www.d20srd.org/srd/spells/deathWard.htm), [deeper darkness](http://www.d20srd.org/srd/spells/deeperDarkness.htm), [detect evil](https://www.dandwiki.com/wiki/SRD:Detect_Evil), [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm), [dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm), [discern lies](http://www.d20srd.org/srd/spells/discernLies.htm), [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm), [endure elements](https://www.dandwiki.com/wiki/SRD:Endure_Elements), [freedom of movement](https://www.dandwiki.com/wiki/SRD:Freedom_of_Movement), [invisibility purge](https://www.dandwiki.com/wiki/SRD:Invisibility_Purge), [protection from energy](https://www.dandwiki.com/wiki/SRD:Protection_from_Energy), [remove fear](http://www.d20srd.org/srd/spells/removeFear.htm), [resist energy](https://www.dandwiki.com/wiki/SRD:Resist_Energy), [silence](http://www.d20srd.org/srd/spells/silence.htm), [tongues](https://www.dandwiki.com/wiki/SRD:Tongues), and [zone of truth](https://www.dandwiki.com/wiki/SRD:Zone_of_Truth). Saving throws and spell resistance might apply to these spells’ effects. (See the individual spell descriptions for details.)
+                             Spell effects that may be tied to a *hallowed* site include [aid](https://www.dandwiki.com/wiki/SRD:Aid), [bane](http://www.d20srd.org/srd/spells/bane.htm), [bless](http://www.d20srd.org/srd/spells/bless.htm), [cause fear](http://www.d20srd.org/srd/spells/causeFear.htm), [darkness](http://www.d20srd.org/srd/spells/darkness.htm), [daylight](http://www.d20srd.org/srd/spells/daylight.htm), [death ward](http://www.d20srd.org/srd/spells/deathWard.htm), [deeper darkness](http://www.d20srd.org/srd/spells/deeperDarkness.htm), [detect evil](http://www.d20srd.org/srd/spells/detectEvil.htm), [detect magic](http://www.d20srd.org/srd/spells/detectMagic.htm), [dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm), [discern lies](http://www.d20srd.org/srd/spells/discernLies.htm), [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm), [endure elements](https://www.dandwiki.com/wiki/SRD:Endure_Elements), [freedom of movement](https://www.dandwiki.com/wiki/SRD:Freedom_of_Movement), [invisibility purge](https://www.dandwiki.com/wiki/SRD:Invisibility_Purge), [protection from energy](https://www.dandwiki.com/wiki/SRD:Protection_from_Energy), [remove fear](http://www.d20srd.org/srd/spells/removeFear.htm), [resist energy](https://www.dandwiki.com/wiki/SRD:Resist_Energy), [silence](http://www.d20srd.org/srd/spells/silence.htm), [tongues](http://www.d20srd.org/srd/spells/tongues.htm), and [zone of truth](https://www.dandwiki.com/wiki/SRD:Zone_of_Truth). Saving throws and spell resistance might apply to these spells’ effects. (See the individual spell descriptions for details.)
                              An area can receive only one *hallow* spell (and its associated spell effect) at a time. Hallow counters but does not dispel [unhallow](https://www.dandwiki.com/wiki/SRD:Unhallow).`,
           component_details:'Material Component: Herbs, oils, and incense worth at least 1,000 gp, plus 1,000 gp per level of the spell to be included in the *hallowed* area.'
         },
@@ -5532,7 +5555,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `You create a destructive resonance in a corporeal creature’s body. For each round you concentrate, you cause one creature to collapse in on itself, killing it. (This effect, being instantaneous, cannot be dispelled.)
                              You can target a particular creature only once with each casting of the spell.
-                             *Implosion* has no effect on creatures in [gaseous form](https://www.dandwiki.com/wiki/SRD:Gaseous_Form_%28Spell%29) or on incorporeal creatures.`,
+                             *Implosion* has no effect on creatures in [gaseous form](http://www.d20srd.org/srd/spells/gaseousForm.htm) or on incorporeal creatures.`,
           component_details:null
         },
         'imprisonment': {
@@ -5947,7 +5970,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: A glass or crystal bead that shatters at the expiration of the spell.'
         },
         'lesser planar ally': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Lesser_Planar_Ally',
+          ref:              'http://www.d20srd.org/srd/spells/planarAllyLesser.htm',
           school:           'Conjuration (Calling) [see text]',
           level:            'Clr 4',
           components:       'V, S, DF, XP',
@@ -6083,7 +6106,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • Duplicate any other spell of 5th level or lower, provided the spell is not of a school prohibited to you.
                              • Duplicate any sorcerer/wizard spell of 5th level or lower, even if it’s of a prohibited school.
                              • Duplicate any other spell of 4th level or lower, even if it’s of a prohibited school.
-                             • Undo the harmful effects of many spells, such as [geas/quest](https://www.dandwiki.com/wiki/SRD:Geas/Quest) or [insanity](https://www.dandwiki.com/wiki/SRD:Insanity).
+                             • Undo the harmful effects of many spells, such as [geas/quest](http://www.d20srd.org/srd/spells/geasQuest.htm) or [insanity](https://www.dandwiki.com/wiki/SRD:Insanity).
                              • Produce any other effect whose power level is in line with the above effects, such as a single creature automatically hitting on its next attack or taking a -7 penalty on its next saving throw.
                              A duplicated spell allows saving throws and spell resistance as normal (but the save DC is for a 7th-level spell). When a *limited wish* duplicates a spell that has an XP cost, you must pay that cost or 300 XP, whichever is more. When a *limited wish* spell duplicates a spell with a material component that costs more than 1,000 gp, you must provide that component.`,
           component_details:'XP Cost: 300 XP or more (see above).'
@@ -6120,7 +6143,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'No',
           text:             `You slowly turn and sense when you are facing in the direction of the creature to be located, provided it is within range. You also know in which direction the creature is moving, if any.
                              The spell can locate a creature of a specific kind or a specific creature known to you. It cannot find a creature of a certain type. To find a kind of creature, you must have seen such a creature up close (within 30 feet) at least once.
-                             The spell is blocked by even a thin sheet of lead. Running water blocks the spell. It cannot detect objects. It can be fooled by [mislead](https://www.dandwiki.com/wiki/SRD:Mislead), [nondetection](https://www.dandwiki.com/wiki/SRD:Nondetection), and [polymorph](https://www.dandwiki.com/wiki/SRD:Polymorph_%28Spell%29) spells.`,
+                             The spell is blocked by even a thin sheet of lead. Running water blocks the spell. It cannot detect objects. It can be fooled by [mislead](http://www.d20srd.org/srd/spells/mislead.htm), [nondetection](http://www.d20srd.org/srd/spells/nondetection.htm), and [polymorph](http://www.d20srd.org/srd/spells/polymorph.htm) spells.`,
           component_details:'Material Component: A bit of fur from a bloodhound.'
         },
         'locate object': {
