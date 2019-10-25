@@ -5810,11 +5810,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `The subject feels an undeniable urge to dance and begins doing so, complete with foot shuffling and tapping. The spell effect makes it impossible for the subject to do anything other than caper and prance in place. The effect imposes a -4 penalty to Armor Class and a -10 penalty on Reflex saves, and it negates any AC bonus granted by a shield the target holds. The dancing subject provokes attacks of opportunity each round on its turn.`
         },
         // Spells that start with J
-        //BEGIN REVIEW MARKER
         'jump': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Jump',
+          ref:              'http://www.d20srd.org/srd/spells/jump.htm',
           school:           'Transmutation',
-          level:            'Asn 1, Drd 1, Rgr 1, Sor/Wiz 1',
+          level:            'Arc 1, Asn 1, Drd 1, Duskblade 1, Rgr 1, Sor/Wiz 1, Wuj 1',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -5828,9 +5827,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         // Spells that start with K
         'keen edge': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Keen_Edge',
+          ref:              'http://www.d20srd.org/srd/spells/keenEdge.htm',
           school:           'Transmutation',
-          level:            'Sor/Wiz 3',
+          level:            'Arc 3, Duskblade 3, Metal 3, Shu 3, Sor/Wiz 3, Wuj 3',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -5839,15 +5838,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless, object)',
           spell_resistance: 'Yes (harmless, object)',
-          text:             `This spell makes a weapon magically keen, improving its ability to deal telling blows. This transmutation doubles the threat range of the weapon. A threat range of 20 becomes 19–20, a threat range of 19–20 becomes 17–20, and a threat range of 18–20 becomes 15–20. The spell can be cast only on piercing or slashing weapons. If cast on arrows or crossbow bolts, the *keen edge* on a particular projectile ends after one use, whether or not the missile strikes its intended target. (Treat shuriken as arrows, rather than as thrown weapons, for the purpose of this spell.)
-                             Multiple effects that increase a weapon’s threat range (such as the *keen edge* spell and the Improved Critical feat) don’t stack. You can’t cast this spell on a natural weapon, such as a claw.`,
-          component_details:null
+          text:             `This spell makes a weapon magically keen, improving its ability to deal telling blows. This transmutation doubles the threat range of the weapon. A threat range of 20 becomes 19–20, a threat range of 19–20 becomes 17–20, and a threat range of 18–20 becomes 15–20. The spell can be cast only on piercing or slashing weapons. If cast on arrows or crossbow bolts, the keen edge on a particular projectile ends after one use, whether or not the missile strikes its intended target. (Treat shuriken as arrows, rather than as thrown weapons, for the purpose of this spell.)
+                             Multiple effects that increase a weapon’s threat range (such as the keen edge spell and the Improved Critical feat) don’t stack. You can’t cast this spell on a natural weapon, such as a claw.`,
         },
         //Epic Spell: kinetic control
         'knock': {
           ref:              'http://www.d20srd.org/srd/spells/knock.htm',
           school:           'Transmutation',
-          level:            'Sor/Wiz 2',
+          level:            'Beguiler 2, Greed 3, Hoard 2, Sor/Wiz 2, Wuj 2',
           components:       'V',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -5856,23 +5854,22 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous; see text',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `The *knock* spell opens stuck, barred, locked, [held](https://www.dandwiki.com/wiki/SRD:Hold_Portal), or [arcane locked](http://www.d20srd.org/srd/spells/arcaneLock.htm) doors. It opens secret doors, as well as locked or trick-opening boxes or chests. It also loosens welds, shackles, or chains (provided they serve to hold closures shut). If used to open an *arcane locked* door, the spell does not remove the *arcane lock* but simply suspends its functioning for 10 minutes. In all other cases, the door does not relock itself or become stuck again on its own. *Knock* does not raise barred gates or similar impediments (such as a portcullis), nor does it affect ropes, vines, and the like. The effect is limited by the area. Each spell can undo as many as two means of preventing egress.`,
-          component_details:null
+          text:             `The knock spell opens stuck, barred, locked, held, or [arcane locked](http://www.d20srd.org/srd/spells/arcaneLock.htm) doors. It opens secret doors, as well as locked or trick-opening boxes or chests. It also loosens welds, shackles, or chains (provided they serve to hold closures shut). If used to open an *arcane locked* door, the spell does not remove the arcane lock but simply suspends its functioning for 10 minutes. In all other cases, the door does not relock itself or become stuck again on its own. Knock does not raise barred gates or similar impediments (such as a portcullis), nor does it affect ropes, vines, and the like. The effect is limited by the area. Each spell can undo as many as two means of preventing egress.`
         },
         'know direction': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Know_Direction',
+          ref:              'http://www.d20srd.org/srd/spells/knowDirection.htm',
           school:           'Divination',
-          level:            'Brd 0, Drd 0',
+          level:            'Arc 0, Brd 0, Drd 0, Shu 0',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
           duration:         'Instantaneous',
-          text:             `You instantly know the direction of north from your current position. The spell is effective in any environment in which “north” exists, but it may not work in extraplanar settings. Your knowledge of north is correct at the moment of casting, but you can get lost again within moments if you don’t find some external reference point to help you keep track of direction.`,
-          component_details:null
+          text:             `You instantly know the direction of north from your current position. The spell is effective in any environment in which “north” exists, but it may not work in extraplanar settings. Your knowledge of north is correct at the moment of casting, but you can get lost again within moments if you don’t find some external reference point to help you keep track of direction.`
         },
         // Spells that start with L
+        //BEGIN REVIEW MARKER
         'legend lore': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Legend_Lore',
           school:           'Divination',
