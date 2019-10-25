@@ -938,10 +938,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `Any nonevil creature within the area of a *blasphemy* spell suffers the following ill effects.
 
-                             • **[[?{Casting Level}]] HD**: Dazed
-                             • **Up to [[?{Casting Level}-1]] HD**: Weakened, dazed
-                             • **Up to [[?{Casting Level}-5]] HD**: Paralyzed, weakened, dazed
-                             • **Up to [[?{Casting Level}-10]] HD**: Killed, paralyzed, weakened, dazed
+                             ◦ **HD**: Effect
+                             • **[[?{Casting Level}]]**: Dazed
+                             • **Up to [[{?{Casting Level}-1,1}kl1]]**: Weakened, dazed
+                             • **Up to [[{?{Casting Level}-5,1}kl1]]**: Paralyzed, weakened, dazed
+                             • **Up to [[{?{Casting Level}-10,1}kl1]]**: Killed, paralyzed, weakened, dazed
 
                              The effects are cumulative and concurrent.
                              No saving throw is allowed against these effects.
@@ -2897,10 +2898,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `Any nonlawful creature within the area of a dictum spell suffers the following ill effects.
 
                              ◦ **HD**: Effect
-                             • **Equal to caster level**: Deafened
-                             • **Up to caster level - 1**: Slowed,deafened
-                             • **Up to caster level - 5**: Paralyzed,slowed,deafened
-                             • **Up to caster level - 10**: Killed,paralyzed,slowed,deafened
+                             • **[[?{Casting Level}]]**: Deafened
+                             • **Up to [[{?{Casting Level}-1,1}kl1]]**: Slowed,deafened
+                             • **Up to [[{?{Casting Level}-5,1}kl1]]**: Paralyzed,slowed,deafened
+                             • **Up to [[{?{Casting Level}-10,1}kl1]]**: Killed,paralyzed,slowed,deafened
 
                              The effects are cumulative and concurrent. No saving throw is allowed against these effects.
 
@@ -11687,10 +11688,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              The effects are cumulative and concurrent. No saving throw is allowed against these effects.
 
                              ◦ **HD**: Effect
-                             • **Equal to caster level**: Deafened
-                             • **Up to caster level -1**: Stunned, deafened
-                             • **Up to caster level -5**: Confused, stunned, deafened
-                             • **Up to caster level -10**:  Killed, confused, stunned, deafened
+                             • **[[?{Casting Level}]]**: Deafened
+                             • **Up to [[{?{Casting Level}-1,1}kl1]]**: Stunned, deafened
+                             • **Up to [[{?{Casting Level}-5,1}kl1]]**: Confused, stunned, deafened
+                             • **Up to [[{?{Casting Level}-10,1}kl1]]**:  Killed, confused, stunned, deafened
 
                              *Deafened*
                              The creature is deafened for ‹1d4|[[1d4]] rounds› rounds.
