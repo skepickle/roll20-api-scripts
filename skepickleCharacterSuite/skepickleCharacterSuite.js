@@ -3503,27 +3503,25 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: A pinch of powdered iron.'
         },
         //Epic Spell: enslave (ritual)
-        //BEGIN REVIEW MARKER
         'entangle': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Entangle',
+          ref:              'http://www.d20srd.org/srd/spells/entangle.htm',
           school:           'Transmutation',
-          level:            'Drd 1, Plant 1, Rgr 1',
+          level:            'Arc 1, BVal 1, Drd 1, Plant 1, Rgr 1, Watery Death 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_long_',
           target_type:      'Area',
-          target:           '[Plants](https://www.dandwiki.com/wiki/SRD:Plant_Type) in a 40-ft.-radius spread',
+          target:           'Plants in a 40-ft.-radius spread',
           duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'Reflex partial; see text',
           spell_resistance: 'No',
-          text:             `Grasses, weeds, bushes, and even trees wrap, twist, and entwine about creatures in the area or those that enter the area, holding them fast and causing them to become entangled. The creature can break free and move half its normal speed by using a full-round action to make a DC 20 Strength check or a DC 20 Escape Artist check. A creature that succeeds on a Reflex save is not entangled but can still move at only half speed through the area. Each round on your turn, the [plants](https://www.dandwiki.com/wiki/SRD:Plant_Type) once again attempt to entangle all creatures that have avoided or escaped entanglement.
-                             *Note:* The effects of the spell may be altered somewhat, based on the nature of the entangling [plants](https://www.dandwiki.com/wiki/SRD:Plant_Type).`,
-          component_details:null
+          text:             `Grasses, weeds, bushes, and even trees wrap, twist, and entwine about creatures in the area or those that enter the area, holding them fast and causing them to become entangled. The creature can break free and move half its normal speed by using a full-round action to make a DC 20 Strength check or a DC 20 Escape Artist check. A creature that succeeds on a Reflex save is not entangled but can still move at only half speed through the area. Each round on your turn, the plants once again attempt to entangle all creatures that have avoided or escaped entanglement.
+                             *Note:* The effects of the spell may be altered somewhat, based on the nature of the entangling plants.`
         },
         'enthrall': {
           ref:              'http://www.d20srd.org/srd/spells/enthrall.htm',
           school:           'Enchantment (Charm) [Language-Dependent, Mind-Affecting, Sonic]',
-          level:            'Brd 2, Clr 2, Nobility 2',
+          level:            'APeace 2, Arc 2, Brd 2, Clr 2, Domination 2, EmBarachiel 2, HB 2, Herald 2, Nobility 2, Tyranny 2',
           components:       'V, S',
           casting_time:     '1 round',
           range:            '_medium_',
@@ -3534,22 +3532,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `If you have the attention of a group of creatures, you can use this spell to hold them spellbound. To cast the spell, you must speak or sing without interruption for 1 full round. Thereafter, those affected give you their undivided attention, ignoring their surroundings. They are considered to have an attitude of friendly while under the effect of the spell. Any potentially affected creature of a race or religion unfriendly to yours gets a +4 bonus on the saving throw.
                              A creature with 4 or more HD or with a Wisdom score of 16 or higher remains aware of its surroundings and has an attitude of indifferent. It gains a new saving throw if it witnesses actions that it opposes.
-                             The effect lasts as long as you speak or sing, to a maximum of 1 hour. Those *enthralled* by your words take no action while you speak or sing and for [[1d3]] rounds thereafter while they discuss the topic or performance. Those entering the area during the performance must also successfully save or become *enthralled*. The speech ends (but the 1d3-round delay still applies) if you lose concentration or do anything other than speak or sing.
-                             If those not *enthralled* have unfriendly or hostile attitudes toward you, they can collectively make a Charisma check to try to end the spell by jeering and heckling. For this check, use the Charisma bonus of the creature with the highest Charisma in the group; others may make Charisma checks to assist. The heckling ends the spell if this check result beats your Charisma check result. Only one such challenge is allowed per use of the spell.
-                             If any member of the audience is attacked or subjected to some other overtly hostile act, the spell ends and the previously *enthralled* members become immediately unfriendly toward you. Each creature with 4 or more HD or with a Wisdom score of 16 or higher becomes hostile.`,
-          component_details:null
+                             The effect lasts as long as you speak or sing, to a maximum of 1 hour. Those enthralled by your words take no action while you speak or sing and for [[1d3]] rounds thereafter while they discuss the topic or performance. Those entering the area during the performance must also successfully save or become enthralled. The speech ends (but the 1d3-round delay still applies) if you lose concentration or do anything other than speak or sing.
+                             If those not enthralled have unfriendly or hostile attitudes toward you, they can collectively make a Charisma check to try to end the spell by jeering and heckling. For this check, use the Charisma bonus of the creature with the highest Charisma in the group; others may make Charisma checks to assist. The heckling ends the spell if this check result beats your Charisma check result. Only one such challenge is allowed per use of the spell.
+                             If any member of the audience is attacked or subjected to some other overtly hostile act, the spell ends and the previously enthralled members become immediately unfriendly toward you. Each creature with 4 or more HD or with a Wisdom score of 16 or higher becomes hostile.`
         },
         'entropic shield': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Entropic_Shield',
+          ref:              'http://www.d20srd.org/srd/spells/entropicShield.htm',
           school:           'Abjuration',
-          level:            'Clr 1, Luck 1',
+          level:            'APeace 1, Arc 1, Clr 1, HB 1, Luck 1, Storm 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Personal',
           target:           'You',
           duration:         '[[?{Casting Level}]] minutes (D)',
-          text:             `A magical field appears around you, glowing with a chaotic blast of multicolored hues. This field deflects incoming arrows, rays, and other ranged attacks. Each ranged attack directed at you for which the attacker must make an attack roll has a 20% miss chance (similar to the effects of concealment). Other attacks that simply work at a distance are not affected.`,
-          component_details:null
+          text:             `A magical field appears around you, glowing with a chaotic blast of multicolored hues. This field deflects incoming arrows, rays, and other ranged attacks. Each ranged attack directed at you for which the attacker must make an attack roll has a 20% miss chance (similar to the effects of concealment). Other attacks that simply work at a distance are not affected.`
         },
         //Epic Spell: epic counterspell
         //Epic Spell: epic mage armor
@@ -3561,38 +3557,36 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Brd 1, Rune 1, Sor/Wiz 1',
           components:       'V, S',
           casting_time:     '1 standard action',
-          range:            'close',
+          range:            '_close_',
           target_type:      'Target',
           target:           'One scroll or two pages',
           duration:         'Instantaneous',
           saving_throw:     'See text',
           spell_resistance: 'No',
-          text:             `*Erase* removes writings of either magical or mundane nature from a scroll or from one or two pages of paper, parchment, or similar surfaces. With this spell, you can remove [explosive runes](https://www.dandwiki.com/wiki/SRD:Explosive_Runes), a [glyph of warding](https://www.dandwiki.com/wiki/SRD:Glyph_of_Warding), a [sepia snake sigil](https://www.dandwiki.com/wiki/SRD:Sepia_Snake_Sigil), or an [arcane mark](http://www.d20srd.org/srd/spells/arcaneMark.htm), but not [illusory script](http://www.d20srd.org/srd/spells/illusoryScript.htm) or a [symbol](https://www.dandwiki.com/wiki/SRD:Symbol_of_Death) spell. Nonmagical writing is automatically erased if you touch it and no one else is holding it. Otherwise, the chance of erasing nonmagical writing is 90%.
-                             Magic writing must be touched to be erased, and you also must succeed on a caster level check (1d20 + caster level) against DC 15. (A natural 1 or 2 is always a failure on this check.) If you fail to erase *explosive runes*, a *glyph of warding*, or a *sepia snake sigil*, you accidentally activate that writing instead.`,
-          component_details:null
+          text:             `Erase removes writings of either magical or mundane nature from a scroll or from one or two pages of paper, parchment, or similar surfaces. With this spell, you can remove [explosive runes](http://www.d20srd.org/srd/spells/explosiveRunes.htm), a [glyph of warding](http://www.d20srd.org/srd/spells/glyphOfWarding.htm), a [sepia snake sigil](http://www.d20srd.org/srd/spells/sepiaSnakeSigil.htm), or an [arcane mark](http://www.d20srd.org/srd/spells/arcaneMark.htm), but not [illusory script](http://www.d20srd.org/srd/spells/illusoryScript.htm) or a [symbol](http://www.d20srd.org/srd/spells/symbolOfDeath.htm) spell. Nonmagical writing is automatically erased if you touch it and no one else is holding it. Otherwise, the chance of erasing nonmagical writing is 90%.
+                             Magic writing must be touched to be erased, and you also must succeed on a caster level check (1d20 + caster level) against DC 15. (A natural 1 or 2 is always a failure on this check.) If you fail to erase explosive runes, a glyph of warding, or a sepia snake sigil, you accidentally activate that writing instead.`
         },
         //Epic Spell: eternal freedom
         'ethereal jaunt': {
           ref:              'http://www.d20srd.org/srd/spells/etherealJaunt.htm',
           school:           'Transmutation',
-          level:            'Clr 7, Sor/Wiz 7',
+          level:            'APeace 7, Arc 7, Beguiler 7, Clr 7, Sor/Wiz 7, Wuj 7',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
           duration:         '[[?{Casting Level}]] rounds (D)',
-          text:             `You become ethereal, along with your equipment. For the duration of the spell, you are in a place called the [Ethereal Plane](https://www.dandwiki.com/wiki/SRD:Ethereal_Plane), which overlaps the normal, physical, [Material Plane](https://www.dandwiki.com/wiki/SRD:Material_Plane). When the spell expires, you return to material existence.
+          text:             `You become ethereal, along with your equipment. For the duration of the spell, you are in a place called the Ethereal Plane, which overlaps the normal, physical, Material Plane. When the spell expires, you return to material existence.
                              An ethereal creature is invisible, insubstantial, and capable of moving in any direction, even up or down, albeit at half normal speed. As an insubstantial creature, you can move through solid objects, including living creatures. An ethereal creature can see and hear on the Material Plane, but everything looks gray and ephemeral. Sight and hearing onto the Material Plane are limited to 60 feet.
                              Force effects and abjurations affect an ethereal creature normally. Their effects extend onto the Ethereal Plane from the Material Plane, but not vice versa. An ethereal creature can’t attack material creatures, and spells you cast while ethereal affect only other ethereal things. Certain material creatures or objects have attacks or effects that work on the Ethereal Plane.
                              Treat other ethereal creatures and ethereal objects as if they were material.
-                             If you end the spell and become material while inside a material object (such as a solid wall), you are shunted off to the nearest open space and take ‹1d6› points of damage per 5 feet that you so travel.`,
-          component_details:null
+                             If you end the spell and become material while inside a material object (such as a solid wall), you are shunted off to the nearest open space and take ‹1d6› points of damage per 5 feet that you so travel.`
         },
         'etherealness': {
           ref:              'http://www.d20srd.org/srd/spells/etherealness.htm',
           school:           'Transmutation',
-          level:            'Clr 9, Sor/Wiz 9',
+          level:            'APeace 9, Arc 9, Beguiler 9, Clr 9, Portal 7, Portal (alt) 7, Shu 9, Sor/Wiz 9, Wuj 9',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Touch; see text',
@@ -3601,24 +3595,22 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minutes (D)',
           spell_resistance: 'Yes',
           text:             `This spell functions like [ethereal jaunt](http://www.d20srd.org/srd/spells/etherealJaunt.htm), except that you and other willing creatures joined by linked hands (along with their equipment) become ethereal. Besides yourself, you can bring one creature per three caster levels to the Ethereal Plane. Once ethereal, the subjects need not stay together.
-                             When the spell expires, all affected creatures on the [Ethereal Plane](https://www.dandwiki.com/wiki/SRD:Ethereal_Plane) return to material existence.`,
-          component_details:null
+                             When the spell expires, all affected creatures on the Ethereal Plane return to material existence.`
         },
         'expeditious retreat': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Expeditious_Retreat',
+          ref:              'http://www.d20srd.org/srd/spells/expeditiousRetreat.htm',
           school:           'Transmutation',
-          level:            'Brd 1, Sor/Wiz 1',
+          level:            'Arc 1, Beguiler 1, Brd 1, Celerity 1, Duskblade 1, HB 1, Hoard 1, Shu 1, Sor/Wiz 1',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
           duration:         '[[?{Casting Level}]] minutes (D)',
-          text:             `This spell increases your base land speed by 30 feet. (This adjustment is treated as an enhancement bonus.) There is no effect on other modes of movement, such as burrow, climb, fly, or swim. As with any effect that increases your speed, this spell affects your jumping distance (see the Jump skill).`,
-          component_details:null
+          text:             `This spell increases your base land speed by 30 feet. (This adjustment is treated as an enhancement bonus.) There is no effect on other modes of movement, such as burrow, climb, fly, or swim. As with any effect that increases your speed, this spell affects your jumping distance (see the Jump skill).`
         },
         'explosive runes': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Explosive_Runes',
+          ref:              'http://www.d20srd.org/srd/spells/explosiveRunes.htm',
           school:           'Abjuration [Force]',
           level:            'Rune 4, Sor/Wiz 3',
           components:       'V, S',
@@ -3629,15 +3621,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Permanent until discharged (D)',
           saving_throw:     'See text',
           spell_resistance: 'Yes',
-          text:             `You trace these mystic runes upon a book, map, scroll, or similar object bearing written information. The *runes* detonate when read, dealing ‹6d6› points of force damage. Anyone next to the *runes* (close enough to read them) takes the full damage with no saving throw; any other creature within 10 feet of the *runes* is entitled to a Reflex save for half damage. The object on which the *runes* were written also takes full damage (no saving throw).
-                             You and any characters you specifically instruct can read the protected writing without triggering the *runes*. Likewise, you can remove the *runes* whenever desired. Another creature can remove them with a successful *dispel magic* or *erase* spell, but attempting to dispel or erase the *runes* and failing to do so triggers the explosion.
-                             *Note:* Magic traps such as *explosive runes* are hard to detect and disable. A rogue (only) can use the Search skill to find the *runes* and Disable Device to thwart them. The DC in each case is 25 + spell level, or 28 for *explosive runes*.`,
-          component_details:null
+          text:             `You trace these mystic runes upon a book, map, scroll, or similar object bearing written information. The runes detonate when read, dealing ‹6d6|[[6d6]] points of force damage› points of force damage. Anyone next to the runes (close enough to read them) takes the full damage with no saving throw; any other creature within 10 feet of the runes is entitled to a Reflex save for half damage. The object on which the runes were written also takes full damage (no saving throw).
+                             You and any characters you specifically instruct can read the protected writing without triggering the runes. Likewise, you can remove the runes whenever desired. Another creature can remove them with a successful [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) or [erase](http://www.d20srd.org/srd/spells/erase.htm) spell, but attempting to dispel or erase the runes and failing to do so triggers the explosion.
+                             *Note:* Magic traps such as explosive runes are hard to detect and disable. A rogue (only) can use the Search skill to find the runes and Disable Device to thwart them. The DC in each case is 25 + spell level, or 28 for explosive runes.`
         },
         'eyebite': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Eyebite',
+          ref:              'http://www.d20srd.org/srd/spells/eyebite.htm',
           school:           'Necromancy [Evil]',
-          level:            'Brd 6, Scalykind 6, Sor/Wiz 6',
+          level:            'Brd 6, Necro 6, Orc 6, Scalykind 6, Sor/Wiz 6',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -3648,23 +3639,29 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `Each round, you may target a single living creature, striking it with waves of evil power. Depending on the target’s HD, this attack has as many as three effects.
 
-                             HD  Effect
-                             10 or more  Sickened
-                             5–9 Panicked, sickened
-                             4 or less Comatose, panicked, sickened
+                             ◦ **HD**: Effect
+                             • **10 or more**: Sickened
+                             • **5–9**: Panicked, sickened
+                             • **4 or less**: Comatose, panicked, sickened
 
                              The effects are cumulative and concurrent.
-                             *[Sickened](https://www.dandwiki.com/wiki/SRD:Sickened):* Sudden pain and fever sweeps over the subject’s body. A [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) creature takes a -2 penalty on attack rolls, weapon damage rolls, saving throws, skill checks, and ability checks. A creature affected by this spell remains [sickened](https://www.dandwiki.com/wiki/SRD:Sickened) for [[10*?{Casting Level}]] minutes. The effects cannot be negated by a [remove disease](https://www.dandwiki.com/wiki/SRD:Remove_Disease) or [heal](https://www.dandwiki.com/wiki/SRD:Heal) spell, but a [remove curse](http://www.d20srd.org/srd/spells/bestowCurse.htm) is effective.
-                             *Panicked:* The subject becomes panicked for [[1d4]] rounds. Even after the panic ends, the creature remains shaken for [[10*?{Casting Level}]] minutes, and it automatically becomes panicked again if it comes within sight of you during that time. This is a fear effect.
-                             *Comatose:* The subject falls into a catatonic coma for [[10*?{Casting Level}]] minutes. During this time, it cannot be awakened by any means short of dispelling the effect. This is not a [sleep](https://www.dandwiki.com/wiki/SRD:Sleep) effect, and thus elves are not immune to it.
-                             You must spend a move action each round after the first to target a foe.`,
-          component_details:null
+
+                             *Sickened*
+                             Sudden pain and fever sweeps over the subject’s body. A sickened creature takes a -2 penalty on attack rolls, weapon damage rolls, saving throws, skill checks, and ability checks. A creature affected by this spell remains sickened for [[10*?{Casting Level}]] minutes. The effects cannot be negated by a [remove disease](http://www.d20srd.org/srd/spells/removeDisease.htm) or [heal](http://www.d20srd.org/srd/spells/heal.htm) spell, but a [remove curse](http://www.d20srd.org/srd/spells/bestowCurse.htm) is effective.
+
+                             *Panicked*
+                             The subject becomes panicked for [[1d4]] rounds. Even after the panic ends, the creature remains shaken for [[10*?{Casting Level}]] minutes, and it automatically becomes panicked again if it comes within sight of you during that time. This is a fear effect.
+
+                             *Comatose*
+                             The subject falls into a catatonic coma for [[10*?{Casting Level}]] minutes. During this time, it cannot be awakened by any means short of dispelling the effect. This is not a sleep effect, and thus elves are not immune to it.
+
+                             You must spend a move action each round after the first to target a foe.`
         },
         // Spells that start with F
         'fabricate': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Fabricate',
+          ref:              'http://www.d20srd.org/srd/spells/fabricate.htm',
           school:           'Transmutation',
-          level:            'Artifice 5, Sor/Wiz 5',
+          level:            'Artifice 5, Artificer 5, Dwarf 5, Greed 5, Sor/Wiz 5, Trade 5, Wuj 5',
           components:       'V, S, M',
           casting_time:     'See text',
           range:            '_close_',
@@ -3673,15 +3670,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `You convert material of one sort into a product that is of the same material. Creatures or magic items cannot be created or transmuted by the *fabricate* spell. The quality of items made by this spell is commensurate with the quality of material used as the basis for the new fabrication. If you work with a mineral, the target is reduced to [[?{Casting Level}]] cu. ft.
+          text:             `You convert material of one sort into a product that is of the same material. Creatures or magic items cannot be created or transmuted by the fabricate spell. The quality of items made by this spell is commensurate with the quality of material used as the basis for the new fabrication. If you work with a mineral, the target is reduced to [[?{Casting Level}]] cu. ft.
                              You must make an appropriate Craft check to fabricate articles requiring a high degree of craftsmanship.
                              Casting requires 1 round per 10 cubic feet (or 1 cubic foot if mineral) of material to be affected by the spell.`,
           component_details:'Material Component: The original material, which costs the same amount as the raw materials required to craft the item to be created.'
         },
         'faerie fire': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Faerie_Fire',
+          ref:              'http://www.d20srd.org/srd/spells/faerieFire.htm',
           school:           'Evocation [Light]',
-          level:            'Drd 1',
+          level:            'Arc 1, Drd 1, Fey 1, Moon 1, Shu 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_long_',
@@ -3690,13 +3687,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `A pale glow surrounds and outlines the subjects. Outlined subjects shed light as candles. Outlined creatures do not benefit from the [concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment) normally provided by darkness (though a 2nd-level or higher magical [darkness](http://www.d20srd.org/srd/spells/darkness.htm) effect functions normally), [blur](http://www.d20srd.org/srd/spells/blur.htm), [displacement](https://www.dandwiki.com/wiki/SRD:Displacement), invisibility or dark-dwelling creatures vulnerable to light. The *faerie fire* can be blue, green, or violet, according to your choice at the time of casting. The *faerie fire* does not cause any harm to the objects or creatures thus outlined.`,
-          component_details:null
+          text:             `A pale glow surrounds and outlines the subjects. Outlined subjects shed light as candles. Outlined creatures do not benefit from the concealment normally provided by darkness (though a 2nd-level or higher magical darkness effect functions normally), [blur](http://www.d20srd.org/srd/spells/blur.htm), [displacement](http://www.d20srd.org/srd/spells/displacement.htm), invisibility or dark-dwelling creatures vulnerable to light. The faerie fire can be blue, green, or violet, according to your choice at the time of casting. The faerie fire does not cause any harm to the objects or creatures thus outlined.`
         },
         'false life': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:False_Life',
+          ref:              'http://www.d20srd.org/srd/spells/falseLife.htm',
+          other_versions:   'Tome and Blood on page 89',
           school:           'Necromancy',
-          level:            'Asn 3, Sor/Wiz 2',
+          level:            'Asn 3, HB 2, Sor/Wiz 2',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            'Personal',
@@ -3707,7 +3704,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: A small amount of alcohol or distilled spirits, which you use to trace certain sigils on your body during casting. These sigils cannot be seen once the alcohol or spirits evaporate.'
         },
         'false vision': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:False_Vision',
+          ref:              'http://www.d20srd.org/srd/spells/falseVision.htm',
           school:           'Illusion (Glamer)',
           level:            'Brd 5, Sor/Wiz 5, Trickery 5',
           components:       'V, S, M',
@@ -3718,13 +3715,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] hours (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `Any divination (scrying) spell used to view anything within the area of this spell instead receives a false image (as the [major image](https://www.dandwiki.com/wiki/Major_Image) spell), as defined by you at the time of casting. As long as the duration lasts, you can concentrate to change the image as desired. While you aren’t concentrating, the image remains static.`,
+          text:             `Any divination (scrying) spell used to view anything within the area of this spell instead receives a false image (as the [major image](http://www.d20srd.org/srd/spells/majorImage.htm) spell), as defined by you at the time of casting. As long as the duration lasts, you can concentrate to change the image as desired. While you aren’t concentrating, the image remains static.`,
           component_details:'Arcane Material Component: The ground dust of a piece of jade worth at least 250 gp, which is sprinkled into the air when the spell is cast.'
         },
         'fear': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Fear_%28Spell%29',
+          ref:              'http://www.d20srd.org/srd/spells/fear.htm',
           school:           'Necromancy [Fear, Mind-Affecting]',
-          level:            'Brd 3, Sor/Wiz 4',
+          level:            'Brd 3, HB 4, Sor/Wiz 4, Tyranny 4',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '30 ft.',
@@ -3733,13 +3730,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] round or 1 round; see text',
           saving_throw:     'Will partial',
           spell_resistance: 'Yes',
-          text:             `An invisible cone of terror causes each living creature in the area to become panicked unless it succeeds on a Will save. If cornered, a panicked creature begins [cowering](https://www.dandwiki.com/wiki/SRD:Cowering). If the Will save succeeds, the creature is shaken for 1 round.`,
+          text:             `An invisible cone of terror causes each living creature in the area to become panicked unless it succeeds on a Will save. If cornered, a panicked creature begins cowering. If the Will save succeeds, the creature is shaken for 1 round.`,
           component_details:'Material Component: Either the heart of a hen or a white feather.'
         },
         'feather fall': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Feather_Fall',
+          ref:              'http://www.d20srd.org/srd/spells/featherFall.htm',
           school:           'Transmutation',
-          level:            'Asn 1, Brd 1, Sor/Wiz 1',
+          level:            'Arc 1, Asn 1, Brd 1, Shu 1, Sor/Wiz 1',
           components:       'V',
           casting_time:     '1 free action',
           range:            '_close_',
@@ -3748,17 +3745,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Until landing or [[?{Casting Level}]] rounds',
           saving_throw:     'Will negates (harmless) or Will negates (object)',
           spell_resistance: 'Yes (object)',
-          text:             `The affected creatures or objects fall slowly. *Feather fall* instantly changes the rate at which the targets fall to a mere 60 feet per round (equivalent to the end of a fall from a few feet), and the subjects take no damage upon landing while the spell is in effect. However, when the spell duration expires, a normal rate of falling resumes.
+          text:             `The affected creatures or objects fall slowly. Feather fall instantly changes the rate at which the targets fall to a mere 60 feet per round (equivalent to the end of a fall from a few feet), and the subjects take no damage upon landing while the spell is in effect. However, when the spell duration expires, a normal rate of falling resumes.
                              The spell affects one or more Medium or smaller creatures (including gear and carried objects up to each creature’s maximum load) or objects, or the equivalent in larger creatures: A Large creature or object counts as two Medium creatures or objects, a Huge creature or object counts as two Large creatures or objects, and so forth.
-                             You can cast this spell with an instant utterance, quickly enough to save yourself if you unexpectedly fall. Casting the spell is a [free action](https://www.dandwiki.com/wiki/SRD:Free_Actions), like casting a quickened spell, and it counts toward the normal limit of one quickened spell per round. You may even cast this spell when it isn’t your turn.
+                             You can cast this spell with an instant utterance, quickly enough to save yourself if you unexpectedly fall. Casting the spell is a free action, like casting a quickened spell, and it counts toward the normal limit of one quickened spell per round. You may even cast this spell when it isn’t your turn.
                              This spell has no special effect on ranged weapons unless they are falling quite a distance. If the spell is cast on a falling item the object does half normal damage based on its weight, with no bonus for the height of the drop.
-                             *Feather fall* works only upon free-falling objects. It does not affect a sword blow or a charging or flying creature.`,
-          component_details:null
+                             Feather fall works only upon free-falling objects. It does not affect a sword blow or a charging or flying creature.`
         },
         'feeblemind': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Feeblemind',
+          ref:              'http://www.d20srd.org/srd/spells/feeblemind.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Sor/Wiz 5',
+          level:            'Arc 5, Beguiler 5, Corruption 5, Shu 5, Sor/Wiz 5, Wuj 5',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -3767,27 +3763,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `If the target creature fails a Will saving throw, its Intelligence and Charisma scores each drop to 1. The affected creature is unable to use Intelligence- or Charisma-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a [heal](https://www.dandwiki.com/wiki/SRD:Heal), [limited wish](http://www.d20srd.org/srd/spells/limitedWish.htm), [miracle](http://www.d20srd.org/srd/spells/miracle.htm), or [wish](http://www.d20srd.org/srd/spells/wish.htm) spell is used to cancel the effect of the *feeblemind*. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a -4 penalty on its saving throw.`,
+          text:             `If the target creature fails a Will saving throw, its Intelligence and Charisma scores each drop to 1. The affected creature is unable to use Intelligence- or Charisma-based skills, cast spells, understand language, or communicate coherently. Still, it knows who its friends are and can follow them and even protect them. The subject remains in this state until a [heal](http://www.d20srd.org/srd/spells/heal.htm), [limited wish](http://www.d20srd.org/srd/spells/limitedWish.htm), [miracle](http://www.d20srd.org/srd/spells/miracle.htm), or [wish](http://www.d20srd.org/srd/spells/wish.htm) spell is used to cancel the effect of the feeblemind. A creature that can cast arcane spells, such as a sorcerer or a wizard, takes a -4 penalty on its saving throw.`,
           component_details:'Material Component: A handful of clay, crystal, glass, or mineral spheres.'
         },
-        'find traps': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Find_Traps',
-          school:           'Divination',
-          level:            'Clr 2',
-          components:       'V, S',
-          casting_time:     '1 standard action',
-          range:            'Personal',
-          target_type:      'Target',
-          target:           'You',
-          duration:         '[[?{Casting Level}]] minutes',
-          text:             `You gain intuitive insight into the workings of traps. You can use the Search skill to detect traps just as a rogue can. In addition, you gain +[[{floor(?{Casting Level}/2),10}kl1]] [insight bonus](https://www.dandwiki.com/wiki/Insight_bonus) on Search checks made to find traps while the spell is in effect.
-                             Note that *find traps* grants no ability to disable the traps that you may find.`,
-          component_details:null
-        },
         'find the path': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Find_the_Path',
+          ref:              'http://www.d20srd.org/srd/spells/findThePath.htm',
           school:           'Divination',
-          level:            'Brd 6, Clr 6, Drd 6, Knowledge 6, Travel 6',
+          level:            'Arc 6, Brd 6, Cavern 6, Clr 6, Drd 6, Elf 6, Knowledge 6, Meditation 6, Travel 6',
           components:       'V, S, F',
           casting_time:     '3 rounds',
           range:            'Personal or touch',
@@ -3796,15 +3778,28 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None or Will negates (harmless)',
           spell_resistance: 'No or Yes (harmless)',
-          text:             `The recipient of this spell can find the shortest, most direct physical route to a specified destination, be it the way into or out of a locale. The locale can be outdoors, underground, or even inside a [maze](http://www.d20srd.org/srd/spells/maze.htm) spell. *Find the path* works with respect to locations, not objects or creatures at a locale. The location must be on the same plane as you are at the time of casting.
-                             The spell enables the subject to sense the correct direction that will eventually lead it to its destination, indicating at appropriate times the exact path to follow or physical actions to take. For example, the spell enables the subject to sense trip wires or the proper word to bypass a [glyph of warding](https://www.dandwiki.com/wiki/SRD:Glyph_of_Warding). The spell ends when the destination is reached or the duration expires, whichever comes first. *Find the path* can be used to remove the subject and its companions from the effect of a [maze](http://www.d20srd.org/srd/spells/maze.htm) spell in a single round.
+          text:             `The recipient of this spell can find the shortest, most direct physical route to a specified destination, be it the way into or out of a locale. The locale can be outdoors, underground, or even inside a [maze](http://www.d20srd.org/srd/spells/maze.htm) spell. Find the path works with respect to locations, not objects or creatures at a locale. The location must be on the same plane as you are at the time of casting.
+                             The spell enables the subject to sense the correct direction that will eventually lead it to its destination, indicating at appropriate times the exact path to follow or physical actions to take. For example, the spell enables the subject to sense trip wires or the proper word to bypass a [glyph of warding](http://www.d20srd.org/srd/spells/glyphOfWarding.htm). The spell ends when the destination is reached or the duration expires, whichever comes first. Find the path can be used to remove the subject and its companions from the effect of a [maze](http://www.d20srd.org/srd/spells/maze.htm) spell in a single round.
                              This divination is keyed to the recipient, not its companions, and its effect does not predict or allow for the actions of creatures (including guardians).`,
           component_details:'Focus: A set of divination counters of the sort you favor.'
         },
+        'find traps': {
+          ref:              'http://www.d20srd.org/srd/spells/findTraps.htm',
+          school:           'Divination',
+          level:            'Arc 2, Clr 2',
+          components:       'V, S',
+          casting_time:     '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Casting Level}]] minutes',
+          text:             `You gain intuitive insight into the workings of traps. You can use the Search skill to detect traps just as a rogue can. In addition, you gain +[[{floor(?{Casting Level}/2),10}kl1]] insight bonus on Search checks made to find traps while the spell is in effect.
+                             Note that find traps grants no ability to disable the traps that you may find.`
+        },
         'finger of death': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Finger_of_Death',
+          ref:              'http://www.d20srd.org/srd/spells/fingerOfDeath.htm',
           school:           'Necromancy [Death]',
-          level:            'Drd 8, Sor/Wiz 7',
+          level:            'Arc 6, Blg 6, Drd 8, Sor/Wiz 7, Wmg 7',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -3814,13 +3809,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Fortitude partial',
           spell_resistance: 'Yes',
           text:             `You can slay any one living creature within range. The target is entitled to a Fortitude saving throw to survive the attack. If the save is successful, the creature instead takes [[3d6+{?{Casting Level},25}kl1]] points of damage.
-                             The subject might die from damage even if it succeeds on its saving throw.`,
-          component_details:null
+                             The subject might die from damage even if it succeeds on its saving throw.`
         },
         'fire seeds': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Fire_Seeds',
+          ref:              'http://www.d20srd.org/srd/spells/fireSeeds.htm',
           school:           'Conjuration (Creation) [Fire]',
-          level:            'Drd 6, Fire 6, Sun 6',
+          level:            'Arc 6, Blg 6, Drd 6, Fire 6, Shu 6, Sun 6, Wmg 6, Wuj 6',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -3829,16 +3823,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minutes or until used',
           saving_throw:     'None or Reflex half; see text',
           spell_resistance: 'No',
-          text:             `Depending on the version of *fire seeds* you choose, you turn acorns into splash weapons that you or another character can throw, or you turn holly berries into bombs that you can detonate on command.
-                             *Acorn Grenades:* As many as four acorns turn into special splash weapons that can be hurled as far as 100 feet. A ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack) roll is required to strike the intended target. Together, the acorns are capable of dealing [[[[{?{Casting Level},20}kl1]]d6]] points of fire damage, divided up among the acorns as you wish.
+          text:             `Depending on the version of fire seeds you choose, you turn acorns into splash weapons that you or another character can throw, or you turn holly berries into bombs that you can detonate on command.
+
+                             *Acorn Grenades*
+                             As many as four acorns turn into special splash weapons that can be hurled as far as 100 feet. A ranged touch attack roll is required to strike the intended target. Together, the acorns are capable of dealing [[[[{?{Casting Level},20}kl1]]d6]] points of fire damage, divided up among the acorns as you wish.
                              Each acorn explodes upon striking any hard surface. In addition to its regular fire damage, it deals [[{?{Casting Level},20}kl1]] point of splash damage per die, and it ignites any combustible materials within 10 feet. A creature within this area that makes a successful Reflex saving throw takes only half damage; a creature struck directly is not allowed a saving throw.
-                             *Holly Berry Bombs:* You turn as many as eight holly berries into special bombs. The holly berries are usually placed by hand, since they are too light to make effective thrown weapons (they can be tossed only 5 feet). If you are within 200 feet and speak a word of command, each berry instantly bursts into flame, causing [[1d8+?{Casting Level}]] points of fire damage to every creature in a 5-foot radius burst and igniting any combustible materials within 5 feet. A creature in the area that makes a successful Reflex saving throw takes only half damage.`,
+
+                             *Holly Berry Bombs*
+                             You turn as many as eight holly berries into special bombs. The holly berries are usually placed by hand, since they are too light to make effective thrown weapons (they can be tossed only 5 feet). If you are within 200 feet and speak a word of command, each berry instantly bursts into flame, causing [[1d8+?{Casting Level}]] points of fire damage to every creature in a 5-foot radius burst and igniting any combustible materials within 5 feet. A creature in the area that makes a successful Reflex saving throw takes only half damage.`,
           component_details:'Material Component: The acorns or holly berries.'
         },
         'fire shield': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Fire_Shield',
+          ref:              'http://www.d20srd.org/srd/spells/fireShield.htm',
           school:           'Evocation [Fire or Cold]',
-          level:            'Fire 5, Sor/Wiz 4, Sun 4',
+          level:            'Arc 4, Duskblade 4, Fire 5, Retribution 4, Shu 4, Sor/Wiz 4, Sun 4, Wmg 3, Wuj 4',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            'Personal',
@@ -3846,16 +3844,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         '[[?{Casting Level}]] rounds (D)',
           text:             `This spell wreathes you in flame and causes damage to each creature that attacks you in melee. The flames also protect you from either cold-based or fire-based attacks (your choice).
-                             Any creature striking you with its body or a handheld weapon deals normal damage, but at the same time the attacker takes [[1d6+{?{Casting Level},15}kl1]] points of damage. This damage is either cold damage (if the *shield* protects against fire-based attacks) or fire damage (if the *shield* protects against cold-based attacks). If the attacker has spell resistance, it applies to this effect. Creatures wielding weapons with exceptional reach are not subject to this damage if they attack you.
+                             Any creature striking you with its body or a handheld weapon deals normal damage, but at the same time the attacker takes [[1d6+{?{Casting Level},15}kl1]] points of damage. This damage is either cold damage (if the shield protects against fire-based attacks) or fire damage (if the shield protects against cold-based attacks). If the attacker has spell resistance, it applies to this effect. Creatures wielding weapons with exceptional reach are not subject to this damage if they attack you.
                              When casting this spell, you appear to immolate yourself, but the flames are thin and wispy, giving off light equal to only half the illumination of a normal torch (10 feet). The color of the flames is determined randomly (50% chance of either color)—blue or green if the *chill shield* is cast, violet or blue if the *warm shield* is employed. The special powers of each version are as follows.
-                             *Warm Shield:* The flames are warm to the touch. You take only half damage from cold-based attacks. If such an attack allows a Reflex save for half damage, you take no damage on a successful save.
-                             *Chill Shield:* The flames are cool to the touch. You take only half damage from fire-based attacks. If such an attack allows a Reflex save for half damage, you take no damage on a successful save.`,
+
+                             *Warm Shield*
+                             The flames are warm to the touch. You take only half damage from cold-based attacks. If such an attack allows a Reflex save for half damage, you take no damage on a successful save.
+
+                             *Chill Shield*
+                             The flames are cool to the touch. You take only half damage from fire-based attacks. If such an attack allows a Reflex save for half damage, you take no damage on a successful save.`,
           component_details:'Arcane Material Component: A bit of phosphorus for the *warm shield*; a live firefly or glowworm or the tail portions of four dead ones for the *chill shield*.'
         },
         'fire storm': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Fire_Storm',
+          ref:              'http://www.d20srd.org/srd/spells/fireStorm.htm',
           school:           'Evocation [Fire]',
-          level:            'Clr 8, Drd 7, Fire 7',
+          level:            'Arc 8, Blg 7, Clr 8, Drd 7, Fire 7, Shu 7, Wmg 7',
           components:       'V, S',
           casting_time:     '1 round',
           range:            '_medium_',
@@ -3864,13 +3866,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
-          text:             `When a *fire storm* spell is cast, the whole area is shot through with sheets of roaring flame. The raging flames do not harm natural vegetation, ground [cover](https://www.dandwiki.com/wiki/SRD:Cover), and any [plant](https://www.dandwiki.com/wiki/SRD:Plant_Type) creatures in the area that you wish to exclude from damage. Any other creature within the area takes [[[[{?{Casting Level},20}kl1]]d6]] points of fire damage.`,
-          component_details:null
+          text:             `When a fire storm spell is cast, the whole area is shot through with sheets of roaring flame. The raging flames do not harm natural vegetation, ground cover, and any plant creatures in the area that you wish to exclude from damage. Any other creature within the area takes [[[[{?{Casting Level},20}kl1]]d6]] points of fire damage.`
         },
         'fire trap': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Fire_Trap',
+          ref:              'http://www.d20srd.org/srd/spells/fireTrap.htm',
           school:           'Abjuration [Fire]',
-          level:            'Drd 2, Sor/Wiz 4',
+          level:            'Arc 2, Blg 2, Drd 2, Greed 4, Sor/Wiz 4, Wmg 2, Wuj 4',
           components:       'V, S, M',
           casting_time:     '10 minutes',
           range:            'Touch',
@@ -3879,19 +3880,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Permanent until discharged (D)',
           saving_throw:     'Reflex half; see text',
           spell_resistance: 'Yes',
-          text:             `*Fire trap* creates a fiery explosion when an intruder opens the item that the trap protects. A *fire trap* can ward any object that can be opened and closed.
-                             When casting *fire trap*, you select a point on the object as the spell’s center. When someone other than you opens the object, a fiery explosion fills the area within a 5-foot radius around the spell’s center. The flames deal [[1d4+[[{?{Casting Level},20}kl1]]]] points of fire damage. The item protected by the trap is not harmed by this explosion.
-                             A *fire trapped* item cannot have a second closure or warding spell placed on it.
-                             A [knock](http://www.d20srd.org/srd/spells/knock.htm) spell does not bypass a *fire trap*. An unsuccessful [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell does not detonate the spell.
+          text:             `Fire trap creates a fiery explosion when an intruder opens the item that the trap protects. A fire trap can ward any object that can be opened and closed.
+                             When casting fire trap, you select a point on the object as the spell’s center. When someone other than you opens the object, a fiery explosion fills the area within a 5-foot radius around the spell’s center. The flames deal [[1d4+[[{?{Casting Level},20}kl1]]]] points of fire damage. The item protected by the trap is not harmed by this explosion.
+                             A fire trapped item cannot have a second closure or warding spell placed on it.
+                             A [knock](http://www.d20srd.org/srd/spells/knock.htm) spell does not bypass a fire trap. An unsuccessful [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell does not detonate the spell.
                              Underwater, this ward deals half damage and creates a large cloud of steam.
-                             You can use the *fire trapped* object without discharging it, as can any individual to whom the object was specifically attuned when cast. Attuning a *fire trapped* object to an individual usually involves setting a password that you can share with friends.
-                             *Note:* Magic traps such as *fire trap* are hard to detect and disable. A rogue (only) can use the Search skill to find a *fire trap* and Disable Device to thwart it. The DC in each case is 25 + spell level (DC 27 for a druid’s *fire trap* or DC 29 for the arcane version).`,
+                             You can use the fire trapped object without discharging it, as can any individual to whom the object was specifically attuned when cast. Attuning a fire trapped object to an individual usually involves setting a password that you can share with friends.
+                             *Note:* Magic traps such as fire trap are hard to detect and disable. A rogue (only) can use the Search skill to find a fire trap and Disable Device to thwart it. The DC in each case is 25 + spell level (DC 27 for a druid’s fire trap or DC 29 for the arcane version).`,
           component_details:'Material Component: A half-pound of gold dust (cost 25 gp) sprinkled on the warded object.'
         },
         'fireball': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Fireball',
+          ref:              'http://www.d20srd.org/srd/spells/fireball.htm',
           school:           'Evocation [Fire]',
-          level:            'Sor/Wiz 3',
+          level:            'Sor/Wiz 3, Wmg 3, Wuj 3',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_long_',
@@ -3900,15 +3901,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
-          text:             `A *fireball* spell is an explosion of flame that detonates with a low roar and deals [[[[{?{Casting Level},10}kl1]]d6]] points of fire damage to every creature within the area. Unattended objects also take this damage. The explosion creates almost no pressure.
-                             You point your finger and determine the range (distance and height) at which the *fireball* is to burst. A glowing, pea-sized bead streaks from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the *fireball* at that point. (An early impact results in an early detonation.) If you attempt to send the bead through a narrow passage, such as through an arrow slit, you must “hit” the opening with a ranged [touch attack](https://www.dandwiki.com/wiki/SRD:Touch_Attack), or else the bead strikes the barrier and detonates prematurely.
-                             The *fireball* sets fire to combustibles and damages objects in the area. It can melt metals with low melting points, such as lead, gold, copper, silver, and bronze. If the damage caused to an interposing barrier shatters or breaks through it, the *fireball* may continue beyond the barrier if the area permits; otherwise it stops at the barrier just as any other spell effect does.`,
+          text:             `A fireball spell is an explosion of flame that detonates with a low roar and deals [[[[{?{Casting Level},10}kl1]]d6]] points of fire damage to every creature within the area. Unattended objects also take this damage. The explosion creates almost no pressure.
+                             You point your finger and determine the range (distance and height) at which the fireball is to burst. A glowing, pea-sized bead streaks from the pointing digit and, unless it impacts upon a material body or solid barrier prior to attaining the prescribed range, blossoms into the fireball at that point. (An early impact results in an early detonation.) If you attempt to send the bead through a narrow passage, such as through an arrow slit, you must “hit” the opening with a ranged touch attack, or else the bead strikes the barrier and detonates prematurely.
+                             The fireball sets fire to combustibles and damages objects in the area. It can melt metals with low melting points, such as lead, gold, copper, silver, and bronze. If the damage caused to an interposing barrier shatters or breaks through it, the fireball may continue beyond the barrier if the area permits; otherwise it stops at the barrier just as any other spell effect does.`,
           component_details:'Material Component: A tiny ball of bat guano and sulfur.'
         },
         'flame arrow': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Flame_Arrow',
+          ref:              'http://www.d20srd.org/srd/spells/flameArrow.htm',
           school:           'Transmutation [Fire]',
-          level:            'Sor/Wiz 3',
+          level:            'Arc 4, Shu 4, Sor/Wiz 3, Wmg 3',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -3917,13 +3918,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `You turn ammunition (such as arrows, bolts, shuriken, and stones) into fiery projectiles. Each piece of ammunition deals an extra ‹1d6› points of fire damage to any target it hits. A flaming projectile can easily ignite a flammable object or structure, but it won’t ignite a creature it strikes.`,
+          text:             `You turn ammunition (such as arrows, bolts, shuriken, and stones) into fiery projectiles. Each piece of ammunition deals an extra ‹1d6|[[1d6]] points of fire damage› points of fire damage to any target it hits. A flaming projectile can easily ignite a flammable object or structure, but it won’t ignite a creature it strikes.`,
           component_details:'Material Component: A drop of oil and a small piece of flint.'
         },
         'flame blade': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Flame_Blade',
+          ref:              'http://www.d20srd.org/srd/spells/flameBlade.htm',
           school:           'Evocation [Fire]',
-          level:            'Drd 2',
+          level:            'Arc 2, Drd 2, Shu 2',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '0 ft.',
@@ -3932,14 +3933,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `A 3-foot-long, blazing beam of red-hot fire springs forth from your hand. You wield this bladelike beam as if it were a scimitar. Attacks with the *flame blade* are melee [touch attacks](https://www.dandwiki.com/wiki/SRD:Touch_Attack). The blade deals [[1d8+[[{?{Casting Level},10}kl1]]]] points of fire damage. Since the blade is immaterial, your Strength modifier does not apply to the damage. A *flame blade* can ignite combustible materials such as parchment, straw, dry sticks, and cloth.
-                             The spell does not function underwater.`,
-          component_details:null
+          text:             `A 3-foot-long, blazing beam of red-hot fire springs forth from your hand. You wield this bladelike beam as if it were a scimitar. Attacks with the flame blade are melee touch attacks. The blade deals [[1d8+[[{?{Casting Level},10}kl1]]]] points of fire damage. Since the blade is immaterial, your Strength modifier does not apply to the damage. A flame blade can ignite combustible materials such as parchment, straw, dry sticks, and cloth.
+                             The spell does not function underwater.`
         },
         'flame strike': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Flame_Strike',
+          ref:              'http://www.d20srd.org/srd/spells/flameStrike.htm',
           school:           'Evocation [Fire]',
-          level:            'Clr 5, Drd 4, Sun 5, War 5',
+          level:            'Arc 5, Blg 4, Clr 5, Drd 4, Shu 5, Sun 5, War 5, Wmg 5',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -3948,13 +3948,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
-          text:             `A *flame strike* produces a vertical column of divine fire roaring downward. The spell deals [[[[{?{Caster Level},15}kl1]]d6]] points of damage. Half the damage is fire damage, but the other half results directly from divine power and is therefore not subject to being reduced by resistance to fire-based attacks.`,
-          component_details:null
+          text:             `A flame strike produces a vertical column of divine fire roaring downward. The spell deals [[[[{?{Caster Level},15}kl1]]d6]] points of damage. Half the damage is fire damage, but the other half results directly from divine power and is therefore not subject to being reduced by resistance to fire-based attacks.`
         },
         'flaming sphere': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Flaming_Sphere',
+          ref:              'http://www.d20srd.org/srd/spells/flamingSphere.htm',
           school:           'Evocation [Fire]',
-          level:            'Drd 2, Sor/Wiz 2',
+          level:            'Arc 2, Blg 2, Drd 2, Shu 2, Sor/Wiz 2, Wmg 2',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -3963,14 +3962,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] rounds',
           saving_throw:     'Reflex negates',
           spell_resistance: 'Yes',
-          text:             `A burning globe of fire rolls in whichever direction you point and burns those it strikes. It moves 30 feet per round. As part of this movement, it can ascend or jump up to 30 feet to strike a target. If it enters a space with a creature, it stops moving for the round and deals ‹2d6› points of fire damage to that creature, though a successful Reflex save negates that damage. A *flaming sphere* rolls over barriers less than 4 feet tall. It ignites flammable substances it touches and illuminates the same area as a torch would.
-                             The sphere moves as long as you actively direct it (a move action for you); otherwise, it merely stays at rest and burns. It can be extinguished by any means that would put out a normal fire of its size. The surface of the sphere has a spongy, yielding consistency and so does not cause damage except by its flame. It cannot push aside unwilling creatures or batter down large obstacles. A *flaming sphere* winks out if it exceeds the spell’s range.`,
+          text:             `A burning globe of fire rolls in whichever direction you point and burns those it strikes. It moves 30 feet per round. As part of this movement, it can ascend or jump up to 30 feet to strike a target. If it enters a space with a creature, it stops moving for the round and deals ‹2d6› points of fire damage to that creature, though a successful Reflex save negates that damage. A flaming sphere rolls over barriers less than 4 feet tall. It ignites flammable substances it touches and illuminates the same area as a torch would.
+                             The sphere moves as long as you actively direct it (a move action for you); otherwise, it merely stays at rest and burns. It can be extinguished by any means that would put out a normal fire of its size. The surface of the sphere has a spongy, yielding consistency and so does not cause damage except by its flame. It cannot push aside unwilling creatures or batter down large obstacles. A flaming sphere winks out if it exceeds the spell’s range.`,
           component_details:'Arcane Material Component: A bit of tallow, a pinch of brimstone, and a dusting of powdered iron.'
         },
         'flare': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Flare',
+          ref:              'http://www.d20srd.org/srd/spells/flare.htm',
           school:           'Evocation [Light]',
-          level:            'Brd 0, Drd 0, Sor/Wiz 0',
+          level:            'Arc 0, Blg 0, Brd 0, Drd 0, Duskblade 0, Shu 0, Sor/Wiz 0, Wuj 0',
           components:       'V',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -3979,13 +3978,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Fortitude negates',
           spell_resistance: 'Yes',
-          text:             `This cantrip creates a burst of light. If you cause the light to burst directly in front of a single creature, that creature is [dazzled](https://www.dandwiki.com/wiki/SRD:Dazzled) for 1 minute unless it makes a successful Fortitude save. Sightless creatures, as well as creatures already [dazzled](https://www.dandwiki.com/wiki/SRD:Dazzled), are not affected by *flare*.`,
-          component_details:null
+          text:             `This cantrip creates a burst of light. If you cause the light to burst directly in front of a single creature, that creature is dazzled for 1 minute unless it makes a successful Fortitude save. Sightless creatures, as well as creatures already dazzled, are not affected by flare.`
         },
         'flesh to stone': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Flesh_to_Stone',
+          ref:              'http://www.d20srd.org/srd/spells/fleshToStone.htm',
           school:           'Transmutation',
-          level:            'Sor/Wiz 6',
+          level:            'Arc 7, Shu 7, Sor/Wiz 6, Wuj 6',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -3996,12 +3994,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `The subject, along with all its carried gear, turns into a mindless, inert statue. If the statue resulting from this spell is broken or damaged, the subject (if ever returned to its original state) has similar damage or deformities. The creature is not dead, but it does not seem to be alive either when viewed with spells such as [deathwatch](http://www.d20srd.org/srd/spells/deathwatch.htm).
                              Only creatures made of flesh are affected by this spell.`,
-          component_details:'*Material Component:* Lime, water, and earth.'
+          component_details:'Material Component: Lime, water, and earth.'
         },
         'floating disk': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Floating_Disk',
+          ref:              'http://www.d20srd.org/srd/spells/floatingDisk.htm',
           school:           'Evocation [Force]',
-          level:            'Sor/Wiz 1',
+          level:            'Hoard 1, Sor/Wiz 1',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -4014,9 +4012,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: A drop of mercury.'
         },
         'fly': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Fly_%28Spell%29',
+          ref:              'http://www.d20srd.org/srd/spells/fly.htm',
           school:           'Transmutation',
-          level:            'Sor/Wiz 3, Travel 3',
+          level:            'Duskblade 2, Sor/Wiz 3, Travel 3',
           components:       'V, S, F/DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -4025,14 +4023,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `The subject can fly at a speed of 60 feet (or 40 feet if it wears medium or heavy armor, or if it carries a medium or heavy load). It can ascend at half speed and descend at double speed, and its maneuverability is good. Using a *fly* spell requires only as much concentration as walking, so the subject can attack or cast spells normally. The subject of a *fly* spell can charge but not run, and it cannot carry aloft more weight than its maximum load, plus any armor it wears.
-                             Should the spell duration expire while the subject is still aloft, the magic fails slowly. The subject floats downward 60 feet per round for 1d6 rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking 1d6 points of damage per 10 feet of fall. Since dispelling a spell effectively ends it, the subject also descends in this way if the *fly* spell is dispelled, but not if it is negated by an antimagic field.`,
+          text:             `The subject can fly at a speed of 60 feet (or 40 feet if it wears medium or heavy armor, or if it carries a medium or heavy load). It can ascend at half speed and descend at double speed, and its maneuverability is good. Using a fly spell requires only as much concentration as walking, so the subject can attack or cast spells normally. The subject of a fly spell can charge but not run, and it cannot carry aloft more weight than its maximum load, plus any armor it wears.
+                             Should the spell duration expire while the subject is still aloft, the magic fails slowly. The subject floats downward 60 feet per round for 1d6 rounds. If it reaches the ground in that amount of time, it lands safely. If not, it falls the rest of the distance, taking 1d6 points of damage per 10 feet of fall. Since dispelling a spell effectively ends it, the subject also descends in this way if the fly spell is dispelled, but not if it is negated by an antimagic field.`,
           component_details:'Arcane Focus: A wing feather from any bird.'
         },
         'fog cloud': {
           ref:              'http://www.d20srd.org/srd/spells/fogCloud.htm',
           school:           'Conjuration (Creation)',
-          level:            'Drd 2, Sor/Wiz 2, Water 2, Weather 2',
+          level:            'Arc 2, Beguiler 2, Drd 2, Shu 2, Sor/Wiz 2, Water 2, Wuj 2',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '_medium_',
@@ -4041,15 +4039,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `A bank of fog billows out from the point you designate. The fog obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has [concealment](http://www.d20srd.org/srd/combat/combatModifiers.htm#concealment) (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker can’t use sight to locate the target).
+          text:             `A bank of fog billows out from the point you designate. The fog obscures all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker can’t use sight to locate the target).
                              A moderate wind (11+ mph) disperses the fog in 4 rounds; a strong wind (21+ mph) disperses the fog in 1 round.
-                             The spell does not function underwater.`,
-          component_details:null
+                             The spell does not function underwater.`
         },
         'forbiddance': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Forbiddance',
+          ref:              'http://www.d20srd.org/srd/spells/forbiddance.htm',
           school:           'Abjuration',
-          level:            'Clr 6',
+          level:            'APeace 6, Arc 6, Blg 5, Clr 6, Hatred 6, Sin-P 6, Wealth 6',
           components:       'V, S, M, DF',
           casting_time:     '6 rounds',
           range:            '_medium_',
@@ -4058,20 +4055,27 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Permanent',
           saving_throw:     'See text',
           spell_resistance: 'Yes',
-          text:             `*Forbiddance* seals an area against all planar travel into or within it. This includes all teleportation spells (such as [dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm) and [teleport](http://www.d20srd.org/srd/spells/teleport.htm)), plane shifting, astral travel, ethereal travel, and all summoning spells. Such effects simply fail automatically.
+          text:             `Forbiddance seals an area against all planar travel into or within it. This includes all teleportation spells (such as [dimension door](http://www.d20srd.org/srd/spells/dimensionDoor.htm) and [teleport](http://www.d20srd.org/srd/spells/teleport.htm)), [plane shifting](http://www.d20srd.org/srd/spells/planeShift.htm), astral travel, ethereal travel, and all summoning spells. Such effects simply fail automatically.
                              In addition, it damages entering creatures whose alignments are different from yours. The effect on those attempting to enter the warded area is based on their alignment relative to yours (see below). A creature inside the area when the spell is cast takes no damage unless it exits the area and attempts to reenter, at which time it is affected as normal.
-                             *Alignments identical:* No effect. The creature may enter the area freely (although not by planar travel).
-                             *Alignments different with respect to either law/chaos or good/evil:* The creature takes ‹6d6› points of damage. A successful Will save halves the damage, and spell resistance applies.
-                             *Alignments different with respect to both law/chaos and good/evil:* The creature takes ‹12d6› points of damage. A successful Will save halves the damage, and spell resistance applies.
+
+                             *Alignments identical*
+                             No effect. The creature may enter the area freely (although not by planar travel).
+
+                             *Alignments different with respect to either law/chaos or good/evil*
+                             The creature takes ‹6d6› points of damage. A successful Will save halves the damage, and spell resistance applies.
+
+                             *Alignments different with respect to both law/chaos and good/evil*
+                             The creature takes ‹12d6› points of damage. A successful Will save halves the damage, and spell resistance applies.
+
                              At your option, the abjuration can include a password, in which case creatures of alignments different from yours can avoid the damage by speaking the password as they enter the area. You must select this option (and the password) at the time of casting.
-                             [Dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) does not dispel a *forbiddance* effect unless the dispeller’s level is at least as high as your caster level.
+                             [Dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) does not dispel a forbiddance effect unless the dispeller’s level is at least as high as your caster level.
                              You can’t have multiple overlapping *forbiddance* effects. In such a case, the more recent effect stops at the boundary of the older effect.`,
           component_details:'Material Component: A sprinkling of holy water and rare incenses worth at least 1,500 gp, plus 1,500 gp per 60-foot cube. If a password is desired, this requires the burning of additional rare incenses worth at least 1,000 gp, plus 1,000 gp per 60-foot cube.'
         },
         'forcecage': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Forcecage',
+          ref:              'http://www.d20srd.org/srd/spells/forcecage.htm',
           school:           'Evocation [Force]',
-          level:            'Sor/Wiz 7',
+          level:            'Craft 8, Force 7, Sor/Wiz 7',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -4082,9 +4086,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'No',
           text:             `This powerful spell brings into being an immobile, invisible cubical prison composed of either bars of force or solid walls of force (your choice).
                              Creatures within the area are caught and contained unless they are too big to fit inside, in which case the spell automatically fails. Teleportation and other forms of astral travel provide a means of escape, but the force walls or bars extend into the Ethereal Plane, blocking ethereal travel, though Mage's disjunction might.
-                             Like a [wall of force](http://www.d20srd.org/srd/spells/wallOfForce.htm) spell, a *forcecage* resists [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm), but it is vulnerable to a *disintegrate* spell, and it can be destroyed by a *sphere of annihilation* or a *rod of cancellation*.
-                             *Barred Cage:* This version of the spell produces a 20-foot cube made of bands of force (similar to a *wall of force* spell) for bars. The bands are a half-inch wide, with half-inch gaps between them. Any creature capable of passing through such a small space can escape; others are confined. You can’t attack a creature in a barred cage with a weapon unless the weapon can fit between the gaps. Even against such weapons (including arrows and similar ranged attacks), a creature in the barred cage has cover. All spells and breath weapons can pass through the gaps in the bars.
-                             *Windowless Cell:* This version of the spell produces a 10-foot cube with no way in and no way out. Solid walls of force form its six sides.`,
+                             Like a [wall of force](http://www.d20srd.org/srd/spells/wallOfForce.htm) spell, a forcecage resists [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm), but it is vulnerable to a [disintegrate](http://www.d20srd.org/srd/spells/disintegrate.htm) spell, and it can be destroyed by a sphere of annihilation or a rod of cancellation.
+
+                             *Barred Cage*
+                             This version of the spell produces a 20-foot cube made of bands of force (similar to a [wall of force](http://www.d20srd.org/srd/spells/wallOfForce.htm) spell) for bars. The bands are a half-inch wide, with half-inch gaps between them. Any creature capable of passing through such a small space can escape; others are confined. You can’t attack a creature in a barred cage with a weapon unless the weapon can fit between the gaps. Even against such weapons (including arrows and similar ranged attacks), a creature in the barred cage has cover. All spells and breath weapons can pass through the gaps in the bars.
+
+                             *Windowless Cell*
+                             This version of the spell produces a 10-foot cube with no way in and no way out. Solid walls of force form its six sides.`,
           component_details:'Material Component: Ruby dust worth 1,500 gp, which is tossed into the air and disappears when you cast the spell.'
         },
         'forceful hand': {
@@ -4099,14 +4107,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'Yes',
-          text:             `This spell functions like [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm), except that the *forceful hand* pursues and pushes away the opponent that you designate. Treat this attack as a [bull rush](https://www.dandwiki.com/wiki/SRD:Bull_Rush) with a +14 bonus on the Strength check (+8 for Strength 27, +4 for being Large, and a +2 bonus for charging, which it always gets). The hand always moves with the opponent to push that target back the full distance allowed, and it has no speed limit. Directing the spell to a new target is a move action.
+          text:             `This spell functions like [interposing hand](http://www.d20srd.org/srd/spells/interposingHand.htm), except that the forceful hand pursues and pushes away the opponent that you designate. Treat this attack as a bull rush with a +14 bonus on the Strength check (+8 for Strength 27, +4 for being Large, and a +2 bonus for charging, which it always gets). The hand always moves with the opponent to push that target back the full distance allowed, and it has no speed limit. Directing the spell to a new target is a move action.
                              A very strong creature could not push the hand out of its way because the latter would instantly reposition itself between the creature and you, but an opponent could push the hand up against you by successfully bull rushing it.`,
           component_details:'Focus: A sturdy glove made of leather or heavy cloth.'
         },
         'foresight': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Foresight',
+          ref:              'http://www.d20srd.org/srd/spells/foresight.htm',
           school:           'Divination',
-          level:            'Drd 9, Knowledge 9, Sor/Wiz 9',
+          level:            'Arc 9, Beguiler 9, Blg 9, Drd 9, Fate 9, Halfling 9, Hlr 9, Knowledge 9, Oracle 9, Seafolk 9, Sor/Wiz 9, Time 8',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            'Personal or touch',
@@ -4115,15 +4123,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None or Will negates (harmless)',
           spell_resistance: 'No or Yes (harmless)',
-          text:             `This spell grants you a powerful sixth sense in relation to yourself or another. Once *foresight* is cast, you receive instantaneous warnings of impending danger or harm to the subject of the spell. You are never surprised or flat-footed. In addition, the spell gives you a general idea of what action you might take to best protect yourself and gives you a +2 insight bonus to AC and Reflex saves. This insight bonus is lost whenever you would lose a Dexterity bonus to AC.
+          text:             `This spell grants you a powerful sixth sense in relation to yourself or another. Once foresight is cast, you receive instantaneous warnings of impending danger or harm to the subject of the spell. You are never surprised or flat-footed. In addition, the spell gives you a general idea of what action you might take to best protect yourself and gives you a +2 insight bonus to AC and Reflex saves. This insight bonus is lost whenever you would lose a Dexterity bonus to AC.
                              When another creature is the subject of the spell, you receive warnings about that creature. You must communicate what you learn to the other creature for the warning to be useful, and the creature can be caught unprepared in the absence of such a warning. Shouting a warning, yanking a person back, and even telepathically communicating (via an appropriate spell) can all be accomplished before some danger befalls the subject, provided you act on the warning without delay. The subject, however, does not gain the insight bonus to AC and Reflex saves.`,
           component_details:'Arcane Material Component: A hummingbird’s feather.'
         },
         'fox\'s cunning': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Fox%27s_Cunning',
+          ref:              'http://www.d20srd.org/srd/spells/foxsCunning.htm',
           other_versions:   'Savage Species on page 66, Tome and Blood on page 89',
           school:           'Transmutation',
-          level:            'Asn 2, Brd 2, Sor/Wiz 2',
+          level:            'Artificer 2, Asn 2, Brd 2, EmBarachiel 2, Sor/Wiz 2',
           components:       'V, S, M/DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -4136,9 +4144,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Arcane Material Component: A few hairs, or a pinch of dung, from a fox.'
         },
         'freedom': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Freedom',
+          ref:              'http://www.d20srd.org/srd/spells/freedom.htm',
           school:           'Abjuration',
-          level:            'Liberation 9, Sor/Wiz 9',
+          level:            'Exorcism 9, Renewal 9, Sor/Wiz 9, Wuj 9',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            'Close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.) or see text',
@@ -4147,13 +4155,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes',
-          text:             `The subject is freed from spells and effects that restrict its movement, including [binding](http://www.d20srd.org/srd/spells/binding.htm), [entangle](https://www.dandwiki.com/wiki/SRD:Entangle), [grappling](https://www.dandwiki.com/wiki/SRD:Grapple), [imprisonment](https://www.dandwiki.com/wiki/SRD:Imprisonment), [maze](http://www.d20srd.org/srd/spells/maze.htm), [paralysis](https://www.dandwiki.com/wiki/SRD:Paralysis), [petrification](https://www.dandwiki.com/wiki/SRD:Flesh_to_Stone), [pinning](https://www.dandwiki.com/wiki/SRD:Grapple), [sleep](https://www.dandwiki.com/wiki/SRD:Sleep), [slow](http://www.d20srd.org/srd/spells/slow.htm), stunning, [temporal stasis](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis), and [web](https://www.dandwiki.com/wiki/SRD:Web). To free a creature from *imprisonment* or *maze*, you must know its name and background, and you must cast this spell at the spot where it was entombed or banished into the *maze*.`,
-          component_details:null
+          text:             `The subject is freed from spells and effects that restrict its movement, including [binding](http://www.d20srd.org/srd/spells/binding.htm), [entangle](http://www.d20srd.org/srd/spells/entangle.htm), grappling, [imprisonment](http://www.d20srd.org/srd/spells/imprisonment.htm), [maze](http://www.d20srd.org/srd/spells/maze.htm), paralysis, petrification, pinning, [sleep](http://www.d20srd.org/srd/spells/sleep.htm), [slow](http://www.d20srd.org/srd/spells/slow.htm), stunning, [temporal stasis](http://www.d20srd.org/srd/spells/temporalStasis.htm), and [web](http://www.d20srd.org/srd/spells/web.htm). To free a creature from [imprisonment](http://www.d20srd.org/srd/spells/imprisonment.htm) or [maze](http://www.d20srd.org/srd/spells/maze.htm), you must know its name and background, and you must cast this spell at the spot where it was entombed or banished into the [maze](http://www.d20srd.org/srd/spells/maze.htm).`
         },
         'freedom of movement': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Freedom_of_Movement',
+          ref:              'http://www.d20srd.org/srd/spells/freedomOfMovement.htm',
           school:           'Abjuration',
-          level:            'Asn 4, Blg 4, Brd 4, Clr 4, Drd 4, Liberation 4, Luck 4, Rgr 4',
+          level:            'APeace 4, Arc 4, Asn 4, Beguiler 4, Blk 4, Brd 4, BVal 4, ChamGwyn 4, Clr 4, Drd 4, Halfling 4, Hlr 4, Hoard 4, HotD 4, Liberation 4, Luck 4, Ocean 4, Rgr 4, Slayer of Domiel 4, Time 4',
           components:       'V, S, M, DF',
           casting_time:     '1 standard action',
           range:            'Personal or touch',
@@ -4162,14 +4169,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `This spell enables you or a creature you touch to move and attack normally for the duration of the spell, even under the influence of magic that usually impedes movement, such as [paralysis](https://www.dandwiki.com/wiki/SRD:Paralysis), [solid fog](https://www.dandwiki.com/wiki/SRD:Solid_Fog), [slow](http://www.d20srd.org/srd/spells/slow.htm), and [web](https://www.dandwiki.com/wiki/SRD:Web). The subject automatically succeeds on any [grapple](https://www.dandwiki.com/wiki/SRD:Grapple) check made to resist a grapple attempt, as well as on grapple checks or Escape Artist checks made to escape a grapple or a pin.
-                             The spell also allows the subject to move and attack normally while underwater, even with slashing weapons such as axes and swords or with bludgeoning weapons such as flails, hammers, and maces, provided that the weapon is wielded in the hand rather than hurled. The *freedom of movement* spell does not, however, allow water breathing.`,
+          text:             `This spell enables you or a creature you touch to move and attack normally for the duration of the spell, even under the influence of magic that usually impedes movement, such as paralysis, [solid fog](http://www.d20srd.org/srd/spells/solidFog.htm), [slow](http://www.d20srd.org/srd/spells/slow.htm), and [web](http://www.d20srd.org/srd/spells/web.htm). The subject automatically succeeds on any grapple check made to resist a grapple attempt, as well as on grapple checks or Escape Artist checks made to escape a grapple or a pin.
+                             The spell also allows the subject to move and attack normally while underwater, even with slashing weapons such as axes and swords or with bludgeoning weapons such as flails, hammers, and maces, provided that the weapon is wielded in the hand rather than hurled. The freedom of movement spell does not, however, allow water breathing.`,
           component_details:'Material Component: A leather thong, bound around the arm or a similar appendage.'
         },
         'freezing sphere': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Freezing_Sphere',
+          ref:              'http://www.d20srd.org/srd/spells/freezingSphere.htm',
           school:           'Evocation [Cold]',
-          level:            'Sor/Wiz 6',
+          level:            'Ocean 6, Sor/Wiz 6, Wmg 6',
           components:       'V, S, F',
           casting_time:     '1 standard action',
           range:            '_long_',
@@ -4178,12 +4185,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous or [[?{Casting Level}]] rounds; see text',
           saving_throw:     'Reflex half; see text',
           spell_resistance: 'Yes',
-          text:             `*Freezing sphere* creates a frigid globe of cold energy that streaks from your fingertips to the location you select, where it explodes in a 10-foot-radius burst, dealing [[[[{?{Casting Level},15}kl1]]d6]] points of cold damage to each creature in the area. An elemental (water) creature instead takes [[[[{?{Casting Level},15}kl1]]d8]] points of cold damage.
-                             If the *freezing sphere* strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area equal to [[100*[[{?{Casting Level},15}kl1]]]] square feet. This ice lasts for [[?{Casting Level}]] rounds. Creatures that were swimming on the surface of frozen water become trapped in the ice. Attempting to break free is a full-round action. A trapped creature must make a DC 25 Strength check or a DC 25 Escape Artist check to do so.
+          text:             `Freezing sphere creates a frigid globe of cold energy that streaks from your fingertips to the location you select, where it explodes in a 10-foot-radius burst, dealing [[[[{?{Casting Level},15}kl1]]d6]] points of cold damage to each creature in the area. An elemental (water) creature instead takes [[[[{?{Casting Level},15}kl1]]d8]] points of cold damage.
+                             If the freezing sphere strikes a body of water or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area equal to [[100*[[{?{Casting Level},15}kl1]]]] square feet. This ice lasts for [[?{Casting Level}]] rounds. Creatures that were swimming on the surface of frozen water become trapped in the ice. Attempting to break free is a full-round action. A trapped creature must make a DC 25 Strength check or a DC 25 Escape Artist check to do so.
                              You can refrain from firing the globe after completing the spell, if you wish. Treat this as a touch spell for which you are holding the charge. You can hold the charge for as long as [[?{Casting Level}]] rounds, at the end of which time the *freezing sphere* bursts centered on you (and you receive no saving throw to resist its effect). Firing the globe in a later round is a standard action.`,
           component_details:'Focus: A small crystal sphere.'
         },
         // Spells that start with G
+        //BEGIN REVIEW MARKER
         'gaseous form': {
           ref:              'https://www.dandwiki.com/wiki/SRD:Gaseous_Form_%28Spell%29',
           school:           'Transmutation',
@@ -4406,7 +4414,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:null
         },
         'glyph of warding': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Glyph_of_Warding',
+          ref:              'http://www.d20srd.org/srd/spells/glyphOfWarding.htm',
           school:           'Abjuration',
           level:            'Clr 3, Rune 3',
           components:       'V, S, M',
@@ -4902,7 +4910,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `This powerful spell is primarily used to defend your stronghold. The ward protects 200 square feet per caster level. The warded area can be as much as 20 feet high, and shaped as you desire. You can ward several stories of a stronghold by dividing the area among them; you must be somewhere within the area to be warded to cast the spell. The spell creates the following magical effects within the warded area.
                              *Fog:* Fog fills all corridors, obscuring all sight, including darkvision, beyond 5 feet. A creature within 5 feet has concealment (attacks have a 20% miss chance). Creatures farther away have total concealment (50% miss chance, and the attacker cannot use sight to locate the target). Saving Throw: None. Spell Resistance: No.
                              *Arcane Locks:* All doors in the warded area are [arcane locked](http://www.d20srd.org/srd/spells/arcaneLock.htm). Saving Throw: None. Spell Resistance: No.
-                             *Webs:* Webs fill all stairs from top to bottom. These strands are identical with those created by the [web](https://www.dandwiki.com/wiki/SRD:Web) spell, except that they regrow in 10 minutes if they are burned or torn away while the *guards and wards* spell lasts. Saving Throw: Reflex negates; see text for web. Spell Resistance: No.
+                             *Webs:* Webs fill all stairs from top to bottom. These strands are identical with those created by the [web](http://www.d20srd.org/srd/spells/web.htm) spell, except that they regrow in 10 minutes if they are burned or torn away while the *guards and wards* spell lasts. Saving Throw: Reflex negates; see text for web. Spell Resistance: No.
                              *Confusion:* Where there are choices in direction—such as a corridor intersection or side passage—a minor confusion-type effect functions so as to make it 50% probable that intruders believe they are going in the opposite direction from the one they actually chose. This is an enchantment, mind-affecting effect. Saving Throw: None. Spell Resistance: Yes.
                              *Lost Doors:* One door per caster level is covered by a [silent image](https://www.dandwiki.com/wiki/SRD:Silent_Image) to appear as if it were a plain wall. Saving Throw: Will disbelief (if interacted with). Spell Resistance: No.
                              In addition, you can place your choice of one of the following five magical effects.
@@ -5527,7 +5535,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:null
         },
         'imprisonment': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Imprisonment',
+          ref:              'http://www.d20srd.org/srd/spells/imprisonment.htm',
           school:           'Abjuration',
           level:            'Sor/Wiz 9',
           components:       'V, S',
@@ -5538,7 +5546,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates; see text',
           spell_resistance: 'Yes',
-          text:             `When you cast *imprisonment* and touch a creature, it is entombed in a state of suspended animation (see the [temporal stasis](https://www.dandwiki.com/wiki/SRD:Temporal_Stasis) spell) in a small sphere far beneath the surface of the earth. The subject remains there unless a *freedom* spell is cast at the locale where the imprisonment took place. Magical search by a *crystal ball*, a [locate object](https://www.dandwiki.com/wiki/SRD:Locate_Object) spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but [discern location](http://www.d20srd.org/srd/spells/discernLocation.htm) does. A [wish](http://www.d20srd.org/srd/spells/wish.htm) or [miracle](http://www.d20srd.org/srd/spells/miracle.htm) spell will not free the recipient, but will reveal where it is entombed. If you know the target’s name and some facts about its life, the target takes a -4 penalty on its save.`,
+          text:             `When you cast *imprisonment* and touch a creature, it is entombed in a state of suspended animation (see the [temporal stasis](http://www.d20srd.org/srd/spells/temporalStasis.htm) spell) in a small sphere far beneath the surface of the earth. The subject remains there unless a *freedom* spell is cast at the locale where the imprisonment took place. Magical search by a *crystal ball*, a [locate object](https://www.dandwiki.com/wiki/SRD:Locate_Object) spell, or some other similar divination does not reveal the fact that a creature is imprisoned, but [discern location](http://www.d20srd.org/srd/spells/discernLocation.htm) does. A [wish](http://www.d20srd.org/srd/spells/wish.htm) or [miracle](http://www.d20srd.org/srd/spells/miracle.htm) spell will not free the recipient, but will reveal where it is entombed. If you know the target’s name and some facts about its life, the target takes a -4 penalty on its save.`,
           component_details:null
         },
         'incendiary cloud': {
@@ -11972,7 +11980,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'fly':                             { recharge: '5 minutes' },
         'fog cloud':                       { recharge: 'General' },
         'forbiddance':                     { recharge: 'General' },
-        'forcecage':                       { recharge: '1 hour' },
+        'forcecage':                       { recharge: 'General' },
         'forceful hand':                   { recharge: 'General' },
         'foresight':                       { recharge: '1 hour' },
         'fox\'s cunning':                  { recharge: '5 minutes' },
