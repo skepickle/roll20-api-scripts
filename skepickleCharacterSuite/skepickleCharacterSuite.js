@@ -5869,26 +5869,25 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `You instantly know the direction of north from your current position. The spell is effective in any environment in which “north” exists, but it may not work in extraplanar settings. Your knowledge of north is correct at the moment of casting, but you can get lost again within moments if you don’t find some external reference point to help you keep track of direction.`
         },
         // Spells that start with L
-        //BEGIN REVIEW MARKER
         'legend lore': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Legend_Lore',
+          ref:              'http://www.d20srd.org/srd/spells/legendLore.htm',
           school:           'Divination',
-          level:            'Brd 4, Knowledge 7, Sor/Wiz 6',
+          level:            'Brd 4, Knowledge 7, Oracle 6, Sor/Wiz 6',
           components:       'V, S, M, F',
           casting_time:     'See text',
           range:            'Personal',
           target_type:      'Target',
           target:           'You',
           duration:         'See text',
-          text:             `*Legend lore* brings to your mind legends about an important person, place, or thing. If the person or thing is at hand, or if you are in the place in question, the casting time is only ‹1d4×10|[[1d4*10]]› minutes. If you have only detailed information on the person, place, or thing, the casting time is ‹1d10› days, and the resulting lore is less complete and specific (though it often provides enough information to help you find the person, place, or thing, thus allowing a better *legend lore* result next time). If you know only rumors, the casting time is ‹2d6› weeks, and the resulting lore is vague and incomplete (though it often directs you to more detailed information, thus allowing a better *legend lore* result next time).
+          text:             `Legend lore brings to your mind legends about an important person, place, or thing. If the person or thing is at hand, or if you are in the place in question, the casting time is only ‹1d4×10|[[1d4*10]]› minutes. If you have only detailed information on the person, place, or thing, the casting time is ‹1d10› days, and the resulting lore is less complete and specific (though it often provides enough information to help you find the person, place, or thing, thus allowing a better legend lore result next time). If you know only rumors, the casting time is ‹2d6› weeks, and the resulting lore is vague and incomplete (though it often directs you to more detailed information, thus allowing a better legend lore result next time).
                              During the casting, you cannot engage in other than routine activities: eating, sleeping, and so forth. When completed, the divination brings legends (if any) about the person, place, or things to your mind. These may be legends that are still current, legends that have been forgotten, or even information that has never been generally known. If the person, place, or thing is not of legendary importance, you gain no information. As a rule of thumb, characters who are 11th level and higher are “legendary,” as are the sorts of creatures they contend with, the major magic items they wield, and the places where they perform their key deeds.`,
           component_details:`Material Component: Incense worth at least 250 gp.
                              Focus: Four strips of ivory (worth 50 gp each) formed into a rectangle.`
         },
         'lesser confusion': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Lesser_Confusion',
+          ref:              'http://www.d20srd.org/srd/spells/confusionLesser.htm',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
-          level:            'Brd 1, Madness 1',
+          level:            'Brd 1, Madness 1, Mental 1',
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            '_close_',
@@ -5899,13 +5898,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           spell_resistance: 'Yes',
           text:             `This spell causes a single creature to become confused for 1 round.
                              Roll ‹1d100› on the confused condition table at the beginning of each subject’s turn each round to see what the subject does in that round.
-                             A confused character who can’t carry out the indicated action does nothing but babble incoherently. Attackers are not at any special advantage when attacking a confused character. Any confused character who is attacked automatically attacks its attackers on its next turn, as long as it is still confused when its turn comes. Note that a confused character will not make [attacks of opportunity](https://www.dandwiki.com/wiki/SRD:Attack_of_Opportunity) against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).`,
-          component_details:null
+                             A confused character who can’t carry out the indicated action does nothing but babble incoherently. Attackers are not at any special advantage when attacking a confused character. Any confused character who is attacked automatically attacks its attackers on its next turn, as long as it is still confused when its turn comes. Note that a confused character will not make attacks of opportunity against any creature that it is not already devoted to attacking (either because of its most recent action or because it has just been attacked).`
         },
         'lesser geas': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Lesser_Geas',
+          ref:              'http://www.d20srd.org/srd/spells/geasLesser.htm',
           school:           'Enchantment (Compulsion) [Language-Dependent, Mind-Affecting]',
-          level:            'Brd 3, Sor/Wiz 4',
+          level:            'Brd 3, EmBarachiel 3, Sor/Wiz 4',
           components:       'V',
           casting_time:     '1 round',
           range:            '_close_',
@@ -5914,17 +5912,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] days or until discharged (D)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `A *lesser geas* places a magical command on a creature to carry out some service or to refrain from some action or course of activity, as desired by you. The creature must have 7 or fewer Hit Dice and be able to understand you. While a geas cannot compel a creature to kill itself or perform acts that would result in certain death, it can cause almost any other course of activity.
-                             The *geased* creature must follow the given instructions until the *geas* is completed, no matter how long it takes.
+          text:             `A lesser geas places a magical command on a creature to carry out some service or to refrain from some action or course of activity, as desired by you. The creature must have 7 or fewer Hit Dice and be able to understand you. While a geas cannot compel a creature to kill itself or perform acts that would result in certain death, it can cause almost any other course of activity.
+                             The geased creature must follow the given instructions until the geas is completed, no matter how long it takes.
                              If the instructions involve some open-ended task that the recipient cannot complete through his own actions the spell remains in effect for a maximum of one day per caster level. A clever recipient can subvert some instructions:
-                             If the subject is prevented from obeying the *lesser geas* for 24 hours, it takes a -2 penalty to each of its ability scores. Each day, another -2 penalty accumulates, up to a total of -8. No ability score can be reduced to less than 1 by this effect. The ability score penalties are removed 24 hours after the subject resumes obeying the *lesser geas*.
-                             A *lesser geas* (and all ability score penalties) can be ended by [break enchantment](http://www.d20srd.org/srd/spells/breakEnchantment.htm), [limited wish](http://www.d20srd.org/srd/spells/limitedWish.htm), [remove curse](http://www.d20srd.org/srd/spells/bestowCurse.htm), [miracle](http://www.d20srd.org/srd/spells/miracle.htm), or [wish](http://www.d20srd.org/srd/spells/wish.htm). [Dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) does not affect a *lesser geas*.`,
-          component_details:null
+                             If the subject is prevented from obeying the lesser geas for 24 hours, it takes a -2 penalty to each of its ability scores. Each day, another -2 penalty accumulates, up to a total of -8. No ability score can be reduced to less than 1 by this effect. The ability score penalties are removed 24 hours after the subject resumes obeying the lesser geas.
+                             A lesser geas (and all ability score penalties) can be ended by [break enchantment](http://www.d20srd.org/srd/spells/breakEnchantment.htm), [limited wish](http://www.d20srd.org/srd/spells/limitedWish.htm), [remove curse](http://www.d20srd.org/srd/spells/bestowCurse.htm), [miracle](http://www.d20srd.org/srd/spells/miracle.htm), or [wish](http://www.d20srd.org/srd/spells/wish.htm). [Dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) does not affect a lesser geas.`
         },
         'lesser globe of invulnerability': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Lesser_Globe_of_Invulnerability',
+          ref:              'http://www.d20srd.org/srd/spells/globeOfInvulnerabilityLesser.htm',
           school:           'Abjuration',
-          level:            'Sor/Wiz 4',
+          level:            'Artificer 4, Sor/Wiz 4, Wuj 4',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '10 ft.',
@@ -5933,20 +5930,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] rounds (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `An immobile, faintly shimmering magical sphere surrounds you and excludes all spell effects of 3rd level or lower. The area or effect of any such spells does not include the area of the *lesser globe of invulnerability*. Such spells fail to affect any target located within the globe. Excluded effects include spell-like abilities and spells or spell-like effects from items. However, any type of spell can be cast through or out of the magical globe. Spells of 4th level and higher are not affected by the globe, nor are spells already in effect when the globe is cast. The globe can be brought down by a targeted [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell, but not by an area *dispel magic*. You can leave and return to the globe without penalty.
+          text:             `An immobile, faintly shimmering magical sphere surrounds you and excludes all spell effects of 3rd level or lower. The area or effect of any such spells does not include the area of the lesser globe of invulnerability. Such spells fail to affect any target located within the globe. Excluded effects include spell-like abilities and spells or spell-like effects from items. However, any type of spell can be cast through or out of the magical globe. Spells of 4th level and higher are not affected by the globe, nor are spells already in effect when the globe is cast. The globe can be brought down by a targeted [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell, but not by an area dispel magic. You can leave and return to the globe without penalty.
                              Note that spell effects are not disrupted unless their effects enter the globe, and even then they are merely suppressed, not dispelled.
-                             If a given spell has more than one level depending on which character class is casting it, use the level appropriate to the caster to determine whether *lesser globe of invulnerability* stops it.`,
+                             If a given spell has more than one level depending on which character class is casting it, use the level appropriate to the caster to determine whether lesser globe of invulnerability stops it.`,
           component_details:'Material Component: A glass or crystal bead that shatters at the expiration of the spell.'
         },
         'lesser planar ally': {
           ref:              'http://www.d20srd.org/srd/spells/planarAllyLesser.htm',
           school:           'Conjuration (Calling) [see text]',
-          level:            'Clr 4',
+          level:            'APeace 4, Arc 4, Celestial 4, Clr 4, DrgBlw 4, Exalted Arcanist 4, Hth 4, KotC 4, Sin-L 4, Summoner 4',
           components:       'V, S, DF, XP',
           casting_time:     '10 minutes',
           range:            '_close_',
           target_type:      'Effect',
-          target:           'One called [elemental](https://www.dandwiki.com/wiki/SRD:Elemental) or [outsider](https://www.dandwiki.com/wiki/SRD:Outsider_Type) of 6 HD or less',
+          target:           'One called elemental or outsider of 6 HD or less',
           duration:         'Instantaneous',
           saving_throw:     'None',
           spell_resistance: 'No',
@@ -5962,27 +5959,26 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         'lesser planar binding': {
           ref:              'http://www.d20srd.org/srd/spells/planarBindingLesser.htm',
           school:           'Conjuration (Calling) [see text]',
-          level:            'Rune 5, Sor/Wiz 5',
+          level:            'Dem 3, Demonic 5, Diabolic 5, Hth 5, Rune 5, Sor/Wiz 5',
           components:       'V, S',
           casting_time:     '10 minutes',
           range:            'Close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.); see text',
           target_type:      'Target',
-          target:           'One [elemental](https://www.dandwiki.com/wiki/SRD:Elemental_Type) or [outsider](https://www.dandwiki.com/wiki/SRD:Outsider_Type) with 6 HD or less',
+          target:           'One elemental or outsider with 6 HD or less',
           duration:         'Instantaneous',
           saving_throw:     'Will negates',
           spell_resistance: 'No and Yes; see text',
-          text:             `Casting this spell attempts a dangerous act: to lure a [creature from another plane](https://www.dandwiki.com/wiki/SRD:Outsider_Type) to a specifically prepared trap, which must lie within the spell’s range. The called creature is held in the trap until it agrees to perform one service in return for its freedom.
+          text:             `Casting this spell attempts a dangerous act: to lure a creature from another plane to a specifically prepared trap, which must lie within the spell’s range. The called creature is held in the trap until it agrees to perform one service in return for its freedom.
                              To create the trap, you must use a [Magic Circle](http://www.d20srd.org/srd/spells/magicCircleAgainstEvil.htm) spell, focused inward. The kind of creature to be bound must be known and stated. If you wish to call a specific individual, you must use that individual’s proper name in casting the spell.
                              The target creature is allowed a Will saving throw. If the saving throw succeeds, the creature resists the spell. If the saving throw fails, the creature is immediately drawn to the trap (spell resistance does not keep it from being called). The creature can escape from the trap with by successfully pitting its spell resistance against your caster level check, by dimensional travel, or with a successful Charisma check (DC 15 + 1/2 your caster level + your Cha modifier). It can try each method once per day. If it breaks loose, it can flee or attack you. A [dimensional anchor](http://www.d20srd.org/srd/spells/dimensionalAnchor.htm) cast on the creature prevents its escape via dimensional travel. You can also employ a calling diagram (see [magic circle against evil](http://www.d20srd.org/srd/spells/magicCircleAgainstEvil.htm)) to make the trap more secure.
                              If the creature does not break free of the trap, you can keep it bound for as long as you dare. You can attempt to compel the creature to perform a service by describing the service and perhaps offering some sort of reward. You make a Charisma check opposed by the creature’s Charisma check. The check is assigned a bonus of +0 to +6 based on the nature of the service and the reward. If the creature wins the opposed check, it refuses service. New offers, bribes, and the like can be made or the old ones reoffered every 24 hours. This process can be repeated until the creature promises to serve, until it breaks free, or until you decide to get rid of it by means of some other spell. Impossible demands or unreasonable commands are never agreed to. If you roll a 1 on the Charisma check, the creature breaks free of the binding and can escape or attack you.
                              Once the requested service is completed, the creature need only so inform you to be instantly sent back whence it came. The creature might later seek revenge. If you assign some open-ended task that the creature cannot complete though its own actions the spell remains in effect for a maximum of one day per caster level, and the creature gains an immediate chance to break free. Note that a clever recipient can subvert some instructions.
-                             *Note:* When you use a calling spell such as gate to call an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.`,
-          component_details:null
+                             *Note:* When you use a calling spell such as gate to call an air, chaotic, earth, evil, fire, good, lawful, or water creature, it is a spell of that type.`
         },
         'lesser restoration': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Lesser_Restoration',
+          ref:              'http://www.d20srd.org/srd/spells/restorationLesser.htm',
           school:           'Conjuration (Healing)',
-          level:            'Clr 2, Drd 2, Pal 1',
+          level:            'APeace 2, Arc 2, BVal 2, ChamGwyn 1, Clr 2, Drd 2, Hlr 2, HotD 2, Life 2, Pal 1, Renewal 2, SaveLife 2, Shu 2',
           components:       'V, S',
           casting_time:     '3 rounds',
           range:            'Touch',
@@ -5991,13 +5987,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Instantaneous',
           saving_throw:     'Will negates (harmless)',
           spell_resistance: 'Yes (harmless)',
-          text:             `*Lesser restoration* dispels any magical effects reducing one of the subject’s ability scores or cures 1d4 points of temporary [ability damage](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Damage) to one of the subject’s ability scores. It also eliminates any [fatigue](https://www.dandwiki.com/wiki/SRD:Fatigued) suffered by the character, and improves an [exhausted condition](https://www.dandwiki.com/wiki/SRD:Exhausted) to [fatigued](https://www.dandwiki.com/wiki/SRD:Fatigued). It does not restore permanent [ability drain](https://www.dandwiki.com/wiki/SRD:Ability_Score_Loss#Ability_Drain).`,
-          component_details:null
+          text:             `Lesser restoration dispels any magical effects reducing one of the subject’s ability scores or cures ‹1d4› points of temporary ability damage to one of the subject’s ability scores. It also eliminates any fatigue suffered by the character, and improves an exhausted condition to fatigued. It does not restore permanent ability drain.`
         },
         'lesser telepathic bond': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Lesser_Telepathic_Bond',
+          ref:              'http://www.d20srd.org/srd/psionic/spells/telepathicBondLesser.htm',
+          other_versions:   'Complete Divine on page 183, Defenders of the Faith on page 87',
           school:           'Divination [Mind-Affecting]',
-          level:            'Clr 3, Mind 3, Sor/Wiz 3',
+          level:            'Arc 3, Clr 3, Mind 3, Sor/Wiz 3',
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '30 ft.',
@@ -6006,14 +6002,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minutes',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `You forge a telepathic bond with another creature with an Intelligence score of 6 or higher. The bond can be established only with a willing subject. You can communicate telepathically through the bond regardless of language. No special power or influence is established as a result of the bond. Once the bond is formed, it works over any distance (although not from one plane to another).`,
-          component_details:null
+          text:             `You forge a telepathic bond with another creature with an Intelligence score of 6 or higher. The bond can be established only with a willing subject. You can communicate telepathically through the bond regardless of language. No special power or influence is established as a result of the bond. Once the bond is formed, it works over any distance (although not from one plane to another).`
         },
         // Epic Spell: let go of me
         'levitate': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Levitate',
+          ref:              'http://www.d20srd.org/srd/spells/levitate.htm',
           school:           'Transmutation',
-          level:            'Sor/Wiz 2',
+          level:            'Arc 2, Shu 2, Sor/Wiz 2',
           components:       'V, S, F',
           casting_time:     '1 standard action',
           range:            'Personal or close ([[25+(5*floor([[?{Casting Level}/2]]))]] ft.)',
@@ -6022,14 +6017,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `*Levitate* allows you to move yourself, another creature, or an object up and down as you wish. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. You can mentally direct the recipient to move up or down as much as 20 feet each round; doing so is a move action. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its base land speed).
-                             A *levitating* creature that attacks with a melee or ranged weapon finds itself increasingly unstable; the first attack has a -1 penalty on attack rolls, the second -2, and so on, to a maximum penalty of -5. A full round spent stabilizing allows the creature to begin again at -1.`,
+          text:             `Levitate allows you to move yourself, another creature, or an object up and down as you wish. A creature must be willing to be levitated, and an object must be unattended or possessed by a willing creature. You can mentally direct the recipient to move up or down as much as 20 feet each round; doing so is a move action. You cannot move the recipient horizontally, but the recipient could clamber along the face of a cliff, for example, or push against a ceiling to move laterally (generally at half its base land speed).
+                             A levitating creature that attacks with a melee or ranged weapon finds itself increasingly unstable; the first attack has a -1 penalty on attack rolls, the second -2, and so on, to a maximum penalty of -5. A full round spent stabilizing allows the creature to begin again at -1.`,
           component_details:'Focus: Either a small leather loop or a piece of golden wire bent into a cup shape with a long shank on one end.'
         },
         'light': {
           ref:              'http://www.d20srd.org/srd/spells/light.htm',
           school:           'Evocation [Light]',
-          level:            'Brd 0, Clr 0, Drd 0, Sor/Wiz 0',
+          level:            'Adp 0, APeace 0, Arc 0, Artificer 1, Brd 0, Clr 0, Drd 0, HB 1, Hlr 0, Shu 0, Sor/Wiz 0, Wmg 0, Wuj 0',
           components:       'V, M/DF',
           casting_time:     '1 standard action',
           range:            'Touch',
@@ -6038,14 +6033,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[10*?{Casting Level}]] minutes (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `This spell causes an object to glow like a torch, shedding bright light in a 20-foot radius (and dim light for an additional 20 feet) from the point you touch. The effect is immobile, but it can be cast on a movable object. Light taken into an area of magical *darkness* does not function.
+          text:             `This spell causes an object to glow like a torch, shedding bright light in a 20-foot radius (and dim light for an additional 20 feet) from the point you touch. The effect is immobile, but it can be cast on a movable object. Light taken into an area of magical darkness does not function.
                              A light spell (one with the light descriptor) counters and dispels a darkness spell (one with the darkness descriptor) of an equal or lower level.`,
           component_details:'Arcane Material Component: A firefly or a piece of phosphorescent moss.'
         },
         'lightning bolt': {
           ref:              'http://www.d20srd.org/srd/spells/lightningBolt.htm',
           school:           'Evocation [Electricity]',
-          level:            'Sor/Wiz 3',
+          level:            'Adp 3, Arc 3, Shu 4, Sor/Wiz 3, Wmg 3',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '120 ft.',
@@ -6055,13 +6050,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Reflex half',
           spell_resistance: 'Yes',
           text:             `You release a powerful stroke of electrical energy that deals [[[[{?{Casting Level},10}kl1]]d6]] points of electricity damage to each creature within its area. The bolt begins at your fingertips.
-                             The *lightning bolt* sets fire to combustibles and damages objects in its path. It can melt metals with a low melting point, such as lead, gold, copper, silver, or bronze. If the damage caused to an interposing barrier shatters or breaks through it, the bolt may continue beyond the barrier if the spell’s range permits; otherwise, it stops at the barrier just as any other spell effect does.`,
+                             The lightning bolt sets fire to combustibles and damages objects in its path. It can melt metals with a low melting point, such as lead, gold, copper, silver, or bronze. If the damage caused to an interposing barrier shatters or breaks through it, the bolt may continue beyond the barrier if the spell’s range permits; otherwise, it stops at the barrier just as any other spell effect does.`,
           component_details:'Material Component: A bit of fur and an amber, crystal, or glass rod.'
         },
         'limited wish': {
           ref:              'http://www.d20srd.org/srd/spells/limitedWish.htm',
           school:           'Universal',
-          level:            'Sor/Wiz 7',
+          level:            'Sin-E 7, Sor/Wiz 7, Spell 7, Wuj 7',
           components:       'V, S, XP',
           casting_time:     '1 standard action',
           range:            'See text',
@@ -6070,20 +6065,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'See text',
           saving_throw:     'None; see text',
           spell_resistance: 'Yes',
-          text:             `A *limited wish* lets you create nearly any type of effect. For example, a *limited wish* can do any of the following things.
+          text:             `A limited wish lets you create nearly any type of effect. For example, a limited wish can do any of the following things.
                              • Duplicate any sorcerer/wizard spell of 6th level or lower, provided the spell is not of a school prohibited to you.
                              • Duplicate any other spell of 5th level or lower, provided the spell is not of a school prohibited to you.
                              • Duplicate any sorcerer/wizard spell of 5th level or lower, even if it’s of a prohibited school.
                              • Duplicate any other spell of 4th level or lower, even if it’s of a prohibited school.
-                             • Undo the harmful effects of many spells, such as [geas/quest](http://www.d20srd.org/srd/spells/geasQuest.htm) or [insanity](https://www.dandwiki.com/wiki/SRD:Insanity).
+                             • Undo the harmful effects of many spells, such as [geas/quest](http://www.d20srd.org/srd/spells/geasQuest.htm) or [insanity](http://www.d20srd.org/srd/spells/insanity.htm).
                              • Produce any other effect whose power level is in line with the above effects, such as a single creature automatically hitting on its next attack or taking a -7 penalty on its next saving throw.
-                             A duplicated spell allows saving throws and spell resistance as normal (but the save DC is for a 7th-level spell). When a *limited wish* duplicates a spell that has an XP cost, you must pay that cost or 300 XP, whichever is more. When a *limited wish* spell duplicates a spell with a material component that costs more than 1,000 gp, you must provide that component.`,
+                             A duplicated spell allows saving throws and spell resistance as normal (but the save DC is for a 7th-level spell). When a limited wish duplicates a spell that has an XP cost, you must pay that cost or 300 XP, whichever is more. When a limited wish spell duplicates a spell with a material component that costs more than 1,000 gp, you must provide that component.`,
           component_details:'XP Cost: 300 XP or more (see above).'
         },
         'liveoak': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Liveoak',
+          ref:              'http://www.d20srd.org/srd/spells/liveoak.htm',
           school:           'Transmutation',
-          level:            'Drd 6',
+          level:            'Arc 6, Drd 6, Elf 7, Fey 7',
           components:       'V, S',
           casting_time:     '10 minutes',
           range:            'Touch',
@@ -6092,16 +6087,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         '[[?{Casting Level}]] days (D)',
           saving_throw:     'None',
           spell_resistance: 'No',
-          text:             `This spell turns an oak tree into a protector or guardian. The spell can be cast on only a single tree at a time; while *liveoak* is in effect, you can’t cast it again on another tree. The tree on which the spell is cast must be within 10 feet of your dwelling place, within a place sacred to you, or within 300 feet of something that you wish to guard or protect.
-                             *Liveoak* must be cast on a healthy, Huge oak. A triggering phrase of up to one word per caster level is placed on the targeted oak. The *liveoak* spell triggers the tree into animating as a treant.
-                             If *liveoak* is dispelled, the tree takes root immediately, wherever it happens to be. If released by you, the tree tries to return to its original location before taking root.`,
-          component_details:null
+          text:             `This spell turns an oak tree into a protector or guardian. The spell can be cast on only a single tree at a time; while liveoak is in effect, you can’t cast it again on another tree. The tree on which the spell is cast must be within 10 feet of your dwelling place, within a place sacred to you, or within 300 feet of something that you wish to guard or protect.
+                             Liveoak must be cast on a healthy, Huge oak. A triggering phrase of up to one word per caster level is placed on the targeted oak. The liveoak spell triggers the tree into animating as a treant.
+                             If liveoak is dispelled, the tree takes root immediately, wherever it happens to be. If released by you, the tree tries to return to its original location before taking root.`
         },
         // Epic Spell: living lightning
         'locate creature': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Locate_Creature',
+          ref:              'http://www.d20srd.org/srd/spells/locateCreature.htm',
           school:           'Divination',
-          level:            'Asn 4, Brd 4, Sor/Wiz 4',
+          level:            'Arc 4, Asn 4, Beguiler 4, Brd 4, MH 4, Shu 4, Sor/Wiz 4, Wuj 4',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            '_long_',
@@ -6116,9 +6110,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           component_details:'Material Component: A bit of fur from a bloodhound.'
         },
         'locate object': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Locate_Object',
+          ref:              'http://www.d20srd.org/srd/spells/locateObject.htm',
           school:           'Divination',
-          level:            'Brd 2, Clr 3, Sor/Wiz 2, Travel 2',
+          level:            'Arc 3, Brd 2, Clr 3, Hoard 2, Meditation 3, Shu 2, Sin-A 3, Sor/Wiz 2, Travel 2, Wuj 2',
           components:       'V, S, F/DF',
           casting_time:     '1 standard action',
           range:            '_long_',
@@ -6128,13 +6122,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           spell_resistance: 'No',
           text:             `You sense the direction of a well-known or clearly visualized object. You can search for general items, in which case you locate the nearest one of its kind if more than one is within range. Attempting to find a certain item requires a specific and accurate mental image; if the image is not close enough to the actual object, the spell fails. You cannot specify a unique item unless you have observed that particular item firsthand (not through divination).
-                             The spell is blocked by even a thin sheet of lead. Creatures cannot be found by this spell. [Polymorph any object](https://www.dandwiki.com/wiki/SRD:Polymorph_Any_Object) fools it.`,
+                             The spell is blocked by even a thin sheet of lead. Creatures cannot be found by this spell. [Polymorph any object](http://www.d20srd.org/srd/spells/polymorphAnyObject.htm) fools it.`,
           component_details:'Arcane Focus: A forked twig.'
         },
         'longstrider': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Longstrider',
+          ref:              'http://www.d20srd.org/srd/spells/longstrider.htm',
           school:           'Transmutation',
-          level:            'Drd 1, Rgr 1, Travel 1',
+          level:            'Arc 1, BVal 1, Drd 1, Rgr 1, Travel 1',
           components:       'V, S, M',
           casting_time:     '1 standard action',
           range:            'Personal',
@@ -6146,7 +6140,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         // Epic Wish: lord of nightmares
         'lullaby': {
-          ref:              'https://www.dandwiki.com/wiki/SRD:Lullaby',
+          ref:              'http://www.d20srd.org/srd/spells/lullaby.htm',
+          other_versions:   'Song and Silence on page 94',
           school:           'Enchantment (Compulsion) [Mind-Affecting]',
           level:            'Brd 0',
           components:       'V, S',
@@ -6157,10 +6152,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           duration:         'Concentration + [[?{Casting Level}]] rounds (D)',
           saving_throw:     'Will negates',
           spell_resistance: 'Yes',
-          text:             `Any creature within the area that fails a Will save becomes drowsy and inattentive, taking a -5 penalty on Listen and Spot checks and a -2 penalty on Will saves against *sleep* effects while the *lullaby* is in effect. *Lullaby* lasts for as long as the caster concentrates, plus up to 1 round per caster level thereafter.`,
-          component_details:null
+          text:             `Any creature within the area that fails a Will save becomes drowsy and inattentive, taking a -5 penalty on Listen and Spot checks and a -2 penalty on Will saves against [sleep](http://www.d20srd.org/srd/spells/sleep.htm) effects while the lullaby is in effect. Lullaby lasts for as long as the caster concentrates, plus up to [[?{Casting Level}]] rounds thereafter.`
         },
-        //END REVIEW MARKER
         // Spells that start with M
         'maddening scream': {
           ref:              'http://www.d20srd.org/srd/divine/spells/maddeningScream.htm',
