@@ -12430,6 +12430,236 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              **Augment**
                              If you spend 6 additional power points, the effect of this power extends across all planar boundaries.`
         },
+        'animal affinity': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/animalAffinity.htm',
+          discipline:       'Psychometabolism',
+          level:            'Egoist 2, Psychic Warrior 2',
+          display:          'Material',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] minutes',
+          power_points:     '3',
+          text:             `You forge a psychometabolic affinity with an idealized animal form, thereby boosting one of your ability scores (choose either Strength, Dexterity, Constitution, Intelligence, Wisdom, or Charisma). The power grants a +4 enhancement bonus to the ability score you choose, adding the usual benefits provided by a high ability bonus. Because you are emulating the idealized form of an animal, you also take on minor aspects of the animal you choose. If you choose to increase the ability you use to manifest powers, you do not gain the benefit of an increased ability score long enough to gain any bonus power points for a high ability score, but the save DCs of your powers increase for the duration of this power.
+                             **Augment**
+                             For every 5 additional power points you spend, this power grants a +4 enhancement bonus to another ability.`
+        },
+        'apopsi': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/apopsi.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psion/Wilder 9',
+          display:          'Auditory, material, and visual',
+          manifesting_time: '1 round',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One living psionic creature',
+          duration:         'Instantaneouss',
+          saving_throw:     'Fortitude negates',
+          resistance:       'Yes',
+          power_points:     '17',
+          text:             `By using this power, you delete [[1d4]] powers permanently from the subject’s mind. You specify the level of each power, and the game master randomly determines which of the subject’s powers is actually deleted. [Psychic chirurgery](http://www.d20srd.org/srd/psionic/powers/psychicChirurgery.htm) or [reality revision](http://www.d20srd.org/srd/psionic/powers/realityRevision.htm) can be used to restore the lost powers, but it must be performed within 1 week of losing the powers.`,
+          component_details:'XP Cost: 50 XP per level of the deleted powers.'
+        },
+        'assimilate': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/assimilate.htm',
+          discipline:       'Psychometabolism',
+          level:            'Psion/Wilder 9',
+          display:          'Auditory and visual',
+          manifesting_time: '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'One living creature touched',
+          duration:         'Instantaneous and 1 hour; see text',
+          saving_throw:     'Fortitude half',
+          resistance:       'Yes',
+          power_points:     '17',
+          text:             `Your pointing finger turns black as obsidian. A creature touched by you is partially assimilated into your form and takes [[20d6]] points of damage. Any creature reduced to 0 or fewer hit points by this power is killed, entirely assimilated into your form, leaving behind only a trace of fine dust. An assimilated creature’s equipment is unaffected.
+                             A creature that is partially assimilated into your form (that is, a creature that has at least 1 hit point following your use of this power) grants you a number of temporary hit points equal to half the damage you dealt for 1 hour.
+                             A creature that is completely assimilated grants you a number of temporary hit points equal to the damage you dealt and a +4 bonus to each of your ability scores for 1 hour. If the assimilated creature knows psionic powers, you gain knowledge of one of its powers for 1 hour. You gain some semblance of a creature you completely assimilate for 1 hour, granting you a +10 bonus on Disguise checks made to appear as that creature during that time.`
+        },
+        'astral caravan': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/astralCaravan.htm',
+          discipline:       'Psychoportation',
+          level:            'Nomad 3',
+          display:          'None',
+          manifesting_time: '1 hour',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You and touched willing creatures',
+          duration:         'See text',
+          power_points:     '5',
+          text:             `You lead a caravan into the Astral Plane, leaving the Material Plane behind. Since the Astral Plane touches upon other planes, you can travel astrally to any of these other planes as you wish, but only if you know your way (see below).
+                             You can bring other willing creatures with you, provided that these subjects have each manifested [astral traveler](http://www.d20srd.org/srd/psionic/powers/astralTraveler.htm) and are linked hand to hand with you at the time of the astral caravan’s manifestation. These fellow travelers are dependent upon you and must accompany you at all times. If something happens to you during the journey that causes you to break hand-to-hand contact, your companions are stranded wherever you leave them. Because the planes are a dangerous place, those who lead astral caravans usually choose to manifest this power only if they have a large party of travelers assembled. Sometimes groups of lower-level adventurers may hire you to lead forays beyond the Material Plane.
+                             The astral caravan power lasts while you and your fellow travelers maintain your original formation, until (1) you reach your intended destination plane, (2) you desire to end the power while still traversing the Astral Plane, (3) you or anyone traveling with you breaks the hand-to-hand chain connecting the travelers for 2 consecutive rounds, or (4) the power is terminated by some outside means, such as [dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm). When the power ends, you and your fellow travelers halt in whatever portion of the Astral Plane you happen to be traversing (the Astral Plane is in many ways subjective in location; in any event, one place on the Astral looks much like any other).
+                             While you are traveling through the Astral Plane, those natives who happen to glimpse you and your fellow travelers perceive you to be moving at a speed of 30 feet (you can’t run), with you flying in the lead and your fellow travelers strung out behind you, each linked to the next by one hand.
+                             Depending on your knowledge of the planes, your journey through the subjective space that is the Astral Plane may take a longer or shorter period of time. For each 24 hours you travel, make a Knowledge (the planes) check. Unless a location is particularly hard to find and well guarded, or conversely easy to find and well advertised, the average DC for an astral caravan journey should be set at 20. You cannot take 20 on this check, though you can take 10. Each check may be modified by your degree of familiarity with the destination or by some connection you have with the place; see the associated tables.
+
+                             **Destination Knowledge (the planes)**
+                             ◦ *Check Modifier*, Knowledge
+                             • *n/a*, None†
+                             • *-10*, Secondhand (you have heard of the destination)
+                             • *+0*, Firsthand (you have visited before)
+                             • *+5*, Familiar (you have visited three or more times)
+                             †If you have no direct knowledge of your destination, you must have some connection to it in order to travel there; see below.
+
+                             **Knowledge (the planes)**
+                             ◦ *Check Modifier*, Connection
+                             • *+2*, Likeness or picture of destination
+                             • *+4*, Object from destination
+                             • *+10*, Planar Cartographer’s map of destination
+
+                             Each successful check indicates that you are one step closer to your goal. To finally arrive at your location, you must succeed on six checks within a span of 12 days. (If you fail to make six successful checks within the first 12 days, you can continue to make one check per day until you get the requisite six successes within a span of 12 consecutive days). When you successfully make the requisite number of checks, the journey ends, and you appear on your chosen plane within [[10*1d100]] miles of your intended destination on that plane.
+
+                             **Augment**
+                             If you spend 2 additional power points, this power weaves a quasi-real filmy membrane around yourself and all those adjacent to each other in the caravan (being linked by hand is not required if this membrane is used). You remain visible within the translucent, amorphous enclosure. You can pick up or drop willing passengers, easily reaching through the film. Anything you hold is enveloped by the film. Any attacks made through the enclosure in either direction have a 25% miss chance due to the rippling membrane.
+                             When you manifest this power in its augmented form, your apparent speed to those observing on the Astral Plane is 40 feet, and you can make a Knowledge (the planes) check once every 12 hours to attempt to make it to your destination (six successful checks within 12 consecutive days still sees you to your desired goal).`
+        },
+        'astral construct': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/astralConstruct.htm',
+          discipline:       'Metacreativity (Creation)',
+          level:            'Shaper 1',
+          display:          'Visual; see text',
+          manifesting_time: '1 round',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'One created astral construct',
+          duration:         '[[?{Manifester Level}]] rounds (D)',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `This power creates one 1st-level astral construct of solidified ectoplasm that attacks your enemies. It appears where you designate and acts immediately, on your turn. It attacks your opponents to the best of its ability. As a free action, you can mentally direct it not to attack, to attack particular enemies, or to perform other actions. The astral construct acts normally on the last round of the power’s duration and dissipates at the end of its turn.
+                             Astral constructs are not summoned; they are created on the plane you inhabit (using ectoplasm drawn from the Astral Plane). Thus, they are not subject to effects that hedge out or otherwise affect outsiders; they are constructs, not outsiders.
+                             **Augment**
+                             For every 2 additional power points you spend, the level of the astral construct increases by one.`
+        },
+        'astral seed': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/astralSeed.htm',
+          discipline:       'Metacreativity',
+          level:            'Shaper 8',
+          display:          'Material; see text',
+          manifesting_time: '10 minutes',
+          range:            '0 ft.',
+          target_type:      'Effect',
+          target:           'One storage crystal',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '15',
+          text:             `This power weaves strands of astral ectoplasm into a crystal containing the seed of your living mind (hardness 1 and 1 hit point). You can have only one astral seed in existence at any one time. Until such time as you perish, the astral seed (also called the storage crystal) is utterly inert. If you are slain at some later date, your soul transfers into the storage crystal, which begins to dimly glow.
+                             Upon transference, your physical remains (should they still exist) become inert matter and cannot thereafter be restored to life. The transfer from the slain body to the astral seed works over any distance, physical or extradimensional.
+                             Once your body’s physical demise activates the storage crystal, you have the abilities of a psicrystal of the appropriate level, plus all the powers you knew and the maximum power points you possessed when astral seed was manifested—but you also have a negative level that cannot be healed and that does not convert to real level loss in your current crystalline form. You have thirty days to grow an organic body, after which time your sentience fades and your soul passes on if it hasn’t entered a new body.
+                             To grow a body, you (in the storage crystal) must spend ten days in uninterrupted solitude. The body’s constituent parts are pulled as ectoplasm from the Astral Plane, then slowly molded and transformed into a living, breathing body that is an exact duplicate of your body at the time you manifested astral seed (the crystal itself breaks down and becomes a part of the new organic body). When the tenth day ends, you completely and totally inhabit the new body. You possess all the abilities you possessed when astral seed was manifested, at one level lower, but you have none of your equipment.
+                             If the body is struck for any amount of damage during the ten-day period when it is growing, it is destroyed and your soul passes on.
+                             Conceivably, you could manifest [mind switch](http://www.d20srd.org/srd/psionic/powers/mindSwitch.htm) to utilize a temporary body, but only an evil creature would smash his own temporarily empty storage crystal to permanently usurp a subject’s organic body (unless the subject is itself irredeemably evil).`
+        },
+        'astral traveler': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/astralTraveler.htm',
+          discipline:       'Psychoportation',
+          level:            'Psion/Wilder 1, Psychic Warrior 1',
+          display:          'None',
+          manifesting_time: '1 hour',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         'See text',
+          saving_throw:     'Will negates (harmless)',
+          resistance:       'Yes (harmless)',
+          power_points:     '1',
+          text:             `This power allows you or a creature you touch to participate in an astral caravan created through use of the astral caravan power. While participating in a journey allowed by the [astral caravan](http://www.d20srd.org/srd/psionic/powers/astralCaravan.htm) power, you must hold the hand of both your fellow passenger ahead of you (or the caravan leader) and your fellow passenger behind you (unless you happen to be the last in the hand-linked line). If you or any one of your fellow passengers breaks the hand-to-hand link for 2 consecutive rounds, the impetus through the Astral Plane provided by astral caravan fails.
+                             All those who are part of the caravan who are capable of performing purely mental actions, such as manifesting a power, may do so while maintaining hand-to-hand contact with their fellow travelers. When astral travelers begin their journey, each one is connected to the Material Plane by an insubstantial silvery cord. Very few weapons exist that can damage a silvery cord.
+                             The last creature in the line of those making up the caravan is sometimes referred to as the rear guard, because he or she has one hand free and can use it to wield a weapon without relinquishing his or her grip on the next traveler in line. The weightless, subjective environment of the Astral Plane allows the caravan to flex and bend as necessary to bring the rear guard’s weapon to bear.`
+        },
+        'attraction': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/attraction.htm',
+          discipline:       'Telepathy (Charm) [Mind-Affecting]',
+          level:            'Psion/Wilder 1',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         '[[?{Manifester Level}]] hours',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '1',
+          text:             `You plant a compelling attraction in the mind of the subject. The attraction can be toward a particular person or an object. The subject will take reasonable steps to meet, get close to, attend, or find the object of its implanted attraction. For the purpose of this power, “reasonable” means that, while attracted, the subject doesn’t suffer from blind obsession. He will act on this attraction only when not engaged in combat. The subject won’t perform obviously suicidal actions. He can still recognize danger but will not flee unless the threat is immediate. If you make the subject feel an attraction to yourself, you can’t command him indiscriminately, although he will be willing to listen to you (even if he disagrees). This power grants you a +4 bonus on any interaction checks you make involving the subject (such as Bluff, Diplomacy, Intimidate, and Sense Motive).
+                             **Augment**
+                             For every 2 additional power points you spend, this power’s save DC increases by 1 and the bonus on interaction checks increases by 1.`
+        },
+        'aura alteration': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/auraAlteration.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psion/Wilder 6',
+          display:          'Material',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One willing creature',
+          duration:         '[[10*?{Manifester Level}]] minutes or instantaneous; see text',
+          power_points:     '11',
+          text:             `You can use this power in one of two ways: to disguise the subject’s aura (alignment) and level, or to remove a compulsion or charm effect from the subject.
+                             **Disguise**
+                             If you use this power to disguise the subject’s alignment and level, the power has a duration of 10 minutes per level. You can change the subject’s alignment by only one step. You can adjust the subject’s apparent level up or down by a number equal to one-half your own level (rounded down) or less.
+                             **Remove Compulsion**
+                             If you use this power to attempt to cleanse the subject’s aura of a baleful or controlling effect, the duration is instantaneous. This power can remove the compulsion of a curse or a [geas/quest](http://www.d20srd.org/srd/spells/geasQuest.htm) effect. It can also negate any charm and compulsion powers of 6th level or lower, such as [crisis of breath](http://www.d20srd.org/srd/psionic/powers/crisisofBreath.htm) or [death urge](http://www.d20srd.org/srd/psionic/powers/deathUrge.htm). When aura alteration is manifested for this purpose, the subject gains another saving throw to remove the compulsion afflicting it against the original save DC, but with a +2 bonus.
+                             **Augment**
+                             You can augment this power in one or both of the following ways.
+                             • For every additional power point you spend, the duration of the disguise aura increases by 10 minutes.
+                             • If you spend 2 additional power points, the subject’s alignment shifts an additional step; if you spend 4 additional power points, the subject’s alignment changes to its opposite.`
+        },
+        'aura sight': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/auraSight.htm',
+          discipline:       'Clairsentience',
+          level:            'Psion/Wilder 4',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation centered on you',
+          duration:         'Concentration, up to [[10*?{Manifester Level}]] minutes',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '7',
+          text:             `You discern auras. Auras are invisible to the naked eye, but to a psionic viewer manifesting this power they appear as glowing halos or envelopes of colored light that surround all objects. The color of each aura reveals information to the psionic character. The amount of information revealed depends on how long you study a particular area.
+                             **1st Round**
+                             Presence of good and evil auras in the area. You can’t pin an aura to a particular object or individual at this stage; instead, you see a colored haze suffusing the area. (This power can detect lawful and chaotic auras as well, but doing so requires a separate manifestation that focuses only on that alignment axis.)
+                             **2nd Round**
+                             Number of auras (creatures, objects, powers, or spells) in the area. You know how many auras are in the area, even though each aura doesn’t resolve to its actual location quite yet.
+                             **3rd Round**
+                             The owner of each aura is revealed, unless the individual is outside your line of sight. If a creature whose aura you detect has 5 or more Hit Dice than you do, you are overwhelmed by its presence and dazed for 1 round, and the power ends.
+                             **Augment**
+                             For every 2 additional power points you spend, this power’s range increases by 5 feet.`
+        },
+        'aversion': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/aversion.htm',
+          discipline:       'Telepathy (Compulsion) [Mind-Affecting]',
+          level:            'Telepath 2',
+          display:          'Auditory and material',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         '[[?{Manifester Level}]] hours',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `You plant a powerful aversion in the mind of the subject. If the object of the implanted aversion is an individual or a physical object, she will prefer not to approach within 30 feet of it. If it is a word, she will try not to utter it; if it is an action, she will not willingly attempt to perform it; and if it is an event, she will not willingly attend it. The subject will take reasonable steps to avoid the object of its aversion, but will not put herself in jeopardy by doing so.
+                             If the subject is forced into taking an action she has an aversion to, she takes a -2 penalty on any attack rolls, ability checks, or skill checks involved.
+                             **Augment**
+                             For every 2 additional power points you spend, this power’s save DC increases by 1 and the duration increases by 1 hour.`
+        },
 
         //'': {
         //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
@@ -14358,8 +14588,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               } else {
                                 spellmacro = spellmacro.concat(' {{Range:=',dnd35.spell_ranges()[spell_spec.range],'}}');
                               };
-                              spellmacro = spellmacro.concat(' {{',spell_spec.target_type,':=',spell_spec.target.replace(/\(S\)$/, "(Shapeable)"),'}}');
-                              spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration.replace(/\(D\)$/, "(Dismissible)"),'}}');
+                              spellmacro = spellmacro.concat(' {{',spell_spec.target_type,':=',spell_spec.target.replace(/\(S\)/, "(Shapeable)"),'}}');
+                              spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration.replace(/\(D\)/, "(Dismissible)"),'}}');
                               if (spell_spec.saving_throw) {
                                 spellmacro = spellmacro.concat(' {{Saving Throw:=',spell_spec.saving_throw,'}}');
                               };
@@ -14417,10 +14647,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                   spellmacro = spellmacro.concat(' {{Manifester level check:=[[1d20+?{Manifester Level}[Manifesting Level]]] vs power resist.}}');
                                 };
                               };
-                              spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,'}}');
+                              if (spell_spec.text.toLowerCase().match(/\*\*augment\*\*/)) {
+                                spellmacro = spellmacro.concat(' {{Power Points:=[[',spell_spec.power_points,'+?{Power Augmentation|0}]]}}');
+                              } else {
+                                spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,'}}');
+                              }
                               spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
-                              spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲&nbsp;&nbsp;&nbsp;',spell_spec.text,(spell_spec.component_details)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
-                              spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲&nbsp;&nbsp;&nbsp;',spell_spec.text,(spell_spec.component_details)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
+                              spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲&nbsp;&nbsp;&nbsp;',spell_spec.text,'}}');
+                              spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲&nbsp;&nbsp;&nbsp;',spell_spec.text,'}}');
                               break;
                             case 'epicpower':
                               break;
