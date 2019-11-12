@@ -12456,7 +12456,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One living psionic creature',
-          duration:         'Instantaneouss',
+          duration:         'Instantaneous',
           saving_throw:     'Fortitude negates',
           resistance:       'Yes',
           power_points:     '17',
@@ -12498,7 +12498,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              The astral caravan power lasts while you and your fellow travelers maintain your original formation, until (1) you reach your intended destination plane, (2) you desire to end the power while still traversing the Astral Plane, (3) you or anyone traveling with you breaks the hand-to-hand chain connecting the travelers for 2 consecutive rounds, or (4) the power is terminated by some outside means, such as [dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm). When the power ends, you and your fellow travelers halt in whatever portion of the Astral Plane you happen to be traversing (the Astral Plane is in many ways subjective in location; in any event, one place on the Astral looks much like any other).
                              While you are traveling through the Astral Plane, those natives who happen to glimpse you and your fellow travelers perceive you to be moving at a speed of 30 feet (you can’t run), with you flying in the lead and your fellow travelers strung out behind you, each linked to the next by one hand.
                              Depending on your knowledge of the planes, your journey through the subjective space that is the Astral Plane may take a longer or shorter period of time. For each 24 hours you travel, make a Knowledge (the planes) check. Unless a location is particularly hard to find and well guarded, or conversely easy to find and well advertised, the average DC for an astral caravan journey should be set at 20. You cannot take 20 on this check, though you can take 10. Each check may be modified by your degree of familiarity with the destination or by some connection you have with the place; see the associated tables.
-
                              **Destination Knowledge (the planes)**
                              ◦ *Check Modifier*, Knowledge
                              • *n/a*, None†
@@ -12506,15 +12505,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • *+0*, Firsthand (you have visited before)
                              • *+5*, Familiar (you have visited three or more times)
                              †If you have no direct knowledge of your destination, you must have some connection to it in order to travel there; see below.
-
                              **Knowledge (the planes)**
                              ◦ *Check Modifier*, Connection
                              • *+2*, Likeness or picture of destination
                              • *+4*, Object from destination
                              • *+10*, Planar Cartographer’s map of destination
-
                              Each successful check indicates that you are one step closer to your goal. To finally arrive at your location, you must succeed on six checks within a span of 12 days. (If you fail to make six successful checks within the first 12 days, you can continue to make one check per day until you get the requisite six successes within a span of 12 consecutive days). When you successfully make the requisite number of checks, the journey ends, and you appear on your chosen plane within [[10*1d100]] miles of your intended destination on that plane.
-
                              **Augment**
                              If you spend 2 additional power points, this power weaves a quasi-real filmy membrane around yourself and all those adjacent to each other in the caravan (being linked by hand is not required if this membrane is used). You remain visible within the translucent, amorphous enclosure. You can pick up or drop willing passengers, easily reaching through the film. Anything you hold is enveloped by the film. Any attacks made through the enclosure in either direction have a 25% miss chance due to the rippling membrane.
                              When you manifest this power in its augmented form, your apparent speed to those observing on the Astral Plane is 40 feet, and you can make a Knowledge (the planes) check once every 12 hours to attempt to make it to your destination (six successful checks within 12 consecutive days still sees you to your desired goal).`
@@ -12660,6 +12656,755 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              **Augment**
                              For every 2 additional power points you spend, this power’s save DC increases by 1 and the duration increases by 1 hour.`
         },
+        // Powers that start with B
+        'baleful teleport': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/balefulTeleport.htm',
+          discipline:       'Psychoportation (Teleportation)',
+          level:            'Nomad 5',
+          display:          'Material and visual',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One corporeal creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude half',
+          resistance:       'Yes',
+          power_points:     '9',
+          text:             `You psychoportively disperse minuscule portions of the subject, dealing [[9d6]] points of damage. Targets can be protected from the effects of baleful teleport by dimensional anchor.
+                             **Augment**
+                             For every additional power point you spend, this power’s damage increases by 1d6 points. For each extra 2d6 points of damage, this power’s save DC increases by 1 and your manifester level increases by 1 for the purpose of overcoming power resistance.`
+        },
+        'bend reality': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/bendReality.htm',
+          discipline:       'Clairsentience',
+          level:            'Psion/Wilder 8',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            'See text',
+          target_type:      'Target, Effect, or Area',
+          target:           'See text',
+          duration:         'See text',
+          saving_throw:     'None; see text',
+          resistance:       'Yes',
+          power_points:     '15',
+          text:             `Bend reality lets you create nearly any type of effect. For example, bend reality can do any of the following:
+                             • Duplicate any psion power of 6th level or lower, provided the power is not of a discipline prohibited to you.
+                             • Duplicate any other power (but not a spell) of 5th level or lower, provided the power is not of a discipline prohibited to you.
+                             • Duplicate any psion power of 5th level or lower, even if it’s of a prohibited discipline.
+                             • Duplicate any other power (but not a spell) of 4th level or lower, even if it’s of a prohibited discipline.
+                             • Undo the harmful effects of many powers, such as [psionic dominate](http://www.d20srd.org/srd/psionic/powers/dominatePsionic.htm), [geas/quest](http://www.d20srd.org/srd/psionic/powers/dominatePsionic.htm), or [insanity](http://www.d20srd.org/srd/psionic/powers/insanity.htm).
+                             • Produce any other effect whose power level is in line with the above effects, such as a single creature automatically hitting on its next attack or taking a -8 penalty on its next saving throw.
+                             A duplicated power allows saving throws and power resistance as normal (but the save DC is for a 8th-level power).
+                             When bend reality duplicates a power that has an XP cost, you must pay that cost or 300 XP, whichever is more. When bend reality duplicates a spell with a material component, you must pay additional XP equal to the value of the material component divided by 5.`,
+          component_details:'XP Cost: 300 XP or more (see above).'
+        },
+        'bestow power': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/bestowPower.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psion/Wilder 2',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '20 ft.',
+          target_type:      'Target',
+          target:           'One psionic creature',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '3',
+          text:             `You link your mind with another psionic creature’s mind, creating a brief conduit through which mental energy can be shared. When you manifest this power, the subject gains up to 2 power points. You can transfer only as many power points to a subject as it has manifester levels.
+                             Because of the intimate nature of this power, it cannot be fabricated into a psionic item—only power points generated by a psionic creature in the moment can be shared using bestow power.
+                             **Augment**
+                             For every 3 additional power points you spend, the subject gains 2 additional power points.`
+        },
+        'biofeedback': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/biofeedback.htm',
+          discipline:       'Psychometabolism',
+          level:            'Psion/Wilder 2, Psychic Warrior 1',
+          display:          'Material and visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] minutes (D)',
+          power_points:     'Psion/Wilder 3, Psychic Warrior 1',
+          text:             `You can toughen your body against wounds, lessening their impact. During the duration of this power, you gain damage reduction 2/-.
+                             **Augment**
+                             For every 3 additional power points you spend, your damage reduction increases by 1.`
+        },
+        'bite of the wolf': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/biteoftheWolf.htm',
+          discipline:       'Psychometabolism',
+          level:            'Psychic Warrior 1',
+          display:          'Visual; see text',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] minutes',
+          power_points:     '1',
+          text:             `Your posture becomes stooped forward, and you grow a muzzle complete with fangs. You gain one bite attack each round, instead of or in addition to any other attacks you have, that deals ‹1d8|[[1d8]] points of damage› points of damage (assuming you are a Medium creature) when it hits.
+                             Your bite attack is a natural weapon, so you are considered armed when attacking with it, and it can be affected by powers, spells, and effects that enhance or improve natural weapons. You can choose to deal nonlethal damage with your bite, taking the standard -4 penalty on your attack roll. If you bite as your only attack, you use your highest base attack bonus on the attack roll, and you can apply your full Strength bonus to damage. If you bite in addition to making other attacks, the bite is a secondary attack.
+                             If you are not a Medium creature, your bite attack’s base damage varies as follows: Fine ‹1d2|[[1d2]] points of damage›, Diminutive ‹1d3|[[1d3]] points of damage›, Tiny ‹1d4|[[1d4]] points of damage›, Small ‹1d6|[[1d6]] points of damage›, Large ‹2d6|[[2d6]] points of damage›, Huge ‹2d8|[[2d8]] points of damage›, Gargantuan ‹4d6|[[4d6]] points of damage›, Colossal ‹6d6|[[6d6]] points of damage›.
+                             Based on your psychic warrior level, your bite increases in ferocity dealing an extra ‹[[floor([[{?{Manifester Level},20}kl1]]/5)]]d8|[[[[floor([[{?{Manifester Level},20}kl1]]/5)]]d8]] extra points of damage› points of damage.`
+        },
+        'body adjustment': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/bodyAdjustment.htm',
+          discipline:       'Psychometabolism (Healing)',
+          level:            'Psion/Wilder 3, Psychic Warrior 2',
+          display:          'Auditory and Material',
+          manifesting_time: '1 round',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Instantaneous',
+          power_points:     'Psion/Wilder 5, Psychic Warrior 3',
+          text:             `You take control of your body’s healing process, curing yourself of [[1d12]] points of damage. As usual, when regular damage is healed, an equal amount of nonlethal damage is also healed.
+                             **Augment**
+                             For every 2 additional power points you spend, this power heals an additional ‹1d12|[[1d12]] additional points of damage› points of damage.`
+        },
+        'body equilibrium': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/bodyEquilibrium.htm',
+          discipline:       'Psychometabolism',
+          level:            'Psion/Wilder 2, Psychic Warrior 2',
+          display:          'Material and visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[10*?{Manifester Level}]] minutes (D)',
+          power_points:     '3',
+          text:             `You can adjust your body’s equilibrium to correspond with any solid or liquid that you stand on. Thus, you can walk on water, quicksand, or even a spider’s web without sinking or breaking through (this effect does not confer any resistance to particularly sticky webs). You can move at your normal speed, but you cannot run (×4 speed) on an unfirm surface without sinking or breaking through.
+                             If you fall from any height while using this power, damage from the impact is halved.`
+        },
+        'body purification': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/bodyPurification.htm',
+          discipline:       'Psychometabolism (Healing)',
+          level:            'Psion/Wilder 3, Psychic Warrior 2',
+          display:          'Auditory and material',
+          manifesting_time: '1 round',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Instantaneous',
+          power_points:     'Psion/Wilder 5, Psychic Warrior 3',
+          text:             `You restore up to 2 points of damage to a single ability score. You cannot use body purification to heal ability drain.
+                             **Augment**
+                             For every additional power point you spend, this power heals 1 additional point of damage to the same ability score.`
+        },
+        'bolt': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/bolt.htm',
+          discipline:       'Metacreativity (Creation)',
+          level:            'Psion/wilder 1',
+          display:          'Material',
+          manifesting_time: '1 standard action',
+          range:            '0 ft.',
+          target_type:      'Effect',
+          target:           'A normal bolt, arrow, or sling bullet',
+          duration:         '[[?{Manifester Level}]] minutes',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `You create [[2d4]] ectoplasmic crossbow bolts, arrows, or sling bullets, appropriate to your size, which dissipate into their constituent ectoplasmic particles when the duration ends or after being fired. Ammunition you create has a +1 enhancement bonus on attack rolls and damage rolls.
+                             **Augment**
+                             For every 3 additional power points you spend, this power improves the ammunition’s enhancement bonus on attack rolls and damage rolls by 1.`
+        },
+        'brain lock': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/brainLock.htm',
+          discipline:       'Telepathy (Compulsion) [Mind-Affecting]',
+          level:            'Telepath 2',
+          display:          'Material and visual',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One humanoid',
+          duration:         'Concentration + 1 round',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `The subject’s higher mind is locked away. He is dazed and cannot take psionic actions for the duration of the power. A brain locked subject is not stunned, so attackers get no special advantage against him.
+                             **Augment**
+                             You can augment this power in one or both of the following ways.
+                             • If you spend 2 additional power points, this power can also affect an animal, fey, giant, magical beast, or monstrous humanoid.
+                             • If you spend 4 additional power points, this power can also affect an aberration, dragon, elemental, or outsider in addition to the creature types mentioned above.`
+        },
+        'breath of the black dragon': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/breathoftheBlackDragon.htm',
+          discipline:       'Psychometabolism [Acid]',
+          level:            'Psion/Wilder 6, Psychic Warrior 6',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Area',
+          target:           'Cone-shaped burst centered on you',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half',
+          resistance:       'Yes',
+          power_points:     '11',
+          text:             `Your mouth spews forth vitriolic acid that deals [[11d6]] points of acid damage to any targets in the area.
+                             **Augment**
+                             For every additional power point you spend, this power’s damage increases by 1d6 points.`
+        },
+        'burst': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/burst.htm',
+          discipline:       'Psychoportation',
+          level:            'Nomad 1, Psychic Warrior 1',
+          display:          'Auditory',
+          manifesting_time: '1 swift action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '1 round',
+          power_points:     '1',
+          text:             `This power increases your land speed by 10 feet. (This adjustment counts as an enhancement bonus to speed.)
+                             You can manifest this power with an instant thought, quickly enough to gain the benefit of the power on your turn before you move. Manifesting this power is a swift action You cannot manifest this power when it isn’t your turn.`
+        },
+        // Powers that start with C
+        'call to mind': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/calltoMind.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psion/Wilder 1',
+          display:          'Mental',
+          manifesting_time: '1 minute',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Instantaneous',
+          power_points:     '1',
+          text:             `By meditating on a subject, you can recall natural memories and knowledge otherwise inaccessible to you.
+                             On a failed Knowledge check, you can manifest this power to gain a new check with a +4 competence bonus. If successful, you instantly recall what was previously buried in your subconscious.`
+        },
+        'call weaponry': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/callWeaponry.htm',
+          discipline:       'Psychoportation (Teleportation)',
+          level:            'Psychic Warrior 1',
+          display:          'Material',
+          manifesting_time: '1 round',
+          range:            '0 ft.',
+          target_type:      'Effect',
+          target:           'One weapon; see text',
+          duration:         '[[?{Manifester Level}]] minutes; see text (D)',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `You call a weapon “from thin air” into your waiting hand (actually, it is a real weapon hailing from another location in space and time). You don’t have to see or know of a weapon to call it—in fact, you can’t call a specific weapon; you just specify the kind. If you call a projectile weapon, it comes with ‹3d6|[[3d6]] nonmagical bolts, arrows, or sling bullets› nonmagical bolts, arrows, or sling bullets, as appropriate. The weapon is made of ordinary materials as appropriate for its kind. If you relinquish your grip on the weapon you called for 2 or more consecutive rounds, it automatically returns to wherever it originated.
+                             Weapons gained by call weaponry are distinctive due to their astral glimmer. They are considered magic weapons and thus are effective against damage reduction that requires a magic weapon to overcome.
+                             **Augment**
+                             For every 4 additional power points you spend, this power improves the weapon’s enhancement bonus on attack rolls and damage rolls by 1.`
+        },
+        'catapsi': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/catapsi.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psion/Wilder 5, Psychic Warrior 5',
+          display:          'Mental and visual',
+          manifesting_time: '1 standard action',
+          range:            '30 ft.',
+          target_type:      'Area',
+          target:           '30-ft.-radius emanation centered on you',
+          duration:         '[[?{Manifester Level}]] rounds',
+          saving_throw:     'Will negates; see text',
+          resistance:       'Yes',
+          power_points:     '9',
+          text:             `By manifesting this power, you generate psychic static, interfering with the ability of other psionic characters to manifest their powers or use psi-like abilities (you are not affected by your own catapsi manifestation). All psionic activity within the area requires 4 more power points to manifest than normal, unless a character makes a Will save each time he attempts to manifest a power. Using a psi-like ability becomes a full-round action, instead of a standard action, in a catapsi field. If two or more fields of catapsi overlap, the effects are not cumulative.
+                             The limit on the number of power points a subject can spend on a power remains in effect; thus, a subject may not be able to manifest its highest-level powers. If manifesting a power would cause the manifester to exceed his available power points or his spending limits, the manifestation fails automatically, but no power points are expended.
+                             **Augment**
+                             For every 4 additional power points you spend, this power’s range and the radius of its area both increase by 5 feet.`
+        },
+        'catfall': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/catfall.htm',
+          discipline:       'Psychoportation',
+          level:            'Psion/Wilder 1, Psychic Warrior 1',
+          display:          'Auditory',
+          manifesting_time: '1 immediate action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Until landing or [[?{Manifester Level}]] rounds',
+          power_points:     '1',
+          text:             `You recover instantly from a fall and can absorb some damage from falling. You land on your feet no matter how far you fall, and you take damage as if the fall were 10 feet shorter than it actually is. This power affects you and anything you carry or hold (up to your maximum load). You can manifest this power with an instant thought, quickly enough to gain the benefit of the power while you fall. Manifesting the power is an immediate action. You can manifest this power even when it isn’t your turn.
+                             **Augment**
+                             For every additional power point you spend, this power reduces your damage as if the fall were an additional 10 feet shorter.`
+        },
+        'chameleon': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/chameleon.htm',
+          discipline:       'Psychometabolism',
+          level:            'Egoist 2, Psychic Warrior 1',
+          display:          'Olfactory',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[10*?{Manifester Level}]] minutes (D)',
+          power_points:     '1',
+          text:             `Your skin and equipment take on the color and texture of nearby objects, including floors and walls. You receive a +10 enhancement bonus on Hide checks.`
+        },
+        'clairtangent hand': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/clairtangentHand.htm',
+          discipline:       'Clairsentience (Scrying)',
+          level:            'Seer 5',
+          display:          'Auditory, mental, and visual',
+          manifesting_time: '1 standard action',
+          range:            'See text',
+          target_type:      'Area',
+          target:           'See text',
+          duration:         'Up to [[?{Manifester Level}]] minutes; see text (D)',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '9',
+          text:             `You can emulate a [far hand](http://www.d20srd.org/srd/psionic/powers/farHand.htm) effect at any distance while simultaneously emulating [clairvoyant sense](http://www.d20srd.org/srd/psionic/powers/clairvoyantSense.htm) to target your far hand; see the appropriate power descriptions. Clairtangent hand’s duration is up to 1 minute per level when used with a far hand effect.
+                             **Augment**
+                             If you spend 8 additional power points, you can emulate [clairvoyant sense](http://www.d20srd.org/srd/psionic/powers/clairvoyantSense.htm) in conjunction with either [telekinetic force](http://www.d20srd.org/srd/psionic/powers/telekineticForce.htm), [telekinetic maneuver](http://www.d20srd.org/srd/psionic/powers/telekineticManeuver.htm), or [telekinetic thrust](http://www.d20srd.org/srd/psionic/powers/telekineticThrust.htm), but this power’s duration expires as soon as any of the noted telekinetic powers deals damage.`
+        },
+        'clairvoyant sense': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/clairvoyantSense.htm',
+          discipline:       'Clairsentience (Scrying)',
+          level:            'Seer 2',
+          display:          'Auditory and visual',
+          manifesting_time: '1 standard action',
+          range:            'See text',
+          target_type:      'Effect',
+          target:           'Psionic sensor',
+          duration:         '[[?{Manifester Level}]] minutes (D)',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '3',
+          text:             `You can see and hear a distant location almost as if you were there. You don’t need line of sight or line of effect, but the locale must be known—a place familiar to you or an obvious one, such as behind a door, around a corner, or in a grove of trees. Once you have selected the locale, the focus of your clairvoyant sense doesn’t move, but you can rotate it in all directions to view the area as desired. Unlike other scrying powers, this power does not allow psionically or supernaturally enhanced senses to work through it.
+                             If the chosen locale is magically or psionically dark, you see nothing. If it is naturally pitch black, you can see in a 10-foot radius around the center of the power’s effect or out to the extent of your natural darkvision. The power does not work across planes.`
+        },
+        'claw of energy': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/clawofEnergy.htm',
+          discipline:       'Psychokinesis [see text]',
+          level:            'Psychic Warrior 4',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] rounds',
+          power_points:     '7',
+          text:             `If you have a claw attack (either from an actual natural weapon or from an effect such as [claws of the beast](http://www.d20srd.org/srd/psionic/powers/clawsoftheBeast.htm)), you can use this power to energize that weapon. The claw attack deals an extra ‹1d6|[[1d6]] points of cold, electricity, or fire damage› points of cold, electricity, or fire damage (as chosen by you at the time of manifestation) on a successful hit. On a critical hit, it deals an extra ‹1d10|[[1d10]] extra points energy damage› points of energy damage. If the claw’s critical multiplier is ×3, add ‹2d10|[[2d10]] extra points of energy damage› points of energy damage instead; if the multiplier is ×4, add ‹3d10|[[3d10]] extra points of energy damage› points of energy damage.
+                             This power can be manifested on a claw attack that already deals energy damage, but if the claw already deals the same type of damage as the power, the effects stack. If this power is manifested on a claw attack already benefiting from the effect of the power, the newer manifestation supersedes the older manifestation, even if both manifestations are of different energy types.
+                             This power’s subtype is the same as the type of energy infused in the natural weapon.`
+        },
+        'claws of the beast': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/clawsoftheBeast.htm',
+          discipline:       'Psychometabolism',
+          level:            'Psychic Warrior 1',
+          display:          'Visual',
+          manifesting_time: '1 swift action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] hours',
+          power_points:     'See text',
+          text:             `You call forth the aggressive nature of the beast inherent in yourself, psionically transforming your hands into deadly claws. You gain two natural attacks with your claws, each dealing 1d4 points of damage (1d6 if you are Large, or 1d3 if you are Small) plus your Strength bonus.
+                             ◦ **Power Points**, Claw Damage (Small / Medium / Large)
+                             • **1**, (1d3 / 1d4 / 1d6)
+                             • **3**, (1d4 / 1d6 / 1d8)
+                             • **5**, (1d6 / 1d8 / 2d6)
+                             • **7**, (1d8 / 2d6 / 3d6)
+                             • **11**, (2d6 / 3d6 / 4d6)
+                             • **15**, (3d6 / 4d6 / 5d6)
+                             • **19**, (4d6 / 5d6 / 6d6)
+                             Your claws are natural weapons, so you are considered armed when attacking with them, and they can be affected by powers, spells, and effects that enhance or improve natural. You can choose to deal nonlethal damage with your claws, taking the standard -4 penalty on your attack roll.
+                             Your claws work just like the natural weapons of many monsters. You can make an attack with one claw or a full attack with two claws at your normal attack bonus, replacing your normal attack routine. You take no penalties for two-weapon fighting, and neither attack is a secondary attack. If your base attack bonus is +6 or higher, you do not gain any additional attacks—you simply have two claw attacks at your normal attack bonus.
+                             You can manifest this power with an instant thought, quickly enough to gain the benefit of the power on your turn before you attack. Manifesting this power is a swift action You cannot manifest this power when it isn’t your turn.
+                             You can call or dismiss the claws as a swift action during the duration of the power. If you attack with a manufactured weapon or another natural attack, you can’t make any claw attacks in that round. You can still hold and manipulate items with your claws or cast spells just as well as you could with your hands.
+                             **Augment**
+                             If you spend additional power points, you can create larger, sharper, and more deadly claws, as shown on the table.`
+        },
+        'claws of the vampire': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/clawsoftheVampire.htm',
+          discipline:       'Psychometabolism',
+          level:            'Psychic Warrior 3',
+          display:          'Material and visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] rounds',
+          power_points:     '5',
+          text:             `If you have a claw attack (either from an actual natural weapon or from an effect such as [claws of the beast](http://www.d20srd.org/srd/psionic/powers/clawsoftheBeast.htm)), you can use this power to change the nature of that weapon. When this power is manifested, your claws take on an ominous glimmer. Each time you make a successful claw attack against a living creature of Small or larger size, you are healed of some amount of damage.
+                             You heal a number of hit points equal to half the base damage dealt by your claws of the vampire, rounded down (additional damage dealt because of a high Strength score or other enhancements does not count toward the amount you heal). You heal as many hit points as can be gained while the creature remains at 1 hit point or higher. Any damage that would reduce the creature to 0 or fewer hit points does not benefit you.
+                             You do not heal damage if your attack deals nonlethal damage, such as when you attack a creature that has the regeneration ability. Moreover, you gain no healing from attacking any creature that is under the effect of biofeedback. Using [fission](http://www.d20srd.org/srd/psionic/powers/fission.htm) on yourself and then attacking your duplicate also fails to grant any healing.`
+        },
+        'cloud mind': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/cloudMind.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psion/Wilder 2',
+          display:          'None',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         '[[?{Manifester Level}]] minutes',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `You make yourself completely undetectable to the subject by erasing all awareness of your presence from its mind. This power has the following effects.
+                             First, you are invisible and inaudible to the creature. It cannot even detect your presence by means of blindsense, blindsight, scent, or tremorsense. It cannot pinpoint your location by any means.
+                             Second, the subject remains unaware of your actions, provided you do not make any attacks or cause any obvious or directly threatening changes in the subject’s environment. If you attack the subject creature, the effect ends.
+                             If you take an action that creates a sustained and obvious change in the subject’s environment—for example, attacking a creature aside from the subject or moving a large or attended object the subject can see—the subject immediately gains a new saving throw against the power. An ally of the subject creature that is able to see or perceive you can use a move action to warn the subject and thereby grant it a new saving throw.`
+        },
+        'compression': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/compression.htm',
+          discipline:       'Psychometabolism',
+          level:            'Psychic Warrior 1',
+          display:          'Olfactory',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] rounds (D)',
+          power_points:     '1',
+          text:             `This power causes instant diminution, halving your height, length, and width and dividing your weight by 8. This decrease changes your size category to the next smaller one. You gain a +2 size bonus to Dexterity, a -2 size penalty to Strength (to a minimum effective Strength score of 1), a +1 size bonus on attack rolls, and a +1 size bonus to Armor Class due to your reduced size. If your new size is Tiny, you have a space of 2 ½ feet and a natural reach of 0 feet (meaning that you must enter an opponent’s square to attack). If your new size is Diminutive, you have a space of 1 foot and a natural reach of 0 feet. This power doesn’t change your speed.
+                             All your equipment, worn or carried, is similarly reduced by the power. Melee and projectile weapons deal less damage. Other psionic or magical properties are not affected by this power. Any affected item that leaves your possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage (projectiles deal damage based on the size of the weapon that fired them). Multiple effects that reduce size do not stack, which means (among other things) that you can’t use a second manifestation of this power to further reduce yourself.
+                             **Augment**
+                             You can augment this power in one or more of the following ways.
+                             • If you spend 6 additional power points, this power decreases your size by two size categories. You gain a +4 size bonus to Dexterity, a -4 size penalty to Strength (to a minimum effective Strength score of 1), a +2 size bonus on attack rolls, and a +2 size bonus to Armor Class due to your reduced size.
+                             • If you spend 6 additional power points, you can manifest this power as a swift action instead of a standard action.
+                             • If you spend 2 additional power points, this power’s duration is 1 minute per level rather than 1 round per level.`
+        },
+        'conceal thoughts': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/concealThoughts.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psion/Wilder 1, Psychic Warrior 1',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One willing creature',
+          duration:         '[[?{Manifester Level}]] hours',
+          saving_throw:     'Will negates (harmless)',
+          resistance:       'Yes (harmless)',
+          power_points:     '1',
+          text:             `You protect the subject’s thoughts from analysis. While the duration lasts, the subject gains a +10 circumstance bonus on Bluff checks against those attempting to discern its true intentions with Sense Motive. It also gains a +4 bonus on its saving throw against any power or spell used to read its mind (such as [read thoughts](http://www.d20srd.org/srd/psionic/powers/readThoughts.htm) or [mind probe](http://www.d20srd.org/srd/psionic/powers/mindProbe.htm)).`
+        },
+        'concealing amorpha': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/concealingAmorpha.htm',
+          discipline:       'Metacreativity (Creation)',
+          level:            'Psion/Wilder 2, Psychic Warrior 2',
+          display:          'Material; see text',
+          manifesting_time: '1 standard action',
+          range:            '0 ft.',
+          target_type:      'Effect',
+          target:           'Quasi-real amorphous film centered on you',
+          duration:         '[[?{Manifester Level}]] minutes (D)',
+          power_points:     '3',
+          text:             `Using concealing amorpha, you weave a quasi-real membrane around yourself. You remain visible within the translucent, amorphous enclosure. This distortion grants you concealment (opponents have a 20% miss chance), thanks to the rippling membrane encasing your form. You can pick up or drop objects, easily reaching through the film. Anything you hold is enveloped by the amorpha. Likewise, you can engage in melee, make ranged attacks, and manifest powers without hindrance.`
+        },
+        'concussion blast': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/concussionBlast.htm',
+          discipline:       'Psychokinesis [Force]',
+          level:            'Psion/Wilder 2',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One creature or object',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `A subject you select is pummeled with telekinetic force for [[1d6]] points of force damage. You can choose to have the power deal an equal amount of nonlethal damage instead. Concussion blast always affects a subject within range that you can see, even if the subject is in melee or has cover or concealment (you cannot use this power against creatures with total cover or total concealment).
+                             Nonmagical, unattended objects (including doors, walls, locks, and so on) may also be damaged by this power.
+                             **Augment**
+                             You can augment this power in one or both of the following ways.
+                             • For every 2 additional power points you spend, this power’s damage increases by ‹1d6|[[1d6]] points of damage› points.
+                             • For every 2 additional power points you spend, this power can affect an additional target. Any additional target cannot be more than 15 feet from another target of the power.`
+        },
+        'control air': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/controlAir.htm',
+          discipline:       'Psychokinesis',
+          level:            'Kineticist 2',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '_long_',
+          target_type:      'Area',
+          target:           '50-ft.-radius spread',
+          duration:         'Concentration, up to [[?{Manifester Level}]] minutes',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '3',
+          text:             `You have some control over wind speed and direction. The speed of the wind within the area of this power can be increased or decreased by up to 10 miles per hour.
+                             You can spend as many as 5 additional power points to augment this power, with each point allowing you to modify the wind speed by an additional 10 miles per hour, to a maximum change in wind speed of 60 miles per hour.
+                             This power also gives you the ability to alter the direction of the wind by as much as 90 degrees.
+                             Powerful enough winds can cause creatures to be blown away, knocked down, or checked.
+                             **Augment**
+                             See above.`
+        },
+        'control body': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/controlBody.htm',
+          discipline:       'Psychokinesis',
+          level:            'Kineticist 4',
+          display:          'Material',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One Medium or smaller creature with humanoid physiology',
+          duration:         'Concentration, up to [[?{Manifester Level}]] minutes',
+          saving_throw:     'Fortitude negates',
+          resistance:       'Yes',
+          power_points:     '7',
+          text:             `You psychokinetically control the actions of any humanoid (including undead or outsiders with a humanoid physiology) that is within range and to which you have line of sight. Control body doesn’t require mental contact with the subject, since you are actually forcing limb movements independent of the target’s mind. You can force the subject to stand up, sit down, walk, turn around, and so on, but operating the vocal cords is too difficult. You can also hold the subject immobile, rendering it helpless. You cannot force the subject to manifest powers, cast spells, or use any special ability that is not a function of just its body movements. If you lose line of sight to the subject, the effect of this power ends.
+                             If you force the subject to engage in combat, its attack bonus is equal to your base attack bonus + your Intelligence bonus, and its bonus on damage rolls is equal to your Intelligence bonus. A subject of this power cannot make attacks of opportunity. The subject gains no benefit to Armor Class from its Dexterity, but it does gain a bonus to its AC equal to your Intelligence bonus.
+                             Although the subject’s body is under your control, the subject’s mind is not. Creatures capable of taking purely mental actions (such as manifesting powers) can do so.
+                             **Augment**
+                             For every 2 additional power points you spend, this power can affect a target one size category larger.`
+        },
+        'control flames': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/controlFlames.htm',
+          discipline:       'Psychokinesis [Fire]',
+          level:            'Psion/Wilder 1',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Area',
+          target:           'One nonmagical fire source; see text',
+          duration:         'Concentration, up to [[?{Manifester Level}]] minutes',
+          saving_throw:     'See text',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `You pyrokinetically control the intensity or movements of one fire source. A nonmagical fire source can be controlled if it is equal to or smaller than the maximum size of fire you can control according to your manifester level, as noted on the accompanying table. You can freely switch control between fire sources, or change the nature of your control, while you maintain concentration, but only one specified change (keeping a fire burning, animating it, or altering its size) can be made to one fire source in a round. When your control over a fire source lapses, that fire immediately returns to its original state (or goes out if it has no fuel or has been moved away from its original location). With this power, you can artificially keep a fire burning that would normally expire for lack of fuel; even dousing a controlled flame with water does not put it out (though completely submerging the flame would). Normally, a creature at risk of catching on fire can avoid this fate by making a DC 15 Reflex saving throw, with success indicating that the fire has gone out. If the fire is one that has been kept burning by the use of control flames, then the DC of the Reflex save needed to put out the flames increases to 25.
+                             This power also enables you to make a fire move as if it were a living creature. You can animate only a naturally burning fire; if you attempt to animate one that has been increased or decreased in size by your augmentation of this power, the fire immediately returns to its original size. An animated fire moves at a speed of 30 feet. A fire that moves away from its fuel or its original location dies as soon as your control over it lapses.
+                             An animated fire can enter any square, even if a creature already occupies it. If an animated fire enters a square occupied by a creature, that creature can make a Reflex save to get out of the way (DC 11 + the number of dice of damage the fire does + your Int modifier if you are a psion or your Cha modifier if you are a wilder). A successful Reflex save moves the creature to the nearest unoccupied square. The flames deal the indicated damage to any creature that is either on fire or surrounded by the flames (in the fire’s space); see the accompanying table).
+                             At the start of your turn, the animated fire deals damage to any creature in its space, and the creature catches on fire unless it makes a Reflex save (DC as noted above). A victim on fire takes 1d6 points of damage each round. Additional rounds in the same space as the animated fire occupies mean additional chances of ignition. The damage from multiple normal fires stacks, but the victim gets a saving throw each round to negate each fire. It is possible to switch control from the animated fire (causing it to disappear) to intensify flames that are already burning (thus denying the foe Reflex saves after the first).
+                             **Control Flames**
+                             ◦ **Manifester Level**, Fire Size, *Example*, Maximum Damage per Round, *Space*
+                             • **1st-2nd**, Fine, *Tindertwig*, 1, *1 foot square*
+                             • **3rd-4th**, Diminutive, *Torch*, 1d3, *1 foot square*
+                             • **5th-6th**, Tiny, *Small campfire*, 1d6, *1 foot square*
+                             • **7th-8th**, Small, *Large campfire*, 2d6, *1 foot square*
+                             • **9th-10th**, Medium, *Forge*, 3d6, *1 foot square*
+                             • **11th-12th**, Large, *Bonfire*, 4d6, *2-by-2-foot square*
+                             • **13th-14th**, Huge, *Burning shack*, 5d6, *3-by-3-foot square*
+                             • **15th-16th**, Gargantuan, *Burning tavern*, 6d6, *4-by-4-foot square*
+                             • **17th or higher**, Colossal, *Burning inn*, 7d6, *5-by-5-foot square*
+                             **Augment**
+                             You can augment this power in one or both of the following ways.
+                             • For every 2 additional power points you spend, you can increase the size of a fire you want to control by one step, up to the maximum size of fire you can control according to your manifester level.
+                             • For every 2 additional power points you spend, you can decrease the size of a fire you want to control by one step. You can reduce a Tiny or smaller fire to nothing, extinguishing it.`
+        },
+        'control light': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/controlLight.htm',
+          discipline:       'Psychokinesis [Light]',
+          level:            'Psion/Wilder 1',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Area',
+          target:           '[[9+(3*?{Manifester Level})]] × 10-ft. cubes',
+          duration:         'Concentration, up to [[?{Manifester Level}]] minutes, or 1 round; see text',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `By manipulating the ambient light level, you can decrease or increase the illumination of an area. The change in illumination can be gradual (taking as long as 1 minute) or sudden (occurring immediately when you manifest this power). You can alter the level of illumination from its original level at any time during the power’s duration.
+                             **Decrease**
+                             You can decrease the illumination of an area by as little as 5% (barely perceptible) or as much as 100% (total darkness). If you decrease the light by 50% or more, the visual ability of creatures that depend on light to see declines accordingly.If you decrease the ambient light in an area by 100%, even those with low-light vision are unable to see within the affected area. For each 25% decrease in ambient light, characters in the area gain a cumulative +1 circumstance bonus on Hide checks (to a maximum of +4 when all the light is gone).
+                             **Increase**
+                             You can increase the illumination of an area by as little as 5% (barely perceptible) or as much as 100%. If you increase the light by 50% or more, the visual ability of creatures that depend on light to see improves accordingly.
+                             You can use this power to increase the illumination of an area by 200% (improving visual abilities accordingly), but in such a case the power’s duration is only 1 round.`
+        },
+        'control object': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/controlObject.htm',
+          discipline:       'Psychokinesis',
+          level:            'Kineticist 1',
+          display:          'Material',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One unattended object weighing up to 100 lb.',
+          duration:         'Concentration, up to [[?{Manifester Level}]] rounds',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `You telekinetically “bring to life” an inanimate object. Though it is not actually alive, the object moves under your control. Live vegetation cannot be controlled in this fashion, nor can already animated objects or undead. The controlled object moves like a puppet, with jerky and clumsy movements, at a speed of up to 20 feet. If its form is rigid, it makes creaking, groaning, or grating sounds as you control it.
+                             A controlled object can attack an opponent if you direct it to do so. It has one slam attack, at a base attack bonus equal to your base attack bonus plus your Intelligence modifier. If the attack hits, it deals points of damage equal to 1d6 plus your Intelligence modifier. A controlled object has its usual hardness and hit points.
+                             You can use this power on a nonmagical lock, making it move in such a way as to attempt to unlock itself. If another character makes an Open Lock check involving a lock that you are concentrating on controlling, the character gains a +4 bonus on the check.`
+        },
+        'control sound': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/controlSound.htm',
+          discipline:       'Psychokinesis [Sonic]',
+          level:            'Psion/Wilder 2',
+          display:          'Auditory; see text',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One sound or mixture of related sounds',
+          duration:         'Concentration, up to [[?{Manifester Level}]] minutes; see text',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '3',
+          text:             `You shape and alter existing sounds. You can target one sound, such as a person speaking or singing, or a group of related sounds, such as the patter of many raindrops or the tramp of soldiers passing by. A sound as quiet as a snapping finger can be controlled. You can substitute any sound you have heard for the target sound. If you attempt to exactly duplicate the voice of a specific individual, or an inherently terrifying sound (such as a dragon’s roar), you must succeed on a Bluff check with a +5 circumstance bonus opposed by the intended listener’s Sense Motive check to avoid arousing suspicion.
+                             You can entirely muffle a noise or magnify a sound to such loudness that it drowns out all other conversation in the immediate area. In this way, you can provide yourself or any with a +4 circumstance bonus on Move Silently and Listen checks.
+                             Alternatively, you can use up the power in an instant. You do this by modulating a sound into a one-time destructive impetus that shatters nonmagical/nonpsionic, unattended objects of crystal, glass, ceramics, or porcelain (vials, bottles, flasks, jugs, mirrors, and so forth) in the area.`
+        },
+        'co-opt concentration': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/coOptConcentration.htm',
+          discipline:       'Telepathy (Compulsion) [Mind-Affecting]',
+          level:            'Psion/Wilder 6',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Concentration, up to [[?{Manifester Level}]] rounds',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '11',
+          text:             `You take over control of a power that was manifested by the subject and that must be maintained through concentration. Once you wrest control of the power from the subject, you have several options.
+                             • Allow the power to function as normal.
+                             • Keep the power targeted on the subject (if a personal power) but decide how the power fulfills its function each round.
+                             • Retarget the power on yourself (if a personal power).
+                             • Choose not to concentrate on the co-opted power in the next round, ending the power at that point.
+                             When the duration of co-opt concentration expires, the power you took control of ends (even if this would mean that the power ends earlier than normal).`
+        },
+        'correspond': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/correspond.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psion/Wilder 4',
+          display:          'Mental',
+          manifesting_time: '10 minutes',
+          range:            'See text',
+          target_type:      'Target',
+          target:           'One creature with an Intelligence score of 3 or higher',
+          duration:         '[[?{Manifester Level}]] rounds',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '7',
+          text:             `You forge a passive mental link with a creature with which you have previously had physical or mental contact. The subject need not be within sight or even on the same plane as you are. The subject recognizes you, and you can mentally communicate with it for the duration (though nothing forces the subject to respond to you), exchanging messages of twenty-five words or less once per round. Receiving a message is not an action and does not provoke attacks of opportunity; however, sending a message is equivalent to a standard action that can provoke attacks of opportunity.`
+        },
+        'create sound': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/createSound.htm',
+          discipline:       'Metacreativity (Creation) [Sonic]',
+          level:            'Psion/Wilder 1',
+          display:          'Auditory; see text',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'Sounds; see text',
+          duration:         '[[?{Manifester Level}]] rounds (D)',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `You create a volume of sound that rises, recedes, approaches, or remains at a fixed place. You choose what type of sound the power creates when manifesting it and cannot thereafter change its basic character. The volume of sound created, however, depends on your level. You can produce as much noise as four normal humans per manifester level (maximum twenty humans). Thus, talking, singing, shouting, walking, marching, or running sounds can be created. The noise produced can be virtually any type of sound within the volume limit. A horde of rats running and squeaking is about the same volume as eight humans running and shouting. A roaring lion is equal to the noise from sixteen humans, while a roaring dire lion is equal to the noise from twenty humans.
+                             If you wish to create a specific message, up to twenty-five words can be created, and those words repeat over and over until the duration expires or the power is dismissed. If you attempt to exactly duplicate the voice of a specific individual or an inherently terrifying sound (such as a dragon’s roar), you must succeed on a Bluff check with a +2 circumstance bonus opposed by the listener’s Sense Motive check to avoid arousing suspicion.
+                             Create sound can be used to bring sounds into existence that you later manipulate by manifesting control sound.`
+        },
+        'crisis of breath': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/crisisofBreath.htm',
+          discipline:       'Telepathy (Compulsion) [Mind-Affecting]',
+          level:            'Telepath 3',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One breathing humanoid',
+          duration:         '[[?{Manifester Level}]] rounds',
+          saving_throw:     'Will negates, Fortitude partial; see text',
+          resistance:       'Yes',
+          power_points:     '5',
+          text:             `You compel the subject to purge its entire store of air in one explosive exhalation, and thereby disrupt the subject’s autonomic breathing cycle. The subject’s lungs do not automatically function again while the power’s duration lasts.
+                             If the target succeeds on a Will save when crisis of breath is manifested, it is unaffected by this power. If it fails its Will save, it can still continue to breathe by taking a standard action in each round to gasp for breath.
+                             An affected creature can attempt to take actions normally (instead of consciously controlling its breathing), but each round it does so, beginning in the round when it failed its Will save, the subject risks blacking out from lack of oxygen. It must succeed on a Fortitude save at the end of any of its turns in which it did not consciously take a breath. The DC of this save increases by 1 in every consecutive round after the first one that goes by without a breath; the DC drops back to its original value if the subject spends an action to take a breath.
+                             If a subject fails a Fortitude save, it is disabled (0 hp). In the following round, it drops to -1 hit points and is dying. Curing powers or spells can revive a dying subject normally, so long as this power’s duration has expired; if the power is still in effect, a revived creature is still subject to Fortitude saves in each round when it does not consciously breathe.
+                             **Augment**
+                             You can augment this power in one or more of the following ways.
+                             • If you spend 2 additional power points, this power can also affect an animal, fey, giant, magical beast, or monstrous humanoid.
+                             • If you spend 4 additional power points, this power can also affect an aberration, dragon, or outsider in addition to the creature types mentioned above.
+                             • If you spend 6 additional power points, this power can affect up to four creatures all within a 20-ft.-radius burst.
+                             In addition, for every 2 additional power points you spend to achieve any of these effects, this power’s save DC increases by 1.`
+        },
+        'crisis of life': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/crisisofLife.htm',
+          discipline:       'Telepathy [Mind-Affecting, Death]',
+          level:            'Telepath 7',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude partial; see text',
+          resistance:       'Yes',
+          power_points:     '13',
+          text:             `You interrupt the subject’s autonomic heart rhythm, killing it instantly on a failed saving throw if it has 11 Hit Dice or less. If the target makes its saving throw or has more than 11 Hit Dice, it takes [[7d6]] points of damage.
+                             **Augment**
+                             For every additional power point you spend, this power can kill a subject that has Hit Dice equal to 11 + the number of additional points.`
+        },
+        'crystal shard': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/crystalShard.htm',
+          discipline:       'Metacreativity (Creation)',
+          level:            'Psion/Wilder 1',
+          display:          'Auditory and material',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'Ray',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `Upon manifesting this power, you propel a razor-sharp crystal shard at your target. You must succeed on a ranged touch attack with the ray to deal damage to a target. The ray deals [[1d6]] points of piercing damage.
+                             **Augment**
+                             For every additional power point you spend, this power’s damage increases by 1d6 points.`
+        },
+        'crystallize': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/crystallize.htm',
+          discipline:       'Metacreativity',
+          level:            'Shaper 6',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One living creature',
+          duration:         'Permanent',
+          saving_throw:     'Fortitude negates',
+          resistance:       'Yes',
+          power_points:     '11',
+          text:             `You seed the subject’s flesh with supersaturated crystal. In an eyeblink, the subject’s form seems to freeze over, as its flesh and fluids are instantly crystallized. Following the application of this power, the subject appears lifeless. In fact, it is not dead (though no life can be detected with powers or spells that detect such).
+                             This power has a chance of being dispelled only by a manifester of a higher level than you when you manifested this power. When the power is dispelled, crystal melts back into flesh, and the subject is in exactly the state he was prior being affected by crystallize.`
+        },
+
 
         //'': {
         //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
@@ -14647,8 +15392,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                   spellmacro = spellmacro.concat(' {{Manifester level check:=[[1d20+?{Manifester Level}[Manifesting Level]]] vs power resist.}}');
                                 };
                               };
-                              if (spell_spec.text.toLowerCase().match(/\*\*augment\*\*/)) {
-                                spellmacro = spellmacro.concat(' {{Power Points:=[[',spell_spec.power_points,'+?{Power Augmentation|0}]]}}');
+                              if (spell_spec.text.match(/^ *\*\*augment\*\*$/im)) {
+                                spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,' + [[?{Power Augmentation|0}]][Augment]}}');
+                                spell_spec.text = spell_spec.text.replace(/^( *)\*\*augment\*\*$/im, "$1**Augment: *[[?{Power Augmentation}]] points***");
                               } else {
                                 spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,'}}');
                               }
@@ -15102,6 +15848,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                 } else {
                                   if (isNaN(aid_total)) { aid_total = roll_skill_map[char_name_unique].check; } else { aid_total += roll_skill_map[char_name_unique].check; };
                                   chat_msg += "{{" + char_name_unique + "= " + roll_skill_map[char_name_unique].check + "}} ";
+                                  //EXPERIMENT chat_msg += "{{" + char_name_unique + "= [[" + roll_skill_map[char_name_unique].check + " : 1 d 20 + " + roll_skill_map[char_name_unique].bonus + " ]]}} ";
                                 };
                               } else {
                                 chat_msg += "{{" + char_name_unique + "= *Untrained* }} ";
