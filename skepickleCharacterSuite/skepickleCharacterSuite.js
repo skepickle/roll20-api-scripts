@@ -12384,7 +12384,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/adaptBody.htm',
           discipline:       'Psychometabolism',
-          level:            'Psion/Wilder 5, Psychic Warrior 5',
+          level:            'Elements 5, Lurk 5, Psion/Wilder 5, Psychic Rogue 5, Psychic Warrior 5, Worldthought Medic 5',
           display:          'Visual',
           manifesting_time: '1 standard action',
           range:            'Personal',
@@ -12399,7 +12399,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/affinityField.htm',
           discipline:       'Psychometabolism',
-          level:            'Psion/Wilder 9',
+          level:            'Psion/Wilder 9, Worldthought Medic 9',
           display:          'Material and visual',
           manifesting_time: '1 standard action',
           range:            '20 ft.',
@@ -12434,7 +12434,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/animalAffinity.htm',
           discipline:       'Psychometabolism',
-          level:            'Egoist 2, Psychic Warrior 2',
+          level:            'Egoist 2, Lurk 2, Natural World 2, Physical Power 2, Psychic Rogue 2, Psychic Warrior 2, Worldthought Medic 2',
           display:          'Material',
           manifesting_time: '1 standard action',
           range:            'Personal',
@@ -12450,7 +12450,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/apopsi.htm',
           discipline:       'Telepathy [Mind-Affecting]',
-          level:            'Psion/Wilder 9',
+          level:            'Consumption 9, Psion/Wilder 9',
           display:          'Auditory, material, and visual',
           manifesting_time: '1 round',
           range:            '_close_',
@@ -12467,7 +12467,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/assimilate.htm',
           discipline:       'Psychometabolism',
-          level:            'Psion/Wilder 9',
+          level:            'Psion/Wilder 9, Worldthought Medic 9',
           display:          'Auditory and visual',
           manifesting_time: '1 standard action',
           range:            'Touch',
@@ -12485,7 +12485,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/astralCaravan.htm',
           discipline:       'Psychoportation',
-          level:            'Nomad 3',
+          level:            'Nomad 3, The Planes 3',
           display:          'None',
           manifesting_time: '1 hour',
           range:            'Personal',
@@ -12559,7 +12559,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/astralTraveler.htm',
           discipline:       'Psychoportation',
-          level:            'Psion/Wilder 1, Psychic Warrior 1',
+          level:            'Psion/Wilder 1, Psychic Rogue 1, Psychic Warrior 1, The Planes 1',
           display:          'None',
           manifesting_time: '1 hour',
           range:            'Touch',
@@ -12577,7 +12577,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/attraction.htm',
           discipline:       'Telepathy (Charm) [Mind-Affecting]',
-          level:            'Psion/Wilder 1',
+          level:            'Communication 1, Psion/Wilder 1, Psychic Rogue 1',
           display:          'Auditory',
           manifesting_time: '1 standard action',
           range:            '_close_',
@@ -12595,7 +12595,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/auraAlteration.htm',
           discipline:       'Telepathy [Mind-Affecting]',
-          level:            'Psion/Wilder 6',
+          level:            'Lurk 6, Psion/Wilder 6, Worldthought Medic 6',
           display:          'Material',
           manifesting_time: '1 standard action',
           range:            '_medium_',
@@ -12617,7 +12617,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/auraSight.htm',
           discipline:       'Clairsentience',
-          level:            'Psion/Wilder 4',
+          level:            'Justice 4, Lurk 4, Psion/Wilder 4',
           display:          'Visual',
           manifesting_time: '1 standard action',
           range:            '60 ft.',
@@ -12641,7 +12641,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/aversion.htm',
           discipline:       'Telepathy (Compulsion) [Mind-Affecting]',
-          level:            'Telepath 2',
+          level:            'Psychic Rogue 2, Telepath 2',
           display:          'Auditory and material',
           manifesting_time: '1 standard action',
           range:            '_close_',
@@ -12679,7 +12679,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/bendReality.htm',
           discipline:       'Clairsentience',
-          level:            'Psion/Wilder 8',
+          level:            'Deception 8, Psion/Wilder 8, Worldthought Medic 8',
           display:          'Visual',
           manifesting_time: '1 standard action',
           range:            'See text',
@@ -12723,7 +12723,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/biofeedback.htm',
           discipline:       'Psychometabolism',
-          level:            'Psion/Wilder 2, Psychic Warrior 1',
+          level:            'Lurk 2, Psion/Wilder 3, Psychic Warrior 1, Worldthought Medic 1',
           display:          'Material and visual',
           manifesting_time: '1 standard action',
           range:            'Personal',
@@ -12756,7 +12756,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/bodyAdjustment.htm',
           discipline:       'Psychometabolism (Healing)',
-          level:            'Psion/Wilder 3, Psychic Warrior 2',
+          level:            'Psion/Wilder 3, Psychic Rogue 3, Psychic Warrior 2, Worldthought Medic 2',
           display:          'Auditory and Material',
           manifesting_time: '1 round',
           range:            'Personal',
@@ -12772,7 +12772,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/bodyEquilibrium.htm',
           discipline:       'Psychometabolism',
-          level:            'Psion/Wilder 2, Psychic Warrior 2',
+          level:            'Lurk 2, Psion/Wilder 2, Psychic Rogue 2, Psychic Warrior 2, Worldthought Medic 2',
           display:          'Material and visual',
           manifesting_time: '1 standard action',
           range:            'Personal',
@@ -12787,7 +12787,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/bodyPurification.htm',
           discipline:       'Psychometabolism (Healing)',
-          level:            'Psion/Wilder 3, Psychic Warrior 2',
+          level:            'Life 3, Psion/Wilder 3, Psychic Rogue 3, Psychic Warrior 2, Worldthought Medic 3',
           display:          'Auditory and material',
           manifesting_time: '1 round',
           range:            'Personal',
@@ -12803,7 +12803,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/bolt.htm',
           discipline:       'Metacreativity (Creation)',
-          level:            'Psion/wilder 1',
+          level:            'Psion/Wilder 1, Psychic Rogue 1',
           display:          'Material',
           manifesting_time: '1 standard action',
           range:            '0 ft.',
@@ -12821,7 +12821,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/brainLock.htm',
           discipline:       'Telepathy (Compulsion) [Mind-Affecting]',
-          level:            'Telepath 2',
+          level:            'Corruption and Madness 2, Telepath 2',
           display:          'Material and visual',
           manifesting_time: '1 standard action',
           range:            '_medium_',
@@ -12859,7 +12859,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/burst.htm',
           discipline:       'Psychoportation',
-          level:            'Nomad 1, Psychic Warrior 1',
+          level:            'Lurk 1, Nomad 1, Psychic Rogue 1, Psychic Warrior 1',
           display:          'Auditory',
           manifesting_time: '1 swift action',
           range:            'Personal',
@@ -12875,7 +12875,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/calltoMind.htm',
           discipline:       'Telepathy [Mind-Affecting]',
-          level:            'Psion/Wilder 1',
+          level:            'Knowledge 1, Psion/Wilder 1',
           display:          'Mental',
           manifesting_time: '1 minute',
           range:            'Personal',
@@ -12890,7 +12890,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/callWeaponry.htm',
           discipline:       'Psychoportation (Teleportation)',
-          level:            'Psychic Warrior 1',
+          level:            'Justice 1, Psychic Warrior 1',
           display:          'Material',
           manifesting_time: '1 round',
           range:            '0 ft.',
@@ -12909,7 +12909,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/catapsi.htm',
           discipline:       'Telepathy [Mind-Affecting]',
-          level:            'Psion/Wilder 5, Psychic Warrior 5',
+          level:            'Chaos 5, Lurk 5, Psion/Wilder 5, Psychic Warrior 5',
           display:          'Mental and visual',
           manifesting_time: '1 standard action',
           range:            '30 ft.',
@@ -12928,7 +12928,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/catfall.htm',
           discipline:       'Psychoportation',
-          level:            'Psion/Wilder 1, Psychic Warrior 1',
+          level:            'Lurk 1, Psion/Wilder 1, Psychic Rogue 1, Psychic Warrior 1',
           display:          'Auditory',
           manifesting_time: '1 immediate action',
           range:            'Personal',
@@ -12944,7 +12944,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/chameleon.htm',
           discipline:       'Psychometabolism',
-          level:            'Egoist 2, Psychic Warrior 1',
+          level:            'Egoist 2, Lurk 1, Natural World 1, Psychic Rogue 2, Psychic Warrior 1',
           display:          'Olfactory',
           manifesting_time: '1 standard action',
           range:            'Personal',
@@ -12976,7 +12976,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/clairvoyantSense.htm',
           discipline:       'Clairsentience (Scrying)',
-          level:            'Seer 2',
+          level:            'Fate 2, Seer 2',
           display:          'Auditory and visual',
           manifesting_time: '1 standard action',
           range:            'See text',
@@ -13053,7 +13053,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/cloudMind.htm',
           discipline:       'Telepathy [Mind-Affecting]',
-          level:            'Psion/Wilder 2',
+          level:            'Deception 2, Lurk 2, Psion/Wilder 2, Psychic Rogue 2',
           display:          'None',
           manifesting_time: '1 standard action',
           range:            '_close_',
@@ -13072,7 +13072,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/compression.htm',
           discipline:       'Psychometabolism',
-          level:            'Psychic Warrior 1',
+          level:            'Lurk 1, Psychic Rogue 1, Psychic Warrior 1',
           display:          'Olfactory',
           manifesting_time: '1 standard action',
           range:            'Personal',
@@ -13092,7 +13092,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/concealThoughts.htm',
           discipline:       'Telepathy [Mind-Affecting]',
-          level:            'Psion/Wilder 1, Psychic Warrior 1',
+          level:            'Lurk 1, Psion/Wilder 1, Psychic Rogue 1, Psychic Warrior 1',
           display:          'Mental',
           manifesting_time: '1 standard action',
           range:            '_close_',
@@ -13108,7 +13108,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/concealingAmorpha.htm',
           discipline:       'Metacreativity (Creation)',
-          level:            'Psion/Wilder 2, Psychic Warrior 2',
+          level:            'Deception 2, Lurk 2, Psion/Wilder 2, Psychic Rogue 2, Psychic Warrior 2',
           display:          'Material; see text',
           manifesting_time: '1 standard action',
           range:            '0 ft.',
@@ -13122,7 +13122,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/concussionBlast.htm',
           discipline:       'Psychokinesis [Force]',
-          level:            'Psion/Wilder 2',
+          level:            'Force 2, Psion/Wilder 2',
           display:          'Auditory',
           manifesting_time: '1 standard action',
           range:            '_medium_',
@@ -13143,7 +13143,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/controlAir.htm',
           discipline:       'Psychokinesis',
-          level:            'Kineticist 2',
+          level:            'Elements 2, Kineticist 2, Psychic Rogue 3',
           display:          'Mental',
           manifesting_time: '1 standard action',
           range:            '_long_',
@@ -13184,7 +13184,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/controlFlames.htm',
           discipline:       'Psychokinesis [Fire]',
-          level:            'Psion/Wilder 1',
+          level:            'Elements 1, Psion/Wilder 1',
           display:          'Auditory',
           manifesting_time: '1 standard action',
           range:            '_medium_',
@@ -13218,7 +13218,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/controlLight.htm',
           discipline:       'Psychokinesis [Light]',
-          level:            'Psion/Wilder 1',
+          level:            'Lightness and Darkness 1, Psion/Wilder 1, Psychic Rogue 1',
           display:          'Visual',
           manifesting_time: '1 standard action',
           range:            '_medium_',
@@ -13239,7 +13239,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/controlObject.htm',
           discipline:       'Psychokinesis',
-          level:            'Kineticist 1',
+          level:            'Kineticist 1, Psychic Rogue 2',
           display:          'Material',
           manifesting_time: '1 standard action',
           range:            '_medium_',
@@ -13257,7 +13257,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/controlSound.htm',
           discipline:       'Psychokinesis [Sonic]',
-          level:            'Psion/Wilder 2',
+          level:            'Psion/Wilder 2, Psychic Rogue 2',
           display:          'Auditory; see text',
           manifesting_time: '1 standard action',
           range:            '_medium_',
@@ -13296,7 +13296,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/correspond.htm',
           discipline:       'Telepathy [Mind-Affecting]',
-          level:            'Psion/Wilder 4',
+          level:            'Communication 4, Psion/Wilder 4, Psychic Rogue 4',
           display:          'Mental',
           manifesting_time: '10 minutes',
           range:            'See text',
@@ -13355,7 +13355,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/crisisofLife.htm',
           discipline:       'Telepathy [Mind-Affecting, Death]',
-          level:            'Telepath 7',
+          level:            'Death 7, Telepath 7, Worldthought Medic 7',
           display:          'Mental',
           manifesting_time: '1 standard action',
           range:            '_medium_',
@@ -13404,7 +13404,486 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `You seed the subject’s flesh with supersaturated crystal. In an eyeblink, the subject’s form seems to freeze over, as its flesh and fluids are instantly crystallized. Following the application of this power, the subject appears lifeless. In fact, it is not dead (though no life can be detected with powers or spells that detect such).
                              This power has a chance of being dispelled only by a manifester of a higher level than you when you manifested this power. When the power is dispelled, crystal melts back into flesh, and the subject is in exactly the state he was prior being affected by crystallize.`
         },
-
+        // Powers that start with D
+        'danger sense': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/dangerSense.htm',
+          discipline:       'Clairsentience',
+          level:            'Lurk 3, Psion/Wilder 3, Psychic Warrior 3, Worldthought Medic 3',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] hours (D)',
+          power_points:     '5',
+          text:             `You can sense the presence of danger before your senses would normally allow it. Your intuitive sense alerts you to danger from traps, giving you a +4 insight bonus on Ref lex saves to avoid traps and a +4 insight bonus to Armor Class against attacks by traps.
+                             **Augment**
+                             If you spend 3 additional power points, this power also gives you the uncanny dodge ability; if you spend 6 additional power points, this power gives you the improved uncanny dodge ability as well.`
+        },
+        'death urge': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/deathUrge.htm',
+          discipline:       'Telepathy (Compulsion) [Mind-Affecting]',
+          level:            'Death 4, Lurk 4, Psion/Wilder 4',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One living creature',
+          duration:         '1 round',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '7',
+          text:             `You plant a hidden death-urge impulse in the subject’s unconscious. On the subject’s next turn, it looks for the quickest method to end its life and attempts to do so. The subject takes no other action on its turn except attempting to harm itself.
+                             If armed, the subject attacks itself as a full-round action. The attack automatically succeeds and deals damage as a critical hit. If unarmed, the subject moves adjacent to the nearest enemy and provokes an attack of opportunity, offering its opponent an opening, which the opponent may or may not choose to take advantage of.
+                             If the subject is unarmed and no enemy is nearby, the subject simply does nothing at all. A subject close to an immediate and lethal hazard such as a cliff or a fire might hurl itself off the cliff or into the fire instead of striking itself with a weapon.
+                             **Augment**
+                             For every 4 additional power points you spend, this power’s save DC increases by 2 and its duration increases by 1 round.`
+        },
+        'deceleration': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/deceleration.htm',
+          discipline:       'Psychoportation',
+          level:            'Psion/Wilder 1, Time 1',
+          display:          'Auditory and material',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One Medium or smaller creature',
+          duration:         '[[?{Manifester Level}]] minutes',
+          saving_throw:     'Reflex negates',
+          resistance:       'Yes',
+          power_points:     '1',
+          text:             `You warp space around an individual, hindering the subject’s ability to move. The subject’s speed (in any movement mode it possesses) is halved. A subsequent manifestation of deceleration on the subject does not further decrease its speed.
+                             **Augment**
+                             For every 2 additional power points you spend, this power can affect a target one size category larger.`
+        },
+        'decerebrate': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/decerebrate.htm',
+          discipline:       'Psychoportation [Teleportation]',
+          level:            'Consumption 7, Corruption and Madness 7, Psion/Wilder 7',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One living creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude negates',
+          resistance:       'Yes',
+          power_points:     '13',
+          text:             `With decerebrate, you selectively remove a portion of the subject’s brain stem. The creature loses all cerebral function, vision, hearing, and other sensory abilities, and all voluntary motor activity. The subject becomes limp and unresponsive. Without extreme measures, such as [greater restoration](http://www.d20srd.org/srd/spells/restorationGreater.htm) or some other suitable effect of 7th level or higher, the creature perishes in [[1d4]] days.`
+        },
+        'defensive precognition': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/precognitionDefensive.htm',
+          discipline:       'Clairsentience',
+          level:            'Fate 1, Lurk 1, Psion/Wilder 1, Psychic Rogue 1, Psychic Warrior 1',
+          display:          'Material and visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] minutes (D)',
+          power_points:     '1',
+          text:             `Your awareness extends a fraction of a second into the future, allowing you to better evade an opponent’s blows.
+                             You gain a +1 insight bonus to AC and on all saving throws. If caught in a situation where your Dexterity bonus isn’t applied to your Armor Class, this bonus to AC and saving throws does not apply.
+                             **Augment**
+                             You can augment this power in one or both of the following ways.
+                             • For every 3 additional power points you spend, the insight bonus gained increases by 1.
+                             • If you spend 6 additional power points, you can manifest this power as a swift action`
+        },
+        'deja vu': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/dejaVu.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psion/Wilder 1, Psychic Rogue 1',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         '1 round',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '1',
+          text:             `Your mental impulse forces the subject to repeat the actions it took on its previous turn. If the situation has changed in such a way that the subject can’t take the same actions again (if its foe is dead, or the subject has run out of power points, and so on), the subject stands still and takes no actions for 1 round. In any event, the subject can still defend itself, and it retains its Dexterity bonus to AC even if it stands still.
+                             **Augment**
+                             For every 2 additional power points you spend, this power’s save DC increases by 1.`
+        },
+        'demoralize': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/demoralize.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psion/Wilder 1',
+          display:          'Mental and olfactory',
+          manifesting_time: '1 standard action',
+          range:            '30 ft.',
+          target_type:      'Area',
+          target:           '30-ft.-radius spread centered on you',
+          duration:         '[[?{Manifester Level}]] minutes',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '1',
+          text:             `You fill your enemies with self-doubt. Any enemy in the area that fails its save becomes shaken for the duration of the power. Allies and creatures without an Intelligence score are unaffected.
+                             **Augment**
+                             For every 2 additional power points you spend, this power’s range and the radius of its area both increase by 5 feet, and the power’s save DC increases by 1.`
+        },
+        'destiny dissonance': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/destinyDissonance.htm',
+          discipline:       'Clairsentience',
+          level:            'Chaos 1, Seer 1',
+          display:          'Material and mental',
+          manifesting_time: '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Manifester Level}]] rounds',
+          saving_throw:     'None',
+          resistance:       'Yes',
+          power_points:     '1',
+          text:             `Your mere touch grants your foe an imperfect, unfocused glimpse of the many possible futures in store. Unaccustomed to and unable to process the information, the subject becomes sickened for [[?{Manifester Level}]] rounds.`
+        },
+        'detect hostile intent': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/detectHostileIntent.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Knowledge 2, Lurk 2, Psion/Wilder 2, Psion/Wilder 2, Psychic Rogue 2',
+          display:          'Olfactory',
+          manifesting_time: '1 standard action',
+          range:            '30 ft.',
+          target_type:      'Area',
+          target:           '30-ft.-radius emanation centered on you',
+          duration:         '[[10*?{Manifester Level}]] minutes (D)',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '3',
+          text:             `While the duration of this power lasts, you become aware of the presence of any creatures with hostile intent within 30 feet of you, and their direction from you (but not their specific location). The power detects active aggression, as opposed to vigilance. In addition, while this power is active you cannot be surprised or caught flat-footed by creatures that are susceptible to mind-affecting powers.
+                             While under the effect of this power, you can make Sense Motive checks as a free action against anyone within 30 feet of you.
+                             The power can penetrate barriers, but 3 feet of stone, 3 inches of common metal, 1 inch of lead, or 6 feet of wood or dirt blocks it.`
+        },
+        'detect psionics': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/detectPsionics.htm',
+          discipline:       'Clairsentience',
+          level:            'Knowledge 1, Lurk 1, Psion/Wilder 1, Psychic Rogue 1, Psychic Warrior 1, Worldthought Medic 1',
+          display:          'Auditory and visual',
+          manifesting_time: '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation centered on you',
+          duration:         'Concentration, up to [[?{Manifester Level}]] minutes (D)',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `You detect psionic auras. A psionic aura is given off by any active or permanent power, or during the use of any psionic feat. Characters who have levels in a psionic class, creatures with the psionic subtype, and creatures with the Wild Talent feat possess psionic auras. The amount of information revealed by the manifestation of this power depends on how long you study a particular area or subject.
+                             **1st Round**
+                             Presence or absence of psionic auras.
+                             **2nd Round**
+                             Number of different psionic auras and the strength of the most potent aura.
+                             **3rd Round**
+                             The strength and location of each aura. If the items or creatures bearing the auras are in line of sight, you can make Psicraft checks to determine the discipline involved in each aura. (Make one check per aura; DC 15 + power level, or 15 + one-half manifester level for an effect that is not created by a power, such as that of a psionic item.)
+                             **Aura Strength**
+                             A psionic aura’s strength depends on a functioning power’s level or an item’s manifester level. If an aura falls into more than one category, detect psionics indicates the stronger of the two. Detection of an overwhelming aura (see the accompanying table) dazes you for 1 round and the power ends.
+                             **Psionic Aura Strength**
+                             ◦ **Power or Item**, Aura Strength: Faint / Moderate / Strong / Overwhelming
+                             • **Functioning power (power level)**, 3rd or lower / 4th-6th / 7th-9th / 10th+ (deity-level)
+                             • **Psionic item (manifester level)**, 5th or lower / 6th-11th / 12th-20th / 21st+ (artifact)
+                             **Lingering Aura**
+                             A psionic aura lingers after its original source dissipates (in the case of a power) or is destroyed (in the case of a psionic item). If detect psionics is manifested and directed at such a location, the power indicates an aura of dim (even weaker than a faint aura). How long the aura lingers at this dim level depends on its original strength:
+                             **Lingering Aura Duration**
+                             ◦ **Original Strength**, Duration
+                             • **Faint**, ‹1d6|[[1d6]] minutes› minutes
+                             • **Moderate**, ‹1d6×10|[[10*1d6]] minutes› minutes
+                             • **Strong**, ‹1d6|[[1d6]] hours› hours
+                             • **Overwhelming**, ‹1d6|[[1d6]] days› days
+                             Psionically charged locations, multiple disciplines, or strong local psionic emanations may confuse or conceal weaker auras.
+                             Each round, you can turn to detect psionics in a new area. You can tell the difference between magical and psionic auras. The power can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`
+        },
+        'detect remote viewing': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/detectRemoteViewing.htm',
+          discipline:       'Clairsentience',
+          level:            'Knowledge 4, Lurk 4, Psion/Wilder 4',
+          display:          'Mental and visual',
+          manifesting_time: '1 standard action',
+          range:            '40 ft.',
+          target_type:      'Area',
+          target:           '40-ft.-radius emanation centered on you',
+          duration:         '24 hours',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '7',
+          text:             `You immediately become aware of any attempt to observe you by means of a clairsentience (scrying) power or divination (scrying) spell. The power’s effect radiates from you and moves as you move. You know the location of every psionic or magical sensor within the power’s area.
+                             If the viewing attempt originates within the area, you also know the viewer’s location. Otherwise, you and the remote viewer immediately make opposed manifester level checks (1d20 + manifester level, or viewer’s caster level as appropriate). If you at least match the remote viewer’s result, you get a visual image of the remote viewer and an accurate sense of the remote viewer’s direction and distance from you.`
+        },
+        'detect teleportation': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/detectTeleportation.htm',
+          discipline:       'Clairsentience',
+          level:            'Knowledge 1, Nomad 1',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            '40 ft.',
+          target_type:      'Area',
+          target:           '40-ft.-radius emanation centered on you',
+          duration:         'Concentration, up to 1 minute (D)',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `You sense the use of any effects of the teleportation subdiscipline within the area. You sense the use of these powers whether or not you have line of sight or line of effect (although a force effect prevents this detection). When you sense the use of an appropriate power, you know the direction in which the power was used, though not the distance or the exact effect.
+                             **Augment**
+                             If you spend 2 additional power points, this power’s range increases to Medium (100 ft. + 10 ft./level).`
+        },
+        'dimension slide': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/dimensionSlide.htm',
+          discipline:       'Psychoportation (Teleportation)',
+          level:            'Conflict 3, Psychic Rogue 3, Psychic Warrior 3',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'You; see text',
+          duration:         'Instantaneous',
+          power_points:     '5',
+          text:             `You instantly transfer yourself from your current location to any other spot within range to which you have line of sight. You can bring along possessions that amount to as much as a medium load, including living creatures that weigh as much as 20 pounds. Movement caused by the use of dimension slide does not provoke attacks of opportunity.
+                             If you somehow attempt to transfer yourself to a location occupied by a solid body or a location you can’t see the power simply fails to function.
+                             **Augment**
+                             If you spend 4 additional power points, you can manifest this power as a move action.`
+        },
+        'dimension swap': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/dimensionSwap.htm',
+          discipline:       'Psychoportation (Teleportation)',
+          level:            'Nomad 2, Psychic Warrior 2',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'You and one ally in range, or any two allies in range; see text',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates (harmless, object)',
+          resistance:       'Yes (harmless, object)',
+          power_points:     '3',
+          text:             `You instantly swap positions between your current position and that of a designated ally in range. Alternatively, you can swap the positions of any two allies in range. This power affects creatures of Large or smaller size. You can bring along objects, but not other creatures.
+                             **Special**
+                             A psychic warrior can manifest this power to swap positions with an ally, but not to swap the positions of two allies.
+                             **Augment**
+                             For every 2 additional power points you spend, this power can affect a target one size category larger.`
+        },
+        'disable': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/disable.htm',
+          discipline:       'Telepathy (Compulsion) [Mind-Affecting]',
+          level:            'Pain and Suffering 1, Psion/Wilder 1, Psychic Rogue 1',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            '20 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation centered on you',
+          duration:         '[[?{Manifester Level}]] minutes (D)',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '1',
+          text:             `You broadcast a mental compulsion that convinces one or more creatures of 4 Hit Dice or less that they are disabled. Creatures with the fewest HD are affected first. Among creatures with equal Hit Dice, those who are closest to the power’s point of origin are affected first. Hit Dice that are not sufficient to affect a creature are wasted. Creatures that are rendered helpless or are destroyed when they reach 0 hit points cannot be affected.
+                             Creatures affected by this power believe that they have somehow been brought to the brink of unconsciousness and must act accordingly. While it’s possible for an important nonplayer character to attempt some sort of “heroic” action, common NPCs and creatures under the effect of this power typically cower or retreat.
+                             Any creature that attempts to take a standard action immediately breaks the compulsion and can act normally. A creature that attempts to heal itself or that receives healing is likewise freed of the compulsion, and if it is not actually wounded, the healing is wasted. A creature that takes damage is also instantly freed of the compulsion (although the damage still counts against its actual current hit points).
+                             **Augment**
+                             For every 2 additional power points you spend, this power’s range increases by 5 feet and its save DC increases by 1.
+                             In addition, for every additional power point you spend to increase the range and the save DC, this power can affect targets that have Hit Dice equal to 4 + the number of additional points.`
+        },
+        'dismiss ectoplasm': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/dismissEctoplasm.htm',
+          discipline:       'Metacreativity',
+          level:            'Psion/Wilder 3',
+          display:          'Auditory and visual',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Area',
+          target:           '30-ft.-radius burst',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates; see text',
+          resistance:       'No',
+          power_points:     '5',
+          text:             `You dismiss creatures, objects, or effects composed of ectoplasm, such as astral constructs or the [ectoplasmic cocoon](http://www.d20srd.org/srd/psionic/powers/ectoplasmicCocoon.htm) power, or that were formerly composed of ectoplasm, such as items created by metacreativity (creation) powers.
+                             An ectoplasmic creature that fails its Will saving throw dissipates into so much constituent ectoplasm, which evaporates immediately.
+                             A creature under the effect of the [ectoplasmic form](http://www.d20srd.org/srd/psionic/powers/ectoplasmicForm.htm) power that fails its saving throw is either destroyed out right or physically shifted to a random location on the Astral Plane (50% chance for either result).
+                             Other ongoing powers that create ectoplasmic objects or effects, such as [ectoplasmic cocoon](http://www.d20srd.org/srd/psionic/powers/ectoplasmicCocoon.htm), are dismissed if you succeed on a manifester level check (1d20 + your manifester level, maximum +10) against a DC of 11 + the power’s manifester level.`
+        },
+        'dispel psionics': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm',
+          discipline:       'Psychokinesis',
+          level:            'Destruction 3, Guardian 3, Magic 3, Psion/Wilder 3',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target or Area',
+          target:           'One manifester, creature, or object; or 20-ft.-radius burst',
+          duration:         'Instantaneous or 1d4 rounds; see text',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '5',
+          text:             `You can use dispel psionics to end ongoing powers that have been manifested on a creature or object, to temporarily suppress the psionic abilities of a psionic item, or to end ongoing powers (or at least their effects) within an area. A dispelled power ends as if its duration had expired. Some powers, as detailed in their descriptions, can’t be defeated by dispel psionics, or can be ended only if you manifest dispel psionics at a high enough manifester level. Dispel psionics can end spell-like effects just as it does powers.
+                             The effect of a power with an instantaneous duration can’t be dispelled, because the psionic effect is already over before the dispel psionics can take effect.
+                             You choose to use dispel psionics in one of two ways: a targeted dispel or an area dispel.
+                             **Targeted Dispel**
+                             One object, creature, or power is the target of the dispel psionics power. You make a dispel check (1d20 + your manifester level, maximum +10) against the power or against each ongoing power currently in effect on the object or creature. The DC for this dispel check is 11 + the power’s manifester level. If you succeed on a particular check, that power is dispelled; if you fail, that power remains in effect.
+                             If you target an object or creature that is the effect of an ongoing power or is under the effect of an ongoing power, you make a dispel check to end the power or its effect. If the object that you target is a psionic item, you make a dispel check against the item’s manifester level. If you succeed, all the item’s psionic properties are suppressed for 1d4 rounds, after which the item recovers on its own. A suppressed item becomes nonpsionic for the duration of the effect. An interdimensional interface is temporarily closed. A psionic item’s physical properties are unchanged: A suppressed psionic sword is still a sword (a masterwork sword, in fact). Artifacts and deities are unaffected by mortal power such as this.
+                             You automatically succeed on your dispel check against any power that you manifested yourself.
+                             **Area Dispel**
+                             When dispel psionics is used in this way, the power affects everything within a 20-foot radius. For each creature within the area that is the subject of one or more powers, you make a dispel check against the power with the highest manifester level. If that check fails, you make dispel checks against progressively weaker powers until you dispel one power (which discharges the dispel psionics power so far as that target is concerned) or until you fail all your checks. The creature’s psionic items are not affected.
+                             For each object within the area that is the target of one or more powers, you make dispel checks as with creatures. Psionic items are not affected by an area dispel.
+                             For each ongoing area or effect power whose point of origin is within the area of the dispel psionics power, you can make a dispel check to dispel the power.
+                             For each ongoing power whose area overlaps that of the dispel psionics power, you can make a dispel check to end the effect, but only within the overlapping area.
+                             If an object or creature that is the effect of an ongoing power is in the area, you can make a dispel check to end the power that created that object or construct in addition to attempting to dispel powers targeting the creature or object. You can choose to automatically succeed on dispel checks against any power that you have manifested.
+                             **Augment**
+                             For every additional power point you spend, the bonus on your dispel check increases by 2 (to a maximum bonus of +20 for a 5-point expenditure).`
+        },
+        'dispelling buffer': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/dispellingBuffer.htm',
+          discipline:       'Psychokinesis',
+          level:            'Kineticist 6, Lurk 6, Psychic Warrior 6',
+          display:          'Material and olfactory',
+          manifesting_time: '1 standard action',
+          range:            'Personal or Close ([[25+(5*floor([[?{Caster Level}/2]]))]] ft.); see text',
+          target_type:      'Target',
+          target:           'You or one willing creature or one object (object weighing up to [[100*?{Manifester Level}]] lb.); see text',
+          duration:         '[[?{Manifester Level}]] hours (D)',
+          saving_throw:     'None',
+          resistance:       'Yes (harmless, object)',
+          power_points:     '11',
+          text:             `You create a psychokinetic shield around the subject that improves the chance that any powers affecting the subject will resist a [dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm) power (or a [dispel magic](http://www.d20srd.org/srd/spells/dispelMagic.htm) spell) or a negation effect that targets a specific power (such as [shatter mind blank](http://www.d20srd.org/srd/psionic/powers/shatterMindBlank.htm)). When dispelling buffer is manifested on a creature or object, add +5 to the DC of the dispel check for each ongoing effect that is subject to being dispelled.
+                             [Dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm) can negate dispelling buffer, but against a targeted dispel, dispelling buffer is always checked last (with the same +5 bonus). Against an area dispel, dispelling buffer is checked in the order according to its level (with the same +5 bonus).
+                             **Special**
+                             When a psychic warrior manifests this power, the range is personal and the target is the manifester.`
+        },
+        'dissipating touch': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/dissipatingTouch.htm',
+          discipline:       'Psychoportation (Teleportation)',
+          level:            'Destruction 1, Psion/Wilder 1, Psychic Warrior 1',
+          display:          'Auditory and visual',
+          manifesting_time: '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature or object touched',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          resistance:       'Yes (object)',
+          power_points:     '1',
+          text:             `Your mere touch can disperse the surface material of a foe or object, sending a tiny portion of it far away. This effect is disruptive; thus, your successful melee touch attack deals 1d6 points of damage.
+                             **Augment**
+                             For every additional power point you spend, this power’s damage increases by 1d6 points.`
+        },
+        'dissolving touch': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/dissolvingTouch.htm',
+          discipline:       'Psychometabolism [Acid]',
+          level:            'Destruction 2, Psychic Warrior 2',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature or object touched',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '3',
+          text:             `Your touch, claw, or bite is corrosive, and sizzling moisture visibly oozes from your natural weapon or hand. You deal 4d6 points of acid damage to any creature or object you touch with your successful melee touch attack. Acid you secrete denatures 1 round after use, losing all efficacy and ability to deal damage. You are immune to your own acid.
+                             **Augment**
+                             For every 2 additional power points you spend, this power’s damage increases by 1d6 points.`
+        },
+        'dissolving weapon': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/dissolvingWeapon.htm',
+          discipline:       'Psychometabolism [Acid]',
+          level:            'Destruction 2, Psychic Warrior 2',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'One held weapon; see text',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '3',
+          text:             `As [dissolving touch](http://www.d20srd.org/srd/psionic/powers/dissolvingTouch.htm), except your weapon is charged with acid until you make a successful attack.`
+        },
+        'distract': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/distract.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Lurk 1, Psion/Wilder 1, Psychic Rogue 1, Psychic Warrior 1',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Concentration, up to [[?{Manifester Level}]] minutes (D)',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '1',
+          text:             `You cause your subject’s mind to wander, distracting her. Subjects under the effect of distract make all Listen, Spot, Search, and Sense Motive checks at a -4 penalty.`
+        },
+        'divert teleport': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/divertTeleport.htm',
+          discipline:       'Psychoportation (Teleportation)',
+          level:            'Psion/Wilder 7',
+          display:          'Visual',
+          manifesting_time: '1 immediate action; see text',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'Diverts the teleportation of any object or creature whose weight does not exceed your maximum load',
+          duration:         '[[10*?{Manifester Level}]] minutes (D)',
+          saving_throw:     'Will negates (foils diversion)',
+          resistance:       'Yes (foils diversion)',
+          power_points:     '13',
+          text:             `Similar to [detect teleportation](http://www.d20srd.org/srd/psionic/powers/detectTeleportation.htm), except that you know the intended destination, and you can divert the final destination of any teleportation attempt made by others within the area. This is an immediate action, like manifesting a quickened power, and counts toward the limit of one quickened power per round. You can manifest this power even if it is not your turn.
+                             You can divert the destination of both incoming and outgoing teleportations, psionic and magical. You must overcome the power resistance of creatures that possess it to make a successful diversion, and the teleporting creature can make a Will save to foil the diversion as well.
+                             For the purpose of this power, “divert” means you choose the actual destination of any teleportation attempt you can affect, as if you yourself were teleporting to that location, regardless of the teleportation range of the effect you are diverting. The destination you choose must be a location with which you are very familiar or that you have studied carefully.`
+        },
+        'dream travel': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/dreamTravel.htm',
+          discipline:       'Psychoportation',
+          level:            'Nomad 7',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'You and up [[?{Manifester Level}]] touched creature or creatures',
+          duration:         '[[?{Manifester Level}]] hours (D)',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '13',
+          text:             `You and any creature you touch are drawn along a crystal arc of reverie to the edge of conscious thought and into the region of dreams. You can take more than one creature along with you (subject to your level limit), but each one must be touching another one. You physically enter the land of dreams, leaving nothing behind.
+                             In the region of dreams, you move through a menagerie of thoughts, desires, and phantoms created by the minds of dreamers everywhere. For every minute you move through dream, you can “wake” to find yourself five miles displaced in the waking world. Thus, a character can use this power to travel rapidly by physically entering where only dreams normally prowl, moving the desired distance, and then stepping back into the waking world. You know where you will come out in the waking world.
+                             Dream travel can also be used to travel to other planes that contain creatures that dream, but doing this requires crossing into the dreams of outsiders, where you are subject to the vagaries of many dream realities—a potentially perilous proposition. Transferring to another plane of existence in this fashion requires ‹1d4|[[1d4]] hours› hours of uninterrupted travel.
+                             Any creatures that come along when dream travel is manifested also make the transition to the borders of unconscious thought. A creature separated from you wanders off into the dreamscape. When the duration ends, all affected creatures return to the waking world as much as 1,000 miles (‹d%×10|[[10*1d100]] miles›) from their starting point. If a creature remains in the dreamscape, it is powerless to leave unless it can manifest the dream travel power itself or someone who manifests the power seeks out the lost creature.
+                             **Augment**
+                             For every 2 additional power points you spend, this power’s save DC increases by 1.`
+        },
+        'duodimensional claw': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/duodimensionalClaw.htm',
+          discipline:       'Psychometabolism',
+          level:            'Psychic Warrior 3',
+          display:          'Material',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[10*?{Manifester Level}]] minutes',
+          power_points:     '5',
+          text:             `If you have a claw attack (either from an actual natural weapon or from an effect such as [claws of the beast](http://www.d20srd.org/srd/psionic/powers/clawsoftheBeast.htm)), you can use this power to improve that weapon. One of your claws becomes two-dimensional, making it razorsharp. The weapon is now psionically keen, increasing its threat range from 20 to 19-20. This benefit does not stack with other effects that improve a weapon’s threat range.`
+        },
 
         //'': {
         //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
@@ -15285,16 +15764,32 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                           //log(spell_spec);
                           //log("^^^^^^^^^^^^^^");
                           var new_spell_name = spellname_attr.get('current').replace(/[^A-Za-z ]/g, '');
-                          if (spell_spec.component_details) {
-                            if (spell_spec.component_details.toLowerCase().match(/component(s)?\:.*[0-9,]+ *(cp|sp|gp|pp)/)) {
-                              new_spell_name = new_spell_name.concat('ᴹ');
-                            };
-                            if (spell_spec.component_details.toLowerCase().match(/focus\:.*[0-9,]+ *(cp|sp|gp|pp)/)) {
-                              new_spell_name = new_spell_name.concat('ᶠ');
-                            };
-                            if (spell_spec.component_details.toLowerCase().match(/xp cost\:/)) {
-                              new_spell_name = new_spell_name.concat('ˣ');
-                            };
+                          switch (spell_spec.type) {
+                            case 'spell':
+                            case 'epicspell':
+                              if (spell_spec.component_details) {
+                                if (spell_spec.component_details.toLowerCase().match(/component(s)?\:.*[0-9,]+ *(cp|sp|gp|pp)/)) {
+                                  new_spell_name = new_spell_name.concat('ᴹ');
+                                };
+                                if (spell_spec.component_details.toLowerCase().match(/focus\:.*[0-9,]+ *(cp|sp|gp|pp)/)) {
+                                  new_spell_name = new_spell_name.concat('ᶠ');
+                                };
+                                if (spell_spec.component_details.toLowerCase().match(/xp cost\:/)) {
+                                  new_spell_name = new_spell_name.concat('ˣ');
+                                };
+                              };
+                              break;
+                            case 'power':
+                            case 'epicpower':
+                              if (spell_spec.text.match(/^ *\*\*augment\*\*$/im)) {
+                                new_spell_name = new_spell_name.concat('ᴬ');
+                              };
+                              if (spell_spec.component_details) {
+                                if (spell_spec.component_details.toLowerCase().match(/xp cost\:/)) {
+                                  new_spell_name = new_spell_name.concat('ˣ');
+                                };
+                              };
+                              break;
                           };
                           setAttrByName(character.id,spellname_attr.get('name'),new_spell_name);
                           spellmacro = '&{template:DnD35StdRoll} {{spellflag=true}} {{name=@{character_name}}}';
@@ -15379,7 +15874,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               if (dnd35.spell_ranges()[spell_spec.range] === undefined) {
                                 spellmacro = spellmacro.concat(' {{Range:=',spell_spec.range,'}}');
                               } else {
-                                spellmacro = spellmacro.concat(' {{Range:=',dnd35.spell_ranges()[spell_spec.range],'}}');
+                                spellmacro = spellmacro.concat(' {{Range:=',dnd35.spell_ranges()[spell_spec.range].replace(/Caster/gm, 'Manifester'),'}}');
                               };
                               spellmacro = spellmacro.concat(' {{',spell_spec.target_type,':=',spell_spec.target.replace(/\(S\)$/, "(Shapeable)"),'}}');
                               spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration.replace(/\(D\)$/, "(Dismissible)"),'}}');
