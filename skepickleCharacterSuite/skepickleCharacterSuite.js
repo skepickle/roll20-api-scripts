@@ -14735,6 +14735,113 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              If a fused being is killed, it separates into its constituent creatures, both of which are also dead. You cannot use [fission](http://www.d20srd.org/srd/psionic/powers/fission.htm) on a fused being.`,
           component_details:"XP Cost: 50 XP."
         },
+        // Powers that start with G
+        'graft weapon': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/graftWeapon.htm',
+          discipline:       'Psychometabolism',
+          level:            'Conflict 5, Physical Power 3, Psychic Warrior 3',
+          display:          'Olfactory',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '24 hours (D)',
+          saving_throw:     '',
+          resistance:       '',
+          power_points:     '5',
+          text:             `You attach any melee weapon you can use in one hand—mundane, psionic, or magical—onto the end of one of your arms. The weapon becomes a natural extension of your arm, and that hand blends seamlessly into the shaft, hilt, or head of the weapon. Now that the weapon and you are one, you gain a +1 competence bonus on all attack and damage rolls while using the weapon.
+                             The grafted weapon is considered both a standard weapon and a natural weapon for the purpose of effects that distinguish between either weapon type. For instance, the grafted weapon is treated as a natural weapon for the purpose of delivering a touch attack with a power in conjunction with the weapon attack. As with any power (or spell) melee touch attack made in conjunction with a natural weapon attack, the touch attack effect is not delivered unless the natural weapon strikes normally; on a failed attack, the touch power (or spell) is wasted.
+                             For a psychic warrior under the effect of the [claws of the beast](http://www.d20srd.org/srd/psionic/powers/clawsoftheBeast.htm) power, grafting a weapon means that attacks with this hand deal the base damage of the weapon, instead of the claw upon which a psychic warrior normally relies.
+                             While your hand is grafted to a weapon, you lose the use of that hand and take a -2 penalty on all skill checks requiring the use of hands. Powers that temporarily polymorph or metamorph you can ignore the grafted weapon or alter it normally, at your discretion. If the weapon takes damage, you take damage as well. If you are healed, so is your grafted weapon. If your weapon is destroyed, you permanently lose 2 points of Constitution; the ability drain persists until you can restore your natural anatomy (by means of [regenerate](http://www.d20srd.org/srd/spells/regenerate.htm) or a similar effect).
+                             When this power’s duration expires, the grafted weapon falls to the ground and your hand returns.`
+        },
+        'greater concealing amorpha': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/concealingAmorphaGreater.htm',
+          discipline:       'Metacreativity (Creation)',
+          level:            'Lurk 3, Psychic Rogue 3, Psychic Warrior 3, Shaper 3',
+          display:          'Material; see text',
+          manifesting_time: '1 standard action',
+          range:            '0 ft.',
+          target_type:      'Effect',
+          target:           'Quasi-real amorphous film centered on you',
+          duration:         '[[?{Manifester Level}]] rounds (D)',
+          power_points:     '5',
+          text:             `Using concealing amorpha, you weave a quasi-real membrane around yourself. You remain visible within the translucent, amorphous enclosure. This distortion grants you total concealment (opponents have a 50% miss chance), thanks to the rippling membrane encasing your form. You can pick up or drop objects, easily reaching through the film. Anything you hold is enveloped by the amorpha. Likewise, you can engage in melee, make ranged attacks, and manifest powers without hindrance.`
+        },
+        'greater metamorphosis': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/metamorphosisGreater.htm',
+          discipline:       'Psychometabolism',
+          level:            'Egoist 9',
+          display:          'Material and visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] minutes (D) for a creature; [[?{Manifester Level}]] hours (D) for an object',
+          power_points:     '17',
+          text:             `As [metamorphosis](http://www.d20srd.org/srd/psionic/powers/metamorphosis.htm), except that this power enables you to assume the form of any single nonunique object or creature (of any type) from Fine to Colossal size. The assumed form cannot have more Hit Dice than your manifester level (to a maximum of 25 HD). Unlike metamorphosis, this power allows incorporeal, ectoplasmic, or gaseous forms to be assumed.
+                             You gain all extraordinary and supernatural abilities (both special attacks and special qualities) of the assumed form, but you lose your own supernatural abilities. You also gain the type of the new form (for example, dragon or magical beast) in place of your own. The new form does not disorient you. Parts of your body or pieces of equipment that are separated from you do not revert to their original form.
+                             You can become just about anything you are familiar with. You can change form once each round as a swift action
+                             The change takes place either immediately before your regular action or immediately after it, but not during the action.
+                             If you use this power to create a disguise, you get a +10 bonus on your Disguise check.
+                             As an inanimate object, you lose all mobility; however, you retain your ability to manifest powers normally.`,
+          component_details:"XP Cost: 200 XP."
+        },
+        'greater precognition': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/precognitionGreater.htm',
+          discipline:       'Clairsentience',
+          level:            'Fate 6, Seer 6',
+          display:          'Auditory and visual',
+          manifesting_time: '10 minutes',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] hours',
+          power_points:     '11',
+          text:             `Precognition allows your mind to glimpse fragments of potential future events—what you see will probably happen if no one takes action to change it. However, your vision is incomplete, and it makes no real sense until the actual events you glimpsed begin to unfold. That’s when everything begins to come together, and you can act, if you act swiftly, on the information you previously received when you manifested this power.
+                             In practice, manifesting this power grants you a “precognitive edge.” Normally, you can have only a single precognitive edge at one time. You must use your edge within a period of no more than 10 minutes per level, at which time your preknowledge fades and you lose your edge.
+                             You can use your precognitive edge in a variety of ways. Essentially, the edge translates into a +4 insight bonus that you can apply at any time to either an attack roll, a damage roll, a saving throw, or a skill check. You can elect to apply the bonus to the roll after you determine that your unmodified roll is lower than desired.`
+        },
+        'greater psionic fabricate': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/fabricateGreaterPsionic.htm',
+          discipline:       'Metacreativity (Creation)',
+          level:            'Creation 6, Shaper 6',
+          display:          'Material',
+          manifesting_time: 'See spell text',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'Up to [[100*?{Manifester Level}]] cu. ft.',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '11',
+          text:             `You convert material of one sort into a product that is of the same material. Creatures or magic items cannot be created or transmuted by the greater psionic fabricate power. The quality of items made by this spell is commensurate with the quality of material used as the basis for the new fabrication. If you work with a mineral, the target is reduced to [[10*?{Manifester Level}]] cubic feet instead.
+                             You must make an appropriate Craft check to fabricate articles requiring a high degree of craftsmanship.
+                             Manifesting requires 1 round per 100 cubic feet (or 10 cubic foot) of material to be affected by the power.`
+        },
+        'grip of iron': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/gripofIron.htm',
+          discipline:       'Psychometabolism',
+          level:            'Law 1, Psychic Warrior 1',
+          display:          'Visual',
+          manifesting_time: '1 immediate action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] round/level',
+          power_points:     '1',
+          text:             `You can improve your chances in a grapple as an immediate action, gaining a +4 enhancement bonus on your grapple checks.
+                             You can manifest this power with an instant thought, quickly enough to gain the benefit of the power in the current round. Manifesting this power is an immediate action. You can manifest this power when it isn’t your turn (if you are grappled).`,
+          augment:          `For every 4 additional power points you spend, the enhancement bonus on your grapple checks increases by 2.`
+        },
+
+
 
         //'': {
         //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
@@ -14755,6 +14862,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  augment:          ``,
         //  component_details:null
         //},
+
+        // Psionic Genesis?
 
         /////////////////////////////////////
       },
