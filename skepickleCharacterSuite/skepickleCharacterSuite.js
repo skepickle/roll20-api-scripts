@@ -14484,10 +14484,257 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • If you spend 6 additional power points, you can manifest this power as a swift action instead of a standard action.
                              • If you spend 2 additional power points, this power’s duration is 10 minutes per level rather than 1 round per level.`
         },
-
-
-
-
+        // Powers that start with F
+        'false sensory input': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/falseSensoryInput.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Deception 3, Telepath 3',
+          display:          'Mental',
+          manifesting_time: '1 round',
+          range:            '_long_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Concentration, up to [[?{Manifester Level}]] minutes (D)',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '5',
+          text:             `You have a limited ability to falsify one of the subject’s senses. The subject thinks she sees, hears, smells, tastes, or feels something other than what her senses actually report. You can’t create a sensation where none exists, nor make the subject completely oblivious to a sensation, but you can replace the specifics of one sensation with different specifics. For instance, you could make a human look like a dwarf (or one human look like another specific human), a closed door look like it is open, a vat of acid smell like rose water, a parrot look like a bookend, stale rations taste like fresh fruit, a light pat feel like a dagger thrust, a scream sound like the howling wind, and so on.
+                             You can switch between senses you falsify round by round. You can’t alter the size of an object by more than 50% by using this power. Thus, you couldn’t make a castle look like a hovel, but you could make it look like a different castle, or a rough hillock of approximately the same size. If this power is used to distract an enemy manifester who is attempting to use his powers, the enemy must make a Concentration check as if grappling or pinned.
+                             Because you override a victim’s senses, you can fool a victim who is using [true seeing](http://www.d20srd.org/srd/psionic/powers/trueSeeingPsionic.htm) or some other method of gathering information, assuming you know that the victim is actively using such an effect and you can maintain concentration.`,
+          augment:          `For every 2 additional power points you spend, this power can affect an additional target. Any additional target cannot be more than 15 feet from another target of the power.`
+        },
+        'far hand': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/farHand.htm',
+          discipline:       'Psychokinesis',
+          level:            'Lurk 1, Psion/Wilder 1, Psychic Rogue 1',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'A nonmagical, unattended object weighing up to 5 lb.',
+          duration:         'Concentration, up to 1 min.',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `You can mentally lift and move an object at will from a distance. As a move action, you can propel the object as far as 15 feet in any direction, though the power ends if the distance between you and the object exceeds the power’s range.`,
+          augment:          `You can augment this power in one or both of the following ways.
+                             • For every 2 additional power points you spend, this power’s range increases by 5 feet.
+                             • For every additional power point you spend, the weight limit of the target increases by 2 pounds.`
+        },
+        'fate link': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/fateLink.htm',
+          discipline:       'Clairsentience',
+          level:            'Seer 3',
+          display:          'Olfactory',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'Any two living creatures that are initially no more than 30 ft. apart.',
+          duration:         '[[10*?{Manifester Level}]] minutes',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '5',
+          text:             `You temporarily link the fates of any two creatures, if both fail their saving throws. If either linked creature experiences pain, both feel it. When one loses hit points, the other loses the same amount. If one takes nonlethal damage, so does the other. If one creature is subjected to an effect to which it is immune (such as a type of energy damage), the linked creature is not subjected to it either. If one dies, the other must immediately succeed on a Fortitude save against this power’s save DC or gain two negative levels.
+                             No other effects are transferred by the fate link.`,
+          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1.`
+        },
+        'fate of one': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/fateofOne.htm',
+          discipline:       'Clairsentience',
+          level:            'Fate 7, Seer 7',
+          display:          'Mental and visual',
+          manifesting_time: '1 immediate action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Instantaneous',
+          power_points:     '13',
+          text:             `Your limited omniscience allows you to reroll a saving throw, attack roll, or skill check. Whatever the result of the reroll, you must use it even if it is worse than the original roll.
+                             You can manifest this power instantly, quickly enough to gain its benefits in an emergency. Manifesting this power is an immediate action. If you use the power to reroll a saving throw, you can manifest this power even when it is not your turn.`
+        },
+        'feat leech': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/featLeech.htm',
+          discipline:       'Clairsentience',
+          level:            'Consumption 2, Psion/Wilder 2, Psychic Rogue 2, Psychic Warrior 2',
+          display:          'Mental and visual',
+          manifesting_time: '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Manifester Level}]] minutes',
+          saving_throw:     'Will negates; see text',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `You can use another’s psionic or metapsionic feats for yourself. You make a melee touch attack against a target. If successful, you immediately are familiar with the target’s psionic and metapsionic feats, if any, and you can choose a number of these feats to “leech” equal to your Wisdom modifier (minimum one).
+                             While the power lasts, you are treated as if you possessed the stolen feats, despite the fact that you have more feats than normally allowed. During this same period, the target can make no use of the stolen feats. When the power’s duration expires, you lose access to the feats, and the target gains immediate use of them. This transfer occurs regardless of the distance between you and the target.
+                             If the duration of feat leech is extended by the use of a metapsionic feat, the target gains a Will saving throw every 10 minutes beyond the normal duration. If this save succeeds, the power’s duration ends. If the target is killed before the duration expires, you immediately lose the benefit of the stolen feats.
+                             You cannot steal a feat for which you do not meet the prerequisites, if any. However, you can use a stolen feat as the prerequisite for another stolen feat.`,
+          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1.`
+        },
+        'fiery discorporation': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/fieryDiscorporation.htm',
+          discipline:       'Psychokinesis [Fire]',
+          level:            'Kineticist 5',
+          display:          'Visual',
+          manifesting_time: '1 immediate action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Instantaneous and up to one day; see text',
+          power_points:     '9',
+          text:             `You use your mastery of energy to cheat death. If you are within 30 feet of an open flame, you can use this power. Any damage that would reduce you to 0 hit points or lower instead has a chance to discorporate you. You attempt a Will save (DC 5 + damage dealt); if it succeeds, you simply break apart into dozens of flitting tongues of flame and vanish, along with all your gear and anything you are holding or carrying.
+                             One day later, you reappear adjacent to an open flame nearest to the place where you discorporated, seeming to materialize from the fire (you choose where you appear along the perimeter of that open flame). While discorporated, you do not exist—you can do nothing, nor can any of your enemies do anything to you.`,
+          augment:          `For every 3 additional power points you spend, you gain a +1 bonus on your Will save to determine whether you discorporate.`
+        },
+        'fission': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/fission.htm',
+          discipline:       'Psychometabolism',
+          level:            'Egoist 7',
+          display:          'Olfactory',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Effect',
+          target:           'Duplicate of yourself',
+          duration:         '[[?{Manifester Level}]] rounds (D)',
+          power_points:     '13',
+          text:             `You can divide yourself, creating a duplicate that comes into existence 5 feet away. Your duplicate thinks and acts exactly as you do and follows your orders, although it will not do anything you wouldn’t do yourself. Your duplicate has all your abilities but none of your psionic or magical equipment (it does possess a duplicate of all your mundane equipment, clothing, armor, and implements, as well as mundane versions of any psionic or magical equipment you have). You and your duplicate evenly split your power points, your remaining usages of pertinent special abilities for the day, and so on. You retain your psionic focus, if you maintain such when this power is manifested. Treat your duplicate as yourself with two negative levels for the purpose of determining the powers to which the duplicate has access (while the duration of this power lasts, those negative levels cannot be removed by any means). Your duplicate has all other physical traits you had at the time you manifest this power. Powers, spells, or other effects affecting you when you manifest this power do not transfer to your duplicate.
+                             When the duration expires or when you dismiss the power, you and your duplicate rejoin, no matter how far from each other you are. You gain back any power points the duplicate has not spent. At the time of rejoining, you take half of the damage your duplicate has taken since this power was manifested. This damage could potentially leave you with negative hit points, but it can’t reduce your hit points to less than -9.
+                             If your duplicate dies before the duration expires, no rejoining occurs, and you gain one negative level. If you die, your duplicate remains in existence, and is for all intents you, but with two negative levels. (Once the duration expires, one of the negative levels immediately converts to one lost level; the other negative level can be removed by standard means.)
+                             You can have only one fissioned duplicate in existence at one time; your duplicate cannot use this power. You cannot use [fusion](http://www.d20srd.org/srd/psionic/powers/fusion.htm) or [metaconcert](http://www.d20srd.org/srd/psionic/powers/metaconcert.htm) with a duplicate, or share any other power or effect that pools abilities (the sum of you and you is still just you). Similarly, attempting to use powers such as [claws of the vampire](http://www.d20srd.org/srd/psionic/powers/clawsoftheVampire.htm) or [vampiric blade](http://www.d20srd.org/srd/psionic/powers/vampiricBlade.htm) to hurt your duplicate only damages your duplicate; these powers do not heal you. [Empathic transfer](http://www.d20srd.org/srd/psionic/powers/empathicTransfer.htm) and similar powers are likewise ineffective (transferring wounds to yourself isn’t a good healing strategy).
+                             All powers affecting a fissioned creature, either the original or the duplicate, end when the fission ends. All damage, including hit point damage, ability damage, ability drain, and ability burn damage, is added together.`
+        },
+        'float': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/float.htm',
+          discipline:       'Psychoportation',
+          level:            'Lurk 1, Psion/Wilder 1, Psychic Rogue 1, Psychic Warrior 1',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] rounds (D)',
+          power_points:     '1',
+          text:             `You mentally support yourself in water or similar liquid. You can swim at a speed of 10 feet using the power alone, or use it to boost your swim speed by 10 feet.`
+        },
+        'force screen': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/forceScreen.htm',
+          discipline:       'Psychokinesis [Force]',
+          level:            'Force 1, Psion/Wilder 1, Psychic Rogue 1, Psychic Warrior 1',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] minutes',
+          power_points:     '1',
+          text:             `You create an invisible mobile disk of force that hovers in front of you. The force screen provides a +4 shield bonus to Armor Class (which applies against incorporeal touch attacks, since the force screen is a force effect). Since it hovers in front of you, the effect has no armor check penalty associated with it.`,
+          augment:          `For every 4 additional power points you spend, the shield bonus to Armor Class improves by 1.`
+        },
+        'forced sense link': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/senseLinkForced.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psion/Wilder 2',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Concentration, up to [[?{Manifester Level}]] minutes',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `You perceive what the subject creature perceives using its sight, hearing, taste, or smell. Only one sense is linked, and you cannot switch between senses with the same manifestation.
+                             You make any skill checks involving senses, such as Spot or Listen, as the subject, and only within the subject’s field of view. You lose your Dexterity bonus to AC while directly sensing what the subject senses.
+                             Once sense link is manifested, the link persists even if the subject moves out of the range of the original manifestation (but the link does not work across planes). You do not control the subject, nor can you communicate with it by means of this power.
+                             The strength of the subject’s linked sense could be enhanced by other powers or items, allowing you the same enhanced sense. You are subject to any gaze attack affecting the subject creature (if you linked vision). If you are blinded or deafened, or suffer some other sensory deprivation, the linked creature functions as an independent sensory organ, and provides you the benefit of the linked sense from its perspective while this power’s duration lasts.`
+        },
+        'forced share pain': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/sharePainForced.htm',
+          discipline:       'Psychometabolism',
+          level:            'Psion/Wilder 3, Worldthought Medic 3',
+          display:          '_close_',
+          manifesting_time: '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         '[[?{Manifester Level}]] rounds (D)',
+          saving_throw:     'Fortitude negates',
+          resistance:       'Yes',
+          power_points:     '5',
+          text:             `This power creates a psychometabolic connection between you and a subject so that some of your wounds are transferred to the subject. You take half damage from all attacks that deal hit point damage to you, and the subject takes the remainder. The amount of damage not taken by you is taken by the subject. If your hit points are reduced by a lowered Constitution score, that reduction is not shared with the subject because it is not a form of hit point damage. When this power ends, subsequent damage is no longer divided between the subject and you, but damage already shared is not reassigned.
+                             If you and the subject move farther away from each other than close range, the power ends.
+                             If you are immune to the type of damage dealt, or if you convert lethal damage into nonlethal damage, the target takes no damage.`,
+          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1.`
+        },
+        'form of doom': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/formofDoom.htm',
+          discipline:       'Psychometabolism',
+          level:            'Psychic Warrior 6',
+          display:          'Visual; see text',
+          manifesting_time: '1 standard action',
+          range:            'Personal; see text',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] rounds (D)',
+          power_points:     '11',
+          text:             `You wrench from your subconscious a terrifying visage of deadly hunger and become one with it. You are transformed into a nightmarish version of yourself, complete with an ooze-sleek skin coating, lashing tentacles, and a fright-inducing countenance. You effectively gain a +10 bonus on Disguise checks, though you retain your basic shape and can continue to use your equipment. This power cannot be used to impersonate someone; while horrible, your form is recognizably your own.
+                             You gain the frightful presence extraordinary ability, which takes effect automatically when you charge a foe. Opponents within 30 feet of you that have fewer Hit Dice or levels than you and that witness your charge become shaken for 5d6 rounds if they fail a Will save (DC 16 + your Cha modifier). An opponent that succeeds on the saving throw is immune to your frightful presence for 24 hours. Frightful presence is a mind-affecting fear effect.
+                             Your horrific form grants you a natural armor bonus of +5, damage reduction 5/-, and a +4 bonus to your Strength score. In addition, you gain +10 feet to your land speed as well as a +10 bonus on Climb and Jump checks.
+                             A nest of violently flailing black tentacles sprout from your hair and back. You can make up to four additional attacks with these tentacles in addition to your regular melee attacks in each round that you take a full attack action. You can make tentacle attacks within the space you normally threaten. If you make your tentacle attacks in addition to you regular melee attacks, each tentacle attacks at your highest base attack bonus with a -5 penalty. If you forgo all your other attacks, making only tentacle attacks, you make your tentacle attacks at your highest base attack bonus with no penalty. These tentacles deal 2d8 points of damage plus one-half your Strength bonus on each successful strike.
+                             This power functions only while you inhabit your base form (for instance, you can’t be metamorphed or polymorphed into another form, though you can use [claws of the beast](http://www.d20srd.org/srd/psionic/powers/clawsoftheBeast.htm), and [bite of the wolf](http://www.d20srd.org/srd/psionic/powers/biteoftheWolf.htm) in conjunction with this power for your regular attacks), and while your mind resides within your own body.`,
+          augment:          `For every additional power point you spend, this power’s duration increases by 2 rounds.`
+        },
+        'fuse flesh': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/fuseFlesh.htm',
+          discipline:       'Psychometabolism',
+          level:            'Pain and Suffering 6, Psion/Wilder 6, Worldthought Medic 6',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '[[?{Manifester Level}]] rounds',
+          saving_throw:     'Fortitude negates and Fortitude partial; see text',
+          resistance:       'Yes',
+          power_points:     '11',
+          text:             `You cause the touched subject’s flesh to ripple, grow together, and fuse into a nearly seamless whole. The subject is forced into a fetal position (if humanoid), with only the vaguest outline of its folded arms and legs visible below the all-encompassing wave of flesh. The subject retains the ability to breathe, eat, and excrete, but may lose the use of its senses (see below). If the sudden transformation would prove fatal to the creature (such as fusing a swimming airbreathing subject, or a flying subject), the subject gets a +4 bonus on the save. Unless it loses the use of its senses (see below), the creature can still perform purely mental actions, such as manifesting powers.
+                             If the target fails its Fortitude save to avoid the power’s effect, the subject must immediately attempt a second Fortitude save. If this second save is failed, the creature’s eyes and ears fuse over, effectively blinding and deafening it. Moreover, it loses its extraordinary, supernatural, and spell-like abilities, as well as its ability to manifest powers (if any), and is generally in sorry shape.
+                             Incorporeal or gaseous creatures and creatures not composed of flesh are immune to fuse flesh, and a shapechanger can revert to its unfused form as a standard action.`,
+          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1.`
+        },
+        'fusion': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/fusion.htm',
+          discipline:       'Psychometabolism',
+          level:            'Egoist 8, Worldthought Medic 9',
+          display:          'Auditory, material, and visual',
+          manifesting_time: '1 round',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'You and one touched willing creature of your type and your size or smaller',
+          duration:         '[[?{Manifester Level}]] minutes (D)',
+          power_points:     '15',
+          text:             `You and another willing, corporeal, living creature of the same or smaller size fuse into one being. As the manifester, you control the actions of the fused being. However, you can give up this control to the other creature. Once you give up control, you cannot regain it unless the other creature relinquishes it.
+                             The fused being has your current hit points plus the other creature’s current hit points. The fused being knows all the powers you and the other creature know, has the sum of your and the other creature’s power points, and knows or has prepared any spells you or the other creature possesses (if any). Likewise, all feats, racial abilities, and class features are pooled (if both creatures have the same ability, the fused being gains it only once). For each of the six ability scores, the fused being’s score is the higher of yours and the other creature’s, and the fused being also has the higher Hit Dice or manifester level—this effectively means the fused being uses the better saving throws, attack bonus, and skill modifiers of either member, and it manifests powers at the higher of the manifester levels that you or the other creature possessed before becoming fused.
+                             You decide what equipment is absorbed into the fused being and what equipment remains available for use. These fused items are restored once the power ends.
+                             When the power ends, the fused being separates. The other creature appears in an area adjacent to you that you determine. If separation occurs in a cramped space, the other creature is expelled through the Astral Plane, finally coming to rest materially in the nearest empty space and taking 1d6 points of damage for each 10 feet of solid material passed through.
+                             Damage taken by the fused being is split evenly between you and the other creature when the power ends. You do not leave the fusion with more hit points than you entered it with, unless you were damaged prior to the fusion and the fused being was subsequently healed. In a like manner, the fused being’s remaining power points are split between you and the other creature (you can leave with more points than you entered with, as long as you don’t exceed the maximum power points for your level and ability score). Ability damage and negative levels are also split between you and the other creature. (If an odd number of negative levels or ability score reductions must be split, you decide whether you or the other creature receives the additional loss.)
+                             If a fused being is killed, it separates into its constituent creatures, both of which are also dead. You cannot use [fission](http://www.d20srd.org/srd/psionic/powers/fission.htm) on a fused being.`,
+          component_details:"XP Cost: 50 XP."
+        },
 
         //'': {
         //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
