@@ -14840,6 +14840,102 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              You can manifest this power with an instant thought, quickly enough to gain the benefit of the power in the current round. Manifesting this power is an immediate action. You can manifest this power when it isn’t your turn (if you are grappled).`,
           augment:          `For every 4 additional power points you spend, the enhancement bonus on your grapple checks increases by 2.`
         },
+        // Powers that start with H
+        'hail of crystals': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  type:             'power',
+        //  ref:              '',
+        //  discipline:       '',
+        //  level:            '',
+        //  display:          '',
+        //  manifesting_time: '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  resistance:       '',
+        //  power_points:     '',
+        //  text:             ``,
+        //  augment:          ``,
+        //  component_details:null
+        },
+        'hammer': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  type:             'power',
+        //  ref:              '',
+        //  discipline:       '',
+        //  level:            '',
+        //  display:          '',
+        //  manifesting_time: '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  resistance:       '',
+        //  power_points:     '',
+        //  text:             ``,
+        //  augment:          ``,
+        //  component_details:null
+        },
+        'hostile empathic transfer': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  type:             'power',
+        //  ref:              '',
+        //  discipline:       '',
+        //  level:            '',
+        //  display:          '',
+        //  manifesting_time: '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  resistance:       '',
+        //  power_points:     '',
+        //  text:             ``,
+        //  augment:          ``,
+        //  component_details:null
+        },
+        'hustle': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  type:             'power',
+        //  ref:              '',
+        //  discipline:       '',
+        //  level:            '',
+        //  display:          '',
+        //  manifesting_time: '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  resistance:       '',
+        //  power_points:     '',
+        //  text:             ``,
+        //  augment:          ``,
+        //  component_details:null
+        },
+        'hypercognition': {
+        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+        //  type:             'power',
+        //  ref:              '',
+        //  discipline:       '',
+        //  level:            '',
+        //  display:          '',
+        //  manifesting_time: '',
+        //  range:            '',
+        //  target_type:      '',
+        //  target:           '',
+        //  duration:         '',
+        //  saving_throw:     '',
+        //  resistance:       '',
+        //  power_points:     '',
+        //  text:             ``,
+        //  augment:          ``,
+        //  component_details:null
+        },
 
 
 
