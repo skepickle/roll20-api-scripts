@@ -13841,6 +13841,653 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           power_points:     '5',
           text:             `If you have a claw attack (either from an actual natural weapon or from an effect such as [claws of the beast](http://www.d20srd.org/srd/psionic/powers/clawsoftheBeast.htm)), you can use this power to improve that weapon. One of your claws becomes two-dimensional, making it razorsharp. The weapon is now psionically keen, increasing its threat range from 20 to 19-20. This benefit does not stack with other effects that improve a weapon’s threat range.`
         },
+        // Powers that start with E
+        'ecto protection': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/ectoProtection.htm',
+          discipline:       'Metacreativity',
+          level:            'Psion/Wilder 1',
+          display:          'Visual; see text',
+          manifesting_time: '1 standard action; see text',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'An astral construct you manifest',
+          duration:         '[[?{Manifester Level}]] minutes',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `This power reinforces an astral construct created by the [astral construct](http://www.d20srd.org/srd/psionic/powers/astralConstruct.htm) power, giving you a +1 bonus on any manifester level checks you make to protect it against [dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm) or a similar effect, and a +1 bonus on its saving throw to resist dismiss ectoplasm. This power can be manifested as a swift action in the same round that you manifest an astral construct, as long as the power points you spend to perform both actions does not exceed your manifester level.`,
+          augment:          `For every 2 additional power points you spend, your bonus on manifester level checks to protect your astral construct increases by 1, and your astral construct’s bonus on its saving throw to resist dismiss ectoplasm increases by 1.`
+        },
+        'ectoplasmic cocoon': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/ectoplasmicCocoon.htm',
+          discipline:       'Metacreativity',
+          level:            'Shaper 3',
+          display:          'Auditory and material',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One Medium or smaller creature',
+          duration:         '[[?{Manifester Level}]] rounds (D)',
+          saving_throw:     'Reflex negates',
+          resistance:       'No',
+          power_points:     '5',
+          text:             `You draw writhing strands of ectoplasm from the Astral Plane that wrap up the subject like a mummy. The subject can still breathe but is otherwise helpless, unable to see outside the cocoon, speak, or take any physical actions. The subject’s nostrils are clear (air passes through the cocoon normally). The subject can execute purely mental actions (such as manifesting powers or casting spells with no verbal, somatic, or material components).
+                             Cutting or damaging the cocoon can free a victim. The cocoon has hardness 8 and 20 hit points. Teleportation and other forms of travel provide a means of escape, but the cocoon extends into the Ethereal Plane, blocking ethereal travel. An ectoplasmic cocoon can’t be affected by [dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm), but it can be dismissed with dismiss ectoplasm, or otherwise destroyed by extreme measures or items.
+                             The creature within the cocoon is visible only as a vague shape (substantial enough to interrupt line of sight) and cannot be directly harmed or interacted with unless the cocoon is destroyed. The cocooned creature can be moved normally (the weight of the cocoon is negligible).
+                             A creature that is cocooned while aloft begins to fall immediately, and a creature that is cocooned while swimming or underwater may drown.`,
+          augment:          `You can augment this power in one or both of the following ways.
+                             • For every 2 additional power points you spend, this power’s save DC increases by 1.
+                             • For every 2 additional power points you spend, this power can affect a target one size category larger.`
+        },
+        'ectoplasmic form': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/ectoplasmicForm.htm',
+          discipline:       'Psychometabolism',
+          level:            'Egoist 3, Psychic Warrior 3',
+          display:          'Olfactory',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] minutes (D)',
+          power_points:     '5',
+          text:             `You and all your gear become a partially translucent mass of rippling ectoplasm that generally conforms to your normal shape. You gain damage reduction 10/psionics, and you gain immunity to poison and critical hits. Your material armor becomes meaningless, although your size, Dexterity, deflection bonuses, and armor bonuses from force effects (such as those gained by [inertial armor](http://www.d20srd.org/srd/psionic/powers/inertialArmor.htm)) still apply to your Armor Class.
+                             You can manifest powers while in ectoplasmic form, but you must make a Concentration check (DC 20 + power level) for each power you attempt to manifest.
+                             You cannot physically attack, you lose supernatural abilities (if any), and you can’t speak while in ectoplasmic form. You can’t run, but you can fly at a speed of 20 feet (perfect). You can pass through small holes or narrow openings, even mere cracks, with all you were wearing or holding in your hands. You are subject to the effects of wind, and you can’t enter water or other liquid. You also can’t manipulate objects or activate items, even those carried along with you. Continuously active items remain active, though in some cases their effects may be moot (such as items that provide armor or natural armor bonuses).`
+        },
+        'ectoplasmic shambler': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/ectoplasmicShambler.htm',
+          discipline:       'Metacreativity (Creation)',
+          level:            'Psion/Wilder 5',
+          display:          'Auditory, material, and olfactory; see text',
+          manifesting_time: '1 round',
+          range:            '_long_',
+          target_type:      'Effect',
+          target:           'One ectoplasmic manifestation of a size equal to ten 10-ft. cubes (S)',
+          duration:         '[[?{Manifester Level}]] minutes',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '9',
+          text:             `You fashion an ephemeral, manylegged mass of pseudo-living ectoplasm called an ectoplasmic shambler. You can direct the shambler as a free action. It has a speed of 10 feet. It can completely surround objects (and opponents) over which it is manifested or onto which it moves, because it has the consistency of thick mist. The vision of those within the shambler is limited to 5 feet, and manifesting powers (or casting spells) within the shambler is difficult due to the constant turbulence felt by those caught in the shambler’s form.
+                             Creatures enveloped by the shambler, regardless of Armor Class, take 1 point of damage for every two manifester levels you have in each round they become or remain within the roiling turbulence of the shambler. Anyone trying to manifest a power must make a Concentration check (DC 15 + power’s or spell’s level) to successfully manifest a power or cast a spell inside the shambler.
+                             A wind stronger than 20 miles per hour that blows against the shambler reduces its speed to 0 feet during the first round, and in subsequent rounds moves it in the direction of the wind at a speed of 5 feet. A wind stronger than 20 miles per hour that blows in the direction the shambler travels increases its speed to 15 feet.`
+        },
+        'ego whip': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/egoWhip.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psion/Wilder 2',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Will half; see text',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `Your rapid mental lashings assault the ego of your enemy, debilitating its confidence. The target takes [[1d4]] points of Charisma damage, or half that amount (minimum 1 point) on a successful save. A target that fails its save is also dazed for 1 round.`,
+          augment:          `For every 4 additional power points you spend, this power’s Charisma damage increases by 1d4 points and its save DC increases by 2.`
+        },
+        'elfsight': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/elfsight.htm',
+          discipline:       'Psychometabolism',
+          level:            'Lightness and Darkness 1, Lurk 2, Psion/Wilder 2, Psychic Rogue 1, Psychic Warrior 1, Worldthought Medic 1',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] hours',
+          power_points:     'Psion/Wilder 3, Psychic Warrior 1',
+          text:             `You gain low-light vision (as an elf) for the duration of the power, as well as a +2 bonus on Search and Spot checks.
+                             In addition, you gain the ability to notice secret or concealed doors by merely passing within 5 feet of one, getting to make a Search check as if you were actively looking for it.
+                             If elfsight is used in conjunction with [my light](http://www.d20srd.org/srd/psionic/powers/myLight.htm), the cone of light extends out to 40 feet instead of 20 feet.`
+        },
+        'empathic feedback': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/empathicFeedback.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Pain and Suffering 4, Psion/Wilder 4, Psychic Warrior 3, Worldthought Medic 4',
+          display:          'Auditory and material',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[10*?{Manifester Level}]] minutes',
+          power_points:     'Psion/Wilder 7, Psychic Warrior 5',
+          text:             `You empathically share your pain and suffering with your attacker. Each time a creature strikes you in melee, it takes damage equal to the amount it dealt to you or 5 points, whichever is less. This damage is empathic in nature, so powers and abilities the attacker may have such as damage reduction and regeneration do not lessen or change this damage. The damage from empathic feedback has no type, so even if you took fire damage from a creature that has immunity to fire, empathic feedback will damage your attacker.`,
+          augment:          `For every additional power point you spend, this power’s damage potential increases by 1 point.`
+        },
+        'empathic transfer': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/empathicTransfer.htm',
+          discipline:       'Psychometabolism',
+          level:            'Egoist 2, Good 2, Psychic Warrior 2, Repose 2, Worldthought Medic 2',
+          display:          'Auditory and material',
+          manifesting_time: '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Willing creature touched',
+          duration:         'Instantaneous',
+          power_points:     '3',
+          text:             `You heal another creature’s wounds, transferring some of its damage to yourself. When you manifest this power, you can heal as much as [[2d10]] points of damage. The target regains a number of hit points equal to the dice result, and you lose hit points equal to half of that amount. (This loss can bring you to 0 or fewer hit points.) Powers and abilities you may have such as damage reduction and regeneration do not lessen or change this damage, since you are taking the target’s pain into yourself in an empathic manner. The damage transferred by this power has no type, so even if you have immunity to the type of damage the target originally took, the transfer occurs normally and deals hit point damage to you.
+                             Alternatively, you can use this power to absorb one poison or one disease afflicting the target creature into yourself. When you absorb a poison or disease, you do not take any of the damage previously dealt to the target by the affliction, but you do assume the burden of making the secondary and/or continuing Fortitude saves to combat the affliction.
+                             Finally, you can use this power to transfer up to 1 point of ability damage per manifester level from the target to yourself.`,
+          augment:          `For every additional power point you spend, you can heal an additional 2d10 points of damage (to a maximum of 10d10 points per manifestation).`
+        },
+        'empathy': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/empathy.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psion/Wilder 1, Psychic Rogue 1',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '30 ft.',
+          target_type:      'Area',
+          target:           '30-ft.-radius spread centered on you',
+          duration:         'Concentration, up to [[?{Manifester Level}]] minutes (D)',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `You detect the surface emotions of any creature you can see that is in the power’s area. You can sense basic needs, drives, and emotions. Thirst, hunger, fear, fatigue, pain, rage, hatred, uncertainty, curiosity, friendliness, and many other kinds of sensations and moods can all be perceived.
+                             You gain a +2 insight bonus on any Bluff, Diplomacy, Intimidate, or Sense Motive checks that you make in the round when you cease concentrating on this power.`,
+          augment:          `You can augment this power in one or both of the following ways.
+                             • For every additional power point you spend, this power’s range and the radius of its area increases by 5 feet.
+                             • If you spend 2 additional power points, this power’s maximum duration increases to 1 hour/level.`
+        },
+        'empty mind': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/emptyMind.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Lurk 1, Psion/Wilder 1, Psychic Rogue 1, Psychic Warrior 1, Repose 1',
+          display:          'Auditory',
+          manifesting_time: '1 immediate action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '1 round',
+          power_points:     '1',
+          text:             `You empty your mind of all transitory and distracting thoughts, improving your self-control. You gain a +2 bonus on all Will saves until your next action.
+                             You can manifest this power instantly, quickly enough to gain its benefit in an emergency. Manifesting this power is an immediate action. You can use this power even when it is not your turn.`,
+          augment:          `For every 2 additional power points you spend, the bonus on your Will saves increases by 1.`
+        },
+        'energy adaptation': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyAdaptation.htm',
+          discipline:       'Psychometabolism [see text]',
+          level:            'Psion/Wilder 4, Psychic Warrior 4, Worldthought Medic 4',
+          display:          'Visual; see text',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[10*?{Manifester Level}]] minutes',
+          power_points:     '7',
+          text:             `Your body assimilates some of the effect of an energy attack and converts it to harmless light. You gain resistance 10 against any attack that deals acid, cold, electricity, fire, or sonic damage.
+                             When you absorb damage, you can choose to radiate visible light that illuminates a 60-foot radius for a number of rounds equal to the points of damage you successfully resisted, or merely dissipate the energy without giving off a visual display.
+                             The energy resistance provided by this power increases to 20 points at 9th manifester level and to a maximum of 30 points at 13th level. The power protects your equipment as well.
+                             The resistance provided by this power does not stack with other forms of energy resistance.
+                             This power’s subtype is the same as the type of damage it protects against.`,
+          augment:          `If you spend 4 additional power points, you can manifest this power as an immediate action.`
+        },
+        'energy ball': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyBall.htm',
+          discipline:       'Psychokinesis [see text]',
+          level:            'Kineticist 4',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '_long_',
+          target_type:      'Area',
+          target:           '20-ft.-radius spread',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half or Fortitude half; see text',
+          resistance:       'Yes',
+          power_points:     '7',
+          text:             `Upon manifesting this power, you choose cold, electricity, fire, or sonic. You create an explosion of energy of the chosen type that deals [[7d6]] points of damage to every creature or object within the area. The explosion creates almost no pressure.
+                             **Cold**
+                             A ball of this energy type deals +1 point of damage per die. The saving throw to reduce damage from a cold ball is a Fortitude save instead of a Reflex save.
+                             **Electricity**
+                             Manifesting a ball of this energy type provides a +2 bonus to the save DC and a +2 bonus on manifester level checks for the purpose of overcoming power resistance.
+                             **Fire**
+                             A ball of this energy type deals +1 point of damage per die.
+                             **Sonic**
+                             A ball of this energy type deals -1 point of damage per die and ignores an object’s hardness.
+
+                             This power’s subtype is the same as the type of energy you manifest.`,
+          augment:          `For every additional power point you spend, this power’s damage increases by one die (d6). For each extra two dice of damage, this power’s save DC increases by 1.`
+        },
+        'energy bolt': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyBolt.htm',
+          discipline:       'Psychokinesis [see text]',
+          level:            'Energy 3, Psion/Wilder 3',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '120 ft.',
+          target_type:      'Area',
+          target:           '120-ft. line',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half or Fortitude half; see text',
+          resistance:       'Yes',
+          power_points:     '5',
+          text:             `Upon manifesting this power, you choose cold, electricity, fire, or sonic. You release a powerful stroke of energy of the chosen type that deals [[5d6]] points of damage to every creature or object within the area. The beam begins at your fingertips.
+                             **Cold**
+                             A bolt of this energy type deals +1 point of damage per die. The saving throw to reduce damage from a cold bolt is a Fortitude save instead of a Reflex save.
+                             **Electricity**
+                             Manifesting a bolt of this energy type provides a +2 bonus to the save DC and a +2 bonus on manifester level checks for the purpose of overcoming power resistance.
+                             **Fire**
+                             A bolt of this energy type deals +1 point of damage per die.
+                             **Sonic**
+                             A bolt of this energy type deals -1 point of damage per die and ignores an object’s hardness.
+
+                             This power’s subtype is the same as the type of energy you manifest.`,
+          augment:          `For every additional power point you spend, this power’s damage increases by one die (d6). For each extra two dice of damage, this power’s save DC increases by 1.`
+        },
+        'energy burst': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyBurst.htm',
+          discipline:       'Psychokinesis [see text]',
+          level:            'Energy 3, Psion/Wilder 3',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '40 ft.',
+          target_type:      'Area',
+          target:           '40-ft-radius burst centered on you',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half or Fortitude half; see text',
+          resistance:       'Yes',
+          power_points:     '5',
+          text:             `Upon manifesting this power, you choose cold, electricity, fire, or sonic. You create an explosion of unstable ectoplasmic energy of the chosen type that deals [[5d6]] points of damage to every creature or object within the area. The explosion creates almost no pressure. Since this power extends outward from you, you are not affected by the damage.
+                             **Cold**
+                             A burst of this energy type deals +1 point of damage per die. The saving throw to reduce damage from a cold burst is a Fortitude save instead of a Reflex save.
+                             **Electricity**
+                             Manifesting a burst of this energy type provides a +2 bonus to the save DC and a +2 bonus on manifester level checks for the purpose of overcoming power resistance.
+                             **Fire**
+                             A burst of this energy type deals +1 point of damage per die.
+                             **Sonic**
+                             A burst of this energy type deals -1 point of damage per die and ignores an object’s hardness.
+
+                             This power’s subtype is the same as the type of energy you manifest.`,
+          augment:          `For every additional power point you spend, this power’s damage increases by one die (d6). For each extra two dice of damage, this power’s save DC increases by 1.`
+        },
+        'energy cone': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyCone.htm',
+          discipline:       'Psychokinesis [see text]',
+          level:            'Kineticist 3',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped spread',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half or Fortitude half; see text',
+          resistance:       'Yes',
+          power_points:     '5',
+          text:             `Upon manifesting this power, you choose cold, electricity, fire, or sonic. You create a cone of energy of the chosen type, extending outward from your hand, that deals [[5d6]] points of damage to every creature or object within the area.
+                             **Cold**
+                             A cone of this energy type deals +1 point of damage per die. The saving throw to reduce damage from a cold cone is a Fortitude save instead of a Reflex save.
+                             **Electricity**
+                             Manifesting a cone of this energy type provides a +2 bonus to the save DC and a +2 bonus on manifester level checks for the purpose of overcoming power resistance.
+                             **Fire**
+                             A cone of this energy type deals +1 point of damage per die.
+                             **Sonic**
+                             A cone of this energy type deals -1 point of damage per die and ignores an object’s hardness.
+
+                             This power’s subtype is the same as the type of energy you manifest.`,
+          augment:          `For every additional power point you spend, this power’s damage increases by one die (d6). For each extra two dice of damage, this power’s save DC increases by 1.`
+        },
+        'energy conversion': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyConversion.htm',
+          discipline:       'Psychometabolism [see text]',
+          level:            'Psion/Wilder 7, Worldthought Medic 7',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            'Personal and close (25 ft. + 5 ft./2 levels); see text',
+          target_type:      'Effect',
+          target:           'Ray; see text',
+          duration:         '[[10*?{Manifester Level}]] minutes',
+          saving_throw:     'None',
+          resistance:       'Yes',
+          power_points:     '13',
+          text:             `As [energy adaptation](http://www.d20srd.org/srd/psionic/powers/energyAdaptation.htm), except that instead of radiating away energy as light, you store up the energy and can later discharge it as a ray. To discharge a ray requires a standard action. You can choose to fire any number of rays during the power’s duration. The ray you fire must be of one of the energy types you have stored (if you have stored more than one type, you can choose what kind of energy to use for each ray). If a ray successfully strikes its target (requiring a ranged touch attack), the target takes damage equal to the amount of energy damage of that type you have stored, up to a maximum of three times your manifester level. As long as this power remains in effect, you can continue to absorb energy damage and fire additional rays using the stored damage.
+                             This power’s subtype is the same as the type of energy you discharge in a ray; thus, its subtype can change during the course of the power’s duration.`
+        },
+        'energy current': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyCurrent.htm',
+          discipline:       'Psychokinesis [see text]',
+          level:            'Kineticist 5',
+          display:          'Visual; see text',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'Any two creatures no more than 15 ft. apart',
+          duration:         'Concentration, up to [[?{Manifester Level}]] rounds',
+          saving_throw:     'Reflex half or Fortitude half; see text',
+          resistance:       'Yes',
+          power_points:     '9',
+          text:             `Upon manifesting this power, you choose cold, electricity, fire, or sonic. Your body’s psionically fueled bioenergetic currents produce an arc of energy of the chosen type that targets a creature you designate as the primary foe for [[9d6]] points of damage in every round when the power remains in effect. Energy also arcs off the primary foe to strike one additional foe that is initially within 15 feet of the primary foe, or that subsequently moves within 15 feet of the primary foe while the duration lasts. Secondary foes take half the damage that the primary foe takes in every round while the duration lasts.
+                             Should either the primary or secondary foe fall to less than 0 hit points (or should a target completely evade the effect with a special ability or power), the energy current’s arc randomly retargets another primary and/or secondary foe while the duration lasts. Targeted foes can move normally, possibly moving out of range of the effect, but each round they are targeted and remain in range they must make a saving throw to avoid taking full damage in that round.
+                             Concentrating to maintain energy current is a full-round action. If you take damage while maintaining energy current, you must make a successful Concentration check (DC 10 + damage dealt) to avoid losing your concentration on the power.
+                             **Cold**
+                             A current of this energy type deals +1 point of damage per die. The saving throw to reduce damage from a cold current is a Fortitude save instead of a Reflex save.
+                             **Electricity**
+                             Manifesting a current of this energy type provides a +2 bonus to the save DC and a +2 bonus on manifester level checks for the purpose of overcoming power resistance.
+                             **Fire**
+                             A current of this energy type deals +1 point of damage per die.
+                             **Sonic**
+                             A current of this energy type deals -1 point of damage per die and ignores an object’s hardness.
+
+                             This power’s subtype is the same as the type of energy you manifest.`,
+          augment:          `You can augment this power in one or both of the following ways.
+                             • For every additional power point you spend, this power’s damage increases by one die (d6). For each extra two dice of damage, this power’s save DC increases by 1.
+                             • For every 4 additional power points you spend, this power can affect an additional secondary target. Any additional secondary target cannot be more than 15 feet from another target of the power.`
+        },
+        'energy missile': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyMissile.htm',
+          discipline:       'Psychokinesis [see text]',
+          level:            'Kineticist 2',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'Up to five creatures or objects; no two targets can be more than 15 ft. apart.',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half or Fortitude half; see text',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `Upon manifesting this power, you choose cold, electricity, fire, or sonic. You release a powerful missile of energy of the chosen type at your foe. The missile deals [[3d6]] points of damage to each creature or object you target, to the maximum of five targets. You cannot hit the same target multiple times with the same manifestation of this power.
+                             **Cold**
+                             A missile of this energy type deals +1 point of damage per die. The saving throw to reduce damage from a cold missile is a Fortitude save instead of a Reflex save.
+                             **Electricity**
+                             Manifesting a missile of this energy type provides a +2 bonus to the save DC and a +2 bonus on manifester level checks for the purpose of overcoming power resistance.
+                             **Fire**
+                             A missile of this energy type deals +1 point of damage per die.
+                             **Sonic**
+                             A missile of this energy type deals -1 point of damage per die and ignores an object’s hardness.
+
+                             This power’s subtype is the same as the type of energy you manifest.`,
+          augment:          `For every additional power point you spend, this power’s damage increases by one die (d6) and its save DC increases by 1.`
+        },
+        'energy push': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyPush.htm',
+          discipline:       'Psychokinetic [see text]',
+          level:            'Energy 2, Psion/Wilder 2',
+          display:          'Auditory and visual',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Effect',
+          target:           'Ray',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half or Fortitude half; see text',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `Upon manifesting this power, you choose cold, electricity, fire, or sonic. You project a solid blast of energy of the chosen type at a target, dealing it [[2d6]] points of damage. In addition, if a subject of up to one size category larger than you fails a Strength check (DC equal to the save DC of this power), the driving force of the energy blast pushes it back 5 feet plus another 5 feet for every 5 points of damage it takes. If a wall or other solid object prevents the subject from being pushed back, the subject instead slams into the object and takes an extra [[2d6]] points of damage from the impact (no save). The movement caused by energy push does not provoke attacks of opportunity.
+                             **Cold**
+                             A blast of this energy type deals +1 point of damage per die (damage from impact remains at 2d6 points). The saving throw to reduce damage from a cold push is a Fortitude save instead of a Reflex save.
+                             **Electricity**
+                             Manifesting a blast of this energy type provides a +2 bonus to the save DC and a +2 bonus on manifester level checks for the purpose of overcoming power resistance.
+                             **Fire**
+                             A blast of this energy type deals +1 point of damage per die (damage from impact remains at 2d6 points).
+                             **Sonic**
+                             A blast of this energy type deals -1 point of damage per die (damage from impact remains at 2d6 points) and ignores an object’s hardness.
+
+                             This power’s subtype is the same as the type of energy you manifest.`,
+          augment:          `For every 2 additional power points you spend, this power’s damage increases by one die (d6) and its save DC increases by 1. The damage increase applies to both the initial blast and any damage from impact with an object.`
+        },
+        'energy ray': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyRay.htm',
+          discipline:       'Psychokinesis [see text]',
+          level:            'Energy 1, Psion/Wilder 1',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'Ray',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          resistance:       'Yes',
+          power_points:     '1',
+          text:             `Upon manifesting this power, you choose cold, electricity, fire, or sonic. You create a ray of energy of the chosen type that shoots forth from your fingertip and strikes a target within range, dealing [[1d6]] points of damage, if you succeed on a ranged touch attack with the ray.
+                             **Cold**
+                             A ray of this energy type deals +1 point of damage per die.
+                             **Electricity**
+                             Manifesting a ray of this energy type provides a +3 bonus on your attack roll if the target is wearing metal armor and a +2 bonus on manifester level checks for the purpose of overcoming power resistance.
+                             **Fire**
+                             A ray of this energy type deals +1 point of damage per die.
+                             **Sonic**
+                             A ray of this energy type deals -1 point of damage per die and ignores an object’s hardness.
+
+                             This power’s subtype is the same as the type of energy you manifest.`,
+          augment:          `For every additional power point you spend, this power’s damage increases by one die (d6).`
+        },
+        'energy retort': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyRetort.htm',
+          discipline:       'Psychokinesis [see text]',
+          level:            'Psion/Wilder 3',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal and close (25 ft. + 5 ft./2 levels); see text',
+          target_type:      'Target',
+          target:           'You and creature or object attacking you; see text',
+          duration:         '[[?{Manifester Level}]] minutes',
+          saving_throw:     'Reflex half or Fortitude half; see text',
+          resistance:       'Yes',
+          power_points:     '5',
+          text:             `Upon manifesting this power, you choose cold, electricity, fire, or sonic. You weave a field of potential energy of the chosen type around your body. The first successful attack made against you in each round during the power’s duration prompts a response from the field with out any effort on your part. The attack may be physical, the effect of a power, or the effect of a spell (including spell-like, supernatural, and extraordinary abilities). An “ectoburst” discharges from the field, targeting the source of the attack and dealing [[4d6]] points of damage of the chosen energy type. To be affected, a target must be within close range, you must have line of sight and line of effect to it, and you must be able to identify the source of the attack. The ectoburst is a ranged touch attack made using your base attack bonus plus your key ability modifier for your manifesting class.
+                             **Cold**
+                             A field of this energy type deals +1 point of damage per die. The saving throw to reduce damage from a cold retort is a Fortitude save instead of a Reflex save.
+                             **Electricity**
+                             Manifesting a field of this energy type provides a +2 bonus to the save DC and a +2 bonus on manifester level checks for the purpose of overcoming power resistance.
+                             **Fire**
+                             A field of this energy type deals +1 point of damage per die.
+                             **Sonic**
+                             A field of this energy type deals -1 point of damage per die and ignores an object’s hardness.
+
+                             This power’s subtype is the same as the type of energy you manifest.`,
+          augment:          `For every additional power point you spend, this power’s duration increases by 1 minute.`
+        },
+        'energy stun': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyStun.htm',
+          discipline:       'Psychokinesis [see text]',
+          level:            'Psion/Wilder 2',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Area',
+          target:           '5-ft.-radius burst',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half or Fortitude half; see text',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `Upon manifesting this power, you choose cold, electricity, fire, or sonic. You release a powerful stroke of the chosen energy type that encircles all creatures in the area, dealing [[1d6]] points of damage to each of them. In addition, any creature that fails its save for half damage must succeed on a Will save or be stunned for 1 round.
+                             **Cold**
+                             A stroke of this energy type deals +1 point of damage per die. The saving throw to reduce damage from a cold stun is a Fortitude save instead of a Reflex save.
+                             **Electricity**
+                             Manifesting a stroke of this energy type provides a +2 bonus to the save DC and a +2 bonus on manifester level checks for the purpose of overcoming power resistance.
+                             **Fire**
+                             A stroke of this energy type deals +1 point of damage per die.
+                             **Sonic**
+                             A stroke of this energy type deals -1 point of damage per die and ignores an object’s hardness.
+
+                             This power’s subtype is the same as the type of energy you manifest.`,
+          augment:          `For every additional power point you spend, this power’s damage increases by one die (d6) and its save DC increases by 1.`
+        },
+        'energy wall': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyWall.htm',
+          discipline:       'Metacreativity (Creation) [see text]',
+          level:            'Energy 3, Psion/Wilder 3',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Area',
+          target:           'An opaque sheet of energy up to [[20*?{Manifester Level}]] ft. long or a ring of energy with a radius of up to [[5*floor(?{Manifester Level}/2)]] ft.',
+          duration:         'Concentration + [[?{Manifester Level}]] rounds',
+          saving_throw:     'Reflex half or Fortitude half; see text',
+          resistance:       'No',
+          power_points:     '5',
+          text:             `Upon manifesting this power, you choose cold, electricity, fire, or sonic. You create an immobile sheet of energy of the chosen type formed out of unstable ectoplasm. One side of the wall, selected by you, sends forth waves of energy, dealing [[2d6]] points of damage to creatures and objects within 10 feet and [[1d6]] points of damage to those beyond 10 feet but within 20 feet. In addition, anyone passing though the energy wall takes 2d6 points of damage +1 point per manifester level (maximum +20).
+                             If you manifest the wall so that it appears where creatures are, each creature takes damage as if passing through the wall.
+                             If you manifest this power in the form of a ring of energy, you choose whether the waves of energy radiate inward or outward from the ring.
+                             **Cold**
+                             A sheet of this energy type deals +1 point of damage per die. The saving throw to reduce damage from a cold wall is a Fortitude save instead of a Reflex save.
+                             **Electricity**
+                             Manifesting a sheet of this energy type provides a +2 bonus to the save DC and a +2 bonus on manifester level checks for the purpose of overcoming power resistance.
+                             **Fire**
+                             A sheet of this energy type deals +1 point of damage per die.
+                             **Sonic**
+                             A sheet of this energy type deals -1 point of damage per die and ignores an object’s hardness.
+
+                             This power’s subtype is the same as the type of energy you manifest.`
+        },
+        'energy wave': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/energyWave.htm',
+          discipline:       'Psychokinesis [see text]',
+          level:            'Energy 7, Psion/Wilder 7',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '120 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped spread',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half or Fortitude half; see text',
+          resistance:       'Yes',
+          power_points:     '13',
+          text:             `Upon manifesting this power, you choose cold, electricity, fire, or sonic. You create a flood of energy of the chosen type out of unstable ectoplasm that deals [[13d6]] points of damage to each creature and object in the area. This power originates at your hand and extends outward in a cone.
+                             **Cold**
+                             A wave of this energy type deals +1 point of damage per die. The saving throw to reduce damage from a cold wave is a Fortitude save instead of a Reflex save.
+                             **Electricity**
+                             Manifesting a wave of this energy type provides a +2 bonus to the save DC and a +2 bonus on manifester level checks for the purpose of overcoming power resistance.
+                             **Fire**
+                             A wave of this energy type deals +1 point of damage per die.
+                             **Sonic**
+                             A wave of this energy type deals -1 point of damage per die and ignores an object’s hardness.
+
+                             This power’s subtype is the same as the type of energy you manifest.`,
+          augment:          `For every additional power point you spend, this power’s damage increases by one die (d6). For each extra two dice of damage, this power’s save DC increases by 1.`
+        },
+        'entangling ectoplasm': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/entanglingEctoplasm.htm',
+          discipline:       'Metacreativity (Creation)',
+          level:            'Psion/Wilder 1, Psychic Rogue 1',
+          display:          'Material and visual',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One Medium or smaller creature',
+          duration:         '5 rounds',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '1',
+          text:             `You draw forth a glob of ectoplasmic goo from the Astral Plane and immediately throw it as a ranged touch attack at any creature in range. On a successful hit, the subject is covered in goo and becomes entangled. The goo evaporates at the end of the power’s duration.`,
+          augment:          `For every 2 additional power points you spend, this power can affect a target one size category larger.`
+        },
+        'eradicate invisibility': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/eradicateInvisibility.htm',
+          discipline:       'Psychokinesis',
+          level:            'Lurk 3, Psion/Wilder 3',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            '50 ft.',
+          target_type:      'Target',
+          target:           'You and all invisible creatures and objects in a 50-ft.-radius burst centered on you',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex negates',
+          resistance:       'No',
+          power_points:     '5',
+          text:             `You radiate a psychokinetic burst that disrupts and negates all types of invisibility (though this power can’t negate the effect of [cloud mind](http://www.d20srd.org/srd/psionic/powers/cloudMind.htm)). Any creature that fails its save to avoid the effect loses its invisibility.
+                             Creatures that are naturally invisible, such as an invisible stalker, are revealed as a dim outline for 1 round (until the beginning of your next turn) and do not have total concealment during this period.`,
+          augment:          `For every additional power point you spend, this power’s range and the radius of the burst in which it functions both increase by 5 feet.`
+        },
+        'escape detection': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/escapeDetection.htm',
+          discipline:       'Clairsentience',
+          level:            'Deception 3, Psychic Rogue 3, Psychic Warrior 3, Seer 3',
+          display:          'None',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] hours',
+          power_points:     '5',
+          text:             `You (plus all your gear and any objects you carry) become difficult to detect by clairsentience powers such as [clairvoyant sense](http://www.d20srd.org/srd/psionic/powers/clairvoyantSense.htm), [remote viewing](http://www.d20srd.org/srd/psionic/powers/remoteViewing.htm), and [psionic true seeing](http://www.d20srd.org/srd/psionic/powers/trueSeeingPsionic.htm). If a clairsentience power or similar effect is attempted against you, the manifester of the power must succeed on a manifester level check (1d20 + manifester level, or caster level if the opponent is not a manifester) against a DC of 13 + your manifester level (maximum +10).`
+        },
+        'evade burst': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/evadeBurst.htm',
+          discipline:       'Psychometabolism',
+          level:            'Freedom 6, Lurk 3, Psion/Wilder 7, Psychic Warrior 3, Worldthought Medic 4',
+          display:          'Material',
+          manifesting_time: '1 immediate action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Instantaneous',
+          power_points:     'Psion/Wilder 13, Psychic Warrior 5',
+          text:             `You throw off a faux ectoplasmic shell, allowing you to slide out of range of a damaging effect. When you manifest this power in conjunction with making a successful Reflex save against an attack that normally deals half damage on a successful save, you instead take no damage.
+                             You can manifest this power with an instant thought, quickly enough to save yourself if you unexpectedly come within range of a dangerous effect. Manifesting this power is an immediate action. You can even manifest this power when it isn’t your turn.`,
+          augment:          `If you spend 4 additional power points, you take only half damage on a failed Reflex save.`
+        },
+        'exhalation of the black dragon': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/exhalationoftheBlackDragon.htm',
+          discipline:       'Psychometabolism [Acid]',
+          level:            'Psychic Warrior 3',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Effect',
+          target:           'Ray',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          resistance:       'Yes',
+          power_points:     '5',
+          text:             `You spit forth vitriolic acid, originating from your mouth, at your target. If you succeed on a ranged touch attack, the target takes [[3d6]] points of acid damage.`,
+          augment:          `For every 2 additional power points you spend, this power’s damage increases by 1d6 points.`
+        },
+        'expansion': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/expansion.htm',
+          discipline:       'Psychometabolism',
+          level:            'Psychic Warrior 1',
+          display:          'Olfactory',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] rounds (D)',
+          power_points:     '1',
+          text:             `This power causes instant growth, doubling your height, length, and width and multiplying your weight by 8. This increase changes your size category to the next larger one. You gain a +2 size bonus to Strength, a -2 size penalty to Dexterity (to a minimum effective Dexterity score of 1), a -1 size penalty on attack rolls, and a -1 size penalty to Armor Class due to your increased size.
+                             If your new size is Large or larger, you have a space of at least 10 feet and a natural reach of at least 10 feet. This power doesn’t change your speed. If insufficient room is available for the desired growth, you attain the maximum possible size and can make a Strength check (using your increased Strength score) to burst any enclosures in the process. If you fail, you are constrained without harm by the materials enclosing you—you cannot crush yourself to death by increasing your size.
+                             All your equipment, worn or carried, is similarly expanded by this power. Melee and projectile weapons deal more damage.
+                             Other psionic or magical properties are not affected by this power. Any affected item that leaves your possession (including a projectile or thrown weapon) instantly returns to its normal size. This means that thrown weapons deal their normal damage (projectiles deal damage based on the size of the weapon that fired them). Multiple effects that increase size do not stack, which means (among other things) that you can’t use a second manifestation of this power to further expand yourself.`,
+          augment:          `You can augment this power in one or more of the following ways.
+                             • If you spend 6 additional power points, this power increases your size by two size categories instead of one. You gain a +4 size bonus to Strength, a -4 size penalty to Dexterity (to a minimum effective Dexterity score of 1), a -2 size penalty on attack rolls, and a -2 size penalty to Armor Class due to your increased size.
+                             • If you spend 6 additional power points, you can manifest this power as a swift action instead of a standard action.
+                             • If you spend 2 additional power points, this power’s duration is 10 minutes per level rather than 1 round per level.`
+        },
+
+
+
+
 
         //'': {
         //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
@@ -13858,6 +14505,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  resistance:       '',
         //  power_points:     '',
         //  text:             ``,
+        //  augment:          ``,
         //  component_details:null
         //},
 
@@ -15843,7 +16491,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               if (spell_spec.resistance) {
                                 spellmacro = spellmacro.concat(' {{Power Resist.:=',spell_spec.resistance,'}}');
                                 if (spell_spec.resistance != 'No') {
-                                  spellmacro = spellmacro.concat(' {{Manifester level check:=[[1d20+?{Manifester Level}[Manifesting Level]]] vs power resist.}}');
+                                  spellmacro = spellmacro.concat(' {{Manifester level check:=[[1d20+?{Manifester Level}[Manifester Level]]] vs power resist.}}');
                                 };
                               };
                               var text_augment = "";
