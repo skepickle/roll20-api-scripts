@@ -14842,99 +14842,91 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         },
         // Powers that start with H
         'hail of crystals': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/hailofCrystals.htm',
+          discipline:       'Hail of Crystals',
+          level:            'Metacreativity (Creation)',
+          display:          'Shaper 5',
+          manifesting_time: 'Auditory and visual',
+          range:            '_medium_',
+          target_type:      'Area',
+          target:           '20-ft.-radius burst',
+          duration:         'Instantaneous',
+          saving_throw:     'Reflex half',
+          resistance:       'No',
+          power_points:     '0',
+          text:             `A tiny ectoplasmic crystal emanates from your outstretched hand and rapidly expands to a 2-foot-diameter ball of crystal as it speeds toward the location you designate. You can choose to aim this crystal at a single target or at a specific point in space (a grid intersection).
+                             If you aim the crystal at a single target, you must make a ranged touch attack to strike the target. Any creature or object struck by the ball of crystal takes ‹5d4|[[5d4]] points of bludgeoning damage› points of bludgeoning damage.
+                             Whether the crystal hits its target, misses, or was aimed at a point in space, it explodes upon arrival at the location you designated. Anyone within 20 feet of the explosion takes ‹9d4|[[9d4]] points of slashing damage› points of slashing damage from the thousands of crystal shards that spray forth.`,
+          augment:          `For every additional power point you spend, this power’s damage from the explosion of the crystal increases by 1d4 points.`
         },
         'hammer': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/hammer.htm',
+          discipline:       'Psychometabolism',
+          level:            'Law 1, Psion/Wilder 1, Psychic Warrior 1',
+          display:          'Auditory and material',
+          manifesting_time: '1 swift action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         '1 round',
+          saving_throw:     'None',
+          resistance:       'Yes',
+          power_points:     '1',
+          text:             `This power charges your touch with the force of a sledgehammer. A successful melee touch attack deals ‹1d8|[[1d8]] points of bludgeoning damage› points of bludgeoning damage. This damage is not increased or decreased by your Strength modifier.`,
+          augment:          `For every additional power point you spend, this power’s duration increases by 1 round.`
         },
         'hostile empathic transfer': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/empathicTransferHostile.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psychic Warrior 3, Telepath 3, Worldthought Medic 3',
+          display:          'Auditory and material',
+          manifesting_time: '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Will half',
+          resistance:       'Yes',
+          power_points:     '5',
+          text:             `You transfer your hurt to another. When you manifest this power and then make a successful touch attack, you can transfer 50 points of damage (or less, if you choose) from yourself to the touched creature. You immediately regain hit points equal to the amount of damage you transfer.
+                             You cannot use this power to gain hit points in excess of your full normal total. The transferred damage is empathic in nature, so powers and abilities the subject may have such as damage reduction and regeneration do not lessen or change this damage.
+                             The damage transferred by this power has no type, so even if the subject has immunity to the type of damage you originally took, the transfer occurs normally and deals hit point damage to the subject.`,
+          augment:          `You can augment this power in one or both of the following ways.
+                             • For every additional power point you spend, you can transfer an additional 10 points of damage (maximum 90 points per manifestation).
+                             • If you spend 6 additional power points, this power affects all creatures in a 20-foot-radius spread centered on you.`
         },
         'hustle': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/hustle.htm',
+          discipline:       'Psychometabolism',
+          level:            'Egoist 3, Freedom 2, Psychic Rogue 3, Psychic Warrior 2, Worldthought Medic 3',
+          display:          'Auditory',
+          manifesting_time: '1 swift action',
+          range:            'Personal',
+          target_type:      'Target and Effect',
+          target:           'You and 1 extra move action',
+          power_points:     'Egoist 5, Psychic Warrior 3',
+          text:             `You gain an additional move action in the current round. Taking a full round’s worth of attacks and then using this power to move away from your foe does provoke attacks of opportunity.
+                             You can manifest this power with an instant thought, quickly enough to gain the benefit of the power before you move. Manifesting the power is a swift action You cannot manifest this power when it isn’t your turn.`
         },
         'hypercognition': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/hypercognition.htm',
+          discipline:       'Clairsentience',
+          level:            'Mental Power 8, Seer 8',
+          display:          'Mental',
+          manifesting_time: '1 standard action or 1 immediate action; see text',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Instantaneous',
+          power_points:     '15',
+          text:             `You make lightning-fast deductions based on only the slightest clue, pattern, or scrap of memory resident in your mind. You can make reasonable statements about a person, place, or object, seemingly from very little knowledge. However, your knowledge is in fact the result of a rigorously logical process that you force your mind to undertake, digging up and correlating every possible piece of knowledge bearing on the topic (possibly even extracting echoes of knowledge from the Astral Plane).
+                             The nature of the knowledge you gain concerning the subject of your analysis might include the answer to a riddle, the way out of a maze, stray bits of information about a person, legends about a place or an object, or even a conclusion concerning a dilemma that your conscious mind is unable to arrive at.
+                             An Intelligence check may be required to obtain the desired information. If so, you can manifest hypercognition as an immediate action prior to making the check and receive a +20 bonus for doing so.`
         },
 
 
@@ -16936,7 +16928,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                 spellmacro = spellmacro.concat(' {{Range:=',dnd35.spell_ranges()[spell_spec.range].replace(/Caster/gm, 'Manifester'),'}}');
                               };
                               spellmacro = spellmacro.concat(' {{',spell_spec.target_type,':=',spell_spec.target.replace(/\(S\)$/, "(Shapeable)"),'}}');
-                              spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration.replace(/\(D\)$/, "(Dismissible)"),'}}');
+                              if (spell_spec.duration) {
+                                spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration.replace(/\(D\)$/, "(Dismissible)"),'}}');
+                              };
                               if (spell_spec.saving_throw) {
                                 spellmacro = spellmacro.concat(' {{Saving Throw:=',spell_spec.saving_throw,'}}');
                               };
