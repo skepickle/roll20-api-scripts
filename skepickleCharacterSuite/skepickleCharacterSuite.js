@@ -15094,6 +15094,39 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              You can manifest this power instantly, quickly enough to gain its benefits in an emergency. Manifesting the power is an immediate action. You can use this power even when it’s not your turn.`,
           augment:          `For every additional power point you spend, this power’s duration increases by 1 round.`
         },
+        // Powers that start with K
+        'know direction and location': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/knowDirectionandLocation.htm',
+          discipline:       'Clairsentience',
+          level:            'Knowledge 1 [+], Lurk 1 [+], Psion/Wilder 1 [+], Psychic Rogue 1 [+]',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Instantaneous',
+          power_points:     '1',
+          text:             `You generally know where you are. This power is useful to characters who end up at unfamiliar destinations after teleporting, using a gate, or traveling to or from other planes of existence. The power reveals general information about your location as a feeling or presentiment. The information is usually no more detailed than a summary that locates you according to a prominent local or regional site. Using this power also tells you what direction you are facing.
+                             Using this power prior to making a Knowledge (the planes) check with [astral caravan](http://www.d20srd.org/srd/psionic/powers/astralCaravan.htm) grants a +2 bonus on the check.`
+        },
+        // Powers that start with L
+        'leech field': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/leechField.htm',
+          discipline:       'Psychometabolism',
+          level:            'Psion/Wilder 5 [+], Worldthought Medic 5 [+]',
+          display:          'Visual; see text',
+          manifesting_time: '1 standard action',
+          range:            'Personal; see text',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '1 minute',
+          power_points:     '9',
+          text:             `You raise a field of potentiality that drains the vitality from powers that you successfully save against. When you succeed on a saving throw to negate the effect of a foe’s power on you, and the power is one that leech field is effective against (see below), your body erupts in a brief flash of crackling dark energy. You gain 1 power point for every 2 power points your foe spent to manifest the power you just saved against (to a maximum number of points equal to your manifester level). You cannot gain power points that would cause you to exceed your normal daily maximum.
+                             This power is effective against any power that targets a single creature and allows the target a saving throw to negate it, except those that are delivered by a touch attack or a ranged touch attack (including a ray).`,
+          augment:          `For every 2 additional power points you spend, this power’s duration increases by 1 minute.`
+        },
 
 
         //'': {
