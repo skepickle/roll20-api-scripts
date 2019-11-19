@@ -15599,6 +15599,95 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              [Dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm) does not remove the field. Two or more null psionics fields sharing any of the same space have no effect on each other. Certain powers may be unaffected by null psionics field (see the individual power descriptions). Artifacts and deities are unaffected by mortal power such as this. Should a creature’s space extend across the boundary of the area enclosed by the field, any part of the creature that lies outside the effect is unaffected by the field.`
         },
         // Powers that start with O
+        'oak body': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/oakBody.htm',
+          discipline:       'Psychometabolism',
+          level:            'Natural World 5, Physical Power 7, Psion/Wilder 7, Psychic Warrior 5, Worldthought Medic 7',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] minutes (D)',
+          power_points:     'Psion/Wilder 13, Psychic Warrior 9',
+          text:             `This power transforms your body into living oak, which grants you several advantages.
+                             You gain damage reduction 10/slashing and a +5 bonus to natural armor that overlaps (does not stack with) any natural armor bonus you may already have. You are immune to ability damage, blindness, deafness, disease, drowning, poison, stunning, and all powers, spells, or attacks that affect your physiology or respiration, because you have no physiology or respiration while this power is in effect.
+                             You take only half damage from cold effects of all kinds. However, you become susceptible to all special attacks that affect wood, and you gain vulnerability to fire.
+                             You gain a +4 enhancement bonus to Strength, but you take a -2 penalty to Dexterity (to a minimum Dexterity score of 1), and your speed is reduced to half normal. You can speak but cannot drink (and thus can’t use potions) or play wind instruments. You have an armor check penalty of -4 and an arcane spell failure chance of 25%.
+                             Your unarmed attacks deal damage equal to a club sized for you (1d4 for Small characters, 1d6 for Medium characters), and you are considered armed when making unarmed attacks. When you make a full attack against an object or structure using your unarmed strike, you deal double damage.`,
+          augment:          `For every additional power point you spend, this power’s duration increases by 1 minute.`
+        },
+        'object reading': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/objectReading.htm',
+          discipline:       'Clairsentience',
+          level:            'Knowledge 2, Psychic Rogue 2, Seer 2',
+          display:          'Auditory and material',
+          manifesting_time: '1 minute',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Object touched',
+          duration:         'Concentration, up to [[10*?{Manifester Level}]] minutes (D)',
+          saving_throw:     'None',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `You can learn details of an inanimate object’s previous owner. Objects accumulate psychic impressions left by their previous owners, which can be read by use of this power. The amount of information revealed depends on how long you study a particular object.
+
+                             **1st Minute**
+                             Last owner’s race.
+                             **2nd Minute**
+                             Last owner’s gender.
+                             **3rd Minute**
+                             Last owner’s age.
+                             **4th Minute**
+                             Last owner’s alignment.
+                             **5th Minute**
+                             How last owner gained and lost the object.
+                             **6th+ Minute**
+                             Next-to-last owner’s race, and so on.
+
+                             The power always correctly identifies the last owner of the item, and the original owner (if you keep the power active long enough).
+                             There is a 90% chance that this power will successfully identify all other former owners in sequence, but there is a 10% chance that one former owner will be skipped and thus not identified.
+                             This power will not identify casual users as owners. (Anyone who uses an object to attack someone or something is not thereafter considered a casual user.)
+                             An object without any previous owners reveals no information. You can continue to run through a list of previous owners and learn details about them as long as the power’s duration lasts. If you use this power additional times on the same object, the information yielded is the same as if you were using the power on the object for the first time.`,
+          augment:          `For every additional power point you spend, this power’s maximum duration increases by 10 minutes.`
+        },
+        'offensive precognition': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/precognitionOffensive.htm',
+          discipline:       'Clairsentience',
+          level:            'Fate 1, Psion/Wilder 1, Psychic Rogue 1, Psychic Warrior 1',
+          display:          'Material and visual',
+          manifesting_time: '1 standard action; see text',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] minutes (D)',
+          power_points:     '1',
+          text:             `Your awareness extends a fraction of a second into the future, allowing you to better land blows against your opponent. You gain a +1 insight bonus on your attack rolls.`,
+          augment:          `You can augment this power in one or both of the following ways.
+                             • For every 3 additional power points you spend, the insight bonus gained on your attack rolls increases by 1.
+                             • If you spend 6 additional power points, you can manifest this power as a swift action`
+        },
+        'offensive prescience': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/prescienceOffensive.htm',
+          discipline:       'Clairsentience',
+          level:            'Conflict 1, Lurk 1, Psion/Wilder 1, Psychic Rogue 1, Psychic Warrior 1',
+          display:          'Material and visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] minutes (D)',
+          power_points:     '1',
+          text:             `Your awareness extends a fraction of a second into the future, allowing you to better aim blows against your opponent. You gain a +2 insight bonus on your damage rolls.`,
+          augment:          `You can augment this power in one or both of the following ways.
+                             • For every 3 additional power points you spend, the insight bonus gained on your damage rolls increases by 1.
+                             • If you spend 6 additional power points, you can manifest this power as a swift action`
+        },
+        // Powers that start with P
 
 
 
