@@ -15198,156 +15198,172 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           augment:          `If you spend 6 additional power points, you can manifest this power as an immediate action.`
         },
         'matter agitation': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/matterAgitation.htm',
+          discipline:       'Psychokinesis',
+          level:            'Chaos 2, Psion/Wilder 1',
+          display:          'Auditory and material',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Area',
+          target:           '2 sq. ft. of surface area of an object or creature',
+          duration:         'Concentration, up to [[?{Manifester Level}]] minutes',
+          saving_throw:     'None',
+          resistance:       'Yes',
+          power_points:     '1',
+          text:             `You can excite the structure of a nonpsionic, nonmagical object, heating it to the point of combustion over time. The agitation grows more intense in the second and third rounds after you manifest the power, as described below.
+                             **1st Round**
+                             Readily flammable material (paper, dry grass, tinder, torches) ignites. Skin reddens (1 point of damage).
+                             **2nd Round**
+                             Wood smolders and smokes, metal becomes hot to the touch, skin blisters (1d4 points of damage), hair smolders, paint shrivels, water boils.
+                             **3rd and Subsequent Rounds**
+                             Wood ignites, metal scorches (1d4 points of damage for those holding metallic objects). Skin burns and hair ignites (1d6 points of damage), lead melts.`
         },
         'matter manipulation': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/matterManipulation.htm',
+          discipline:       'Metacreativity',
+          level:            'Psion/Wilder 8',
+          display:          'Auditory and mental',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Area',
+          target:           '[[?{Manifester Level}]] cu. ft. of inanimate material',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          resistance:       'Yes',
+          power_points:     '15',
+          text:             `You can weaken or strengthen the substance of an object or structure. You can affect both mundane and magical inanimate material. Weakening an object’s substance decreases its hardness and hit points, and strengthening it increases its hardness and hit points. You can increase or decrease an object’s hardness by up to 5 from its original hardness. When hardness increases, the object (or portion of an object) gains 3 hit points per inch of thickness for every point of increased hardness. When hardness decreases, the object (or portion of an object) loses 2 hit points per inch of thickness for every point of decreased hardness (to a minimum of 1 hit point per inch of thickness).
+                             You can’t decrease the hardness of an object that already has hardness 0.
+                             Working Manipulated Metals
+                             An object or portion thereof whose hardness is decreased or increased is permanently changed. Even hardening adamantine to 25 is possible. You can also harden or weaken a preforged weapon, a suit of armor, or some other finished item.`,
+          component_details:'XP Cost: 250 XP for each point by which the object’s hardness is altered.'
         },
         'mental barrier': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/mentalBarrier.htm',
+          discipline:       'Clairsentience',
+          level:            'Lurk 3, Psion/Wilder 3, Psychic Rogue 3, Psychic Warrior 3',
+          display:          'Auditory',
+          manifesting_time: '1 immediate action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '1 round',
+          power_points:     '5',
+          text:             `You project a field of improbability around yourself, creating a fleeting protective shell. You gain a +4 deflection bonus to Armor Class.
+                             You can manifest this power instantly, quickly enough to gain its benefits in an emergency. Manifesting the power is an immediate action. You can use this power even when it’s not your turn; however, you must manifest it prior to an opponent’s attack roll in order to gain this power’s benefit against that attack.`,
+          augment:          `You can augment this power in one or both of the following ways.
+                             • If you spend 4 additional power points, the deflection bonus to Armor Class increases by 1.
+                             • For every additional power point you spend, this power’s duration increases by 1 round.`
         },
         'mental disruption': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/mentalDisruption.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Mental Power 2, Psion/Wilder 2',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '10 ft.',
+          target_type:      'Area',
+          target:           '10-ft.-radius spread centered on you',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `You generate a mental wave of confusion that instantly sweeps out from your location. All creatures you designate in the affected area (you can choose certain creatures to be unaffected) must make a Will save or become dazed for 1 round.`,
+          augment:          `You can augment this power in one or both of the following ways.
+                             • For every 2 additional power points you spend, this power’s save DC increases by 1.
+                             • For every 2 additional power points you spend, this power’s range and the radius of its area both increase by 5 feet.`
         },
         'metaconcert': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/metaconcert.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Communication 5, Psychic Warrior 5, Telepath 5',
+          display:          'Visual; see text',
+          manifesting_time: '1 minute',
+          range:            '20 ft.',
+          target_type:      'Target',
+          target:           'You and up to nine other willing psionic creatures in range',
+          duration:         '[[?{Manifester Level}]] minutes (D)',
+          power_points:     '9',
+          text:             `You link your psychic might with other psionic creatures, creating an entity more powerful than the sum of its parts.
+                             When you manifest this power, a number of power points you designate flows from each participant into a collective pool. One individual is chosen as the metaconcert conductor by mutual consent of the other participants (this is usually the manifester, but doesn’t have to be). Until the power ends, this conductor directs the efforts of the group. Misty strands of glowing power link the brows of all the participants in a complex and shifting pattern.
+                             All the powers of each participant are known to the mental entity created with metaconcert (which is under the conductor’s command). This entity can’t take any more actions than a normal individual, but it manifests all its powers more effectively. Each participant contributing to the entity provides a cumulative +1 bonus to save DCs that apply when manifesting a power or using a psi-like ability. Likewise, each individual provides a cumulative +1 bonus when the entity makes its own saving throws in response to powers or psi-like abilities.
+                             If the psionic entity takes ability damage from a psionic attack the total is divided among all the members as determined by the conductor.
+                             If the entity manifests a power that has an XP cost, all the participants pay an equal share (the conductor pays the remainder if the cost can’t be divided evenly).
+                             Once linked, the participants must remain within a 20-foot-radius area, and as a group can move at a speed of 10 feet. If a participant moves outside the 20-foot-radius area occupied by the others (whether willingly or involuntarily), that individual drops out of the group, and the power point pool of the metaconcert is instantly recalculated.
+                             All participants who leave before a metaconcert ends or is dismissed reclaim a number of power points equal to the current power point pool divided by the number of members. If the conductor drops out, the power ends. That same number of points is removed from the power point pool.
+                             When a metaconcert ends normally or is dismissed, remaining power points in the pool are divided among all the participants (the conductor receives the remainder if the points can’t be divided evenly).`,
+          augment:          `For every additional power point you spend, this power’s duration increases by 1 minute.`
         },
         'metafaculty': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/metafaculty.htm',
+          discipline:       'Clairsentience',
+          level:            'Communication 9, Fate 9, Seer 9',
+          display:          'Mental, olfactory, and visual',
+          manifesting_time: '1 hour',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Instantaneous and [[?{Manifester Level}]] minutes (D); see text',
+          power_points:     '17',
+          text:             `You elevate your mind to a near-universal consciousness, cogitating countless impressions and predictions involving any creature you have seen before, whether personally or by means of another power such as [remote viewing](http://www.d20srd.org/srd/psionic/powers/remoteViewing.htm).
+                             This process gives you an uncannily accurate vision of the creature’s nature, activities, and whereabouts. When you manifest the power, you learn the following facts about the creature.
+
+                             • Its name, race, alignment, and character class.
+                             • A general estimate of its level or Hit Dice: low (5 HD or lower), medium (6 to 11 HD), high (12 to 20 HD), very high (21 HD to 40 HD), or deific (41 HD or higher).
+                             • Its location (including place of residence, town, country, world, and plane of existence).
+                             • Significant items currently in its possession.
+                             • Any significant activities or actions the creature has undertaken in the previous 8 hours, including details such as locales traveled through, the names or races of those the creature fought, spells it cast, items it acquired, and items it left behind (including the location of those items).
+                             • A current mental view of the creature, as described in the [remote viewing](http://www.d20srd.org/srd/psionic/powers/remoteViewing.htm) power, which you can maintain for up to 1 minute per level.
+
+                             Metafaculty can defeat spells, powers, and special abilities such as [screen](http://www.d20srd.org/srd/spells/screen.htm) or [mind blank](http://www.d20srd.org/srd/psionic/powers/mindBlankPsionic.htm) (or even a [wish](http://www.d20srd.org/srd/spells/wish.htm) spell) that normally obscure clairsentience powers. You can attempt a caster level check (DC 6 + caster level of the creator of the obscuring effect) to defeat these sorts of otherwise impervious defenses.
+                             Metafaculty is defeated by epic powers, epic spells, and epic special abilities that obscure divinations and clairsentience powers.`,
+          component_details:'XP Cost: 1,000.'
         },
         'metamorphosis': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/metamorphosis.htm',
+          discipline:       'Psychometabolism',
+          level:            'Egoist 4, Natural World 4',
+          display:          'Material and olfactory',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] minutes (D) for a creature; [[?{Manifester Level}]] hours (D) for an object',
+          power_points:     '7',
+          text:             `You assume the form of a creature of the same type as your normal form, or any other type except construct, elemental, outsider, and undead. The assumed form can have as many Hit Dice as your manifester level, to a maximum of 15.
+                             You can’t assume a form smaller than Fine, nor can you assume an incorporeal, ectoplasmic, or gaseous form. You cannot take the form of any creature that has a template. Your type and subtype (if applicable) change to match the new form.
+                             Upon changing, you regain lost hit points as if you had rested for a night (though this healing does not restore ability damage and provide other benefits of resting; and changing back does not heal you further). If you are slain while under the effect of this power, you revert to your original form, though you remain dead. You gain the Strength, Dexterity, and Constitution scores of the new form but retain your own Intelligence, Wisdom, and Charisma scores. You also gain all extraordinary special attacks possessed by the form (such as constrict, improved grab, and poison) but do not gain the extraordinary special qualities possessed by the new form (such as blindsense, fast healing, regeneration, and scent) or any supernatural, psionic, or spell-like abilities.
+                             You retain all supernatural and spell-like special attacks and special qualities of your normal form, except for those requiring a body part that the new form does not have, if any. You keep all extraordinary special attacks and special qualities derived from class levels, but you lose any benefits of the racial traits of your normal form. If you have a template, special abilities it provides are likewise not retained. If the assumed form is capable of speech, you can communicate normally. You retain any manifesting ability you had in your original form.
+                             You acquire the physical qualities of the new form while retaining your own mind. Physical qualities include natural size, mundane movement capabilities (such as burrowing, climbing, walking, swimming, and flight with wings, to a maximum speed of 120 feet for flying or 60 feet for nonflying movement), natural armor bonus, natural weapons (such as claws or a bite), racial bonuses on skill checks, racial bonus feats, and any anatomical qualities (presence or absence of wings, number of extremities, and so forth). A body with extra limbs does not allow you to make more attacks (or more advantageous two-weapon attacks) than normal.
+                             You can freely designate the new form’s minor physical qualities (such as hair color, hair texture, and skin color) within the normal ranges for a creature of that type. The new form’s significant physical qualities (such as height, weight, and gender) are also under your control, but they must fall within the norms for the new form’s species. You are effectively disguised as an average member of the new form’s race. If you use this power to create a disguise, you get a +10 bonus on your Disguise check.
+                             When the change occurs, your equipment either remains worn or held by the new form (if it is capable of wearing or holding the item in question) or melds into the new form and becomes nonfunctional. When you revert to your normal form, any objects previously melded into the new form reappear in the same location on your body they previously occupied and are once again functional. Any new items you wore in the assumed form and can’t wear in your normal form fall off and land at your feet; any that you could wear in either form or carry in a body part common to both forms (mouth, hands, or the like) at the time of reversion are still held in the same way. Any part of the body or piece of equipment that is separated from the whole reverts to its normal form.
+                             You can also use this power to assume the form of an inanimate object. You gain the object’s hardness and retain your own hit points. You can take the shape of almost any simple object you can think of. If you attempt to take the form of a complex object, you must make an appropriate skill check.. If you fail the check, your manifestation of the power does not succeed. Likewise, you cannot take the form of a complex mechanical mechanism unless you have some sort of skill associated with the object. You cannot use this power to assume the form of a psionic item or a magic item, or any object with a hardness of 15 or higher. You also cannot take the form of a psionically animated mechanism or any object formed of ectoplasm.
+                             As an inanimate object, you lose all mobility. You retain your normal senses and your ability to speak. You can manifest a power if you make a Concentration check (DC 20 + power level); however, doing so ends the duration of this power. If you take damage while in the form of an object, your actual body also takes damage (but the object’s hardness, if any, protects you).`
         },
         'metaphysical claw': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+        // ↲’‹›«»◦•×†‡🖱️ %28Spell%29
+          type:             'power',
+          ref:              '',
+          discipline:       '',
+          level:            '',
+          display:          '',
+          manifesting_time: '',
+          range:            '',
+          target_type:      '',
+          target:           '',
+          duration:         '',
+          saving_throw:     '',
+          resistance:       '',
+          power_points:     '',
+          text:             ``,
+          augment:          ``,
+          component_details:null
         },
         'metaphysical weapon': {
         //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
