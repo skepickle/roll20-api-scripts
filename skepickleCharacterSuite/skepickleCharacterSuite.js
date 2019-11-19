@@ -14928,7 +14928,172 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              The nature of the knowledge you gain concerning the subject of your analysis might include the answer to a riddle, the way out of a maze, stray bits of information about a person, legends about a place or an object, or even a conclusion concerning a dilemma that your conscious mind is unable to arrive at.
                              An Intelligence check may be required to obtain the desired information. If so, you can manifest hypercognition as an immediate action prior to making the check and receive a +20 bonus for doing so.`
         },
-
+        // Powers that start with I
+        'id insinuation': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/idInsinuation.htm',
+          discipline:       'Telepathy (Compulsion) [Mind-Affecting]',
+          level:            'Psion/Wilder 2',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Concentration + 1 round',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `As the [confusion](http://www.d20srd.org/srd/spells/confusion.htm) spell, except as noted here.
+                             Swift tendrils of thought disrupt the unconscious mind of any one creature, sapping its might. As long as the manifester remains concentrating fully on this power, the subject is confused, making it unable to independently determine it will do. Roll on the following table at the beginning of each of the subject’s turns to see what the subject does in that round.
+                             ◦ **d%**, Behavior
+                             • **01-10**, Attack manifester with melee or ranged weapons (or move toward manifester if attack is not possible).
+                             • **11-20**, Act normally.
+                             • **21-50**, Do nothing but babble incoherently.
+                             • **51-70**, Flee from manifester at top possible speed.
+                             • **71-100**, Attack nearest creature (for this purpose, a psicrystal counts as part of the subject’s self).`,
+          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1, and the power can affect an additional target. Any additional target cannot be more than 15 feet from another target of the power.`
+        },
+        'immovability': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/immovability.htm',
+          discipline:       'Psychometabolism',
+          level:            'Conflict 4 [+], Law 4 [+], Psychic Warrior 4 [+], Worldthought Medic 4 [+]',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'Concentration',
+          power_points:     '7',
+          text:             `You are almost impossible to move. Your weight does not vary; instead, you mentally attach yourself to the underlying fabric of the plane. Thus, you could conceivably anchor yourself in midair. Any creature attempting to physically move you must succeed on an opposed Strength check, and you gain a +20 bonus on the check. You can’t voluntarily move to a new location unless you stop concentrating, which ends the power.
+                             You cannot apply your Dexterity bonus to Armor Class; however, your anchored body gains damage reduction 15/-.
+                             You cannot make physical attacks or perform any other large-scale movements (you can make smallscale movements, such as breathing, turning your head, moving your eyes, talking, and so on). Powers with the teleportation descriptor, or any telekinetic effect, manifested on you automatically fail.`,
+          augment:          `If you spend 8 additional power points, you can manifest this power as an immediate action.`
+        },
+        'incarnate': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/incarnate.htm',
+          discipline:       'Metacreativity',
+          level:            'Psion/Wilder 5 [+], Worldthought Medic 5 [+]',
+          display:          'Material',
+          manifesting_time: '2 rounds',
+          range:            'See text',
+          target_type:      'Target, Effect, or Area',
+          target:           'See text',
+          duration:         'Permanent; see text',
+          saving_throw:     'None',
+          resistance:       'No',
+          power_points:     '9',
+          text:             `This power makes certain other powers permanent. Depending on the power to be affected, you must be of a minimum manifester level and must expend a number of XP.
+                             You can make the following powers permanent only in regard to yourself.
+                             You manifest the desired power and then follow it with the incarnate manifestation.
+                             ◦ **Power**, Minimum Manifester Level, **XP Cost**
+                             • [Aura sight](http://www.d20srd.org/srd/psionic/powers/auraSight.htm), 15th, **2,000 XP**
+                             • [Conceal thoughts](), 9th, **500 XP**
+                             • [Danger sense](http://www.d20srd.org/srd/psionic/powers/dangerSense.htm), 13th, **1,500 XP**
+                             • [Detect psionics](http://www.d20srd.org/srd/psionic/powers/detectPsionics.htm), 9th, **500 XP**
+                             • [Detect remote viewing](http://www.d20srd.org/srd/psionic/powers/detectRemoteViewing.htm), 15th, **2,000 XP**
+                             • [Detect teleportation](http://www.d20srd.org/srd/psionic/powers/detectTeleportation.htm), 9th, **500 XP**
+                             • [Elfsight](http://www.d20srd.org/srd/psionic/powers/elfsight.htm), 11th, **1,000 XP**
+                             • [Know direction and location](http://www.d20srd.org/srd/psionic/powers/knowDirectionandLocation.htm), 9th, **500 XP**
+                             • [My light](http://www.d20srd.org/srd/psionic/powers/myLight.htm), 9th, **500 XP**
+                             • [Psionic darkvision](http://www.d20srd.org/srd/psionic/powers/darkvisionPsionic.htm), 13th, **1,500 XP**
+                             • [Psionic tongues](http://www.d20srd.org/srd/psionic/powers/tonguesPsionic.htm), 11th, **1,000 XP**
+                             • [Ubiquitous vision](http://www.d20srd.org/srd/psionic/powers/ubiquitousVision.htm), 13th, **1,500 XP**`,
+          component_details:'XP Cost: 500 XP - 2,000 XP; see table'
+        },
+        'inertial armor': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/inertialArmor.htm',
+          discipline:       'Psychokinesis',
+          level:            'Psion/Wilder 1, Psychic Warrior 1',
+          display:          'Visual; see text',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] hours (D)',
+          power_points:     '1; see text',
+          text:             `Your mind generates a tangible field of force that provides a +4 armor bonus to Armor Class. Unlike mundane armor, inertial armor entails no armor check penalty or speed reduction. Because inertial armor is composed of psychokinetic force, incorporeal creatures can’t bypass it the way they do normal armor.
+                             Your inertial armor can be invisible or can appear as a colored glow, at your option.
+                             The armor bonus provided by inertial armor does not stack with the armor bonus provided by regular armor.`,
+          augment:          `For every 2 additional power points you spend, the armor bonus to Armor Class increases by 1.`
+        },
+        'inertial barrier': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/inertialBarrier.htm',
+          discipline:       'Psychokinesis',
+          level:            'Kineticist 4 [+], Psychic Warrior 4 [+], Worldthought Medic 4 [+]',
+          display:          'Auditory and mental',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[10*?{Manifester Level}]] minutes',
+          power_points:     '7',
+          text:             `You create a skin-tight psychokinetic barrier around yourself that resists blows, cuts, stabs, and slashes, as well as providing some protection against falling. You gain damage reduction 5/-. Inertial barrier also absorbs half the damage you take from any fall.`
+        },
+        'inflict pain': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/inflictPain.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Pain and Suffering 2 [+], Psion/Wilder 2 [+]',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         '[[?{Manifester Level}]] rounds',
+          saving_throw:     'Will partial; see text',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `You telepathically stab the mind of your foe, causing horrible agony. The subject suffers wracking pain that imposes a -4 penalty on attack rolls, skill checks, and ability checks. If the target makes its save, it takes only a -2 penalty.`,
+          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1, and the power can affect an additional target. Any additional target cannot be more than 15 feet from another target of the power.`
+        },
+        'insanity': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/insanity.htm',
+          discipline:       'Telepathy (Compulsion) [Mind-Affecting]',
+          level:            'Corruption and Madness 7 [+], Psion/Wilder 7 [+]',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '13',
+          text:             `As the [confusion](http://www.d20srd.org/srd/spells/confusion.htm) spell, except as noted here.
+                             Creatures affected by this power are permanently confused and constantly behave randomly. Roll on the following table at the beginning the subject’s turn each round to see what the subject does in that round.
+                             ◦ **d%**, Behavior
+                             • **01-10**, Attack manifester with melee or ranged weapons (or move toward manifester if attack is not possible).
+                             • **11-20**, Act normally.
+                             • **21-50**, Do nothing but babble incoherently.
+                             • **51-70**, Flee from manifester at top possible speed.
+                             • **71-100**, Attack nearest creature (for this purpose, a psicrystal counts as part of the subject’s self).
+                             Only [psychic chirurgery](http://www.d20srd.org/srd/psionic/powers/psychicChirurgery.htm), [reality revision](http://www.d20srd.org/srd/psionic/powers/realityRevision.htm), and other similarly extreme measures can restore the subject’s sanity.`,
+          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1, and the power can affect an additional target. Any additional target cannot be more than 15 feet from another target of the power.`
+        },
+        'intellect fortress': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/intellectFortress.htm',
+          discipline:       'Psychokinesis',
+          level:            'Mental Power 4 [+], Psion/Wilder 4 [+]',
+          display:          'Auditory',
+          manifesting_time: '1 immediate action',
+          range:            '20 ft.',
+          target_type:      'Area',
+          target:           '20-ft.-radius spread centered on you',
+          duration:         '1 round',
+          saving_throw:     'None',
+          resistance:       'Yes',
+          power_points:     '7',
+          text:             `You encase yourself and your allies in a shimmering fortress of telekinetic force. All damage from powers and psi-like abilities taken by subjects inside the area of the intellect fortress, including ability damage, is halved. This lowering takes place prior to the effects of other powers or abilities that lessen damage, such as damage reduction and evasion.
+                             Powers that are not subject to power resistance are not affected by an intellect fortress.
+                             You can manifest this power instantly, quickly enough to gain its benefits in an emergency. Manifesting the power is an immediate action. You can use this power even when it’s not your turn.`,
+          augment:          `For every additional power point you spend, this power’s duration increases by 1 round.`
+        },
 
 
         //'': {
