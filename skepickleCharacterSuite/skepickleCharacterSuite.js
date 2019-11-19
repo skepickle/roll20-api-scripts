@@ -15347,234 +15347,258 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              As an inanimate object, you lose all mobility. You retain your normal senses and your ability to speak. You can manifest a power if you make a Concentration check (DC 20 + power level); however, doing so ends the duration of this power. If you take damage while in the form of an object, your actual body also takes damage (but the object’s hardness, if any, protects you).`
         },
         'metaphysical claw': {
-        // ↲’‹›«»◦•×†‡🖱️ %28Spell%29
           type:             'power',
-          ref:              '',
-          discipline:       '',
-          level:            '',
-          display:          '',
-          manifesting_time: '',
-          range:            '',
-          target_type:      '',
-          target:           '',
-          duration:         '',
-          saving_throw:     '',
-          resistance:       '',
-          power_points:     '',
-          text:             ``,
-          augment:          ``,
-          component_details:null
+          ref:              'http://www.d20srd.org/srd/psionic/powers/metaphysicalClaw.htm',
+          discipline:       'Psychometabolism',
+          level:            'Natural World 1, Psychic Warrior 1',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[?{Manifester Level}]] minutes',
+          power_points:     '1',
+          text:             `If you have a claw attack (either from an actual natural weapon or from an effect such as [claws of the beast](http://www.d20srd.org/srd/psionic/powers/clawsoftheBeast.htm)) or a bite attack (which could be a natural bite attack or one you gain by means of the power [bite of the wolf](http://www.d20srd.org/srd/psionic/powers/biteoftheWolf.htm)), you can use this power to provide one of your natural weapons a +1 enhancement bonus on attack rolls and damage rolls.`,
+          augment:          `If you spend 4 additional power points, this power’s duration increases to 1 hour per level.
+                             In addition, for every 4 additional power points you spend, this power improves the natural weapon’s enhancement bonus on attack rolls and damage rolls by 1.`
         },
         'metaphysical weapon': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/metaphysicalWeapon.htm',
+          discipline:       'Metacreativity',
+          level:            'Conflict 1, Magic 1, Psychic Warrior 1',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Weapon touched',
+          duration:         '[[?{Manifester Level}]] minutes',
+          saving_throw:     'Will negates (harmless, object)',
+          resistance:       'Yes (harmless, object)',
+          power_points:     '1',
+          text:             `Metaphysical weapon gives a weapon a +1 enhancement bonus on attack rolls and damage rolls. (An enhancement bonus does not stack with a masterwork weapon’s +1 bonus on attack rolls.)
+                             Alternatively, you can affect up to fifty arrows, bolts, or bullets. The projectiles must be of the same type, and they have to be together (such as in the same quiver). Projectiles, but not thrown weapons, lose their enhancement when used. (Treat shuriken as projectiles, rather than thrown weapons, for the purpose of this power.)
+                             You can’t manifest this power on most natural weapons, including a psychic warrior’s claw strike. This power does work on a weapon brought into being by the [graft weapon](http://www.d20srd.org/srd/psionic/powers/graftWeapon.htm) power.`,
+          augment:          `If you spend 4 additional power points, this power’s duration increases to 1 hour per level.
+                             In addition, for every 4 additional power points you spend, this power improves the weapon’s enhancement bonus on attack rolls and damage rolls by 1.`
         },
         'microcosm': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/microcosm.htm',
+          discipline:       'Telepathy (Compulsion) [Mind-Affecting]',
+          level:            'Corruption and Madness 9, Psion/Wilder 9',
+          display:          'Material',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target or Area',
+          target:           'One creature; or one or more creatures within a 15-ft.-radius sphere',
+          duration:         'Instantaneous',
+          saving_throw:     'None',
+          resistance:       'Yes',
+          power_points:     '17',
+          text:             `This power enables you to warp the consciousness and senses of one or more creatures, sending the victim into a catatonic state. When microcosm is manifested, you can target either a single creature within range or a group of creatures all located within the power’s area.
+                             **Single Target**
+                             If microcosm targets a single creature, that creature’s senses are pinched off from the real world if it currently has 100 or fewer hit points. The subject’s senses are all completely fabricated from within its own mind, though it may not realize this. In reality, the subject sprawls limply, drooling and mewling, and eventually dies of thirst and starvation without care. The subject lives within its own made-up world until the time of its actual death.
+                             **Area Effect**
+                             If microcosm is manifested on an area, it sends all affected creatures into a shared catatonia (the world is a construct, but within the world, the victims can interact with each other). It affects only creatures that currently have 30 or fewer hit points, and only up to a total of 300 hit points of such creatures. The power affects creatures with the lowest hit point totals first. (Creatures with negative hit points count as having 0 hit points.)
+
+                             Manifesting microcosm a second time on an affected creature turns its sensory pathways outward once more. Otherwise, only very potent powers (such as [psychic chirurgery](http://www.d20srd.org/srd/psionic/powers/psychicChirurgery.htm) or [reality revision](http://www.d20srd.org/srd/psionic/powers/realityRevision.htm)) or similar effects (such as [miracle](http://www.d20srd.org/srd/spells/miracle.htm) or [wish](http://www.d20srd.org/srd/spells/wish.htm)) can undo the mental crosswiring that this power brings about.`,
+          augment:          `For every additional power point you spend, the number of individual and group hit points the power can affect increases by 10.`
         },
         'mind probe': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/mindProbe.htm',
+          discipline:       'Telepathy (Charm) [Mind-Affecting]',
+          level:            'Telepath 5',
+          display:          'Auditory, material, and visual',
+          manifesting_time: '1 minute',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         '[[?{Manifester Level}]] rounds (D)',
+          saving_throw:     'Will partial; see text',
+          resistance:       'Yes',
+          power_points:     '9',
+          text:             `All the subject’s memories and knowledge are accessible to you, from memories deep below the surface to those still easily called to mind. You can learn the answer to one question per round, to the best of the subject’s knowledge. If the subject succeeds on a Will save, it is not required to answer the question; however, making a save does not end the power. You can ask the subject a new question (or the same question) in subsequent rounds for as long as the power’s duration persists.
+                             You can probe a sleeping subject and automatically get an answer to your question. If the subject then succeeds on a Will save, it wakes after providing the answer and thereafter can resist answering by making Will saves as described above.
+                             Subjects that do not wish to be probed can attempt to move beyond the power’s range, unless they are somehow hindered. You pose the questions telepathically, and the answers to those questions are imparted directly to your mind. You and the subject do not need to speak the same language, though less intelligent creatures may yield up only appropriate visual images in answer to your questions.`
         },
         'mind seed': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/mindSeed.htm',
+          discipline:       'Telepathy (Compulsion) [Evil, Mind-Affecting]',
+          level:            'Telepath 8',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'One touched Medium or smaller humanoid',
+          duration:         'Instantaneous; see text',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '15',
+          text:             `You impress the totality of your psyche into a subject’s subconscious. If successfully implanted, the seed of your mind “germinates” over the period of one week. During this time, the subject begins to unconsciously take on your mannerisms.
+                             When integration is complete (after one week), the subject becomes you in mind as you were when you manifested the power, but the subject’s level is eight lower than your own. (In effect, the subject has received eight negative levels—but these are negative levels that can’t be removed.) The subject does not have any of your physical ability scores or equipment, but does have the Intelligence, Wisdom, and Charisma scores you had when you were eight levels lower. The subject also knows the powers you knew when you were eight levels lower.
+                             While the subject is initially your mental duplicate, the two personalities diverge over time. Although the subject starts off with memories of your experiences, it possesses its original “soul” and physical body and is free to develop its own personality based on its own new experiences. Thus, the subject is not your slave or servant, but instead a nonplayer character in its own right that shares your earlier memories.
+                             [Protection from evil](http://www.d20srd.org/srd/spells/protectionFromEvil.htm) or a similar spell or power can prevent you from implanting mind seed, or prevent a seed from germinating while the protective power lasts. Otherwise, a germinating seed can be removed (prior to germination) only by [psychic chirurgery](http://www.d20srd.org/srd/psionic/powers/psychicChirurgery.htm), [reality revision](http://www.d20srd.org/srd/psionic/powers/realityRevision.htm), or similarly high-level effects. Manifesting mind seed again during the germination period also cleanses the subject’s mind.`,
+          component_details:'XP Cost: 3,000 XP.'
         },
         'mind switch': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/mindSwitch.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Telepath 6',
+          display:          'Visual',
+          manifesting_time: '1 round',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'You and one other creature',
+          duration:         '[[10*?{Manifester Level}]] minutes',
+          saving_throw:     'Will negates; see text',
+          resistance:       'Yes',
+          power_points:     '11',
+          text:             `You can attempt to take control of a nearby living creature, forcing your mind (and soul) into its body, and its mind into your body. You can target any creature whose Hit Dice are equal to or less than your manifester level.
+                             You possess the target’s body and force the creature’s mind into your body unless it succeeds on a Will save. You can move your mind back into your own body whenever you desire, which returns the subject’s mind to its own body and ends the power. If the manifestation succeeds, your life force occupies the host body, and the host’s life force takes over yours.
+                             You can call on rudimentary or instinctive knowledge of the subject creature, but not upon its acquired or learned knowledge (such as skills and feats it possesses). The same is true for the subject in your body. The mind switch brings about the following changes.
+                             • You gain the type of your assumed body.
+                             • You gain the Strength, Dexterity, and Constitution scores of your assumed body.
+                             • You gain the natural armor, natural attacks, movement, and other simple physical characteristics of your assumed body.
+                             • You gain the extraordinary special attacks and qualities of your assumed body, but you do not gain supernatural or spell-like abilities.
+                             • You gain the possessions and equipment of your assumed body.
+                             • You retain your own hit points, saving throws (possibly modified by new ability scores), class abilities, supernatural and spell-like abilities, spells and powers, and skills and feats (although skill checks use your new ability scores, and you may be temporarily unable to use feats whose requirements you do not meet in your new body).
+                             Supernatural abilities that require a certain body part may be unavailable in your new form.
+                             If either body is killed while the power is in effect, the other participant also dies when the power ends. If one participant’s body becomes petrified, imprisoned by [temporal stasis](http://www.d20srd.org/srd/spells/temporalStasis.htm) or [imprisonment](http://www.d20srd.org/srd/spells/imprisonment.htm), or incapacitated in some other way, the other participant will be incapacitated in that way when the power ends.
+                             A targeted [dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm) (or similar spells or effects) successfully manifested on either participant causes both minds to return to their original bodies.`,
+          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1.`,
+          component_details:'XP Cost: 100 XP.'
         },
         'mind thrust': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/mindThrust.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Mental Power 1, Psion/Wilder 1',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '1',
+          text:             `You instantly deliver a massive assault on the thought pathways of any one creature, dealing ‹1d10|[[1d10]] points of damage› points of damage to it.`,
+          augment:          `For every additional power point you spend, this power’s damage increases by 1d10 points. For each extra 2d10 points of damage, this power’s save DC increases by 1.`
         },
         'mind trap': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/mindTrap.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Mental Power 3, Psion/Wilder 3',
+          display:          'Auditory',
+          manifesting_time: '1 immediate action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '1 round',
+          saving_throw:     'None',
+          resistance:       'Yes (harmless)',
+          power_points:     '5',
+          text:             `You set up a trap in your mind against psionic intruders. Anyone who attacks you with a telepathy power immediately loses ‹1d6|loses [[1d6]] power points› power points. This power’s effect does not negate the power that is currently being used against you. You can manifest this power instantly, quickly enough to gain its benefit in an emergency. Manifesting the power is an immediate action. You can use this power even when it is not your turn.`,
+          augment:          `For every additional power point you spend, this power’s duration increases by 1 round.`
         },
         'mindlink': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/mindlink.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Telepath 1',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            'Close ([[25+(5*floor([[?{Caster Level}/2]]))]] ft.); see text',
+          target_type:      'Target',
+          target:           'You and one other willing creature within range that has an Intelligence score of 3 or higher',
+          duration:         '[[10*?{Manifester Level}]] minutes',
+          saving_throw:     'None; see text',
+          resistance:       'Yes (harmless)',
+          power_points:     '1',
+          text:             `You forge a telepathic bond with your target. You can communicate telepathically through the bond even if you do not share a common language. No special power or influence is established as a result of the bond. Once the bond is formed, it works over any distance (although not from one plane to another).`,
+          augment:          `You can augment this power in one or both of the following ways.
+                             • If you spend 4 additional power points, you can attempt to create a telepathic bond with a creature that is not willing (Will save negates).
+                             • For every additional power point you spend, this power can affect an additional target. Any additional target cannot be more than 15 feet from another target of the power.`
         },
         'mindwipe': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/mindwipe.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Corruption and Madness 4, Lurk 4, Psion/Wilder 4',
+          display:          'Auditory, mental, and visual',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Fortitude negates',
+          resistance:       'Yes',
+          power_points:     '7',
+          text:             `You partially wipe your victim’s mind of past experiences, bestowing two negative levels upon it. If the subject has at least as many negative levels as Hit Dice, it dies. For each negative level it gains, a psionic creature loses knowledge of one power from its highest available level, and a number of power points from its maximum power point total sufficient to manifest that power. The effects of multiple negative levels stack.
+                             If the subject survives, it loses these two negative levels after 1 hour. (No Fortitude save is necessary to avoid gaining the negative level permanently.)`,
+          augment:          `You can manifest this power in one or both of the following ways.
+                             • For every 2 additional power points you spend, this power’s save DC increases by 1.
+                             • For every 3 additional power points you spend, this power bestows an additional negative level on the subject.`
         },
         'missive': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/missive.htm',
+          discipline:       'Telepathy [Mind-Affecting, Language-Dependent]',
+          level:            'Communication 1, Psion/Wilder 1, Worldthought Medic 1',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '_close_',
+          target_type:      'Target, and Effect',
+          target:           'One creature, and mental message delivered to subject',
+          saving_throw:     'None',
+          resistance:       'Yes',
+          power_points:     '1',
+          text:             `You send a telepathic message of up to ten words to any living creature within range. Missive is strictly a one-way exchange from you to the subject. If you do not share a common language, the subject “hears” meaningless mental syllables.`,
+          augment:          `For every 2 additional power points you spend, this power’s range increases by 5 feet.`
         },
         'my light': {
-        //// ↲’‹›«»◦•×†‡🖱️ %28Spell%29
-        //  type:             'power',
-        //  ref:              '',
-        //  discipline:       '',
-        //  level:            '',
-        //  display:          '',
-        //  manifesting_time: '',
-        //  range:            '',
-        //  target_type:      '',
-        //  target:           '',
-        //  duration:         '',
-        //  saving_throw:     '',
-        //  resistance:       '',
-        //  power_points:     '',
-        //  text:             ``,
-        //  augment:          ``,
-        //  component_details:null
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/myLight.htm',
+          discipline:       'Psychokinesis [Light]',
+          level:            'Lightness and Darkness 1, Psion/Wilder 1, Psychic Rogue 1, Psychic Warrior 1',
+          display:          'Auditory and visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Effect',
+          target:           '20-ft. cone of light emanating from you',
+          duration:         '[[10*?{Manifester Level}]] minutes (D)',
+          power_points:     '1',
+          text:             `Your eyes beam forth a 20-foot cone of light. You and other creatures can see normally in the light. If you walk into an area filled with psionic or magical darkness, my light goes dark while you stay within that area.
+                             If my light is used in conjunction with [elfsight](http://www.d20srd.org/srd/psionic/powers/elfsight.htm), the cone of light extends out to 40 feet instead of 20 feet.`,
+          augment:          `If you spend 2 additional power points, you can manifest this power as a swift action`
         },
-
+        // Powers that start with N
+        'null psionics field': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/nullPsionicsField.htm',
+          discipline:       'Psychokinesis',
+          level:            'Kineticist 6, Magic 6',
+          display:          'Auditory and visual',
+          manifesting_time: '1 standard action',
+          range:            '10 ft.',
+          target_type:      'Area',
+          target:           '10-ft.-radius emanation centered on you',
+          duration:         '[[10*?{Manifester Level}]] minutes (D)',
+          saving_throw:     'None',
+          resistance:       'See text',
+          power_points:     '11',
+          text:             `An invisible barrier surrounds you and moves with you. The space within this barrier is impervious to most psionic effects, including powers, psi-like abilities, and supernatural abilities. Likewise, it prevents the functioning of any psionic items or powers within its confines. A null psionics field suppresses any power or psionic effect used within, brought into, or manifested into its area, but does not negate it. Time spent within a null psionics field counts against a suppressed effect’s duration.
+                             Astral constructs and summoned creatures wink out if they enter a null psionics field. They reappear in the same spot once the field goes away. Time spent winked out counts normally against the duration of the power that is maintaining the construct or summoned creature.
+                             Creation powers with instantaneous durations and calling powers are not affected by a null psionics field because the power itself is no longer in effect, only its result.
+                             A normal creature (a normally encountered construct rather than a created one, for instance) can enter the area, as can normal missiles. Furthermore, while a psionic sword does not function psionically within the area, it is still a sword (and a masterwork sword at that). The power has no effect on golems and other constructs that are imbued with magic during their creation process and are thereafter self-supporting (unless they have been summoned or have a limited duration, in which case they are treated like any other summoned creatures). Elementals, corporeal undead, and outsiders are likewise unaffected unless summoned. These creatures’ spell-like or supernatural abilities, however, may be temporarily nullified by the field.
+                             [Dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm) does not remove the field. Two or more null psionics fields sharing any of the same space have no effect on each other. Certain powers may be unaffected by null psionics field (see the individual power descriptions). Artifacts and deities are unaffected by mortal power such as this. Should a creature’s space extend across the boundary of the area enclosed by the field, any part of the creature that lies outside the effect is unaffected by the field.`
+        },
+        // Powers that start with O
 
 
 
