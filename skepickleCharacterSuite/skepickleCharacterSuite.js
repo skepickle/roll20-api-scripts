@@ -16677,6 +16677,193 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Large quantities of quintessence could theoretically be gathered to preserve large items or structures (or even a complete living creature; if completely immersed, a living creature would not take the damage associated with partial contact). However, psionic characters and creatures are generally loath to do so because accumulations of quintessence weighing 1 pound or more hinder psionic activity within a 5-foot radius of the accumulation: Powers require twice as many power points to manifest, unless the manifester makes a successful DC 16 Will save each time he or she attempts to manifest a power. Also in these circumstances, manifesting a psi-like ability that is usable at will is a full-round action rather than a standard action.`
         },
         // Powers that start with R
+        'read thoughts': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/readThoughts.htm',
+          discipline:       'Telepathy [Mind-Affecting]',
+          level:            'Psychic Rogue 2, Telepath 2',
+          display:          'Mental',
+          manifesting_time: '1 standard action',
+          range:            '60 ft.',
+          target_type:      'Area',
+          target:           'Cone-shaped emanation centered on you',
+          duration:         'Concentration, up to [[?{Manifester Level}]] minutes (D)',
+          saving_throw:     'Will negates; see text',
+          resistance:       'No',
+          power_points:     '3',
+          text:             `You know the surface thoughts of the mind of any creature in the area that fails a Will save. A target that succeeds on its save is not affected by this manifestation of the power, even if it leaves the area and then reenters the area before the duration expires.
+                             Creatures of animal intelligence have simple, instinctual thoughts that you can pick up. If you read the thoughts of a creature with an Intelligence of 26 or higher (and at least 10 points higher than your own Intelligence score), you are stunned for 1 round and the power ends. This power does not let you pinpoint the location of an affected mind if you don’t have line of sight to the subject.
+                             Each round, you can turn to use this power in a new area. The power can penetrate barriers, but 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt blocks it.`
+        },
+        'reality revision': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/realityRevision.htm',
+          discipline:       'Clairsentience',
+          level:            'Psion/Wilder 9',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            'See text',
+          target_type:      'Target, Effect, or Area',
+          target:           'See text',
+          duration:         'See text',
+          saving_throw:     'See text',
+          resistance:       'See text',
+          power_points:     '17',
+          text:             `As [bend reality](http://www.d20srd.org/srd/psionic/powers/bendReality.htm), but with more farreaching effects. A reality revision can produce any one of the following effects.
+
+                             • Duplicate any psion power of 8th level or lower, provided the power is not prohibited to you.
+                             • Duplicate any other power (but not a spell) of 6th level or lower, such as a psychic warrior power.
+                             • Duplicate any psion power of 7th level or lower even if it’s a power prohibited to you.
+                             • Undo the harmful effects of many other powers, such as [microcosm](http://www.d20srd.org/srd/psionic/powers/microcosm.htm), [geas/quest](http://www.d20srd.org/srd/spells/geasQuest.htm), or [insanity](http://www.d20srd.org/srd/psionic/powers/insanity.htm).
+                             • Create a nonpsionic item of up to 25,000 gp in value.
+                             • Create a psionic item, or add to the powers of an existing psionic item (see XP cost below).
+                             • Grant a creature a +1 inherent bonus to an ability score. Two to five reality revisions manifested in immediate succession can grant a creature a +2 to +5 inherent bonus to an ability score. Inherent bonuses are instantaneous, so they cannot be negated or dispelled. An inherent bonus cannot exceed +5 for a single ability score. Inherent bonuses to a particular ability score do not stack; only the best one applies.
+                             • Remove injuries and afflictions. A single reality revision can aid one creature per manifester level, and all subjects are cured of the same kind of affliction.
+
+                             Reality revision can not restore the experience point loss from manifesting a power or casting a spell, or the level or Constitution loss from being returned to life by those effects that reduce level or Constitution.
+
+                             • Revive the dead. Reality revision can bring a dead creature back to life by duplicating a [resurrection](http://www.d20srd.org/srd/spells/resurrection.htm) spell. This power can revive a dead creature whose body has been destroyed, but the task takes two manifestations of reality revision, one to recreate the body and another to infuse the body with life again. Reality revision cannot prevent a character who is brought back to life from losing a level.
+                             • Transport travelers. This power can lift one creature per manifester level from anywhere on any plane and place those creatures anywhere else on any plane regardless of local conditions. An unwilling target gets a Will save to negate the effect, and power resistance (if any) applies.
+                             • Undo misfortune. Reality revision can undo a single recent event. Manifesting the power forces a reroll of any roll made within the last round (including your last turn). Reality reshapes itself to accommodate the new result. The reroll, however, may be as bad as or worse than the original roll. An unwilling target gets a Will save to negate the effect, and power resistance (if any) applies.
+
+                             You can try to use reality revision to produce more powerful effects than these, but doing so is dangerous. The manifestation may pervert your intent into a literal but undesirable fulfillment or only a partial fulfillment.
+                             Duplicated powers allow saves and power resistance as normal (but save DCs are calculated as though the power is 9th level).`,
+          component_details:`XP Cost: The minimum XP cost for manifesting reality revision is 5,000 XP. When a manifestation duplicates a power that has an XP cost, you must pay 5,000 XP or that cost, whichever is more. When a manifestation creates or improves a psionic item, you must pay twice the normal XP cost for crafting or improving the item, plus an additional 5,000 XP.`
+        },
+        'recall agony': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/recallAgony.htm',
+          discipline:       'Clairsentience [Mind-Affecting]',
+          level:            'Pain and Suffering 2, Psion/Wilder 2',
+          display:          'Material',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Will half',
+          resistance:       'Yes',
+          power_points:     '3',
+          text:             `The fabric of time parts to your will, revealing wounds your foe has received in the past (or has yet to receive). That foe takes [[2d6]] points of damage as the past (or future) impinges briefly on the present.`,
+          augment:          `For every additional power point you spend, this power’s damage increases by 1d6 points. For each extra 2d6 points of damage, this power’s save DC increases by 1.`
+        },
+        'recall death': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/recallDeath.htm',
+          discipline:       'Clairsentience [Death, Mind-Affecting]',
+          level:            'Death 8, Psion/Wilder 8',
+          display:          'Material',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One creature',
+          duration:         'Instantaneous',
+          saving_throw:     'Will partial; see text',
+          resistance:       'Yes',
+          power_points:     '15',
+          text:             `As [recall agony](http://www.d20srd.org/srd/psionic/powers/recallAgony.htm), except the wounds revealed by folding the fourth dimension are potentially fatal. If the target fails its Will save. it dies. If the save succeeds, the target instead takes [[5d6]] points of damage.`,
+          augment:          `For every additional power point you spend, this power’s damage increases by 1d6 points. For each extra 2d6 points of damage, this power’s save DC increases by 1.`
+        },
+        'reddopsi': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/reddopsi.htm',
+          discipline:       'Psychokinesis',
+          level:            'Justice 7, Kineticist 7',
+          display:          'Auditory, mental, and olfactory',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[10*?{Manifester Level}]] minutes (D)',
+          power_points:     '13',
+          text:             `When you manifest reddopsi, powers targeted against you rebound to affect the original manifester. This effect reverses powers that have only you as a target (except [dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm) and similar powers or effects). Powers that affect an area and those that produce effects can’t be reversed. Reddopsi also can’t reverse any power with a range of touch.
+                             Should you rebound a power back against a manifester who also is protected by reddopsi, the power rebounds once more upon you.`
+        },
+        'remote view trap': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/remoteViewTrap.htm',
+          discipline:       'Clairsentience [Electricity]',
+          level:            'Psion/Wilder 6',
+          display:          'Mental and visual',
+          manifesting_time: '1 standard action',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         '[[24+?{Manifester Level}]] hours',
+          saving_throw:     'Will half; see text',
+          resistance:       'No',
+          power_points:     '11',
+          text:             `When others use [clairvoyant sense](http://www.d20srd.org/srd/psionic/powers/clairvoyantSense.htm), [remote viewing](http://www.d20srd.org/srd/psionic/powers/remoteViewing.htm), or other means of scrying you from afar, your prepared trap gives them a nasty surprise. If the scryer fails its saving throw, you are undetected. Moreover, the would-be observer takes ‹8d6|[[8d6]] points of electricity damage› points of electricity damage. If the scryer makes its saving throw, it takes only ‹4d6|[[4d6]] points of electricity damage› points of electricity damage and is able to observe you normally. Either way, you are aware of the attempt to view you, but not of the viewer or the viewer’s location. It is possible that you might recognize the quasireal viewpoint of someone using the remote viewing power if you could pierce its invisibility (which is true for remote viewing whether or not you use this power).`
+        },
+        'remote viewing': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/remoteViewing.htm',
+          discipline:       'Clairsentience (Scrying; see text)',
+          level:            'Fate 4, Psychic Rogue 5, Seer 4',
+          display:          'Mental',
+          manifesting_time: '1 hour',
+          range:            'See text',
+          target_type:      'Effect',
+          target:           'Quasi-real viewpoint',
+          duration:         '[[?{Manifester Level}]] minutes (D)',
+          saving_throw:     'Will negates',
+          resistance:       'Yes',
+          power_points:     '7',
+          text:             `You send your mind across space and dimensions, forming it into a quasireal viewpoint from which you can see and hear some creature located at any distance from you, even if planar boundaries separate you. If the subject succeeds on a Will save, the remote viewing attempt fails, and you can’t attempt to view that creature again for at least 24 hours. The difficulty of the save depends on how well you know the subject and what sort of physical connection (if any) you have to that creature. Furthermore, if the subject is on another plane, it gets a +5 bonus on its Will save.
+
+                             ◦ Knowledge, **Will Save Modifier**
+                             • None†, **+10**
+                             • Secondhand (you have heard of the subject), **+5**
+                             • Firsthand (you have met the subject), **+0**
+                             • Familiar (you know the subject well), **-5**
+                             †You must have some sort of connection to a creature you have no knowledge of.
+
+                             ◦ Connection, **Will Save Modifier**
+                             • Likeness or picture, **-2**
+                             • Possession or garment, **-4**
+                             • Body part, lock of hair, bit of nail, etc., **-10**
+                             • Subject on another plane, **+5**
+
+                             If the subject fails its Will save, your mind coalesces a quasi-real viewpoint near enough to the subject to see and hear the subject and its immediate surroundings (up 30 feet in all directions away from the subject).
+                             While the remote viewing lasts, your real body remains unmoving and unaware of your actual surroundings. On the other hand, your quasi-real viewpoint is treated in some ways as if it were an invisible [ectoplasmic form](http://www.d20srd.org/srd/psionic/powers/ectoplasmicForm.htm) of yourself, except as follows. This power is of the Scrying subdiscipline, but use the following information in place of the standard scrying sensor. As a quasi-real viewpoint, you can speak (though your voice is whispery).
+                             You may potentially be sensed by the subject of your viewing (subjects who can see or sense invisible or hidden creatures automatically sense you; otherwise you make a Hide check with a +40 bonus to escape detection if immobile, or a +20 bonus if moving). You could be attacked (although if you become subject to [dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm), the remote viewing simply ends). If the subject moves, you can attempt to follow it at a speed of 20 feet, though if it gets farther than 30 feet from you (or you move farther than 30 feet from it), the power ends.
+                             You can attempt to manifest one power through your quasi-real viewpoint, but you must make a Concentration check (DC 20 + level of the power you wish to manifest) to succeed. Manifesting (or attempting and failing to manifest) a power immediately ends the remote viewing.
+                             Furthermore, all powers from your quasi-real viewpoint cost twice the usual number of power points (you can’t exceed the power point limit set by your manifester level, so you are restricted to manifesting lower-level powers than you otherwise could). Power points you spend as a quasireal viewpoint are drained from your real body.`,
+          component_details:'XP Cost: 20 XP.'
+        },
+        'restore extremity': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/restoreExtremity.htm',
+          discipline:       'Psychometabolism (Healing)',
+          level:            'Egoist 5, Worldthought Medic 5',
+          display:          'Auditory',
+          manifesting_time: '1 standard action',
+          range:            'Touch',
+          target_type:      'Target',
+          target:           'Creature touched',
+          duration:         'Instantaneous',
+          saving_throw:     'Will half (harmless)',
+          resistance:       'Yes (harmless)',
+          power_points:     '9',
+          text:             `You restore a severed extremity to a creature that has lost a digit, hand, arm, leg, or even its head. This power does not restore life, but it returns a lost extremity to a living or dead creature if the creature is otherwise mostly intact. The original extremity need not be present when this power is manifested; a new extremity is created by the power. If a head is restored to a body, the original head (if not already destroyed) loses all spark of identity, and can be considered so much dead tissue.`
+        },
+        'retrieve': {
+          type:             'power',
+          ref:              'http://www.d20srd.org/srd/psionic/powers/retrieve.htm',
+          discipline:       'Psychoportation (Teleportation)',
+          level:            'Lurk 6, Psion/Wilder 6, Psychic Rogue 5',
+          display:          'Visual',
+          manifesting_time: '1 standard action',
+          range:            '_medium_',
+          target_type:      'Target',
+          target:           'One object you can hold or carry in one hand, weighing up to [[10*?{Manifester Level}]] lb.',
+          duration:         'Instantaneous',
+          saving_throw:     'Will negates; see text',
+          resistance:       'No',
+          power_points:     '11',
+          text:             `You automatically teleport an item you can see within range directly to your hand. If the object is in the possession of an opponent, it comes to your hand if your opponent fails a Will save.`,
+          augment:          `For every additional power point you spend, the weight limit of the target increases by 10 pounds.`
+        },
         // Powers that start with S
         // Powers that start with T
         // Powers that start with U
