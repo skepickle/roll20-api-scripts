@@ -19435,57 +19435,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               break;
           };
           break;
-        //             ███╗   ███╗ ██████╗  ██████╗ ██╗  ██╗
-        //             ████╗ ████║██╔═══██╗██╔═══██╗██║ ██╔╝
-        // █████╗█████╗██╔████╔██║██║   ██║██║   ██║█████╔╝
-        // ╚════╝╚════╝██║╚██╔╝██║██║   ██║██║   ██║██╔═██╗
-        //             ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝██║  ██╗
-        //             ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
-        case '--mook':
-          if (!playerIsGM(playerID)) { /*TODO error message! */ return; };
-          if (firstFragment == null) {
-            //TODO Error / Usage message here
-            break;
-          };
-          tokenIDs.forEach(function(idOfToken) {
-            var obj = getObj("graphic", idOfToken);
-            var character = getObj("character", obj.get("represents"));
-            if (!character) {
-              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
-              return;
-            };
-            character.get("_defaulttoken", function(defaultToken) {
-              if (defaultToken !== "null") {
-                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Not a mook'}));
-                return;
-              };
-              try {
-                // At this point, we are sure that the selected token is a mook.
-                switch (firstFragment) {
-                  case 'audit-npc-sheet':
-                    mookAuditNPCSheet(character.id);
-                    break;
-                  case 'infer-pc-sheet':
-                    mookInferPCSheet(character.id);
-                    break;
-                  case 'promote-to-skookum':
-                    //remaining arguments = new NPC's name
-                    //TODO Implement this?
-                    break;
-                };
-              } catch(e) {
-                respondToChat(msg,e);
-              };
-            });
-          });
-          break;
-        //             ███████╗██╗  ██╗ ██████╗  ██████╗ ██╗  ██╗██╗   ██╗███╗   ███╗
-        //             ██╔════╝██║ ██╔╝██╔═══██╗██╔═══██╗██║ ██╔╝██║   ██║████╗ ████║
-        // █████╗█████╗███████╗█████╔╝ ██║   ██║██║   ██║█████╔╝ ██║   ██║██╔████╔██║
-        // ╚════╝╚════╝╚════██║██╔═██╗ ██║   ██║██║   ██║██╔═██╗ ██║   ██║██║╚██╔╝██║
-        //             ███████║██║  ██╗╚██████╔╝╚██████╔╝██║  ██╗╚██████╔╝██║ ╚═╝ ██║
-        //             ╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
-        case '--skookum':
+        //              █████╗ ██╗   ██╗██████╗ ██╗████████╗
+        //             ██╔══██╗██║   ██║██╔══██╗██║╚══██╔══╝
+        // █████╗█████╗███████║██║   ██║██║  ██║██║   ██║
+        // ╚════╝╚════╝██╔══██║██║   ██║██║  ██║██║   ██║
+        //             ██║  ██║╚██████╔╝██████╔╝██║   ██║
+        //             ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝   ╚═╝
+        case '--audit':
           if (firstFragment == null) {
             //TODO Error / Usage message here
             break;
@@ -19499,10 +19455,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             };
             //TODO Check that msg.who can edit character!!
             character.get("_defaulttoken", function(defaultToken) {
-              if (defaultToken === "null") {
-                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Not a skookum'}));
-                return;
-              };
               try {
                 // At this point, we are sure that the selected token is a mook.
                 switch (firstFragment) {
@@ -19512,7 +19464,37 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                   case 'audit-spell-macros':
                     //TODO
                     break;
-                  case 'fill-spell-macros':
+                };
+              } catch(e) {
+                respondToChat(msg,e);
+              };
+            });
+          });
+          break;
+        //             ███████╗██╗██╗     ██╗
+        //             ██╔════╝██║██║     ██║
+        // █████╗█████╗█████╗  ██║██║     ██║
+        // ╚════╝╚════╝██╔══╝  ██║██║     ██║
+        //             ██║     ██║███████╗███████╗
+        //             ╚═╝     ╚═╝╚══════╝╚══════╝
+        case '--fill':
+          if (firstFragment == null) {
+            //TODO Error / Usage message here
+            break;
+          };
+          tokenIDs.forEach(function(idOfToken) {
+            var obj = getObj("graphic", idOfToken);
+            var character = getObj("character", obj.get("represents"));
+            if (!character) {
+              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+              return;
+            };
+            //TODO Check that msg.who can edit character!!
+            character.get("_defaulttoken", function(defaultToken) {
+              try {
+                // At this point, we are sure that the selected token is a mook.
+                switch (firstFragment) {
+                  case 'spell-macros':
                     var spell_names = Object.keys(dnd35.spells());
                     findObjs({
                       _type: "attribute",
@@ -19717,6 +19699,87 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                         };
                       };
                     });
+                    break;
+                };
+              } catch(e) {
+                respondToChat(msg,e);
+              };
+            });
+          });
+          break;
+        //             ███╗   ███╗ ██████╗  ██████╗ ██╗  ██╗
+        //             ████╗ ████║██╔═══██╗██╔═══██╗██║ ██╔╝
+        // █████╗█████╗██╔████╔██║██║   ██║██║   ██║█████╔╝
+        // ╚════╝╚════╝██║╚██╔╝██║██║   ██║██║   ██║██╔═██╗
+        //             ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝██║  ██╗
+        //             ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
+        case '--mook':
+          if (!playerIsGM(playerID)) { /*TODO error message! */ return; };
+          if (firstFragment == null) {
+            //TODO Error / Usage message here
+            break;
+          };
+          tokenIDs.forEach(function(idOfToken) {
+            var obj = getObj("graphic", idOfToken);
+            var character = getObj("character", obj.get("represents"));
+            if (!character) {
+              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+              return;
+            };
+            character.get("_defaulttoken", function(defaultToken) {
+              if (defaultToken !== "null") {
+                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Not a mook'}));
+                return;
+              };
+              try {
+                // At this point, we are sure that the selected token is a mook.
+                switch (firstFragment) {
+                  case 'audit-npc-sheet':
+                    mookAuditNPCSheet(character.id);
+                    break;
+                  case 'infer-pc-sheet':
+                    mookInferPCSheet(character.id);
+                    break;
+                  case 'promote-to-skookum':
+                    //remaining arguments = new NPC's name
+                    //TODO Implement this?
+                    break;
+                };
+              } catch(e) {
+                respondToChat(msg,e);
+              };
+            });
+          });
+          break;
+        //             ███████╗██╗  ██╗ ██████╗  ██████╗ ██╗  ██╗██╗   ██╗███╗   ███╗
+        //             ██╔════╝██║ ██╔╝██╔═══██╗██╔═══██╗██║ ██╔╝██║   ██║████╗ ████║
+        // █████╗█████╗███████╗█████╔╝ ██║   ██║██║   ██║█████╔╝ ██║   ██║██╔████╔██║
+        // ╚════╝╚════╝╚════██║██╔═██╗ ██║   ██║██║   ██║██╔═██╗ ██║   ██║██║╚██╔╝██║
+        //             ███████║██║  ██╗╚██████╔╝╚██████╔╝██║  ██╗╚██████╔╝██║ ╚═╝ ██║
+        //             ╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
+        case '--skookum':
+          if (firstFragment == null) {
+            //TODO Error / Usage message here
+            break;
+          };
+          tokenIDs.forEach(function(idOfToken) {
+            var obj = getObj("graphic", idOfToken);
+            var character = getObj("character", obj.get("represents"));
+            if (!character) {
+              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+              return;
+            };
+            //TODO Check that msg.who can edit character!!
+            character.get("_defaulttoken", function(defaultToken) {
+              if (defaultToken === "null") {
+                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Not a skookum'}));
+                return;
+              };
+              try {
+                // At this point, we are sure that the selected token is a mook.
+                switch (firstFragment) {
+                  case 'some-command':
+                    //TODO
                     break;
                 };
               } catch(e) {
