@@ -11897,14 +11897,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Fate 7, Sor/Wiz 7',
           components:       'V, S, M, XP',
           casting_time:     '1 standard action',
-          range:            '',
-          target_type:      '',
-          target:           '',
-          duration:         '',
-          saving_throw:     '',
-          resistance:       '',
+          range:            'Personal',
+          target_type:      'Target',
+          target:           'You',
+          duration:         'See text',
           text:             `This spell functions like [legend lore](http://www.d20srd.org/srd/spells/legendLore.htm), except that it works more quickly but produces some strain on you. You pose a question about some person, place, or object, then cast the spell. If the person or object is at hand or if you are in the place in question, you receive a vision about it by succeeding on a caster level check (1d20 +1 per caster level; maximum +25) against DC 20. If only detailed information on the person, place, or object is known, the DC is 25, and the information gained is incomplete. If only rumors are known, the DC is 30, and the information gained is vague.`,
           component_details:`Material Component: Incense worth at least 250 gp.
+                             Focus: Four strips of ivory (worth 50 gp each) formed into a rectangle.
                              XP Cost: 100 XP.`
         },
         // Spells that start with W
