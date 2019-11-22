@@ -940,7 +940,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'A 20-ft.-radius emanation centered on a creature, object, or point in space',
           duration:         '[[?{Caster Level}]] rounds (D)',
           saving_throw:     'Will negates or none (object)',
-          resistance:       'Yes or no (object)',
+          resistance:       'Yes or No (object)',
           text:             `The caster creates an area of total darkness. The darkness is impenetrable to normal vision and darkvision, but the caster can see normally within the blacklit area. Creatures outside the spell’s area, even the caster, cannot see through it.
                              The spell can be cast on a point in space, but the effect is stationary when cast on a mobile object. A character can cast the spell on a creature, and the effect then radiates from the creature and moves as it moves. Unattended objects and points in space do not get saving throws or benefit from spell resistance.
                              Blacklight counters or dispels any light spell of equal or lower level. The 3rd-level cleric spell [daylight](http://www.d20srd.org/srd/spells/daylight.htm) counters or dispels blacklight.`
@@ -8997,11 +8997,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           components:       'V, S',
           casting_time:     '1 standard action',
           range:            '60 ft.',
-          target_type:      '60-ft. line-shaped emanation from you',
-          target:           '[[?{Caster Level}]] minutes (D)',
-          duration:         'None',
-          saving_throw:     'No',
-          resistance:       '',
+          target_type:      'Area',
+          target:           '60-ft. line-shaped emanation from you',
+          duration:         '[[?{Caster Level}]] minutes (D)',
+          saving_throw:     'None',
+          resistance:       'No',
           text:             `Waves of energy roll forth from you, moving in the direction that you determine, causing all wooden objects in the path of the spell to be pushed away from you to the limit of the range. Wooden objects larger than 3 inches in diameter that are fixed firmly are not affected, but loose objects are. Objects 3 inches in diameter or smaller that are fixed in place splinter and break, and the pieces move with the wave of energy. Objects affected by the spell are repelled at the rate of 40 feet per round.
                              Objects such as wooden shields, spears, wooden weapon shafts and hafts, and arrows and bolts are pushed back, dragging those carrying them along. (A creature being dragged by an item it is carrying can let go. A creature being dragged by a shield can loose it as a move action and drop it as a free action.) If a spear is planted (set) to prevent this forced movement, it splinters. Even magic items with wooden sections are repelled, although an antimagic field blocks the effects.
                              The waves of energy continue to sweep down the set path for the spell’s duration. After you cast the spell, the path is set, and you can then do other things or go elsewhere without affecting the spell’s power.`
@@ -11041,8 +11041,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target_type:      'Target',
           target:           'You',
           duration:         '[[floor(?{Caster Level}/2)]] minutes',
-          saving_throw:     '',
-          resistance:       '',
           text:             `This spell allows the caster to protect him or herself against some condition that would ordinarily cause certain death. The character can only protect him or herself against a natural occurrence or condition, not against a spell or the action of a creature. The character must specify the condition against which he or she wishes to protect him or herself, and the spell is effective only against that condition. Should the character be subjected to that condition during the duration of the spell, he or she feels no discomfort and takes no damage from the condition. However, the spell does not protect any items carried on the caster’s person. At the end of the spell’s duration, the condition has full normal effects if the character is still subjected to it.`,
           component_details:'Material Component: An ointment of peach syrup and cinnabar.'
         },
@@ -14745,8 +14743,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target_type:      'Target',
           target:           'You',
           duration:         '24 hours (D)',
-          saving_throw:     '',
-          resistance:       '',
           power_points:     '5',
           text:             `You attach any melee weapon you can use in one hand—mundane, psionic, or magical—onto the end of one of your arms. The weapon becomes a natural extension of your arm, and that hand blends seamlessly into the shaft, hilt, or head of the weapon. Now that the weapon and you are one, you gain a +1 competence bonus on all attack and damage rolls while using the weapon.
                              The grafted weapon is considered both a standard weapon and a natural weapon for the purpose of effects that distinguish between either weapon type. For instance, the grafted weapon is treated as a natural weapon for the purpose of delivering a touch attack with a power in conjunction with the weapon attack. As with any power (or spell) melee touch attack made in conjunction with a natural weapon attack, the touch attack effect is not delivered unless the natural weapon strikes normally; on a failed attack, the touch power (or spell) is wasted.
@@ -15981,7 +15977,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'Ray',
           duration:         'Instantaneous',
           saving_throw:     'Fortitude partial (object)',
-          resistance:       'Ray',
+          resistance:       'Yes',
           power_points:     '11',
           text:             `A thin, green ray springs from your pointing finger. You must make a successful ranged touch attack to hit. Any creature struck by the ray takes [[22d6]] points of damage. Any creature reduced to 0 or fewer hit points by this power is entirely disintegrated, leaving behind only a trace of fine dust. A disintegrated creature’s equipment is unaffected.
                              When used against an object, the ray simply disintegrates as much as one 10-foot cube of nonliving matter. Thus, the power disintegrates only part of any very large object or structure targeted. The ray affects even objects constructed entirely of force, but not psionic effects such as a [null psionics field](http://www.d20srd.org/srd/psionic/powers/nullPsionicsField.htm).
@@ -17326,8 +17322,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target_type:      'Target',
           target:           'You',
           duration:         '1 round',
-          saving_throw:     '',
-          resistance:       '',
           power_points:     '3',
           text:             `You fortify your mind against intrusions, gaining power resistance 13 against all mind-affecting powers.
                              You can manifest this power instantly, quickly enough to gain its benefits in an emergency. Manifesting the power is an immediate action. You can use this power even when it’s not your turn.`,
@@ -17415,8 +17409,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target_type:      'Target',
           target:           'You',
           duration:         '[[?{Manifester Level}]] minutes (D)',
-          saving_throw:     '',
-          resistance:       '',
           power_points:     '5',
           text:             `You generate a subtle telekinetic field of mental contact, allowing you to “feel” your surroundings even in total darkness or when your sight would otherwise be obscured by your physical environment. Your touchsight field emanates from you out to 60 feet. You ignore invisibility, darkness, and concealment, though you must have line of effect to a creature or an object to discern it. You do not need to make Spot or Listen checks to notice creatures; you can detect and pinpoint all creatures within 60 feet. In many circumstances, comparing your regular senses to what you learn with touchsight is enough to tell you the difference between visible, invisible, hiding, and concealed creatures.`,
           augment:          `For every 2 additional power points you spend, the radius of your touchsight field increases by 10 feet.`
