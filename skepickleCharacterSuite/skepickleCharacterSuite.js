@@ -19579,6 +19579,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                 spell_range_a = spell_spec.range.slice();
                               } else if (typeof spell_spec.range === 'string') {
                                 spell_range_a = [ spell_spec.range ];
+                              } else {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Invalid Spell Range', 'Value': spell_spec.range}))
                               };
                               for (var i=0; i<spell_range_a.length; i++) {
                                 if (dnd35.spell_ranges()[spell_range_a[i]] !== undefined) {
@@ -19641,6 +19643,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                 spell_range_a = spell_spec.range.slice();
                               } else if (typeof spell_spec.range === 'string') {
                                 spell_range_a = [ spell_spec.range ];
+                              } else {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Invalid Power Range', 'Value': spell_spec.range}))
                               };
                               for (var i=0; i<spell_range_a.length; i++) {
                                 if (dnd35.spell_ranges()[spell_range_a[i]] !== undefined) {
