@@ -2127,7 +2127,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Arc 7, Drd 7, Spider 8',
           components:       'V, S',
           casting_time:     '1 round',
-          range:            'Close ([[25+(5*floor([[?{Caster Level}/2]]))]]) / 100 ft.; see text',
+          range:            ['_close_', ' / 100 ft.; see text'],
           target_type:      'Effect',
           target:           '[[floor(?{Caster Level}/2)]] swarm of centipedes',
           duration:         '[[?{Caster Level}]] minutes',
@@ -4357,7 +4357,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Exorcism 9, Renewal 9, Sor/Wiz 9, Wuj 9',
           components:       'V, S',
           casting_time:     '1 standard action',
-          range:            'Close ([[25+(5*floor([[?{Caster Level}/2]]))]] ft.) or see text',
+          range:            ['_close_', ' or see text'],
           target_type:      'Target',
           target:           'One creature',
           duration:         'Instantaneous',
@@ -4940,7 +4940,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Hth 8, Sor/Wiz 8',
           components:       'V, S',
           casting_time:     '10 minutes',
-          range:            'Close ([[25+(5*floor([[?{Caster Level}/2]]))]] ft.); see text',
+          range:            ['_close_', '; see text'],
           target_type:      'Targets',
           target:           'Up to three elementals or outsiders, totaling no more than 18 HD, no two of which can be more than 30 ft. apart when they appear.',
           duration:         'Instantaneous',
@@ -6270,7 +6270,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Dem 3, Demonic 5, Diabolic 5, Hth 5, Rune 5, Sor/Wiz 5',
           components:       'V, S',
           casting_time:     '10 minutes',
-          range:            'Close ([[25+(5*floor([[?{Caster Level}/2]]))]] ft.); see text',
+          range:            ['_close_', '; see text'],
           target_type:      'Target',
           target:           'One elemental or outsider with 6 HD or less',
           duration:         'Instantaneous',
@@ -6322,7 +6322,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Arc 2, Shu 2, Sor/Wiz 2',
           components:       'V, S, F',
           casting_time:     '1 standard action',
-          range:            ['Personal or', '_close_'], //'close ([[25+(5*floor([[?{Caster Level}/2]]))]] ft.)'],
+          range:            ['Personal or ', '_close_'],
           target_type:      'Target',
           target:           'You or one willing creature or one object (total weight up to [[100*?{Caster Level}]] lb.)',
           duration:         '[[?{Caster Level}]] minutes (D)',
@@ -8059,7 +8059,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Dem 4, Demonic 6, Diabolic 6, Hth 6, Sor/Wiz 6',
           components:       'V, S',
           casting_time:     '10 minutes',
-          range:            'Close ([[25+(5*floor([[?{Caster Level}/2]]))]] ft.); see text',
+          range:            ['_close_', '; see text'],
           target_type:      'Targets',
           target:           'Up to three elementals or outsiders, totaling no more than 12 HD, no two of which can be more than 30 ft. apart when they appear',
           duration:         'Instantaneous',
@@ -13710,7 +13710,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Kineticist 6, Lurk 6, Psychic Warrior 6',
           display:          'Material and olfactory',
           manifesting_time: '1 standard action',
-          range:            'Personal or Close ([[25+(5*floor([[?{Caster Level}/2]]))]] ft.); see text',
+          range:            ['Personal or ', '_close_', '; see text'],
           target_type:      'Target',
           target:           'You or one willing creature or one object (object weighing up to [[100*?{Manifester Level}]] lb.); see text',
           duration:         '[[?{Manifester Level}]] hours (D)',
@@ -14149,7 +14149,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Psion/Wilder 7, Worldthought Medic 7',
           display:          'Mental',
           manifesting_time: '1 standard action',
-          range:            'Personal and close (25 ft. + 5 ft./2 levels); see text',
+          range:            ['Personal and ', '_close_', '; see text'],
           target_type:      'Effect',
           target:           'Ray; see text',
           duration:         '[[10*?{Manifester Level}]] minutes',
@@ -14278,7 +14278,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Psion/Wilder 3',
           display:          'Visual',
           manifesting_time: '1 standard action',
-          range:            'Personal and close (25 ft. + 5 ft./2 levels); see text',
+          range:            ['Personal and ' ,'_close_' ,'; see text'],
           target_type:      'Target',
           target:           'You and creature or object attacking you; see text',
           duration:         '[[?{Manifester Level}]] minutes',
@@ -15512,7 +15512,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Telepath 1',
           display:          'Mental',
           manifesting_time: '1 standard action',
-          range:            'Close ([[25+(5*floor([[?{Caster Level}/2]]))]] ft.); see text',
+          range:            ['_close_', '; see text'],
           target_type:      'Target',
           target:           'You and one other willing creature within range that has an Intelligence score of 3 or higher',
           duration:         '[[10*?{Manifester Level}]] minutes',
@@ -16239,7 +16239,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Lurk 2, Nomad 2, Psion/Wilder 2, Psychic Rogue 2, Psychic Warrior 2',
           display:          'Olfactory',
           manifesting_time: '1 standard action',
-          range:            'Personal or close ([[25+(5*floor([[?{Caster Level}/2]]))]] ft.)',
+          range:            ['Personal or ', '_close_'],
           target_type:      'Target',
           target:           'You or one willing creature or one object (total weight up to [[100*?{Manifester Level}]] lb.)',
           duration:         '[[10*?{Manifester Level}]] minutes (D)',
@@ -17305,7 +17305,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Telepath 4',
           display:          'Mental',
           manifesting_time: '1 standard action',
-          range:            'Close ([[25+(5*floor([[?{Caster Level}/2]]))]] ft.); see text',
+          range:            ['_close_', '; see text'],
           target_type:      'Target',
           target:           'You and one other willing creature within range that has an Intelligence score of 3 or higher',
           duration:         '[[10*?{Manifester Level}]] minutes (D)',
@@ -19589,7 +19589,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                   };
                                 };
                               };
-                              spellmacro = spellmacro.concat(' {{Range:=',spell_range_a.join(" "),'}}');
+                              spellmacro = spellmacro.concat(' {{Range:=',spell_range_a.join(),'}}');
                             };
                             spellmacro = spellmacro.concat(' {{',spell_spec.target_type,':=',spell_spec.target.replace(/\(S\)/, "(Shapeable)"),'}}');
                             spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration.replace(/\(D\)/, "(Dismissible)"),'}}');
@@ -19651,7 +19651,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                   };
                                 };
                               };
-                              spellmacro = spellmacro.concat(' {{Range:=',spell_range_a.join(" "),'}}');
+                              spellmacro = spellmacro.concat(' {{Range:=',spell_range_a.join(),'}}');
                             };
                             spellmacro = spellmacro.concat(' {{',spell_spec.target_type,':=',spell_spec.target.replace(/\(S\)$/, "(Shapeable)"),'}}');
                             if (spell_spec.duration) {
