@@ -794,7 +794,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              If this save fails, it loses its ability to understand language, as well as all other memories of its previous form, and its Hit Dice and hit points change to match an average creature of its new form. These abilities and statistics return to normal if the effect is later ended.
                              Incorporeal or gaseous creatures are immune to baleful polymorph, and a creature with the shapechanger subtype (such as a lycanthrope or a doppelganger) can revert to its natural form as a standard action (which ends the spell’s effect).`
         },
-        //TODO? baleful transposition -- might not be SRD!
         'bane': {
           type:             'spell',
           ref:              'http://www.d20srd.org/srd/spells/bane.htm',
@@ -6323,7 +6322,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Arc 2, Shu 2, Sor/Wiz 2',
           components:       'V, S, F',
           casting_time:     '1 standard action',
-          range:            'Personal or close ([[25+(5*floor([[?{Caster Level}/2]]))]] ft.)',
+          range:            ['Personal or', '_close_'], //'close ([[25+(5*floor([[?{Caster Level}/2]]))]] ft.)'],
           target_type:      'Target',
           target:           'You or one willing creature or one object (total weight up to [[100*?{Caster Level}]] lb.)',
           duration:         '[[?{Caster Level}]] minutes (D)',
@@ -19230,8 +19229,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         setAttrByName(id, 'languages', speakLanguage.join(','));
       };
     };
-    //TODO npcspecialqualities -> racialabilities
-    //TODO npcfeats -> feats
+    //SKIP npcspecialqualities -> racialabilities
+    //SKIP npcfeats -> feats
     //SKIP npcspecialattacks
   }; // mookInferPCSheet
 
@@ -19293,7 +19292,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           //obj.set("light_dimradius",    (distance*5)/6); // For THAC0* Thursdays
           obj.set("light_dimradius",    distance+1);
         };
-        obj.set("light_hassight", true); //TODO set to false if some sort of blind effect on the character...
+        obj.set("light_hassight", true);
       };
       if (defaultToken !== "null") { return; };
       var npcspeed       = parseFloat(getAttrByName(character.id, "npcspeed").replace(new RegExp("[^\.0-9].*$"), ""));
@@ -19404,6 +19403,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     };
 
     try {
+      // TODO --calculate-encounter-level
+      // TODO --calculate-encounter-rewards <encounter level>
+      // TODO --generate-treasure
       switch (userCommand) {
         //             ███████╗ ██████╗ ██╗   ██╗██████╗  ██████╗███████╗ ████████╗███████╗██╗  ██╗████████╗
         //             ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔════╝ ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝
@@ -19572,10 +19574,22 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             if (spell_spec.recharge) {
                               spellmacro = spellmacro.concat(' {{Recharge:=',spell_spec.recharge,'}}');
                             };
-                            if (dnd35.spell_ranges()[spell_spec.range] === undefined) {
-                              spellmacro = spellmacro.concat(' {{Range:=',spell_spec.range,'}}');
-                            } else {
-                              spellmacro = spellmacro.concat(' {{Range:=',dnd35.spell_ranges()[spell_spec.range],'}}');
+                            if (spell_spec.range !== undefined) {
+                              let spell_range_a = [];
+                              if (Array.isArray(spell_spec.range)) {
+                                spell_range_a = spell_spec.range.slice();
+                              } else if (typeof spell_spec.range === 'string') {
+                                spell_range_a = [ spell_spec.range ];
+                              };
+                              for (var i=0; i<spell_range_a.length; i++) {
+                                if (dnd35.spell_ranges()[spell_range_a[i]] !== undefined) {
+                                  spell_range_a[i] = dnd35.spell_ranges()[spell_range_a[i]];
+                                  if (i > 0) {
+                                    spell_range_a[i] = spell_range_a[i].replace(/^\w/, c => c.toLowerCase());
+                                  };
+                                };
+                              };
+                              spellmacro = spellmacro.concat(' {{Range:=',spell_range_a.join(" "),'}}');
                             };
                             spellmacro = spellmacro.concat(' {{',spell_spec.target_type,':=',spell_spec.target.replace(/\(S\)/, "(Shapeable)"),'}}');
                             spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration.replace(/\(D\)/, "(Dismissible)"),'}}');
@@ -19622,10 +19636,22 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               spellmacro = spellmacro.concat(' {{Display:=',spell_spec.display,'}}');
                             }
                             spellmacro = spellmacro.concat(' {{Manifesting Time:=',spell_spec.manifesting_time,'}}');
-                            if (dnd35.spell_ranges()[spell_spec.range] === undefined) {
-                              spellmacro = spellmacro.concat(' {{Range:=',spell_spec.range,'}}');
-                            } else {
-                              spellmacro = spellmacro.concat(' {{Range:=',dnd35.spell_ranges()[spell_spec.range].replace(/Caster/gm, 'Manifester'),'}}');
+                            if (spell_spec.range !== undefined) {
+                              let spell_range_a = [];
+                              if (Array.isArray(spell_spec.range)) {
+                                spell_range_a = spell_spec.range.slice();
+                              } else if (typeof spell_spec.range === 'string') {
+                                spell_range_a = [ spell_spec.range ];
+                              };
+                              for (var i=0; i<spell_range_a.length; i++) {
+                                if (dnd35.spell_ranges()[spell_range_a[i]] !== undefined) {
+                                  spell_range_a[i] = dnd35.spell_ranges()[spell_range_a[i]].replace(/Caster/g, 'Manifester');
+                                  if (i > 0) {
+                                    spell_range_a[i] = spell_range_a[i].replace(/^\w/, c => c.toLowerCase());
+                                  };
+                                };
+                              };
+                              spellmacro = spellmacro.concat(' {{Range:=',spell_range_a.join(" "),'}}');
                             };
                             spellmacro = spellmacro.concat(' {{',spell_spec.target_type,':=',spell_spec.target.replace(/\(S\)$/, "(Shapeable)"),'}}');
                             if (spell_spec.duration) {
