@@ -7557,8 +7557,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           components:       'S',
           casting_time:     '1 standard action',
           range:            '_close_',
-          target_type:      'Target/Effect',
-          target:           'You/one illusory double',
+          target_type:      ['Target', 'Effect'],
+          target:           ['You', 'One illusory double'],
           duration:         '[[?{Caster Level}]] rounds (D) and concentration + 3 rounds; see text',
           saving_throw:     'None or Will disbelief (if interacted with); see text',
           resistance:       'No',
@@ -14904,8 +14904,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           display:          'Auditory',
           manifesting_time: '1 swift action',
           range:            'Personal',
-          target_type:      'Target and Effect',
-          target:           'You and 1 extra move action',
+          target_type:      ['Target', 'Effect'],
+          target:           ['You', '1 extra move action'],
           power_points:     'Egoist 5, Psychic Warrior 3',
           text:             `You gain an additional move action in the current round. Taking a full round’s worth of attacks and then using this power to move away from your foe does provoke attacks of opportunity.
                              You can manifest this power with an instant thought, quickly enough to gain the benefit of the power before you move. Manifesting the power is a swift action You cannot manifest this power when it isn’t your turn.`
@@ -15170,8 +15170,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           display:          'Mental',
           manifesting_time: '1 standard action',
           range:            '_long_',
-          target_type:      'Target and Effect',
-          target:           'All creatures in a [[400+40*?{Manifester Level}]] ft. radius centered on you; see text, and mental message delivered to subjects',
+          target_type:      ['Target', 'Effect'],
+          target:           ['All creatures in a [[400+40*?{Manifester Level}]] ft. radius centered on you; see text', 'Mental message delivered to subjects'],
           saving_throw:     'Will negates (harmless)',
           resistance:       'Yes (harmless)',
           power_points:     '3',
@@ -15551,8 +15551,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           display:          'Mental',
           manifesting_time: '1 standard action',
           range:            '_close_',
-          target_type:      'Target, and Effect',
-          target:           'One creature, and mental message delivered to subject',
+          target_type:      ['Target', 'Effect'],
+          target:           ['One creature', 'Mental message delivered to subject'],
           saving_throw:     'None',
           resistance:       'Yes',
           power_points:     '1',
@@ -19559,6 +19559,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                   spellcastingstat = spellcastingstat.concat('2');
                                 } else {
                                   respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Character does not have spellcastingstat2 attribute defined.'}));
+                                  return;
                                 };
                               };
                               spellmacro = spellmacro.concat(' {{Spell DC:=[[10+', spell_section, '[Spell Level]+@{', spellcastingstat, '}[Ability Mod]]]}}');
@@ -19581,8 +19582,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                 spell_range_a = [ spell_spec.range ];
                               } else {
                                 respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Invalid Spell Range', 'Value': spell_spec.range}))
+                                return;
                               };
-                              for (var i=0; i<spell_range_a.length; i++) {
+                              for (let i=0; i<spell_range_a.length; i++) {
                                 if (dnd35.spell_ranges()[spell_range_a[i]] !== undefined) {
                                   spell_range_a[i] = dnd35.spell_ranges()[spell_range_a[i]];
                                   if (i > 0) {
@@ -19592,7 +19594,33 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               };
                               spellmacro = spellmacro.concat(' {{Range:=',spell_range_a.join(),'}}');
                             };
-                            spellmacro = spellmacro.concat(' {{',spell_spec.target_type,':=',spell_spec.target.replace(/\(S\)/, "(Shapeable)"),'}}');
+                            if ((spell_spec.target_type !== undefined) || (spell_spec.target !== undefined)) {
+                              let spell_target_type_a = [];
+                              let spell_target_a = [];
+                              if ((spell_spec.target_type !== undefined) && (Array.isArray(spell_spec.target_type))) {
+                                spell_target_type_a = spell_spec.target_type.slice();
+                              } else if ((spell_spec.target_type !== undefined) && (typeof spell_spec.target_type === 'string')) {
+                                spell_target_type_a = [ spell_spec.target_type ];
+                              } else {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO'}));
+                                return;
+                              };
+                              if ((spell_spec.target !== undefined) && (Array.isArray(spell_spec.target))) {
+                                spell_target_a = spell_spec.target.slice();
+                              } else if ((spell_spec.target !== undefined) && (typeof spell_spec.target === 'string')) {
+                                spell_target_a = [ spell_spec.target ];
+                              } else {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO'}));
+                                return;
+                              };
+                              if (spell_target_type_a.length != spell_target_a.length) {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Mismatching Spell Target Fields'}))
+                                return;
+                              };
+                              for (let i=0; i<spell_target_type_a.length; i++) {
+                                spellmacro = spellmacro.concat(' {{',spell_target_type_a[i],':=',spell_target_a[i].replace(/\(S\)/, "(Shapeable)"),'}}');
+                              }
+                            };
                             spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration.replace(/\(D\)/, "(Dismissible)"),'}}');
                             if (spell_spec.saving_throw) {
                               spellmacro = spellmacro.concat(' {{Saving Throw:=',spell_spec.saving_throw,'}}');
@@ -19624,6 +19652,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                   spellcastingstat = spellcastingstat.concat('2');
                                 } else {
                                   respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Character does not have spellcastingstat2 attribute defined.'}));
+                                  return;
                                 };
                               };
                               spellmacro = spellmacro.concat(' {{Power DC:=[[10+', spell_section, '[Power Level]+@{', spellcastingstat, '}[Ability Mod]]]}}');
@@ -19644,9 +19673,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               } else if (typeof spell_spec.range === 'string') {
                                 spell_range_a = [ spell_spec.range ];
                               } else {
-                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Invalid Power Range', 'Value': spell_spec.range}))
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Invalid Power Range', 'Power': spell_name, 'Range': spell_spec.range}))
+                                return;
                               };
-                              for (var i=0; i<spell_range_a.length; i++) {
+                              for (let i=0; i<spell_range_a.length; i++) {
                                 if (dnd35.spell_ranges()[spell_range_a[i]] !== undefined) {
                                   spell_range_a[i] = dnd35.spell_ranges()[spell_range_a[i]].replace(/Caster/g, 'Manifester');
                                   if (i > 0) {
@@ -19656,7 +19686,33 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               };
                               spellmacro = spellmacro.concat(' {{Range:=',spell_range_a.join(),'}}');
                             };
-                            spellmacro = spellmacro.concat(' {{',spell_spec.target_type,':=',spell_spec.target.replace(/\(S\)$/, "(Shapeable)"),'}}');
+                            if ((spell_spec.target_type !== undefined) || (spell_spec.target !== undefined)) {
+                              let spell_target_type_a = [];
+                              let spell_target_a = [];
+                              if ((spell_spec.target_type !== undefined) && (Array.isArray(spell_spec.target_type))) {
+                                spell_target_type_a = spell_spec.target_type.slice();
+                              } else if ((spell_spec.target_type !== undefined) && (typeof spell_spec.target_type === 'string')) {
+                                spell_target_type_a = [ spell_spec.target_type ];
+                              } else {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO'}));
+                                return;
+                              };
+                              if ((spell_spec.target !== undefined) && (Array.isArray(spell_spec.target))) {
+                                spell_target_a = spell_spec.target.slice();
+                              } else if ((spell_spec.target !== undefined) && (typeof spell_spec.target === 'string')) {
+                                spell_target_a = [ spell_spec.target ];
+                              } else {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO'}));
+                                return;
+                              };
+                              if (spell_target_type_a.length != spell_target_a.length) {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Mismatching Power Target Fields'}))
+                                return;
+                              };
+                              for (let i=0; i<spell_target_type_a.length; i++) {
+                                spellmacro = spellmacro.concat(' {{',spell_target_type_a[i],':=',spell_target_a[i].replace(/\(S\)/, "(Shapeable)"),'}}');
+                              }
+                            };
                             if (spell_spec.duration) {
                               spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration.replace(/\(D\)$/, "(Dismissible)"),'}}');
                             };
