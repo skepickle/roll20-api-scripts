@@ -19630,6 +19630,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                           case 'epicspell':
                             break;
                           case 'power':
+                            let manifester_level_query = null;
+                            let power_augment_query    = null;
                             if (spell_spec.ref.match(/^https{0,1}:\/\//)) {
                               spellmacro = spellmacro.concat(' {{subtags=manifests [',spellname_attr.get('current'), '](', spell_spec.ref, ')}}');
                             } else {
@@ -19652,7 +19654,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             {
                               var default_casterlevel = 'casterlevel';
                               if (spell_column == '2') { default_casterlevel = default_casterlevel.concat('2'); };
-                              spellmacro = spellmacro.concat(' {{Manifester level:=?{Manifester Level|@{',default_casterlevel,'}}}}');
+                              manifester_level_query = ' '.concat('?{Manifester Level|@{',default_casterlevel,'}}');
+                              spellmacro = spellmacro.concat(' {{Manifester level:=?{Manifester Level}}}');
                             }
                             if (spell_spec.display) {
                               spellmacro = spellmacro.concat(' {{Display:=',spell_spec.display,'}}');
@@ -19719,8 +19722,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             };
                             var text_augment = "";
                             if (spell_spec.augment) {
-                              //spellmacro = "! ?{Power Augmentation|0}\n".concat(spellmacro);  HERE
-                              spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,' + [[?{Power Augmentation|0}]][Augment]}}');
+                              power_augment_query = " ?{Power Augmentation|0}";
+                              spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,' + [[?{Power Augmentation}]][Augment]}}');
                               text_augment = "↲".concat("**Augment: *[[?{Power Augmentation}]] points***", "↲", spell_spec.augment);
                             } else {
                               spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,'}}');
@@ -19728,6 +19731,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
                             spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲',spell_spec.text,text_augment,'}}');
                             spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲',spell_spec.text,text_augment,'}}');
+                            if (manifester_level_query || power_augment_query) {
+                              spellmacro = "".concat("!", manifester_level_query?manifester_level_query:'', power_augment_query?power_augment_query:'', "\n", spellmacro);
+                            };
                             break;
                           case 'epicpower':
                             break;
