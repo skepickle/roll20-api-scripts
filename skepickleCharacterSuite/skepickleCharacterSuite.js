@@ -12437,8 +12437,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         '[[?{Manifester Level}]] minutes',
           power_points:     '3',
-          text:             `You forge a psychometabolic affinity with an idealized animal form, thereby boosting one of your ability scores (choose either Strength, Dexterity, Constitution, Intelligence, Wisdom, or Charisma). The power grants a +4 enhancement bonus to the ability score you choose, adding the usual benefits provided by a high ability bonus. Because you are emulating the idealized form of an animal, you also take on minor aspects of the animal you choose. If you choose to increase the ability you use to manifest powers, you do not gain the benefit of an increased ability score long enough to gain any bonus power points for a high ability score, but the save DCs of your powers increase for the duration of this power.`,
-          augment:          `For every 5 additional power points you spend, this power grants a +4 enhancement bonus to another ability.`
+          text:             `You forge a psychometabolic affinity with an idealized animal form, thereby boosting [[1+floor(?{Power Augmentation}/5)]] of your ability scores (choose either Strength, Dexterity, Constitution, Intelligence, Wisdom, or Charisma). The power grants a +4 enhancement bonus to the ability score(s) you choose, adding the usual benefits provided by a high ability bonus. Because you are emulating the idealized form of an animal, you also take on minor aspects of the animal you choose. If you choose to increase the ability you use to manifest powers, you do not gain the benefit of an increased ability score long enough to gain any bonus power points for a high ability score, but the save DCs of your powers increase for the duration of this power.`,
+          augment:          `**(Note: Already included above)**
+                             *For every 5 additional power points you spend, this power grants a +4 enhancement bonus to another ability.*`
         },
         'apopsi': {
           type:             'power',
@@ -12522,9 +12523,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           resistance:       'No',
           power_points:     '1',
-          text:             `This power creates one 1st-level astral construct of solidified ectoplasm that attacks your enemies. It appears where you designate and acts immediately, on your turn. It attacks your opponents to the best of its ability. As a free action, you can mentally direct it not to attack, to attack particular enemies, or to perform other actions. The astral construct acts normally on the last round of the power’s duration and dissipates at the end of its turn.
+          text:             `This power creates one level-[[1+floor(?{Power Augmentation}/2)]] astral construct of solidified ectoplasm that attacks your enemies. It appears where you designate and acts immediately, on your turn. It attacks your opponents to the best of its ability. As a free action, you can mentally direct it not to attack, to attack particular enemies, or to perform other actions. The astral construct acts normally on the last round of the power’s duration and dissipates at the end of its turn.
                              Astral constructs are not summoned; they are created on the plane you inhabit (using ectoplasm drawn from the Astral Plane). Thus, they are not subject to effects that hedge out or otherwise affect outsiders; they are constructs, not outsiders.`,
-          augment:          `For every 2 additional power points you spend, the level of the astral construct increases by one.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, the level of the astral construct increases by one.*`
         },
         'astral seed': {
           type:             'power',
@@ -12579,8 +12581,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will negates',
           resistance:       'Yes',
           power_points:     '1',
-          text:             `You plant a compelling attraction in the mind of the subject. The attraction can be toward a particular person or an object. The subject will take reasonable steps to meet, get close to, attend, or find the object of its implanted attraction. For the purpose of this power, “reasonable” means that, while attracted, the subject doesn’t suffer from blind obsession. He will act on this attraction only when not engaged in combat. The subject won’t perform obviously suicidal actions. He can still recognize danger but will not flee unless the threat is immediate. If you make the subject feel an attraction to yourself, you can’t command him indiscriminately, although he will be willing to listen to you (even if he disagrees). This power grants you a +4 bonus on any interaction checks you make involving the subject (such as Bluff, Diplomacy, Intimidate, and Sense Motive).`,
-          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1 and the bonus on interaction checks increases by 1.`
+          text:             `You plant a compelling attraction in the mind of the subject. The attraction can be toward a particular person or an object. The subject will take reasonable steps to meet, get close to, attend, or find the object of its implanted attraction. For the purpose of this power, “reasonable” means that, while attracted, the subject doesn’t suffer from blind obsession. He will act on this attraction only when not engaged in combat. The subject won’t perform obviously suicidal actions. He can still recognize danger but will not flee unless the threat is immediate. If you make the subject feel an attraction to yourself, you can’t command him indiscriminately, although he will be willing to listen to you (even if he disagrees). This power grants you a \`\`+[[4+floor(?{Power Augmentation}/2)]] bonus\`\` on any interaction checks you make involving the subject (such as Bluff, Diplomacy, Intimidate, and Sense Motive).`,
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s save DC increases by 1 and the bonus on interaction checks increases by 1.*`,
+          save_dc_bonus:    '+floor(?{Power Augmentation}/2)'
         },
         'aura alteration': {
           type:             'power',
@@ -12610,7 +12614,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Justice 4, Lurk 4, Psion/Wilder 4',
           display:          'Visual',
           manifesting_time: '1 standard action',
-          range:            '60 ft.',
+          range:            '[[60+5*floor(?{Power Augmentation}/2)]] ft.',
           target_type:      'Area',
           target:           'Cone-shaped emanation centered on you',
           duration:         'Concentration, up to [[10*?{Manifester Level}]] minutes',
@@ -12624,7 +12628,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              Number of auras (creatures, objects, powers, or spells) in the area. You know how many auras are in the area, even though each aura doesn’t resolve to its actual location quite yet.
                              **3rd Round**
                              The owner of each aura is revealed, unless the individual is outside your line of sight. If a creature whose aura you detect has 5 or more Hit Dice than you do, you are overwhelmed by its presence and dazed for 1 round, and the power ends.`,
-          augment:          `For every 2 additional power points you spend, this power’s range increases by 5 feet.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s range increases by 5 feet.*`
         },
         'aversion': {
           type:             'power',
@@ -12636,13 +12641,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_close_',
           target_type:      'Target',
           target:           'One creature',
-          duration:         '[[?{Manifester Level}]] hours',
+          duration:         '[[?{Manifester Level}+floor(?{Power Augmentation}/2)]] hours',
           saving_throw:     'Will negates',
           resistance:       'Yes',
           power_points:     '3',
           text:             `You plant a powerful aversion in the mind of the subject. If the object of the implanted aversion is an individual or a physical object, she will prefer not to approach within 30 feet of it. If it is a word, she will try not to utter it; if it is an action, she will not willingly attempt to perform it; and if it is an event, she will not willingly attend it. The subject will take reasonable steps to avoid the object of its aversion, but will not put herself in jeopardy by doing so.
                              If the subject is forced into taking an action she has an aversion to, she takes a -2 penalty on any attack rolls, ability checks, or skill checks involved.`,
-          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1 and the duration increases by 1 hour.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s save DC increases by 1 and the duration increases by 1 hour.*`,
+          save_dc_bonus:    '+floor(?{Power Augmentation}/2)'
         },
         // Powers that start with B
         'baleful teleport': {
@@ -12701,9 +12708,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           resistance:       'No',
           power_points:     '3',
-          text:             `You link your mind with another psionic creature’s mind, creating a brief conduit through which mental energy can be shared. When you manifest this power, the subject gains up to 2 power points. You can transfer only as many power points to a subject as it has manifester levels.
+          text:             `You link your mind with another psionic creature’s mind, creating a brief conduit through which mental energy can be shared. When you manifest this power, the subject gains up to [[2+2*floor(?{Power Augmentation}/3)]] power points. You can transfer only as many power points to a subject as it has manifester levels.
                              Because of the intimate nature of this power, it cannot be fabricated into a psionic item—only power points generated by a psionic creature in the moment can be shared using bestow power.`,
-          augment:          `For every 3 additional power points you spend, the subject gains 2 additional power points.`
+          augment:          `**(Note: Already included above)**
+                             *For every 3 additional power points you spend, the subject gains 2 additional power points.*`
         },
         'biofeedback': {
           type:             'power',
@@ -12717,9 +12725,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         '[[?{Manifester Level}]] minutes (D)',
           power_points:     'Psion/Wilder 3, Psychic Warrior 1',
-          text:             `You can toughen your body against wounds, lessening their impact. During the duration of this power, you gain damage reduction 2/-.`,
-          augment:          `For every 3 additional power points you spend, your damage reduction increases by 1.`
+          text:             `You can toughen your body against wounds, lessening their impact. During the duration of this power, you gain damage reduction [[2+floor(?{Power Augmentation}/3)]]/-.`,
+          augment:          `**(Note: Already included above)**
+                             *For every 3 additional power points you spend, your damage reduction increases by 1.*`
         },
+        //AUGMENT REVIEW
         'bite of the wolf': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/biteoftheWolf.htm',
@@ -19649,7 +19659,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                   return;
                                 };
                               };
-                              spellmacro = spellmacro.concat(' {{Power DC:=[[10+', spell_section, '[Power Level]+@{', spellcastingstat, '}[Ability Mod]]]}}');
+                              spellmacro = spellmacro.concat(' {{Power DC:=[[10+', spell_section, '[Power Level]+@{', spellcastingstat, '}[Ability Mod]',((spell_spec.save_dc_bonus !== undefined)?(spell_spec.save_dc_bonus):('')),']]}}');
                             }
                             {
                               var default_casterlevel = 'casterlevel';
@@ -19727,7 +19737,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               text_augment = "↲".concat("**Augment: *[[?{Power Augmentation}]] points***", "↲", spell_spec.augment);
                             } else {
                               spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,'}}');
-                            }
+                            };
                             spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
                             spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲',spell_spec.text,text_augment,'}}');
                             spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲',spell_spec.text,text_augment,'}}');
