@@ -12584,7 +12584,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `You plant a compelling attraction in the mind of the subject. The attraction can be toward a particular person or an object. The subject will take reasonable steps to meet, get close to, attend, or find the object of its implanted attraction. For the purpose of this power, “reasonable” means that, while attracted, the subject doesn’t suffer from blind obsession. He will act on this attraction only when not engaged in combat. The subject won’t perform obviously suicidal actions. He can still recognize danger but will not flee unless the threat is immediate. If you make the subject feel an attraction to yourself, you can’t command him indiscriminately, although he will be willing to listen to you (even if he disagrees). This power grants you a \`\`+[[4+floor(?{Power Augmentation}/2)]] bonus\`\` on any interaction checks you make involving the subject (such as Bluff, Diplomacy, Intimidate, and Sense Motive).`,
           augment:          `**(Note: Already included above)**
                              *For every 2 additional power points you spend, this power’s save DC increases by 1 and the bonus on interaction checks increases by 1.*`,
-          save_dc_bonus:    '+floor(?{Power Augmentation}/2)'
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)'
         },
         'aura alteration': {
           type:             'power',
@@ -12649,7 +12649,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              If the subject is forced into taking an action she has an aversion to, she takes a -2 penalty on any attack rolls, ability checks, or skill checks involved.`,
           augment:          `**(Note: Already included above)**
                              *For every 2 additional power points you spend, this power’s save DC increases by 1 and the duration increases by 1 hour.*`,
-          save_dc_bonus:    '+floor(?{Power Augmentation}/2)'
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)'
         },
         // Powers that start with B
         'baleful teleport': {
@@ -12666,8 +12666,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Fortitude half',
           resistance:       'Yes',
           power_points:     '9',
-          text:             `You psychoportively disperse minuscule portions of the subject, dealing [[9d6]] points of damage. Targets can be protected from the effects of baleful teleport by dimensional anchor.`,
-          augment:          `For every additional power point you spend, this power’s damage increases by 1d6 points. For each extra 2d6 points of damage, this power’s save DC increases by 1 and your manifester level increases by 1 for the purpose of overcoming power resistance.`
+          text:             `You psychoportively disperse minuscule portions of the subject, dealing [[[[9+?{Power Augmentation}]]d6]] points of damage. Targets can be protected from the effects of baleful teleport by dimensional anchor.`,
+          augment:          `For every additional power point you spend, this power’s damage increases by 1d6 points. For each extra 2d6 points of damage, this power’s save DC increases by 1 and your manifester level increases by 1 for the purpose of overcoming power resistance.`,
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)',
+          resistance_bonus: 'floor(?{Power Augmentation}/2)'
         },
         'bend reality': {
           type:             'power',
@@ -12729,7 +12731,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           augment:          `**(Note: Already included above)**
                              *For every 3 additional power points you spend, your damage reduction increases by 1.*`
         },
-        //AUGMENT REVIEW
         'bite of the wolf': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/biteoftheWolf.htm',
@@ -12759,8 +12760,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         'Instantaneous',
           power_points:     'Psion/Wilder 5, Psychic Warrior 3',
-          text:             `You take control of your body’s healing process, curing yourself of [[1d12]] points of damage. As usual, when regular damage is healed, an equal amount of nonlethal damage is also healed.`,
-          augment:          `For every 2 additional power points you spend, this power heals an additional ‹1d12|[[1d12]] additional points of damage› points of damage.`
+          text:             `You take control of your body’s healing process, curing yourself of [[[[1+floor(?{Power Augmentation}/2)]]d12]] points of damage. As usual, when regular damage is healed, an equal amount of nonlethal damage is also healed.`,
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power heals an additional 1d12 additional points of damage› points of damage.*`
         },
         'body equilibrium': {
           type:             'power',
@@ -12789,8 +12791,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         'Instantaneous',
           power_points:     'Psion/Wilder 5, Psychic Warrior 3',
-          text:             `You restore up to 2 points of damage to a single ability score. You cannot use body purification to heal ability drain.`,
-          augment:          `For every additional power point you spend, this power heals 1 additional point of damage to the same ability score.`
+          text:             `You restore up to [[2+?{Power Augmentation}]] points of damage to a single ability score. You cannot use body purification to heal ability drain.`,
+          augment:          `**(Note: Already included above)**
+                             *For every additional power point you spend, this power heals 1 additional point of damage to the same ability score.*`
         },
         'bolt': {
           type:             'power',
@@ -12806,8 +12809,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           resistance:       'No',
           power_points:     '1',
-          text:             `You create [[2d4]] ectoplasmic crossbow bolts, arrows, or sling bullets, appropriate to your size, which dissipate into their constituent ectoplasmic particles when the duration ends or after being fired. Ammunition you create has a +1 enhancement bonus on attack rolls and damage rolls.`,
-          augment:          `For every 3 additional power points you spend, this power improves the ammunition’s enhancement bonus on attack rolls and damage rolls by 1.`
+          text:             `You create [[2d4]] ectoplasmic crossbow bolts, arrows, or sling bullets, appropriate to your size, which dissipate into their constituent ectoplasmic particles when the duration ends or after being fired. Ammunition you create has a +[[1+floor(?{Power Augmentation}/3)]] enhancement bonus on attack rolls and damage rolls.`,
+          augment:          `**(Note: Already included above)**
+                             *For every 3 additional power points you spend, this power improves the ammunition’s enhancement bonus on attack rolls and damage rolls by 1.*`
         },
         'brain lock': {
           type:             'power',
@@ -12842,8 +12846,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Reflex half',
           resistance:       'Yes',
           power_points:     '11',
-          text:             `Your mouth spews forth vitriolic acid that deals [[11d6]] points of acid damage to any targets in the area.`,
-          augment:          `For every additional power point you spend, this power’s damage increases by 1d6 points.`
+          text:             `Your mouth spews forth vitriolic acid that deals [[[[11+floor(?{Power Augmentation})]]d6]] points of acid damage to any targets in the area.`,
+          augment:          `**(Note: Already included above)**
+                             *For every additional power point you spend, this power’s damage increases by 1d6 points.*`
         },
         'burst': {
           type:             'power',
@@ -12891,8 +12896,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           resistance:       'No',
           power_points:     '1',
           text:             `You call a weapon “from thin air” into your waiting hand (actually, it is a real weapon hailing from another location in space and time). You don’t have to see or know of a weapon to call it—in fact, you can’t call a specific weapon; you just specify the kind. If you call a projectile weapon, it comes with ‹3d6|[[3d6]] nonmagical bolts, arrows, or sling bullets› nonmagical bolts, arrows, or sling bullets, as appropriate. The weapon is made of ordinary materials as appropriate for its kind. If you relinquish your grip on the weapon you called for 2 or more consecutive rounds, it automatically returns to wherever it originated.
-                             Weapons gained by call weaponry are distinctive due to their astral glimmer. They are considered magic weapons and thus are effective against damage reduction that requires a magic weapon to overcome.`,
-          augment:          `For every 4 additional power points you spend, this power improves the weapon’s enhancement bonus on attack rolls and damage rolls by 1.`
+                             Weapons gained by call weaponry are distinctive due to their astral glimmer. They are considered +[[1+floor(?{Power Augmentation}/4)]] magic weapons and thus are effective against damage reduction that requires a magic weapon to overcome.`,
+          augment:          `**(Note: Already included above)**
+                             *For every 4 additional power points you spend, this power improves the weapon’s enhancement bonus on attack rolls and damage rolls by 1.*`
         },
         'catapsi': {
           type:             'power',
@@ -12901,16 +12907,17 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Chaos 5, Lurk 5, Psion/Wilder 5, Psychic Warrior 5',
           display:          'Mental and visual',
           manifesting_time: '1 standard action',
-          range:            '30 ft.',
+          range:            '[[30+5*floor(?{Power Augmentation}/4)]] ft.',
           target_type:      'Area',
-          target:           '30-ft.-radius emanation centered on you',
+          target:           '[[30+5*floor(?{Power Augmentation}/4)]]-ft.-radius emanation centered on you',
           duration:         '[[?{Manifester Level}]] rounds',
           saving_throw:     'Will negates; see text',
           resistance:       'Yes',
           power_points:     '9',
           text:             `By manifesting this power, you generate psychic static, interfering with the ability of other psionic characters to manifest their powers or use psi-like abilities (you are not affected by your own catapsi manifestation). All psionic activity within the area requires 4 more power points to manifest than normal, unless a character makes a Will save each time he attempts to manifest a power. Using a psi-like ability becomes a full-round action, instead of a standard action, in a catapsi field. If two or more fields of catapsi overlap, the effects are not cumulative.
                              The limit on the number of power points a subject can spend on a power remains in effect; thus, a subject may not be able to manifest its highest-level powers. If manifesting a power would cause the manifester to exceed his available power points or his spending limits, the manifestation fails automatically, but no power points are expended.`,
-          augment:          `For every 4 additional power points you spend, this power’s range and the radius of its area both increase by 5 feet.`
+          augment:          `**(Note: Already included above)**
+                             *For every 4 additional power points you spend, this power’s range and the radius of its area both increase by 5 feet.*`
         },
         'catfall': {
           type:             'power',
@@ -12924,8 +12931,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         'Until landing or [[?{Manifester Level}]] rounds',
           power_points:     '1',
-          text:             `You recover instantly from a fall and can absorb some damage from falling. You land on your feet no matter how far you fall, and you take damage as if the fall were 10 feet shorter than it actually is. This power affects you and anything you carry or hold (up to your maximum load). You can manifest this power with an instant thought, quickly enough to gain the benefit of the power while you fall. Manifesting the power is an immediate action. You can manifest this power even when it isn’t your turn.`,
-          augment:          `For every additional power point you spend, this power reduces your damage as if the fall were an additional 10 feet shorter.`
+          text:             `You recover instantly from a fall and can absorb some damage from falling. You land on your feet no matter how far you fall, and you take damage as if the fall were [[10+10*?{Power Augmentation}]] feet shorter than it actually is. This power affects you and anything you carry or hold (up to your maximum load). You can manifest this power with an instant thought, quickly enough to gain the benefit of the power while you fall. Manifesting the power is an immediate action. You can manifest this power even when it isn’t your turn.`,
+          augment:          `**(Note: Already included above)**
+                             *For every additional power point you spend, this power reduces your damage as if the fall were an additional 10 feet shorter.*`
         },
         'chameleon': {
           type:             'power',
@@ -13328,7 +13336,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • If you spend 2 additional power points, this power can also affect an animal, fey, giant, magical beast, or monstrous humanoid.
                              • If you spend 4 additional power points, this power can also affect an aberration, dragon, or outsider in addition to the creature types mentioned above.
                              • If you spend 6 additional power points, this power can affect up to four creatures all within a 20-ft.-radius burst.
-                             In addition, for every 2 additional power points you spend to achieve any of these effects, this power’s save DC increases by 1.`
+                             **(Note: Already included above)**
+                             *In addition, for every 2 additional power points you spend to achieve any of these effects, this power’s save DC increases by 1.*`,
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)'
         },
         'crisis of life': {
           type:             'power',
@@ -13344,8 +13354,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Fortitude partial; see text',
           resistance:       'Yes',
           power_points:     '13',
-          text:             `You interrupt the subject’s autonomic heart rhythm, killing it instantly on a failed saving throw if it has 11 Hit Dice or less. If the target makes its saving throw or has more than 11 Hit Dice, it takes [[7d6]] points of damage.`,
-          augment:          `For every additional power point you spend, this power can kill a subject that has Hit Dice equal to 11 + the number of additional points.`
+          text:             `You interrupt the subject’s autonomic heart rhythm, killing it instantly on a failed saving throw if it has [[11+?{Power Augmentation}]] Hit Dice or less. If the target makes its saving throw or has more than [[11+?{Power Augmentation}]] Hit Dice, it takes [[7d6]] points of damage.`,
+          augment:          `**(Note: Already included above)**
+                             *For every additional power point you spend, this power can kill a subject that has Hit Dice equal to 11 + the number of additional points.*`
         },
         'crystal shard': {
           type:             'power',
@@ -13361,8 +13372,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           resistance:       'No',
           power_points:     '1',
-          text:             `Upon manifesting this power, you propel a razor-sharp crystal shard at your target. You must succeed on a ranged touch attack with the ray to deal damage to a target. The ray deals [[1d6]] points of piercing damage.`,
-          augment:          `For every additional power point you spend, this power’s damage increases by 1d6 points.`
+          text:             `Upon manifesting this power, you propel a razor-sharp crystal shard at your target. You must succeed on a ranged touch attack with the ray to deal damage to a target. The ray deals [[[[1+?{Power Augmentation}]]d6]] points of piercing damage.`,
+          augment:          `**(Note: Already included above)**
+                             *For every additional power point you spend, this power’s damage increases by 1d6 points.*`
         },
         'crystallize': {
           type:             'power',
@@ -13394,9 +13406,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         '[[?{Manifester Level}]] hours (D)',
           power_points:     '5',
-          text:             `You can sense the presence of danger before your senses would normally allow it. Your intuitive sense alerts you to danger from traps, giving you a +4 insight bonus on Ref lex saves to avoid traps and a +4 insight bonus to Armor Class against attacks by traps.`,
+          text:             `You can sense the presence of danger before your senses would normally allow it. Your intuitive sense alerts you to danger from traps, giving you a +4 insight bonus on Reflex saves to avoid traps and a +4 insight bonus to Armor Class against attacks by traps.`,
           augment:          `If you spend 3 additional power points, this power also gives you the uncanny dodge ability; if you spend 6 additional power points, this power gives you the improved uncanny dodge ability as well.`
         },
+        //AUGMENT REVIEW
         'death urge': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/deathUrge.htm',
@@ -19659,7 +19672,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                   return;
                                 };
                               };
-                              spellmacro = spellmacro.concat(' {{Power DC:=[[10+', spell_section, '[Power Level]+@{', spellcastingstat, '}[Ability Mod]',((spell_spec.save_dc_bonus !== undefined)?(spell_spec.save_dc_bonus):('')),']]}}');
+                              spellmacro = spellmacro.concat(' {{Power DC:=[[10+', spell_section, '[Power Level]+@{', spellcastingstat, '}[Ability Mod]',((spell_spec.save_dc_bonus !== undefined)?('+'.concat(spell_spec.save_dc_bonus)):('')),']]}}');
                             }
                             {
                               var default_casterlevel = 'casterlevel';
@@ -19727,7 +19740,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             if (spell_spec.resistance) {
                               spellmacro = spellmacro.concat(' {{Power Resist.:=',spell_spec.resistance,'}}');
                               if (spell_spec.resistance != 'No') {
-                                spellmacro = spellmacro.concat(' {{Manifester level check:=[[1d20+?{Manifester Level}[Manifester Level]]] vs power resist.}}');
+                                spellmacro = spellmacro.concat(' {{Manifester level check:=[[1d20+?{Manifester Level}[Manifester Level]', ((spell_spec.resistance_bonus !== undefined)?('+'.concat(spell_spec.resistance_bonus)):('')), ']] vs power resist.}}');
                               };
                             };
                             var text_augment = "";
