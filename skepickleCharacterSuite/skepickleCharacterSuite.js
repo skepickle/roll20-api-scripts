@@ -19719,6 +19719,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             };
                             var text_augment = "";
                             if (spell_spec.augment) {
+                              //spellmacro = "! ?{Power Augmentation|0}\n".concat(spellmacro);  HERE
                               spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,' + [[?{Power Augmentation|0}]][Augment]}}');
                               text_augment = "↲".concat("**Augment: *[[?{Power Augmentation}]] points***", "↲", spell_spec.augment);
                             } else {
