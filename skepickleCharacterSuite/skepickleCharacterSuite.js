@@ -13409,7 +13409,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `You can sense the presence of danger before your senses would normally allow it. Your intuitive sense alerts you to danger from traps, giving you a +4 insight bonus on Reflex saves to avoid traps and a +4 insight bonus to Armor Class against attacks by traps.`,
           augment:          `If you spend 3 additional power points, this power also gives you the uncanny dodge ability; if you spend 6 additional power points, this power gives you the improved uncanny dodge ability as well.`
         },
-        //AUGMENT REVIEW
         'death urge': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/deathUrge.htm',
@@ -13420,14 +13419,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            '_medium_',
           target_type:      'Target',
           target:           'One living creature',
-          duration:         '1 round',
+          duration:         '[[1+floor(?{Power Augmentation}/4)]] round',
           saving_throw:     'Will negates',
           resistance:       'Yes',
           power_points:     '7',
           text:             `You plant a hidden death-urge impulse in the subject’s unconscious. On the subject’s next turn, it looks for the quickest method to end its life and attempts to do so. The subject takes no other action on its turn except attempting to harm itself.
                              If armed, the subject attacks itself as a full-round action. The attack automatically succeeds and deals damage as a critical hit. If unarmed, the subject moves adjacent to the nearest enemy and provokes an attack of opportunity, offering its opponent an opening, which the opponent may or may not choose to take advantage of.
                              If the subject is unarmed and no enemy is nearby, the subject simply does nothing at all. A subject close to an immediate and lethal hazard such as a cliff or a fire might hurl itself off the cliff or into the fire instead of striking itself with a weapon.`,
-          augment:          `For every 4 additional power points you spend, this power’s save DC increases by 2 and its duration increases by 1 round.`
+          augment:          `**(Note: Already included above)**
+                             *For every 4 additional power points you spend, this power’s save DC increases by 2 and its duration increases by 1 round.*`,
+          save_dc_bonus:    '2*floor(?{Power Augmentation}/4)'
         },
         'deceleration': {
           type:             'power',
@@ -13495,7 +13496,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           resistance:       'Yes',
           power_points:     '1',
           text:             `Your mental impulse forces the subject to repeat the actions it took on its previous turn. If the situation has changed in such a way that the subject can’t take the same actions again (if its foe is dead, or the subject has run out of power points, and so on), the subject stands still and takes no actions for 1 round. In any event, the subject can still defend itself, and it retains its Dexterity bonus to AC even if it stands still.`,
-          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s save DC increases by 1.*`,
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)'
         },
         'demoralize': {
           type:             'power',
@@ -13504,15 +13507,17 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Psion/Wilder 1',
           display:          'Mental and olfactory',
           manifesting_time: '1 standard action',
-          range:            '30 ft.',
+          range:            '[[30+5*floor(?{Power Augmentation}/2)]] ft.',
           target_type:      'Area',
-          target:           '30-ft.-radius spread centered on you',
+          target:           '[[30+5*floor(?{Power Augmentation}/2)]]-ft.-radius spread centered on you',
           duration:         '[[?{Manifester Level}]] minutes',
           saving_throw:     'Will negates',
           resistance:       'Yes',
           power_points:     '1',
           text:             `You fill your enemies with self-doubt. Any enemy in the area that fails its save becomes shaken for the duration of the power. Allies and creatures without an Intelligence score are unaffected.`,
-          augment:          `For every 2 additional power points you spend, this power’s range and the radius of its area both increase by 5 feet, and the power’s save DC increases by 1.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s range and the radius of its area both increase by 5 feet, and the power’s save DC increases by 1.*`,
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)'
         },
         'destiny dissonance': {
           type:             'power',
@@ -13662,18 +13667,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Pain and Suffering 1, Psion/Wilder 1, Psychic Rogue 1',
           display:          'Visual',
           manifesting_time: '1 standard action',
-          range:            '20 ft.',
+          range:            '[[20+5*floor(?{Power Augmentation}/2)]] ft.',
           target_type:      'Area',
           target:           'Cone-shaped emanation centered on you',
           duration:         '[[?{Manifester Level}]] minutes (D)',
           saving_throw:     'Will negates',
           resistance:       'Yes',
           power_points:     '1',
-          text:             `You broadcast a mental compulsion that convinces one or more creatures of 4 Hit Dice or less that they are disabled. Creatures with the fewest HD are affected first. Among creatures with equal Hit Dice, those who are closest to the power’s point of origin are affected first. Hit Dice that are not sufficient to affect a creature are wasted. Creatures that are rendered helpless or are destroyed when they reach 0 hit points cannot be affected.
+          text:             `You broadcast a mental compulsion that convinces one or more creatures of [[4+2*floor(?{Power Augmentation}/2)]] Hit Dice or less that they are disabled. Creatures with the fewest HD are affected first. Among creatures with equal Hit Dice, those who are closest to the power’s point of origin are affected first. Hit Dice that are not sufficient to affect a creature are wasted. Creatures that are rendered helpless or are destroyed when they reach 0 hit points cannot be affected.
                              Creatures affected by this power believe that they have somehow been brought to the brink of unconsciousness and must act accordingly. While it’s possible for an important nonplayer character to attempt some sort of “heroic” action, common NPCs and creatures under the effect of this power typically cower or retreat.
                              Any creature that attempts to take a standard action immediately breaks the compulsion and can act normally. A creature that attempts to heal itself or that receives healing is likewise freed of the compulsion, and if it is not actually wounded, the healing is wasted. A creature that takes damage is also instantly freed of the compulsion (although the damage still counts against its actual current hit points).`,
-          augment:          `For every 2 additional power points you spend, this power’s range increases by 5 feet and its save DC increases by 1.
-                             In addition, for every additional power point you spend to increase the range and the save DC, this power can affect targets that have Hit Dice equal to 4 + the number of additional points.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s range increases by 5 feet and its save DC increases by 1.
+                             In addition, for every additional power point you spend to increase the range and the save DC, this power can affect targets that have Hit Dice equal to 4 + the number of additional points.*`,
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)'
         },
         'dismiss ectoplasm': {
           type:             'power',
@@ -13712,7 +13719,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              The effect of a power with an instantaneous duration can’t be dispelled, because the psionic effect is already over before the dispel psionics can take effect.
                              You choose to use dispel psionics in one of two ways: a targeted dispel or an area dispel.
                              **Targeted Dispel**
-                             One object, creature, or power is the target of the dispel psionics power. You make a dispel check (1d20 + your manifester level, maximum +10) against the power or against each ongoing power currently in effect on the object or creature. The DC for this dispel check is 11 + the power’s manifester level. If you succeed on a particular check, that power is dispelled; if you fail, that power remains in effect.
+                             One object, creature, or power is the target of the dispel psionics power. You make a ‹dispel check|dispel check: [[1d20+{?{Manifester Level},10}kl1+2*{?{Power Augmentation},5}kl1]]› (1d20 + your manifester level, maximum +10) against the power or against each ongoing power currently in effect on the object or creature. The DC for this dispel check is 11 + the power’s manifester level. If you succeed on a particular check, that power is dispelled; if you fail, that power remains in effect.
                              If you target an object or creature that is the effect of an ongoing power or is under the effect of an ongoing power, you make a dispel check to end the power or its effect. If the object that you target is a psionic item, you make a dispel check against the item’s manifester level. If you succeed, all the item’s psionic properties are suppressed for 1d4 rounds, after which the item recovers on its own. A suppressed item becomes nonpsionic for the duration of the effect. An interdimensional interface is temporarily closed. A psionic item’s physical properties are unchanged: A suppressed psionic sword is still a sword (a masterwork sword, in fact). Artifacts and deities are unaffected by mortal power such as this.
                              You automatically succeed on your dispel check against any power that you manifested yourself.
                              **Area Dispel**
@@ -13721,7 +13728,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              For each ongoing area or effect power whose point of origin is within the area of the dispel psionics power, you can make a dispel check to dispel the power.
                              For each ongoing power whose area overlaps that of the dispel psionics power, you can make a dispel check to end the effect, but only within the overlapping area.
                              If an object or creature that is the effect of an ongoing power is in the area, you can make a dispel check to end the power that created that object or construct in addition to attempting to dispel powers targeting the creature or object. You can choose to automatically succeed on dispel checks against any power that you have manifested.`,
-          augment:          `For every additional power point you spend, the bonus on your dispel check increases by 2 (to a maximum bonus of +20 for a 5-point expenditure).`
+          augment:          `**(Note: Already included above)**
+                             *For every additional power point you spend, the bonus on your dispel check increases by 2 (to a maximum bonus of +20 for a 5-point expenditure).*`
         },
         'dispelling buffer': {
           type:             'power',
@@ -13756,8 +13764,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           resistance:       'Yes (object)',
           power_points:     '1',
-          text:             `Your mere touch can disperse the surface material of a foe or object, sending a tiny portion of it far away. This effect is disruptive; thus, your successful melee touch attack deals 1d6 points of damage.`,
-          augment:          `For every additional power point you spend, this power’s damage increases by 1d6 points.`
+          text:             `Your mere touch can disperse the surface material of a foe or object, sending a tiny portion of it far away. This effect is disruptive; thus, your successful melee touch attack deals [[[[1+?{Power Augmentation}]]d6]] points of damage.`,
+          augment:          `**(Note: Already included above)**
+                             *For every additional power point you spend, this power’s damage increases by 1d6 points.*`
         },
         'dissolving touch': {
           type:             'power',
@@ -13773,8 +13782,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           resistance:       'No',
           power_points:     '3',
-          text:             `Your touch, claw, or bite is corrosive, and sizzling moisture visibly oozes from your natural weapon or hand. You deal 4d6 points of acid damage to any creature or object you touch with your successful melee touch attack. Acid you secrete denatures 1 round after use, losing all efficacy and ability to deal damage. You are immune to your own acid.`,
-          augment:          `For every 2 additional power points you spend, this power’s damage increases by 1d6 points.`
+          text:             `Your touch, claw, or bite is corrosive, and sizzling moisture visibly oozes from your natural weapon or hand. You deal [[[[4+floor(?{Power Augmentation}/2)]]d6]] points of acid damage to any creature or object you touch with your successful melee touch attack. Acid you secrete denatures 1 round after use, losing all efficacy and ability to deal damage. You are immune to your own acid.`,
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s damage increases by 1d6 points.*`
         },
         'dissolving weapon': {
           type:             'power',
@@ -13844,7 +13854,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              In the region of dreams, you move through a menagerie of thoughts, desires, and phantoms created by the minds of dreamers everywhere. For every minute you move through dream, you can “wake” to find yourself five miles displaced in the waking world. Thus, a character can use this power to travel rapidly by physically entering where only dreams normally prowl, moving the desired distance, and then stepping back into the waking world. You know where you will come out in the waking world.
                              Dream travel can also be used to travel to other planes that contain creatures that dream, but doing this requires crossing into the dreams of outsiders, where you are subject to the vagaries of many dream realities—a potentially perilous proposition. Transferring to another plane of existence in this fashion requires ‹1d4|[[1d4]] hours› hours of uninterrupted travel.
                              Any creatures that come along when dream travel is manifested also make the transition to the borders of unconscious thought. A creature separated from you wanders off into the dreamscape. When the duration ends, all affected creatures return to the waking world as much as 1,000 miles (‹d%×10|[[10*1d100]] miles›) from their starting point. If a creature remains in the dreamscape, it is powerless to leave unless it can manifest the dream travel power itself or someone who manifests the power seeks out the lost creature.`,
-          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s save DC increases by 1.*`,
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)'
         },
         'duodimensional claw': {
           type:             'power',
@@ -13875,8 +13887,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           resistance:       'No',
           power_points:     '1',
-          text:             `This power reinforces an astral construct created by the [astral construct](http://www.d20srd.org/srd/psionic/powers/astralConstruct.htm) power, giving you a +1 bonus on any manifester level checks you make to protect it against [dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm) or a similar effect, and a +1 bonus on its saving throw to resist dismiss ectoplasm. This power can be manifested as a swift action in the same round that you manifest an astral construct, as long as the power points you spend to perform both actions does not exceed your manifester level.`,
-          augment:          `For every 2 additional power points you spend, your bonus on manifester level checks to protect your astral construct increases by 1, and your astral construct’s bonus on its saving throw to resist dismiss ectoplasm increases by 1.`
+          text:             `This power reinforces an astral construct created by the [astral construct](http://www.d20srd.org/srd/psionic/powers/astralConstruct.htm) power, giving you a +[[1+floor(?{Power Augmentation}/2)]] bonus on any manifester level checks you make to protect it against [dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm) or a similar effect, and a +[[1+floor(?{Power Augmentation}/2)]] bonus on its saving throw to resist dismiss ectoplasm. This power can be manifested as a swift action in the same round that you manifest an astral construct, as long as the power points you spend to perform both actions does not exceed your manifester level.`,
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, your bonus on manifester level checks to protect your astral construct increases by 1, and your astral construct’s bonus on its saving throw to resist dismiss ectoplasm increases by 1.*`
         },
         'ectoplasmic cocoon': {
           type:             'power',
@@ -13948,8 +13961,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'Will half; see text',
           resistance:       'Yes',
           power_points:     '3',
-          text:             `Your rapid mental lashings assault the ego of your enemy, debilitating its confidence. The target takes [[1d4]] points of Charisma damage, or half that amount (minimum 1 point) on a successful save. A target that fails its save is also dazed for 1 round.`,
-          augment:          `For every 4 additional power points you spend, this power’s Charisma damage increases by 1d4 points and its save DC increases by 2.`
+          text:             `Your rapid mental lashings assault the ego of your enemy, debilitating its confidence. The target takes [[[[1+floor(?{Power Augmentation}/4)]]d4]] points of Charisma damage, or half that amount (minimum 1 point) on a successful save. A target that fails its save is also dazed for 1 round.`,
+          augment:          `**(Note: Already included above)**
+                             *For every 4 additional power points you spend, this power’s Charisma damage increases by 1d4 points and its save DC increases by 2.*`,
+          save_dc_bonus:    '2*floor(?{Power Augmentation}/4)'
         },
         'elfsight': {
           type:             'power',
@@ -13979,8 +13994,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         '[[10*?{Manifester Level}]] minutes',
           power_points:     'Psion/Wilder 7, Psychic Warrior 5',
-          text:             `You empathically share your pain and suffering with your attacker. Each time a creature strikes you in melee, it takes damage equal to the amount it dealt to you or 5 points, whichever is less. This damage is empathic in nature, so powers and abilities the attacker may have such as damage reduction and regeneration do not lessen or change this damage. The damage from empathic feedback has no type, so even if you took fire damage from a creature that has immunity to fire, empathic feedback will damage your attacker.`,
-          augment:          `For every additional power point you spend, this power’s damage potential increases by 1 point.`
+          text:             `You empathically share your pain and suffering with your attacker. Each time a creature strikes you in melee, it takes damage equal to the amount it dealt to you or [[5+?{Power Augmentation}]] points, whichever is less. This damage is empathic in nature, so powers and abilities the attacker may have such as damage reduction and regeneration do not lessen or change this damage. The damage from empathic feedback has no type, so even if you took fire damage from a creature that has immunity to fire, empathic feedback will damage your attacker.`,
+          augment:          `**(Note: Already included above)**
+                             *For every additional power point you spend, this power’s damage potential increases by 1 point.*`
         },
         'empathic transfer': {
           type:             'power',
@@ -13994,10 +14010,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'Willing creature touched',
           duration:         'Instantaneous',
           power_points:     '3',
-          text:             `You heal another creature’s wounds, transferring some of its damage to yourself. When you manifest this power, you can heal as much as [[2d10]] points of damage. The target regains a number of hit points equal to the dice result, and you lose hit points equal to half of that amount. (This loss can bring you to 0 or fewer hit points.) Powers and abilities you may have such as damage reduction and regeneration do not lessen or change this damage, since you are taking the target’s pain into yourself in an empathic manner. The damage transferred by this power has no type, so even if you have immunity to the type of damage the target originally took, the transfer occurs normally and deals hit point damage to you.
+          text:             `You heal another creature’s wounds, transferring some of its damage to yourself. When you manifest this power, you can heal as much as [[[[{2+2*?{Power Augmentation},10}kl1]]d10]] points of damage. The target regains a number of hit points equal to the dice result, and you lose hit points equal to half of that amount. (This loss can bring you to 0 or fewer hit points.) Powers and abilities you may have such as damage reduction and regeneration do not lessen or change this damage, since you are taking the target’s pain into yourself in an empathic manner. The damage transferred by this power has no type, so even if you have immunity to the type of damage the target originally took, the transfer occurs normally and deals hit point damage to you.
                              Alternatively, you can use this power to absorb one poison or one disease afflicting the target creature into yourself. When you absorb a poison or disease, you do not take any of the damage previously dealt to the target by the affliction, but you do assume the burden of making the secondary and/or continuing Fortitude saves to combat the affliction.
                              Finally, you can use this power to transfer up to 1 point of ability damage per manifester level from the target to yourself.`,
-          augment:          `For every additional power point you spend, you can heal an additional 2d10 points of damage (to a maximum of 10d10 points per manifestation).`
+          augment:          `**(Note: Already included above)**
+                             *For every additional power point you spend, you can heal an additional 2d10 points of damage (to a maximum of 10d10 points per manifestation).*`
         },
         'empathy': {
           type:             'power',
@@ -14031,9 +14048,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         '1 round',
           power_points:     '1',
-          text:             `You empty your mind of all transitory and distracting thoughts, improving your self-control. You gain a +2 bonus on all Will saves until your next action.
+          text:             `You empty your mind of all transitory and distracting thoughts, improving your self-control. You gain a +[[2+floor(?{Power Augmentation}/2)]] bonus on all Will saves until your next action.
                              You can manifest this power instantly, quickly enough to gain its benefit in an emergency. Manifesting this power is an immediate action. You can use this power even when it is not your turn.`,
-          augment:          `For every 2 additional power points you spend, the bonus on your Will saves increases by 1.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, the bonus on your Will saves increases by 1.*`
         },
         'energy adaptation': {
           type:             'power',
@@ -14054,6 +14072,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              This power’s subtype is the same as the type of damage it protects against.`,
           augment:          `If you spend 4 additional power points, you can manifest this power as an immediate action.`
         },
+        //TODO Maybe use curve-fitting to automate the energy type selection of 'energy ball' power
         'energy ball': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/energyBall.htm',
@@ -14081,6 +14100,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              This power’s subtype is the same as the type of energy you manifest.`,
           augment:          `For every additional power point you spend, this power’s damage increases by one die (d6). For each extra two dice of damage, this power’s save DC increases by 1.`
         },
+        //TODO Maybe use curve-fitting to automate the energy type selection of 'energy bolt' power
         'energy bolt': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/energyBolt.htm',
@@ -14108,6 +14128,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              This power’s subtype is the same as the type of energy you manifest.`,
           augment:          `For every additional power point you spend, this power’s damage increases by one die (d6). For each extra two dice of damage, this power’s save DC increases by 1.`
         },
+        //TODO Maybe use curve-fitting to automate the energy type selection of 'energy burst' power
         'energy burst': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/energyBurst.htm',
@@ -14135,6 +14156,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              This power’s subtype is the same as the type of energy you manifest.`,
           augment:          `For every additional power point you spend, this power’s damage increases by one die (d6). For each extra two dice of damage, this power’s save DC increases by 1.`
         },
+        //TODO Maybe use curve-fitting to automate the energy type selection of 'energy cone' power
         'energy cone': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/energyCone.htm',
@@ -14179,6 +14201,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `As [energy adaptation](http://www.d20srd.org/srd/psionic/powers/energyAdaptation.htm), except that instead of radiating away energy as light, you store up the energy and can later discharge it as a ray. To discharge a ray requires a standard action. You can choose to fire any number of rays during the power’s duration. The ray you fire must be of one of the energy types you have stored (if you have stored more than one type, you can choose what kind of energy to use for each ray). If a ray successfully strikes its target (requiring a ranged touch attack), the target takes damage equal to the amount of energy damage of that type you have stored, up to a maximum of three times your manifester level. As long as this power remains in effect, you can continue to absorb energy damage and fire additional rays using the stored damage.
                              This power’s subtype is the same as the type of energy you discharge in a ray; thus, its subtype can change during the course of the power’s duration.`
         },
+        //TODO Maybe use curve-fitting to automate the energy type selection of 'energy current' power
         'energy current': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/energyCurrent.htm',
@@ -14210,6 +14233,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • For every additional power point you spend, this power’s damage increases by one die (d6). For each extra two dice of damage, this power’s save DC increases by 1.
                              • For every 4 additional power points you spend, this power can affect an additional secondary target. Any additional secondary target cannot be more than 15 feet from another target of the power.`
         },
+        //TODO Maybe use curve-fitting to automate the energy type selection of 'energy missile' power
         'energy missile': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/energyMissile.htm',
@@ -14237,6 +14261,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              This power’s subtype is the same as the type of energy you manifest.`,
           augment:          `For every additional power point you spend, this power’s damage increases by one die (d6) and its save DC increases by 1.`
         },
+        //TODO Maybe use curve-fitting to automate the energy type selection of 'energy push' power
         'energy push': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/energyPush.htm',
@@ -14264,6 +14289,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              This power’s subtype is the same as the type of energy you manifest.`,
           augment:          `For every 2 additional power points you spend, this power’s damage increases by one die (d6) and its save DC increases by 1. The damage increase applies to both the initial blast and any damage from impact with an object.`
         },
+        //TODO Maybe use curve-fitting to automate the energy type selection of 'energy ray' power
         'energy ray': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/energyRay.htm',
@@ -14291,6 +14317,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              This power’s subtype is the same as the type of energy you manifest.`,
           augment:          `For every additional power point you spend, this power’s damage increases by one die (d6).`
         },
+        //TODO Maybe use curve-fitting to automate the energy type selection of 'energy retort' power
         'energy retort': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/energyRetort.htm',
@@ -14318,6 +14345,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              This power’s subtype is the same as the type of energy you manifest.`,
           augment:          `For every additional power point you spend, this power’s duration increases by 1 minute.`
         },
+        //TODO Maybe use curve-fitting to automate the energy type selection of 'energy stun' power
         'energy stun': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/energyStun.htm',
@@ -14345,6 +14373,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              This power’s subtype is the same as the type of energy you manifest.`,
           augment:          `For every additional power point you spend, this power’s damage increases by one die (d6) and its save DC increases by 1.`
         },
+        //TODO Maybe use curve-fitting to automate the energy type selection of 'energy wall' power
         'energy wall': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/energyWall.htm',
@@ -14373,6 +14402,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
                              This power’s subtype is the same as the type of energy you manifest.`
         },
+        //TODO Maybe use curve-fitting to automate the energy type selection of 'energy wave' power
         'energy wave': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/energyWave.htm',
@@ -14424,16 +14454,17 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           level:            'Lurk 3, Psion/Wilder 3',
           display:          'Visual',
           manifesting_time: '1 standard action',
-          range:            '50 ft.',
+          range:            '[[50+5*?{Power Augmentation}]] ft.',
           target_type:      'Target',
-          target:           'You and all invisible creatures and objects in a 50-ft.-radius burst centered on you',
+          target:           'You and all invisible creatures and objects in a [[50+5*?{Power Augmentation}]]-ft.-radius burst centered on you',
           duration:         'Instantaneous',
           saving_throw:     'Reflex negates',
           resistance:       'No',
           power_points:     '5',
           text:             `You radiate a psychokinetic burst that disrupts and negates all types of invisibility (though this power can’t negate the effect of [cloud mind](http://www.d20srd.org/srd/psionic/powers/cloudMind.htm)). Any creature that fails its save to avoid the effect loses its invisibility.
                              Creatures that are naturally invisible, such as an invisible stalker, are revealed as a dim outline for 1 round (until the beginning of your next turn) and do not have total concealment during this period.`,
-          augment:          `For every additional power point you spend, this power’s range and the radius of the burst in which it functions both increase by 5 feet.`
+          augment:          `**(Note: Already included above)**
+                             *For every additional power point you spend, this power’s range and the radius of the burst in which it functions both increase by 5 feet.*`
         },
         'escape detection': {
           type:             'power',
@@ -14479,9 +14510,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           resistance:       'Yes',
           power_points:     '5',
-          text:             `You spit forth vitriolic acid, originating from your mouth, at your target. If you succeed on a ranged touch attack, the target takes [[3d6]] points of acid damage.`,
-          augment:          `For every 2 additional power points you spend, this power’s damage increases by 1d6 points.`
+          text:             `You spit forth vitriolic acid, originating from your mouth, at your target. If you succeed on a ranged touch attack, the target takes [[[[3+floor(?{Power Augmentation}/2)]]d6]] points of acid damage.`,
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s damage increases by 1d6 points.*`
         },
+        //REVIEW AUGMENT
         'expansion': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/expansion.htm',
