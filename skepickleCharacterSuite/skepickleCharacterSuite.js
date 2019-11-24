@@ -19647,8 +19647,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               };
                             };
                             spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
-                            spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲&nbsp;&nbsp;&nbsp;',spell_spec.text,(spell_spec.component_details)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
-                            spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲&nbsp;&nbsp;&nbsp;',spell_spec.text,(spell_spec.component_details)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
+                            spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲',spell_spec.text,(spell_spec.component_details)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
+                            spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲',spell_spec.text,(spell_spec.component_details)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
                             break;
                           case 'epicspell':
                             break;
@@ -19747,7 +19747,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             if (spell_spec.augment) {
                               power_augment_query = " ?{Power Augmentation|0}";
                               spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,' + [[?{Power Augmentation}]][Augment]}}');
-                              text_augment = "↲".concat("**Augment: *[[?{Power Augmentation}]] points***", "↲", spell_spec.augment);
+                              text_augment = "↲".concat("**Augment:**", "↲", spell_spec.augment);
                             } else {
                               spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,'}}');
                             };
@@ -19787,6 +19787,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                           };
                           //log(spellmacro);
                         };
+                        spellmacro = spellmacro.replace(/^ +/gm,  "&nbsp;&nbsp;&nbsp;"); // INDENT!
                         spellmacro = spellmacro.replace(/↲ +/g, "\n&nbsp;&nbsp;&nbsp;"); // INDENT!
                         spellmacro = spellmacro.replace(/↲/g, "\n");
                         // Embolden links, and also italicize links to spells and powers
