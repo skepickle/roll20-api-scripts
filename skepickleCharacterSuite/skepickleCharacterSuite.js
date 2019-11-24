@@ -19521,12 +19521,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                     //var spellmacro = getAttrByName(character.id, ''.concat('repeating_spells',spell_section,spell_column,'_',rowID,'_spellmacro',spell_section,spell_column));
                     var spellmacro = getAttrByName(character.id, spellname_attr.get('name').replace(/_spellname/, "_spellmacro"));
                     if (['','-','fill','empty'].includes(stringTrimWhitespace(spellmacro))) {
-                      var spell_name = stringTrimWhitespace(spellname_attr.get('current').toLowerCase()).replace(/’/g, "'").replace(/[^a-z' ]/g, '');
+                      var spell_name = stringTrimWhitespace(spellname_attr.get('current').toLowerCase()).replace(/’/g, "'").replace(/[^-a-z' ]/g, '');
                       if (spell_names.includes(spell_name)) {
                         var spell_spec = dnd35.spell(spell_name);
                         //log(spell_spec);
                         //log("^^^^^^^^^^^^^^");
-                        var new_spell_name = spellname_attr.get('current').replace(/[^-A-Za-z ]/g, '');
+                        var new_spell_name = spellname_attr.get('current').replace(/[^-A-Za-z' ]/g, '');
                         switch (spell_spec.type) {
                           case 'spell':
                             if (spell_spec.component_details) {
@@ -19789,9 +19789,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                         };
                         spellmacro = spellmacro.replace(/↲ +/g, "\n&nbsp;&nbsp;&nbsp;"); // INDENT!
                         spellmacro = spellmacro.replace(/↲/g, "\n");
-                        // Embolden links, and also italicize links to spells
-                        spellmacro = spellmacro.replace(/(\[[^\]]+\]\([^\)]+\/spells\/[^\)]+\))/gm, "*$1*");
-                        spellmacro = spellmacro.replace(/(\[[^\]]+\]\([^\)]+\))/gm, "**$1**");
+                        // Embolden links, and also italicize links to spells and powers
+                        spellmacro = spellmacro.replace(/(\[[^\]]+\]\([^\)]+\/(spells|psionic)\/[^\)]+\))/gm, "***$1***");
+                        spellmacro = spellmacro.replace(/([^*])(\[[^\]]+\]\([^\)]+\))([^*])/gm, "$1*$2*$3");
                         // Escape bonuses and penalties to give red-text look...
                         spellmacro = spellmacro.replace(/([+-][0-9]+ ([a-z]+ ){0,1}(bonus|bonuses|penalty|penalties))/gm, "``$1``");
                         //log("FOUND!");
