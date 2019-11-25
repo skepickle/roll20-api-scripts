@@ -12809,7 +12809,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           resistance:       'No',
           power_points:     '1',
-          text:             `You create [[2d4]] ectoplasmic crossbow bolts, arrows, or sling bullets, appropriate to your size, which dissipate into their constituent ectoplasmic particles when the duration ends or after being fired. Ammunition you create has a +[[1+floor(?{Power Augmentation}/3)]] enhancement bonus on attack rolls and damage rolls.`,
+          text:             `You create [[2d4]] ectoplasmic crossbow bolts, arrows, or sling bullets, appropriate to your size, which dissipate into their constituent ectoplasmic particles when the duration ends or after being fired. Ammunition you create has a \`\`+[[1+floor(?{Power Augmentation}/3)]] enhancement bonus\`\` on attack rolls and damage rolls.`,
           augment:          `**(Note: Already included above)**
                              *For every 3 additional power points you spend, this power improves the ammunition’s enhancement bonus on attack rolls and damage rolls by 1.*`
         },
@@ -13887,7 +13887,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           saving_throw:     'None',
           resistance:       'No',
           power_points:     '1',
-          text:             `This power reinforces an astral construct created by the [astral construct](http://www.d20srd.org/srd/psionic/powers/astralConstruct.htm) power, giving you a +[[1+floor(?{Power Augmentation}/2)]] bonus on any manifester level checks you make to protect it against [dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm) or a similar effect, and a +[[1+floor(?{Power Augmentation}/2)]] bonus on its saving throw to resist dismiss ectoplasm. This power can be manifested as a swift action in the same round that you manifest an astral construct, as long as the power points you spend to perform both actions does not exceed your manifester level.`,
+          text:             `This power reinforces an astral construct created by the [astral construct](http://www.d20srd.org/srd/psionic/powers/astralConstruct.htm) power, giving you a \`\`+[[1+floor(?{Power Augmentation}/2)]] bonus\`\` on any manifester level checks you make to protect it against [dispel psionics](http://www.d20srd.org/srd/psionic/powers/dispelPsionics.htm) or a similar effect, and a \`\`+[[1+floor(?{Power Augmentation}/2)]] bonus\`\` on its saving throw to resist dismiss ectoplasm. This power can be manifested as a swift action in the same round that you manifest an astral construct, as long as the power points you spend to perform both actions does not exceed your manifester level.`,
           augment:          `**(Note: Already included above)**
                              *For every 2 additional power points you spend, your bonus on manifester level checks to protect your astral construct increases by 1, and your astral construct’s bonus on its saving throw to resist dismiss ectoplasm increases by 1.*`
         },
@@ -14048,7 +14048,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         '1 round',
           power_points:     '1',
-          text:             `You empty your mind of all transitory and distracting thoughts, improving your self-control. You gain a +[[2+floor(?{Power Augmentation}/2)]] bonus on all Will saves until your next action.
+          text:             `You empty your mind of all transitory and distracting thoughts, improving your self-control. You gain a \`\`+[[2+floor(?{Power Augmentation}/2)]] bonus\`\` on all Will saves until your next action.
                              You can manifest this power instantly, quickly enough to gain its benefit in an emergency. Manifesting this power is an immediate action. You can use this power even when it is not your turn.`,
           augment:          `**(Note: Already included above)**
                              *For every 2 additional power points you spend, the bonus on your Will saves increases by 1.*`
@@ -14514,7 +14514,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           augment:          `**(Note: Already included above)**
                              *For every 2 additional power points you spend, this power’s damage increases by 1d6 points.*`
         },
-        //REVIEW AUGMENT
         'expansion': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/expansion.htm',
@@ -14545,8 +14544,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           display:          'Mental',
           manifesting_time: '1 round',
           range:            '_long_',
-          target_type:      'Target',
-          target:           'One creature',
+          target_type:      'Targets',
+          target:           '[[1+floor(Power Augmentation/2)]] creatures, at most 15 ft. from another target',
           duration:         'Concentration, up to [[?{Manifester Level}]] minutes (D)',
           saving_throw:     'Will negates',
           resistance:       'Yes',
@@ -14554,7 +14553,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `You have a limited ability to falsify one of the subject’s senses. The subject thinks she sees, hears, smells, tastes, or feels something other than what her senses actually report. You can’t create a sensation where none exists, nor make the subject completely oblivious to a sensation, but you can replace the specifics of one sensation with different specifics. For instance, you could make a human look like a dwarf (or one human look like another specific human), a closed door look like it is open, a vat of acid smell like rose water, a parrot look like a bookend, stale rations taste like fresh fruit, a light pat feel like a dagger thrust, a scream sound like the howling wind, and so on.
                              You can switch between senses you falsify round by round. You can’t alter the size of an object by more than 50% by using this power. Thus, you couldn’t make a castle look like a hovel, but you could make it look like a different castle, or a rough hillock of approximately the same size. If this power is used to distract an enemy manifester who is attempting to use his powers, the enemy must make a Concentration check as if grappling or pinned.
                              Because you override a victim’s senses, you can fool a victim who is using [true seeing](http://www.d20srd.org/srd/psionic/powers/trueSeeingPsionic.htm) or some other method of gathering information, assuming you know that the victim is actively using such an effect and you can maintain concentration.`,
-          augment:          `For every 2 additional power points you spend, this power can affect an additional target. Any additional target cannot be more than 15 feet from another target of the power.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power can affect an additional target. Any additional target cannot be more than 15 feet from another target of the power.*`
         },
         'far hand': {
           type:             'power',
@@ -14591,7 +14591,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           power_points:     '5',
           text:             `You temporarily link the fates of any two creatures, if both fail their saving throws. If either linked creature experiences pain, both feel it. When one loses hit points, the other loses the same amount. If one takes nonlethal damage, so does the other. If one creature is subjected to an effect to which it is immune (such as a type of energy damage), the linked creature is not subjected to it either. If one dies, the other must immediately succeed on a Fortitude save against this power’s save DC or gain two negative levels.
                              No other effects are transferred by the fate link.`,
-          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s save DC increases by 1.*`,
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)'
         },
         'fate of one': {
           type:             'power',
@@ -14626,7 +14628,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              While the power lasts, you are treated as if you possessed the stolen feats, despite the fact that you have more feats than normally allowed. During this same period, the target can make no use of the stolen feats. When the power’s duration expires, you lose access to the feats, and the target gains immediate use of them. This transfer occurs regardless of the distance between you and the target.
                              If the duration of feat leech is extended by the use of a metapsionic feat, the target gains a Will saving throw every 10 minutes beyond the normal duration. If this save succeeds, the power’s duration ends. If the target is killed before the duration expires, you immediately lose the benefit of the stolen feats.
                              You cannot steal a feat for which you do not meet the prerequisites, if any. However, you can use a stolen feat as the prerequisite for another stolen feat.`,
-          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s save DC increases by 1.`,
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)'
         },
         'fiery discorporation': {
           type:             'power',
@@ -14688,8 +14692,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         '[[?{Manifester Level}]] minutes',
           power_points:     '1',
-          text:             `You create an invisible mobile disk of force that hovers in front of you. The force screen provides a +4 shield bonus to Armor Class (which applies against incorporeal touch attacks, since the force screen is a force effect). Since it hovers in front of you, the effect has no armor check penalty associated with it.`,
-          augment:          `For every 4 additional power points you spend, the shield bonus to Armor Class improves by 1.`
+          text:             `You create an invisible mobile disk of force that hovers in front of you. The force screen provides a \`\`+[[4+floor(?{Power Augmentation}/4)]] shield bonus\`\` to Armor Class (which applies against incorporeal touch attacks, since the force screen is a force effect). Since it hovers in front of you, the effect has no armor check penalty associated with it.`,
+          augment:          `**(Note: Already included above)**
+                             *For every 4 additional power points you spend, the shield bonus to Armor Class improves by 1.*`
         },
         'forced sense link': {
           type:             'power',
@@ -14727,7 +14732,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `This power creates a psychometabolic connection between you and a subject so that some of your wounds are transferred to the subject. You take half damage from all attacks that deal hit point damage to you, and the subject takes the remainder. The amount of damage not taken by you is taken by the subject. If your hit points are reduced by a lowered Constitution score, that reduction is not shared with the subject because it is not a form of hit point damage. When this power ends, subsequent damage is no longer divided between the subject and you, but damage already shared is not reassigned.
                              If you and the subject move farther away from each other than close range, the power ends.
                              If you are immune to the type of damage dealt, or if you convert lethal damage into nonlethal damage, the target takes no damage.`,
-          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s save DC increases by 1.*`,
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)'
         },
         'form of doom': {
           type:             'power',
@@ -14739,14 +14746,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Personal; see text',
           target_type:      'Target',
           target:           'You',
-          duration:         '[[?{Manifester Level}]] rounds (D)',
+          duration:         '[[?{Manifester Level}+2*?{Power Augmentation}]] rounds (D)',
           power_points:     '11',
           text:             `You wrench from your subconscious a terrifying visage of deadly hunger and become one with it. You are transformed into a nightmarish version of yourself, complete with an ooze-sleek skin coating, lashing tentacles, and a fright-inducing countenance. You effectively gain a +10 bonus on Disguise checks, though you retain your basic shape and can continue to use your equipment. This power cannot be used to impersonate someone; while horrible, your form is recognizably your own.
                              You gain the frightful presence extraordinary ability, which takes effect automatically when you charge a foe. Opponents within 30 feet of you that have fewer Hit Dice or levels than you and that witness your charge become shaken for 5d6 rounds if they fail a Will save (DC 16 + your Cha modifier). An opponent that succeeds on the saving throw is immune to your frightful presence for 24 hours. Frightful presence is a mind-affecting fear effect.
                              Your horrific form grants you a natural armor bonus of +5, damage reduction 5/-, and a +4 bonus to your Strength score. In addition, you gain +10 feet to your land speed as well as a +10 bonus on Climb and Jump checks.
                              A nest of violently flailing black tentacles sprout from your hair and back. You can make up to four additional attacks with these tentacles in addition to your regular melee attacks in each round that you take a full attack action. You can make tentacle attacks within the space you normally threaten. If you make your tentacle attacks in addition to you regular melee attacks, each tentacle attacks at your highest base attack bonus with a -5 penalty. If you forgo all your other attacks, making only tentacle attacks, you make your tentacle attacks at your highest base attack bonus with no penalty. These tentacles deal 2d8 points of damage plus one-half your Strength bonus on each successful strike.
                              This power functions only while you inhabit your base form (for instance, you can’t be metamorphed or polymorphed into another form, though you can use [claws of the beast](http://www.d20srd.org/srd/psionic/powers/clawsoftheBeast.htm), and [bite of the wolf](http://www.d20srd.org/srd/psionic/powers/biteoftheWolf.htm) in conjunction with this power for your regular attacks), and while your mind resides within your own body.`,
-          augment:          `For every additional power point you spend, this power’s duration increases by 2 rounds.`
+          augment:          `**(Note: Already included above)**
+                             *For every additional power point you spend, this power’s duration increases by 2 rounds.*`
         },
         'fuse flesh': {
           type:             'power',
@@ -14765,7 +14773,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           text:             `You cause the touched subject’s flesh to ripple, grow together, and fuse into a nearly seamless whole. The subject is forced into a fetal position (if humanoid), with only the vaguest outline of its folded arms and legs visible below the all-encompassing wave of flesh. The subject retains the ability to breathe, eat, and excrete, but may lose the use of its senses (see below). If the sudden transformation would prove fatal to the creature (such as fusing a swimming airbreathing subject, or a flying subject), the subject gets a +4 bonus on the save. Unless it loses the use of its senses (see below), the creature can still perform purely mental actions, such as manifesting powers.
                              If the target fails its Fortitude save to avoid the power’s effect, the subject must immediately attempt a second Fortitude save. If this second save is failed, the creature’s eyes and ears fuse over, effectively blinding and deafening it. Moreover, it loses its extraordinary, supernatural, and spell-like abilities, as well as its ability to manifest powers (if any), and is generally in sorry shape.
                              Incorporeal or gaseous creatures and creatures not composed of flesh are immune to fuse flesh, and a shapechanger can revert to its unfused form as a standard action.`,
-          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s save DC increases by 1.*`,
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)'
         },
         'fusion': {
           type:             'power',
@@ -14886,9 +14896,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         '[[?{Manifester Level}]] round/level',
           power_points:     '1',
-          text:             `You can improve your chances in a grapple as an immediate action, gaining a +4 enhancement bonus on your grapple checks.
+          text:             `You can improve your chances in a grapple as an immediate action, gaining a \`\`+[[4+2*floor(?{Power Augmentation}/4)]] enhancement bonus\`\` on your grapple checks.
                              You can manifest this power with an instant thought, quickly enough to gain the benefit of the power in the current round. Manifesting this power is an immediate action. You can manifest this power when it isn’t your turn (if you are grappled).`,
-          augment:          `For every 4 additional power points you spend, the enhancement bonus on your grapple checks increases by 2.`
+          augment:          `**(Note: Already included above)**
+                             *For every 4 additional power points you spend, the enhancement bonus on your grapple checks increases by 2.*`
         },
         // Powers that start with H
         'hail of crystals': {
@@ -14906,9 +14917,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           resistance:       'No',
           power_points:     '0',
           text:             `A tiny ectoplasmic crystal emanates from your outstretched hand and rapidly expands to a 2-foot-diameter ball of crystal as it speeds toward the location you designate. You can choose to aim this crystal at a single target or at a specific point in space (a grid intersection).
-                             If you aim the crystal at a single target, you must make a ranged touch attack to strike the target. Any creature or object struck by the ball of crystal takes ‹5d4|[[5d4]] points of bludgeoning damage› points of bludgeoning damage.
-                             Whether the crystal hits its target, misses, or was aimed at a point in space, it explodes upon arrival at the location you designated. Anyone within 20 feet of the explosion takes ‹9d4|[[9d4]] points of slashing damage› points of slashing damage from the thousands of crystal shards that spray forth.`,
-          augment:          `For every additional power point you spend, this power’s damage from the explosion of the crystal increases by 1d4 points.`
+                             If you aim the crystal at a single target, you must make a ranged touch attack to strike the target. Any creature or object struck by the ball of crystal takes [[5d4]] points of bludgeoning damage.
+                             Whether the crystal hits its target, misses, or was aimed at a point in space, it explodes upon arrival at the location you designated. Anyone within 20 feet of the explosion takes [[[[9+?{Power Augmentation}]]d4]] points of slashing damage from the thousands of crystal shards that spray forth.`,
+          augment:          `**(Note: Already included above)**
+                             *For every additional power point you spend, this power’s damage from the explosion of the crystal increases by 1d4 points.*`
         },
         'hammer': {
           type:             'power',
@@ -14920,12 +14932,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           range:            'Touch',
           target_type:      'Target',
           target:           'Creature touched',
-          duration:         '1 round',
+          duration:         '[[1+?{Power Augmentation}]] round',
           saving_throw:     'None',
           resistance:       'Yes',
           power_points:     '1',
           text:             `This power charges your touch with the force of a sledgehammer. A successful melee touch attack deals ‹1d8|[[1d8]] points of bludgeoning damage› points of bludgeoning damage. This damage is not increased or decreased by your Strength modifier.`,
-          augment:          `For every additional power point you spend, this power’s duration increases by 1 round.`
+          augment:          `**(Note: Already included above)**
+                             *For every additional power point you spend, this power’s duration increases by 1 round.*`
         },
         'hostile empathic transfer': {
           type:             'power',
@@ -14988,7 +15001,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           manifesting_time: '1 standard action',
           range:            '_close_',
           target_type:      'Target',
-          target:           'One creature',
+          target:           '[[1+floor(?{Power Augmentation}/2)]] creatures, at most 15 ft. from another target',
           duration:         'Concentration + 1 round',
           saving_throw:     'Will negates',
           resistance:       'Yes',
@@ -15001,7 +15014,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                              • **21-50**, Do nothing but babble incoherently.
                              • **51-70**, Flee from manifester at top possible speed.
                              • **71-100**, Attack nearest creature (for this purpose, a psicrystal counts as part of the subject’s self).`,
-          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1, and the power can affect an additional target. Any additional target cannot be more than 15 feet from another target of the power.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, this power’s save DC increases by 1, and the power can affect an additional target. Any additional target cannot be more than 15 feet from another target of the power.*`,
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)'
         },
         'immovability': {
           type:             'power',
@@ -15064,10 +15079,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           target:           'You',
           duration:         '[[?{Manifester Level}]] hours (D)',
           power_points:     '1; see text',
-          text:             `Your mind generates a tangible field of force that provides a +4 armor bonus to Armor Class. Unlike mundane armor, inertial armor entails no armor check penalty or speed reduction. Because inertial armor is composed of psychokinetic force, incorporeal creatures can’t bypass it the way they do normal armor.
+          text:             `Your mind generates a tangible field of force that provides a \`\`+[[4+floor(?{Power Augmentation/2)]] armor bonus\`\` to Armor Class. Unlike mundane armor, inertial armor entails no armor check penalty or speed reduction. Because inertial armor is composed of psychokinetic force, incorporeal creatures can’t bypass it the way they do normal armor.
                              Your inertial armor can be invisible or can appear as a colored glow, at your option.
                              The armor bonus provided by inertial armor does not stack with the armor bonus provided by regular armor.`,
-          augment:          `For every 2 additional power points you spend, the armor bonus to Armor Class increases by 1.`
+          augment:          `**(Note: Already included above)**
+                             *For every 2 additional power points you spend, the armor bonus to Armor Class increases by 1.*`
         },
         'inertial barrier': {
           type:             'power',
@@ -15092,14 +15108,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           manifesting_time: '1 standard action',
           range:            '_close_',
           target_type:      'Target',
-          target:           'One creature',
+          target:           '[[1+floor(?{Power Augmentation}/2)]] creatures, at most 15 ft. from another target',
           duration:         '[[?{Manifester Level}]] rounds',
           saving_throw:     'Will partial; see text',
           resistance:       'Yes',
           power_points:     '3',
           text:             `You telepathically stab the mind of your foe, causing horrible agony. The subject suffers wracking pain that imposes a -4 penalty on attack rolls, skill checks, and ability checks. If the target makes its save, it takes only a -2 penalty.`,
-          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1, and the power can affect an additional target. Any additional target cannot be more than 15 feet from another target of the power.`
+          augment:          `For every 2 additional power points you spend, this power’s save DC increases by 1, and the power can affect an additional target. Any additional target cannot be more than 15 feet from another target of the power.`,
+          save_dc_bonus:    'floor(?{Power Augmentation}/2)'
         },
+        //REVIEW AUGMENT
         'insanity': {
           type:             'power',
           ref:              'http://www.d20srd.org/srd/psionic/powers/insanity.htm',
