@@ -271,7 +271,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           components:       'V, S, DF',
           casting_time:     '1 standard action',
           range:            'Touch',
-          targer_type:      'Target',
+          target_type:      'Target',
           target:           'Living creature touched',
           duration:         '[[?{Caster Level}]] minutes',
           saving_throw:     'None',
