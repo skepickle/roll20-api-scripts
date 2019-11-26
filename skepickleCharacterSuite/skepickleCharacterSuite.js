@@ -18615,6 +18615,288 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     };
   }; // getSkillSpecification
 
+  var calculateEncounterLevel = function(encounter_crs) {
+    let crs = Object.assign({}, encounter_crs);
+    // Use http://archive.wizards.com/default.asp?x=dnd/dnd/20010320b
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    // CR 1/10
+    //log(crs);
+    //log("CR 1/10");
+    if (crs["1/10"] !== undefined) {
+      while ((crs["1/10"] !== undefined) && (crs["1/10"] > 10)) {
+        crs["1/10"] -= 10;
+        crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+      };
+      switch (crs["1/10"]) {
+        case 2: crs["1/8"] = (crs["1/8"] === undefined)?(1):(crs["1/8"]+1);
+                delete crs["1/10"]; break;
+        case 3: crs["1/6"] = (crs["1/6"] === undefined)?(1):(crs["1/6"]+1);
+                delete crs["1/10"]; break;
+        case 4: crs["1/4"] = (crs["1/4"] === undefined)?(1):(crs["1/4"]+1);
+                delete crs["1/10"]; break;
+        case 5:
+        case 6: crs["1/3"] = (crs["1/3"] === undefined)?(1):(crs["1/3"]+1);
+                delete crs["1/10"]; break;
+        case 7:
+        case 8: crs["1/2"] = (crs["1/2"] === undefined)?(1):(crs["1/2"]+1);
+                delete crs["1/10"]; break;
+        case 9:
+        case 10:
+                crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+                delete crs["1/10"]; break;
+      };
+    };
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    // CR 1/8
+    //log(crs);
+    //log("CR 1/8");
+    if (crs["1/8"] !== undefined) {
+      while ((crs["1/8"] !== undefined) && (crs["1/8"] > 8)) {
+        crs["1/8"] -= 8;
+        crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+      };
+      switch (crs["1/8"]) {
+        case 2: crs["1/6"] = (crs["1/6"] === undefined)?(1):(crs["1/6"]+1);
+                delete crs["1/8"]; break;
+        case 3: crs["1/4"] = (crs["1/4"] === undefined)?(1):(crs["1/4"]+1);
+                delete crs["1/8"]; break;
+        case 4: crs["1/3"] = (crs["1/3"] === undefined)?(1):(crs["1/3"]+1);
+                delete crs["1/8"]; break;
+        case 5:
+        case 6: crs["1/2"] = (crs["1/2"] === undefined)?(1):(crs["1/2"]+1);
+                delete crs["1/8"]; break;
+        case 7:
+        case 8: crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+                delete crs["1/8"]; break;
+      };
+    };
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    // CR 1/6
+    //log(crs);
+    //log("CR 1/6");
+    if (crs["1/6"] !== undefined) {
+      while ((crs["1/6"] !== undefined) && (crs["1/6"] > 6)) {
+        crs["1/6"] -= 6;
+        crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+      };
+      switch (crs["1/6"]) {
+        case 2: crs["1/4"] = (crs["1/4"] === undefined)?(1):(crs["1/4"]+1);
+                delete crs["1/6"]; break;
+        case 3: crs["1/3"] = (crs["1/3"] === undefined)?(1):(crs["1/3"]+1);
+                delete crs["1/6"]; break;
+        case 4: crs["1/2"] = (crs["1/2"] === undefined)?(1):(crs["1/2"]+1);
+                delete crs["1/6"]; break;
+        case 5:
+        case 6: crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+                delete crs["1/6"]; break;
+      };
+    };
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    // CR 1/4
+    //log(crs);
+    //log("CR 1/4");
+    if ((crs["1/8"] !== undefined) && (crs["1/10"] !== undefined) &&
+        (crs["1/8"] == 1)          && (crs["1/10"] == 1)) {
+      crs["1/4"] = (crs["1/4"] === undefined)?(1):(crs["1/4"]+1);
+      delete crs["1/8"];
+      delete crs["1/10"];
+    };
+    if (crs["1/10"] !== undefined) { delete crs["1/10"]};
+    if (crs["1/4"] !== undefined) {
+      while ((crs["1/4"] !== undefined) && (crs["1/4"] > 4)) {
+        crs["1/4"] -= 4;
+        crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+      };
+      switch (crs["1/4"]) {
+        case 2: crs["1/2"] = (crs["1/2"] === undefined)?(1):(crs["1/2"]+1);
+               delete crs["1/4"]; break;
+        case 3:
+        case 4: crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+               delete crs["1/4"]; break;
+      };
+    };
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    // CR 1/3
+    //log(crs);
+    //log("CR 1/3");
+    if ((crs["1/6"] !== undefined) && (crs["1/8"] !== undefined) &&
+        (crs["1/6"] == 1)          && (crs["1/8"] == 1)) {
+      crs["1/3"] = (crs["1/3"] === undefined)?(1):(crs["1/3"]+1);
+      delete crs["1/6"];
+      delete crs["1/8"];
+    };
+    if (crs["1/8"] !== undefined) { delete crs["1/8"]};
+    if ((crs["1/4"] !== undefined) && (crs["1/6"] !== undefined) &&
+        (crs["1/4"] == 1)          && (crs["1/6"] == 1)) {
+      crs["1/3"] = (crs["1/3"] === undefined)?(1):(crs["1/3"]+1);
+      delete crs["1/4"];
+      delete crs["1/6"];
+    };
+    if (crs["1/6"] !== undefined) { delete crs["1/6"]};
+    if (crs["1/3"] !== undefined) {
+      while ((crs["1/3"] !== undefined) && (crs["1/3"] > 3)) {
+        crs["1/3"] -= 3;
+        crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+      };
+      switch (crs["1/3"]) {
+        case 2:
+        case 3: crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+                delete crs["1/3"]; break;
+      };
+    };
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    // CR 1/2
+    //log(crs);
+    //log("CR 1/2");
+    if ((crs["1/3"] !== undefined) && (crs["1/4"] !== undefined) &&
+        (crs["1/3"] == 1)          && (crs["1/4"] == 1)) {
+      crs["1/2"] = (crs["1/2"] === undefined)?(1):(crs["1/2"]+1);
+      delete crs["1/3"];
+      delete crs["1/4"];
+    };
+    if (crs["1/4"] !== undefined) { delete crs["1/4"]};
+    if (crs["1/2"] !== undefined) {
+      while ((crs["1/2"] !== undefined) && (crs["1/2"] > 2)) {
+        crs["1/2"] -= 2;
+        crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+      };
+      switch (crs["1/2"]) {
+        case 2: crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+                delete crs["1/2"]; break;
+      };
+    };
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    // CR 1
+    //log(crs);
+    //log("CR 1");
+    if ((crs["1/2"] !== undefined) && (crs["1/3"] !== undefined) &&
+        (crs["1/2"] == 1)          && (crs["1/3"] == 1)) {
+      crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+      delete crs["1/2"];
+      delete crs["1/3"];
+    };
+    if (crs["1/3"] !== undefined) { delete crs["1/3"]};
+    if (crs["1"] !== undefined) {
+      while ((crs["1"] !== undefined) && (crs["1"] > 2)) {
+        crs["1"] -= 2;
+        crs["2"] = (crs["2"] === undefined)?(1):(crs["2"]+1);
+      };
+      switch (crs["1"]) {
+        case 2: crs["2"] = (crs["2"] === undefined)?(1):(crs["2"]+1);
+                delete crs["1"]; break;
+      };
+    };
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    // CR 2
+    //log(crs);
+    //log("CR 2");
+    if ((crs["1"] !== undefined) && (crs["1/2"] !== undefined) &&
+        (crs["1"] == 1)          && (crs["1/2"] == 1)) {
+      crs["2"] = (crs["2"] === undefined)?(1):(crs["2"]+1);
+      delete crs["1"];
+      delete crs["1/2"];
+    };
+    if (crs["1/2"] !== undefined) { delete crs["1/2"]};
+    // WOOHOO!! ALL FRACTIONAL CRs ARE DELETED NOW!!
+    let cMaxCR = 1;
+    let cMinCR = 0;
+    do {
+      cMaxCR += 1;
+      //log(crs);
+      //log("CR "+cMaxCR);
+      // Find starting point for current CR being calculated
+      switch (cMaxCR) {
+        case 2:
+        case 3: cMinCR = 1;
+                break;
+        case 6: cMinCR = 2;
+                break;
+        default:
+                cMinCR = cMaxCR - 3;
+                break;
+      };
+      // Delete any CRs that are lower than the starting point, since they will not ever combine up to higher forms that could bump overall encounter level
+      let crs_keys = Array.from(Object.keys(crs));
+      for (let i = 0; i < crs_keys.length; i++) {
+        if (parseFloat(crs_keys[i]) < cMinCR) {
+          delete crs[crs_keys[i]];
+        };
+      };
+      // Find Mixed Pairs and bump up CR by one
+      if (crs[cMaxCR.toString()] !== undefined) {
+        for (let curCR = cMinCR; curCR < cMaxCR; curCR++) {
+          while ((crs[cMaxCR.toString()] > 0) &&
+                 (crs[curCR.toString()] !== undefined) && (crs[curCR.toString()] > 0)) {
+            crs[(cMaxCR+1).toString()] = (crs[(cMaxCR+1).toString()] === undefined)?(1):(crs[(cMaxCR+1).toString()]+1);
+            crs[curCR.toString()]  -= 1;
+            crs[cMaxCR.toString()] -= 1;
+            if (crs[curCR.toString()] == 0) {
+              delete crs[curCR.toString()];
+            };
+          };
+          if (crs[cMaxCR.toString()] == 0) {
+            delete crs[cMaxCR.toString()];
+            break;
+          };
+        };
+      };
+      // If cMaxCR > 6, then delete and CRs that are equal to the starting point, since they will not ever combine up to higher forms that could bump overall encounter level
+      if ((cMaxCR > 6) && (crs[cMinCR.toString()] !== undefined)) {
+        delete crs[cMinCR.toString()];
+      };
+      // Find CR sets-of-ten and bump up CR by seven
+      while ((crs[cMaxCR.toString()] !== undefined) && (crs[cMaxCR.toString()] >= 10)) {
+        crs[cMaxCR.toString()] -= 10;
+        crs[(cMaxCR+7).toString()] = (crs[(cMaxCR+7).toString()] === undefined)?(1):(crs[(cMaxCR+7).toString()]+1);
+      };
+      if (crs[cMaxCR.toString()] == 0) {
+        delete crs[cMaxCR.toString()];
+      };
+      // Find CR sets-of-seven and bump up CR by six
+      while ((crs[cMaxCR.toString()] !== undefined) && (crs[cMaxCR.toString()] >= 7)) {
+        crs[cMaxCR.toString()] -= 7;
+        crs[(cMaxCR+6).toString()] = (crs[(cMaxCR+6).toString()] === undefined)?(1):(crs[(cMaxCR+6).toString()]+1);
+      };
+      if (crs[cMaxCR.toString()] == 0) {
+        delete crs[cMaxCR.toString()];
+      };
+      // Find CR sets-of-five and bump up CR by five
+      while ((crs[cMaxCR.toString()] !== undefined) && (crs[cMaxCR.toString()] >= 5)) {
+        crs[cMaxCR.toString()] -= 5;
+        crs[(cMaxCR+5).toString()] = (crs[(cMaxCR+5).toString()] === undefined)?(1):(crs[(cMaxCR+5).toString()]+1);
+      };
+      if (crs[cMaxCR.toString()] == 0) {
+        delete crs[cMaxCR.toString()];
+      };
+      // Find CR sets-of-four and bump up CR by four
+      while ((crs[cMaxCR.toString()] !== undefined) && (crs[cMaxCR.toString()] >= 4)) {
+        crs[cMaxCR.toString()] -= 4;
+        crs[(cMaxCR+4).toString()] = (crs[(cMaxCR+4).toString()] === undefined)?(1):(crs[(cMaxCR+4).toString()]+1);
+      };
+      if (crs[cMaxCR.toString()] == 0) {
+        delete crs[cMaxCR.toString()];
+      };
+      // Find CR sets-of-three and bump up CR by three
+      while ((crs[cMaxCR.toString()] !== undefined) && (crs[cMaxCR.toString()] >= 3)) {
+        crs[cMaxCR.toString()] -= 3;
+        crs[(cMaxCR+3).toString()] = (crs[(cMaxCR+3).toString()] === undefined)?(1):(crs[(cMaxCR+3).toString()]+1);
+      };
+      if (crs[cMaxCR.toString()] == 0) {
+        delete crs[cMaxCR.toString()];
+      };
+      // Find CR doubles and bump up CR by two
+      while ((crs[cMaxCR.toString()] !== undefined) && (crs[cMaxCR.toString()] > 1)) {
+        crs[cMaxCR.toString()] -= 2;
+        crs[(cMaxCR+2).toString()] = (crs[(cMaxCR+2).toString()] === undefined)?(1):(crs[(cMaxCR+2).toString()]+1);
+      };
+      if (crs[cMaxCR.toString()] == 0) {
+        delete crs[cMaxCR.toString()];
+      };
+    } while ((Array.from(Object.keys(crs)).length > 1) || (crs[Array.from(Object.keys(crs))[0]] > 1)); // TODO Change "false" to a real condition here
+    //log(crs);
+    return Array.from(Object.keys(crs))[0];
+  }; // calculateEncounterLevel
+
   // ██████╗  ██████╗ ██╗     ██╗     ██████╗  ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
   // ██╔══██╗██╔═══██╗██║     ██║     ╚════██╗██╔═████╗    ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
   // ██████╔╝██║   ██║██║     ██║      █████╔╝██║██╔██║    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
@@ -19519,9 +19801,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     };
 
     try {
-      // TODO --calculate-encounter-level
-      // TODO --calculate-encounter-rewards <encounter level>
-      // TODO --generate-treasure
       switch (userCommand) {
         //             ███████╗ ██████╗ ██╗   ██╗██████╗  ██████╗███████╗ ████████╗███████╗██╗  ██╗████████╗
         //             ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔════╝ ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝
@@ -19993,6 +20272,52 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               };
             });
           });
+          break;
+        //
+        //
+        //
+        //
+        //
+        //
+        case '--calculate-encounter-level':
+          var encounter_challenge_ratings = {};
+          for (let i=0; i<tokenIDs.length; i++) {
+            let t_obj = getObj("graphic", tokenIDs[i]);
+            let t_character = getObj("character", t_obj.get("represents"));
+            if (!t_character) {
+              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+              continue;
+            };
+            //TODO Check that msg.who can edit character!!
+            let npccr = getAttrByName(t_character.id, "npccr");
+            if ((npccr !== undefined) && (npccr !== '')) {
+              if (!isNaN(npccr)) {
+                if (encounter_challenge_ratings[npccr] === undefined) {
+                  encounter_challenge_ratings[npccr] = 1;
+                } else {
+                  encounter_challenge_ratings[npccr] += 1;
+                };
+              } else if (npccr.match(/([0-9]+)\/([0-9]+)/)) {
+                if (encounter_challenge_ratings[npccr] === undefined) {
+                  encounter_challenge_ratings[npccr] = 1;
+                } else {
+                  encounter_challenge_ratings[npccr] += 1;
+                };
+              } else {
+                log("NaN npc CR = " + npccr);
+              };
+            } else {
+              // Maybe get CR by looking at the PC tab levels field?
+              log("No npc CR = " + npccr);
+            };
+          };
+          log(encounter_challenge_ratings);
+          let encounter_level = calculateEncounterLevel(encounter_challenge_ratings);
+          respondToChat(msg,'&{template:default} {{name=Encounter Level}} {{EL= '+encounter_level+'}}');
+          break;
+        case '--calculate-encounter-rewards': // <encounter level>
+          break;
+        case '--generate-treasure':
           break;
         //          ████████╗ ██████╗  ██████╗  ██████╗ ██╗     ███████╗    ██████╗ ███████╗ █████╗  ██████╗██╗  ██╗       █████╗ ██╗   ██╗██████╗  █████╗ ███████╗
         //          ╚══██╔══╝██╔═══██╗██╔════╝ ██╔════╝ ██║     ██╔════╝    ██╔══██╗██╔════╝██╔══██╗██╔════╝██║  ██║      ██╔══██╗██║   ██║██╔══██╗██╔══██╗██╔════╝
