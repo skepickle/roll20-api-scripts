@@ -18449,12 +18449,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     },
     merge_arrays: function(property_name) {
       var result = [];
-      var myself = this;
       var property_heirarchy = property_name.split('.');
-      this.enabled_source_texts.forEach(function(source) {
-        if (myself['source_text_'.concat(source)] !== undefined) {
-          var i = 0;
-          var property_p = myself['source_text_'.concat(source)];
+      for (let k=0; k<this.enabled_source_texts.length; k++) {
+        if (this['source_text_'.concat(this.enabled_source_texts[k])] !== undefined) {
+          let i = 0;
+          let property_p = this['source_text_'.concat(this.enabled_source_texts[k])];
           do {
             property_p = property_p[property_heirarchy[i]];
             i++;
@@ -18463,17 +18462,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             result = [...new Set([...result ,...property_p])];
           };
         };
-      });
+      };
       return result;
     },
     merge_maps: function(property_name) {
       var result = {};
-      var myself = this;
       var property_heirarchy = property_name.split('.');
-      this.enabled_source_texts.forEach(function(source) {
-        if (myself['source_text_'.concat(source)] !== undefined) {
-          var i = 0;
-          var property_p = myself['source_text_'.concat(source)];
+      for (let k=0; k<this.enabled_source_texts.length; k++) {
+        if (this['source_text_'.concat(this.enabled_source_texts[k])] !== undefined) {
+          let i = 0;
+          let property_p = this['source_text_'.concat(this.enabled_source_texts[k])];
           do {
             property_p = property_p[property_heirarchy[i]];
             i++;
@@ -18482,7 +18480,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             result = Object.assign({}, result, property_p);
           };
         };
-      });
+      };
       return result;
     },
     movement_modes:      function() { return this.merge_arrays("movement_modes"); },
