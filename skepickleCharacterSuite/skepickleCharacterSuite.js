@@ -20290,28 +20290,34 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             };
             //TODO Check that msg.who can edit character!!
             let npccr = getAttrByName(t_character.id, "npccr");
-            if ((npccr !== undefined) && (npccr !== '')) {
-              if (!isNaN(npccr)) {
-                if (encounter_challenge_ratings[npccr] === undefined) {
-                  encounter_challenge_ratings[npccr] = 1;
-                } else {
-                  encounter_challenge_ratings[npccr] += 1;
-                };
-              } else if (npccr.match(/([0-9]+)\/([0-9]+)/)) {
-                if (encounter_challenge_ratings[npccr] === undefined) {
-                  encounter_challenge_ratings[npccr] = 1;
-                } else {
-                  encounter_challenge_ratings[npccr] += 1;
-                };
-              } else {
-                log("NaN npc CR = " + npccr);
-              };
+            if ((npccr !== undefined) && (npccr !== '') && (!isNaN(npccr))) {
+              encounter_challenge_ratings[npccr] = (encounter_challenge_ratings[npccr] === undefined)?(1):(encounter_challenge_ratings[npccr]+1);
+            } else if ((npccr !== undefined) && (npccr !== '') && (npccr.match(/([0-9]+)\/([0-9]+)/))) {
+              encounter_challenge_ratings[npccr] = (encounter_challenge_ratings[npccr] === undefined)?(1):(encounter_challenge_ratings[npccr]+1);
             } else {
               // Maybe get CR by looking at the PC tab levels field?
-              log("No npc CR = " + npccr);
+              let pccr = 0;
+              let racialabilities = getAttrByName(t_character.id, "racialabilities");
+              let match_result = racialabilities.match(/level adjustment ([-+][0-9]+)/im);
+              if ((match_result != null) && (match_result[1] != null)) {
+                // Level Adjustment value found! needs to be added to the CR
+                pccr = parseFloat(match_result[1]);
+              };
+              let level = getAttrByName(t_character.id, "level");
+              let                         level_delim = ','; match_result = level.match(/^(\d+)(,\s*\d+)*$/);
+              if (match_result == null) { level_delim = '/'; match_result = level.match(/^(\d+)(\/\s*\d+)*$/); };
+              if (match_result == null) { level_delim = ' '; match_result = level.match(/^(\d+)( \s*\d+)*$/); };
+              if (match_result == null) { level_delim = '-'; match_result = level.match(/^(\d+)(\-\s*\d+)*$/); };
+              if ((match_result != null) && (match_result[1] != null)) {
+                var arr = level.split(level_delim).map(function(item) {
+                  return parseInt(item, 10);
+                });
+                pccr = pccr + arr.reduce((a,b) => a + b, 0);
+              };
+              encounter_challenge_ratings[pccr.toString()] = (encounter_challenge_ratings[pccr.toString()] === undefined)?(1):(encounter_challenge_ratings[pccr.toString()]+1);
             };
           };
-          log(encounter_challenge_ratings);
+          //log(encounter_challenge_ratings);
           let encounter_level = calculateEncounterLevel(encounter_challenge_ratings);
           respondToChat(msg,'&{template:default} {{name=Encounter Level}} {{EL= '+encounter_level+'}}');
           break;
