@@ -19639,6 +19639,92 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   //  };
   //}; // checkSheetMacros
 
+
+
+
+
+
+
+
+
+
+  // NEW FEATURE STUFF
+
+  // This function should allow for moderation of player tokens. This moderation will encompass two features:
+  // Feature 1: Allow players to indicated desired movement
+  //   a) When a player token is moved, it will actually be set back to it's previous location
+  //   b) A path will be drawn based on the attempted move path of the player token
+  //   c) A tinted graphic of the player token will be placed at the end of the path, where the player token was moved to
+  //   d) If the player token is moved again, the previous path and tinted-token will be removed and the new one will be drawn.
+  // Feature 2: Allow GMs to accept or reject desired player movements.
+  //   a) GMs can execute script message command, to accept or reject the desire path of the selected player token(s).
+  //   b) If a player token's desired path is accepted, then any 'attached tokens' will moved with the player token.
+
+  var handleChangeGraphic = function(obj, prev) {
+    var objLayer = obj.get("layer");
+    var pageId   = obj.get("_pageid");
+    var pageName = getObj("page", pageId).get("name");
+    if (!obj.get("represents")) { return; }
+    var character = getObj("character", obj.get("represents"));
+    if (!character) { return; }
+    if (character.get("controlledby") == "") { return; };
+    //// TODO
+    ////     Set token GMNOTE indicating intended movement of this player controlled token
+    ////     Draw some sort of indication of where the player wants to move... maybe a tinted token using same image?
+    log(prev);
+    log(obj);
+    let controlledby = character.get("controlledby");
+    log(controlledby);
+    if (controlledby.match(/^all$/)) {
+      log("It's all!");
+    } else if (controlledby.match(/,/)) {
+      log("It's more than one player!");
+    } else {
+      let player = getObj("player", controlledby);
+      log(player.get("color")); // <--- this totally works!
+      let the_path = ''.concat(obj.get("lastmove"),',',obj.get("left"),',',obj.get("top"));
+      log(the_path);
+      the_path = the_path.split(',')
+                         .map(parseFloat)
+                         .reduce((acc, val, i, arr) =>
+                                     (i % 2) ? acc
+                                     : [...acc, arr.slice(i, i + 2)]
+                                 , []) ;
+      let min_left = 10000000;
+      let min_top  = 10000000;
+      let max_left = 0;
+      let max_top  = 0;
+      for (let i=0; i<the_path.length; i++) {
+        if (the_path[i][0] < min_left) { min_left = the_path[i][0]; };
+        if (the_path[i][0] > max_left) { max_left = the_path[i][0]; };
+        if (the_path[i][1] < min_top ) { min_top  = the_path[i][1]; };
+        if (the_path[i][1] > max_top ) { max_top  = the_path[i][1]; };
+        the_path[i].unshift('L');
+      };
+      let height = max_top-min_top;
+      let width  = max_left-min_left;
+      the_path[0][0] = 'M';
+      log(the_path);
+      let path_obj = createObj("path", {
+        pageid:       pageId,
+        path:         JSON.stringify(the_path),
+        height:       height,
+        width:        width,
+        left:         min_left+(width/2),
+        top:          min_top+(height/2),
+        fill:         "transparent",
+        stroke:       player.get("color"),
+        layer:        "objects",
+        stroke_width: 5,
+        controlledby: ""
+      });
+    };
+
+    //obj.set("left", prev["left"]);
+    //obj.set("top", prev["top"]);
+    return;
+  }; // handleChangeGraphic
+
   // ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██╗     ███████╗██████╗
   // ██║  ██║██╔══██╗████╗  ██║██╔══██╗██║     ██╔════╝██╔══██╗
   // ███████║███████║██╔██╗ ██║██║  ██║██║     █████╗  ██████╔╝
@@ -19998,7 +20084,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               } else if ((spell_spec.target_type !== undefined) && (typeof spell_spec.target_type === 'string')) {
                                 spell_target_type_a = [ spell_spec.target_type ];
                               } else {
-                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO'}));
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO 1'}));
                                 return;
                               };
                               if ((spell_spec.target !== undefined) && (Array.isArray(spell_spec.target))) {
@@ -20006,7 +20092,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               } else if ((spell_spec.target !== undefined) && (typeof spell_spec.target === 'string')) {
                                 spell_target_a = [ spell_spec.target ];
                               } else {
-                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO'}));
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO 2'}));
                                 return;
                               };
                               if (spell_target_type_a.length != spell_target_a.length) {
@@ -20093,7 +20179,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               } else if ((spell_spec.target_type !== undefined) && (typeof spell_spec.target_type === 'string')) {
                                 spell_target_type_a = [ spell_spec.target_type ];
                               } else {
-                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO'}));
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO 3'}));
                                 return;
                               };
                               if ((spell_spec.target !== undefined) && (Array.isArray(spell_spec.target))) {
@@ -20101,7 +20187,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               } else if ((spell_spec.target !== undefined) && (typeof spell_spec.target === 'string')) {
                                 spell_target_a = [ spell_spec.target ];
                               } else {
-                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO'}));
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO 4'}));
                                 return;
                               };
                               if (spell_target_type_a.length != spell_target_a.length) {
@@ -20367,8 +20453,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               obj.set("aura2_square", (reach<=10));
               obj.set("showplayers_aura1", false);
               obj.set("showplayers_aura2", false);
-              obj.set("playersedit_aura1", false);
-              obj.set("playersedit_aura2", false);
+              obj.set("playersedit_aura1", false); //TODO change these to 'true'?
+              obj.set("playersedit_aura2", false); //TODO change these to 'true'?
             } else {
               // backup present, remove register and restore attributes
               obj.set("aura1_radius", aura_info[0]);
@@ -20682,6 +20768,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //             ███████║███████╗   ██║      ███████╗██║╚██████╔╝██║  ██║   ██║      ███████║╚██████╔╝╚██████╔╝██║  ██║╚██████╗███████╗
         //             ╚══════╝╚══════╝   ╚═╝      ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝
         case '--set-light-source':
+          // TODO Modify this function to use 'attached tokens' for actual light sources, and only apply inherent vision properties to the player token itself.
           if (!playerIsGM(playerID)) { return; /* TODO */ };
           if (firstFragment == null) {
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
@@ -20791,8 +20878,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   // ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝       ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝
 
   var registerEventHandlers = function() {
-    on('add:graphic',  handleAddGraphic);
-    on('chat:message', handleChatMessage);
+    on('add:graphic',    handleAddGraphic);
+    on('change:graphic', handleChangeGraphic);
+    on('chat:message',   handleChatMessage);
   }; // registerEventHandlers
 
   var checkInstall = function() {
