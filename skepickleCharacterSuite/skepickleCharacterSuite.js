@@ -6,6 +6,10 @@
 var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleCharacterSuiteImp() {
   "use strict";
 
+  const constants = {
+    pixels_per_foot: 14
+  };
+
   var info = {
     version: 0.1,
     authorName: "skepickle"
@@ -13,7 +17,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
   var config = {
     debugDEFCON: 5,
-    pixels_per_foot: 14
+    enable_movement_moderation: false
   };
 
   var temp = {
@@ -19661,6 +19665,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   //   b) If a player token's desired path is accepted, then any 'attached tokens' will moved with the player token.
 
   var handleChangeGraphic = function(obj, prev) {
+    return;
+    if (!state.skepickleCharacterSuiteImp.config.enable_movement_moderation) { return; };
     var objLayer = obj.get("layer");
     var pageId   = obj.get("_pageid");
     var pageName = getObj("page", pageId).get("name");
@@ -19830,8 +19836,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             dimensions[1] = parseFloat(dimensions[1]);
             if (dimensions[0] <= 1.0) { dimensions[0] = 1.0; };
             if (dimensions[1] <= 1.0) { dimensions[1] = 1.0; };
-            obj.set("width", config.pixels_per_foot*parseFloat(dimensions[0]));
-            obj.set("height", config.pixels_per_foot*parseFloat(dimensions[1]));
+            obj.set("width", constants.pixels_per_foot*parseFloat(dimensions[0]));
+            obj.set("height", constants.pixels_per_foot*parseFloat(dimensions[1]));
           };
         } else {
           npcspace = npcspace.replace(new RegExp("[^\.0-9].*$"), "");
@@ -19839,8 +19845,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             npcspace = parseFloat(npcspace);
             //log("npcspace     = " + npcspace);
             if (npcspace <= 1.0) { npcspace = 1.0; };
-            obj.set("width", config.pixels_per_foot*parseFloat(npcspace));
-            obj.set("height", config.pixels_per_foot*parseFloat(npcspace));
+            obj.set("width", constants.pixels_per_foot*parseFloat(npcspace));
+            obj.set("height", constants.pixels_per_foot*parseFloat(npcspace));
           };
         };
       };
@@ -20278,6 +20284,49 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             };
           });
           break;
+        //             ███╗   ███╗ ██████╗ ██╗   ██╗███████╗███╗   ███╗███████╗███╗   ██╗████████╗   ███╗   ███╗ ██████╗ ██████╗ ███████╗██████╗  █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
+        //             ████╗ ████║██╔═══██╗██║   ██║██╔════╝████╗ ████║██╔════╝████╗  ██║╚══██╔══╝   ████╗ ████║██╔═══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
+        // █████╗█████╗██╔████╔██║██║   ██║██║   ██║█████╗  ██╔████╔██║█████╗  ██╔██╗ ██║   ██║█████╗██╔████╔██║██║   ██║██║  ██║█████╗  ██████╔╝███████║   ██║   ██║██║   ██║██╔██╗ ██║
+        // ╚════╝╚════╝██║╚██╔╝██║██║   ██║╚██╗ ██╔╝██╔══╝  ██║╚██╔╝██║██╔══╝  ██║╚██╗██║   ██║╚════╝██║╚██╔╝██║██║   ██║██║  ██║██╔══╝  ██╔══██╗██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
+        //             ██║ ╚═╝ ██║╚██████╔╝ ╚████╔╝ ███████╗██║ ╚═╝ ██║███████╗██║ ╚████║   ██║      ██║ ╚═╝ ██║╚██████╔╝██████╔╝███████╗██║  ██║██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
+        //             ╚═╝     ╚═╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝      ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+        case '--movement-moderation':
+          if (!playerIsGM(playerID)) { /*TODO error message! */ return; };
+          if (firstFragment == null) {
+            //TODO Error / Usage message here
+            break;
+          };
+          switch (firstFragment) {
+            case 'enable':
+              state.skepickleCharacterSuiteImp.config.enable_movement_moderation = true;
+              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Message= Movement Moderation Enabled.}}');
+              return;
+            case 'disable':
+              state.skepickleCharacterSuiteImp.config.enable_movement_moderation = false;
+              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Message= Movement Moderation Disabled.}}');
+              return;
+          };
+          tokenIDs.forEach(function(idOfToken) {
+            var obj = getObj("graphic", idOfToken);
+            var character = getObj("character", obj.get("represents"));
+            if (!character) {
+              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+              return;
+            };
+            if (character.get("controlledby") == "") { return; };
+            try {
+              switch (firstFragment) {
+                case 'accept':
+                  break;
+                case 'reject':
+                  break;
+                default:
+                  break;
+              };
+            } catch(e) {
+            };
+          });
+          break;
         //             ███╗   ███╗ ██████╗  ██████╗ ██╗  ██╗
         //             ████╗ ████║██╔═══██╗██╔═══██╗██║ ██╔╝
         // █████╗█████╗██╔████╔██║██║   ██║██║   ██║█████╔╝
@@ -20453,8 +20502,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               obj.set("aura2_square", (reach<=10));
               obj.set("showplayers_aura1", false);
               obj.set("showplayers_aura2", false);
-              obj.set("playersedit_aura1", false); //TODO change these to 'true'?
-              obj.set("playersedit_aura2", false); //TODO change these to 'true'?
+              obj.set("playersedit_aura1", true);
+              obj.set("playersedit_aura2", true);
             } else {
               // backup present, remove register and restore attributes
               obj.set("aura1_radius", aura_info[0]);
@@ -20889,7 +20938,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         info: info,
         config: config
       };
-    };
+    }; //TODO check/fix state properties in "else"
+    log("########## State data for skepickleCharacterSuite");
+    log(state.skepickleCharacterSuiteImp);
+    log("##########");
   }; // checkInstall
 
   var initialize = function() {
