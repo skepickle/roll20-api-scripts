@@ -6,6 +6,7 @@
 var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleCharacterSuiteImp() {
   "use strict";
 
+  // Use Object.freeze()??
   const constants = {
     pixels_per_foot: 14
   };
@@ -18456,14 +18457,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       var result = [];
       var property_heirarchy = property_name.split('.');
       for (let k=0; k<this.enabled_source_texts.length; k++) {
-        if (this['source_text_'.concat(this.enabled_source_texts[k])] !== undefined) {
+        let source_text__k = 'source_text_'.concat(this.enabled_source_texts[k]);
+        if ((source_text__k in this) && (this[source_text__k] !== null)) {
           let i = 0;
-          let property_p = this['source_text_'.concat(this.enabled_source_texts[k])];
+          let property_p = this[source_text__k];
           do {
             property_p = property_p[property_heirarchy[i]];
             i++;
-          } while ((i < property_heirarchy.length) && (property_p !== undefined));
-          if (property_p !== undefined) {
+          } while ((i < property_heirarchy.length) && (typeof property_p !== 'undefined') && (property_p !== null));
+          if ((typeof property_p !== 'undefined') && (property_p !== null)) {
             result = [...new Set([...result ,...property_p])];
           };
         };
@@ -18474,14 +18476,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       var result = {};
       var property_heirarchy = property_name.split('.');
       for (let k=0; k<this.enabled_source_texts.length; k++) {
-        if (this['source_text_'.concat(this.enabled_source_texts[k])] !== undefined) {
+        let source_text__k = 'source_text_'.concat(this.enabled_source_texts[k]);
+        if ((source_text__k in this) && (this[source_text__k] !== null)) {
           let i = 0;
-          let property_p = this['source_text_'.concat(this.enabled_source_texts[k])];
+          let property_p = this[source_text__k];
           do {
             property_p = property_p[property_heirarchy[i]];
             i++;
-          } while ((i < property_heirarchy.length) && (property_p !== undefined));
-          if (property_p !== undefined) {
+          } while ((i < property_heirarchy.length) && (typeof property_p !== 'undefined') && (property_p !== null));
+          if ((typeof property_p !== 'undefined') && (property_p !== null)) {
             result = Object.assign({}, result, property_p);
           };
         };
@@ -18511,23 +18514,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   // ╚═════╝ ╚═════╝  ╚═════╝     ╚═════╝ ╚═╝╚══════╝     ╚═════╝    ╚═╝   ╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝
 
   var abilityScoreToMod = function(score) {
-    if (isNaN(score)) {
-      return 0;
-    };
+    if (isNaN(score)) { return 0; };
     return Math.floor((score-10.0)/2.0);
   }; // abilityScoreToMod
 
   var abilityScoreToBonusSpells = function(score, spelllevel) {
-    if (isNaN(score)) { return 0; };
+    if (isNaN(score))  { return 0; };
     if (spelllevel==0) { return 0; };
-    mod = abilityScoreToMod(score);
-    return Math.max(0,Math.ceil((1.0+mod-spelllevel/4.0)));
+    return Math.max(0,Math.ceil((1.0+abilityScoreToMod(score)-spelllevel/4.0)));
   }; // abilityScoreToBonusSpells
 
   var abilityScoreToBonusPowers = function(score, classlevel) {
     if (isNaN(score)) { return 0; };
-    mod = abilityScoreToMod(score);
-    return Math.floor((mod*classlevel)/2.0);
+    return Math.floor((abilityScoreToMod(score)*classlevel)/2.0);
   }; // abilityScoreToBonusPowers
 
   var sizeToMod = function(size) {
@@ -18602,211 +18601,278 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   }; // sizeModToLongReach
 
   var getSkillSpecification = function(skillString) {
-    skillString = skillString.replace(/ +\(/g, "(");
-    var skills = dnd35.skills();
-    if (skills[skillString.toLowerCase()] !== undefined) {
-      return skills[skillString.toLowerCase()];
+    if ((typeof skillString === 'undefined') || (skillString === null)) { return null; };
+    skillString = stringTrimWhitespace(skillString);
+    let skills = dnd35.skills();
+    let skillString__lc = skillString.toLowerCase();
+    if ((skillString__lc in skills) && (skills[skillString__lc] !== null)) {
+      return skills[skillString__lc];
     };
-    var match_result = skillString.match(/^([^(]+)(\(.+\)){0,1}$/i);
-    if (match_result[1] === undefined) { return null; };
-    var skill_name = stringTrimWhitespace(match_result[1]);
+    let match_result = skillString.match(/^([^(]+)(\(.+\)){0,1}$/i);
+    if (typeof match_result[1] === 'undefined') { return null; };
+    let skill_name = stringTrimWhitespace(match_result[1]);
+    let skill_name__lc = skill_name.toLowerCase();
     if (skill_name == '') { return null; }
-    if (match_result[2] === undefined) {
-      if (skills[skill_name.toLowerCase()] === undefined) { return null; };
-      return skills[skill_name.toLowerCase()];
+    if (typeof match_result[2] === 'undefined') {
+      if (skill_name__lc in skills) {
+        return skills[skill_name__lc];
+      } else {
+        return null;
+      };
     } else {
       skill_name = skill_name+'()';
-      if (skills[skill_name.toLowerCase()] === undefined) { return null; };
-      return Object.assign({}, skills[skill_name.toLowerCase()], { sub: stringTrimWhitespace(match_result[2].replace(/^\(/, '').replace(/\)$/, '').toLowerCase()) });
+      skill_name__lc = skill_name.toLowerCase();
+      if (skill_name__lc in skills) {
+        return Object.assign({}, skills[skill_name__lc], { sub: stringTrimWhitespace(match_result[2].replace(/^\(/, '').replace(/\)$/, '').toLowerCase()) });
+      } else {
+        return null;
+      };
     };
   }; // getSkillSpecification
 
   var calculateEncounterLevel = function(encounter_crs) {
     let crs = Object.assign({}, encounter_crs);
+    let roundLastCR = function(lastCR) {
+      if (lastCR === "1/2") { return 1; }
+      if (lastCR.match(/^1\//)) { return 0; }
+      return parseInt(lastCR);
+    };
     // Use http://archive.wizards.com/default.asp?x=dnd/dnd/20010320b
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
+    for (let cr in crs) {
+      if (crs[cr] === null) { delete crs[cr]; };
+    };
     // CR 1/10
     //log(crs);
     //log("CR 1/10");
-    if (crs["1/10"] !== undefined) {
-      while ((crs["1/10"] !== undefined) && (crs["1/10"] > 10)) {
+    if ("1/10" in crs) {
+      while (crs["1/10"] > 10) {
         crs["1/10"] -= 10;
-        crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
       };
       switch (crs["1/10"]) {
-        case 2: crs["1/8"] = (crs["1/8"] === undefined)?(1):(crs["1/8"]+1);
-                delete crs["1/10"]; break;
-        case 3: crs["1/6"] = (crs["1/6"] === undefined)?(1):(crs["1/6"]+1);
-                delete crs["1/10"]; break;
-        case 4: crs["1/4"] = (crs["1/4"] === undefined)?(1):(crs["1/4"]+1);
-                delete crs["1/10"]; break;
+        case 2: crs["1/8"] = ("1/8" in crs)?(crs["1/8"]+1):(1);
+                delete crs["1/10"];
+                break;
+        case 3: crs["1/6"] = ("1/6" in crs)?(crs["1/6"]+1):(1);
+                delete crs["1/10"];
+                break;
+        case 4: crs["1/4"] = ("1/4" in crs)?(crs["1/4"]+1):(1);
+                delete crs["1/10"];
+                break;
         case 5:
-        case 6: crs["1/3"] = (crs["1/3"] === undefined)?(1):(crs["1/3"]+1);
-                delete crs["1/10"]; break;
+        case 6: crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
+                delete crs["1/10"];
+                break;
         case 7:
-        case 8: crs["1/2"] = (crs["1/2"] === undefined)?(1):(crs["1/2"]+1);
-                delete crs["1/10"]; break;
+        case 8: crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
+                delete crs["1/10"];
+                break;
         case 9:
         case 10:
-                crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
-                delete crs["1/10"]; break;
+                crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+                delete crs["1/10"];
+                break;
       };
     };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
     // CR 1/8
     //log(crs);
     //log("CR 1/8");
-    if (crs["1/8"] !== undefined) {
-      while ((crs["1/8"] !== undefined) && (crs["1/8"] > 8)) {
+    if ("1/8" in crs) {
+      while (crs["1/8"] > 8) {
         crs["1/8"] -= 8;
-        crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
       };
       switch (crs["1/8"]) {
-        case 2: crs["1/6"] = (crs["1/6"] === undefined)?(1):(crs["1/6"]+1);
-                delete crs["1/8"]; break;
-        case 3: crs["1/4"] = (crs["1/4"] === undefined)?(1):(crs["1/4"]+1);
-                delete crs["1/8"]; break;
-        case 4: crs["1/3"] = (crs["1/3"] === undefined)?(1):(crs["1/3"]+1);
-                delete crs["1/8"]; break;
+        case 2: crs["1/6"] = ("1/6" in crs)?(crs["1/6"]+1):(1);
+                delete crs["1/8"];
+                break;
+        case 3: crs["1/4"] = ("1/4" in crs)?(crs["1/4"]+1):(1);
+                delete crs["1/8"];
+                break;
+        case 4: crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
+                delete crs["1/8"];
+                break;
         case 5:
-        case 6: crs["1/2"] = (crs["1/2"] === undefined)?(1):(crs["1/2"]+1);
-                delete crs["1/8"]; break;
+        case 6: crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
+                delete crs["1/8"];
+                break;
         case 7:
-        case 8: crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
-                delete crs["1/8"]; break;
+        case 8: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+                delete crs["1/8"];
+                break;
       };
     };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
     // CR 1/6
     //log(crs);
     //log("CR 1/6");
-    if (crs["1/6"] !== undefined) {
-      while ((crs["1/6"] !== undefined) && (crs["1/6"] > 6)) {
+    if ("1/6" in crs) {
+      while (crs["1/6"] > 6) {
         crs["1/6"] -= 6;
-        crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
       };
       switch (crs["1/6"]) {
-        case 2: crs["1/4"] = (crs["1/4"] === undefined)?(1):(crs["1/4"]+1);
-                delete crs["1/6"]; break;
-        case 3: crs["1/3"] = (crs["1/3"] === undefined)?(1):(crs["1/3"]+1);
-                delete crs["1/6"]; break;
-        case 4: crs["1/2"] = (crs["1/2"] === undefined)?(1):(crs["1/2"]+1);
-                delete crs["1/6"]; break;
+        case 2: crs["1/4"] = ("1/4" in crs)?(crs["1/4"]+1):(1);
+                delete crs["1/6"];
+                break;
+        case 3: crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
+                delete crs["1/6"];
+                break;
+        case 4: crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
+                delete crs["1/6"];
+                break;
         case 5:
-        case 6: crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
-                delete crs["1/6"]; break;
+        case 6: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+                delete crs["1/6"];
+                break;
       };
     };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
     // CR 1/4
     //log(crs);
     //log("CR 1/4");
-    if ((crs["1/8"] !== undefined) && (crs["1/10"] !== undefined) &&
-        (crs["1/8"] == 1)          && (crs["1/10"] == 1)) {
-      crs["1/4"] = (crs["1/4"] === undefined)?(1):(crs["1/4"]+1);
-      delete crs["1/8"];
+    if (("1/8" in crs) && ("1/10" in crs)) {
+      crs["1/4"] = ("1/4" in crs)?(crs["1/4"]+1):(1);
+      crs["1/8"] -= 1;
+      crs["1/10"] -= 1;
+      if (crs["1/8"] == 0) { delete crs["1/8"]; };
+      if (crs["1/10"] == 0) { delete crs["1/10"]; };
+    };
+    if ("1/10" in crs) {
+      // At this point, CR of 1/10 won't contribute to anything higher.
       delete crs["1/10"];
     };
-    if (crs["1/10"] !== undefined) { delete crs["1/10"]};
-    if (crs["1/4"] !== undefined) {
-      while ((crs["1/4"] !== undefined) && (crs["1/4"] > 4)) {
+    if ("1/4" in crs) {
+      while (crs["1/4"] > 4) {
         crs["1/4"] -= 4;
-        crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
       };
       switch (crs["1/4"]) {
-        case 2: crs["1/2"] = (crs["1/2"] === undefined)?(1):(crs["1/2"]+1);
-               delete crs["1/4"]; break;
+        case 2: crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
+               delete crs["1/4"];
+               break;
         case 3:
-        case 4: crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
-               delete crs["1/4"]; break;
+        case 4: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+               delete crs["1/4"];
+               break;
       };
     };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
     // CR 1/3
     //log(crs);
     //log("CR 1/3");
-    if ((crs["1/6"] !== undefined) && (crs["1/8"] !== undefined) &&
-        (crs["1/6"] == 1)          && (crs["1/8"] == 1)) {
-      crs["1/3"] = (crs["1/3"] === undefined)?(1):(crs["1/3"]+1);
-      delete crs["1/6"];
+    if (("1/6" in crs) && ("1/8" in crs)) {
+      crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
+      crs["1/6"] -= 1;
+      crs["1/8"] -= 1;
+      if (crs["1/6"] == 0) { delete crs["1/6"]; };
+      if (crs["1/8"] == 0) { delete crs["1/8"]; };
+    };
+    if ("1/8" in crs) {
+      // At this point, CR of 1/8 won't contribute to anything higher.
       delete crs["1/8"];
     };
-    if (crs["1/8"] !== undefined) { delete crs["1/8"]};
-    if ((crs["1/4"] !== undefined) && (crs["1/6"] !== undefined) &&
-        (crs["1/4"] == 1)          && (crs["1/6"] == 1)) {
-      crs["1/3"] = (crs["1/3"] === undefined)?(1):(crs["1/3"]+1);
-      delete crs["1/4"];
+    if (("1/4" in crs) && ("1/6" in crs)) {
+      crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
+      crs["1/4"] -= 1;
+      crs["1/6"] -= 1;
+      if (crs["1/4"] == 0) { delete crs["1/4"]; };
+      if (crs["1/6"] == 0) { delete crs["1/6"]; };
+    };
+    if ("1/6" in crs) {
+      // At this point, CR of 1/6 won't contribute to anything higher.
       delete crs["1/6"];
     };
-    if (crs["1/6"] !== undefined) { delete crs["1/6"]};
-    if (crs["1/3"] !== undefined) {
-      while ((crs["1/3"] !== undefined) && (crs["1/3"] > 3)) {
+    if ("1/3" in crs) {
+      while (crs["1/3"] > 3) {
         crs["1/3"] -= 3;
-        crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
       };
       switch (crs["1/3"]) {
         case 2:
-        case 3: crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
-                delete crs["1/3"]; break;
+        case 3: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+                delete crs["1/3"];
+                break;
       };
     };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
     // CR 1/2
     //log(crs);
     //log("CR 1/2");
-    if ((crs["1/3"] !== undefined) && (crs["1/4"] !== undefined) &&
-        (crs["1/3"] == 1)          && (crs["1/4"] == 1)) {
-      crs["1/2"] = (crs["1/2"] === undefined)?(1):(crs["1/2"]+1);
-      delete crs["1/3"];
+    if (("1/3" in crs) && ("1/4" in crs)) {
+      crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
+      crs["1/3"] -= 1;
+      crs["1/4"] -= 1;
+      if (crs["1/3"] == 0) { delete crs["1/3"]; };
+      if (crs["1/4"] == 0) { delete crs["1/4"]; };
+    };
+    if ("1/4" in crs) {
+      // At this point, CR of 1/4 won't contribute to anything higher.
       delete crs["1/4"];
     };
-    if (crs["1/4"] !== undefined) { delete crs["1/4"]};
-    if (crs["1/2"] !== undefined) {
-      while ((crs["1/2"] !== undefined) && (crs["1/2"] > 2)) {
+    if ("1/2" in crs) {
+      while (crs["1/2"] > 2) {
         crs["1/2"] -= 2;
-        crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
+        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
       };
       switch (crs["1/2"]) {
-        case 2: crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
-                delete crs["1/2"]; break;
+        case 2: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+                delete crs["1/2"];
+                break;
       };
     };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
     // CR 1
     //log(crs);
     //log("CR 1");
-    if ((crs["1/2"] !== undefined) && (crs["1/3"] !== undefined) &&
-        (crs["1/2"] == 1)          && (crs["1/3"] == 1)) {
-      crs["1"] = (crs["1"] === undefined)?(1):(crs["1"]+1);
-      delete crs["1/2"];
+    if (("1/2" in crs) && ("1/3" in crs)) {
+      crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+      crs["1/2"] -= 1;
+      crs["1/3"] -= 1;
+      if (crs["1/2"] == 0) { delete crs["1/2"]; };
+      if (crs["1/3"] == 0) { delete crs["1/3"]; };
+    };
+    if ("1/3" in crs) {
+      // At this point, CR of 1/3 won't contribute to anything higher.
       delete crs["1/3"];
     };
-    if (crs["1/3"] !== undefined) { delete crs["1/3"]};
-    if (crs["1"] !== undefined) {
-      while ((crs["1"] !== undefined) && (crs["1"] > 2)) {
+    if ("1" in crs) {
+      while (crs["1"] > 2) {
         crs["1"] -= 2;
-        crs["2"] = (crs["2"] === undefined)?(1):(crs["2"]+1);
+        crs["2"] = ("2" in crs)?(crs["2"]+1):(1);
       };
       switch (crs["1"]) {
-        case 2: crs["2"] = (crs["2"] === undefined)?(1):(crs["2"]+1);
-                delete crs["1"]; break;
+        case 2: crs["2"] = ("2" in crs)?(crs["2"]+1):(1);
+                delete crs["1"];
+                break;
       };
     };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return Array.from(Object.keys(crs))[0];};
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
     // CR 2
     //log(crs);
     //log("CR 2");
-    if ((crs["1"] !== undefined) && (crs["1/2"] !== undefined) &&
-        (crs["1"] == 1)          && (crs["1/2"] == 1)) {
-      crs["2"] = (crs["2"] === undefined)?(1):(crs["2"]+1);
-      delete crs["1"];
+    if (("1" in crs) && ("1/2" in crs)) {
+      crs["2"] = ("2" in crs)?(crs["2"]+1):(1);
+      crs["1"] -= 1;
+      crs["1/2"] -= 1;
+      if (crs["1"] == 0) { delete crs["1"]; };
+      if (crs["1/2"] == 0) { delete crs["1/2"]; };
+    };
+    if ("1/2" in crs) {
+      // At this point, CR of 1/2 won't contribute to anything higher.
       delete crs["1/2"];
     };
-    if (crs["1/2"] !== undefined) { delete crs["1/2"]};
+    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
     // WOOHOO!! ALL FRACTIONAL CRs ARE DELETED NOW!!
     let cMaxCR = 1;
     let cMinCR = 0;
     do {
+      if (cMaxCR > Math.max(Array.from(Object.keys(crs)))) {
+        log("Looking for CR that's higher than highest CR in list!");
+        break;
+      };
       cMaxCR += 1;
       //log(crs);
       //log("CR "+cMaxCR);
@@ -18824,16 +18890,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       // Delete any CRs that are lower than the starting point, since they will not ever combine up to higher forms that could bump overall encounter level
       let crs_keys = Array.from(Object.keys(crs));
       for (let i = 0; i < crs_keys.length; i++) {
-        if (parseFloat(crs_keys[i]) < cMinCR) {
+        if (parseInt(crs_keys[i]) < cMinCR) {
           delete crs[crs_keys[i]];
         };
       };
       // Find Mixed Pairs and bump up CR by one
-      if (crs[cMaxCR.toString()] !== undefined) {
+      if (cMaxCR.toString() in crs) {
         for (let curCR = cMinCR; curCR < cMaxCR; curCR++) {
-          while ((crs[cMaxCR.toString()] > 0) &&
-                 (crs[curCR.toString()] !== undefined) && (crs[curCR.toString()] > 0)) {
-            crs[(cMaxCR+1).toString()] = (crs[(cMaxCR+1).toString()] === undefined)?(1):(crs[(cMaxCR+1).toString()]+1);
+          while ((crs[cMaxCR.toString()] > 0) && (curCR.toString() in crs) && (crs[curCR.toString()] > 0)) {
+            crs[(cMaxCR+1).toString()] = ((cMaxCR+1).toString() in crs)?(crs[(cMaxCR+1).toString()]+1):(1);
             crs[curCR.toString()]  -= 1;
             crs[cMaxCR.toString()] -= 1;
             if (crs[curCR.toString()] == 0) {
@@ -18847,59 +18912,59 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         };
       };
       // If cMaxCR > 6, then delete and CRs that are equal to the starting point, since they will not ever combine up to higher forms that could bump overall encounter level
-      if ((cMaxCR > 6) && (crs[cMinCR.toString()] !== undefined)) {
+      if ((cMaxCR > 6) && (cMinCR.toString() in crs)) {
         delete crs[cMinCR.toString()];
       };
       // Find CR sets-of-ten and bump up CR by seven
-      while ((crs[cMaxCR.toString()] !== undefined) && (crs[cMaxCR.toString()] >= 10)) {
+      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 10)) {
         crs[cMaxCR.toString()] -= 10;
-        crs[(cMaxCR+7).toString()] = (crs[(cMaxCR+7).toString()] === undefined)?(1):(crs[(cMaxCR+7).toString()]+1);
+        crs[(cMaxCR+7).toString()] = ((cMaxCR+7).toString() in crs)?(crs[(cMaxCR+7).toString()]+1):(1);
       };
-      if (crs[cMaxCR.toString()] == 0) {
+      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
         delete crs[cMaxCR.toString()];
       };
       // Find CR sets-of-seven and bump up CR by six
-      while ((crs[cMaxCR.toString()] !== undefined) && (crs[cMaxCR.toString()] >= 7)) {
+      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 7)) {
         crs[cMaxCR.toString()] -= 7;
-        crs[(cMaxCR+6).toString()] = (crs[(cMaxCR+6).toString()] === undefined)?(1):(crs[(cMaxCR+6).toString()]+1);
+        crs[(cMaxCR+6).toString()] = ((cMaxCR+6).toString() in crs)?(crs[(cMaxCR+6).toString()]+1):(1);
       };
-      if (crs[cMaxCR.toString()] == 0) {
+      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
         delete crs[cMaxCR.toString()];
       };
       // Find CR sets-of-five and bump up CR by five
-      while ((crs[cMaxCR.toString()] !== undefined) && (crs[cMaxCR.toString()] >= 5)) {
+      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 5)) {
         crs[cMaxCR.toString()] -= 5;
-        crs[(cMaxCR+5).toString()] = (crs[(cMaxCR+5).toString()] === undefined)?(1):(crs[(cMaxCR+5).toString()]+1);
+        crs[(cMaxCR+5).toString()] = ((cMaxCR+5).toString() in crs)?(crs[(cMaxCR+5).toString()]+1):(1);
       };
-      if (crs[cMaxCR.toString()] == 0) {
+      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
         delete crs[cMaxCR.toString()];
       };
       // Find CR sets-of-four and bump up CR by four
-      while ((crs[cMaxCR.toString()] !== undefined) && (crs[cMaxCR.toString()] >= 4)) {
+      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 4)) {
         crs[cMaxCR.toString()] -= 4;
-        crs[(cMaxCR+4).toString()] = (crs[(cMaxCR+4).toString()] === undefined)?(1):(crs[(cMaxCR+4).toString()]+1);
+        crs[(cMaxCR+4).toString()] = ((cMaxCR+4).toString() in crs)?(crs[(cMaxCR+4).toString()]+1):(1);
       };
-      if (crs[cMaxCR.toString()] == 0) {
+      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
         delete crs[cMaxCR.toString()];
       };
       // Find CR sets-of-three and bump up CR by three
-      while ((crs[cMaxCR.toString()] !== undefined) && (crs[cMaxCR.toString()] >= 3)) {
+      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 3)) {
         crs[cMaxCR.toString()] -= 3;
-        crs[(cMaxCR+3).toString()] = (crs[(cMaxCR+3).toString()] === undefined)?(1):(crs[(cMaxCR+3).toString()]+1);
+        crs[(cMaxCR+3).toString()] = ((cMaxCR+3).toString() in crs)?(crs[(cMaxCR+3).toString()]+1):(1);
       };
-      if (crs[cMaxCR.toString()] == 0) {
+      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
         delete crs[cMaxCR.toString()];
       };
       // Find CR doubles and bump up CR by two
-      while ((crs[cMaxCR.toString()] !== undefined) && (crs[cMaxCR.toString()] > 1)) {
+      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] > 1)) {
         crs[cMaxCR.toString()] -= 2;
-        crs[(cMaxCR+2).toString()] = (crs[(cMaxCR+2).toString()] === undefined)?(1):(crs[(cMaxCR+2).toString()]+1);
+        crs[(cMaxCR+2).toString()] = ((cMaxCR+2).toString() in crs)?(crs[(cMaxCR+2).toString()]+1):(1);
       };
-      if (crs[cMaxCR.toString()] == 0) {
+      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
         delete crs[cMaxCR.toString()];
       };
-    } while ((Array.from(Object.keys(crs)).length > 1) || (crs[Array.from(Object.keys(crs))[0]] > 1)); // TODO Change "false" to a real condition here
-    //log(crs);
+    } while ((Array.from(Object.keys(crs)).length > 1) || (crs[Array.from(Object.keys(crs))[0]] > 1));
+    log(crs);
     return Array.from(Object.keys(crs))[0];
   }; // calculateEncounterLevel
 
@@ -18970,7 +19035,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   var renderDefaultTemplate = function(scope, id, fields) {
     var character = getObj("character", id);
     var str = ''.concat("&{template:default} {{name=",scope,"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "character_name"),"}}");
-    for (var k in fields) {
+    for (let k in fields) {
       str = str.concat(" {{"+k+"= "+escapeRoll20Macro(fields[k])+"}}");
     };
     return str;
@@ -19039,7 +19104,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   var isAttrByNameNaN = function(charID, attrib, valueType) {
     valueType = valueType || 'current';
     var val = getAttrByName(charID, attrib, valueType);
-    if (val === undefined) {
+    if (typeof val === 'undefined') {
       throw "isAttrByNameNaN() called with undefined attribute"
     };
     return isNaN(val);
@@ -19055,13 +19120,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       _characterid: charid
     });
     var loop_count = 0;
-    while (true) {
+    while (loop_count <= 10) {
       rowID = generateRowID();
       var re = new RegExp(`^repeating_.*_${rowID}_.*$`);
       if (char_attribs.filter(attribute => attribute.get('name').match(re).length == 0)) { break; };
       loop_count++;
       log(loop_count);
-      if (loop_count > 10) { break; };
     };
     return rowID;
   }; // generateUniqueRowID
@@ -19097,7 +19161,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
   var setAttrByName = function(id, attrib, value, max=null) {
     //log("setAttrByName("+id+","+attrib+","+value+","+max+")");
-    if (value==null) { log("ERROR: setAttrByName called with undefined value = '"+value+"'"); return; };
+    if ((typeof value === 'undefined') || (value === null)) { log("ERROR: setAttrByName called with undefined value = '"+value+"'"); return; };
     var obj = findObjs({
         _type: "attribute",
         _characterid: id,
@@ -19254,14 +19318,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     {
       var npctype = getAttrByName(id, "npctype");
       let result = npctype.match(/^([a-z ]+)(\([a-z ,]+\)){0,1}$/i)
-      if (result[1] === undefined) {
+      if ((result === null) || (typeof result[1] === 'undefined')) {
         throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npctype', 'Invalid Type Value': npctype});
       };
       var type = stringTrimWhitespace(result[1]);
       if (!dnd35.types().includes(type.toLowerCase())) {
         throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npctype', 'Invalid Type Value': type});
       };
-      if (result[2] !== undefined) {
+      if (typeof result[2] !== 'undefined') {
         stringTrimWhitespace(result[2]).replace(/^\(/, "").replace(/\)$/, "").split(",").forEach(function(subtype) {
           if (!dnd35.subtypes().includes(subtype.toLowerCase())) {
             throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npctype', 'Invalid Subtype Value': subtype});
@@ -19289,17 +19353,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     // npcspeed
     {
       var npcspeed = getAttrByName(id, "npcspeed");
-      var npcspeeds = stringTrimWhitespace(npcspeed.toLowerCase()
-                                           .replace(/([0-9]+) *(feet|foot|ft\.*|')/g, "$1"))
-                        .split(",");
+      var npcspeeds = stringTrimWhitespace(npcspeed.toLowerCase().replace(/([0-9]+) *(feet|foot|ft\.*|')/g, "$1")).split(",");
       var mode_type_map = {};
       npcspeeds.forEach(function(e) {
         let result = e.match(/^(([a-z]+) *){0,1}([0-9]+)( *\(([a-z]+)\)){0,1}$/);
-        if (result == null) {
+        if (result === null) {
           throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcspeed', 'Invalid Entry': e});
         };
         var mode = "";
-        if (result[2] == null) {
+        if ((typeof result[2] === 'undefined') || (result[2] === null)) {
           mode = "land";
         } else {
           mode = result[2];
@@ -19307,13 +19369,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcspeed', 'Invalid Movement Mode': mode});
           };
         };
-        if (mode_type_map[mode] !== undefined) {
+        if (mode in mode_type_map) {
           throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcspeed', 'Invalid Movement Mode': mode, '': 'This mode was defined multiple times.'});
         } else {
           mode_type_map[mode] = result[3];
         };
-        if (mode=="fly") {
-          if (result[5] == null) {
+        if (mode === "fly") {
+          if ((typeof result[5] === 'undefined') || (result[5] === null)) {
             throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcspeed', 'Invalid fly maneuverability': '**Undefined**'});
           } else {
             if (!dnd35.fly_maneuverability().includes(result[5])) {
@@ -19332,7 +19394,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       var bonus_type_map = {};
       npcarmorclassinfos.forEach(function(e) {
         let result = e.match(/^[+]{0,1}([-]{0,1}[0-9]+) +(.*)+$/);
-        if (result == null) {
+        if (result === null) {
           throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcarmorclassinfo', 'Invalid Entry': e});
         };
         if (isNaN(result[1])) {
@@ -19356,7 +19418,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     // npcspace
     {
       var npcspace = stringTrimWhitespace(getAttrByName(id, "npcspace").toLowerCase()
-                                          .replace(/^([0-9]+) *(feet|foot|ft\.*|')$/g, "$1"));
+                                          .replace(/^([0-9]+(\.[0-9]+){0,1}) *(feet|foot|ft\.*|')$/g, "$1"));
       if (isNaN(npcspace)) {
         throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcspace', 'Invalid value': getAttrByName(id, "npcspace")});
       };
@@ -19378,19 +19440,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       npcskills.forEach(function(npcSkillsEntry) {
         if (npcSkillsEntry == "") { return; }; // Not an error, just an empty skills field!
         let match_result = npcSkillsEntry.match(/([a-z() ]+)([+]{0,1}([-]{0,1}[0-9]+)){0,1}/i);
-        if (match_result == null) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Invalid Entry': npcSkillsEntry}); };
-        if (match_result[1] === undefined) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Invalid Entry': npcSkillsEntry}); };
-        var skill_name = stringTrimWhitespace(match_result[1]);
+        if (match_result === null) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Invalid Entry': npcSkillsEntry}); };
+        if (typeof match_result[1] === 'undefined') { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Invalid Entry': npcSkillsEntry}); };
+        let skill_name = stringTrimWhitespace(match_result[1]);
         if (skill_name == "") { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Empty Skill Entry': npcSkillsEntry}); };
-        if (match_result[3] !== undefined) {
+        if ((typeof match_result[3] !== 'undefined') && (match_result[3] !== null)) {
           if (isNaN(match_result[3])) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Skill Bonus Not a Number': npcSkillsEntry}); };
         } else {
           if (!skill_name.toLowerCase().match(/Speak Language\([a-z ]+\)/i)) {
             throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Skill Bonus Missing': npcSkillsEntry});
           };
         };
-        var skill_spec = getSkillSpecification(skill_name);
-        if (skill_spec == null) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Unknown Skill': npcSkillsEntry}); };
+        let skill_spec = getSkillSpecification(skill_name);
+        if (skill_spec === null) { throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcskills', 'Unknown Skill': npcSkillsEntry}); };
       });
     };
 
@@ -19550,7 +19612,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     {
       // Fix PC page Skills
       // Clear out all the skill settings on PC tab.
-      for (var k in dnd35.skills()) {
+      for (let k in dnd35.skills()) {
         //log(dnd35.skills()[k]);
         if (dnd35.skills()[k].attrib != "") {
           if (dnd35.skills()[k].attrib.match(/\#/)) {
@@ -19592,11 +19654,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           let match_result = npcSkillsEntry.match(/([a-z() ]+)([+]{0,1}([-]{0,1}[0-9]+)){0,1}/i);
           var skill_name = stringTrimWhitespace(match_result[1]);
           var npc_skill_bonus;
-          if (match_result[3] !== undefined) {
+          if (typeof match_result[3] !== 'undefined') {
             npc_skill_bonus = parseFloat(stringTrimWhitespace(match_result[3]));
           };
           var skill_spec = getSkillSpecification(skill_name);
-          if ((skill_spec == null) || (skill_spec.base === undefined)) {
+          if ((skill_spec === null) || (typeof skill_spec.base === 'undefined')) {
             throwDefaultTemplate('mookInferPCSheet()',id,{'Error': 'Unknown skill', 'Skill Name': skill_name});
             return;
           };
@@ -19775,9 +19837,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           obj.set("light_multiplier", multiplier);
         };
         var match_result = npcspecialqualities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);
-        if (match_result == null) { match_result = racialabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/); };
-        if (match_result == null) { match_result = classabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);  };
-        if ((match_result != null) && (match_result[1] != null)) {
+        if (match_result === null) { match_result = racialabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/); };
+        if (match_result === null) { match_result = classabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);  };
+        if ((match_result !== null) && (typeof match_result[1] !== 'undefined' && (match_result[1] !== null))) {
           // match_result[1] is the darkvision distance in feet...
           var distance = parseFloat(match_result[1]);
           if (npcfeats.match(/improved darkvision/) ||
@@ -19832,8 +19894,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       if (npcspace) {
         npcspace = npcspace.toLowerCase();
         if (npcspace.match(/ by /)) {
-          npcspace = npcspace
-             .replace(/^ +/, "").replace(/ +$/, "").replace(/ +/g, " ");             // cleanup whitespace
+          npcspace = npcspace.replace(/^ +/, "").replace(/ +$/, "").replace(/ +/g, " "); // cleanup whitespace
           var dimensions = npcspace.split(" by ");
           dimensions[0] = dimensions[0].replace(new RegExp("[^\.0-9].*$"), "");
           dimensions[1] = dimensions[1].replace(new RegExp("[^\.0-9].*$"), "");
@@ -19909,7 +19970,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //             ███████║╚██████╔╝╚██████╔╝██║  ██║╚██████╗███████╗    ██║   ███████╗██╔╝ ██╗   ██║
         //             ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝
         case '--source-text':
-          if (firstFragment == null) {
+          if (firstFragment === null) {
             //TODO Error / Usage message here
             break;
           };
@@ -19940,7 +20001,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //             ██║  ██║╚██████╔╝██████╔╝██║   ██║
         //             ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝   ╚═╝
         case '--audit':
-          if (firstFragment == null) {
+          if (firstFragment === null) {
             //TODO Error / Usage message here
             break;
           };
@@ -19975,7 +20036,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //             ██║     ██║███████╗███████╗
         //             ╚═╝     ╚═╝╚══════╝╚══════╝
         case '--fill':
-          if (firstFragment == null) {
+          if (firstFragment === null) {
             //TODO Error / Usage message here
             break;
           };
@@ -20069,10 +20130,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             }
                             spellmacro = spellmacro.concat(' {{Components:=',spell_spec.components,'}}');
                             spellmacro = spellmacro.concat(' {{Casting Time:=',spell_spec.casting_time,'}}');
-                            if (spell_spec.recharge) {
+                            if ('recharge' in spell_spec) {
                               spellmacro = spellmacro.concat(' {{Recharge:=',spell_spec.recharge,'}}');
                             };
-                            if (spell_spec.range !== undefined) {
+                            if (typeof spell_spec.range !== 'undefined') {
                               let spell_range_a = [];
                               if (Array.isArray(spell_spec.range)) {
                                 spell_range_a = spell_spec.range.slice();
@@ -20083,7 +20144,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                 return;
                               };
                               for (let i=0; i<spell_range_a.length; i++) {
-                                if (dnd35.spell_ranges()[spell_range_a[i]] !== undefined) {
+                                if (spell_range_a[i] in dnd35.spell_ranges()) {
                                   spell_range_a[i] = dnd35.spell_ranges()[spell_range_a[i]];
                                   if (i > 0) {
                                     spell_range_a[i] = spell_range_a[i].replace(/^\w/, c => c.toLowerCase());
@@ -20092,20 +20153,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               };
                               spellmacro = spellmacro.concat(' {{Range:=',spell_range_a.join(),'}}');
                             };
-                            if ((spell_spec.target_type !== undefined) || (spell_spec.target !== undefined)) {
+                            if (('target_type' in spell_spec) || ('target' in spell_spec)) {
                               let spell_target_type_a = [];
                               let spell_target_a = [];
-                              if ((spell_spec.target_type !== undefined) && (Array.isArray(spell_spec.target_type))) {
+                              if (('target_type' in spell_spec) && (Array.isArray(spell_spec.target_type))) {
                                 spell_target_type_a = spell_spec.target_type.slice();
-                              } else if ((spell_spec.target_type !== undefined) && (typeof spell_spec.target_type === 'string')) {
+                              } else if (('target_type' in spell_spec) && (typeof spell_spec.target_type === 'string')) {
                                 spell_target_type_a = [ spell_spec.target_type ];
                               } else {
                                 respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO 1'}));
                                 return;
                               };
-                              if ((spell_spec.target !== undefined) && (Array.isArray(spell_spec.target))) {
+                              if (('target' in spell_spec) && (Array.isArray(spell_spec.target))) {
                                 spell_target_a = spell_spec.target.slice();
-                              } else if ((spell_spec.target !== undefined) && (typeof spell_spec.target === 'string')) {
+                              } else if (('target' in spell_spec) && (typeof spell_spec.target === 'string')) {
                                 spell_target_a = [ spell_spec.target ];
                               } else {
                                 respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO 2'}));
@@ -20117,21 +20178,21 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               };
                               for (let i=0; i<spell_target_type_a.length; i++) {
                                 spellmacro = spellmacro.concat(' {{',spell_target_type_a[i],':=',spell_target_a[i].replace(/\(S\)/, "(Shapeable)"),'}}');
-                              }
+                              };
                             };
                             spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration.replace(/\(D\)/, "(Dismissible)"),'}}');
-                            if (spell_spec.saving_throw) {
+                            if ('saving_throw' in spell_spec) {
                               spellmacro = spellmacro.concat(' {{Saving Throw:=',spell_spec.saving_throw,'}}');
                             };
-                            if (spell_spec.resistance) {
+                            if ('resistance' in spell_spec) {
                               spellmacro = spellmacro.concat(' {{Spell Resist.:=',spell_spec.resistance,'}}');
                               if (spell_spec.resistance != 'No') {
                                 spellmacro = spellmacro.concat(' {{Caster level check:=[[1d20+?{Caster Level}[Caster Level]+@{spellpen}[Spell Penalty]]] vs spell resist.}}');
                               };
                             };
                             spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
-                            spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲',spell_spec.text,(spell_spec.component_details)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
-                            spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲',spell_spec.text,(spell_spec.component_details)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
+                            spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲',('text' in spell_spec)?(spell_spec.text):(''),('component_details' in spell_spec)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
+                            spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲',('text' in spell_spec)?(spell_spec.text):(''),('component_details' in spell_spec)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
                             break;
                           case 'epicspell':
                             break;
@@ -20155,7 +20216,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                   return;
                                 };
                               };
-                              spellmacro = spellmacro.concat(' {{Power DC:=[[10+', spell_section, '[Power Level]+@{', spellcastingstat, '}[Ability Mod]',((spell_spec.save_dc_bonus !== undefined)?('+'.concat(spell_spec.save_dc_bonus)):('')),']]}}');
+                              spellmacro = spellmacro.concat(' {{Power DC:=[[10+', spell_section, '[Power Level]+@{', spellcastingstat, '}[Ability Mod]',(('save_dc_bonus' in spell_spec)?('+'.concat(spell_spec.save_dc_bonus)):('')),']]}}');
                             }
                             {
                               var default_casterlevel = 'casterlevel';
@@ -20163,11 +20224,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               manifester_level_query = ' '.concat('?{Manifester Level|@{',default_casterlevel,'}}');
                               spellmacro = spellmacro.concat(' {{Manifester level:=?{Manifester Level}}}');
                             }
-                            if (spell_spec.display) {
+                            if ('display' in spell_spec) {
                               spellmacro = spellmacro.concat(' {{Display:=',spell_spec.display,'}}');
                             }
                             spellmacro = spellmacro.concat(' {{Manifesting Time:=',spell_spec.manifesting_time,'}}');
-                            if (spell_spec.range !== undefined) {
+                            if ('range' in spell_spec) {
                               let spell_range_a = [];
                               if (Array.isArray(spell_spec.range)) {
                                 spell_range_a = spell_spec.range.slice();
@@ -20178,7 +20239,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                 return;
                               };
                               for (let i=0; i<spell_range_a.length; i++) {
-                                if (dnd35.spell_ranges()[spell_range_a[i]] !== undefined) {
+                                if (spell_range_a[i] in dnd35.spell_ranges()) {
                                   spell_range_a[i] = dnd35.spell_ranges()[spell_range_a[i]].replace(/Caster/g, 'Manifester');
                                   if (i > 0) {
                                     spell_range_a[i] = spell_range_a[i].replace(/^\w/, c => c.toLowerCase());
@@ -20187,20 +20248,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               };
                               spellmacro = spellmacro.concat(' {{Range:=',spell_range_a.join(),'}}');
                             };
-                            if ((spell_spec.target_type !== undefined) || (spell_spec.target !== undefined)) {
+                            if (('target_type' in spell_spec) || ('target' in spell_spec)) {
                               let spell_target_type_a = [];
                               let spell_target_a = [];
-                              if ((spell_spec.target_type !== undefined) && (Array.isArray(spell_spec.target_type))) {
+                              if (('target_type' in spell_spec) && (Array.isArray(spell_spec.target_type))) {
                                 spell_target_type_a = spell_spec.target_type.slice();
-                              } else if ((spell_spec.target_type !== undefined) && (typeof spell_spec.target_type === 'string')) {
+                              } else if (('target_type' in spell_spec) && (typeof spell_spec.target_type === 'string')) {
                                 spell_target_type_a = [ spell_spec.target_type ];
                               } else {
                                 respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO 3'}));
                                 return;
                               };
-                              if ((spell_spec.target !== undefined) && (Array.isArray(spell_spec.target))) {
+                              if (('target' in spell_spec) && (Array.isArray(spell_spec.target))) {
                                 spell_target_a = spell_spec.target.slice();
-                              } else if ((spell_spec.target !== undefined) && (typeof spell_spec.target === 'string')) {
+                              } else if (('target' in spell_spec) && (typeof spell_spec.target === 'string')) {
                                 spell_target_a = [ spell_spec.target ];
                               } else {
                                 respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'TODO 4'}));
@@ -20214,20 +20275,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                 spellmacro = spellmacro.concat(' {{',spell_target_type_a[i],':=',spell_target_a[i].replace(/\(S\)/, "(Shapeable)"),'}}');
                               }
                             };
-                            if (spell_spec.duration) {
+                            if ('duration' in spell_spec) {
                               spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration.replace(/\(D\)$/, "(Dismissible)"),'}}');
                             };
-                            if (spell_spec.saving_throw) {
+                            if ('saving_throw' in spell_spec) {
                               spellmacro = spellmacro.concat(' {{Saving Throw:=',spell_spec.saving_throw,'}}');
                             };
-                            if (spell_spec.resistance) {
+                            if ('resistance' in spell_spec) {
                               spellmacro = spellmacro.concat(' {{Power Resist.:=',spell_spec.resistance,'}}');
                               if (spell_spec.resistance != 'No') {
-                                spellmacro = spellmacro.concat(' {{Manifester level check:=[[1d20+?{Manifester Level}[Manifester Level]', ((spell_spec.resistance_bonus !== undefined)?('+'.concat(spell_spec.resistance_bonus)):('')), ']] vs power resist.}}');
+                                spellmacro = spellmacro.concat(' {{Manifester level check:=[[1d20+?{Manifester Level}[Manifester Level]', (('resistance_bonus' in spell_spec)?('+'.concat(spell_spec.resistance_bonus)):('')), ']] vs power resist.}}');
                               };
                             };
-                            var text_augment = "";
-                            if (spell_spec.augment) {
+                            let text_augment = "";
+                            if ('augment' in spell_spec) {
                               power_augment_query = " ?{Power Augmentation|0}";
                               spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,' + [[?{Power Augmentation}]][Augment]}}');
                               text_augment = "↲".concat("**Augment:**", "↲", spell_spec.augment);
@@ -20235,10 +20296,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,'}}');
                             };
                             spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
-                            spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲',spell_spec.text,text_augment,'}}');
-                            spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲',spell_spec.text,text_augment,'}}');
-                            if (manifester_level_query || power_augment_query) {
-                              spellmacro = "".concat("!", manifester_level_query?manifester_level_query:'', power_augment_query?power_augment_query:'', "\n", spellmacro);
+                            spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲',('text' in spell_spec)?(spell_spec.text):(''),text_augment,'}}');
+                            spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲',('text' in spell_spec)?(spell_spec.text):(''),text_augment,'}}');
+                            if ((manifester_level_query !== null) || (power_augment_query !== null)) {
+                              spellmacro = "".concat("!", (manifester_level_query !== null)?(manifester_level_query):(''), (power_augment_query !== null)?(power_augment_query):(''), "\n", spellmacro);
                             };
                             break;
                           case 'epicpower':
@@ -20251,21 +20312,21 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                spellmacro.match(/^.*‹[^›«»|]+\|[^›«»]+›.*$/) ||
                                spellmacro.match(/^.*«[^‹›»|]+».*$/) ||
                                spellmacro.match(/^.*«[^‹›»|]+\|[^‹›»]+».*$/)) {
-                          var match_results;
+                          let match_results;
                           match_results = spellmacro.match(/^(.*)‹([^›«»|]+)›(.*)$/);
-                          if (match_results) {
+                          if (match_results !== null) {
                             spellmacro = ''.concat(match_results[1],createChatButton(match_results[2],''.concat('[[',match_results[2],']]')),match_results[3]);
                           };
                           match_results = spellmacro.match(/^(.*)‹([^›«»|]+)\|([^›«»]+)›(.*)$/);
-                          if (match_results) {
+                          if (match_results !== null) {
                             spellmacro = ''.concat(match_results[1],createChatButton(match_results[2],match_results[3]),match_results[4]);
                           };
                           match_results = spellmacro.match(/^(.*)«([^‹›»|]+)»(.*)$/);
-                          if (match_results) {
+                          if (match_results !== null) {
                             spellmacro = ''.concat(match_results[1],createEscapedChatButton(match_results[2],''.concat('[[',match_results[2],']]')),match_results[3]);
                           };
                           match_results = spellmacro.match(/^(.*)«([^‹›»|]+)\|([^‹›»]+)»(.*)$/);
-                          if (match_results) {
+                          if (match_results !== null) {
                             spellmacro = ''.concat(match_results[1],createEscapedChatButton(match_results[2],match_results[3]),match_results[4]);
                           };
                           //log(spellmacro);
@@ -20303,7 +20364,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //             ╚═╝     ╚═╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝      ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
         case '--movement-moderation':
           if (!playerIsGM(playerID)) { /*TODO error message! */ return; };
-          if (firstFragment == null) {
+          if (firstFragment === null) {
             //TODO Error / Usage message here
             break;
           };
@@ -20347,7 +20408,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //             ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
         case '--mook':
           if (!playerIsGM(playerID)) { /*TODO error message! */ return; };
-          if (firstFragment == null) {
+          if (firstFragment === null) {
             //TODO Error / Usage message here
             break;
           };
@@ -20391,7 +20452,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //             ███████║██║  ██╗╚██████╔╝╚██████╔╝██║  ██╗╚██████╔╝██║ ╚═╝ ██║
         //             ╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
         case '--skookum':
-          if (firstFragment == null) {
+          if (firstFragment === null) {
             //TODO Error / Usage message here
             break;
           };
@@ -20434,36 +20495,35 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             let t_obj = getObj("graphic", tokenIDs[i]);
             let t_character = getObj("character", t_obj.get("represents"));
             if (!t_character) {
-              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+t_obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
               continue;
             };
             //TODO Check that msg.who can edit character!!
             let npccr = getAttrByName(t_character.id, "npccr");
-            if ((npccr !== undefined) && (npccr !== '') && (!isNaN(npccr))) {
-              encounter_challenge_ratings[npccr] = (encounter_challenge_ratings[npccr] === undefined)?(1):(encounter_challenge_ratings[npccr]+1);
-            } else if ((npccr !== undefined) && (npccr !== '') && (npccr.match(/([0-9]+)\/([0-9]+)/))) {
-              encounter_challenge_ratings[npccr] = (encounter_challenge_ratings[npccr] === undefined)?(1):(encounter_challenge_ratings[npccr]+1);
+            if ((typeof npccr !== 'undefined') && (npccr !== null) && (npccr !== '') && (!isNaN(npccr))) {
+              encounter_challenge_ratings[npccr] = ('npccr' in encounter_challenge_ratings)?(encounter_challenge_ratings[npccr]+1):(1);
+            } else if ((typeof npccr !== 'undefined') && (npccr !== null) && (npccr !== '') && (npccr.match(/([0-9]+)\/([0-9]+)/))) {
+              encounter_challenge_ratings[npccr] = ('npccr' in encounter_challenge_ratings)?(encounter_challenge_ratings[npccr]+1):(1);
             } else {
-              // Maybe get CR by looking at the PC tab levels field?
               let pccr = 0;
               let racialabilities = getAttrByName(t_character.id, "racialabilities");
               let match_result = racialabilities.match(/level adjustment ([-+][0-9]+)/im);
-              if ((match_result != null) && (match_result[1] != null)) {
+              if ((match_result !== null) && (typeof match_result[1] !== 'undefined')) {
                 // Level Adjustment value found! needs to be added to the CR
                 pccr = parseFloat(match_result[1]);
               };
               let level = getAttrByName(t_character.id, "level");
-              let                         level_delim = ','; match_result = level.match(/^(\d+)(,\s*\d+)*$/);
-              if (match_result == null) { level_delim = '/'; match_result = level.match(/^(\d+)(\/\s*\d+)*$/); };
-              if (match_result == null) { level_delim = ' '; match_result = level.match(/^(\d+)( \s*\d+)*$/); };
-              if (match_result == null) { level_delim = '-'; match_result = level.match(/^(\d+)(\-\s*\d+)*$/); };
-              if ((match_result != null) && (match_result[1] != null)) {
+              let                          level_delim = ','; match_result = level.match(/^(\d+)(,\s*\d+)*$/);
+              if (match_result === null) { level_delim = '/'; match_result = level.match(/^(\d+)(\/\s*\d+)*$/); };
+              if (match_result === null) { level_delim = ' '; match_result = level.match(/^(\d+)( \s*\d+)*$/); };
+              if (match_result === null) { level_delim = '-'; match_result = level.match(/^(\d+)(\-\s*\d+)*$/); };
+              if ((match_result !== null) && (typeof match_result[1] !== 'undefined')) {
                 var arr = level.split(level_delim).map(function(item) {
                   return parseInt(item, 10);
                 });
                 pccr = pccr + arr.reduce((a,b) => a + b, 0);
               };
-              encounter_challenge_ratings[pccr.toString()] = (encounter_challenge_ratings[pccr.toString()] === undefined)?(1):(encounter_challenge_ratings[pccr.toString()]+1);
+              encounter_challenge_ratings[pccr.toString()] = (pccr.toString() in encounter_challenge_ratings)?(encounter_challenge_ratings[pccr.toString()]+1):(1);
             };
           };
           //log(encounter_challenge_ratings);
@@ -20559,7 +20619,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             tokenIDs = filteredTokenIDs;
           };
           var remainingTokenIDs = tokenIDs.length;
-          if ((firstFragment != null) && (firstFragment.toLowerCase() == "clear")) {
+          if ((firstFragment !== null) && (firstFragment.toLowerCase() == "clear")) {
             Campaign().set("turnorder", JSON.stringify([]));
           };
           tokenIDs.forEach( idOfToken => {
@@ -20569,7 +20629,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             var init_macro;
             {
               var init_attrib_name;
-              if (getAttrByName(character.id, "npcname")==="") {
+              if (getAttrByName(character.id, "npcname") == "") {
                 init_attrib_name = "init";
               } else {
                 init_attrib_name = "npcinit";
@@ -20604,7 +20664,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                 Campaign().set("turnorder", JSON.stringify(turnorder));
                 {
                   var char_name_unique = char_name;
-                  if (roll_initiative_map[char_name] !== undefined) {
+                  if (char_name in roll_initiative_map) {
                     if (roll_initiative_map[char_name] != "EXCLUDE") {
                       char_name_unique = char_name.concat(" (1)");
                       roll_initiative_map[char_name_unique] = roll_initiative_map[char_name];
@@ -20612,7 +20672,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       char_name_unique = char_name.concat(" (2)");
                     } else {
                       var n = 3;
-                      while (roll_initiative_map[char_name.concat(" ("+n+")")] !== undefined) {
+                      while (char_name.concat(" ("+n+")") in roll_initiative_map) {
                         n++;
                       };
                       char_name_unique = char_name.concat(" ("+n+")");
@@ -20649,7 +20709,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           // --group-skill-check (Aid Another|Individual) (<Skill Name>)
           //   Both arguments are required
           if (!playerIsGM(playerID)) { return; /* TODO */ };
-          if (firstFragment == null) {
+          if (firstFragment === null) {
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
             return;
           };
@@ -20672,7 +20732,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           unprocessedFragments = [];
           //secondFragment = secondFragment.toLowerCase();
           var skill_spec = getSkillSpecification(secondFragment);
-          if ((skill_spec == null) || (skill_spec.base === undefined)) {
+          if ((skill_spec === null) || (typeof skill_spec.base === 'undefined')) {
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Unknown skill '+secondFragment+'}}');
             return;
           };
@@ -20702,10 +20762,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             //log(skill_attrib);
             // ...generate a unique char_name, in case of multiple instances...
             var char_name_unique = char_name;
-            if (roll_skill_map[char_name] !== undefined) {
+            if (char_name in roll_skill_map) {
               if (roll_skill_map[char_name].state == "EXCLUDE") {
                 var n = 3;
-                while (roll_skill_map[char_name.concat(" ("+n+")")] !== undefined) {
+                while (char_name.concat(" ("+n+")") in roll_skill_map) {
                   n++;
                 };
                 char_name_unique = char_name.concat(" ("+n+")");
@@ -20837,7 +20897,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         case '--set-light-source':
           // TODO Modify this function to use 'attached tokens' for actual light sources, and only apply inherent vision properties to the player token itself.
           if (!playerIsGM(playerID)) { return; /* TODO */ };
-          if (firstFragment == null) {
+          if (firstFragment === null) {
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
             return;
           };
@@ -20846,7 +20906,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           processedFragments.concat(unprocessedFragments);
           unprocessedFragments = [];
           var light_source_spec = dnd35.light_sources()[firstFragment.toLowerCase()];
-          if (!light_source_spec) {
+          if ((typeof light_source_spec === 'undefined') || (light_source_spec === null)) {
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Unknown light source}}');
             return;
           };
@@ -20875,9 +20935,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                 };
               };
               var match_result = npcspecialqualities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);
-              if (match_result == null) { match_result = racialabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/); };
-              if (match_result == null) { match_result = classabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);  };
-              if ((match_result != null) && (match_result[1] != null)) {
+              if (match_result === null) { match_result = racialabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/); };
+              if (match_result === null) { match_result = classabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);  };
+              if ((match_result !== null) && (typeof match_result[1] !== 'undefined')) {
                 // match_result[1] is the darkvision distance in feet...
                 var distance = parseFloat(match_result[1]);
                 if (npcfeats.match(/improved darkvision/) ||
@@ -20926,7 +20986,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           });
           break;
         case '--help':
-        case undefined:
         default:
         //getHelp();
           sendChat("GM", '/w "'+playerName+'" Test 1 2 3 '+playerName);
@@ -20952,12 +21011,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   }; // registerEventHandlers
 
   var checkInstall = function() {
-    if ( Boolean(state.skepickleCharacterSuiteImp) === false ) {
+    if ((typeof state.skepickleCharacterSuiteImp === 'undefined') || (state.skepickleCharacterSuiteImp === null)) {
       state.skepickleCharacterSuiteImp = {
         info: info,
         config: config
       };
-    }; //TODO check/fix state properties in "else"
+    } else {
+      // TODO Recursively add / remove properties to sync with current structures.
+    };
     log("########## State data for skepickleCharacterSuite");
     log(state.skepickleCharacterSuiteImp);
     log("##########");
