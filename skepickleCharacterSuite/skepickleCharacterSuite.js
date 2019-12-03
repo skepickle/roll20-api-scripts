@@ -21011,13 +21011,41 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   }; // registerEventHandlers
 
   var checkInstall = function() {
+    //IDEA Maybe use this to copy objects: b = Object.assign({}, a);
     if ((typeof state.skepickleCharacterSuiteImp === 'undefined') || (state.skepickleCharacterSuiteImp === null)) {
       state.skepickleCharacterSuiteImp = {
         info: info,
         config: config
       };
     } else {
-      // TODO Recursively add / remove properties to sync with current structures.
+      if (!('info' in state.skepickleCharacterSuiteImp)) {
+        state.skepickleCharacterSuiteImp.info = info;
+      } else {
+        for (let p in state.skepickleCharacterSuiteImp.info) {
+          if (!(p in info)) {
+            delete state.skepickleCharacterSuiteImp.info[p];
+          };
+        };
+        for (let p in info) {
+          if (!(p in state.skepickleCharacterSuiteImp.info)) {
+            state.skepickleCharacterSuiteImp.info[p] = info[p];
+          };
+        };
+      };
+      if (!('config' in state.skepickleCharacterSuiteImp)) {
+        state.skepickleCharacterSuiteImp.config = config;
+      } else {
+        for (let p in state.skepickleCharacterSuiteImp.config) {
+          if (!(p in config)) {
+            delete state.skepickleCharacterSuiteImp.config[p];
+          };
+        };
+        for (let p in config) {
+          if (!(p in state.skepickleCharacterSuiteImp.config)) {
+            state.skepickleCharacterSuiteImp.config[p] = config[p];
+          };
+        };
+      };
     };
     log("########## State data for skepickleCharacterSuite");
     log(state.skepickleCharacterSuiteImp);
