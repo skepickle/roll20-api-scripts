@@ -18,7 +18,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
   var config = {
     debugDEFCON: 5,
-    enable_movement_moderation: false
+    moderate_pc_movement: false
   };
 
   var temp = {
@@ -26,7 +26,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //GMPlayer: Campaign
   };
 
-  // SECTIONANCHOR
+  // SECTION_ANCHOR
   // ███████╗████████╗██████╗ ██╗███╗   ██╗ ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
   // ██╔════╝╚══██╔══╝██╔══██╗██║████╗  ██║██╔════╝     ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
   // ███████╗   ██║   ██████╔╝██║██╔██╗ ██║██║  ███╗    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
@@ -118,7 +118,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     return generateUUID().replace(/_/g, "Z");
   };
 
-  // SECTIONANCHOR
+  // SECTION_ANCHOR
   // ██████╗    ██╗   ██████╗     ██████╗    ███████╗    ████████╗ █████╗ ██████╗ ██╗     ███████╗███████╗
   // ██╔══██╗   ██║   ██╔══██╗    ╚════██╗   ██╔════╝    ╚══██╔══╝██╔══██╗██╔══██╗██║     ██╔════╝██╔════╝
   // ██║  ██║████████╗██║  ██║     █████╔╝   ███████╗       ██║   ███████║██████╔╝██║     █████╗  ███████╗
@@ -18505,7 +18505,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     spell:               function(name) { return this.merge_maps("spells.".concat(name)); }
   };
 
-  // SECTIONANCHOR
+  // SECTION_ANCHOR
   // ██████╗    ██╗   ██████╗     ██████╗    ███████╗    ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
   // ██╔══██╗   ██║   ██╔══██╗    ╚════██╗   ██╔════╝    ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
   // ██║  ██║████████╗██║  ██║     █████╔╝   ███████╗    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
@@ -18968,7 +18968,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     return Array.from(Object.keys(crs))[0];
   }; // calculateEncounterLevel
 
-  // SECTIONANCHOR
+  // SECTION_ANCHOR
   // ██████╗  ██████╗ ██╗     ██╗     ██████╗  ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
   // ██╔══██╗██╔═══██╗██║     ██║     ╚════██╗██╔═████╗    ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
   // ██████╔╝██║   ██║██║     ██║      █████╔╝██║██╔██║    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
@@ -19078,7 +19078,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     return ids;
   }; // getSelectedTokenIDs
 
-  // SECTIONANCHOR
+  // SECTION_ANCHOR
   // ██████╗  ██████╗ ██╗     ██╗     ██████╗  ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
   // ██╔══██╗██╔═══██╗██║     ██║     ╚════██╗██╔═████╗    ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
   // ██████╔╝██║   ██║██║     ██║      █████╔╝██║██╔██║    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
@@ -19180,7 +19180,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     if (max) { obj.setWithWorker("max", max); };
   }; // setAttrByName
 
-  // SECTIONANCHOR
+  // SECTION_ANCHOR
   // ██████╗  ██████╗ ██╗     ██╗     ██████╗  ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
   // ██╔══██╗██╔═══██╗██║     ██║     ╚════██╗██╔═████╗    ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
   // ██████╔╝██║   ██║██║     ██║      █████╔╝██║██╔██║    ██║   ██║   ██║   ██║██║     ██║   ██║   ██║█████╗  ███████╗
@@ -19732,73 +19732,97 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   //   b) If a player token's desired path is accepted, then any 'attached tokens' will moved with the player token.
 
   var handleChangeGraphic = function(obj, prev) {
-    return;
-    if (!state.skepickleCharacterSuiteImp.config.enable_movement_moderation) { return; };
-    var objLayer = obj.get("layer");
-    var pageId   = obj.get("_pageid");
-    var pageName = getObj("page", pageId).get("name");
-    if (!obj.get("represents")) { return; }
-    var character = getObj("character", obj.get("represents"));
-    if (!character) { return; }
-    if (character.get("controlledby") == "") { return; };
-    //// TODO
-    ////     Set token GMNOTE indicating intended movement of this player controlled token
-    ////     Draw some sort of indication of where the player wants to move... maybe a tinted token using same image?
-    log(prev);
-    log(obj);
-    let controlledby = character.get("controlledby");
-    log(controlledby);
-    if (controlledby.match(/^all$/)) {
-      log("It's all!");
-    } else if (controlledby.match(/,/)) {
-      log("It's more than one player!");
-    } else {
-      let player = getObj("player", controlledby);
-      log(player.get("color")); // <--- this totally works!
-      let the_path = ''.concat(obj.get("lastmove"),',',obj.get("left"),',',obj.get("top"));
-      log(the_path);
-      the_path = the_path.split(',')
-                         .map(parseFloat)
-                         .reduce((acc, val, i, arr) =>
-                                     (i % 2) ? acc
-                                     : [...acc, arr.slice(i, i + 2)]
-                                 , []) ;
-      let min_left = 10000000;
-      let min_top  = 10000000;
-      let max_left = 0;
-      let max_top  = 0;
-      for (let i=0; i<the_path.length; i++) {
-        if (the_path[i][0] < min_left) { min_left = the_path[i][0]; };
-        if (the_path[i][0] > max_left) { max_left = the_path[i][0]; };
-        if (the_path[i][1] < min_top ) { min_top  = the_path[i][1]; };
-        if (the_path[i][1] > max_top ) { max_top  = the_path[i][1]; };
-        the_path[i].unshift('L');
-      };
-      let height = max_top-min_top;
-      let width  = max_left-min_left;
-      the_path[0][0] = 'M';
-      log(the_path);
-      let path_obj = createObj("path", {
-        pageid:       pageId,
-        path:         JSON.stringify(the_path),
-        height:       height,
-        width:        width,
-        left:         min_left+(width/2),
-        top:          min_top+(height/2),
-        fill:         "transparent",
-        stroke:       player.get("color"),
-        layer:        "objects",
-        stroke_width: 5,
-        controlledby: ""
-      });
-    };
-
-    //obj.set("left", prev["left"]);
-    //obj.set("top", prev["top"]);
+    let objLayer = obj.get("layer");
+    let pageId   = obj.get("_pageid");
+    let pageName = getObj("page", pageId).get("name");
+    switch (state.skepickleCharacterSuiteImp.config.moderate_pc_movement) {
+      case true:
+        if ((obj.get("left") == prev["left"]) &&
+            (obj.get("top") == prev["top"])) { break; };
+        if (!obj.get("represents")) { break; }
+        let character = getObj("character", obj.get("represents"));
+        if (!character) { break; }
+        if (character.get("controlledby") == "") { break; };
+        let controlledby = character.get("controlledby");
+        if (controlledby.match(/^all$/)) { break; };
+        if (controlledby.match(/,/)) { break; };
+        let player = getObj("player", controlledby);
+        if ((typeof player === 'undefined') || (player === null)) { break; };
+        let gmnotes = decodeRoll20String(obj.get('gmnotes'));
+        {
+          let mm_data = getStringRegister(gmnotes, "moderate_pc_movement");
+          if (mm_data !== null) {
+            let mm_path = getObj("path", mm_data[0]);
+            if ((typeof mm_path !== 'undefined') && (mm_path !== null)) { mm_path.remove(); };
+            let mm_shadow = getObj("graphic", mm_data[1]);
+            if ((typeof mm_shadow !== 'undefined') && (mm_shadow !== null)) { mm_shadow.remove(); };
+          };
+        };
+        let path_obj = null;
+        {
+          let the_path = ''.concat(obj.get("lastmove"),',',obj.get("left"),',',obj.get("top"));
+          the_path = the_path.split(',')
+                             .map(parseFloat)
+                             .reduce((acc, val, i, arr) =>
+                                         (i % 2) ? acc
+                                         : [...acc, arr.slice(i, i + 2)]
+                                     , []) ;
+          let min_left = 10000000;
+          let min_top  = 10000000;
+          let max_left = 0;
+          let max_top  = 0;
+          for (let i=0; i<the_path.length; i++) {
+            if (the_path[i][0] < min_left) { min_left = the_path[i][0]; };
+            if (the_path[i][0] > max_left) { max_left = the_path[i][0]; };
+            if (the_path[i][1] < min_top ) { min_top  = the_path[i][1]; };
+            if (the_path[i][1] > max_top ) { max_top  = the_path[i][1]; };
+            the_path[i].unshift('L');
+          };
+          let height = max_top-min_top;
+          let width  = max_left-min_left;
+          the_path[0][0] = 'M';
+          //log(the_path);
+          path_obj = createObj("path", {
+            pageid:       pageId,
+            path:         JSON.stringify(the_path),
+            height:       height,
+            width:        width,
+            left:         min_left+(width/2),
+            top:          min_top+(height/2),
+            fill:         "transparent",
+            stroke:       player.get("color"),
+            layer:        "objects",
+            stroke_width: 5,
+            controlledby: ""
+          });
+          if (path_obj === null) { break; }; //TODO error!
+        };
+        let shadow_obj = createObj("graphic", {
+          pageid:     pageId,
+          layer:      objLayer,
+          imgsrc:     obj.get("imgsrc"),
+          left:       obj.get("left"),
+          top:        obj.get("top"),
+          width:      obj.get("width")*0.75,
+          height:     obj.get("height")*0.75,
+          rotation:   obj.get("rotation"),
+          isdrawing:  true,
+          tint_color: player.get("color")
+        });
+        obj.set("gmnotes",setStringRegister(gmnotes,
+                                            "moderate_pc_movement",
+                                            [path_obj.id, shadow_obj.id]));
+        obj.set("lastmove", ''.concat(prev["left"],",",prev["top"]));
+        obj.set("left", prev["left"]);
+        obj.set("top", prev["top"]);
+        toBack(path_obj);
+        toFront(shadow_obj);
+        break;
+    }; // process_moderate_pc_movement
     return;
   }; // handleChangeGraphic
 
-  // SECTIONANCHOR
+  // SECTION_ANCHOR
   // ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██╗     ███████╗██████╗
   // ██║  ██║██╔══██╗████╗  ██║██╔══██╗██║     ██╔════╝██╔══██╗
   // ███████║███████║██╔██╗ ██║██║  ██║██║     █████╗  ██████╔╝
@@ -19920,7 +19944,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     });
   }; // handleAddGraphic
 
-  // SECTIONANCHOR
+  // SECTION_ANCHOR
   // ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██╗     ███████╗██████╗
   // ██║  ██║██╔══██╗████╗  ██║██╔══██╗██║     ██╔════╝██╔══██╗
   // ███████║███████║██╔██╗ ██║██║  ██║██║     █████╗  ██████╔╝
@@ -19962,14 +19986,118 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
     try {
       switch (userCommand) {
-        // COMMANDANCHOR
-        //             ███████╗ ██████╗ ██╗   ██╗██████╗  ██████╗███████╗ ████████╗███████╗██╗  ██╗████████╗
-        //             ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔════╝ ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝
-        // █████╗█████╗███████╗██║   ██║██║   ██║██████╔╝██║     █████╗█████╗██║   █████╗   ╚███╔╝    ██║
-        // ╚════╝╚════╝╚════██║██║   ██║██║   ██║██╔══██╗██║     ██╔══╝╚════╝██║   ██╔══╝   ██╔██╗    ██║
-        //             ███████║╚██████╔╝╚██████╔╝██║  ██║╚██████╗███████╗    ██║   ███████╗██╔╝ ██╗   ██║
-        //             ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝
+        // COMMAND_ANCHOR
+        //  ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗ 
+        // ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝ 
+        // ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
+        // ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
+        // ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
+        //  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
+        case 'config':
+        case '--config':
+          if (!playerIsGM(playerID)) { /*TODO error message! */ return; };
+          if (firstFragment === null) {
+            let message_to_send = '';
+            for (let p in state.skepickleCharacterSuiteImp.config) {
+              switch (typeof state.skepickleCharacterSuiteImp.config[p]) {
+                case 'undefined':
+                  message_to_send = message_to_send.concat(' {{',p,'= *undefined*}}');
+                  break;
+                case 'boolean':
+                case 'number':
+                case 'bigint':
+                case 'string':
+                  message_to_send = message_to_send.concat(' {{',p,'= ',state.skepickleCharacterSuiteImp.config[p].toString(),'}}');
+                  break;
+                case 'symbol':
+                case 'function':
+                case 'object':
+                  message_to_send = message_to_send.concat(' {{',p,'= *unhandled: ',typeof state.skepickleCharacterSuiteImp.config[p],'*}}');
+                  break;
+                default:
+                  log("blah!");
+                  break;
+              };
+            };
+            respondToChat(msg,'&{template:default} {{name=Configuration}} '+message_to_send,true);
+            break;
+          } else {
+            let secondFragment = null;
+            if (unprocessedFragments.length > 0) {
+              secondFragment = unprocessedFragments.shift();
+              processedFragments.push(secondFragment);
+            };
+            if (secondFragment === null) {
+              if (firstFragment in state.skepickleCharacterSuiteImp.config) {
+                switch (typeof state.skepickleCharacterSuiteImp.config[firstFragment]) {
+                  case 'undefined':
+                    respondToChat(msg,'&{template:default} {{name=Configuration}} {{'+firstFragment+'= *undefined*}}',true);
+                    break;
+                  case 'boolean':
+                  case 'number':
+                  case 'bigint':
+                  case 'string':
+                    respondToChat(msg,'&{template:default} {{name=Configuration}} {{'+firstFragment+'= '+state.skepickleCharacterSuiteImp.config[firstFragment].toString()+'*}}',true);
+                    break;
+                  case 'symbol':
+                  case 'function':
+                  case 'object':
+                    respondToChat(msg,'&{template:default} {{name=Configuration}} {{'+firstFragment+'= *unhandled: '+typeof state.skepickleCharacterSuiteImp.config[firstFragment]+'*}}',true);
+                    break;
+                  default:
+                    log("blah!");
+                    break;
+                };
+              } else {
+                respondToChat(msg,'&{template:default} {{name=Configuration}} {{'+firstFragment+'= *undefined*}}',true);
+              };
+              break;
+            } else {
+              if (firstFragment in state.skepickleCharacterSuiteImp.config) {
+                switch (typeof state.skepickleCharacterSuiteImp.config[firstFragment]) {
+                  case 'boolean':
+                    state.skepickleCharacterSuiteImp.config[firstFragment] = (secondFragment.toLowerCase() === 'true') || (secondFragment.toLowerCase() === 'yes');
+                    break;
+                  case 'number':
+                    state.skepickleCharacterSuiteImp.config[firstFragment] = parseFloat(secondFragment);
+                    break;
+                  case 'bigint':
+                    state.skepickleCharacterSuiteImp.config[firstFragment] = BigInt(secondFragment);
+                    break;
+                  case 'string':
+                    state.skepickleCharacterSuiteImp.config[firstFragment] = secondFragment;
+                    break;
+                  default:
+                    log("blah!");
+                    break;
+                };
+              } else {
+                respondToChat(msg,'&{template:default} {{name=Configuration}} {{'+firstFragment+'= *Unknown configuration field*}}',true);
+              };
+              break;
+            };
+          };
+          //TODO set value of firstFragment property to value of secondFragment
+          //switch (firstFragment) {
+          //  case 'enable':
+          //    state.skepickleCharacterSuiteImp.config.moderate_pc_movement = true;
+          //    respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Message= Movement Moderation Enabled.}}');
+          //    return;
+          //  case 'disable':
+          //    state.skepickleCharacterSuiteImp.config.moderate_pc_movement = false;
+          //    respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Message= Movement Moderation Disabled.}}');
+          //    return;
+          //};
+        // COMMAND_ANCHOR
+        // ███████╗ ██████╗ ██╗   ██╗██████╗  ██████╗███████╗ ████████╗███████╗██╗  ██╗████████╗
+        // ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔════╝ ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝
+        // ███████╗██║   ██║██║   ██║██████╔╝██║     █████╗█████╗██║   █████╗   ╚███╔╝    ██║
+        // ╚════██║██║   ██║██║   ██║██╔══██╗██║     ██╔══╝╚════╝██║   ██╔══╝   ██╔██╗    ██║
+        // ███████║╚██████╔╝╚██████╔╝██║  ██║╚██████╗███████╗    ██║   ███████╗██╔╝ ██╗   ██║
+        // ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝
+        case 'source-text':
         case '--source-text':
+          //TODO For this to be useful, the list of activated sources needs to be moved into the state data structure.
           if (firstFragment === null) {
             //TODO Error / Usage message here
             break;
@@ -19985,7 +20113,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                   message_to_send = message_to_send.concat(' {{',dnd35.all_source_texts[k],'= disabled}}');
                 };
               });
-              respondToChat(msg,'&{template:default} {{name=Source Texts}} '+message_to_send, null, {noarchive:true});
+              respondToChat(msg,'&{template:default} {{name=Source Texts}} '+message_to_send, true);
               break;
             case 'enable':
               break;
@@ -19993,13 +20121,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               break;
           };
           break;
-        // COMMANDANCHOR
-        //              █████╗ ██╗   ██╗██████╗ ██╗████████╗
-        //             ██╔══██╗██║   ██║██╔══██╗██║╚══██╔══╝
-        // █████╗█████╗███████║██║   ██║██║  ██║██║   ██║
-        // ╚════╝╚════╝██╔══██║██║   ██║██║  ██║██║   ██║
-        //             ██║  ██║╚██████╔╝██████╔╝██║   ██║
-        //             ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝   ╚═╝
+        // COMMAND_ANCHOR
+        //  █████╗ ██╗   ██╗██████╗ ██╗████████╗
+        // ██╔══██╗██║   ██║██╔══██╗██║╚══██╔══╝
+        // ███████║██║   ██║██║  ██║██║   ██║
+        // ██╔══██║██║   ██║██║  ██║██║   ██║
+        // ██║  ██║╚██████╔╝██████╔╝██║   ██║
+        // ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝   ╚═╝
+        case 'audit':
         case '--audit':
           if (firstFragment === null) {
             //TODO Error / Usage message here
@@ -20028,13 +20157,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             };
           });
           break;
-        // COMMANDANCHOR
-        //             ███████╗██╗██╗     ██╗
-        //             ██╔════╝██║██║     ██║
-        // █████╗█████╗█████╗  ██║██║     ██║
-        // ╚════╝╚════╝██╔══╝  ██║██║     ██║
-        //             ██║     ██║███████╗███████╗
-        //             ╚═╝     ╚═╝╚══════╝╚══════╝
+        // COMMAND_ANCHOR
+        // ███████╗██╗██╗     ██╗
+        // ██╔════╝██║██║     ██║
+        // █████╗  ██║██║     ██║
+        // ██╔══╝  ██║██║     ██║
+        // ██║     ██║███████╗███████╗
+        // ╚═╝     ╚═╝╚══════╝╚══════╝
+        case 'fill':
         case '--fill':
           if (firstFragment === null) {
             //TODO Error / Usage message here
@@ -20355,28 +20485,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             };
           });
           break;
-        // COMMANDANCHOR
-        //             ███╗   ███╗ ██████╗ ██╗   ██╗███████╗███╗   ███╗███████╗███╗   ██╗████████╗   ███╗   ███╗ ██████╗ ██████╗ ███████╗██████╗  █████╗ ████████╗██╗ ██████╗ ███╗   ██╗
-        //             ████╗ ████║██╔═══██╗██║   ██║██╔════╝████╗ ████║██╔════╝████╗  ██║╚══██╔══╝   ████╗ ████║██╔═══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║
-        // █████╗█████╗██╔████╔██║██║   ██║██║   ██║█████╗  ██╔████╔██║█████╗  ██╔██╗ ██║   ██║█████╗██╔████╔██║██║   ██║██║  ██║█████╗  ██████╔╝███████║   ██║   ██║██║   ██║██╔██╗ ██║
-        // ╚════╝╚════╝██║╚██╔╝██║██║   ██║╚██╗ ██╔╝██╔══╝  ██║╚██╔╝██║██╔══╝  ██║╚██╗██║   ██║╚════╝██║╚██╔╝██║██║   ██║██║  ██║██╔══╝  ██╔══██╗██╔══██║   ██║   ██║██║   ██║██║╚██╗██║
-        //             ██║ ╚═╝ ██║╚██████╔╝ ╚████╔╝ ███████╗██║ ╚═╝ ██║███████╗██║ ╚████║   ██║      ██║ ╚═╝ ██║╚██████╔╝██████╔╝███████╗██║  ██║██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║
-        //             ╚═╝     ╚═╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝      ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝
-        case '--movement-moderation':
+        // COMMAND_ANCHOR
+        // ███╗   ███╗ ██████╗ ██████╗ ███████╗██████╗  █████╗ ████████╗███████╗    ██████╗  ██████╗    ███╗   ███╗ ██████╗ ██╗   ██╗███████╗███╗   ███╗███████╗███╗   ██╗████████╗
+        // ████╗ ████║██╔═══██╗██╔══██╗██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝    ██╔══██╗██╔════╝    ████╗ ████║██╔═══██╗██║   ██║██╔════╝████╗ ████║██╔════╝████╗  ██║╚══██╔══╝
+        // ██╔████╔██║██║   ██║██║  ██║█████╗  ██████╔╝███████║   ██║   █████╗█████╗██████╔╝██║   █████╗██╔████╔██║██║   ██║██║   ██║█████╗  ██╔████╔██║█████╗  ██╔██╗ ██║   ██║
+        // ██║╚██╔╝██║██║   ██║██║  ██║██╔══╝  ██╔══██╗██╔══██║   ██║   ██╔══╝╚════╝██╔═══╝ ██║   ╚════╝██║╚██╔╝██║██║   ██║╚██╗ ██╔╝██╔══╝  ██║╚██╔╝██║██╔══╝  ██║╚██╗██║   ██║
+        // ██║ ╚═╝ ██║╚██████╔╝██████╔╝███████╗██║  ██║██║  ██║   ██║   ███████╗    ██║     ╚██████╗    ██║ ╚═╝ ██║╚██████╔╝ ╚████╔╝ ███████╗██║ ╚═╝ ██║███████╗██║ ╚████║   ██║
+        // ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝    ╚═╝      ╚═════╝    ╚═╝     ╚═╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝
+        case 'moderate-pc-movement':
+        case '--moderate-pc-movement':
           if (!playerIsGM(playerID)) { /*TODO error message! */ return; };
           if (firstFragment === null) {
             //TODO Error / Usage message here
             break;
-          };
-          switch (firstFragment) {
-            case 'enable':
-              state.skepickleCharacterSuiteImp.config.enable_movement_moderation = true;
-              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Message= Movement Moderation Enabled.}}');
-              return;
-            case 'disable':
-              state.skepickleCharacterSuiteImp.config.enable_movement_moderation = false;
-              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Message= Movement Moderation Disabled.}}');
-              return;
           };
           tokenIDs.forEach(function(idOfToken) {
             var obj = getObj("graphic", idOfToken);
@@ -20387,25 +20508,60 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             };
             if (character.get("controlledby") == "") { return; };
             try {
+              let gmnotes = decodeRoll20String(obj.get('gmnotes'));
+              let mm_data = getStringRegister(gmnotes, "moderate_pc_movement");
               switch (firstFragment) {
                 case 'accept':
-                  break;
+                  if (mm_data !== null) {
+                    let mm_path = getObj("path", mm_data[0]);
+                    if ((typeof mm_path !== 'undefined') && (mm_path !== null)) {
+                      let the_path = JSON.parse(mm_path.get("path"));
+                      //log(the_path);
+                      let left = the_path[the_path.length-1][1];
+                      let top  = the_path[the_path.length-1][2];
+                      the_path.pop();
+                      obj.set("left", left);
+                      obj.set("top",  top);
+                      for (let i=0; i<the_path.length; i++) {
+                        the_path[i].shift();
+                        if (the_path[i] instanceof Array) {
+                          the_path[i] = the_path[i].join(',');
+                        };
+                      };
+                      let lastmove = the_path.join(',');
+                      //log(lastmove);
+                      obj.set("lastmove", the_path.join(','));
+                    };
+                    //let mm_shadow = getObj("graphic", mm_data[1]);
+                    //if ((typeof mm_shadow !== 'undefined') && (mm_shadow !== null)) {
+                    //  obj.set("left", mm_shadow.get("left"));
+                    //  obj.set("top",  mm_shadow.get("top"));
+                    //};
+                  };
+                  //Note: No 'break' here as it's meant to fall through to the reject logic below to delete the path and shadow token
                 case 'reject':
-                  break;
-                default:
+                  if (mm_data !== null) {
+                    let mm_path = getObj("path", mm_data[0]);
+                    if ((typeof mm_path !== 'undefined') && (mm_path !== null)) { mm_path.remove(); };
+                    let mm_shadow = getObj("graphic", mm_data[1]);
+                    if ((typeof mm_shadow !== 'undefined') && (mm_shadow !== null)) { mm_shadow.remove(); };
+                    obj.set("gmnotes",setStringRegister(gmnotes,
+                                                        "moderate_pc_movement"));
+                  };
                   break;
               };
             } catch(e) {
             };
           });
           break;
-        // COMMANDANCHOR
-        //             ███╗   ███╗ ██████╗  ██████╗ ██╗  ██╗
-        //             ████╗ ████║██╔═══██╗██╔═══██╗██║ ██╔╝
-        // █████╗█████╗██╔████╔██║██║   ██║██║   ██║█████╔╝
-        // ╚════╝╚════╝██║╚██╔╝██║██║   ██║██║   ██║██╔═██╗
-        //             ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝██║  ██╗
-        //             ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
+        // COMMAND_ANCHOR
+        // ███╗   ███╗ ██████╗  ██████╗ ██╗  ██╗
+        // ████╗ ████║██╔═══██╗██╔═══██╗██║ ██╔╝
+        // ██╔████╔██║██║   ██║██║   ██║█████╔╝
+        // ██║╚██╔╝██║██║   ██║██║   ██║██╔═██╗
+        // ██║ ╚═╝ ██║╚██████╔╝╚██████╔╝██║  ██╗
+        // ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
+        case 'mook':
         case '--mook':
           if (!playerIsGM(playerID)) { /*TODO error message! */ return; };
           if (firstFragment === null) {
@@ -20444,13 +20600,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             });
           });
           break;
-        // COMMANDANCHOR
-        //             ███████╗██╗  ██╗ ██████╗  ██████╗ ██╗  ██╗██╗   ██╗███╗   ███╗
-        //             ██╔════╝██║ ██╔╝██╔═══██╗██╔═══██╗██║ ██╔╝██║   ██║████╗ ████║
-        // █████╗█████╗███████╗█████╔╝ ██║   ██║██║   ██║█████╔╝ ██║   ██║██╔████╔██║
-        // ╚════╝╚════╝╚════██║██╔═██╗ ██║   ██║██║   ██║██╔═██╗ ██║   ██║██║╚██╔╝██║
-        //             ███████║██║  ██╗╚██████╔╝╚██████╔╝██║  ██╗╚██████╔╝██║ ╚═╝ ██║
-        //             ╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
+        // COMMAND_ANCHOR
+        // ███████╗██╗  ██╗ ██████╗  ██████╗ ██╗  ██╗██╗   ██╗███╗   ███╗
+        // ██╔════╝██║ ██╔╝██╔═══██╗██╔═══██╗██║ ██╔╝██║   ██║████╗ ████║
+        // ███████╗█████╔╝ ██║   ██║██║   ██║█████╔╝ ██║   ██║██╔████╔██║
+        // ╚════██║██╔═██╗ ██║   ██║██║   ██║██╔═██╗ ██║   ██║██║╚██╔╝██║
+        // ███████║██║  ██╗╚██████╔╝╚██████╔╝██║  ██╗╚██████╔╝██║ ╚═╝ ██║
+        // ╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
+        case 'skookum':
         case '--skookum':
           if (firstFragment === null) {
             //TODO Error / Usage message here
@@ -20482,13 +20639,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             });
           });
           break;
-        // COMMANDANCHOR
-        //              ██████╗ █████╗ ██╗      ██████╗██╗   ██╗██╗      █████╗ ████████╗███████╗    ███████╗███╗   ██╗ ██████╗ ██████╗ ██╗   ██╗███╗   ██╗████████╗███████╗██████╗       ██╗     ███████╗██╗   ██╗███████╗██╗
-        //             ██╔════╝██╔══██╗██║     ██╔════╝██║   ██║██║     ██╔══██╗╚══██╔══╝██╔════╝    ██╔════╝████╗  ██║██╔════╝██╔═══██╗██║   ██║████╗  ██║╚══██╔══╝██╔════╝██╔══██╗      ██║     ██╔════╝██║   ██║██╔════╝██║
-        // █████╗█████╗██║     ███████║██║     ██║     ██║   ██║██║     ███████║   ██║   █████╗█████╗█████╗  ██╔██╗ ██║██║     ██║   ██║██║   ██║██╔██╗ ██║   ██║   █████╗  ██████╔╝█████╗██║     █████╗  ██║   ██║█████╗  ██║
-        // ╚════╝╚════╝██║     ██╔══██║██║     ██║     ██║   ██║██║     ██╔══██║   ██║   ██╔══╝╚════╝██╔══╝  ██║╚██╗██║██║     ██║   ██║██║   ██║██║╚██╗██║   ██║   ██╔══╝  ██╔══██╗╚════╝██║     ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║
-        //             ╚██████╗██║  ██║███████╗╚██████╗╚██████╔╝███████╗██║  ██║   ██║   ███████╗    ███████╗██║ ╚████║╚██████╗╚██████╔╝╚██████╔╝██║ ╚████║   ██║   ███████╗██║  ██║      ███████╗███████╗ ╚████╔╝ ███████╗███████╗
-        //              ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝    ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝      ╚══════╝╚══════╝  ╚═══╝  ╚══════╝╚══════╝
+        // COMMAND_ANCHOR
+        //  ██████╗ █████╗ ██╗      ██████╗██╗   ██╗██╗      █████╗ ████████╗███████╗    ███████╗███╗   ██╗ ██████╗ ██████╗ ██╗   ██╗███╗   ██╗████████╗███████╗██████╗       ██╗     ███████╗██╗   ██╗███████╗██╗
+        // ██╔════╝██╔══██╗██║     ██╔════╝██║   ██║██║     ██╔══██╗╚══██╔══╝██╔════╝    ██╔════╝████╗  ██║██╔════╝██╔═══██╗██║   ██║████╗  ██║╚══██╔══╝██╔════╝██╔══██╗      ██║     ██╔════╝██║   ██║██╔════╝██║
+        // ██║     ███████║██║     ██║     ██║   ██║██║     ███████║   ██║   █████╗█████╗█████╗  ██╔██╗ ██║██║     ██║   ██║██║   ██║██╔██╗ ██║   ██║   █████╗  ██████╔╝█████╗██║     █████╗  ██║   ██║█████╗  ██║
+        // ██║     ██╔══██║██║     ██║     ██║   ██║██║     ██╔══██║   ██║   ██╔══╝╚════╝██╔══╝  ██║╚██╗██║██║     ██║   ██║██║   ██║██║╚██╗██║   ██║   ██╔══╝  ██╔══██╗╚════╝██║     ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║
+        // ╚██████╗██║  ██║███████╗╚██████╗╚██████╔╝███████╗██║  ██║   ██║   ███████╗    ███████╗██║ ╚████║╚██████╗╚██████╔╝╚██████╔╝██║ ╚████║   ██║   ███████╗██║  ██║      ███████╗███████╗ ╚████╔╝ ███████╗███████╗
+        //  ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝    ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝      ╚══════╝╚══════╝  ╚═══╝  ╚══════╝╚══════╝
+        case 'calculate-encounter-level':
         case '--calculate-encounter-level':
           var encounter_challenge_ratings = {};
           for (let i=0; i<tokenIDs.length; i++) {
@@ -20530,17 +20688,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           let encounter_level = calculateEncounterLevel(encounter_challenge_ratings);
           respondToChat(msg,'&{template:default} {{name=Encounter Level}} {{EL= '+encounter_level+'}}');
           break;
+        case 'calculate-encounter-rewards': // <encounter level>
         case '--calculate-encounter-rewards': // <encounter level>
           break;
+        case 'generate-treasure': // <treasure value>
         case '--generate-treasure': // <treasure value>
           break;
-        // COMMANDANCHOR
-        //          ████████╗ ██████╗  ██████╗  ██████╗ ██╗     ███████╗    ██████╗ ███████╗ █████╗  ██████╗██╗  ██╗       █████╗ ██╗   ██╗██████╗  █████╗ ███████╗
-        //          ╚══██╔══╝██╔═══██╗██╔════╝ ██╔════╝ ██║     ██╔════╝    ██╔══██╗██╔════╝██╔══██╗██╔════╝██║  ██║      ██╔══██╗██║   ██║██╔══██╗██╔══██╗██╔════╝
-        // █████╗█████╗██║   ██║   ██║██║  ███╗██║  ███╗██║     █████╗█████╗██████╔╝█████╗  ███████║██║     ███████║█████╗███████║██║   ██║██████╔╝███████║███████╗
-        // ╚════╝╚════╝██║   ██║   ██║██║   ██║██║   ██║██║     ██╔══╝╚════╝██╔══██╗██╔══╝  ██╔══██║██║     ██╔══██║╚════╝██╔══██║██║   ██║██╔══██╗██╔══██║╚════██║
-        //             ██║   ╚██████╔╝╚██████╔╝╚██████╔╝███████╗███████╗    ██║  ██║███████╗██║  ██║╚██████╗██║  ██║      ██║  ██║╚██████╔╝██║  ██║██║  ██║███████║
-        //             ╚═╝    ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚══════╝    ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝      ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+        // COMMAND_ANCHOR
+        // ████████╗ ██████╗  ██████╗  ██████╗ ██╗     ███████╗    ██████╗ ███████╗ █████╗  ██████╗██╗  ██╗       █████╗ ██╗   ██╗██████╗  █████╗ ███████╗
+        // ╚══██╔══╝██╔═══██╗██╔════╝ ██╔════╝ ██║     ██╔════╝    ██╔══██╗██╔════╝██╔══██╗██╔════╝██║  ██║      ██╔══██╗██║   ██║██╔══██╗██╔══██╗██╔════╝
+        //    ██║   ██║   ██║██║  ███╗██║  ███╗██║     █████╗█████╗██████╔╝█████╗  ███████║██║     ███████║█████╗███████║██║   ██║██████╔╝███████║███████╗
+        //    ██║   ██║   ██║██║   ██║██║   ██║██║     ██╔══╝╚════╝██╔══██╗██╔══╝  ██╔══██║██║     ██╔══██║╚════╝██╔══██║██║   ██║██╔══██╗██╔══██║╚════██║
+        //    ██║   ╚██████╔╝╚██████╔╝╚██████╔╝███████╗███████╗    ██║  ██║███████╗██║  ██║╚██████╗██║  ██║      ██║  ██║╚██████╔╝██║  ██║██║  ██║███████║
+        //    ╚═╝    ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚══════╝    ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝      ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+        case 'toggle-reach-auras':
         case '--toggle-reach-auras':
           if (!playerIsGM(playerID)) { return; /* TODO */ };
           tokenIDs.forEach(function(idOfToken) {
@@ -20595,15 +20756,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             };
           });
           break;
-        // COMMANDANCHOR
-        //              ██████╗ ██████╗  ██████╗ ██╗   ██╗██████╗       ██╗███╗   ██╗██╗████████╗██╗ █████╗ ████████╗██╗██╗   ██╗███████╗     ██████╗██╗  ██╗███████╗ ██████╗██╗  ██╗
-        //             ██╔════╝ ██╔══██╗██╔═══██╗██║   ██║██╔══██╗      ██║████╗  ██║██║╚══██╔══╝██║██╔══██╗╚══██╔══╝██║██║   ██║██╔════╝    ██╔════╝██║  ██║██╔════╝██╔════╝██║ ██╔╝
-        // █████╗█████╗██║  ███╗██████╔╝██║   ██║██║   ██║██████╔╝█████╗██║██╔██╗ ██║██║   ██║   ██║███████║   ██║   ██║██║   ██║█████╗█████╗██║     ███████║█████╗  ██║     █████╔╝
-        // ╚════╝╚════╝██║   ██║██╔══██╗██║   ██║██║   ██║██╔═══╝ ╚════╝██║██║╚██╗██║██║   ██║   ██║██╔══██║   ██║   ██║╚██╗ ██╔╝██╔══╝╚════╝██║     ██╔══██║██╔══╝  ██║     ██╔═██╗
-        //             ╚██████╔╝██║  ██║╚██████╔╝╚██████╔╝██║           ██║██║ ╚████║██║   ██║   ██║██║  ██║   ██║   ██║ ╚████╔╝ ███████╗    ╚██████╗██║  ██║███████╗╚██████╗██║  ██╗
-        //              ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝           ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═══╝  ╚══════╝     ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝
+        // COMMAND_ANCHOR
+        //  ██████╗ ██████╗  ██████╗ ██╗   ██╗██████╗       ██╗███╗   ██╗██╗████████╗██╗ █████╗ ████████╗██╗██╗   ██╗███████╗     ██████╗██╗  ██╗███████╗ ██████╗██╗  ██╗
+        // ██╔════╝ ██╔══██╗██╔═══██╗██║   ██║██╔══██╗      ██║████╗  ██║██║╚══██╔══╝██║██╔══██╗╚══██╔══╝██║██║   ██║██╔════╝    ██╔════╝██║  ██║██╔════╝██╔════╝██║ ██╔╝
+        // ██║  ███╗██████╔╝██║   ██║██║   ██║██████╔╝█████╗██║██╔██╗ ██║██║   ██║   ██║███████║   ██║   ██║██║   ██║█████╗█████╗██║     ███████║█████╗  ██║     █████╔╝
+        // ██║   ██║██╔══██╗██║   ██║██║   ██║██╔═══╝ ╚════╝██║██║╚██╗██║██║   ██║   ██║██╔══██║   ██║   ██║╚██╗ ██╔╝██╔══╝╚════╝██║     ██╔══██║██╔══╝  ██║     ██╔═██╗
+        // ╚██████╔╝██║  ██║╚██████╔╝╚██████╔╝██║           ██║██║ ╚████║██║   ██║   ██║██║  ██║   ██║   ██║ ╚████╔╝ ███████╗    ╚██████╗██║  ██║███████╗╚██████╗██║  ██╗
+        //  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝           ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝   ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═══╝  ╚══════╝     ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝
+        case 'group-initiative-check':
         case '--group-initiative-check':
-          // --group-initiative-check [clear]
+          // group-initiative-check [clear]
           //   The optional "clear" argument indicates that the turn order should be cleared before adding new entries
           if (!playerIsGM(playerID)) { return; /* TODO */ };
           var roll_initiative_map = {};
@@ -20689,7 +20851,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                     };
                     chat_msg += "{{" + k + "= "+ roll_initiative_map[k] +"}} ";
                   });
-                  respondToChat(msg,chat_msg);
+                  sendChat("GM", chat_msg);
+                  //respondToChat(msg,chat_msg); //TODO Make this message visible by players? //DELETE?
                 };
               });
             } catch (e) {
@@ -20698,13 +20861,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             };
           });
           break;
-        // COMMANDANCHOR
-        //              ██████╗ ██████╗  ██████╗ ██╗   ██╗██████╗       ███████╗██╗  ██╗██╗██╗     ██╗       ██████╗██╗  ██╗███████╗ ██████╗██╗  ██╗
-        //             ██╔════╝ ██╔══██╗██╔═══██╗██║   ██║██╔══██╗      ██╔════╝██║ ██╔╝██║██║     ██║      ██╔════╝██║  ██║██╔════╝██╔════╝██║ ██╔╝
-        // █████╗█████╗██║  ███╗██████╔╝██║   ██║██║   ██║██████╔╝█████╗███████╗█████╔╝ ██║██║     ██║█████╗██║     ███████║█████╗  ██║     █████╔╝
-        // ╚════╝╚════╝██║   ██║██╔══██╗██║   ██║██║   ██║██╔═══╝ ╚════╝╚════██║██╔═██╗ ██║██║     ██║╚════╝██║     ██╔══██║██╔══╝  ██║     ██╔═██╗
-        //             ╚██████╔╝██║  ██║╚██████╔╝╚██████╔╝██║           ███████║██║  ██╗██║███████╗███████╗ ╚██████╗██║  ██║███████╗╚██████╗██║  ██╗
-        //              ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝           ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝  ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝
+        // COMMAND_ANCHOR
+        //  ██████╗ ██████╗  ██████╗ ██╗   ██╗██████╗       ███████╗██╗  ██╗██╗██╗     ██╗       ██████╗██╗  ██╗███████╗ ██████╗██╗  ██╗
+        // ██╔════╝ ██╔══██╗██╔═══██╗██║   ██║██╔══██╗      ██╔════╝██║ ██╔╝██║██║     ██║      ██╔════╝██║  ██║██╔════╝██╔════╝██║ ██╔╝
+        // ██║  ███╗██████╔╝██║   ██║██║   ██║██████╔╝█████╗███████╗█████╔╝ ██║██║     ██║█████╗██║     ███████║█████╗  ██║     █████╔╝
+        // ██║   ██║██╔══██╗██║   ██║██║   ██║██╔═══╝ ╚════╝╚════██║██╔═██╗ ██║██║     ██║╚════╝██║     ██╔══██║██╔══╝  ██║     ██╔═██╗
+        // ╚██████╔╝██║  ██║╚██████╔╝╚██████╔╝██║           ███████║██║  ██╗██║███████╗███████╗ ╚██████╗██║  ██║███████╗╚██████╗██║  ██╗
+        //  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝           ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝  ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝
+        case 'group-skill-check':
         case '--group-skill-check':
           // --group-skill-check (Aid Another|Individual) (<Skill Name>)
           //   Both arguments are required
@@ -20727,7 +20891,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Second argument (skill name) missing}}');
             return;
           };
-          var secondFragment = unprocessedFragments.join(" ");
+          let secondFragment = unprocessedFragments.join(" ");
           processedFragments.concat(unprocessedFragments);
           unprocessedFragments = [];
           //secondFragment = secondFragment.toLowerCase();
@@ -20875,7 +21039,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                 var avg_check = checks_total / checks_num;
                                 chat_msg += "{{*Average*= ***"+avg_check.toFixed(2)+"***}}";
                               };
-                              respondToChat(msg,chat_msg);
+                              sendChat("GM", chat_msg);
+                              //respondToChat(msg,chat_msg); //TODO Make this message visible by players? //DELETE?
                             };
                           });
                         };
@@ -20887,13 +21052,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             };
           });
           break;
-        // COMMANDANCHOR
-        //             ███████╗███████╗████████╗   ██╗     ██╗ ██████╗ ██╗  ██╗████████╗   ███████╗ ██████╗ ██╗   ██╗██████╗  ██████╗███████╗
-        //             ██╔════╝██╔════╝╚══██╔══╝   ██║     ██║██╔════╝ ██║  ██║╚══██╔══╝   ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔════╝
-        // █████╗█████╗███████╗█████╗     ██║█████╗██║     ██║██║  ███╗███████║   ██║█████╗███████╗██║   ██║██║   ██║██████╔╝██║     █████╗
-        // ╚════╝╚════╝╚════██║██╔══╝     ██║╚════╝██║     ██║██║   ██║██╔══██║   ██║╚════╝╚════██║██║   ██║██║   ██║██╔══██╗██║     ██╔══╝
-        //             ███████║███████╗   ██║      ███████╗██║╚██████╔╝██║  ██║   ██║      ███████║╚██████╔╝╚██████╔╝██║  ██║╚██████╗███████╗
-        //             ╚══════╝╚══════╝   ╚═╝      ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝
+        // COMMAND_ANCHOR
+        // ███████╗███████╗████████╗   ██╗     ██╗ ██████╗ ██╗  ██╗████████╗   ███████╗ ██████╗ ██╗   ██╗██████╗  ██████╗███████╗
+        // ██╔════╝██╔════╝╚══██╔══╝   ██║     ██║██╔════╝ ██║  ██║╚══██╔══╝   ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔════╝
+        // ███████╗█████╗     ██║█████╗██║     ██║██║  ███╗███████║   ██║█████╗███████╗██║   ██║██║   ██║██████╔╝██║     █████╗
+        // ╚════██║██╔══╝     ██║╚════╝██║     ██║██║   ██║██╔══██║   ██║╚════╝╚════██║██║   ██║██║   ██║██╔══██╗██║     ██╔══╝
+        // ███████║███████╗   ██║      ███████╗██║╚██████╔╝██║  ██║   ██║      ███████║╚██████╔╝╚██████╔╝██║  ██║╚██████╗███████╗
+        // ╚══════╝╚══════╝   ╚═╝      ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝
+        case 'set-light-source':
         case '--set-light-source':
           // TODO Modify this function to use 'attached tokens' for actual light sources, and only apply inherent vision properties to the player token itself.
           if (!playerIsGM(playerID)) { return; /* TODO */ };
@@ -20996,7 +21162,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     };
   }; // handleChatMessage
 
-  // SECTIONANCHOR
+  // SECTION_ANCHOR
   // ███████╗ ██████╗██████╗ ██╗██████╗ ████████╗    ██╗███╗   ██╗██╗████████╗
   // ██╔════╝██╔════╝██╔══██╗██║██╔══██╗╚══██╔══╝    ██║████╗  ██║██║╚══██╔══╝
   // ███████╗██║     ██████╔╝██║██████╔╝   ██║       ██║██╔██╗ ██║██║   ██║
