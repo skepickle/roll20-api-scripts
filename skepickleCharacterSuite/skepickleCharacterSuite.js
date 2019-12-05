@@ -22,7 +22,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     // Make these all use Camel-case with first character capitalized.
     DebugLevel: 5,
     ModeratePCMovement: false,
-    InvisibleGraphicURL: ""
+    InvisibleGraphicURL: '',
+    EnabledSourceTexts: 'SRD,UA'
   };
   Object.freeze(config_state_template);
 
@@ -63,19 +64,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     return str.join(' ');
   }; // stringToTitleCase()
 
-  var stringTrimWhitespace = function(str) {
+  function stringTrimWhitespace(str) {
     return str.replace(/ +/g, " ").replace(/^ /, "").replace(/ $/, "").replace(/ *, */g, ",");
-  }; // stringTrimWhitespace
+  }; // stringTrimWhitespace()
 
-  var getStringRegister = function(str,register) {
+  function getStringRegister(str,register) {
     // {register}2|efftype:e|damtype:k|end3|norange|pe|str13|wo1{/register}
     let startPos = str.indexOf("{"  + register + "}");
     let endPos   = str.indexOf("{/" + register + "}");
     if ((startPos == -1) || (endPos == -1)) { return null; };
     return str.substr(startPos+register.length+2, (endPos-startPos)-(register.length+2)).split('|');
-  }; // getStringRegister
+  }; // getStringRegister()
 
-  var setStringRegister = function(str,register,values=null) {
+  function setStringRegister(str,register,values=null) {
     // {register}2|efftype:e|damtype:k|end3|norange|pe|str13|wo1{/register}
     let startPos = str.indexOf("{"  + register + "}");
     let endPos   = str.indexOf("{/" + register + "}");
@@ -102,8 +103,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       };
     };
     return str.replace(reg_exp, replacement);
-  }; // setStringRegister
+  }; // setStringRegister()
 
+  //TODO Can this function rewritten as "function generateUUID()" safely? Experiments needed!
   var generateUUID = (function() {
     "use strict";
     let a = 0, b = [];
@@ -132,10 +134,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     };
   }());
 
-  var generateRowID = function() {
+  function generateRowID() {
     "use strict";
     return generateUUID().replace(/_/g, "Z");
-  };
+  }; // generateRowID()
 
   // SECTION_ANCHOR
   // ██████╗    ██╗   ██████╗     ██████╗    ███████╗    ████████╗ █████╗ ██████╗ ██╗     ███████╗███████╗
@@ -18532,23 +18534,23 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   // ██████╔╝██████║  ██████╔╝    ██████╔╝██╗███████║    ╚██████╔╝   ██║   ██║███████╗██║   ██║   ██║███████╗███████║
   // ╚═════╝ ╚═════╝  ╚═════╝     ╚═════╝ ╚═╝╚══════╝     ╚═════╝    ╚═╝   ╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝
 
-  var abilityScoreToMod = function(score) {
+  function abilityScoreToMod(score) {
     if (isNaN(score)) { return 0; };
     return Math.floor((score-10.0)/2.0);
-  }; // abilityScoreToMod
+  }; // abilityScoreToMod()
 
-  var abilityScoreToBonusSpells = function(score, spelllevel) {
+  function abilityScoreToBonusSpells(score, spelllevel) {
     if (isNaN(score))  { return 0; };
     if (spelllevel==0) { return 0; };
     return Math.max(0,Math.ceil((1.0+abilityScoreToMod(score)-spelllevel/4.0)));
-  }; // abilityScoreToBonusSpells
+  }; // abilityScoreToBonusSpells()
 
-  var abilityScoreToBonusPowers = function(score, classlevel) {
+  function abilityScoreToBonusPowers(score, classlevel) {
     if (isNaN(score)) { return 0; };
     return Math.floor((abilityScoreToMod(score)*classlevel)/2.0);
-  }; // abilityScoreToBonusPowers
+  }; // abilityScoreToBonusPowers()
 
-  var sizeToMod = function(size) {
+  function sizeToMod(size) {
     if (!dnd35.size_categories().includes(size.toLowerCase())) { log("error"); throw "{{error}}"; };
     switch (size.toLowerCase()) {
       case "fine":       return 4;
@@ -18561,9 +18563,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       case "gargantuan": return -3;
       case "colossal":   return -4;
     };
-  }; // sizeToMod
+  }; // sizeToMod()
 
-  var sizeToArmorClassMod = function(size) {
+  function sizeToArmorClassMod(size) {
     if (!dnd35.size_categories().includes(size.toLowerCase())) { log("error"); throw "{{error}}"; };
     switch (size.toLowerCase()) {
       case "fine":       return 8;
@@ -18576,9 +18578,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       case "gargantuan": return -4;
       case "colossal":   return -8;
     };
-  }; // sizeToArmorClassMod
+  }; // sizeToArmorClassMod()
 
-  var sizeModToTallReach = function(size) {
+  function sizeModToTallReach(size) {
     //log("sizeModToTallReach('"+size+"')");
     if (isNaN(size)) {
       log("   isNaN");
@@ -18599,9 +18601,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       case -3: return 20;
       case -4: return 30;
     };
-  }; // sizeModToTallReach
+  }; // sizeModToTallReach()
 
-  var sizeModToLongReach = function(size) {
+  function sizeModToLongReach(size) {
     if (isNaN(size)) {
       if (!dnd35.size_categories().includes(size)) { log("error"); throw "{{error}}"; };
       size = sizeToMod(size);
@@ -18617,9 +18619,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       case -3: return 15;
       case -4: return 20;
     };
-  }; // sizeModToLongReach
+  }; // sizeModToLongReach()
 
-  var getSkillSpecification = function(skillString) {
+  function getSkillSpecification(skillString) {
     if ((typeof skillString === 'undefined') || (skillString === null)) { return null; };
     skillString = stringTrimWhitespace(skillString);
     let skills = dnd35.skills();
@@ -18647,9 +18649,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         return null;
       };
     };
-  }; // getSkillSpecification
+  }; // getSkillSpecification()
 
-  var calculateEncounterLevel = function(encounter_crs) {
+  function calculateEncounterLevel(encounter_crs) {
     let crs = Object.assign({}, encounter_crs);
     let roundLastCR = function(lastCR) {
       if (lastCR === "1/2") { return 1; }
@@ -18985,7 +18987,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     } while ((Array.from(Object.keys(crs)).length > 1) || (crs[Array.from(Object.keys(crs))[0]] > 1));
     log(crs);
     return Array.from(Object.keys(crs))[0];
-  }; // calculateEncounterLevel
+  }; // calculateEncounterLevel()
 
   // SECTION_ANCHOR
   // ██████╗  ██████╗ ██╗     ██╗     ██████╗  ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
@@ -19001,7 +19003,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   // ╚██████╔╝███████╗██║ ╚████║███████╗██║  ██║██║  ██║███████╗
   //  ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
 
-  var escapeRoll20Macro = function(str) {
+  function escapeRoll20Macro(str) {
     return str.replace(/\&/g,  "&amp;")
               .replace(/\#/g,  "&#35;")
               .replace(/\@{/g, "&#64;{")
@@ -19011,9 +19013,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               .replace(/\{\{/g,"&#123;&#123;")
               .replace(/\]\]/g,"&#93;&#93;")
               .replace(/\}\}/g,"&#125;&#125;");
-  }; // escapeRoll20Macro
+  }; // escapeRoll20Macro()
 
-  var createChatButton = function(label, content) {
+  function createChatButton(label, content) {
     let escaped_content = content.replace(/\:/g,  '&#58;')
                                  .replace(/\&/g,  '&amp;')
                                  .replace(/\)/g,  '&#41;')
@@ -19024,9 +19026,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                  .replace(/\]\]/g,"&#93;&#93;")
                                  .replace(/\}\}/g,"&#125;&#125;");
     return ''.concat('[',label,'](!&#13;',escaped_content,')');
-  }; // createChatButton
+  }; // createChatButton()
 
-  var createEscapedChatButton = function(label, content) {
+  function createEscapedChatButton(label, content) {
     let escaped_content = content.replace(/\:/g,  '&#58;')
                                  .replace(/\&/g,  '&amp;')
                                  .replace(/\#/g,  "&#35;")
@@ -19041,36 +19043,36 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                  .replace(/\]\]/g,"&#93;&#93;")
                                  .replace(/\}\}/g,"&#125;&#125;");
     return ''.concat('[',label,'](!&#13;',escaped_content,')');
-  }; // createEscapedChatButton
+  }; // createEscapedChatButton()
 
-  var decodeRoll20String = function(str) {
+  function decodeRoll20String(str) {
     str = decodeURI(str);
     str = str.replace(/%3A/g, ':');
     str = str.replace(/%23/g, '#');
     str = str.replace(/%3F/g, '?');
     return str;
-  }; // decodeRoll20String
+  }; // decodeRoll20String()
 
-  var renderDefaultTemplate = function(scope, id, fields) {
+  function renderDefaultTemplate(scope, id, fields) {
     let character = getObj("character", id);
     let str = ''.concat("&{template:default} {{name=",scope,"}} {{Token= [image](",character.get("avatar").replace(new RegExp("\\?.*$"), ""),")}} {{Name= ",getAttrByName(id, "character_name"),"}}");
     for (let k in fields) {
       str = str.concat(" {{"+k+"= "+escapeRoll20Macro(fields[k])+"}}");
     };
     return str;
-  }; // renderDefaultTemplate
+  }; // renderDefaultTemplate()
 
-  var throwDefaultTemplate = function(scope, id, fields) {
+  function throwDefaultTemplate(scope, id, fields) {
     throw renderDefaultTemplate(scope, id, fields);
-  }; // throwDefaultTemplate
+  }; // throwDefaultTemplate()
 
-  var respondToChat = function(msg,str,noArchive=true) {
+  function respondToChat(msg,str,noArchive=true) {
     let playerName = msg.who;
     if (playerIsGM(msg.playerid)) { playerName = playerName.replace(new RegExp(" \\(GM\\)$"), "") };
     sendChat("skepickleCharacterSuite", '/w "'+playerName+'" '+str, null, {noarchive:noArchive});
-  }; // respondToChat
+  }; // respondToChat()
 
-  var getSelectedTokenIDs = function(msg) {
+  function getSelectedTokenIDs(msg) {
     let ids=[];
     if (msg.selected) {
       for (let selected of msg.selected) {
@@ -19095,7 +19097,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       };
     };
     return ids;
-  }; // getSelectedTokenIDs
+  }; // getSelectedTokenIDs()
 
   // SECTION_ANCHOR
   // ██████╗  ██████╗ ██╗     ██╗     ██████╗  ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
