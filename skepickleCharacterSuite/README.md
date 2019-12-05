@@ -24,10 +24,10 @@ skepickleCharacterSuite implements a set of commands that operate on Diana P's D
     _Note: Operates on any number of selected tokens on the map._  
     This function fills in a character sheet's spell macros if the macro attribute is empty, or contains only '-','fill', or 'empty'.
 * **moderate-pc-movement**
-  * accept
+  * accept  
     _Note: Operates on any number of selected tokens on the map._  
     For each selected token controllable by a single player, this function accepts and implements the desired movement they indicated.
-  * reject
+  * reject  
     _Note: Operates on any number of selected tokens on the map._  
     For each selected token controllable by a single player, this function rejects the desired movement they indicated.
 * **mook**
@@ -41,9 +41,14 @@ skepickleCharacterSuite implements a set of commands that operate on Diana P's D
     _Note: Operates on a single selected token on the map._  
     This function _will_ create a new [skookum](https://en.wikipedia.org/wiki/Skookum) character sheet based on the currently selected [mook](https://www.dandwiki.com/wiki/Help:Glossary_of_Jargon#Mook), which will be named based upon the specified name.
 * **skookum** **_UNDER CONSTRUCTION_**
-* **calculate-encounter-level** **_UNDER CONSTRUCTION_**
-* **calculate-encounter-rewards** **_UNDER CONSTRUCTION_**
-* **calculate-encounter-treasure** **_UNDER CONSTRUCTION_**
+* **encounter**
+  * calculate-level **_UNDER CONSTRUCTION_**  
+    _Note: Operates on any number of selected tokens on the map._  
+    This function calculates an encounter level (EL) based on all the creatures selected, using the challenge ratings (CR) from the NPC section of the character sheet and the levels from the PC section.
+  * calculate-rewards <_encounterLevel_> **_UNDER CONSTRUCTION_**  
+    _Note: Operates on any number of selected tokens on the map._  
+    This function uses the EL level passed in, and calculates XP rewards for each creature selected, based on their levels. It also calculates an overall treasure value.
+  * generate-treasure <_treasureValue_> **_UNDER CONSTRUCTION_**
 * **toggle-reach-auras**  
     _Note: Operates on any number of selected tokens on the map._  
     This function toggles the display of auras that represent the natural reach range, and appropriately sized reach-weapon ranges for the selected characters.
