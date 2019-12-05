@@ -19969,8 +19969,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     processedFragments.push(unprocessedFragments.shift()); // Drop the "!scs" entry, since we already checked that
 
     if (unprocessedFragments.length < 1) {
-      respondToChat(msg,processedFragments.join(" ")+" a command");
-      //TODO send usage info?
+      respondToChat(msg,processedFragments.join(" ")+" requires a command");
       return;
     };
     var userCommand = unprocessedFragments.shift();
@@ -19993,7 +19992,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
         case 'config':
         case '--config':
-          if (!playerIsGM(playerID)) { /*TODO error message! */ return; };
+          if (!playerIsGM(playerID)) { return; };
           if (firstFragment === null) {
             let message_to_send = '';
             for (let p in state.skepickleCharacterSuiteImp.config) {
@@ -20075,17 +20074,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               break;
             };
           };
-          //TODO set value of firstFragment property to value of secondFragment
-          //switch (firstFragment) {
-          //  case 'enable':
-          //    state.skepickleCharacterSuiteImp.config.moderate_pc_movement = true;
-          //    respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Message= Movement Moderation Enabled.}}');
-          //    return;
-          //  case 'disable':
-          //    state.skepickleCharacterSuiteImp.config.moderate_pc_movement = false;
-          //    respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Message= Movement Moderation Disabled.}}');
-          //    return;
-          //};
         // COMMAND_ANCHOR
         // ███████╗ ██████╗ ██╗   ██╗██████╗  ██████╗███████╗ ████████╗███████╗██╗  ██╗████████╗
         // ██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔════╝ ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝
@@ -20096,8 +20084,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         case 'source-text':
         case '--source-text':
           //TODO For this to be useful, the list of activated sources needs to be moved into the state data structure.
+          if (!playerIsGM(playerID)) { return; };
           if (firstFragment === null) {
-            //TODO Error / Usage message here
+            respondToChat(msg,processedFragments.join(" ")+" requires an argument");
             break;
           };
           switch (firstFragment) {
@@ -20128,8 +20117,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝   ╚═╝
         case 'audit':
         case '--audit':
+          if (!playerIsGM(playerID)) { return; };
           if (firstFragment === null) {
-            //TODO Error / Usage message here
+            respondToChat(msg,processedFragments.join(" ")+" requires an argument");
             break;
           };
           tokenIDs.forEach(function(idOfToken) {
@@ -20139,7 +20129,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
               return;
             };
-            //TODO Check that msg.who can edit character!!
             try {
               // At this point, we are sure that the selected token is a mook.
               switch (firstFragment) {
@@ -20164,8 +20153,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // ╚═╝     ╚═╝╚══════╝╚══════╝
         case 'fill':
         case '--fill':
+          if (!playerIsGM(playerID)) { return; };
           if (firstFragment === null) {
-            //TODO Error / Usage message here
+            respondToChat(msg,processedFragments.join(" ")+" requires an argument");
             break;
           };
           tokenIDs.forEach(function(idOfToken) {
@@ -20175,9 +20165,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
               return;
             };
-            //TODO Check that msg.who can edit character!!
             try {
-              // At this point, we are sure that the selected token is a mook.
               switch (firstFragment) {
                 case 'spell-macros':
                   var spell_names = Object.keys(dnd35.spells());
@@ -20492,9 +20480,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝    ╚═╝      ╚═════╝    ╚═╝     ╚═╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝
         case 'moderate-pc-movement':
         case '--moderate-pc-movement':
-          if (!playerIsGM(playerID)) { /*TODO error message! */ return; };
+          if (!playerIsGM(playerID)) { return; };
           if (firstFragment === null) {
-            //TODO Error / Usage message here
+            respondToChat(msg,processedFragments.join(" ")+" requires an argument");
             break;
           };
           tokenIDs.forEach(function(idOfToken) {
@@ -20561,9 +20549,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // ╚═╝     ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
         case 'mook':
         case '--mook':
-          if (!playerIsGM(playerID)) { /*TODO error message! */ return; };
+          if (!playerIsGM(playerID)) { return; };
           if (firstFragment === null) {
-            //TODO Error / Usage message here
+            respondToChat(msg,processedFragments.join(" ")+" requires an argument");
             break;
           };
           tokenIDs.forEach(function(idOfToken) {
@@ -20607,8 +20595,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // ╚══════╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
         case 'skookum':
         case '--skookum':
+          if (!playerIsGM(playerID)) { return; };
           if (firstFragment === null) {
-            //TODO Error / Usage message here
+            respondToChat(msg,processedFragments.join(" ")+" requires an argument");
             break;
           };
           tokenIDs.forEach(function(idOfToken) {
@@ -20618,7 +20607,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
               return;
             };
-            //TODO Check that msg.who can edit character!!
             character.get("_defaulttoken", function(defaultToken) {
               if (defaultToken === "null") {
                 respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Not a skookum'}));
@@ -20645,8 +20633,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // ╚██████╗██║  ██║███████╗╚██████╗╚██████╔╝███████╗██║  ██║   ██║   ███████╗    ███████╗██║ ╚████║╚██████╗╚██████╔╝╚██████╔╝██║ ╚████║   ██║   ███████╗██║  ██║      ███████╗███████╗ ╚████╔╝ ███████╗███████╗
         //  ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝    ╚══════╝╚═╝  ╚═══╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═╝      ╚══════╝╚══════╝  ╚═══╝  ╚══════╝╚══════╝
         case 'encounter':
+          if (!playerIsGM(playerID)) { return; };
           if (firstFragment === null) {
-            //TODO Error / Usage message here
+            respondToChat(msg,processedFragments.join(" ")+" requires an argument");
             break;
           };
           switch (firstFragment) {
@@ -20659,7 +20648,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                   respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+t_obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
                   continue;
                 };
-                //TODO Check that msg.who can edit character!!
                 let npccr = getAttrByName(t_character.id, "npccr");
                 if ((typeof npccr !== 'undefined') && (npccr !== null) && (npccr !== '') && (!isNaN(npccr))) {
                   encounter_challenge_ratings[npccr] = ('npccr' in encounter_challenge_ratings)?(encounter_challenge_ratings[npccr]+1):(1);
@@ -20706,7 +20694,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         //    ╚═╝    ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚══════╝    ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝      ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
         case 'toggle-reach-auras':
         case '--toggle-reach-auras':
-          if (!playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { return; };
           tokenIDs.forEach(function(idOfToken) {
             var obj = getObj("graphic", idOfToken);
             var character = getObj("character", obj.get("represents"));
@@ -20770,7 +20758,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         case '--group-initiative-check':
           // group-initiative-check [clear]
           //   The optional "clear" argument indicates that the turn order should be cleared before adding new entries
-          if (!playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { return; };
           var roll_initiative_map = {};
           {
             var filteredTokenIDs = [];
@@ -20855,7 +20843,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                     chat_msg += "{{" + k + "= "+ roll_initiative_map[k] +"}} ";
                   });
                   sendChat("GM", chat_msg);
-                  //respondToChat(msg,chat_msg); //TODO Make this message visible by players? //DELETE?
                 };
               });
             } catch (e) {
@@ -20875,7 +20862,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         case '--group-skill-check':
           // --group-skill-check (Aid Another|Individual) (<Skill Name>)
           //   Both arguments are required
-          if (!playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { return; };
           if (firstFragment === null) {
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
             return;
@@ -21043,7 +21030,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                 chat_msg += "{{*Average*= ***"+avg_check.toFixed(2)+"***}}";
                               };
                               sendChat("GM", chat_msg);
-                              //respondToChat(msg,chat_msg); //TODO Make this message visible by players? //DELETE?
                             };
                           });
                         };
@@ -21065,7 +21051,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         case 'set-light-source':
         case '--set-light-source':
           // TODO Modify this function to use 'attached tokens' for actual light sources, and only apply inherent vision properties to the player token itself.
-          if (!playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { return; };
           if (firstFragment === null) {
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
             return;
@@ -21128,7 +21114,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           });
           break
         case '--debug-attribute':
-          if (!playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { return; };
           tokenIDs.forEach(function(idOfToken) {
               var obj = getObj("graphic", idOfToken);
               var character = getObj("character", obj.get("represents"));
@@ -21138,7 +21124,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           });
           break;
         case '--debug-attribute-regex':
-          if (!playerIsGM(playerID)) { return; /* TODO */ };
+          if (!playerIsGM(playerID)) { return; };
           log("--debug-attribute-regex "+firstFragment);
           tokenIDs.forEach(function(idOfToken) {
               var token_obj = getObj("graphic", idOfToken);
