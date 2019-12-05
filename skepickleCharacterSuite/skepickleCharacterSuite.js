@@ -10,21 +10,39 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   const constants = {
     pixels_per_foot: 14
   };
+  Object.freeze(constants);
 
-  var info = {
+  const info_state_template = {
     version: 0.1,
     authorName: "skepickle"
   };
+  Object.freeze(info_state_template);
 
-  var config = {
-    debug_level: 5,
-    moderate_pc_movement: false,
-    invisible_graphic_imgsrc: ""
+  const config_state_template = {
+    // Make these all use Camel-case with first character capitalized.
+    DebugLevel: 5,
+    ModeratePCMovement: false,
+    InvisibleGraphicURL: ""
   };
+  Object.freeze(config_state_template);
 
   var temp = {
     campaignLoaded: false
   };
+
+  // SECTION_ANCHOR
+  // BIGTEXT "Javascript language utilities"
+
+  function deepFreeze(obj) {
+    // Retrieve the property names defined on object
+    let propNames = Object.getOwnPropertyNames(obj);
+    // Freeze properties before freezing self
+    for (let name of propNames) {
+      let value = obj[name];
+      obj[name] = value && typeof value === "object" ? deepFreeze(value) : value;
+    }
+    return Object.freeze(obj);
+  }; // deepFreeze()
 
   // SECTION_ANCHOR
   // ███████╗████████╗██████╗ ██╗███╗   ██╗ ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
@@ -35,14 +53,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   // ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝      ╚═════╝    ╚═╝   ╚═╝╚══════╝╚═╝   ╚═╝   ╚═╝╚══════╝╚══════╝
 
   var nonvalue_characters = [""," ","-","֊","־","᠆","‐","‑","‒","–","—","―","⁻","₋","−","⸺","⸻","﹘","﹣","－"];
+  Object.freeze(nonvalue_characters);
 
-  var stringToTitleCase = function(str) {
+  function stringToTitleCase(str) {
     str = str.toLowerCase().split(' ');
     for (let i = 0; i < str.length; i++) {
       str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
     };
     return str.join(' ');
-  }; // stringToTitleCase
+  }; // stringToTitleCase()
 
   var stringTrimWhitespace = function(str) {
     return str.replace(/ +/g, " ").replace(/^ /, "").replace(/ $/, "").replace(/ *, */g, ",");
@@ -19729,7 +19748,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     let pageId   = obj.get("_pageid");
     let pageName = getObj("page", pageId).get("name");
     let moveAttachedGraphics = true;
-    switch (state.skepickleCharacterSuiteImp.config.moderate_pc_movement) {
+    switch (state.skepickleCharacterSuiteImp.config.ModeratePCMovement) {
       case true:
         if ((obj.get("left") == prev["left"]) &&
             (obj.get("top") == prev["top"])) { break; };
@@ -19818,7 +19837,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         obj.set("top", prev["top"]);
         moveAttachedGraphics = false;
         break;
-    }; // process_moderate_pc_movement
+    }; // process ModeratePCMovement
     return;
   }; // handleChangeGraphic
 
@@ -21177,35 +21196,35 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //IDEA Maybe use this to copy objects: b = Object.assign({}, a);
     if ((typeof state.skepickleCharacterSuiteImp === 'undefined') || (state.skepickleCharacterSuiteImp === null)) {
       state.skepickleCharacterSuiteImp = {
-        info: info,
-        config: config
+        info:   Object.assign({}, info_state_template),
+        config: Object.assign({}, config_state_template)
       };
     } else {
-      if (!('info' in state.skepickleCharacterSuiteImp)) {
-        state.skepickleCharacterSuiteImp.info = info;
+      if ((typeof state.skepickleCharacterSuiteImp.info === 'undefined') || (state.skepickleCharacterSuiteImp.info === null)) {
+        state.skepickleCharacterSuiteImp.info = Object.assign({}, info_state_template);
       } else {
         for (let p in state.skepickleCharacterSuiteImp.info) {
-          if (!(p in info)) {
+          if (!(p in info_state_template)) {
             delete state.skepickleCharacterSuiteImp.info[p];
           };
         };
-        for (let p in info) {
+        for (let p in info_state_template) {
           if (!(p in state.skepickleCharacterSuiteImp.info)) {
-            state.skepickleCharacterSuiteImp.info[p] = info[p];
+            state.skepickleCharacterSuiteImp.info[p] = info_state_template[p];
           };
         };
       };
-      if (!('config' in state.skepickleCharacterSuiteImp)) {
-        state.skepickleCharacterSuiteImp.config = config;
+      if ((typeof state.skepickleCharacterSuiteImp.config === 'undefined') || (state.skepickleCharacterSuiteImp.config === null)) {
+        state.skepickleCharacterSuiteImp.config = Object.assign({}, config_state_template);
       } else {
         for (let p in state.skepickleCharacterSuiteImp.config) {
-          if (!(p in config)) {
+          if (!(p in config_state_template)) {
             delete state.skepickleCharacterSuiteImp.config[p];
           };
         };
-        for (let p in config) {
+        for (let p in config_state_template) {
           if (!(p in state.skepickleCharacterSuiteImp.config)) {
-            state.skepickleCharacterSuiteImp.config[p] = config[p];
+            state.skepickleCharacterSuiteImp.config[p] = config_state_template[p];
           };
         };
       };
