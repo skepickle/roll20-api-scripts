@@ -19710,26 +19710,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   //  };
   //}; // checkSheetMacros
 
-
-
-
-
-
-
-
-
-
-  // NEW FEATURE STUFF
-
-  // This function should allow for moderation of player tokens. This moderation will encompass two features:
-  // Feature 1: Allow players to indicated desired movement
-  //   a) When a player token is moved, it will actually be set back to it's previous location
-  //   b) A path will be drawn based on the attempted move path of the player token
-  //   c) A tinted graphic of the player token will be placed at the end of the path, where the player token was moved to
-  //   d) If the player token is moved again, the previous path and tinted-token will be removed and the new one will be drawn.
-  // Feature 2: Allow GMs to accept or reject desired player movements.
-  //   a) GMs can execute script message command, to accept or reject the desire path of the selected player token(s).
-  //   b) If a player token's desired path is accepted, then any 'attached tokens' will moved with the player token.
+  // SECTION_ANCHOR
+  // ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██╗     ███████╗██████╗
+  // ██║  ██║██╔══██╗████╗  ██║██╔══██╗██║     ██╔════╝██╔══██╗
+  // ███████║███████║██╔██╗ ██║██║  ██║██║     █████╗  ██████╔╝
+  // ██╔══██║██╔══██║██║╚██╗██║██║  ██║██║     ██╔══╝  ██╔══██╗
+  // ██║  ██║██║  ██║██║ ╚████║██████╔╝███████╗███████╗██║  ██║
+  // ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝
+  //  ██████╗██╗  ██╗ █████╗ ███╗   ██╗ ██████╗ ███████╗     ██████╗ ██████╗  █████╗ ██████╗ ██╗  ██╗██╗ ██████╗
+  // ██╔════╝██║  ██║██╔══██╗████╗  ██║██╔════╝ ██╔════╝    ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║  ██║██║██╔════╝
+  // ██║     ███████║███████║██╔██╗ ██║██║  ███╗█████╗      ██║  ███╗██████╔╝███████║██████╔╝███████║██║██║
+  // ██║     ██╔══██║██╔══██║██║╚██╗██║██║   ██║██╔══╝      ██║   ██║██╔══██╗██╔══██║██╔═══╝ ██╔══██║██║██║
+  // ╚██████╗██║  ██║██║  ██║██║ ╚████║╚██████╔╝███████╗    ╚██████╔╝██║  ██║██║  ██║██║     ██║  ██║██║╚██████╗
+  //  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝     ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝ ╚═════╝
 
   var handleChangeGraphic = function(obj, prev) {
     let objLayer = obj.get("layer");
@@ -19795,28 +19788,33 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             stroke_width: 5,
             controlledby: ""
           });
-          if (path_obj === null) { break; }; //TODO error!
         };
-        let shadow_obj = createObj("graphic", {
-          pageid:     pageId,
-          layer:      objLayer,
-          imgsrc:     obj.get("imgsrc"),
-          left:       obj.get("left"),
-          top:        obj.get("top"),
-          width:      obj.get("width")*0.75,
-          height:     obj.get("height")*0.75,
-          rotation:   obj.get("rotation"),
-          isdrawing:  true,
-          tint_color: player.get("color")
-        });
-        obj.set("gmnotes",setStringRegister(gmnotes,
-                                            "moderate_pc_movement",
-                                            [path_obj.id, shadow_obj.id]));
+        if (path_obj !== null) {
+          toBack(path_obj);
+          let shadow_obj = createObj("graphic", {
+            pageid:     pageId,
+            layer:      objLayer,
+            imgsrc:     obj.get("imgsrc"),
+            left:       obj.get("left"),
+            top:        obj.get("top"),
+            width:      obj.get("width")*0.75,
+            height:     obj.get("height")*0.75,
+            rotation:   obj.get("rotation"),
+            isdrawing:  true,
+            tint_color: player.get("color")
+          });
+          if (shadow_obj !== null) {
+            obj.set("gmnotes",setStringRegister(gmnotes,
+                                                "moderate_pc_movement",
+                                                [path_obj.id, shadow_obj.id]));
+            toFront(shadow_obj);
+          } else {
+            path_obj.remove();
+          };
+        };
         obj.set("lastmove", ''.concat(prev["left"],",",prev["top"]));
         obj.set("left", prev["left"]);
         obj.set("top", prev["top"]);
-        toBack(path_obj);
-        toFront(shadow_obj);
         break;
     }; // process_moderate_pc_movement
     return;
