@@ -17,13 +17,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   };
 
   var config = {
-    debugDEFCON: 5,
-    moderate_pc_movement: false
+    debug_level: 5,
+    moderate_pc_movement: false,
+    invisible_graphic_imgsrc: ""
   };
 
   var temp = {
-    campaignLoaded: false,
-    //GMPlayer: Campaign
+    campaignLoaded: false
   };
 
   // SECTION_ANCHOR
@@ -19728,6 +19728,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     let objLayer = obj.get("layer");
     let pageId   = obj.get("_pageid");
     let pageName = getObj("page", pageId).get("name");
+    let moveAttachedGraphics = true;
     switch (state.skepickleCharacterSuiteImp.config.moderate_pc_movement) {
       case true:
         if ((obj.get("left") == prev["left"]) &&
@@ -19815,6 +19816,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         obj.set("lastmove", ''.concat(prev["left"],",",prev["top"]));
         obj.set("left", prev["left"]);
         obj.set("top", prev["top"]);
+        moveAttachedGraphics = false;
         break;
     }; // process_moderate_pc_movement
     return;
@@ -20034,7 +20036,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                   case 'number':
                   case 'bigint':
                   case 'string':
-                    respondToChat(msg,'&{template:default} {{name=Configuration}} {{'+firstFragment+'= '+state.skepickleCharacterSuiteImp.config[firstFragment].toString()+'*}}',true);
+                    respondToChat(msg,'&{template:default} {{name=Configuration}} {{'+firstFragment+'= '+state.skepickleCharacterSuiteImp.config[firstFragment].toString()+'}}',true);
                     break;
                   case 'symbol':
                   case 'function':
@@ -21050,7 +21052,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // ╚══════╝╚══════╝   ╚═╝      ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝
         case 'set-light-source':
         case '--set-light-source':
-          // TODO Modify this function to use 'attached tokens' for actual light sources, and only apply inherent vision properties to the player token itself.
           if (!playerIsGM(playerID)) { return; };
           if (firstFragment === null) {
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Required arguments missing}}');
@@ -21072,6 +21073,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             var light_angle        = light_source_spec.angle;
             var light_otherplayers = (light_source_spec.radius != '');
             var light_multiplier   = 1;
+            //TODONEXT Modify this function to use 'attached graphic' for actual light sources, and only apply inherent vision properties to the player token itself.
             var character = getObj("character", obj.get("represents"));
             if (character) {
               //TODO Clean up detection of the following properties by parsing the fields into lists and checking for matching entries.
@@ -21113,6 +21115,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             obj.set("light_multiplier",   light_multiplier);
           });
           break
+        // COMMAND_ANCHOR
         case '--debug-attribute':
           if (!playerIsGM(playerID)) { return; };
           tokenIDs.forEach(function(idOfToken) {
@@ -21121,6 +21124,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               if (!character) { return; };
               var attrib_val = getAttrByName(character.id, firstFragment);
               log(firstFragment+' attribute for '+character.get("name")+' is = '+attrib_val);
+          });
+          break;
+        case '--debug-token-property':
+          if (!playerIsGM(playerID)) { return; };
+          tokenIDs.forEach(function(idOfToken) {
+              var obj = getObj("graphic", idOfToken);
+              log(firstFragment+' is = '+obj.get(firstFragment));
           });
           break;
         case '--debug-attribute-regex':
