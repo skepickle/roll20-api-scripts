@@ -21179,7 +21179,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             let light_multiplier   = 1;
             let character = getObj("character", obj.get("represents"));
             if (character) {
-              //TODO Clean up detection of the following properties by parsing the fields into lists and checking for matching entries.
               let npcspecialqualities = getAttrByName(character.id, "npcspecialqualities").toLowerCase();
               let npcfeats            = getAttrByName(character.id, "npcfeats").toLowerCase();
               let racialabilities     = getAttrByName(character.id, "racialabilities").toLowerCase();
@@ -21204,11 +21203,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                     feats.match(/improved darkvision/)) {
                   distance = distance * 2;
                 };
-                //if ((!light_otherplayers) || (light_radius == '') || (light_radius < distance)) {
-                  light_radius    = distance;
-                  //light_dimradius = (distance*5)/6; // For THAC0* Thursdays
-                  light_dimradius = distance+1;
-                //};
+                light_radius    = distance;
+                light_dimradius = distance+1;
               };
             };
             obj.set("light_radius",       light_radius);
