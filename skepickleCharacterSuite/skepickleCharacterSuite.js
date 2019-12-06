@@ -21313,6 +21313,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     };
     log("########## State data for skepickleCharacterSuite");
     log(state.skepickleCharacterSuiteImp);
+    //TODO Maybe delete old state structures?
+    //delete state["siliceousMMFixer"];
+    //delete state["siliceousTokenLibImp"];
+    //delete state["skepickleTokenLibImp"];
+    //delete state["skepickleCharacterLibImp"];
+    //log(state);
     log("##########");
   }; // checkInstall
 
