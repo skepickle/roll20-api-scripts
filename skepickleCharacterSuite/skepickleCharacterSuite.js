@@ -19842,6 +19842,27 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         moveAttachedGraphics = false;
         break;
     }; // process ModeratePCMovement
+    switch (moveAttachedGraphics) {
+      case true:
+        let gmnotes = decodeRoll20String(obj.get('gmnotes'));
+        {
+          let ag_data = getStringRegister(gmnotes, "attached_graphics");
+          if (ag_data !== null) {
+            //log(ag_data);
+            for (let i=0; i<ag_data.length; i++) {
+              let ag_id = ag_data[i].replace(/:.*$/, '');
+              let ag_obj = getObj("graphic", ag_id);
+              if ((typeof ag_obj !== 'undefined') && (ag_obj !== null)) {
+                ag_obj.set("lastmove", obj.get("lastmove"));
+                ag_obj.set("left",     obj.get("left"));
+                ag_obj.set("top",      obj.get("top"));
+                ag_obj.set("rotation", obj.get("rotation"));
+              };
+            };
+          };
+        };
+        break;
+    };
     return;
   }; // handleChangeGraphic
 
@@ -20529,23 +20550,30 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       let left = the_path[the_path.length-1][1];
                       let top  = the_path[the_path.length-1][2];
                       the_path.pop();
-                      obj.set("left", left);
-                      obj.set("top",  top);
                       for (let i=0; i<the_path.length; i++) {
                         the_path[i].shift();
                         if (the_path[i] instanceof Array) {
                           the_path[i] = the_path[i].join(',');
                         };
                       };
-                      let lastmove = the_path.join(',');
-                      //log(lastmove);
+                      obj.set("left", left);
+                      obj.set("top",  top);
                       obj.set("lastmove", the_path.join(','));
+                      let ag_data = getStringRegister(gmnotes, "attached_graphics");
+                      if (ag_data !== null) {
+                        //log(ag_data);
+                        for (let i=0; i<ag_data.length; i++) {
+                          let ag_id = ag_data[i].replace(/:.*$/, '');
+                          let ag_obj = getObj("graphic", ag_id);
+                          if ((typeof ag_obj !== 'undefined') && (ag_obj !== null)) {
+                            ag_obj.set("left",     obj.get("left"));
+                            ag_obj.set("top",      obj.get("top"));
+                            ag_obj.set("rotation", obj.get("rotation"));
+                            ag_obj.set("lastmove", the_path.join(','));
+                          };
+                        };
+                      };
                     };
-                    //let mm_shadow = getObj("graphic", mm_data[1]);
-                    //if ((typeof mm_shadow !== 'undefined') && (mm_shadow !== null)) {
-                    //  obj.set("left", mm_shadow.get("left"));
-                    //  obj.set("top",  mm_shadow.get("top"));
-                    //};
                   };
                   //Note: No 'break' here as it's meant to fall through to the reject logic below to delete the path and shadow token
                 case 'reject':
@@ -21082,19 +21110,69 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           //log(firstFragment);
           processedFragments.concat(unprocessedFragments);
           unprocessedFragments = [];
+          if ((firstFragment.toLowerCase() != 'None') && (state.skepickleCharacterSuiteImp.config.InvisibleGraphicURL == '')) {
+            respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Please specify a URL for the "InvisibleGraphicURL" config variable}}');
+            return;
+          };
           let light_source_spec = dnd35.light_sources()[firstFragment.toLowerCase()];
           if ((typeof light_source_spec === 'undefined') || (light_source_spec === null)) {
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Unknown light source}}');
             return;
           };
+          //log(light_source_spec);
           tokenIDs.forEach(function(idOfToken) {
             let obj = getObj("graphic", idOfToken);
             let light_radius       = light_source_spec.radius;
             let light_dimradius    = light_source_spec.dim;
             let light_angle        = light_source_spec.angle;
             let light_otherplayers = (light_source_spec.radius != '');
+            // Note This block is light source only
+            {
+              let gmnotes = decodeRoll20String(obj.get('gmnotes'));
+              let ag_data = getStringRegister(gmnotes, "attached_graphics");
+              //log(ag_data);
+              if (ag_data !== null) {
+                // Remove all light sources first
+                let prev_ls = ag_data.filter(function(a) { return a.match(/:lightsource$/)});
+                for (let i=0; i<prev_ls.length; i++) {
+                  let old_ls_obj = getObj("graphic", prev_ls[i].replace(/:lightsource$/, ''));
+                  old_ls_obj.remove();
+                };
+                ag_data = ag_data.filter(function(a) { return !a.match(/:lightsource$/)});
+              } else {
+                ag_data = [];
+              };
+              if ((light_radius != '') || (light_dimradius != '') || (light_angle != '')) {
+                let ls_obj = createObj("graphic", {
+                  pageid:             obj.get("_pageid"),
+                  layer:              "map",
+                  imgsrc:             state.skepickleCharacterSuiteImp.config.InvisibleGraphicURL,
+                  left:               obj.get("left"),
+                  top:                obj.get("top"),
+                  width:              obj.get("width"),
+                  height:             obj.get("height"),
+                  isdrawing:          true,
+                  light_radius:       light_radius,
+                  light_dimradius:    light_dimradius,
+                  light_angle:        light_angle,
+                  light_otherplayers: light_otherplayers
+                });
+                if ((typeof ls_obj !== 'undefined') && (ls_obj !== null)) {
+                  ag_data.push(''.concat(ls_obj.id,':lightsource'));
+                  toBack(ls_obj);
+                };
+              };
+              if (ag_data.length > 0) {
+                obj.set("gmnotes",setStringRegister(gmnotes, "attached_graphics", ag_data));
+              } else {
+                obj.set("gmnotes",setStringRegister(gmnotes, "attached_graphics"));
+              };
+            };
+            // NOTE The following is vision only!
+            light_radius           = '';
+            light_dimradius        = '';
+            light_otherplayers     = false;
             let light_multiplier   = 1;
-            //TODONEXT Modify this function to use 'attached graphic' for actual light sources, and only apply inherent vision properties to the player token itself.
             let character = getObj("character", obj.get("represents"));
             if (character) {
               //TODO Clean up detection of the following properties by parsing the fields into lists and checking for matching entries.
@@ -21122,17 +21200,17 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                     feats.match(/improved darkvision/)) {
                   distance = distance * 2;
                 };
-                if ((!light_otherplayers) || (light_radius == '') || (light_radius < distance)) {
+                //if ((!light_otherplayers) || (light_radius == '') || (light_radius < distance)) {
                   light_radius    = distance;
                   //light_dimradius = (distance*5)/6; // For THAC0* Thursdays
                   light_dimradius = distance+1;
-                };
+                //};
               };
             };
             obj.set("light_radius",       light_radius);
             obj.set("light_dimradius",    light_dimradius);
-            obj.set("light_angle",        light_angle);
-            obj.set("light_otherplayers", light_otherplayers);
+            obj.set("light_angle",        '');
+            obj.set("light_otherplayers", false);
             obj.set("light_multiplier",   light_multiplier);
           });
         }; break;
