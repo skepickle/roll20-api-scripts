@@ -19079,18 +19079,20 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         try {
           if (selected["_type"] != "graphic") { continue; }; // Silently skip over selected non-graphics
           let obj = getObj("graphic", selected["_id"]);
-          if (obj.get("_subtype") != "token") {
-            respondToChat(msg,"&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
-            continue;
-          };
-          if (obj.get("represents") != "") {
-            let character = getObj("character", obj.get("represents"));
-            if (!getAttrByName(character.id, "character_sheet").match(/D&D3.5 v[\.0-9]*/)) {
-              respondToChat(msg,"&{template:default} {{name=ERROR}} {{Not a D&D3.5 character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
+          if ((typeof obj !== 'undefined') && (obj !== null)) {
+            if (obj.get("_subtype") != "token") {
+              respondToChat(msg,"&{template:default} {{name=ERROR}} {{Not a token= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
               continue;
             };
+            if (obj.get("represents") != "") {
+              let character = getObj("character", obj.get("represents"));
+              if (!getAttrByName(character.id, "character_sheet").match(/D&D3.5 v[\.0-9]*/)) {
+                respondToChat(msg,"&{template:default} {{name=ERROR}} {{Not a D&D3.5 character= [image]("+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+")}}");
+                continue;
+              };
+            };
+            ids.push(selected["_id"]);
           };
-          ids.push(selected["_id"]);
         } catch(e) {
           respondToChat(msg,e);
         };
