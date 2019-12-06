@@ -20525,6 +20525,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         case 'moderate-pc-movement':
         case '--moderate-pc-movement': {
           if (!playerIsGM(playerID)) { return; };
+          if (!state.skepickleCharacterSuiteImp.config.ModeratePCMovement) {
+            respondToChat(msg,processedFragments.join(" ")+" requires that the **ModeratePCMovement** configuration option be enabled.");
+            break;
+          };
           if (firstFragment === null) {
             respondToChat(msg,processedFragments.join(" ")+" requires an argument");
             break;
