@@ -28,7 +28,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   Object.freeze(config_state_template);
 
   var temp = {
-    campaignLoaded: false
+    campaignLoaded: false,
+    encounter: {}
   };
 
   // SECTION_ANCHOR
@@ -44,6 +45,41 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     }
     return Object.freeze(obj);
   }; // deepFreeze()
+
+  // SECTION_ANCHOR
+  // BIGTEXT "Javascript math utilities"
+
+  function mFilterInputLevels(strX) {
+    if (strX == "1/2") return 1/2;
+    if (strX == "1/3") return 1/3;
+    if (strX == "1/4") return 1/4;
+    if (strX == "1/6") return 1/6;
+    if (strX == "1/8") return 1/8;
+    if (strX == "1/10") return 1/10;
+    return parseFloat(strX);
+  };
+
+  function RoundOnePlace(x) {
+    return Math.round(x * 10) / 10;
+  };
+
+  function Log2(x) {
+    return Math.LOG2E * Math.log(x);
+  };
+
+  function mCRtoPL(x) {
+    var iReturn = 0;
+    if (x < 2) iReturn = x;
+    else iReturn = Math.pow(2, (x/ 2));
+    return iReturn;
+  };
+
+  function mPLtoCR(x) {
+    var iReturn = 0;
+    if (x < 2) iReturn = x;
+    else iReturn = 2 * Log2(x);
+    return iReturn;
+  };
 
   // SECTION_ANCHOR
   // ███████╗████████╗██████╗ ██╗███╗   ██╗ ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
@@ -18985,7 +19021,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         delete crs[cMaxCR.toString()];
       };
     } while ((Array.from(Object.keys(crs)).length > 1) || (crs[Array.from(Object.keys(crs))[0]] > 1));
-    log(crs);
+    //log(crs);
     return Array.from(Object.keys(crs))[0];
   }; // calculateEncounterLevel()
 
@@ -20694,8 +20730,50 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             break;
           };
           switch (firstFragment) {
-            case 'calculate-level':
-              let encounter_challenge_ratings = {};
+            //case 'calculate-level': {
+            //  let encounter_challenge_ratings = {};
+            //  for (let i=0; i<tokenIDs.length; i++) {
+            //    let t_obj = getObj("graphic", tokenIDs[i]);
+            //    let t_character = getObj("character", t_obj.get("represents"));
+            //    if (!t_character) {
+            //      respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+t_obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+            //      continue;
+            //    };
+            //    let npccr = getAttrByName(t_character.id, "npccr");
+            //    if ((typeof npccr !== 'undefined') && (npccr !== null) && (npccr !== '') && (!isNaN(npccr))) {
+            //      encounter_challenge_ratings[npccr] = (npccr in encounter_challenge_ratings)?(encounter_challenge_ratings[npccr]+1):(1);
+            //    } else if ((typeof npccr !== 'undefined') && (npccr !== null) && (npccr !== '') && (npccr.match(/([0-9]+)\/([0-9]+)/))) {
+            //      encounter_challenge_ratings[npccr] = (npccr in encounter_challenge_ratings)?(encounter_challenge_ratings[npccr]+1):(1);
+            //    } else {
+            //      let pccr = 0;
+            //      let racialabilities = getAttrByName(t_character.id, "racialabilities");
+            //      let match_result = racialabilities.match(/level adjustment ([-+][0-9]+)/im);
+            //      if ((match_result !== null) && (typeof match_result[1] !== 'undefined')) {
+            //        // Level Adjustment value found! needs to be added to the CR
+            //        pccr = parseFloat(match_result[1]);
+            //      };
+            //      let level = getAttrByName(t_character.id, "level");
+            //      let                          level_delim = ','; match_result = level.match(/^(\d+)(,\s*\d+)*$/);
+            //      if (match_result === null) { level_delim = '/'; match_result = level.match(/^(\d+)(\/\s*\d+)*$/); };
+            //      if (match_result === null) { level_delim = ' '; match_result = level.match(/^(\d+)( \s*\d+)*$/); };
+            //      if (match_result === null) { level_delim = '-'; match_result = level.match(/^(\d+)(\-\s*\d+)*$/); };
+            //      if (match_result === null) { level_delim = '+'; match_result = level.match(/^(\d+)(\+\s*\d+)*$/); };
+            //      if ((match_result !== null) && (typeof match_result[1] !== 'undefined')) {
+            //        let arr = level.split(level_delim).map(function(item) {
+            //          return parseInt(item, 10);
+            //        });
+            //        pccr = pccr + arr.reduce((a,b) => a + b, 0);
+            //      };
+            //      encounter_challenge_ratings[pccr.toString()] = (pccr.toString() in encounter_challenge_ratings)?(encounter_challenge_ratings[pccr.toString()]+1):(1);
+            //    };
+            //  };
+            //  //log(encounter_challenge_ratings);
+            //  let encounter_level = calculateEncounterLevel(encounter_challenge_ratings);
+            //  respondToChat(msg,'&{template:default} {{name=Encounter Level}} {{EL= '+encounter_level+'}}');
+            //}; break;
+            case 'set-challengers': {
+              let challengers_cr_counts = {};
+              let challengers_cr_ids    = {};
               for (let i=0; i<tokenIDs.length; i++) {
                 let t_obj = getObj("graphic", tokenIDs[i]);
                 let t_character = getObj("character", t_obj.get("represents"));
@@ -20703,40 +20781,98 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                   respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+t_obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
                   continue;
                 };
-                let npccr = getAttrByName(t_character.id, "npccr");
-                if ((typeof npccr !== 'undefined') && (npccr !== null) && (npccr !== '') && (!isNaN(npccr))) {
-                  encounter_challenge_ratings[npccr] = ('npccr' in encounter_challenge_ratings)?(encounter_challenge_ratings[npccr]+1):(1);
-                } else if ((typeof npccr !== 'undefined') && (npccr !== null) && (npccr !== '') && (npccr.match(/([0-9]+)\/([0-9]+)/))) {
-                  encounter_challenge_ratings[npccr] = ('npccr' in encounter_challenge_ratings)?(encounter_challenge_ratings[npccr]+1):(1);
-                } else {
-                  let pccr = 0;
+                let cr = getAttrByName(t_character.id, "npccr");
+                if ((typeof cr === 'undefined') || (cr === null) || (cr === '') || (isNaN(cr) && !cr.match(/([0-9]+)\/([0-9]+)/))) {
+                  cr = 0;
                   let racialabilities = getAttrByName(t_character.id, "racialabilities");
                   let match_result = racialabilities.match(/level adjustment ([-+][0-9]+)/im);
                   if ((match_result !== null) && (typeof match_result[1] !== 'undefined')) {
                     // Level Adjustment value found! needs to be added to the CR
-                    pccr = parseFloat(match_result[1]);
+                    cr = parseFloat(match_result[1]);
                   };
                   let level = getAttrByName(t_character.id, "level");
                   let                          level_delim = ','; match_result = level.match(/^(\d+)(,\s*\d+)*$/);
                   if (match_result === null) { level_delim = '/'; match_result = level.match(/^(\d+)(\/\s*\d+)*$/); };
                   if (match_result === null) { level_delim = ' '; match_result = level.match(/^(\d+)( \s*\d+)*$/); };
                   if (match_result === null) { level_delim = '-'; match_result = level.match(/^(\d+)(\-\s*\d+)*$/); };
+                  if (match_result === null) { level_delim = '+'; match_result = level.match(/^(\d+)(\+\s*\d+)*$/); };
                   if ((match_result !== null) && (typeof match_result[1] !== 'undefined')) {
                     let arr = level.split(level_delim).map(function(item) {
                       return parseInt(item, 10);
                     });
-                    pccr = pccr + arr.reduce((a,b) => a + b, 0);
+                    cr = cr + arr.reduce((a,b) => a + b, 0);
                   };
-                  encounter_challenge_ratings[pccr.toString()] = (pccr.toString() in encounter_challenge_ratings)?(encounter_challenge_ratings[pccr.toString()]+1):(1);
+                  cr = cr.toString();
+                };
+                challengers_cr_counts[cr] = (cr in challengers_cr_counts)?(challengers_cr_counts[cr]+1):(1);
+                if (!(cr in challengers_cr_ids)) {
+                  challengers_cr_ids[cr] = [];
+                };
+                if (!challengers_cr_ids[cr].includes(t_character.id)) {
+                  challengers_cr_ids[cr].push(t_character.id);
                 };
               };
-              //log(encounter_challenge_ratings);
-              let encounter_level = calculateEncounterLevel(encounter_challenge_ratings);
-              respondToChat(msg,'&{template:default} {{name=Encounter Level}} {{EL= '+encounter_level+'}}');
-              break;
-            case 'calculate-rewards': // <encounter level>
-              break;
-            case 'generate-treasure': // <treasure value>
+              log(challengers_cr_counts);
+              if ((typeof temp.encounter[playerID] === 'undefined') || (temp.encounter[playerID] === null)) {
+                temp.encounter[playerID] = {};
+              };
+              temp.encounter[playerID].challengers = {
+                counts: challengers_cr_counts,
+                ids:    challengers_cr_ids
+              };
+            }; break;
+            case 'set-party': {
+              let party_ecl_counts = {};
+              let party_ecl_ids    = {};
+              for (let i=0; i<tokenIDs.length; i++) {
+                let t_obj = getObj("graphic", tokenIDs[i]);
+                let t_character = getObj("character", t_obj.get("represents"));
+                if (!t_character) {
+                  respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+t_obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+                  continue;
+                };
+                let ecl = getAttrByName(t_character.id, "npccr");
+                if ((typeof ecl === 'undefined') || (ecl === null) || (ecl === '') || (isNaN(ecl) && !ecl.match(/([0-9]+)\/([0-9]+)/))) {
+                  ecl = 0;
+                  let racialabilities = getAttrByName(t_character.id, "racialabilities");
+                  let match_result = racialabilities.match(/level adjustment ([-+][0-9]+)/im);
+                  if ((match_result !== null) && (typeof match_result[1] !== 'undefined')) {
+                    // Level Adjustment value found! needs to be added to the CR
+                    ecl = parseFloat(match_result[1]);
+                  };
+                  let level = getAttrByName(t_character.id, "level");
+                  let                          level_delim = ','; match_result = level.match(/^(\d+)(,\s*\d+)*$/);
+                  if (match_result === null) { level_delim = '/'; match_result = level.match(/^(\d+)(\/\s*\d+)*$/); };
+                  if (match_result === null) { level_delim = ' '; match_result = level.match(/^(\d+)( \s*\d+)*$/); };
+                  if (match_result === null) { level_delim = '-'; match_result = level.match(/^(\d+)(\-\s*\d+)*$/); };
+                  if (match_result === null) { level_delim = '+'; match_result = level.match(/^(\d+)(\+\s*\d+)*$/); };
+                  if ((match_result !== null) && (typeof match_result[1] !== 'undefined')) {
+                    let arr = level.split(level_delim).map(function(item) {
+                      return parseInt(item, 10);
+                    });
+                    ecl = ecl + arr.reduce((a,b) => a + b, 0);
+                  };
+                  ecl = ecl.toString();
+                };
+                party_ecl_counts[ecl] = (ecl in party_ecl_counts)?(party_ecl_counts[ecl]+1):(1);
+                if (!(ecl in party_ecl_ids)) {
+                  party_ecl_ids[ecl] = [];
+                };
+                if (!party_ecl_ids[ecl].includes(t_character.id)) {
+                  party_ecl_ids[ecl].push(t_character.id);
+                };
+              };
+              log(party_ecl_counts);
+              if ((typeof temp.encounter[playerID] === 'undefined') || (temp.encounter[playerID] === null)) {
+                temp.encounter[playerID] = {};
+              };
+              temp.encounter[playerID].party = {
+                counts: party_ecl_counts,
+                ids:    party_ecl_ids
+              };
+            }; break;
+            case 'calculate-xp':
+              log(temp.encounter[playerID]);
               break;
           };
         }; break;
