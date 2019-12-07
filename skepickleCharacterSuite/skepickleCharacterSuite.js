@@ -19758,11 +19758,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             (obj.get("top") == prev["top"])) { break; };
         if (!obj.get("represents")) { break; }
         let character = getObj("character", obj.get("represents"));
-        if (!character) { break; }
-        if (character.get("controlledby") == "") { break; };
+        if ((typeof character === 'undefined') || (character === null)) { break; }
         let controlledby = character.get("controlledby");
+        if (controlledby == "") { break; };
         if (controlledby.match(/^all$/)) { break; };
-        if (controlledby.match(/,/)) { break; };
+        if (controlledby.match(/,/)) { controlledby = controlledby.replace(/,.*$/g, ""); };
         let player = getObj("player", controlledby);
         if ((typeof player === 'undefined') || (player === null)) { break; };
         let gmnotes = decodeRoll20String(obj.get('gmnotes'));
