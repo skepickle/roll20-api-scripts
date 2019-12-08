@@ -49,38 +49,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   // SECTION_ANCHOR
   // BIGTEXT "Javascript math utilities"
 
-  function mFilterInputLevels(strX) {
-    if (strX == "1/2") return 1/2;
-    if (strX == "1/3") return 1/3;
-    if (strX == "1/4") return 1/4;
-    if (strX == "1/6") return 1/6;
-    if (strX == "1/8") return 1/8;
-    if (strX == "1/10") return 1/10;
-    return parseFloat(strX);
-  };
-
-  function RoundOnePlace(x) {
-    return Math.round(x * 10) / 10;
-  };
-
-  function Log2(x) {
-    return Math.LOG2E * Math.log(x);
-  };
-
-  function mCRtoPL(x) {
-    var iReturn = 0;
-    if (x < 2) iReturn = x;
-    else iReturn = Math.pow(2, (x/ 2));
-    return iReturn;
-  };
-
-  function mPLtoCR(x) {
-    var iReturn = 0;
-    if (x < 2) iReturn = x;
-    else iReturn = 2 * Log2(x);
-    return iReturn;
-  };
-
   // SECTION_ANCHOR
   // ███████╗████████╗██████╗ ██╗███╗   ██╗ ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
   // ██╔════╝╚══██╔══╝██╔══██╗██║████╗  ██║██╔════╝     ██║   ██║╚══██╔══╝██║██║     ██║╚══██╔══╝██║██╔════╝██╔════╝
@@ -18687,343 +18655,559 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     };
   }; // getSkillSpecification()
 
-  function calculateEncounterLevel(encounter_crs) {
-    let crs = Object.assign({}, encounter_crs);
-    let roundLastCR = function(lastCR) {
-      if (lastCR === "1/2") { return 1; }
-      if (lastCR.match(/^1\//)) { return 0; }
-      return parseInt(lastCR);
+//  MAYBE DEPRECATED:
+//  function calculateEncounterLevel(encounter_crs) {
+//    let crs = Object.assign({}, encounter_crs);
+//    let roundLastCR = function(lastCR) {
+//      if (lastCR === "1/2") { return 1; }
+//      if (lastCR.match(/^1\//)) { return 0; }
+//      return parseInt(lastCR);
+//    };
+//    // Use http://archive.wizards.com/default.asp?x=dnd/dnd/20010320b
+//    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
+//    for (let cr in crs) {
+//      if (crs[cr] === null) { delete crs[cr]; };
+//    };
+//    // CR 1/10
+//    //log(crs);
+//    //log("CR 1/10");
+//    if ("1/10" in crs) {
+//      while (crs["1/10"] > 10) {
+//        crs["1/10"] -= 10;
+//        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+//      };
+//      switch (crs["1/10"]) {
+//        case 2: crs["1/8"] = ("1/8" in crs)?(crs["1/8"]+1):(1);
+//                delete crs["1/10"];
+//                break;
+//        case 3: crs["1/6"] = ("1/6" in crs)?(crs["1/6"]+1):(1);
+//                delete crs["1/10"];
+//                break;
+//        case 4: crs["1/4"] = ("1/4" in crs)?(crs["1/4"]+1):(1);
+//                delete crs["1/10"];
+//                break;
+//        case 5:
+//        case 6: crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
+//                delete crs["1/10"];
+//                break;
+//        case 7:
+//        case 8: crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
+//                delete crs["1/10"];
+//                break;
+//        case 9:
+//        case 10:
+//                crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+//                delete crs["1/10"];
+//                break;
+//      };
+//    };
+//    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
+//    // CR 1/8
+//    //log(crs);
+//    //log("CR 1/8");
+//    if ("1/8" in crs) {
+//      while (crs["1/8"] > 8) {
+//        crs["1/8"] -= 8;
+//        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+//      };
+//      switch (crs["1/8"]) {
+//        case 2: crs["1/6"] = ("1/6" in crs)?(crs["1/6"]+1):(1);
+//                delete crs["1/8"];
+//                break;
+//        case 3: crs["1/4"] = ("1/4" in crs)?(crs["1/4"]+1):(1);
+//                delete crs["1/8"];
+//                break;
+//        case 4: crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
+//                delete crs["1/8"];
+//                break;
+//        case 5:
+//        case 6: crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
+//                delete crs["1/8"];
+//                break;
+//        case 7:
+//        case 8: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+//                delete crs["1/8"];
+//                break;
+//      };
+//    };
+//    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
+//    // CR 1/6
+//    //log(crs);
+//    //log("CR 1/6");
+//    if ("1/6" in crs) {
+//      while (crs["1/6"] > 6) {
+//        crs["1/6"] -= 6;
+//        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+//      };
+//      switch (crs["1/6"]) {
+//        case 2: crs["1/4"] = ("1/4" in crs)?(crs["1/4"]+1):(1);
+//                delete crs["1/6"];
+//                break;
+//        case 3: crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
+//                delete crs["1/6"];
+//                break;
+//        case 4: crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
+//                delete crs["1/6"];
+//                break;
+//        case 5:
+//        case 6: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+//                delete crs["1/6"];
+//                break;
+//      };
+//    };
+//    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
+//    // CR 1/4
+//    //log(crs);
+//    //log("CR 1/4");
+//    if (("1/8" in crs) && ("1/10" in crs)) {
+//      crs["1/4"] = ("1/4" in crs)?(crs["1/4"]+1):(1);
+//      crs["1/8"] -= 1;
+//      crs["1/10"] -= 1;
+//      if (crs["1/8"] == 0) { delete crs["1/8"]; };
+//      if (crs["1/10"] == 0) { delete crs["1/10"]; };
+//    };
+//    if ("1/10" in crs) {
+//      // At this point, CR of 1/10 won't contribute to anything higher.
+//      delete crs["1/10"];
+//    };
+//    if ("1/4" in crs) {
+//      while (crs["1/4"] > 4) {
+//        crs["1/4"] -= 4;
+//        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+//      };
+//      switch (crs["1/4"]) {
+//        case 2: crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
+//               delete crs["1/4"];
+//               break;
+//        case 3:
+//        case 4: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+//               delete crs["1/4"];
+//               break;
+//      };
+//    };
+//    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
+//    // CR 1/3
+//    //log(crs);
+//    //log("CR 1/3");
+//    if (("1/6" in crs) && ("1/8" in crs)) {
+//      crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
+//      crs["1/6"] -= 1;
+//      crs["1/8"] -= 1;
+//      if (crs["1/6"] == 0) { delete crs["1/6"]; };
+//      if (crs["1/8"] == 0) { delete crs["1/8"]; };
+//    };
+//    if ("1/8" in crs) {
+//      // At this point, CR of 1/8 won't contribute to anything higher.
+//      delete crs["1/8"];
+//    };
+//    if (("1/4" in crs) && ("1/6" in crs)) {
+//      crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
+//      crs["1/4"] -= 1;
+//      crs["1/6"] -= 1;
+//      if (crs["1/4"] == 0) { delete crs["1/4"]; };
+//      if (crs["1/6"] == 0) { delete crs["1/6"]; };
+//    };
+//    if ("1/6" in crs) {
+//      // At this point, CR of 1/6 won't contribute to anything higher.
+//      delete crs["1/6"];
+//    };
+//    if ("1/3" in crs) {
+//      while (crs["1/3"] > 3) {
+//        crs["1/3"] -= 3;
+//        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+//      };
+//      switch (crs["1/3"]) {
+//        case 2:
+//        case 3: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+//                delete crs["1/3"];
+//                break;
+//      };
+//    };
+//    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
+//    // CR 1/2
+//    //log(crs);
+//    //log("CR 1/2");
+//    if (("1/3" in crs) && ("1/4" in crs)) {
+//      crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
+//      crs["1/3"] -= 1;
+//      crs["1/4"] -= 1;
+//      if (crs["1/3"] == 0) { delete crs["1/3"]; };
+//      if (crs["1/4"] == 0) { delete crs["1/4"]; };
+//    };
+//    if ("1/4" in crs) {
+//      // At this point, CR of 1/4 won't contribute to anything higher.
+//      delete crs["1/4"];
+//    };
+//    if ("1/2" in crs) {
+//      while (crs["1/2"] > 2) {
+//        crs["1/2"] -= 2;
+//        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+//      };
+//      switch (crs["1/2"]) {
+//        case 2: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+//                delete crs["1/2"];
+//                break;
+//      };
+//    };
+//    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
+//    // CR 1
+//    //log(crs);
+//    //log("CR 1");
+//    if (("1/2" in crs) && ("1/3" in crs)) {
+//      crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+//      crs["1/2"] -= 1;
+//      crs["1/3"] -= 1;
+//      if (crs["1/2"] == 0) { delete crs["1/2"]; };
+//      if (crs["1/3"] == 0) { delete crs["1/3"]; };
+//    };
+//    if ("1/3" in crs) {
+//      // At this point, CR of 1/3 won't contribute to anything higher.
+//      delete crs["1/3"];
+//    };
+//    if ("1" in crs) {
+//      while (crs["1"] > 2) {
+//        crs["1"] -= 2;
+//        crs["2"] = ("2" in crs)?(crs["2"]+1):(1);
+//      };
+//      switch (crs["1"]) {
+//        case 2: crs["2"] = ("2" in crs)?(crs["2"]+1):(1);
+//                delete crs["1"];
+//                break;
+//      };
+//    };
+//    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
+//    // CR 2
+//    //log(crs);
+//    //log("CR 2");
+//    if (("1" in crs) && ("1/2" in crs)) {
+//      crs["2"] = ("2" in crs)?(crs["2"]+1):(1);
+//      crs["1"] -= 1;
+//      crs["1/2"] -= 1;
+//      if (crs["1"] == 0) { delete crs["1"]; };
+//      if (crs["1/2"] == 0) { delete crs["1/2"]; };
+//    };
+//    if ("1/2" in crs) {
+//      // At this point, CR of 1/2 won't contribute to anything higher.
+//      delete crs["1/2"];
+//    };
+//    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
+//    // WOOHOO!! ALL FRACTIONAL CRs ARE DELETED NOW!!
+//    let cMaxCR = 1;
+//    let cMinCR = 0;
+//    do {
+//      if (cMaxCR > Math.max(Array.from(Object.keys(crs)))) {
+//        log("Looking for CR that's higher than highest CR in list!");
+//        break;
+//      };
+//      cMaxCR += 1;
+//      //log(crs);
+//      //log("CR "+cMaxCR);
+//      // Find starting point for current CR being calculated
+//      switch (cMaxCR) {
+//        case 2:
+//        case 3: cMinCR = 1;
+//                break;
+//        case 6: cMinCR = 2;
+//                break;
+//        default:
+//                cMinCR = cMaxCR - 3;
+//                break;
+//      };
+//      // Delete any CRs that are lower than the starting point, since they will not ever combine up to higher forms that could bump overall encounter level
+//      let crs_keys = Array.from(Object.keys(crs));
+//      for (let i = 0; i < crs_keys.length; i++) {
+//        if (parseInt(crs_keys[i]) < cMinCR) {
+//          delete crs[crs_keys[i]];
+//        };
+//      };
+//      // Find Mixed Pairs and bump up CR by one
+//      if (cMaxCR.toString() in crs) {
+//        for (let curCR = cMinCR; curCR < cMaxCR; curCR++) {
+//          while ((crs[cMaxCR.toString()] > 0) && (curCR.toString() in crs) && (crs[curCR.toString()] > 0)) {
+//            crs[(cMaxCR+1).toString()] = ((cMaxCR+1).toString() in crs)?(crs[(cMaxCR+1).toString()]+1):(1);
+//            crs[curCR.toString()]  -= 1;
+//            crs[cMaxCR.toString()] -= 1;
+//            if (crs[curCR.toString()] == 0) {
+//              delete crs[curCR.toString()];
+//            };
+//          };
+//          if (crs[cMaxCR.toString()] == 0) {
+//            delete crs[cMaxCR.toString()];
+//            break;
+//          };
+//        };
+//      };
+//      // If cMaxCR > 6, then delete and CRs that are equal to the starting point, since they will not ever combine up to higher forms that could bump overall encounter level
+//      if ((cMaxCR > 6) && (cMinCR.toString() in crs)) {
+//        delete crs[cMinCR.toString()];
+//      };
+//      // Find CR sets-of-ten and bump up CR by seven
+//      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 10)) {
+//        crs[cMaxCR.toString()] -= 10;
+//        crs[(cMaxCR+7).toString()] = ((cMaxCR+7).toString() in crs)?(crs[(cMaxCR+7).toString()]+1):(1);
+//      };
+//      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
+//        delete crs[cMaxCR.toString()];
+//      };
+//      // Find CR sets-of-seven and bump up CR by six
+//      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 7)) {
+//        crs[cMaxCR.toString()] -= 7;
+//        crs[(cMaxCR+6).toString()] = ((cMaxCR+6).toString() in crs)?(crs[(cMaxCR+6).toString()]+1):(1);
+//      };
+//      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
+//        delete crs[cMaxCR.toString()];
+//      };
+//      // Find CR sets-of-five and bump up CR by five
+//      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 5)) {
+//        crs[cMaxCR.toString()] -= 5;
+//        crs[(cMaxCR+5).toString()] = ((cMaxCR+5).toString() in crs)?(crs[(cMaxCR+5).toString()]+1):(1);
+//      };
+//      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
+//        delete crs[cMaxCR.toString()];
+//      };
+//      // Find CR sets-of-four and bump up CR by four
+//      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 4)) {
+//        crs[cMaxCR.toString()] -= 4;
+//        crs[(cMaxCR+4).toString()] = ((cMaxCR+4).toString() in crs)?(crs[(cMaxCR+4).toString()]+1):(1);
+//      };
+//      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
+//        delete crs[cMaxCR.toString()];
+//      };
+//      // Find CR sets-of-three and bump up CR by three
+//      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 3)) {
+//        crs[cMaxCR.toString()] -= 3;
+//        crs[(cMaxCR+3).toString()] = ((cMaxCR+3).toString() in crs)?(crs[(cMaxCR+3).toString()]+1):(1);
+//      };
+//      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
+//        delete crs[cMaxCR.toString()];
+//      };
+//      // Find CR doubles and bump up CR by two
+//      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] > 1)) {
+//        crs[cMaxCR.toString()] -= 2;
+//        crs[(cMaxCR+2).toString()] = ((cMaxCR+2).toString() in crs)?(crs[(cMaxCR+2).toString()]+1):(1);
+//      };
+//      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
+//        delete crs[cMaxCR.toString()];
+//      };
+//    } while ((Array.from(Object.keys(crs)).length > 1) || (crs[Array.from(Object.keys(crs))[0]] > 1));
+//    //log(crs);
+//    return Array.from(Object.keys(crs))[0];
+//  }; // calculateEncounterLevel()
+
+  const encounterCalculator = function(party,challengers) {
+    //http://www.d20srd.org/extras/d20encountercalculator/encounterCalculator.js
+
+    var aTreasure = [300, 600, 900, 1200, 1600, 2000, 2600, 3400, 4500, 5800, 7500, 9800, 13000, 17000, 22000, 28000, 36000, 47000, 61000, 80000, 87000, 96000, 106000, 116000, 128000, 141000, 155000, 170000, 187000, 206000, 227000, 249000, 274000, 302000, 332000, 365000, 401000, 442000, 486000, 534000];
+
+    function mFilterInputLevels(strX) {
+      if (strX == "1/2") return 1/2;
+      if (strX == "1/3") return 1/3;
+      if (strX == "1/4") return 1/4;
+      if (strX == "1/6") return 1/6;
+      if (strX == "1/8") return 1/8;
+      if (strX == "1/10") return 1/10;
+      return parseFloat(strX);
     };
-    // Use http://archive.wizards.com/default.asp?x=dnd/dnd/20010320b
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
-    for (let cr in crs) {
-      if (crs[cr] === null) { delete crs[cr]; };
+
+    function RoundOnePlace(x) {
+      return Math.round(x * 10) / 10;
     };
-    // CR 1/10
-    //log(crs);
-    //log("CR 1/10");
-    if ("1/10" in crs) {
-      while (crs["1/10"] > 10) {
-        crs["1/10"] -= 10;
-        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+
+    function Log2(x) {
+      return Math.LOG2E * Math.log(x);
+    };
+
+    function mCRtoPL(x) {
+      var iReturn = 0;
+      if (x < 2) iReturn = x;
+      else iReturn = Math.pow(2, (x/ 2));
+      return iReturn;
+    };
+
+    function mPLtoCR(x) {
+      var iReturn = 0;
+      if (x < 2) iReturn = x;
+      else iReturn = 2 * Log2(x);
+      return iReturn;
+    };
+
+    function mDifference(x, y) {
+      return 2 * (Log2(x) - Log2(y));
+    };
+
+    function mDifficulty(x) {
+      var strReturn = "Unknown";
+      if (x < -9) strReturn = "Trivial";
+      else if (x < -4) strReturn = "Very Easy";
+      else if (x <  0) strReturn = "Easy";
+      else if (x <= 0) strReturn = "Challenging";
+      else if (x <= 4) strReturn = "Very Difficult";
+      else if (x <= 7) strReturn = "Overpowering";
+      else strReturn = "Unbeatable";
+      return strReturn; 
+    };
+
+    function mPercentEnc(x) {
+      var strReturn = "Unknown";
+      if (x < -4) strReturn = "0%";
+      else if (x <  0) strReturn = "10%";
+      else if (x <= 0) strReturn = "50%";
+      else if (x <= 4) strReturn = "15%";
+      else if (x <= 7) strReturn = "5%";
+      else strReturn = "0%";
+      return strReturn; 
+    };
+
+    function mPercentEncs(x) {
+    // What percentage of an adventures encounters should be at this EL.
+      var p=0;
+      if (x < 0) p = 50 + (x * 20);
+      else if (x > 5) p = 15 - ((x-5) * 5);
+      else p = 50 - (x * 7);
+
+      if (x <=8 && x > 5 && p <=2) p = 2; // special case guess.
+      if (p < 0) p = 0;
+
+      p = Math.round(p); // smooth it out a bit.
+      return p +"%";
+    };
+
+    function mEven(x) {
+      var iReturn = 2 * parseInt(x/2);
+      if (x < iReturn) iReturn += -2;
+      else if (x > iReturn) iReturn += 2;
+      return iReturn;
+    };
+
+    function mExperience(x, y) {
+      // x = PClevel y = monsterlevel
+      var iReturn = 0;
+      if (x < 3) x = 3;
+      if ((x <= 6) && (y <= 1)) iReturn = 300 * y;
+      else if (y < 1) iReturn = 0;
+
+      // This formula looks nice, but 3.5 doesn't follow a smooth formula like 3.0 did.
+      else iReturn = 6.25 * x * ( Math.pow(2,mEven(7- (x-y) ) /2) ) * ( 11-(x-y) - mEven(7-(x-y)) );
+
+      // Below catches places where the formula fails for 3.5.
+      if ((y == 4) || (y == 6) || (y == 8) || (y == 10) || (y == 12) || 
+        (y == 14) ||(y == 16) ||(y == 18) ||(y == 20))
+      {
+        if (x <= 3) iReturn = 1350 * Math.pow(2,(y-4)/2);
+        else if (x == 5 && y >= 6) iReturn = 2250 * Math.pow(2,(y-6)/2);
+        else if (x == 7 && y >= 8) iReturn = 3150 * Math.pow(2,(y-8)/2);
+        else if (x == 9 && y >= 10) iReturn = 4050 * Math.pow(2,(y-10)/2);
+        else if (x == 11 && y >= 12) iReturn = 4950 * Math.pow(2,(y-12)/2);
+        else if (x == 13 && y >= 14) iReturn = 5850 * Math.pow(2,(y-14)/2);
+        else if (x == 15 && y >= 16) iReturn = 6750 * Math.pow(2,(y-16)/2);
+        else if (x == 17 && y >= 18) iReturn = 7650 * Math.pow(2,(y-18)/2);
+        else if (x == 19 && y >= 20) iReturn = 8550 * Math.pow(2,(y-20)/2);
+      }
+      if ((y == 7) || (y == 9) || (y == 11) || (y == 13) || (y == 15) || 
+        (y == 17) ||(y == 19))
+      {
+        if (x == 6) iReturn = 2700 * Math.pow(2,(y-7)/2);
+        if (x == 8 && y >= 9) iReturn = 3600 * Math.pow(2,(y-9)/2);
+        if (x == 10 && y >= 11) iReturn = 4500 * Math.pow(2,(y-11)/2);
+        if (x == 12 && y >= 13) iReturn = 5400 * Math.pow(2,(y-13)/2);
+        if (x == 14 && y >= 15) iReturn = 6300 * Math.pow(2,(y-15)/2);
+        if (x == 16 && y >= 17) iReturn = 7200 * Math.pow(2,(y-17)/2);
+        if (x == 18 && y >= 19) iReturn = 8100 * Math.pow(2,(y-19)/2);
+      }
+      
+      if (y > 20) iReturn = 2 * mExperience(x, y-2);
+      // recursion should end this in short order.
+      // This method is clean, and ensures any errors in the above
+      // formulas for 3.5 are accounted for.
+      
+      // Finally we correct for out of bounds entries, doing this last to cut space on the
+      // above formulas.
+      if (x - y > 7) iReturn = 0;
+      else if (y - x > 7) iReturn = 0;
+            
+      return iReturn;
+    };
+
+    function mTreasure(x) {
+      if (x > 40) x = 40; // Not a clean solution. But no idea what ELs above 20 should give.
+      let x2 = parseInt(x);
+      let iReturn;
+      if (x < 1) iReturn = x * aTreasure[0];
+      else if (x > x2) iReturn = aTreasure[x2-1] + (x-x2) * (aTreasure[x2] - aTreasure[x2-1]);
+      else iReturn = aTreasure[x2-1];
+      
+      return iReturn;
+    };
+
+    function xDy(x,y) {
+      return xDyPz(x,y,0);
+    };
+
+    function xDyPz(x,y,z) {
+      //alert (x+"d"+y+"+"+z);
+      for (x; x > 0; x--)
+      {
+        z += Math.round(Math.random() * y);
+        //alert("X: "+x+" Z: "+z);
+      }
+      //alert ("Z: "+z);
+      return z;
+    };
+
+    {
+      let iPartyTotalPower = 0;
+      for (let level in party.counts) {
+        iPartyTotalPower += party.counts[level] * mCRtoPL(mFilterInputLevels(level));
       };
-      switch (crs["1/10"]) {
-        case 2: crs["1/8"] = ("1/8" in crs)?(crs["1/8"]+1):(1);
-                delete crs["1/10"];
-                break;
-        case 3: crs["1/6"] = ("1/6" in crs)?(crs["1/6"]+1):(1);
-                delete crs["1/10"];
-                break;
-        case 4: crs["1/4"] = ("1/4" in crs)?(crs["1/4"]+1):(1);
-                delete crs["1/10"];
-                break;
-        case 5:
-        case 6: crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
-                delete crs["1/10"];
-                break;
-        case 7:
-        case 8: crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
-                delete crs["1/10"];
-                break;
-        case 9:
-        case 10:
-                crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
-                delete crs["1/10"];
-                break;
+      iPartyTotalPower = iPartyTotalPower / 4;
+      let iPartyEffectiveLevel = mPLtoCR(iPartyTotalPower);
+
+      let iCount = 0;
+      let iPartyTotal = 0;
+      for (let level in party.counts) {
+        iPartyTotal += party.counts[level];
+        iCount      += party.counts[level] * mFilterInputLevels(level);
       };
-    };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
-    // CR 1/8
-    //log(crs);
-    //log("CR 1/8");
-    if ("1/8" in crs) {
-      while (crs["1/8"] > 8) {
-        crs["1/8"] -= 8;
-        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
+      let iPartyAverageLevel = iCount / iPartyTotal;
+
+      let iMonsterTotalPower = 0;
+      for (let level in challengers.counts) {
+        iMonsterTotalPower += challengers.counts[level] * mCRtoPL(mFilterInputLevels(level));      
       };
-      switch (crs["1/8"]) {
-        case 2: crs["1/6"] = ("1/6" in crs)?(crs["1/6"]+1):(1);
-                delete crs["1/8"];
-                break;
-        case 3: crs["1/4"] = ("1/4" in crs)?(crs["1/4"]+1):(1);
-                delete crs["1/8"];
-                break;
-        case 4: crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
-                delete crs["1/8"];
-                break;
-        case 5:
-        case 6: crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
-                delete crs["1/8"];
-                break;
-        case 7:
-        case 8: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
-                delete crs["1/8"];
-                break;
+      let iMonsterTotalLevel = mPLtoCR(iMonsterTotalPower);
+      var iDifference = mDifference(iMonsterTotalPower, iPartyTotalPower);
+
+      let iCRExperience = {};
+      for (let p_level in party.counts) {
+        let iMonsterExperience = {};
+        let iMonsterTotalExperience = 0;
+        for (let c_level in challengers.counts) {
+          iMonsterExperience[c_level] = challengers.counts[c_level] * mExperience(mFilterInputLevels(p_level), mFilterInputLevels(c_level));
+          iMonsterTotalExperience  += iMonsterExperience[c_level];
+        };
+        iCRExperience[p_level] = Math.round(iMonsterTotalExperience / iPartyTotal);
       };
-    };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
-    // CR 1/6
-    //log(crs);
-    //log("CR 1/6");
-    if ("1/6" in crs) {
-      while (crs["1/6"] > 6) {
-        crs["1/6"] -= 6;
-        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
-      };
-      switch (crs["1/6"]) {
-        case 2: crs["1/4"] = ("1/4" in crs)?(crs["1/4"]+1):(1);
-                delete crs["1/6"];
-                break;
-        case 3: crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
-                delete crs["1/6"];
-                break;
-        case 4: crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
-                delete crs["1/6"];
-                break;
-        case 5:
-        case 6: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
-                delete crs["1/6"];
-                break;
-      };
-    };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
-    // CR 1/4
-    //log(crs);
-    //log("CR 1/4");
-    if (("1/8" in crs) && ("1/10" in crs)) {
-      crs["1/4"] = ("1/4" in crs)?(crs["1/4"]+1):(1);
-      crs["1/8"] -= 1;
-      crs["1/10"] -= 1;
-      if (crs["1/8"] == 0) { delete crs["1/8"]; };
-      if (crs["1/10"] == 0) { delete crs["1/10"]; };
-    };
-    if ("1/10" in crs) {
-      // At this point, CR of 1/10 won't contribute to anything higher.
-      delete crs["1/10"];
-    };
-    if ("1/4" in crs) {
-      while (crs["1/4"] > 4) {
-        crs["1/4"] -= 4;
-        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
-      };
-      switch (crs["1/4"]) {
-        case 2: crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
-               delete crs["1/4"];
-               break;
-        case 3:
-        case 4: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
-               delete crs["1/4"];
-               break;
-      };
-    };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
-    // CR 1/3
-    //log(crs);
-    //log("CR 1/3");
-    if (("1/6" in crs) && ("1/8" in crs)) {
-      crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
-      crs["1/6"] -= 1;
-      crs["1/8"] -= 1;
-      if (crs["1/6"] == 0) { delete crs["1/6"]; };
-      if (crs["1/8"] == 0) { delete crs["1/8"]; };
-    };
-    if ("1/8" in crs) {
-      // At this point, CR of 1/8 won't contribute to anything higher.
-      delete crs["1/8"];
-    };
-    if (("1/4" in crs) && ("1/6" in crs)) {
-      crs["1/3"] = ("1/3" in crs)?(crs["1/3"]+1):(1);
-      crs["1/4"] -= 1;
-      crs["1/6"] -= 1;
-      if (crs["1/4"] == 0) { delete crs["1/4"]; };
-      if (crs["1/6"] == 0) { delete crs["1/6"]; };
-    };
-    if ("1/6" in crs) {
-      // At this point, CR of 1/6 won't contribute to anything higher.
-      delete crs["1/6"];
-    };
-    if ("1/3" in crs) {
-      while (crs["1/3"] > 3) {
-        crs["1/3"] -= 3;
-        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
-      };
-      switch (crs["1/3"]) {
-        case 2:
-        case 3: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
-                delete crs["1/3"];
-                break;
-      };
-    };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
-    // CR 1/2
-    //log(crs);
-    //log("CR 1/2");
-    if (("1/3" in crs) && ("1/4" in crs)) {
-      crs["1/2"] = ("1/2" in crs)?(crs["1/2"]+1):(1);
-      crs["1/3"] -= 1;
-      crs["1/4"] -= 1;
-      if (crs["1/3"] == 0) { delete crs["1/3"]; };
-      if (crs["1/4"] == 0) { delete crs["1/4"]; };
-    };
-    if ("1/4" in crs) {
-      // At this point, CR of 1/4 won't contribute to anything higher.
-      delete crs["1/4"];
-    };
-    if ("1/2" in crs) {
-      while (crs["1/2"] > 2) {
-        crs["1/2"] -= 2;
-        crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
-      };
-      switch (crs["1/2"]) {
-        case 2: crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
-                delete crs["1/2"];
-                break;
-      };
-    };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
-    // CR 1
-    //log(crs);
-    //log("CR 1");
-    if (("1/2" in crs) && ("1/3" in crs)) {
-      crs["1"] = ("1" in crs)?(crs["1"]+1):(1);
-      crs["1/2"] -= 1;
-      crs["1/3"] -= 1;
-      if (crs["1/2"] == 0) { delete crs["1/2"]; };
-      if (crs["1/3"] == 0) { delete crs["1/3"]; };
-    };
-    if ("1/3" in crs) {
-      // At this point, CR of 1/3 won't contribute to anything higher.
-      delete crs["1/3"];
-    };
-    if ("1" in crs) {
-      while (crs["1"] > 2) {
-        crs["1"] -= 2;
-        crs["2"] = ("2" in crs)?(crs["2"]+1):(1);
-      };
-      switch (crs["1"]) {
-        case 2: crs["2"] = ("2" in crs)?(crs["2"]+1):(1);
-                delete crs["1"];
-                break;
-      };
-    };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
-    // CR 2
-    //log(crs);
-    //log("CR 2");
-    if (("1" in crs) && ("1/2" in crs)) {
-      crs["2"] = ("2" in crs)?(crs["2"]+1):(1);
-      crs["1"] -= 1;
-      crs["1/2"] -= 1;
-      if (crs["1"] == 0) { delete crs["1"]; };
-      if (crs["1/2"] == 0) { delete crs["1/2"]; };
-    };
-    if ("1/2" in crs) {
-      // At this point, CR of 1/2 won't contribute to anything higher.
-      delete crs["1/2"];
-    };
-    if ((Array.from(Object.keys(crs)).length == 1) && (crs[Array.from(Object.keys(crs))[0]] == 1)) { return roundLastCR(Array.from(Object.keys(crs))[0]);};
-    // WOOHOO!! ALL FRACTIONAL CRs ARE DELETED NOW!!
-    let cMaxCR = 1;
-    let cMinCR = 0;
-    do {
-      if (cMaxCR > Math.max(Array.from(Object.keys(crs)))) {
-        log("Looking for CR that's higher than highest CR in list!");
-        break;
-      };
-      cMaxCR += 1;
-      //log(crs);
-      //log("CR "+cMaxCR);
-      // Find starting point for current CR being calculated
-      switch (cMaxCR) {
-        case 2:
-        case 3: cMinCR = 1;
-                break;
-        case 6: cMinCR = 2;
-                break;
-        default:
-                cMinCR = cMaxCR - 3;
-                break;
-      };
-      // Delete any CRs that are lower than the starting point, since they will not ever combine up to higher forms that could bump overall encounter level
-      let crs_keys = Array.from(Object.keys(crs));
-      for (let i = 0; i < crs_keys.length; i++) {
-        if (parseInt(crs_keys[i]) < cMinCR) {
-          delete crs[crs_keys[i]];
+
+      let party_id_xp = {};
+      for (let c_level in party.ids) {
+        for (let i=0; i<party.ids[c_level].length; i++) {
+          party_id_xp[party.ids[c_level][i]] = c_level;
         };
       };
-      // Find Mixed Pairs and bump up CR by one
-      if (cMaxCR.toString() in crs) {
-        for (let curCR = cMinCR; curCR < cMaxCR; curCR++) {
-          while ((crs[cMaxCR.toString()] > 0) && (curCR.toString() in crs) && (crs[curCR.toString()] > 0)) {
-            crs[(cMaxCR+1).toString()] = ((cMaxCR+1).toString() in crs)?(crs[(cMaxCR+1).toString()]+1):(1);
-            crs[curCR.toString()]  -= 1;
-            crs[cMaxCR.toString()] -= 1;
-            if (crs[curCR.toString()] == 0) {
-              delete crs[curCR.toString()];
-            };
-          };
-          if (crs[cMaxCR.toString()] == 0) {
-            delete crs[cMaxCR.toString()];
-            break;
-          };
-        };
+      for (let id in party_id_xp) {
+        party_id_xp[id] = iCRExperience[party_id_xp[id]];
       };
-      // If cMaxCR > 6, then delete and CRs that are equal to the starting point, since they will not ever combine up to higher forms that could bump overall encounter level
-      if ((cMaxCR > 6) && (cMinCR.toString() in crs)) {
-        delete crs[cMinCR.toString()];
+
+      return {
+        xp: party_id_xp,
+        pl: RoundOnePlace(iPartyEffectiveLevel),
+        el: Math.round(iMonsterTotalLevel),
+        difficulty: mDifficulty(iDifference),
+        percentenc: mPercentEnc(iDifference),
+        treasure: RoundOnePlace(mTreasure(iMonsterTotalLevel))
       };
-      // Find CR sets-of-ten and bump up CR by seven
-      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 10)) {
-        crs[cMaxCR.toString()] -= 10;
-        crs[(cMaxCR+7).toString()] = ((cMaxCR+7).toString() in crs)?(crs[(cMaxCR+7).toString()]+1):(1);
-      };
-      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
-        delete crs[cMaxCR.toString()];
-      };
-      // Find CR sets-of-seven and bump up CR by six
-      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 7)) {
-        crs[cMaxCR.toString()] -= 7;
-        crs[(cMaxCR+6).toString()] = ((cMaxCR+6).toString() in crs)?(crs[(cMaxCR+6).toString()]+1):(1);
-      };
-      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
-        delete crs[cMaxCR.toString()];
-      };
-      // Find CR sets-of-five and bump up CR by five
-      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 5)) {
-        crs[cMaxCR.toString()] -= 5;
-        crs[(cMaxCR+5).toString()] = ((cMaxCR+5).toString() in crs)?(crs[(cMaxCR+5).toString()]+1):(1);
-      };
-      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
-        delete crs[cMaxCR.toString()];
-      };
-      // Find CR sets-of-four and bump up CR by four
-      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 4)) {
-        crs[cMaxCR.toString()] -= 4;
-        crs[(cMaxCR+4).toString()] = ((cMaxCR+4).toString() in crs)?(crs[(cMaxCR+4).toString()]+1):(1);
-      };
-      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
-        delete crs[cMaxCR.toString()];
-      };
-      // Find CR sets-of-three and bump up CR by three
-      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] >= 3)) {
-        crs[cMaxCR.toString()] -= 3;
-        crs[(cMaxCR+3).toString()] = ((cMaxCR+3).toString() in crs)?(crs[(cMaxCR+3).toString()]+1):(1);
-      };
-      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
-        delete crs[cMaxCR.toString()];
-      };
-      // Find CR doubles and bump up CR by two
-      while ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] > 1)) {
-        crs[cMaxCR.toString()] -= 2;
-        crs[(cMaxCR+2).toString()] = ((cMaxCR+2).toString() in crs)?(crs[(cMaxCR+2).toString()]+1):(1);
-      };
-      if ((cMaxCR.toString() in crs) && (crs[cMaxCR.toString()] == 0)) {
-        delete crs[cMaxCR.toString()];
-      };
-    } while ((Array.from(Object.keys(crs)).length > 1) || (crs[Array.from(Object.keys(crs))[0]] > 1));
-    //log(crs);
-    return Array.from(Object.keys(crs))[0];
-  }; // calculateEncounterLevel()
+    };
+  };
 
   // SECTION_ANCHOR
   // ██████╗  ██████╗ ██╗     ██╗     ██████╗  ██████╗     ██╗   ██╗████████╗██╗██╗     ██╗████████╗██╗███████╗███████╗
@@ -20871,9 +21055,22 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                 ids:    party_ecl_ids
               };
             }; break;
-            case 'calculate-xp':
-              log(temp.encounter[playerID]);
-              break;
+            case 'calculate-xp': {
+              let enc_calc = encounterCalculator(temp.encounter[playerID].party,temp.encounter[playerID].challengers);
+              let xp_msg_fields = {};
+              for (let id in enc_calc.xp) {
+                let character = getObj("character", id);
+                if (!character) { continue; };
+                xp_msg_fields[character.get("name")] = ''.concat(enc_calc.xp[id],' XP');
+              };
+              let str = ''.concat("&{template:default} {{name=Individual XP Rewards}}");
+              for (let k in xp_msg_fields) {
+                str = str.concat(" {{"+k+"= "+xp_msg_fields[k]+"}}");
+              };
+              respondToChat(msg,str);
+              str = ''.concat("&{template:default} {{name=Encounter Level, Difficulty & Treasure}} {{Party Level= ",enc_calc.pl,"}} {{Encounter Level= ",enc_calc.el,"}} {{Difficulty= ",enc_calc.difficulty,"}} {{% of total= ",enc_calc.percentenc,"}} {{Average Treasure Value= ",enc_calc.treasure," GP}}");
+              respondToChat(msg,str);
+            }; break;
           };
         }; break;
         // COMMAND_ANCHOR
