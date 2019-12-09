@@ -2011,7 +2011,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               } else {
                 respondToChat(msg,'&{template:default} {{name=Configuration}} {{'+firstFragment+'= *undefined*}}',true);
               };
-            } else if (!(['SourceTexts'].includes(firstFragment))) {
+            } else if (!(['SourceTexts'].includes(firstFragment))) { // Do not set READ-ONLY config registers.
               if (firstFragment in state.skepickleCharacterSuiteImp.config) {
                 switch (typeof state.skepickleCharacterSuiteImp.config[firstFragment]) {
                   case 'boolean':
@@ -2485,7 +2485,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       };
                     };
                   };
-                  //Note: No 'break' here as it's meant to fall through to the reject logic below to delete the path and shadow token
+                  //Note: No 'break' here as it is meant to fall through to the reject logic below to delete the path and shadow token
                 case 'reject':
                   if (mm_data !== null) {
                     let mm_path = getObj("path", mm_data[0]);
@@ -2741,7 +2741,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                 ids:    party_ecl_ids
               };
             }; break;
-            case 'calculate-xp': {
+            case 'calculate-rewards': {
               let enc_calc = encounterCalculator(temp.encounter[playerID].party,temp.encounter[playerID].challengers);
               let xp_msg_fields = {};
               for (let id in enc_calc.xp) {

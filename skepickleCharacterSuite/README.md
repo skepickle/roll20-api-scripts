@@ -42,13 +42,14 @@ This script actually consists of multiple files. The most important file is "ske
     This function _will_ create a new [skookum](https://en.wikipedia.org/wiki/Skookum) character sheet based on the currently selected [mook](https://www.dandwiki.com/wiki/Help:Glossary_of_Jargon#Mook), which will be named based upon the specified name.
 * **skookum** **_UNDER CONSTRUCTION_**
 * **encounter**
-  * calculate-level **_UNDER CONSTRUCTION_**  
+  * set-party  
     _Note: Operates on any number of selected tokens on the map._  
-    This function calculates an encounter level (EL) based on all the creatures selected, using the challenge ratings (CR) from the NPC section of the character sheet and the levels from the PC section.
-  * calculate-rewards <_encounterLevel_> **_UNDER CONSTRUCTION_**  
+    This function sets all selected characters to the players' party to be used for encounter calculations.
+  * set-challengers  
     _Note: Operates on any number of selected tokens on the map._  
-    This function uses the EL level passed in, and calculates XP rewards for each creature selected, based on their levels. It also calculates an overall treasure value.
-  * generate-treasure <_treasureValue_> **_UNDER CONSTRUCTION_**
+    This function sets all selected characters to the enemy party to be used for encounter calculations.
+  * calculate-rewards  
+    This function will calculate XP awarded per party-member and the treasure found. The treasure can be ignored if you wish to customize the treasure hoard, in which case this command also provides you with the Encounter Level and average treasure value to aid with custom creation of the treasure.
 * **toggle-reach-auras**  
     _Note: Operates on any number of selected tokens on the map._  
     This function toggles the display of auras that represent the natural reach range, and appropriately sized reach-weapon ranges for the selected characters. Here is an example macro that utilizes this command:  
