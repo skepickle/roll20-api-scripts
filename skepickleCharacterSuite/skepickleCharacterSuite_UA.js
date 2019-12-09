@@ -650,6 +650,14 @@ var skepickleCharacterSuite_UA = skepickleCharacterSuite_UA || (function skepick
 
 //TODO The following still need to be converted into their own files
 //  var dnd35 = {
+//    all_source_texts: {
+//      MH:      "Miniatures Handbook",
+//      ToB:     "Tome of Battle",
+//      BoED:    "Book of Exalted Deeds",
+//      MoF:     "Magic of Faerun",
+//      OA:      "Oriental Adventures",
+//      unknown: "Unknown Text"
+//    },
 //    source_text_ToB: {
 //      skills: { 'martial lore':             {base: 'martial lore',             attrib: '',                  default_ability_mod: 'int-mod', trained_only:true  } }
 //    },
@@ -685,10 +693,27 @@ var skepickleCharacterSuite_UA = skepickleCharacterSuite_UA || (function skepick
     if ((typeof state.skepickleCharacterSuiteImp === 'undefined') || (state.skepickleCharacterSuiteImp === null)) {
       state.skepickleCharacterSuiteImp = {};
     };
-    if ((typeof state.skepickleCharacterSuiteImp.source_texts === 'undefined') || (state.skepickleCharacterSuiteImp.source_texts === null)) {
-      state.skepickleCharacterSuiteImp.source_texts = {};
+    if ((typeof state.skepickleCharacterSuiteImp.config === 'undefined') || (state.skepickleCharacterSuiteImp.config === null)) {
+      state.skepickleCharacterSuiteImp.config = {};
     };
-    state.skepickleCharacterSuiteImp.source_texts.UA = source_text_UA;
+    if ((typeof state.skepickleCharacterSuiteImp.config.SourceTexts === 'undefined') || (state.skepickleCharacterSuiteImp.config.SourceTexts === null) || (state.skepickleCharacterSuiteImp.config.SourceTexts === '')) {
+      state.skepickleCharacterSuiteImp.config.SourceTexts = 'UA';
+    } else {
+      let a = state.skepickleCharacterSuiteImp.config.SourceTexts.split(',');
+      let b = [];
+      for (let i=0; i<a.length; i++) {
+        let p; try { p = eval('skepickleCharacterSuite_'+a[i]); } catch (e) { p = null; };
+        if ((typeof p !== 'undefined') && (p !== null) &&
+            (typeof p.source_text !== 'undefined') && (p.source_text !== null)) {
+          b.push(a[i]);
+        };
+      };
+      if (!(b.includes('UA'))) {
+        b.push('UA');
+      };
+      state.skepickleCharacterSuiteImp.config.SourceTexts = b.join(',');
+    };
+
     if ((typeof state.skepickleCharacterSuiteImp.source_text_specifications === 'undefined') || (state.skepickleCharacterSuiteImp.source_text_specifications === null)) {
       state.skepickleCharacterSuiteImp.source_text_specifications = {};
     };

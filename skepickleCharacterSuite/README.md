@@ -12,10 +12,8 @@ skepickleCharacterSuite implements a set of commands that operate on Diana P's D
     Without any arguments, this just prints out the current values of the configuration variables.  
     With just the variable name argument, this prints out the current value of that variable.  
     With both arguments specified, this sets the value of the variable to the value specified.
-* **source-text**
-  * list
-  * enable <_sourceID_> **_UNDER CONSTRUCTION_**
-  * disable <_sourceID_> **_UNDER CONSTRUCTION_**
+* **source-texts**  
+    List all source texts currently configured in game.
 * **audit**
   * audit-weapon-macros **_UNDER CONSTRUCTION_**
   * audit-spell-macros **_UNDER CONSTRUCTION_**

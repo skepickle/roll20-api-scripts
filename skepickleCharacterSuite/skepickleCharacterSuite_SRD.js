@@ -17696,18 +17696,35 @@ var skepickleCharacterSuite_SRD = skepickleCharacterSuite_SRD || (function skepi
     if ((typeof state.skepickleCharacterSuiteImp === 'undefined') || (state.skepickleCharacterSuiteImp === null)) {
       state.skepickleCharacterSuiteImp = {};
     };
-    if ((typeof state.skepickleCharacterSuiteImp.source_texts === 'undefined') || (state.skepickleCharacterSuiteImp.source_texts === null)) {
-      state.skepickleCharacterSuiteImp.source_texts = {};
+    if ((typeof state.skepickleCharacterSuiteImp.config === 'undefined') || (state.skepickleCharacterSuiteImp.config === null)) {
+      state.skepickleCharacterSuiteImp.config = {};
     };
-    state.skepickleCharacterSuiteImp.source_texts.SRD = source_text_SRD;
+    if ((typeof state.skepickleCharacterSuiteImp.config.SourceTexts === 'undefined') || (state.skepickleCharacterSuiteImp.config.SourceTexts === null) || (state.skepickleCharacterSuiteImp.config.SourceTexts === '')) {
+      state.skepickleCharacterSuiteImp.config.SourceTexts = 'SRD';
+    } else {
+      let a = state.skepickleCharacterSuiteImp.config.SourceTexts.split(',');
+      let b = [];
+      for (let i=0; i<a.length; i++) {
+        let p; try { p = eval('skepickleCharacterSuite_'+a[i]); } catch (e) { p = null; };
+        if ((typeof p !== 'undefined') && (p !== null) &&
+            (typeof p.source_text !== 'undefined') && (p.source_text !== null)) {
+          b.push(a[i]);
+        };
+      };
+      if (!(b.includes('SRD'))) {
+        b.push('SRD');
+      };
+      state.skepickleCharacterSuiteImp.config.SourceTexts = b.join(',');
+    };
+
     if ((typeof state.skepickleCharacterSuiteImp.source_text_specifications === 'undefined') || (state.skepickleCharacterSuiteImp.source_text_specifications === null)) {
       state.skepickleCharacterSuiteImp.source_text_specifications = {};
     };
     state.skepickleCharacterSuiteImp.source_text_specifications.SRD = {
       title: "System Reference Document" // The following link indicates the source books that have OGL content included in SRD: http://www.d20srd.org/faq.htm#faq05 
     };
+    log("########## skepickleCharacterSuite_SRD");
 
-    //TODO Maybe delete old state structures?
     //delete state.skepickleCharacterSuiteImp["rules"];
     //delete state.skepickleCharacterSuiteImp.source_texts.source_text_UA;
     //delete state.skepickleCharacterSuiteImp.source_texts.specifications;
@@ -17715,7 +17732,6 @@ var skepickleCharacterSuite_SRD = skepickleCharacterSuite_SRD || (function skepi
     //delete state["skepickleTokenLibImp"];
     //delete state["skepickleCharacterLibImp"];
     //log(state);
-    log("########## skepickleCharacterSuite_SRD");
   }; // checkInstall
 
   var initialize = function() {
@@ -17726,7 +17742,8 @@ var skepickleCharacterSuite_SRD = skepickleCharacterSuite_SRD || (function skepi
     // Make the following functions available outside the local namespace
     CheckInstall: checkInstall,
     RegisterEventHandlers: registerEventHandlers,
-    Initialize: initialize
+    Initialize: initialize,
+    source_text: source_text_SRD
   };
 
 }());

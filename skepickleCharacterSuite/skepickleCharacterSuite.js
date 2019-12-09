@@ -22,14 +22,15 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     // Make these all use Camel-case with first character capitalized.
     DebugLevel: 5,
     ModeratePCMovement: false,
-    InvisibleGraphicURL: ''
-    //EnabledSourceTexts: 'SRD,UA'
+    InvisibleGraphicURL: '',
+    SourceTexts: ''
   };
   Object.freeze(config_state_template);
 
   var temp = {
     campaignLoaded: false,
-    encounter: {}
+    encounter: {},
+    source_text_cache: null
   };
 
   // SECTION_ANCHOR
@@ -152,29 +153,24 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   // ╚═════╝ ╚═════╝  ╚═════╝     ╚═════╝ ╚═╝╚══════╝       ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝╚══════╝
 
   var dnd_35_sources = {
-    //TODO DELETE THIS ONCE source text migration completed
-    //all_source_texts: {
-    //  SRD:     "System Reference Document", // The following link indicates the source books that have OGL content included in SRD: http://www.d20srd.org/faq.htm#faq05 
-    //  UA:      "Unearthed Arcana",
-    //  MH:      "Miniatures Handbook",
-    //  ToB:     "Tome of Battle",
-    //  BoED:    "Book of Exalted Deeds",
-    //  MoF:     "Magic of Faerun",
-    //  OA:      "Oriental Adventures",
-    //  unknown: "Unknown Text"
-    //},
     merge_arrays: function(property_name) {
       let result = [];
       let property_heirarchy = property_name.split('.');
-      let enabled_source_texts = Array.from(Object.keys(state.skepickleCharacterSuiteImp.source_texts));
+      let enabled_source_texts = state.skepickleCharacterSuiteImp.config.SourceTexts.split(',');
       if (enabled_source_texts.length == 0) {
         throwDefaultTemplate("merge_arrays()",null,{'ERROR': 'No D&D source texts loaded. Please include at least skepickleCharacterSuite_SRD.js in the game.'});
       };
+      if (temp.source_text_cache === null) {
+        temp.source_text_cache = {};
+        for (let k=0; k<enabled_source_texts.length; k++) {
+          temp.source_text_cache[enabled_source_texts[k]] = eval('skepickleCharacterSuite_'+enabled_source_texts[k]+'.source_text');
+        };
+      };
       for (let k=0; k<enabled_source_texts.length; k++) {
-        let source_text__k = enabled_source_texts[k];
-        if ((source_text__k in state.skepickleCharacterSuiteImp.source_texts) && (state.skepickleCharacterSuiteImp.source_texts[source_text__k] !== null)) {
+        let source_text = temp.source_text_cache[enabled_source_texts[k]];
+        if ((typeof source_text !== 'undefined') && (source_text !== null)) {
           let i = 0;
-          let property_p = state.skepickleCharacterSuiteImp.source_texts[source_text__k];
+          let property_p = source_text;
           do {
             property_p = property_p[property_heirarchy[i]];
             i++;
@@ -189,15 +185,21 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     merge_maps: function(property_name) {
       let result = {};
       let property_heirarchy = property_name.split('.');
-      let enabled_source_texts = Array.from(Object.keys(state.skepickleCharacterSuiteImp.source_texts));
+      let enabled_source_texts = state.skepickleCharacterSuiteImp.config.SourceTexts.split(',');
       if (enabled_source_texts.length == 0) {
         throwDefaultTemplate("merge_arrays()",null,{'ERROR': 'No D&D source texts loaded. Please include at least skepickleCharacterSuite_SRD.js in the game.'});
       };
+      if (temp.source_text_cache === null) {
+        temp.source_text_cache = {};
+        for (let k=0; k<enabled_source_texts.length; k++) {
+          temp.source_text_cache[enabled_source_texts[k]] = eval('skepickleCharacterSuite_'+enabled_source_texts[k]+'.source_text');
+        };
+      };
       for (let k=0; k<enabled_source_texts.length; k++) {
-        let source_text__k = enabled_source_texts[k];
-        if ((source_text__k in state.skepickleCharacterSuiteImp.source_texts) && (state.skepickleCharacterSuiteImp.source_texts[source_text__k] !== null)) {
+        let source_text = temp.source_text_cache[enabled_source_texts[k]];
+        if ((typeof source_text !== 'undefined') && (source_text !== null)) {
           let i = 0;
-          let property_p = state.skepickleCharacterSuiteImp.source_texts[source_text__k];
+          let property_p = source_text;
           do {
             property_p = property_p[property_heirarchy[i]];
             i++;
@@ -2009,7 +2011,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               } else {
                 respondToChat(msg,'&{template:default} {{name=Configuration}} {{'+firstFragment+'= *undefined*}}',true);
               };
-            } else {
+            } else if (!(['SourceTexts'].includes(firstFragment))) {
               if (firstFragment in state.skepickleCharacterSuiteImp.config) {
                 switch (typeof state.skepickleCharacterSuiteImp.config[firstFragment]) {
                   case 'boolean':
@@ -2041,33 +2043,21 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // ╚════██║██║   ██║██║   ██║██╔══██╗██║     ██╔══╝╚════╝██║   ██╔══╝   ██╔██╗    ██║
         // ███████║╚██████╔╝╚██████╔╝██║  ██║╚██████╗███████╗    ██║   ███████╗██╔╝ ██╗   ██║
         // ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝
-        //case 'source-text':
-        //case '--source-text': {
-        //  //TODO For this to be useful, the list of activated sources needs to be moved into the state data structure.
-        //  if (!playerIsGM(playerID)) { return; };
-        //  if (firstFragment === null) {
-        //    respondToChat(msg,processedFragments.join(" ")+" requires an argument");
-        //    break;
-        //  };
-        //  switch (firstFragment) {
-        //    case 'list':
-        //      let message_to_send = '';
-        //      Object.keys(dnd_35_sources.all_source_texts).forEach(function(k,i) {
-        //        //log(k+' '+dnd_35_sources.all_source_texts[k]);
-        //        if (dnd_35_sources.enabled_source_texts.includes(k)) {
-        //          message_to_send = message_to_send.concat(' {{',dnd_35_sources.all_source_texts[k],'= enabled}}');
-        //        } else {
-        //          message_to_send = message_to_send.concat(' {{',dnd_35_sources.all_source_texts[k],'= disabled}}');
-        //        };
-        //      });
-        //      respondToChat(msg,'&{template:default} {{name=Source Texts}} '+message_to_send, true);
-        //      break;
-        //    case 'enable':
-        //      break;
-        //    case 'disable':
-        //      break;
-        //  };
-        //}; break;
+        case 'source-text':
+        case '--source-text': {
+          //TODO For this to be useful, the list of activated sources needs to be moved into the state data structure.
+          if (!playerIsGM(playerID)) { return; };
+            let message_to_send = '';
+            Object.keys(dnd_35_sources.all_source_texts).forEach(function(k,i) {
+              //log(k+' '+dnd_35_sources.all_source_texts[k]);
+              if (dnd_35_sources.enabled_source_texts.includes(k)) {
+                message_to_send = message_to_send.concat(' {{',dnd_35_sources.all_source_texts[k],'= enabled}}');
+              } else {
+                message_to_send = message_to_send.concat(' {{',dnd_35_sources.all_source_texts[k],'= disabled}}');
+              };
+            });
+            respondToChat(msg,'&{template:default} {{name=Source Texts}} '+message_to_send, true);
+        }; break;
         // COMMAND_ANCHOR
         //  █████╗ ██╗   ██╗██████╗ ██╗████████╗
         // ██╔══██╗██║   ██║██╔══██╗██║╚══██╔══╝
@@ -2872,6 +2862,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                 init_attrib_name = "npcinit";
               };
               init_macro = "[[(1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"})) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/100) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/10000)]]";
+            //init_macro = "[[(1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"})) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/100) + ((1d20cs>21cf<0 + (@{"+char_name+"|"+init_attrib_name+"}))/10000)]]";
             };
             try {
               sendChat(playerName,init_macro, init_macro_rsp => {
@@ -3278,6 +3269,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               //log(firstFragment+' attribute for '+character.get("name")+' is = '+attrib_val);
           });
         }; break;
+        case '--debug-namespaces': {
+          if (!playerIsGM(playerID)) { return; };
+          log("skepickleCharacterSuite_SRD:");
+          let srd_source_text_data = eval('skepickleCharacterSuite_SRD.source_text');
+          log(srd_source_text_data);
+        }; break;
         case '--help':
         default: {
         //getHelp();
@@ -3339,22 +3336,32 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           };
         };
       };
-      if ((typeof state.skepickleCharacterSuiteImp.source_texts === 'undefined') || (state.skepickleCharacterSuiteImp.source_texts === null)) {
-        state.skepickleCharacterSuiteImp.source_texts = {};
+      if ((typeof state.skepickleCharacterSuiteImp.config.SourceTexts === 'undefined') || (state.skepickleCharacterSuiteImp.config.SourceTexts === null)) {
+        state.skepickleCharacterSuiteImp.config.SourceTexts = '';
+      } else {
+        let a = state.skepickleCharacterSuiteImp.config.SourceTexts.split(',');
+        let b = [];
+        for (let i=0; i<a.length; i++) {
+          let p; try { p = eval('skepickleCharacterSuite_'+a[i]); } catch (e) { p = null; };
+          if ((typeof p !== 'undefined') && (p !== null) &&
+              (typeof p.source_text !== 'undefined') && (p.source_text !== null)) {
+            b.push(a[i]);
+          };
+        };
+        state.skepickleCharacterSuiteImp.config.SourceTexts = b.join(',');
       };
       if ((typeof state.skepickleCharacterSuiteImp.source_text_specifications === 'undefined') || (state.skepickleCharacterSuiteImp.source_text_specifications === null)) {
         state.skepickleCharacterSuiteImp.source_text_specifications = {};
       };
     };
+    log("########## skepickleCharacterSuite");
     //log("########## State data for skepickleCharacterSuite");
     //log(state.skepickleCharacterSuiteImp);
-    //TODO Maybe delete old state structures?
     //delete state["siliceousMMFixer"];
     //delete state["siliceousTokenLibImp"];
     //delete state["skepickleTokenLibImp"];
     //delete state["skepickleCharacterLibImp"];
     //log(state);
-    log("########## skepickleCharacterSuite");
   }; // checkInstall
 
   var initialize = function() {
