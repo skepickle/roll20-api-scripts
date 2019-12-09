@@ -2,6 +2,8 @@
 
 skepickleCharacterSuite implements a set of commands that operate on Diana P's D&D 3.5 character sheets.
 
+This script actually consists of multiple files. The most important file is "skepickleCharacterSuite.js" which is the main body of the script. The second most important file is "skepickleCharacterSuite_SRD.js" which is the primary content library. It provides all the information from the SRD to the main script. Additional libraries can be used based on the source texts you wish to use in a game. For example, the "skepickleCharacterSuite_UA.js" library adds the Spell Recharge specifications for spells from Unearthed Arcana.
+
 ### Syntax
 
 ```!scs <params>```
