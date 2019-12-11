@@ -17717,12 +17717,6 @@ var skepickleCharacterSuite_SRD = skepickleCharacterSuite_SRD || (function skepi
       state.skepickleCharacterSuiteImp.config.SourceTexts = b.join(',');
     };
 
-    if ((typeof state.skepickleCharacterSuiteImp.source_text_specifications === 'undefined') || (state.skepickleCharacterSuiteImp.source_text_specifications === null)) {
-      state.skepickleCharacterSuiteImp.source_text_specifications = {};
-    };
-    state.skepickleCharacterSuiteImp.source_text_specifications.SRD = {
-      title: "System Reference Document" // The following link indicates the source books that have OGL content included in SRD: http://www.d20srd.org/faq.htm#faq05 
-    };
     log("########## skepickleCharacterSuite_SRD");
 
     //delete state.skepickleCharacterSuiteImp["rules"];

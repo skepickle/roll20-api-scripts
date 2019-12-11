@@ -714,12 +714,6 @@ var skepickleCharacterSuite_UA = skepickleCharacterSuite_UA || (function skepick
       state.skepickleCharacterSuiteImp.config.SourceTexts = b.join(',');
     };
 
-    if ((typeof state.skepickleCharacterSuiteImp.source_text_specifications === 'undefined') || (state.skepickleCharacterSuiteImp.source_text_specifications === null)) {
-      state.skepickleCharacterSuiteImp.source_text_specifications = {};
-    };
-    state.skepickleCharacterSuiteImp.source_text_specifications.UA = {
-      title: "Unearthed Arcana"
-    };
     log("########## skepickleCharacterSuite_UA");
   }; // checkInstall
 
