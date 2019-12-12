@@ -30,7 +30,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   var temp = {
     campaignLoaded: false,
     encounter: {},
-    source_text_cache: null
+    cache: {
+      source_text: null
+    }
   };
 
   // SECTION_ANCHOR
@@ -160,14 +162,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       if (enabled_source_texts.length == 0) {
         throwDefaultTemplate("merge_arrays()",null,{'ERROR': 'No D&D source texts loaded. Please include at least skepickleCharacterSuite_SRD.js in the game.'});
       };
-      if (temp.source_text_cache === null) {
-        temp.source_text_cache = {};
+      if (temp.cache.source_text === null) {
+        temp.cache.source_text = {};
         for (let k=0; k<enabled_source_texts.length; k++) {
-          temp.source_text_cache[enabled_source_texts[k]] = eval('skepickleCharacterSuite_'+enabled_source_texts[k]+'.source_text');
+          temp.cache.source_text[enabled_source_texts[k]] = eval('skepickleCharacterSuite_'+enabled_source_texts[k]+'.source_text');
         };
       };
       for (let k=0; k<enabled_source_texts.length; k++) {
-        let source_text = temp.source_text_cache[enabled_source_texts[k]];
+        let source_text = temp.cache.source_text[enabled_source_texts[k]];
         if ((typeof source_text !== 'undefined') && (source_text !== null)) {
           let i = 0;
           let property_p = source_text;
@@ -189,14 +191,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       if (enabled_source_texts.length == 0) {
         throwDefaultTemplate("merge_arrays()",null,{'ERROR': 'No D&D source texts loaded. Please include at least skepickleCharacterSuite_SRD.js in the game.'});
       };
-      if (temp.source_text_cache === null) {
-        temp.source_text_cache = {};
+      if (temp.cache.source_text === null) {
+        temp.cache.source_text = {};
         for (let k=0; k<enabled_source_texts.length; k++) {
-          temp.source_text_cache[enabled_source_texts[k]] = eval('skepickleCharacterSuite_'+enabled_source_texts[k]+'.source_text');
+          temp.cache.source_text[enabled_source_texts[k]] = eval('skepickleCharacterSuite_'+enabled_source_texts[k]+'.source_text');
         };
       };
       for (let k=0; k<enabled_source_texts.length; k++) {
-        let source_text = temp.source_text_cache[enabled_source_texts[k]];
+        let source_text = temp.cache.source_text[enabled_source_texts[k]];
         if ((typeof source_text !== 'undefined') && (source_text !== null)) {
           let i = 0;
           let property_p = source_text;
@@ -739,7 +741,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       else if (x <= 4) strReturn = "Very Difficult";
       else if (x <= 7) strReturn = "Overpowering";
       else strReturn = "Unbeatable";
-      return strReturn; 
+      return strReturn;
     };
 
     function mPercentEnc(x) {
@@ -750,7 +752,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       else if (x <= 4) strReturn = "15%";
       else if (x <= 7) strReturn = "5%";
       else strReturn = "0%";
-      return strReturn; 
+      return strReturn;
     };
 
     function mPercentEncs(x) {
@@ -785,7 +787,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       else iReturn = 6.25 * x * ( Math.pow(2,mEven(7- (x-y) ) /2) ) * ( 11-(x-y) - mEven(7-(x-y)) );
 
       // Below catches places where the formula fails for 3.5.
-      if ((y == 4) || (y == 6) || (y == 8) || (y == 10) || (y == 12) || 
+      if ((y == 4) || (y == 6) || (y == 8) || (y == 10) || (y == 12) ||
         (y == 14) ||(y == 16) ||(y == 18) ||(y == 20))
       {
         if (x <= 3) iReturn = 1350 * Math.pow(2,(y-4)/2);
@@ -798,7 +800,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         else if (x == 17 && y >= 18) iReturn = 7650 * Math.pow(2,(y-18)/2);
         else if (x == 19 && y >= 20) iReturn = 8550 * Math.pow(2,(y-20)/2);
       }
-      if ((y == 7) || (y == 9) || (y == 11) || (y == 13) || (y == 15) || 
+      if ((y == 7) || (y == 9) || (y == 11) || (y == 13) || (y == 15) ||
         (y == 17) ||(y == 19))
       {
         if (x == 6) iReturn = 2700 * Math.pow(2,(y-7)/2);
@@ -809,17 +811,17 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         if (x == 16 && y >= 17) iReturn = 7200 * Math.pow(2,(y-17)/2);
         if (x == 18 && y >= 19) iReturn = 8100 * Math.pow(2,(y-19)/2);
       }
-      
+
       if (y > 20) iReturn = 2 * mExperience(x, y-2);
       // recursion should end this in short order.
       // This method is clean, and ensures any errors in the above
       // formulas for 3.5 are accounted for.
-      
+
       // Finally we correct for out of bounds entries, doing this last to cut space on the
       // above formulas.
       if (x - y > 7) iReturn = 0;
       else if (y - x > 7) iReturn = 0;
-            
+
       return iReturn;
     };
 
@@ -830,7 +832,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       if (x < 1) iReturn = x * aTreasure[0];
       else if (x > x2) iReturn = aTreasure[x2-1] + (x-x2) * (aTreasure[x2] - aTreasure[x2-1]);
       else iReturn = aTreasure[x2-1];
-      
+
       return iReturn;
     };
 
@@ -867,7 +869,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
       let iMonsterTotalPower = 0;
       for (let level in challengers.counts) {
-        iMonsterTotalPower += challengers.counts[level] * mCRtoPL(mFilterInputLevels(level));      
+        iMonsterTotalPower += challengers.counts[level] * mCRtoPL(mFilterInputLevels(level));
       };
       let iMonsterTotalLevel = mPLtoCR(iMonsterTotalPower);
       var iDifference = mDifference(iMonsterTotalPower, iPartyTotalPower);
@@ -1652,6 +1654,363 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   //}; // checkSheetMacros
 
   // SECTION_ANCHOR
+  // ROLL20 UTILITIES
+  // TOKENS
+
+  var refreshToken = function(t_id) {
+    let t_obj = getObj("graphic", t_id);
+    let t_gmnotes = decodeRoll20String(t_obj.get('gmnotes'));
+    let t_lightsource = getStringRegister(t_gmnotes, "light_source") || ["None"];
+    switch (t_lightsource) {
+      default: {
+        //TODONEXT Pseudocode:
+        //       Determine if token has any abilities or effects similar to Darkvision or Blindsight.
+        //       if (no) then dump light source spec into the token vision settings & destroy attached light source token if present
+        //       if (yes) then dump Darkvision/Blindsight/etc specs into the token vision settings and dump light source spec into an attached invisible token
+        let npc_npcspecialqualities = '';
+        let npc_npcfeats            = '';
+        let pc_racialabilities      = '';
+        let pc_classabilities       = '';
+        let pc_feats                = '';
+        let pc_other                = '';
+        let darkvision_distance     = 0;
+        let blindsight_distance     = 0;
+        let light_multiplier        = 1;
+        let character = getObj("character", t_obj.get("represents"));
+        if (character) {
+          npc_npcspecialqualities = getAttrByName(character.id, "npcspecialqualities").toLowerCase();
+          pc_racialabilities      = getAttrByName(character.id, "racialabilities").toLowerCase();
+          pc_classabilities       = getAttrByName(character.id, "classabilities").toLowerCase();
+          pc_other                = getAttrByName(character.id, "other").toLowerCase();
+          npc_npcfeats            = getAttrByName(character.id, "npcfeats").toLowerCase();
+          pc_feats                = getAttrByName(character.id, "feats").toLowerCase();
+          let match_result;
+          // CHECK FOR DARKVISION
+          match_result = npc_npcspecialqualities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);
+          darkvision_distance = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(darkvision_distance):(Math.max(darkvision_distance,parseFloat(match_result[1])));
+          match_result = pc_racialabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);
+          darkvision_distance = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(darkvision_distance):(Math.max(darkvision_distance,parseFloat(match_result[1])));
+          match_result = pc_classabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);
+          darkvision_distance = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(darkvision_distance):(Math.max(darkvision_distance,parseFloat(match_result[1])));
+          match_result = pc_other.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);
+          darkvision_distance = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(darkvision_distance):(Math.max(darkvision_distance,parseFloat(match_result[1])));
+          if (npc_npcfeats.match(/improved darkvision/) ||
+              pc_feats.match(/improved darkvision/)) {
+            darkvision_distance = darkvision_distance * 2;
+          };
+          //TODO Check token registers in t_gmnotes for conditions / effects that give darkvision
+          // CHECK FOR BLINDSIGHT
+          match_result = npc_npcspecialqualities.match(/blindsight *([0-9]+) *(feet|foot|ft\.*|')/);
+          blindsight_distance = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(blindsight_distance):(Math.max(blindsight_distance,parseFloat(match_result[1])));
+          match_result = npc_npcfeats.match(/blindsight *([0-9]+) *(feet|foot|ft\.*|')/);
+          blindsight_distance = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(blindsight_distance):(Math.max(blindsight_distance,parseFloat(match_result[1])));
+          match_result = pc_racialabilities.match(/blindsight *([0-9]+) *(feet|foot|ft\.*|')/);
+          blindsight_distance = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(blindsight_distance):(Math.max(blindsight_distance,parseFloat(match_result[1])));
+          match_result = pc_classabilities.match(/blindsight *([0-9]+) *(feet|foot|ft\.*|')/);
+          blindsight_distance = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(blindsight_distance):(Math.max(blindsight_distance,parseFloat(match_result[1])));
+          match_result = pc_feats.match(/blindsight *([0-9]+) *(feet|foot|ft\.*|')/);
+          blindsight_distance = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(blindsight_distance):(Math.max(blindsight_distance,parseFloat(match_result[1])));
+          //TODO Check token registers in t_gmnotes for conditions / effects that give blindsight
+          // CHECK FOR LOW-LIGHT VISION
+          if (npc_npcspecialqualities.match(/low-light vision/) ||
+              pc_racialabilities.match(/low-light vision/) ||
+              pc_classabilities.match(/low-light vision/) ||
+              pc_other.match(/low-light vision/)) {
+            light_multiplier = 2;
+            if (npc_npcfeats.match(/improved low-light vision/) ||
+                pc_feats.match(/improved low-light vision/)) {
+              light_multiplier = 4;
+            };
+          };
+          //TODO Check token registers in t_gmnotes for conditions / effects that give low-light vision
+        };
+        // Retrieve specs for light source indicated
+        let light_source_spec = dnd_35_sources.light_sources()[t_lightsource[0].toLowerCase()];
+        if ((typeof light_source_spec === 'undefined') || (light_source_spec === null)) {
+          throwDefaultTemplate("refreshToken()",(character)?(character.id):(null),{'Error': 'Undefined light source "'+t_lightsource[0]+'"'});
+          break;
+        };
+        let light_radius       = light_source_spec.radius;
+        let light_dimradius    = light_source_spec.dim;
+        let light_angle        = light_source_spec.angle;
+        //let light_otherplayers = (light_source_spec.radius != '');
+        let use_attached_lightsource = ((light_radius != '') || (light_dimradius != '') || (light_angle != '')) &&
+                                       (((darkvision_distance > 0) && ((light_angle != '') || ((!isNaN(light_dimradius)) && (parseInt(light_dimradius)<darkvision_distance)))) ||
+                                        ((blindsight_distance > 0) && ((light_angle != '') || ((!isNaN(light_dimradius)) && (parseInt(light_dimradius)<blindsight_distance)))));
+        // Set subject's 'Emits Light' token settings
+        log(darkvision_distance);
+        log(blindsight_distance);
+        log(use_attached_lightsource);
+        let passive_light_radius = Math.max(darkvision_distance,blindsight_distance);
+        let passive_light_dimradius = passive_light_radius+1; // (passive_light_radius*5)/6 //For THAC0* Thursdays
+        if (passive_light_radius == 0) {
+          passive_light_radius = '';
+          passive_light_dimradius = '';
+        };
+        log(passive_light_radius);
+        if (use_attached_lightsource) {
+          t_obj.set("light_radius",       passive_light_radius);
+          t_obj.set("light_dimradius",    passive_light_dimradius);
+          t_obj.set("light_angle",        '');
+          t_obj.set("light_otherplayers", false);
+          t_obj.set("light_multiplier",   light_multiplier);
+          t_obj.set("light_hassight",     true); //TODO search for condition/effect/quality that might hinder sight?
+        } else {
+          if ((light_radius != '') || (light_dimradius != '') || (light_angle != '')) {
+            t_obj.set("light_radius",       light_radius);
+            t_obj.set("light_dimradius",    light_dimradius);
+            t_obj.set("light_angle",        light_angle);
+            t_obj.set("light_otherplayers", true);
+            t_obj.set("light_multiplier",   light_multiplier);
+            t_obj.set("light_hassight",     true); //TODO search for condition/effect/quality that might hinder sight?
+          } else {
+          t_obj.set("light_radius",       passive_light_radius);
+          t_obj.set("light_dimradius",    passive_light_dimradius);
+          t_obj.set("light_angle",        '');
+          t_obj.set("light_otherplayers", false);
+          t_obj.set("light_multiplier",   light_multiplier);
+          t_obj.set("light_hassight",     true); //TODO search for condition/effect/quality that might hinder sight?
+          };
+        };
+
+        let cur_attached_lightsource_ids = [];
+        if ((t_id in state.skepickleCharacterSuiteImp.graphic_attachment) &&
+            (state.skepickleCharacterSuiteImp.graphic_attachment[t_id].role == 'subject')) {
+          for (let i=0; i<state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects.length; i++) {
+            let o_id = state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects[i];
+            if ((o_id in state.skepickleCharacterSuiteImp.graphic_attachment) &&
+                (state.skepickleCharacterSuiteImp.graphic_attachment[o_id].type == 'light')) {
+              cur_attached_lightsource_ids.push(state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects[i]);
+            };
+          };
+        };
+        while (cur_attached_lightsource_ids.length > ((use_attached_lightsource)?(1):(0))) {
+          let o_id = cur_attached_lightsource_ids[0];
+          state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects = state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects.filter(function(value, index, arr){ return value != o_id; });
+          delete state.skepickleCharacterSuiteImp.graphic_attachment[o_id];
+          cur_attached_lightsource_ids.shift();
+          let o_obj = getObj("graphic", o_id);
+          if (o_obj !== null) { o_obj.remove(); };
+        };
+        if (use_attached_lightsource) {
+          if (cur_attached_lightsource_ids.length==0) {
+            // create a new token!
+            let ls_obj = createObj("graphic", {
+              pageid:             t_obj.get("_pageid"),
+              layer:              "map",
+              imgsrc:             state.skepickleCharacterSuiteImp.config.InvisibleGraphicURL,
+              left:               t_obj.get("left"),
+              top:                t_obj.get("top"),
+              width:              t_obj.get("width"),
+              height:             t_obj.get("height"),
+              isdrawing:          true,
+              light_radius:       light_radius,
+              light_dimradius:    light_dimradius,
+              light_angle:        light_angle,
+              light_otherplayers: true
+            });
+            let o_id = ls_obj.id;
+            state.skepickleCharacterSuiteImp.graphic_attachment[o_id] = { role: 'object',  subject: t_id, type: 'light' };
+            if (typeof state.skepickleCharacterSuiteImp.graphic_attachment[t_id] === 'undefined') {
+              state.skepickleCharacterSuiteImp.graphic_attachment[t_id] = { role: 'subject', objects: []}
+            };
+            state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects.push(o_id);
+          } else {
+            // set light on existing token!
+            let ls_obj = getObj("graphic", cur_attached_lightsource_ids[0]);
+            ls_obj.set("_pageid",            t_obj.get("_pageid"));
+            ls_obj.set("layer",              "map");
+            ls_obj.set("imgsrc",             state.skepickleCharacterSuiteImp.config.InvisibleGraphicURL);
+            ls_obj.set("left",               t_obj.get("left"));
+            ls_obj.set("top",                t_obj.get("top"));
+            ls_obj.set("width",              t_obj.get("width"));
+            ls_obj.set("height",             t_obj.get("height"));
+            ls_obj.set("isdrawing",          true);
+            ls_obj.set("light_radius",       light_radius);
+            ls_obj.set("light_dimradius",    light_dimradius);
+            ls_obj.set("light_angle",        light_angle);
+            ls_obj.set("light_otherplayers", true);
+          };
+        };
+        if (false) {
+          //TODONEXT handle attached lightsource token, if (use_attached_lightsource)
+          //// Note This block is light source only
+          //{
+          //  let gmnotes = decodeRoll20String(obj.get('gmnotes'));
+          //  let ag_data = getStringRegister(gmnotes, "attached_graphics");
+          //  //log(ag_data);
+          //  if (ag_data !== null) {
+          //    // Remove all light sources first
+          //    let prev_ls = ag_data.filter(function(a) { return a.match(/:lightsource$/)});
+          //    for (let i=0; i<prev_ls.length; i++) {
+          //      let old_ls_obj = getObj("graphic", prev_ls[i].replace(/:lightsource$/, ''));
+          //      old_ls_obj.remove();
+          //    };
+          //    ag_data = ag_data.filter(function(a) { return !a.match(/:lightsource$/)});
+          //  } else {
+          //    ag_data = [];
+          //  };
+          //  if ((light_radius != '') || (light_dimradius != '') || (light_angle != '')) {
+          //    let ls_obj = createObj("graphic", {
+          //      pageid:             obj.get("_pageid"),
+          //      layer:              "map",
+          //      imgsrc:             state.skepickleCharacterSuiteImp.config.InvisibleGraphicURL,
+          //      left:               obj.get("left"),
+          //      top:                obj.get("top"),
+          //      width:              obj.get("width"),
+          //      height:             obj.get("height"),
+          //      isdrawing:          true,
+          //      light_radius:       light_radius,
+          //      light_dimradius:    light_dimradius,
+          //      light_angle:        light_angle,
+          //      light_otherplayers: light_otherplayers
+          //    });
+          //    if ((typeof ls_obj !== 'undefined') && (ls_obj !== null)) {
+          //      ag_data.push(''.concat(ls_obj.id,':lightsource'));
+          //      toBack(ls_obj);
+          //    };
+          //  };
+          //  if (ag_data.length > 0) {
+          //    obj.set("gmnotes",setStringRegister(gmnotes, "attached_graphics", ag_data));
+          //  } else {
+          //    obj.set("gmnotes",setStringRegister(gmnotes, "attached_graphics"));
+          //  };
+          //};
+        };
+
+      }; break;
+    };
+  }; // refreshToken
+
+  // SECTION_ANCHOR
+  // ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██╗     ███████╗██████╗
+  // ██║  ██║██╔══██╗████╗  ██║██╔══██╗██║     ██╔════╝██╔══██╗
+  // ███████║███████║██╔██╗ ██║██║  ██║██║     █████╗  ██████╔╝
+  // ██╔══██║██╔══██║██║╚██╗██║██║  ██║██║     ██╔══╝  ██╔══██╗
+  // ██║  ██║██║  ██║██║ ╚████║██████╔╝███████╗███████╗██║  ██║
+  // ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝
+  //  █████╗ ██████╗ ██████╗      ██████╗ ██████╗  █████╗ ██████╗ ██╗  ██╗██╗ ██████╗
+  // ██╔══██╗██╔══██╗██╔══██╗    ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║  ██║██║██╔════╝
+  // ███████║██║  ██║██║  ██║    ██║  ███╗██████╔╝███████║██████╔╝███████║██║██║
+  // ██╔══██║██║  ██║██║  ██║    ██║   ██║██╔══██╗██╔══██║██╔═══╝ ██╔══██║██║██║
+  // ██║  ██║██████╔╝██████╔╝    ╚██████╔╝██║  ██║██║  ██║██║     ██║  ██║██║╚██████╗
+  // ╚═╝  ╚═╝╚═════╝ ╚═════╝      ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝ ╚═════╝
+
+  var handleAddGraphic = function(obj) {
+    log('#############################################');
+    log('handleAddGraphic()');
+    let objLayer = obj.get("layer");
+    let pageId   = obj.get("_pageid");
+    let pageName = getObj("page", pageId).get("name");
+    log(pageName);
+    log(obj.id);
+    log(obj);
+    refreshToken(obj.id);
+    if (!obj.get("represents")) { return; }
+    let character = getObj("character", obj.get("represents"));
+    if (!character) { return; }
+    character.get("_defaulttoken", function(defaultToken) {
+      //{
+      //  let npcspecialqualities = getAttrByName(character.id, "npcspecialqualities").toLowerCase();
+      //  let npcfeats            = getAttrByName(character.id, "npcfeats").toLowerCase();
+      //  let racialabilities     = getAttrByName(character.id, "racialabilities").toLowerCase();
+      //  let classabilities      = getAttrByName(character.id, "classabilities").toLowerCase();
+      //  let feats               = getAttrByName(character.id, "feats").toLowerCase();
+      //  if (npcspecialqualities.match(/low-light vision/) ||
+      //      racialabilities.match(/low-light vision/) ||
+      //      classabilities.match(/low-light vision/)) {
+      //    let multiplier = 2;
+      //    if (npcfeats.match(/improved low-light vision/) ||
+      //        feats.match(/improved low-light vision/)) {
+      //      multiplier = 4;
+      //    };
+      //    obj.set("light_multiplier", multiplier);
+      //  };
+      //  let match_result = npcspecialqualities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);
+      //  if (match_result === null) { match_result = racialabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/); };
+      //  if (match_result === null) { match_result = classabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);  };
+      //  if ((match_result !== null) && (typeof match_result[1] !== 'undefined' && (match_result[1] !== null))) {
+      //    // match_result[1] is the darkvision distance in feet...
+      //    let distance = parseFloat(match_result[1]);
+      //    if (npcfeats.match(/improved darkvision/) ||
+      //        feats.match(/improved darkvision/)) {
+      //      distance = distance * 2;
+      //    };
+      //    obj.set("light_radius",       distance);
+      //    //obj.set("light_dimradius",    (distance*5)/6); // For THAC0* Thursdays
+      //    obj.set("light_dimradius",    distance+1);
+      //  };
+      //  obj.set("light_hassight", true);
+      //};
+      if (defaultToken !== "null") { return; };
+      let npcspeed       = parseFloat(getAttrByName(character.id, "npcspeed").replace(new RegExp("[^\.0-9].*$"), ""));
+      let armorworn      = parseFloat(getAttrByName(character.id, "armorworn"));
+      let acitemspeed    = parseFloat(getAttrByName(character.id, "acitemspeed").replace(new RegExp("[^\.0-9].*$"), ""));
+      let encumbrload    = parseFloat(getAttrByName(character.id, "encumbrload"));
+      let npcarmorclass  = parseFloat(getAttrByName(character.id, "npcarmorclass"));
+      let npchitdie      = getAttrByName(character.id, "npchitdie");
+      let speed;
+      if (isNaN(npcspeed))                 { log("INVALID npcspeed = "+npcspeed); speed = 0; } else { speed = npcspeed; };
+      if (armorworn && isNaN(acitemspeed)) { log("INVALID acitemspeed = "+acitemspeed); acitemspeed = 1000; };
+      if (encumbrload < 0) {
+        switch (npcspeed) {
+          case  20: speed = 15; break;
+          case  30: speed = 20; break;
+          case  40: speed = 30; break;
+          case  50: speed = 35; break;
+          case  60: speed = 40; break;
+          case  70: speed = 50; break;
+          case  80: speed = 55; break;
+          case  90: speed = 60; break;
+          case 100: speed = 70; break;
+        };
+      };
+      if (armorworn && (acitemspeed < speed)) { speed = acitemspeed; };
+      //log("armorworn      = " + armorworn);
+      //log("acitemspeed    = " + acitemspeed);
+      //log("encumbrload    = " + encumbrload);
+      //log("npcspeed       = " + npcspeed);
+      //log("speed          = " + speed);
+      if (isNaN(npcarmorclass)) { log("INVALID npcarmorclass = "+npcarmorclass); } else { obj.set("bar2_value", npcarmorclass); };
+      if (isNaN(speed))         { log("INVALID speed"+speed); } else { obj.set("bar3_value", speed); };
+      if (npchitdie) {
+        sendChat('GM', '/roll ceil(' + npchitdie +')', function(msg) {
+            obj.set("bar1_value", JSON.parse(msg[0].content)['total']);
+            obj.set("bar1_max",   JSON.parse(msg[0].content)['total']);
+        });
+      };
+      obj.set("showplayers_bar1", true);
+      let npcspace = getAttrByName(character.id, "npcspace");
+      if (npcspace) {
+        npcspace = npcspace.toLowerCase();
+        if (npcspace.match(/ by /)) {
+          npcspace = npcspace.replace(/^ +/, "").replace(/ +$/, "").replace(/ +/g, " "); // cleanup whitespace
+          let dimensions = npcspace.split(" by ");
+          dimensions[0] = dimensions[0].replace(new RegExp("[^\.0-9].*$"), "");
+          dimensions[1] = dimensions[1].replace(new RegExp("[^\.0-9].*$"), "");
+          if (!isNaN(dimensions[0]) && !isNaN(dimensions[1])) {
+            dimensions[0] = parseFloat(dimensions[0]);
+            dimensions[1] = parseFloat(dimensions[1]);
+            if (dimensions[0] <= 1.0) { dimensions[0] = 1.0; };
+            if (dimensions[1] <= 1.0) { dimensions[1] = 1.0; };
+            obj.set("width", constants.pixels_per_foot*parseFloat(dimensions[0]));
+            obj.set("height", constants.pixels_per_foot*parseFloat(dimensions[1]));
+          };
+        } else {
+          npcspace = npcspace.replace(new RegExp("[^\.0-9].*$"), "");
+          if (!isNaN(npcspace)) {
+            npcspace = parseFloat(npcspace);
+            //log("npcspace     = " + npcspace);
+            if (npcspace <= 1.0) { npcspace = 1.0; };
+            obj.set("width", constants.pixels_per_foot*parseFloat(npcspace));
+            obj.set("height", constants.pixels_per_foot*parseFloat(npcspace));
+          };
+        };
+      };
+    });
+  }; // handleAddGraphic
+
+  // SECTION_ANCHOR
   // ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██╗     ███████╗██████╗
   // ██║  ██║██╔══██╗████╗  ██║██╔══██╗██║     ██╔════╝██╔══██╗
   // ███████║███████║██╔██╗ ██║██║  ██║██║     █████╗  ██████╔╝
@@ -1666,9 +2025,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   //  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝     ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝ ╚═════╝
 
   var handleChangeGraphic = function(obj, prev) {
+    log('#############################################');
+    log('handleChangeGraphic()');
     let objLayer = obj.get("layer");
     let pageId   = obj.get("_pageid");
     let pageName = getObj("page", pageId).get("name");
+    log(pageName);
+    log(obj.id);
+    log(obj);
     let moveAttachedGraphics = true;
     switch (state.skepickleCharacterSuiteImp.config.ModeratePCMovement) {
       case true:
@@ -1762,6 +2126,22 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     }; // process ModeratePCMovement
     switch (moveAttachedGraphics) {
       case true:
+        if ((obj.id in state.skepickleCharacterSuiteImp.graphic_attachment) &&
+            (state.skepickleCharacterSuiteImp.graphic_attachment[obj.id].role == 'subject')) {
+          log('wooop');
+          for (let i=0; i<state.skepickleCharacterSuiteImp.graphic_attachment[obj.id].objects.length; i++) {
+            let ag_id = state.skepickleCharacterSuiteImp.graphic_attachment[obj.id].objects[i];
+            if (ag_id in state.skepickleCharacterSuiteImp.graphic_attachment) {
+              let ag_obj = getObj("graphic", ag_id);
+              if ((typeof ag_obj !== 'undefined') && (ag_obj !== null)) {
+                ag_obj.set("lastmove", obj.get("lastmove"));
+                ag_obj.set("left",     obj.get("left"));
+                ag_obj.set("top",      obj.get("top"));
+                ag_obj.set("rotation", obj.get("rotation"));
+              };
+            };
+          };
+        };
         let gmnotes = decodeRoll20String(obj.get('gmnotes'));
         {
           let ag_data = getStringRegister(gmnotes, "attached_graphics");
@@ -1785,126 +2165,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   }; // handleChangeGraphic
 
   // SECTION_ANCHOR
-  // ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██╗     ███████╗██████╗
-  // ██║  ██║██╔══██╗████╗  ██║██╔══██╗██║     ██╔════╝██╔══██╗
-  // ███████║███████║██╔██╗ ██║██║  ██║██║     █████╗  ██████╔╝
-  // ██╔══██║██╔══██║██║╚██╗██║██║  ██║██║     ██╔══╝  ██╔══██╗
-  // ██║  ██║██║  ██║██║ ╚████║██████╔╝███████╗███████╗██║  ██║
-  // ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝
-  //  █████╗ ██████╗ ██████╗      ██████╗ ██████╗  █████╗ ██████╗ ██╗  ██╗██╗ ██████╗
-  // ██╔══██╗██╔══██╗██╔══██╗    ██╔════╝ ██╔══██╗██╔══██╗██╔══██╗██║  ██║██║██╔════╝
-  // ███████║██║  ██║██║  ██║    ██║  ███╗██████╔╝███████║██████╔╝███████║██║██║
-  // ██╔══██║██║  ██║██║  ██║    ██║   ██║██╔══██╗██╔══██║██╔═══╝ ██╔══██║██║██║
-  // ██║  ██║██████╔╝██████╔╝    ╚██████╔╝██║  ██║██║  ██║██║     ██║  ██║██║╚██████╗
-  // ╚═╝  ╚═╝╚═════╝ ╚═════╝      ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ╚═╝╚═╝ ╚═════╝
+  // Handle Destroy Graphic
 
-  var handleAddGraphic = function(obj) {
-    let objLayer = obj.get("layer");
-    let pageId   = obj.get("_pageid");
-    let pageName = getObj("page", pageId).get("name");
-    if (!obj.get("represents")) { return; }
-    let character = getObj("character", obj.get("represents"));
-    if (!character) { return; }
-    character.get("_defaulttoken", function(defaultToken) {
-      {
-        let npcspecialqualities = getAttrByName(character.id, "npcspecialqualities").toLowerCase();
-        let npcfeats            = getAttrByName(character.id, "npcfeats").toLowerCase();
-        let racialabilities     = getAttrByName(character.id, "racialabilities").toLowerCase();
-        let classabilities      = getAttrByName(character.id, "classabilities").toLowerCase();
-        let feats               = getAttrByName(character.id, "feats").toLowerCase();
-        if (npcspecialqualities.match(/low-light vision/) ||
-            racialabilities.match(/low-light vision/) ||
-            classabilities.match(/low-light vision/)) {
-          let multiplier = 2;
-          if (npcfeats.match(/improved low-light vision/) ||
-              feats.match(/improved low-light vision/)) {
-            multiplier = 4;
-          };
-          obj.set("light_multiplier", multiplier);
-        };
-        let match_result = npcspecialqualities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);
-        if (match_result === null) { match_result = racialabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/); };
-        if (match_result === null) { match_result = classabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);  };
-        if ((match_result !== null) && (typeof match_result[1] !== 'undefined' && (match_result[1] !== null))) {
-          // match_result[1] is the darkvision distance in feet...
-          let distance = parseFloat(match_result[1]);
-          if (npcfeats.match(/improved darkvision/) ||
-              feats.match(/improved darkvision/)) {
-            distance = distance * 2;
-          };
-          obj.set("light_radius",       distance);
-          //obj.set("light_dimradius",    (distance*5)/6); // For THAC0* Thursdays
-          obj.set("light_dimradius",    distance+1);
-        };
-        obj.set("light_hassight", true);
-      };
-      if (defaultToken !== "null") { return; };
-      let npcspeed       = parseFloat(getAttrByName(character.id, "npcspeed").replace(new RegExp("[^\.0-9].*$"), ""));
-      let armorworn      = parseFloat(getAttrByName(character.id, "armorworn"));
-      let acitemspeed    = parseFloat(getAttrByName(character.id, "acitemspeed").replace(new RegExp("[^\.0-9].*$"), ""));
-      let encumbrload    = parseFloat(getAttrByName(character.id, "encumbrload"));
-      let npcarmorclass  = parseFloat(getAttrByName(character.id, "npcarmorclass"));
-      let npchitdie      = getAttrByName(character.id, "npchitdie");
-      let speed;
-      if (isNaN(npcspeed))                 { log("INVALID npcspeed = "+npcspeed); speed = 0; } else { speed = npcspeed; };
-      if (armorworn && isNaN(acitemspeed)) { log("INVALID acitemspeed = "+acitemspeed); acitemspeed = 1000; };
-      if (encumbrload < 0) {
-        switch (npcspeed) {
-          case  20: speed = 15; break;
-          case  30: speed = 20; break;
-          case  40: speed = 30; break;
-          case  50: speed = 35; break;
-          case  60: speed = 40; break;
-          case  70: speed = 50; break;
-          case  80: speed = 55; break;
-          case  90: speed = 60; break;
-          case 100: speed = 70; break;
-        };
-      };
-      if (armorworn && (acitemspeed < speed)) { speed = acitemspeed; };
-      //log("armorworn      = " + armorworn);
-      //log("acitemspeed    = " + acitemspeed);
-      //log("encumbrload    = " + encumbrload);
-      //log("npcspeed       = " + npcspeed);
-      //log("speed          = " + speed);
-      if (isNaN(npcarmorclass)) { log("INVALID npcarmorclass = "+npcarmorclass); } else { obj.set("bar2_value", npcarmorclass); };
-      if (isNaN(speed))         { log("INVALID speed"+speed); } else { obj.set("bar3_value", speed); };
-      if (npchitdie) {
-        sendChat('GM', '/roll ceil(' + npchitdie +')', function(msg) {
-            obj.set("bar1_value", JSON.parse(msg[0].content)['total']);
-            obj.set("bar1_max",   JSON.parse(msg[0].content)['total']);
-        });
-      };
-      obj.set("showplayers_bar1", true);
-      let npcspace = getAttrByName(character.id, "npcspace");
-      if (npcspace) {
-        npcspace = npcspace.toLowerCase();
-        if (npcspace.match(/ by /)) {
-          npcspace = npcspace.replace(/^ +/, "").replace(/ +$/, "").replace(/ +/g, " "); // cleanup whitespace
-          let dimensions = npcspace.split(" by ");
-          dimensions[0] = dimensions[0].replace(new RegExp("[^\.0-9].*$"), "");
-          dimensions[1] = dimensions[1].replace(new RegExp("[^\.0-9].*$"), "");
-          if (!isNaN(dimensions[0]) && !isNaN(dimensions[1])) {
-            dimensions[0] = parseFloat(dimensions[0]);
-            dimensions[1] = parseFloat(dimensions[1]);
-            if (dimensions[0] <= 1.0) { dimensions[0] = 1.0; };
-            if (dimensions[1] <= 1.0) { dimensions[1] = 1.0; };
-            obj.set("width", constants.pixels_per_foot*parseFloat(dimensions[0]));
-            obj.set("height", constants.pixels_per_foot*parseFloat(dimensions[1]));
-          };
-        } else {
-          npcspace = npcspace.replace(new RegExp("[^\.0-9].*$"), "");
-          if (!isNaN(npcspace)) {
-            npcspace = parseFloat(npcspace);
-            //log("npcspace     = " + npcspace);
-            if (npcspace <= 1.0) { npcspace = 1.0; };
-            obj.set("width", constants.pixels_per_foot*parseFloat(npcspace));
-            obj.set("height", constants.pixels_per_foot*parseFloat(npcspace));
-          };
-        };
-      };
-    });
-  }; // handleAddGraphic
+  var handleDestroyGraphic = function(obj) {
+    var found = _.findWhere(state.SpinTokens.spinners, {id: obj.id});
+    if (found) {
+      delete state.SpinTokens.spinners[obj.id];
+    };
+  }; // handleDestroyGraphic
 
   // SECTION_ANCHOR
   // ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██╗     ███████╗██████╗
@@ -1948,12 +2216,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     try {
       switch (userCommand) {
         // COMMAND_ANCHOR
-        //  ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗ 
-        // ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝ 
+        //  ██████╗ ██████╗ ███╗   ██╗███████╗██╗ ██████╗
+        // ██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔════╝
         // ██║     ██║   ██║██╔██╗ ██║█████╗  ██║██║  ███╗
         // ██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██║   ██║
         // ╚██████╗╚██████╔╝██║ ╚████║██║     ██║╚██████╔╝
-        //  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝ 
+        //  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝ ╚═════╝
         case 'config':
         case '--config': {
           if (!playerIsGM(playerID)) { return; };
@@ -2045,7 +2313,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝
         case 'source-text':
         case '--source-text': {
-          //TODO For this to be useful, the list of activated sources needs to be moved into the state data structure.
           if (!playerIsGM(playerID)) { return; };
             let message_to_send = '';
             Object.keys(dnd_35_sources.all_source_texts).forEach(function(k,i) {
@@ -3143,95 +3410,17 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             respondToChat(msg,'&{template:default} {{name=ERROR}} {{Command= '+processedFragments.join(" ")+'}} {{Message= Unknown light source}}');
             return;
           };
-          //log(light_source_spec);
           tokenIDs.forEach(function(idOfToken) {
-            let obj = getObj("graphic", idOfToken);
-            let light_radius       = light_source_spec.radius;
-            let light_dimradius    = light_source_spec.dim;
-            let light_angle        = light_source_spec.angle;
-            let light_otherplayers = (light_source_spec.radius != '');
-            // Note This block is light source only
-            {
-              let gmnotes = decodeRoll20String(obj.get('gmnotes'));
-              let ag_data = getStringRegister(gmnotes, "attached_graphics");
-              //log(ag_data);
-              if (ag_data !== null) {
-                // Remove all light sources first
-                let prev_ls = ag_data.filter(function(a) { return a.match(/:lightsource$/)});
-                for (let i=0; i<prev_ls.length; i++) {
-                  let old_ls_obj = getObj("graphic", prev_ls[i].replace(/:lightsource$/, ''));
-                  old_ls_obj.remove();
-                };
-                ag_data = ag_data.filter(function(a) { return !a.match(/:lightsource$/)});
-              } else {
-                ag_data = [];
-              };
-              if ((light_radius != '') || (light_dimradius != '') || (light_angle != '')) {
-                let ls_obj = createObj("graphic", {
-                  pageid:             obj.get("_pageid"),
-                  layer:              "map",
-                  imgsrc:             state.skepickleCharacterSuiteImp.config.InvisibleGraphicURL,
-                  left:               obj.get("left"),
-                  top:                obj.get("top"),
-                  width:              obj.get("width"),
-                  height:             obj.get("height"),
-                  isdrawing:          true,
-                  light_radius:       light_radius,
-                  light_dimradius:    light_dimradius,
-                  light_angle:        light_angle,
-                  light_otherplayers: light_otherplayers
-                });
-                if ((typeof ls_obj !== 'undefined') && (ls_obj !== null)) {
-                  ag_data.push(''.concat(ls_obj.id,':lightsource'));
-                  toBack(ls_obj);
-                };
-              };
-              if (ag_data.length > 0) {
-                obj.set("gmnotes",setStringRegister(gmnotes, "attached_graphics", ag_data));
-              } else {
-                obj.set("gmnotes",setStringRegister(gmnotes, "attached_graphics"));
-              };
+            let t_obj = getObj("graphic", idOfToken);
+            let t_gmnotes = decodeRoll20String(t_obj.get('gmnotes'));
+            if ((light_source_spec.radius === '') &&
+                (light_source_spec.dim === '') &&
+                (light_source_spec.angle === '')) {
+              t_obj.set("gmnotes",setStringRegister(t_gmnotes, "light_source"));
+            } else {
+              t_obj.set("gmnotes",setStringRegister(t_gmnotes, "light_source", [firstFragment]));
             };
-            // NOTE The following is vision only!
-            light_radius           = '';
-            light_dimradius        = '';
-            light_otherplayers     = false;
-            let light_multiplier   = 1;
-            let character = getObj("character", obj.get("represents"));
-            if (character) {
-              let npcspecialqualities = getAttrByName(character.id, "npcspecialqualities").toLowerCase();
-              let npcfeats            = getAttrByName(character.id, "npcfeats").toLowerCase();
-              let racialabilities     = getAttrByName(character.id, "racialabilities").toLowerCase();
-              let classabilities      = getAttrByName(character.id, "classabilities").toLowerCase();
-              let feats               = getAttrByName(character.id, "feats").toLowerCase();
-              if (npcspecialqualities.match(/low-light vision/) ||
-                  racialabilities.match(/low-light vision/) ||
-                  classabilities.match(/low-light vision/)) {
-                light_multiplier = 2;
-                if (npcfeats.match(/improved low-light vision/) ||
-                    feats.match(/improved low-light vision/)) {
-                  light_multiplier = 4;
-                };
-              };
-              let match_result = npcspecialqualities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);
-              if (match_result === null) { match_result = racialabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/); };
-              if (match_result === null) { match_result = classabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);  };
-              if ((match_result !== null) && (typeof match_result[1] !== 'undefined')) {
-                // match_result[1] is the darkvision distance in feet...
-                let distance = parseFloat(match_result[1]);
-                if (npcfeats.match(/improved darkvision/) ||
-                    feats.match(/improved darkvision/)) {
-                  distance = distance * 2;
-                };
-                light_radius    = distance;
-                light_dimradius = distance+1;
-              };
-            };
-            obj.set("light_radius",       light_radius);
-            obj.set("light_dimradius",    light_dimradius);
-            obj.set("light_angle",        '');
-            obj.set("light_otherplayers", false);
-            obj.set("light_multiplier",   light_multiplier);
+            refreshToken(idOfToken);
           });
         }; break;
         // COMMAND_ANCHOR
@@ -3301,11 +3490,47 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   }; // registerEventHandlers
 
   var checkInstall = function() {
-    //IDEA Maybe use this to copy objects: b = Object.assign({}, a);
+    // temp: {
+    //   campaignLoaded: false,
+    //   encounter: {},
+    //   cache: {
+    //     source_text: null  // will get set to associative array on first access
+    //   }
+    // }
+    // state: {
+    //   skepickleCharacterSuiteImp: {
+    //     info:   {},
+    //     config: {},
+    //     graphic_attachment: {
+    //       '%id%': { role: 'subject', objects: ['%id%'...] },
+    //       '%id%': { role: 'object',  subject: '%id%', type: 'light/blah/bloop' }
+    //     },
+    //     text_attachment: {
+    //       subject: {
+    //         '%id%': { object: '%id%' },
+    //       },
+    //       object: {
+    //         '%id%': { subject: '%id%', type: 'condition/effect/blah/blop' },
+    //       },
+    //     },
+    //     desired_movement: {
+    //       subject: {
+    //         '%id%': { object_path: '%id%', object_target: '%id%' },
+    //       },
+    //       object_path: {
+    //         '%id%': { subject: '%id%' },
+    //       },
+    //       object_target: {
+    //         '%id%': { subject: '%id%' },
+    //       },
+    //     },
+    //   }
+    // }
     if ((typeof state.skepickleCharacterSuiteImp === 'undefined') || (state.skepickleCharacterSuiteImp === null)) {
       state.skepickleCharacterSuiteImp = {
         info:   Object.assign({}, info_state_template),
-        config: Object.assign({}, config_state_template)
+        config: Object.assign({}, config_state_template),
+        graphic_attachment: {}
       };
     } else {
       if ((typeof state.skepickleCharacterSuiteImp.info === 'undefined') || (state.skepickleCharacterSuiteImp.info === null)) {
@@ -3350,18 +3575,22 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         };
         state.skepickleCharacterSuiteImp.config.SourceTexts = b.join(',');
       };
-      if ((typeof state.skepickleCharacterSuiteImp.source_text_specifications === 'undefined') || (state.skepickleCharacterSuiteImp.source_text_specifications === null)) {
-        state.skepickleCharacterSuiteImp.source_text_specifications = {};
+      if ((typeof state.skepickleCharacterSuiteImp.graphic_attachment === 'undefined') || (state.skepickleCharacterSuiteImp.graphic_attachment === null)) {
+        state.skepickleCharacterSuiteImp.graphic_attachment = {};
       };
+      //TODO go through all existing entries of state.skepickleCharacterSuiteImp.graphic_attachment and make sure they still exist.
     };
-    log("########## skepickleCharacterSuite");
-    //log("########## State data for skepickleCharacterSuite");
-    //log(state.skepickleCharacterSuiteImp);
+
+
+    delete state.skepickleCharacterSuiteImp.source_text_specifications;
     //delete state["siliceousMMFixer"];
     //delete state["siliceousTokenLibImp"];
     //delete state["skepickleTokenLibImp"];
     //delete state["skepickleCharacterLibImp"];
     //log(state);
+    log("########## skepickleCharacterSuite");
+    log("########## State data for skepickleCharacterSuite");
+    log(state.skepickleCharacterSuiteImp);
   }; // checkInstall
 
   var initialize = function() {
