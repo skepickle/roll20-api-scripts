@@ -1657,16 +1657,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   // ROLL20 UTILITIES
   // TOKENS
 
-  var refreshToken = function(t_id) {
+  var updateTokenAttachedGraphics = function(t_id) {
     let t_obj = getObj("graphic", t_id);
     let t_gmnotes = decodeRoll20String(t_obj.get('gmnotes'));
     let t_lightsource = getStringRegister(t_gmnotes, "light_source") || ["None"];
     switch (t_lightsource) {
-      default: {
-        //TODONEXT Pseudocode:
-        //       Determine if token has any abilities or effects similar to Darkvision or Blindsight.
-        //       if (no) then dump light source spec into the token vision settings & destroy attached light source token if present
-        //       if (yes) then dump Darkvision/Blindsight/etc specs into the token vision settings and dump light source spec into an attached invisible token
+      default: { // Just doing a switch statement here to allow the use of "break" to get out and continue to next stage of this function
+        // Capture relevant specs of the token, things that would effect its vision.
         let npc_npcspecialqualities = '';
         let npc_npcfeats            = '';
         let pc_racialabilities      = '';
@@ -1727,63 +1724,59 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // Retrieve specs for light source indicated
         let light_source_spec = dnd_35_sources.light_sources()[t_lightsource[0].toLowerCase()];
         if ((typeof light_source_spec === 'undefined') || (light_source_spec === null)) {
-          throwDefaultTemplate("refreshToken()",(character)?(character.id):(null),{'Error': 'Undefined light source "'+t_lightsource[0]+'"'});
+          throwDefaultTemplate("updateTokenAttachedGraphics()",(character)?(character.id):(null),{'Error': 'Undefined light source "'+t_lightsource[0]+'"'});
           break;
         };
-        let light_radius       = light_source_spec.radius;
-        let light_dimradius    = light_source_spec.dim;
+        let light_radius       = light_source_spec.full_radius;
+        let light_dimradius    = light_source_spec.bright_radius;
         let light_angle        = light_source_spec.angle;
-        //let light_otherplayers = (light_source_spec.radius != '');
         let use_attached_lightsource = ((light_radius != '') || (light_dimradius != '') || (light_angle != '')) &&
                                        (((darkvision_distance > 0) && ((light_angle != '') || ((!isNaN(light_dimradius)) && (parseInt(light_dimradius)<darkvision_distance)))) ||
                                         ((blindsight_distance > 0) && ((light_angle != '') || ((!isNaN(light_dimradius)) && (parseInt(light_dimradius)<blindsight_distance)))));
         // Set subject's 'Emits Light' token settings
-        log(darkvision_distance);
-        log(blindsight_distance);
-        log(use_attached_lightsource);
+        //log(darkvision_distance);
+        //log(blindsight_distance);
+        //log(use_attached_lightsource);
         let passive_light_radius = Math.max(darkvision_distance,blindsight_distance);
         let passive_light_dimradius = passive_light_radius+1; // (passive_light_radius*5)/6 //For THAC0* Thursdays
         if (passive_light_radius == 0) {
           passive_light_radius = '';
           passive_light_dimradius = '';
         };
-        log(passive_light_radius);
-        if (use_attached_lightsource) {
+        //log(passive_light_radius);
+        if (use_attached_lightsource || ((light_radius == '') && (light_dimradius == '') && (light_angle == ''))) {
+          // If we already determined that an attached graphic is needed, or if the light source is effectively "None", set the token light values to passive specs
           t_obj.set("light_radius",       passive_light_radius);
           t_obj.set("light_dimradius",    passive_light_dimradius);
           t_obj.set("light_angle",        '');
           t_obj.set("light_otherplayers", false);
-          t_obj.set("light_multiplier",   light_multiplier);
-          t_obj.set("light_hassight",     true); //TODO search for condition/effect/quality that might hinder sight?
         } else {
-          if ((light_radius != '') || (light_dimradius != '') || (light_angle != '')) {
-            t_obj.set("light_radius",       light_radius);
-            t_obj.set("light_dimradius",    light_dimradius);
-            t_obj.set("light_angle",        light_angle);
-            t_obj.set("light_otherplayers", true);
-            t_obj.set("light_multiplier",   light_multiplier);
-            t_obj.set("light_hassight",     true); //TODO search for condition/effect/quality that might hinder sight?
-          } else {
-          t_obj.set("light_radius",       passive_light_radius);
-          t_obj.set("light_dimradius",    passive_light_dimradius);
-          t_obj.set("light_angle",        '');
-          t_obj.set("light_otherplayers", false);
-          t_obj.set("light_multiplier",   light_multiplier);
-          t_obj.set("light_hassight",     true); //TODO search for condition/effect/quality that might hinder sight?
-          };
+          // Otherwise set the token light values to actual light source specs
+          t_obj.set("light_radius",       light_radius);
+          t_obj.set("light_dimradius",    light_dimradius);
+          t_obj.set("light_angle",        light_angle);
+          t_obj.set("light_otherplayers", true);
         };
-
+        t_obj.set("light_multiplier",   light_multiplier);
+        t_obj.set("light_hassight",     true); //TODO search for condition/effect/quality that might hinder sight?
+        // Grab IDs of all attached light sources
         let cur_attached_lightsource_ids = [];
         if ((t_id in state.skepickleCharacterSuiteImp.graphic_attachment) &&
             (state.skepickleCharacterSuiteImp.graphic_attachment[t_id].role == 'subject')) {
+          // BE A GOOD BOY SCOUT, clean up any invalid entries related to this token
+          let objects_to_remove = [];
           for (let i=0; i<state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects.length; i++) {
             let o_id = state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects[i];
-            if ((o_id in state.skepickleCharacterSuiteImp.graphic_attachment) &&
-                (state.skepickleCharacterSuiteImp.graphic_attachment[o_id].type == 'light')) {
+            let o_obj = getObj("graphic", o_id);
+            if ((typeof state.skepickleCharacterSuiteImp.graphic_attachment[o_id] === 'undefined') || (o_obj === null)) {
+              objects_to_remove.push(o_id);
+            } else if (state.skepickleCharacterSuiteImp.graphic_attachment[o_id].type == 'light') {
               cur_attached_lightsource_ids.push(state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects[i]);
             };
           };
+          state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects = state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects.filter(function(value, index, arr){ return !objects_to_remove.includes(value); });
         };
+        // Whittle down the group of light source attached-graphics to how many we actually need, either zero or one!
         while (cur_attached_lightsource_ids.length > ((use_attached_lightsource)?(1):(0))) {
           let o_id = cur_attached_lightsource_ids[0];
           state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects = state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects.filter(function(value, index, arr){ return value != o_id; });
@@ -1792,8 +1785,34 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           let o_obj = getObj("graphic", o_id);
           if (o_obj !== null) { o_obj.remove(); };
         };
+        // If we are using an attached-graphic for light, configure it based on the light source spec
         if (use_attached_lightsource) {
-          if (cur_attached_lightsource_ids.length==0) {
+          if (state.skepickleCharacterSuiteImp.config.InvisibleGraphicURL == '') {
+            throwDefaultTemplate("updateTokenAttachedGraphics()",(character)?(character.id):(null),{'Error': 'Cannot create an attached light source because the InvisibleGraphicURL configuration variable is unset.'});
+            break;
+          };
+          let create_new_graphic = false;
+          if (cur_attached_lightsource_ids.length > 0) {
+            // set light on existing token!
+            let ls_obj = getObj("graphic", cur_attached_lightsource_ids[0]);
+            if (ls_obj != null) {
+              ls_obj.set("_pageid",            t_obj.get("_pageid"));
+              ls_obj.set("layer",              "map");
+              ls_obj.set("imgsrc",             state.skepickleCharacterSuiteImp.config.InvisibleGraphicURL);
+              ls_obj.set("left",               t_obj.get("left"));
+              ls_obj.set("top",                t_obj.get("top"));
+              ls_obj.set("width",              t_obj.get("width"));
+              ls_obj.set("height",             t_obj.get("height"));
+              ls_obj.set("isdrawing",          true);
+              ls_obj.set("light_radius",       light_radius);
+              ls_obj.set("light_dimradius",    light_dimradius);
+              ls_obj.set("light_angle",        light_angle);
+              ls_obj.set("light_otherplayers", true);
+            } else {
+              create_new_graphic = true;
+            }
+          };
+          if (create_new_graphic) {
             // create a new token!
             let ls_obj = createObj("graphic", {
               pageid:             t_obj.get("_pageid"),
@@ -1815,72 +1834,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               state.skepickleCharacterSuiteImp.graphic_attachment[t_id] = { role: 'subject', objects: []}
             };
             state.skepickleCharacterSuiteImp.graphic_attachment[t_id].objects.push(o_id);
-          } else {
-            // set light on existing token!
-            let ls_obj = getObj("graphic", cur_attached_lightsource_ids[0]);
-            ls_obj.set("_pageid",            t_obj.get("_pageid"));
-            ls_obj.set("layer",              "map");
-            ls_obj.set("imgsrc",             state.skepickleCharacterSuiteImp.config.InvisibleGraphicURL);
-            ls_obj.set("left",               t_obj.get("left"));
-            ls_obj.set("top",                t_obj.get("top"));
-            ls_obj.set("width",              t_obj.get("width"));
-            ls_obj.set("height",             t_obj.get("height"));
-            ls_obj.set("isdrawing",          true);
-            ls_obj.set("light_radius",       light_radius);
-            ls_obj.set("light_dimradius",    light_dimradius);
-            ls_obj.set("light_angle",        light_angle);
-            ls_obj.set("light_otherplayers", true);
           };
         };
-        if (false) {
-          //TODONEXT handle attached lightsource token, if (use_attached_lightsource)
-          //// Note This block is light source only
-          //{
-          //  let gmnotes = decodeRoll20String(obj.get('gmnotes'));
-          //  let ag_data = getStringRegister(gmnotes, "attached_graphics");
-          //  //log(ag_data);
-          //  if (ag_data !== null) {
-          //    // Remove all light sources first
-          //    let prev_ls = ag_data.filter(function(a) { return a.match(/:lightsource$/)});
-          //    for (let i=0; i<prev_ls.length; i++) {
-          //      let old_ls_obj = getObj("graphic", prev_ls[i].replace(/:lightsource$/, ''));
-          //      old_ls_obj.remove();
-          //    };
-          //    ag_data = ag_data.filter(function(a) { return !a.match(/:lightsource$/)});
-          //  } else {
-          //    ag_data = [];
-          //  };
-          //  if ((light_radius != '') || (light_dimradius != '') || (light_angle != '')) {
-          //    let ls_obj = createObj("graphic", {
-          //      pageid:             obj.get("_pageid"),
-          //      layer:              "map",
-          //      imgsrc:             state.skepickleCharacterSuiteImp.config.InvisibleGraphicURL,
-          //      left:               obj.get("left"),
-          //      top:                obj.get("top"),
-          //      width:              obj.get("width"),
-          //      height:             obj.get("height"),
-          //      isdrawing:          true,
-          //      light_radius:       light_radius,
-          //      light_dimradius:    light_dimradius,
-          //      light_angle:        light_angle,
-          //      light_otherplayers: light_otherplayers
-          //    });
-          //    if ((typeof ls_obj !== 'undefined') && (ls_obj !== null)) {
-          //      ag_data.push(''.concat(ls_obj.id,':lightsource'));
-          //      toBack(ls_obj);
-          //    };
-          //  };
-          //  if (ag_data.length > 0) {
-          //    obj.set("gmnotes",setStringRegister(gmnotes, "attached_graphics", ag_data));
-          //  } else {
-          //    obj.set("gmnotes",setStringRegister(gmnotes, "attached_graphics"));
-          //  };
-          //};
-        };
-
       }; break;
     };
-  }; // refreshToken
+  }; // updateTokenAttachedGraphics()
 
   // SECTION_ANCHOR
   // ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██╗     ███████╗██████╗
@@ -1905,43 +1863,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     log(pageName);
     log(obj.id);
     log(obj);
-    refreshToken(obj.id);
+    updateTokenAttachedGraphics(obj.id);
     if (!obj.get("represents")) { return; }
     let character = getObj("character", obj.get("represents"));
     if (!character) { return; }
     character.get("_defaulttoken", function(defaultToken) {
-      //{
-      //  let npcspecialqualities = getAttrByName(character.id, "npcspecialqualities").toLowerCase();
-      //  let npcfeats            = getAttrByName(character.id, "npcfeats").toLowerCase();
-      //  let racialabilities     = getAttrByName(character.id, "racialabilities").toLowerCase();
-      //  let classabilities      = getAttrByName(character.id, "classabilities").toLowerCase();
-      //  let feats               = getAttrByName(character.id, "feats").toLowerCase();
-      //  if (npcspecialqualities.match(/low-light vision/) ||
-      //      racialabilities.match(/low-light vision/) ||
-      //      classabilities.match(/low-light vision/)) {
-      //    let multiplier = 2;
-      //    if (npcfeats.match(/improved low-light vision/) ||
-      //        feats.match(/improved low-light vision/)) {
-      //      multiplier = 4;
-      //    };
-      //    obj.set("light_multiplier", multiplier);
-      //  };
-      //  let match_result = npcspecialqualities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);
-      //  if (match_result === null) { match_result = racialabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/); };
-      //  if (match_result === null) { match_result = classabilities.match(/darkvision *([0-9]+) *(feet|foot|ft\.*|')/);  };
-      //  if ((match_result !== null) && (typeof match_result[1] !== 'undefined' && (match_result[1] !== null))) {
-      //    // match_result[1] is the darkvision distance in feet...
-      //    let distance = parseFloat(match_result[1]);
-      //    if (npcfeats.match(/improved darkvision/) ||
-      //        feats.match(/improved darkvision/)) {
-      //      distance = distance * 2;
-      //    };
-      //    obj.set("light_radius",       distance);
-      //    //obj.set("light_dimradius",    (distance*5)/6); // For THAC0* Thursdays
-      //    obj.set("light_dimradius",    distance+1);
-      //  };
-      //  obj.set("light_hassight", true);
-      //};
       if (defaultToken !== "null") { return; };
       let npcspeed       = parseFloat(getAttrByName(character.id, "npcspeed").replace(new RegExp("[^\.0-9].*$"), ""));
       let armorworn      = parseFloat(getAttrByName(character.id, "armorworn"));
@@ -2008,7 +1934,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         };
       };
     });
-  }; // handleAddGraphic
+  }; // handleAddGraphic()
 
   // SECTION_ANCHOR
   // ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██╗     ███████╗██████╗
@@ -2124,55 +2050,22 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         moveAttachedGraphics = false;
         break;
     }; // process ModeratePCMovement
-    switch (moveAttachedGraphics) {
-      case true:
-        if ((obj.id in state.skepickleCharacterSuiteImp.graphic_attachment) &&
-            (state.skepickleCharacterSuiteImp.graphic_attachment[obj.id].role == 'subject')) {
-          log('wooop');
-          for (let i=0; i<state.skepickleCharacterSuiteImp.graphic_attachment[obj.id].objects.length; i++) {
-            let ag_id = state.skepickleCharacterSuiteImp.graphic_attachment[obj.id].objects[i];
-            if (ag_id in state.skepickleCharacterSuiteImp.graphic_attachment) {
-              let ag_obj = getObj("graphic", ag_id);
-              if ((typeof ag_obj !== 'undefined') && (ag_obj !== null)) {
-                ag_obj.set("lastmove", obj.get("lastmove"));
-                ag_obj.set("left",     obj.get("left"));
-                ag_obj.set("top",      obj.get("top"));
-                ag_obj.set("rotation", obj.get("rotation"));
-              };
-            };
-          };
-        };
-        let gmnotes = decodeRoll20String(obj.get('gmnotes'));
-        {
-          let ag_data = getStringRegister(gmnotes, "attached_graphics");
-          if (ag_data !== null) {
-            //log(ag_data);
-            for (let i=0; i<ag_data.length; i++) {
-              let ag_id = ag_data[i].replace(/:.*$/, '');
-              let ag_obj = getObj("graphic", ag_id);
-              if ((typeof ag_obj !== 'undefined') && (ag_obj !== null)) {
-                ag_obj.set("lastmove", obj.get("lastmove"));
-                ag_obj.set("left",     obj.get("left"));
-                ag_obj.set("top",      obj.get("top"));
-                ag_obj.set("rotation", obj.get("rotation"));
-              };
-            };
-          };
-        };
-        break;
+    if (moveAttachedGraphics) {
+        updateTokenAttachedGraphics(obj.id);
+        //TODO updateTokenAttachedTexts(obj.id);
     };
     return;
-  }; // handleChangeGraphic
+  }; // handleChangeGraphic()
 
   // SECTION_ANCHOR
   // Handle Destroy Graphic
 
   var handleDestroyGraphic = function(obj) {
-    var found = _.findWhere(state.SpinTokens.spinners, {id: obj.id});
-    if (found) {
-      delete state.SpinTokens.spinners[obj.id];
-    };
-  }; // handleDestroyGraphic
+    //var found = _.findWhere(state.SpinTokens.spinners, {id: obj.id});
+    //if (found) {
+    //  delete state.SpinTokens.spinners[obj.id];
+    //};
+  }; // handleDestroyGraphic()
 
   // SECTION_ANCHOR
   // ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██╗     ███████╗██████╗
@@ -2736,20 +2629,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       obj.set("left", left);
                       obj.set("top",  top);
                       obj.set("lastmove", the_path.join(','));
-                      let ag_data = getStringRegister(gmnotes, "attached_graphics");
-                      if (ag_data !== null) {
-                        //log(ag_data);
-                        for (let i=0; i<ag_data.length; i++) {
-                          let ag_id = ag_data[i].replace(/:.*$/, '');
-                          let ag_obj = getObj("graphic", ag_id);
-                          if ((typeof ag_obj !== 'undefined') && (ag_obj !== null)) {
-                            ag_obj.set("left",     obj.get("left"));
-                            ag_obj.set("top",      obj.get("top"));
-                            ag_obj.set("rotation", obj.get("rotation"));
-                            ag_obj.set("lastmove", the_path.join(','));
-                          };
-                        };
-                      };
+                      updateTokenAttachedGraphics(obj.id);
                     };
                   };
                   //Note: No 'break' here as it is meant to fall through to the reject logic below to delete the path and shadow token
@@ -3413,14 +3293,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           tokenIDs.forEach(function(idOfToken) {
             let t_obj = getObj("graphic", idOfToken);
             let t_gmnotes = decodeRoll20String(t_obj.get('gmnotes'));
-            if ((light_source_spec.radius === '') &&
-                (light_source_spec.dim === '') &&
+            if ((light_source_spec.full_radius === '') &&
+                (light_source_spec.bright_radius === '') &&
                 (light_source_spec.angle === '')) {
               t_obj.set("gmnotes",setStringRegister(t_gmnotes, "light_source"));
             } else {
               t_obj.set("gmnotes",setStringRegister(t_gmnotes, "light_source", [firstFragment]));
             };
-            refreshToken(idOfToken);
+            updateTokenAttachedGraphics(idOfToken);
           });
         }; break;
         // COMMAND_ANCHOR
@@ -3473,7 +3353,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     } catch (e) {
       log("Encountered a problem on "+userCommand+" operation:\n"+e);
     };
-  }; // handleChatMessage
+  }; // handleChatMessage()
 
   // SECTION_ANCHOR
   // ███████╗ ██████╗██████╗ ██╗██████╗ ████████╗    ██╗███╗   ██╗██╗████████╗

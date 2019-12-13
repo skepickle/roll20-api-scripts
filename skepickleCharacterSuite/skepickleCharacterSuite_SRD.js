@@ -81,15 +81,15 @@ var skepickleCharacterSuite_SRD = skepickleCharacterSuite_SRD || (function skepi
       'use psionic device':       {base: 'use psionic device',       attrib: '',                  default_ability_mod: 'cha-mod', trained_only:true  },
       'use rope':                 {base: 'use rope',                 attrib: 'userope',                                           trained_only:false } },
     light_sources: {
-      'none':              { radius: '',   dim: '',   angle: '' },
-      'candle':            { radius: 5,    dim: 0,    angle: '' },
-      'everburning torch': { radius: 40,   dim: 20,   angle: '' },
-      'common lamp':       { radius: 30,   dim: 15,   angle: '' },
-      'bullseye lantern':  { radius: 120,  dim: 60,   angle: 90 },
-      'hooded lantern':    { radius: 60,   dim: 30,   angle: '' },
-      'sunrod':            { radius: 60,   dim: 30,   angle: '' },
-      'torch':             { radius: 40,   dim: 20,   angle: '' },
-      'daylight (spell)':  { radius: 120,  dim: 60,   angle: '' } },
+      'none':              { full_radius: '',   bright_radius: '',   angle: '' },
+      'candle':            { full_radius: 5,    bright_radius: 0,    angle: '' },
+      'everburning torch': { full_radius: 40,   bright_radius: 20,   angle: '' },
+      'common lamp':       { full_radius: 30,   bright_radius: 15,   angle: '' },
+      'bullseye lantern':  { full_radius: 120,  bright_radius: 60,   angle: 90 },
+      'hooded lantern':    { full_radius: 60,   bright_radius: 30,   angle: '' },
+      'sunrod':            { full_radius: 60,   bright_radius: 30,   angle: '' },
+      'torch':             { full_radius: 40,   bright_radius: 20,   angle: '' },
+      'daylight (spell)':  { full_radius: 120,  bright_radius: 60,   angle: '' } },
     spells: {
       // NOTE: Use '↲' character to indicate a carriage return
       // NOTE: Use '’' character for appostrophes...
