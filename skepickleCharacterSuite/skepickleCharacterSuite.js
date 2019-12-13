@@ -1791,7 +1791,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             throwDefaultTemplate("updateTokenAttachedGraphics()",(character)?(character.id):(null),{'Error': 'Cannot create an attached light source because the InvisibleGraphicURL configuration variable is unset.'});
             break;
           };
-          let create_new_graphic = false;
+          let create_new_graphic = true;
           if (cur_attached_lightsource_ids.length > 0) {
             // set light on existing token!
             let ls_obj = getObj("graphic", cur_attached_lightsource_ids[0]);
@@ -1808,8 +1808,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               ls_obj.set("light_dimradius",    light_dimradius);
               ls_obj.set("light_angle",        light_angle);
               ls_obj.set("light_otherplayers", true);
-            } else {
-              create_new_graphic = true;
+              create_new_graphic = false;
             }
           };
           if (create_new_graphic) {
@@ -1860,9 +1859,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     let objLayer = obj.get("layer");
     let pageId   = obj.get("_pageid");
     let pageName = getObj("page", pageId).get("name");
-    log(pageName);
-    log(obj.id);
-    log(obj);
+    //log(pageName);
+    //log(obj.id);
+    //log(obj);
     updateTokenAttachedGraphics(obj.id);
     if (!obj.get("represents")) { return; }
     let character = getObj("character", obj.get("represents"));
@@ -1956,9 +1955,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     let objLayer = obj.get("layer");
     let pageId   = obj.get("_pageid");
     let pageName = getObj("page", pageId).get("name");
-    log(pageName);
-    log(obj.id);
-    log(obj);
+    //log(pageName);
+    //log(obj.id);
+    //log(obj);
     let moveAttachedGraphics = true;
     switch (state.skepickleCharacterSuiteImp.config.ModeratePCMovement) {
       case true:
@@ -2061,10 +2060,25 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   // Handle Destroy Graphic
 
   var handleDestroyGraphic = function(obj) {
-    //var found = _.findWhere(state.SpinTokens.spinners, {id: obj.id});
-    //if (found) {
-    //  delete state.SpinTokens.spinners[obj.id];
-    //};
+    log('#############################################');
+    log('handleDestroyGraphic()');
+    let objLayer = obj.get("layer");
+    //let pageId   = obj.get("_pageid");
+    //let pageName = getObj("page", pageId).get("name");
+    //log(pageName);
+    //log(obj.id);
+    //log(obj);
+    if (obj.id in state.skepickleCharacterSuiteImp.graphic_attachment) {
+      if (state.skepickleCharacterSuiteImp.graphic_attachment[obj.id].role == 'subject') {
+        for (let i=0; i<state.skepickleCharacterSuiteImp.graphic_attachment[obj.id].objects.length; i++) {
+          let o_id = state.skepickleCharacterSuiteImp.graphic_attachment[obj.id].objects[i];
+          delete state.skepickleCharacterSuiteImp.graphic_attachment[o_id];
+          let o_obj = getObj("graphic", o_id);
+          if (o_obj !== null) { o_obj.remove(); };
+        };
+      };
+      delete state.skepickleCharacterSuiteImp.graphic_attachment[obj.id];
+    };
   }; // handleDestroyGraphic()
 
   // SECTION_ANCHOR
@@ -3364,9 +3378,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   // ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝╚═╝        ╚═╝       ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝
 
   var registerEventHandlers = function() {
-    on('add:graphic',    handleAddGraphic);
-    on('change:graphic', handleChangeGraphic);
-    on('chat:message',   handleChatMessage);
+    on('add:graphic',     handleAddGraphic);
+    on('change:graphic',  handleChangeGraphic);
+    on('destroy:graphic', handleDestroyGraphic);
+    on('chat:message',    handleChatMessage);
   }; // registerEventHandlers
 
   var checkInstall = function() {
