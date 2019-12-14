@@ -3474,10 +3474,24 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         state.skepickleCharacterSuiteImp.graphic_attachment = {};
       };
       //TODO go through all existing entries of state.skepickleCharacterSuiteImp.graphic_attachment and make sure they still exist.
+      for (let id in state.skepickleCharacterSuiteImp.graphic_attachment) {
+        let o = getObj("graphic", id);
+        if ((typeof o === 'undefined') || (o === null)) {
+          if (state.skepickleCharacterSuiteImp.graphic_attachment[id].role === "subject") {
+            for (let o_id in state.skepickleCharacterSuiteImp.graphic_attachment[id].objects) {
+              let o_obj = getObj("graphic", o_id);
+              if ((typeof o_obj !== 'undefined') && (o_obj !== null)) {
+                o_obj.remove();
+              };
+              delete state.skepickleCharacterSuiteImp.graphic_attachment[o_id];
+            };
+          };
+          delete state.skepickleCharacterSuiteImp.graphic_attachment[id];
+        };
+      };
     };
 
 
-    delete state.skepickleCharacterSuiteImp.source_text_specifications;
     //delete state["siliceousMMFixer"];
     //delete state["siliceousTokenLibImp"];
     //delete state["skepickleTokenLibImp"];
