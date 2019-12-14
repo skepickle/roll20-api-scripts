@@ -1863,6 +1863,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //log(obj.id);
     //log(obj);
     updateTokenAttachedGraphics(obj.id);
+    //TODO updateTokenAttachedTexts(obj.id);
     if (!obj.get("represents")) { return; }
     let character = getObj("character", obj.get("represents"));
     if (!character) { return; }
@@ -2644,6 +2645,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       obj.set("top",  top);
                       obj.set("lastmove", the_path.join(','));
                       updateTokenAttachedGraphics(obj.id);
+                      //TODO updateTokenAttachedTexts(obj.id);
                     };
                   };
                   //Note: No 'break' here as it is meant to fall through to the reject logic below to delete the path and shadow token
@@ -3400,7 +3402,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //       '%id%': { role: 'subject', objects: ['%id%'...] },
     //       '%id%': { role: 'object',  subject: '%id%', type: 'light/blah/bloop' }
     //     },
-    //     text_attachment: {
+    //     text_attachment: {    TODO
     //       subject: {
     //         '%id%': { object: '%id%' },
     //       },
@@ -3408,7 +3410,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //         '%id%': { subject: '%id%', type: 'condition/effect/blah/blop' },
     //       },
     //     },
-    //     desired_movement: {
+    //     desired_movement: {   TODO
     //       subject: {
     //         '%id%': { object_path: '%id%', object_target: '%id%' },
     //       },
@@ -3425,9 +3427,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       state.skepickleCharacterSuiteImp = {
         info:   Object.assign({}, info_state_template),
         config: Object.assign({}, config_state_template),
-        graphic_attachment: {}
+        graphic_attachment: {},
+        text_attachment: {}
       };
     } else {
+      // CHECK STATE INFO
       if ((typeof state.skepickleCharacterSuiteImp.info === 'undefined') || (state.skepickleCharacterSuiteImp.info === null)) {
         state.skepickleCharacterSuiteImp.info = Object.assign({}, info_state_template);
       } else {
@@ -3442,6 +3446,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           };
         };
       };
+      // CHECK STATE CONFIG
       if ((typeof state.skepickleCharacterSuiteImp.config === 'undefined') || (state.skepickleCharacterSuiteImp.config === null)) {
         state.skepickleCharacterSuiteImp.config = Object.assign({}, config_state_template);
       } else {
@@ -3470,10 +3475,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         };
         state.skepickleCharacterSuiteImp.config.SourceTexts = b.join(',');
       };
+      // CHECK STATE GRAPHIC ATTACHMENT
       if ((typeof state.skepickleCharacterSuiteImp.graphic_attachment === 'undefined') || (state.skepickleCharacterSuiteImp.graphic_attachment === null)) {
         state.skepickleCharacterSuiteImp.graphic_attachment = {};
       };
-      //TODO go through all existing entries of state.skepickleCharacterSuiteImp.graphic_attachment and make sure they still exist.
       for (let id in state.skepickleCharacterSuiteImp.graphic_attachment) {
         let o = getObj("graphic", id);
         if ((typeof o === 'undefined') || (o === null)) {
@@ -3489,6 +3494,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           delete state.skepickleCharacterSuiteImp.graphic_attachment[id];
         };
       };
+      // CHECK STATE TEXT ATTACHMENT
+      if ((typeof state.skepickleCharacterSuiteImp.text_attachment === 'undefined') || (state.skepickleCharacterSuiteImp.text_attachment === null)) {
+        state.skepickleCharacterSuiteImp.text_attachment = {};
+      };
+      //TODO Clean up text_attachment structure
     };
 
 
