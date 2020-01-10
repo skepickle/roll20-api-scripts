@@ -1330,8 +1330,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     // npcinitmacro
     {
       let npcinitmacro = getAttrByName(id, "npcinitmacro");
-      if (npcinitmacro !== '&{template:DnD35Initiative} {{name=@{selected|token_name}}} {{check=checks for initiative:\n}} {{checkroll=[[(1d20cs>21cf<0 + (@{npcinit})) + ((1d20cs>21cf<0 + (@{npcinit}))/100) + ((1d20cs>21cf<0 + (@{npcinit}))/10000) &{tracker}]]}}') {
-        throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcinitmacro', 'Invalid Value': npcinitmacro, 'Correct Value': '&{template:DnD35Initiative} {{name=@{selected|token_name}}} {{check=checks for initiative:\n}} {{checkroll=[[(1d20cs>21cf<0 + (@{npcinit})) + ((1d20cs>21cf<0 + (@{npcinit}))/100) + ((1d20cs>21cf<0 + (@{npcinit}))/10000) &{tracker}]]}}'});
+      if (npcinitmacro !== '/w GM &{template:DnD35Initiative} {{name=@{selected|token_name}}} {{check=Initiative:}} {{checkroll=[[(1d20 + (@{npcinit})) &{tracker}]]}}') {
+        throwDefaultTemplate("mookAuditNPCSheet()",id,{'Attribute Name': 'npcinitmacro', 'Invalid Value': npcinitmacro, 'Correct Value': '/w GM &{template:DnD35Initiative} {{name=@{selected|token_name}}} {{check=Initiative:}} {{checkroll=[[(1d20 + (@{npcinit})) &{tracker}]]}}'});
       };
     };
 
@@ -1690,6 +1690,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //SKIP npcspecialqualities -> racialabilities
     //SKIP npcfeats -> feats
     //SKIP npcspecialattacks
+    //TODONEXT fix up NPC ability macros
   }; // mookInferPCSheet
 
   //var checkSheetMacros = function(id) {
