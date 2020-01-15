@@ -1757,7 +1757,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           };
         };
         if (armorworn && (acitemspeed < real_speed)) { real_speed = acitemspeed; };
-        if (isNaN(real_speed)) { log("INVALID speed"+real_speed); } else { log(real_speed); t_obj.set("bar3_link", null); t_obj.set("bar3_value", real_speed); };
+        if (isNaN(real_speed)) { log("INVALID speed"+real_speed); } else { /*log(real_speed);*/ t_obj.set("bar3_link", null); t_obj.set("bar3_value", real_speed); };
         return;
       } else {
         let npcspeed       = parseFloat(getAttrByName(character.id, "npcspeed").replace(new RegExp("[^\.0-9].*$"), ""));
@@ -2944,6 +2944,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                spellmacro.match(/^.*‹[^›«»|]+\|[^›«»]+›.*$/) ||
                                spellmacro.match(/^.*«[^‹›»|]+».*$/) ||
                                spellmacro.match(/^.*«[^‹›»|]+\|[^‹›»]+».*$/)) {
+                          //TODO Add infinite loop detection here
                           let match_results;
                           match_results = spellmacro.match(/^(.*)‹([^›«»|]+)›(.*)$/);
                           if (match_results !== null) {
@@ -3068,6 +3069,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                     } else {
                       let n = 3;
                       while (char_name.concat(" ("+n+")") in roll_initiative_map) {
+                        //TODO Add infinite loop detection here
                         n++;
                       };
                       char_name_unique = char_name.concat(" ("+n+")");
@@ -3162,6 +3164,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
               if (roll_skill_map[char_name].state == "EXCLUDE") {
                 let n = 3;
                 while (char_name.concat(" ("+n+")") in roll_skill_map) {
+                  //TODO Add infinite loop detection here
                   n++;
                 };
                 char_name_unique = char_name.concat(" ("+n+")");
@@ -3316,7 +3319,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             if (character.get("controlledby") == "") { return; };
             try {
               let gmnotes = decodeRoll20String(obj.get('gmnotes'));
-              switch (firstFragment) {
+              switch (firstFragment.toLowerCase()) {
                 case 'enable':
                   obj.set("gmnotes",setStringRegister(gmnotes, "moderate-movement", ['enabled']));
                   return;
@@ -3329,7 +3332,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                     if (mm_data === null) { return; };
                 }; break;
               };
-              switch (firstFragment) {
+              switch (firstFragment.toLowerCase()) {
                 case 'accept': {
                   if (typeof state.skepickleCharacterSuiteImp.moderate_movement.subject[idOfToken] === 'undefined') {
                     respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not currently have a desired movement specified.}}');
