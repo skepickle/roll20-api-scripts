@@ -1735,13 +1735,16 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           fast_movement_bonus = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(fast_movement_bonus):(Math.max(fast_movement_bonus,parseFloat(match_result[1])));
           match_result = pc_other.match(/fast movement *\+([0-9]+) *(feet|foot|ft\.*|')/);
           fast_movement_bonus = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(fast_movement_bonus):(Math.max(fast_movement_bonus,parseFloat(match_result[1])));
+          let longstrider = 0;
+          match_result = pc_other.match(/longstrider/);
+          longstrider = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(longstrider):(Math.max(longstrider,10));
           let speed_of_thought = 0;
           match_result = pc_feats.match(/speed of thought/);
           speed_of_thought = (match_result === null)?(speed_of_thought):(Math.max(speed_of_thought,10));
           let epic_speed = 0;
           match_result = pc_feats.match(/epic speed/);
           epic_speed = (match_result === null)?(epic_speed):(Math.max(epic_speed,30));
-          real_speed = real_speed + fast_movement_bonus + speed_of_thought + epic_speed;
+          real_speed = real_speed + fast_movement_bonus + longstrider + speed_of_thought + epic_speed;
         };
         if (encumbrload < 0) {
           switch (real_speed) {
