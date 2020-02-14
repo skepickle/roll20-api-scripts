@@ -2820,9 +2820,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               spellmacro = spellmacro.concat(' {{Saving Throw:=',spell_spec.saving_throw,'}}');
                             };
                             if ('resistance' in spell_spec) {
-                              spellmacro = spellmacro.concat(' {{Spell Resist.:=',spell_spec.resistance,'}}');
                               if (spell_spec.resistance != 'No') {
-                                spellmacro = spellmacro.concat(' {{Caster level check:=[[1d20+?{Caster Level}[Caster Level]+@{spellpen}[Spell Penalty]]] vs spell resist.}}');
+                                spellmacro = spellmacro.concat(' {{Spell Resist.:=‹',spell_spec.resistance,'|Caster Level Check vs spell resistance: [[1d20+?{Caster Level}[Caster Level]+@{spellpen}[Spell Penalty]]]›}}');
+                              } else {
+                                spellmacro = spellmacro.concat(' {{Spell Resist.:=',spell_spec.resistance,'}}');
                               };
                             };
                             spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
@@ -2917,9 +2918,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                               spellmacro = spellmacro.concat(' {{Saving Throw:=',spell_spec.saving_throw,'}}');
                             };
                             if ('resistance' in spell_spec) {
-                              spellmacro = spellmacro.concat(' {{Power Resist.:=',spell_spec.resistance,'}}');
                               if (spell_spec.resistance != 'No') {
-                                spellmacro = spellmacro.concat(' {{Manifester level check:=[[1d20+?{Manifester Level}[Manifester Level]', (('resistance_bonus' in spell_spec)?('+'.concat(spell_spec.resistance_bonus)):('')), ']] vs power resist.}}');
+                                spellmacro = spellmacro.concat(' {{Power Resist.:=‹',spell_spec.resistance,'|Manifester Level Check vs power resistance: [[1d20+?{Manifester Level}[Manifester Level]', (('resistance_bonus' in spell_spec)?('+'.concat(spell_spec.resistance_bonus)):('')), ']]›}}');
+                              } else {
+                                spellmacro = spellmacro.concat(' {{Power Resist.:=',spell_spec.resistance,'}}');
                               };
                             };
                             let text_augment = "";
