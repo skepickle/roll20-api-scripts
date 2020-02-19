@@ -2705,7 +2705,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                         let spell_spec = dnd_35_sources.spell(spell_name);
                         //log(spell_spec);
                         //log("^^^^^^^^^^^^^^");
-                        let new_spell_name = spellname_attr.get('current').replace(/[^-A-Za-z' ]/g, '');
+                        let new_spell_name = spellname_attr.get('current').replace(/[^-A-Za-z'/ ]/g, '');
                         switch (spell_spec.type) {
                           case 'spell':
                             if (spell_spec.component_details) {
