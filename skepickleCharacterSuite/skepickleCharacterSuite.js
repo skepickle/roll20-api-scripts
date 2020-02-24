@@ -252,6 +252,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   }; // abilityScoreToBonusPowers()
 
   function sizeToMod(size) {
+    if (size == null) { log("null size"); throw "{{error}}"; };
     if (!dnd_35_sources.size_categories().includes(size.toLowerCase())) { log("error"); throw "{{error}}"; };
     switch (size.toLowerCase()) {
       case "fine":       return 8;
@@ -267,17 +268,19 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   }; // sizeToMod()
 
   function sizeToGrappleMod(size) {
-    if (!dnd_35_sources.size_categories().includes(size.toLowerCase())) { log("error"); throw "{{error}}"; };
-    switch (size.toLowerCase()) {
-      case 8,"fine":       return -16;
-      case 4,"diminutive": return -12;
-      case 2,"tiny":       return -8;
-      case 1,"small":      return -4;
-      case 0,"medium":     return 0;
-      case -1,"large":      return 4;
-      case -2,"huge":       return 8;
-      case -4,"gargantuan": return 12;
-      case -8,"colossal":   return 16;
+    if (isNaN(size)) {
+      size = sizeToMod(size);
+    };
+    switch (size) {
+      case  8: return -16;
+      case  4: return -12;
+      case  2: return -8;
+      case  1: return -4;
+      case  0: return 0;
+      case -1: return 4;
+      case -2: return 8;
+      case -4: return 12;
+      case -8: return 16;
     };
   }; // sizeToGrappleMod()
 
@@ -300,11 +303,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   function sizeModToTallReach(size) {
     //log("sizeModToTallReach('"+size+"')");
     if (isNaN(size)) {
-      log("   isNaN");
-      if (!dnd_35_sources.size_categories().includes(size.toLowerCase())) { log("error"); throw "{{error}}"; };
-      size = sizeToMod(size.toLowerCase());
+      size = sizeToMod(size);
     };
-    size = parseFloat(size);
     switch (size) {
       case  8: return 0;
       case  4: return 0;
@@ -320,7 +320,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
 
   function sizeModToLongReach(size) {
     if (isNaN(size)) {
-      if (!dnd_35_sources.size_categories().includes(size)) { log("error"); throw "{{error}}"; };
       size = sizeToMod(size);
     };
     switch (size) {
@@ -1155,7 +1154,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     if (obj.length == 0) {
       obj = createObj("attribute", {
         name: attrib,
-        current: 1,
+        current: 10,
         characterid: id
       });
     } else {
@@ -1463,8 +1462,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     mookAuditNPCSheet(id);
     setAttrByName(id, "npc-show", 2);
     ["str", "dex", "con", "int", "wis", "cha"].forEach(function(ability) {
-      let score    = parseFloat(getAttrByName(id, "npc"+ability));
-      let modifier = Math.floor(score/2-5);
+      let score = parseFloat(getAttrByName(id, "npc"+ability));
+      if (isNaN(score)) {
+        score = -9999;
+      } else {
+        score = parseFloat(score);
+      };
       // Fix PC page Ability Scores
       setAttrByName(id, ability+"-base", score);
     });
@@ -1484,6 +1487,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       let npcinit     = parseFloat(getAttrByName(id, "npcinit"));
       let npcdex_mod  = parseFloat(getAttrByName(id, "npcdex-mod"));
       setAttrByName(id, "initmiscmod", Math.floor(parseFloat(npcinit-npcdex_mod)));
+      setAttrByName(id, "initmacro", "@{npcinitmacro}");
     };
     {
       // Fix PC page speeds
