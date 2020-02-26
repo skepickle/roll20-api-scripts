@@ -3531,6 +3531,336 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             respondToChat(msg,'&{template:default} {{name=Source Texts}} '+message_to_send, true);
         }; break;
         // COMMAND_ANCHOR
+        // ███████╗██████╗ ███████╗██╗     ██╗
+        // ██╔════╝██╔══██╗██╔════╝██║     ██║
+        // ███████╗██████╔╝█████╗  ██║     ██║
+        // ╚════██║██╔═══╝ ██╔══╝  ██║     ██║
+        // ███████║██║     ███████╗███████╗███████╗
+        // ╚══════╝╚═╝     ╚══════╝╚══════╝╚══════╝
+        case 'spell': {
+          //TODONEXT
+          if (firstFragment === null) {
+            respondToChat(msg,processedFragments.join(" ")+" requires an argument");
+            break;
+          };
+          tokenIDs.forEach(function(idOfToken) {
+            let obj = getObj("graphic", idOfToken);
+            let character = getObj("character", obj.get("represents"));
+            if (!character) {
+              respondToChat(msg,'&{template:default} {{name=handleChatMessage()}} {{Token= [image]('+obj.get("imgsrc").replace(new RegExp("\\?.*$"), "")+')}} {{Message= Token does not represent a character.}}');
+              return;
+            };
+            try {
+              switch (firstFragment) {
+                case 'fill-macros':
+                  let spell_names = Object.keys(dnd_35_sources.spells());
+                  findObjs({
+                    _type: "attribute",
+                    _characterid: character.id
+                  }).filter(attribute => attribute.get('name').match(/^repeating_spells[0-9]*_.*_spellname[0-9]+[1-2]$/)).forEach(function(spellname_attr) {
+                    let match_result = spellname_attr.get('name').match(/^repeating_spells[0-9]*_(.*)_spellname([0-9]+)([1-2])$/);
+                    let rowID         = match_result[1];
+                    let spell_section = match_result[2];
+                    let spell_column  = match_result[3];
+                    //log("I deleting attribute: " + attr_obj.get('name'));
+                    //let spellmacro = getAttrByName(character.id, ''.concat('repeating_spells',spell_section,spell_column,'_',rowID,'_spellmacro',spell_section,spell_column));
+                    let spellmacro = getAttrByName(character.id, spellname_attr.get('name').replace(/_spellname/, "_spellmacro"));
+                    if (['','-','fill','empty'].includes(stringTrimWhitespace(spellmacro))) {
+                      let spell_name = stringTrimWhitespace(spellname_attr.get('current').toLowerCase()).replace(/’/g, "'").replace(/[^-a-z'/ ]/g, '');
+                      if (spell_names.includes(spell_name)) {
+                        let spell_spec = dnd_35_sources.spell(spell_name);
+                        //log(spell_spec);
+                        //log("^^^^^^^^^^^^^^");
+                        let new_spell_name = spellname_attr.get('current').replace(/[^-A-Za-z'/ ]/g, '');
+                        switch (spell_spec.type) {
+                          case 'spell':
+                            if (spell_spec.component_details) {
+                              if (spell_spec.component_details.toLowerCase().match(/component(s)?\:.*[0-9,]+ *(cp|sp|gp|pp)/)) {
+                                new_spell_name = new_spell_name.concat('ᴹ');
+                              };
+                              if (spell_spec.component_details.toLowerCase().match(/focus\:.*[0-9,]+ *(cp|sp|gp|pp)/)) {
+                                new_spell_name = new_spell_name.concat('ᶠ');
+                              };
+                              if (spell_spec.component_details.toLowerCase().match(/xp cost\:/)) {
+                                new_spell_name = new_spell_name.concat('ˣ');
+                              };
+                            };
+                            break;
+                          case 'epicspell': // NOTE: Not sure how to determine...
+                            break;
+                          case 'power':
+                            if (spell_spec.augment) {
+                              new_spell_name = new_spell_name.concat('ᴬ');
+                            };
+                            if (spell_spec.component_details) {
+                              if (spell_spec.component_details.toLowerCase().match(/xp cost\:/)) {
+                                new_spell_name = new_spell_name.concat('ˣ');
+                              };
+                            };
+                            break;
+                          case 'epicpower': // NOTE: Don't really have any examples from SRD, excepts for seeds!
+                            break;
+                        };
+                        setAttrByName(character.id,spellname_attr.get('name'),new_spell_name);
+                        spellmacro = '&{template:DnD35StdRoll} {{spellflag=true}} {{name=@{character_name}}}';
+                        switch (spell_spec.type) {
+                          case 'spell':
+                            if (spell_spec.ref.match(/^https{0,1}:\/\//)) {
+                              spellmacro = spellmacro.concat(' {{subtags=casts [',spellname_attr.get('current'), '](', spell_spec.ref, ')}}');
+                            } else {
+                              spellmacro = spellmacro.concat(' {{subtags=casts ',spellname_attr.get('current'),'↲',spell_spec.ref,'}}');
+                            };
+                            spellmacro = spellmacro.concat(' {{School:=',spell_spec.school,'}}');
+                            spellmacro = spellmacro.concat(' {{Spell Level:=',spell_spec.level,'}}');
+                            {
+                              let spellcastingstat = 'spellcastingstat';
+                              if (spell_column == '2') {
+                                if (isAttrByNameDefined(character.id, 'spellcastingstat2')) {
+                                  spellcastingstat = spellcastingstat.concat('2');
+                                } else {
+                                  respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Character does not have spellcastingstat2 attribute defined.'}));
+                                  return;
+                                };
+                              };
+                              spellmacro = spellmacro.concat(' {{Spell DC:=[[10+', spell_section, '[Spell Level]+@{', spellcastingstat, '}[Ability Mod]]]}}');
+                            }
+                            {
+                              let default_casterlevel = 'casterlevel';
+                              if (spell_column == '2') { default_casterlevel = default_casterlevel.concat('2'); };
+                              spellmacro = spellmacro.concat(' {{Caster level:=?{Caster Level|@{',default_casterlevel,'}}}}');
+                            }
+                            spellmacro = spellmacro.concat(' {{Components:=',spell_spec.components,'}}');
+                            spellmacro = spellmacro.concat(' {{Casting Time:=',spell_spec.casting_time,'}}');
+                            if ('recharge' in spell_spec) {
+                              spellmacro = spellmacro.concat(' {{Recharge:=',spell_spec.recharge,'}}');
+                            };
+                            if (typeof spell_spec.range !== 'undefined') {
+                              let spell_range_a = [];
+                              if (Array.isArray(spell_spec.range)) {
+                                spell_range_a = spell_spec.range.slice();
+                              } else if (typeof spell_spec.range === 'string') {
+                                spell_range_a = [ spell_spec.range ];
+                              } else {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Invalid Spell Range', 'Value': spell_spec.range}))
+                                return;
+                              };
+                              for (let i=0; i<spell_range_a.length; i++) {
+                                if (spell_range_a[i] in dnd_35_sources.spell_ranges()) {
+                                  spell_range_a[i] = dnd_35_sources.spell_ranges()[spell_range_a[i]];
+                                  if (i > 0) {
+                                    spell_range_a[i] = spell_range_a[i].replace(/^\w/, c => c.toLowerCase());
+                                  };
+                                };
+                              };
+                              spellmacro = spellmacro.concat(' {{Range:=',spell_range_a.join(),'}}');
+                            };
+                            if (('target_type' in spell_spec) || ('target' in spell_spec)) {
+                              let spell_target_type_a = [];
+                              let spell_target_a = [];
+                              if (('target_type' in spell_spec) && (Array.isArray(spell_spec.target_type))) {
+                                spell_target_type_a = spell_spec.target_type.slice();
+                              } else if (('target_type' in spell_spec) && (typeof spell_spec.target_type === 'string')) {
+                                spell_target_type_a = [ spell_spec.target_type ];
+                              } else {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Unknown data structure type for "target_type" specification for *'+new_spell_name+'* spell'}));
+                                return;
+                              };
+                              if (('target' in spell_spec) && (Array.isArray(spell_spec.target))) {
+                                spell_target_a = spell_spec.target.slice();
+                              } else if (('target' in spell_spec) && (typeof spell_spec.target === 'string')) {
+                                spell_target_a = [ spell_spec.target ];
+                              } else {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Unknown data structure type for "target" specification for *'+new_spell_name+'* spell'}));
+                                return;
+                              };
+                              if (spell_target_type_a.length != spell_target_a.length) {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Mismatching lengths for "target" and "target_type" specifications for *'+new_spell_name+'* spell'}));
+                                return;
+                              };
+                              for (let i=0; i<spell_target_type_a.length; i++) {
+                                spellmacro = spellmacro.concat(' {{',spell_target_type_a[i],':=',spell_target_a[i].replace(/\(S\)/, "(Shapeable)"),'}}');
+                              };
+                            };
+                            spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration.replace(/\(D\)/, "(Dismissible)"),'}}');
+                            if ('saving_throw' in spell_spec) {
+                              spellmacro = spellmacro.concat(' {{Saving Throw:=',spell_spec.saving_throw,'}}');
+                            };
+                            if ('resistance' in spell_spec) {
+                              if (spell_spec.resistance != 'No') {
+                                spellmacro = spellmacro.concat(' {{Spell Resist.:=‹',spell_spec.resistance,'|Caster Level Check vs spell resistance: [[1d20+?{Caster Level}[Caster Level]+@{spellpen}[Spell Penalty]]]›}}');
+                              } else {
+                                spellmacro = spellmacro.concat(' {{Spell Resist.:=',spell_spec.resistance,'}}');
+                              };
+                            };
+                            spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
+                            spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲',('text' in spell_spec)?(spell_spec.text):(''),('component_details' in spell_spec)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
+                            spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲',('text' in spell_spec)?(spell_spec.text):(''),('component_details' in spell_spec)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
+                            break;
+                          case 'epicspell':
+                            break;
+                          case 'power':
+                            let manifester_level_query = null;
+                            let power_augment_query    = null;
+                            if (spell_spec.ref.match(/^https{0,1}:\/\//)) {
+                              spellmacro = spellmacro.concat(' {{subtags=manifests [',spellname_attr.get('current'), '](', spell_spec.ref, ')}}');
+                            } else {
+                              spellmacro = spellmacro.concat(' {{subtags=manifests ',spellname_attr.get('current'),'↲',spell_spec.ref,'}}');
+                            };
+                            spellmacro = spellmacro.concat(' {{Discipline:=',spell_spec.discipline,'}}');
+                            spellmacro = spellmacro.concat(' {{Power Level:=',spell_spec.level,'}}');
+                            {
+                              let spellcastingstat = 'spellcastingstat';
+                              if (spell_column == '2') {
+                                if (isAttrByNameDefined(character.id, 'spellcastingstat2')) {
+                                  spellcastingstat = spellcastingstat.concat('2');
+                                } else {
+                                  respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Character does not have spellcastingstat2 attribute defined.'}));
+                                  return;
+                                };
+                              };
+                              spellmacro = spellmacro.concat(' {{Power DC:=[[10+', spell_section, '[Power Level]+@{', spellcastingstat, '}[Ability Mod]',(('save_dc_bonus' in spell_spec)?('+'.concat(spell_spec.save_dc_bonus)):('')),']]}}');
+                            }
+                            {
+                              let default_casterlevel = 'casterlevel';
+                              if (spell_column == '2') { default_casterlevel = default_casterlevel.concat('2'); };
+                              manifester_level_query = ' '.concat('?{Manifester Level|@{',default_casterlevel,'}}');
+                              spellmacro = spellmacro.concat(' {{Manifester level:=?{Manifester Level}}}');
+                            }
+                            if ('display' in spell_spec) {
+                              spellmacro = spellmacro.concat(' {{Display:=',spell_spec.display,'}}');
+                            }
+                            spellmacro = spellmacro.concat(' {{Manifesting Time:=',spell_spec.manifesting_time,'}}');
+                            if ('range' in spell_spec) {
+                              let spell_range_a = [];
+                              if (Array.isArray(spell_spec.range)) {
+                                spell_range_a = spell_spec.range.slice();
+                              } else if (typeof spell_spec.range === 'string') {
+                                spell_range_a = [ spell_spec.range ];
+                              } else {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Invalid Power Range', 'Power': spell_name, 'Range': spell_spec.range}))
+                                return;
+                              };
+                              for (let i=0; i<spell_range_a.length; i++) {
+                                if (spell_range_a[i] in dnd_35_sources.spell_ranges()) {
+                                  spell_range_a[i] = dnd_35_sources.spell_ranges()[spell_range_a[i]].replace(/Caster/g, 'Manifester');
+                                  if (i > 0) {
+                                    spell_range_a[i] = spell_range_a[i].replace(/^\w/, c => c.toLowerCase());
+                                  };
+                                };
+                              };
+                              spellmacro = spellmacro.concat(' {{Range:=',spell_range_a.join(),'}}');
+                            };
+                            if (('target_type' in spell_spec) || ('target' in spell_spec)) {
+                              let spell_target_type_a = [];
+                              let spell_target_a = [];
+                              if (('target_type' in spell_spec) && (Array.isArray(spell_spec.target_type))) {
+                                spell_target_type_a = spell_spec.target_type.slice();
+                              } else if (('target_type' in spell_spec) && (typeof spell_spec.target_type === 'string')) {
+                                spell_target_type_a = [ spell_spec.target_type ];
+                              } else {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Unknown data structure type for "target_type" specification for *'+new_spell_name+'* power'}));
+                                return;
+                              };
+                              if (('target' in spell_spec) && (Array.isArray(spell_spec.target))) {
+                                spell_target_a = spell_spec.target.slice();
+                              } else if (('target' in spell_spec) && (typeof spell_spec.target === 'string')) {
+                                spell_target_a = [ spell_spec.target ];
+                              } else {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Unknown data structure type for "target" specification for *'+new_spell_name+'* power'}));
+                                return;
+                              };
+                              if (spell_target_type_a.length != spell_target_a.length) {
+                                respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': 'Mismatching lengths for "target" and "target_type" specifications for *'+new_spell_name+'* power'}));
+                                return;
+                              };
+                              for (let i=0; i<spell_target_type_a.length; i++) {
+                                spellmacro = spellmacro.concat(' {{',spell_target_type_a[i],':=',spell_target_a[i].replace(/\(S\)/, "(Shapeable)"),'}}');
+                              }
+                            };
+                            if ('duration' in spell_spec) {
+                              spellmacro = spellmacro.concat(' {{Duration:=',spell_spec.duration.replace(/\(D\)$/, "(Dismissible)"),'}}');
+                            };
+                            if ('saving_throw' in spell_spec) {
+                              spellmacro = spellmacro.concat(' {{Saving Throw:=',spell_spec.saving_throw,'}}');
+                            };
+                            if ('resistance' in spell_spec) {
+                              if (spell_spec.resistance != 'No') {
+                                spellmacro = spellmacro.concat(' {{Power Resist.:=‹',spell_spec.resistance,'|Manifester Level Check vs power resistance: [[1d20+?{Manifester Level}[Manifester Level]', (('resistance_bonus' in spell_spec)?('+'.concat(spell_spec.resistance_bonus)):('')), ']]›}}');
+                              } else {
+                                spellmacro = spellmacro.concat(' {{Power Resist.:=',spell_spec.resistance,'}}');
+                              };
+                            };
+                            let text_augment = "";
+                            if ('augment' in spell_spec) {
+                              power_augment_query = " ?{Power Augmentation|0}";
+                              spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,' + [[?{Power Augmentation}]][Augment]}}');
+                              text_augment = "↲".concat("**Augment:**", "↲", spell_spec.augment);
+                            } else {
+                              spellmacro = spellmacro.concat(' {{Power Points:=',spell_spec.power_points,'}}');
+                            };
+                            spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
+                            spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲',('text' in spell_spec)?(spell_spec.text):(''),text_augment,'}}');
+                            spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲',('text' in spell_spec)?(spell_spec.text):(''),text_augment,'}}');
+                            if ((manifester_level_query !== null) || (power_augment_query !== null)) {
+                              spellmacro = "".concat("!", (manifester_level_query !== null)?(manifester_level_query):(''), (power_augment_query !== null)?(power_augment_query):(''), "\n", spellmacro);
+                            };
+                            break;
+                          case 'epicpower':
+                            break;
+                        };
+                        spellmacro = spellmacro.replace(/(\r\n|\n|\r)/gm, "↲");
+                        //log(spellmacro);
+                        // Create a chat button in output ‹ and ›, or « and » for indirect buttons
+                        while (spellmacro.match(/^.*‹[^›«»|]+›.*$/) ||
+                               spellmacro.match(/^.*‹[^›«»|]+\|[^›«»]+›.*$/) ||
+                               spellmacro.match(/^.*«[^‹›»|]+».*$/) ||
+                               spellmacro.match(/^.*«[^‹›»|]+\|[^‹›»]+».*$/)) {
+                          //TODO Add infinite loop detection here
+                          let match_results;
+                          match_results = spellmacro.match(/^(.*)‹([^›«»|]+)›(.*)$/);
+                          if (match_results !== null) {
+                            spellmacro = ''.concat(match_results[1],createChatButton(match_results[2],''.concat('[[',match_results[2],']]')),match_results[3]);
+                          };
+                          match_results = spellmacro.match(/^(.*)‹([^›«»|]+)\|([^›«»]+)›(.*)$/);
+                          if (match_results !== null) {
+                            spellmacro = ''.concat(match_results[1],createChatButton(match_results[2],match_results[3]),match_results[4]);
+                          };
+                          match_results = spellmacro.match(/^(.*)«([^‹›»|]+)»(.*)$/);
+                          if (match_results !== null) {
+                            spellmacro = ''.concat(match_results[1],createEscapedChatButton(match_results[2],''.concat('[[',match_results[2],']]')),match_results[3]);
+                          };
+                          match_results = spellmacro.match(/^(.*)«([^‹›»|]+)\|([^‹›»]+)»(.*)$/);
+                          if (match_results !== null) {
+                            spellmacro = ''.concat(match_results[1],createEscapedChatButton(match_results[2],match_results[3]),match_results[4]);
+                          };
+                          //log(spellmacro);
+                        };
+                        spellmacro = spellmacro.replace(/^ +/gm,  "&nbsp;&nbsp;&nbsp;"); // INDENT!
+                        spellmacro = spellmacro.replace(/↲ +/g, "\n&nbsp;&nbsp;&nbsp;"); // INDENT!
+                        spellmacro = spellmacro.replace(/↲/g, "\n");
+                        // Embolden links, and also italicize links to spells and powers
+                        spellmacro = spellmacro.replace(/(\[[^\]]+\]\([^\)]+\/(spells|psionic)\/[^\)]+\))/gm, "***$1***");
+                        spellmacro = spellmacro.replace(/([^*])(\[[^\]]+\]\([^\)]+\))([^*])/gm, "$1*$2*$3");
+                        // Escape bonuses and penalties to give red-text look...
+                        spellmacro = spellmacro.replace(/([+-][0-9]+ ([a-z]+ ){0,1}(bonus|bonuses|penalty|penalties))/gm, "``$1``");
+                        //log("FOUND!");
+                        //log(spell_spec);
+                        //setAttrByName(character.id, ''.concat('repeating_spells',spell_section,spell_column,'_',rowID,'_spellmacro',spell_section,spell_column), spellmacro);
+                        setAttrByName(character.id, spellname_attr.get('name').replace(/_spellname/, "_spellmacro"), spellmacro);
+                      } else {
+                        //TODO Maybe fill macro field with content indicating that the spell is unknown
+                        log("Spell not found: _".concat(spell_name,"_"));
+                      };
+                    };
+                  });
+                  break;
+              };
+            } catch(e) {
+              respondToChat(msg,e);
+            };
+          });
+        }; break;
+        // COMMAND_ANCHOR
         // ████████╗███████╗██╗  ██╗████████╗   ███╗   ███╗ █████╗ ██████╗ ██╗  ██╗███████╗██████╗
         // ╚══██╔══╝██╔════╝╚██╗██╔╝╚══██╔══╝   ████╗ ████║██╔══██╗██╔══██╗██║ ██╔╝██╔════╝██╔══██╗
         //    ██║   █████╗   ╚███╔╝    ██║█████╗██╔████╔██║███████║██████╔╝█████╔╝ █████╗  ██████╔╝
