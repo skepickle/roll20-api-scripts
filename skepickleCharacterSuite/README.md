@@ -28,8 +28,8 @@ This script actually consists of multiple files. The most important file is "ske
     This function will calculate XP awarded per party-member and the treasure found. The treasure can be ignored if you wish to customize the treasure hoard, in which case this command also provides you with the Encounter Level and average treasure value to aid with custom creation of the treasure.
   * generate-average-treasure **_UNDER CONSTRUCTION_**  
     This function will.....
-* **fill**
-  * spell-macros  
+* **spell**
+  * fill-macros  
     _Note: Operates on any number of selected tokens on the map._  
     This function fills in a character sheet's spell macros if the macro attribute is empty, or contains only '-','fill', or 'empty'.
 * **group-initiative-check** [**Clear**]  
