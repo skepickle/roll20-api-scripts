@@ -3300,7 +3300,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             .filter(a => a.get('current') == 'K')
                             .map(a => parseInt(getAttrByName(character.id, a.get('name').replace(/_spellprep/, "_spellused")) || 0))
                             .reduce(function(memo, num){ return memo + num; }, 0);
-                          return "".concat("{{Level ",level,":=",_.map(attrs, function(a) {
+                          let buttons = _.map(attrs, function(a) {
                             let match_result  = a.get('name').match(/^repeating_spells[0-9]*_.*_spellprep[0-9]+([1-2])$/);
                             let spell_column  = match_result[1];
                             let spell_name    = getAttrByName(character.id, a.get('name').replace(/_spellprep/, "_spellname"));
@@ -3308,16 +3308,18 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             let spell_used    = getAttrByName(character.id, a.get('name').replace(/_spellprep/, "_spellused"));
                             let spell_macro   = "".concat("@{selected|",a.get('name').replace(/_spellprep/, "_spellmacro"),"}");
                             switch (spell_prep) {
-                              case 'K':  if (remaining_spells_per_day[level][spell_column] <= 0) { return ""; }; break;
-                              case 'PP': if (remaining_power_points <= 0) { return ""; }; break;
+                              case 'K':  if (remaining_spells_per_day[level][spell_column] <= 0) { return null; }; break;
+                              case 'PP': if (remaining_power_points <= 0) { return null; }; break;
                               default: {
-                                if (isNaN(spell_prep)) { return ""; };
-                                if (isNaN(spell_used)) { return ""; };
-                                if ((parseInt(spell_prep)-parseInt(spell_used)) <= 0) { return ""; };
+                                if (isNaN(spell_prep)) { return null; };
+                                if (isNaN(spell_used)) { return null; };
+                                if ((parseInt(spell_prep)-parseInt(spell_used)) <= 0) { return null; };
                               }; break;
                             };
                             return createEscapedChatButton(spell_name, spell_macro);
-                          }).join("\n"),"}}");
+                          }).filter(b => b !== null);
+                          if (buttons.length == 0) { return ""; };
+                          return "".concat("{{Level ",level,":=",buttons.join("\n"),"}}");
                         }).join(" ")));
                   break;
                 }; break;
