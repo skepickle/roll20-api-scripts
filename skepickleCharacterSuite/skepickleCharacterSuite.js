@@ -67,6 +67,40 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
   var nonvalue_characters = [""," ","-","֊","־","᠆","‐","‑","‒","–","—","―","⁻","₋","−","⸺","⸻","﹘","﹣","－"];
   Object.freeze(nonvalue_characters);
 
+  function prettyPrint(obj) {
+    const stringify = {
+      "undefined": x => "undefined",
+      "boolean":   x => x.toString(),
+      "number":    x => x,
+      "string":    x => enquote(x),
+      "object":    x => traverse(x),
+      "function":  x => x.toString(),
+      "symbol":    x => x.toString()
+    },
+    indent = s => s.replace(/^/mg, "  "),
+    keywords = `do if in for let new try var case else enum eval null this true
+            void with await break catch class const false super throw while
+            yield delete export import public return static switch typeof
+            default extends finally package private continue debugger
+            function arguments interface protected implements instanceof`
+       .split(/\s+/)
+       .reduce( (all, kw) => (all[kw]=true) && all, {} ),
+    keyify = s => ( !(s in keywords) && /^[$A-Z_a-z][$\w]*$/.test(s) ? s : enquote(s) ) + ": ",
+    enquote = s => s.replace(/([\\"])/g, '\\$1').replace(/\n/g,"\\n").replace(/\t/g,"\\t").replace(/^|$/g,'"'),
+    traverse = obj =>  [
+           `{`,
+            indent( Object.keys(obj)
+                    .map( k => indent( keyify(k) + stringify[ typeof obj[k] ](obj[k]) ) )
+                    .join(",\n")
+                    ),
+            `}`
+        ]
+        .filter( s => /\S/.test(s) )
+        .join("\n")
+        .replace(/^{\s*\}$/,"{}");
+    return traverse(obj);
+  }
+
   function stringToTitleCase(str) {
     str = str.toLowerCase().split(' ');
     for (let i = 0; i < str.length; i++) {
@@ -4061,7 +4095,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //log(state);
     log("########## skepickleCharacterSuite");
     log("########## State data for skepickleCharacterSuite");
-    log(state.skepickleCharacterSuiteImp);
+    prettyPrint(state.skepickleCharacterSuiteImp).split(/\n/).forEach(o => { log(o); });
+    //log(prettyPrint(state.skepickleCharacterSuiteImp));
   }; // checkInstall
 
   var initialize = function() {
