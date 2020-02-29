@@ -28,10 +28,6 @@ This script actually consists of multiple files. The most important file is "ske
     This function will calculate XP awarded per party-member and the treasure found. The treasure can be ignored if you wish to customize the treasure hoard, in which case this command also provides you with the Encounter Level and average treasure value to aid with custom creation of the treasure.
   * generate-average-treasure **_UNDER CONSTRUCTION_**  
     This function will.....
-* **spell**
-  * fill-macros  
-    _Note: Operates on any number of selected tokens on the map._  
-    This function fills in a character sheet's spell macros if the macro attribute is empty, or contains only '-','fill', or 'empty'.
 * **group-initiative-check** [**Clear**]  
     _Note: Operates on any number of selected tokens on the map._  
     This function will roll initiative for all the selected characters. If a token does not represent a character, then it is skipped. Here is an example macro that utilizes this command:  
@@ -77,6 +73,13 @@ This script actually consists of multiple files. The most important file is "ske
 * **skookum** **_UNDER CONSTRUCTION_**
 * **source-texts**  
     List all source texts currently configured in game.
+* **spell**
+  * show  
+    _Note: Operates on any number of selected tokens on the map._  
+    This function displays a list of spells or powers that a character can currently use. For this to work the related values in the character sheets must be set correctly. For prepared casters, the "used" and "prep" fields for the spell must be set to the appropriate numerical values. For spontaneous casters the "prep" field must be set to "K" and the spells/day field should be set correctly. the spontaneous casting class is set on the left spell-column, then just enter the numerical value for spells/day. If the spontaneous casting class is set on the right spell-column, then the spells/day field needs to have a "," character and the numberical value needs to follow the comma. For power manifesters, the "prep" field must be set to "PP" and the Power Points fields should be set correctly.
+  * fill-macros  
+    _Note: Operates on any number of selected tokens on the map._  
+    This function fills in a character sheet's spell macros if the macro attribute is empty, or contains only '-','fill', or 'empty'.
 * **text-marker**  
     This function is used to control text markers on tokens. These text markers can represent conditions, or spell effects. Each marker can also be given a duration using units of rounds, minutes, hours, days, weeks, months, or years.
   * clear  

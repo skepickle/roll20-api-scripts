@@ -1728,7 +1728,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     //SKIP npcspecialqualities -> racialabilities
     //SKIP npcfeats -> feats
     //SKIP npcspecialattacks
-    //TODONEXT fix up NPC ability macros
+    //TODO fix up NPC ability macros
   }; // mookInferPCSheet
 
   //var checkSheetMacros = function(id) {
@@ -3220,6 +3220,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝   ╚═╝
         case 'source-text':
         case '--source-text': {
+          //TODO Fix this command
           if (!playerIsGM(playerID)) { return; };
             let message_to_send = '';
             Object.keys(dnd_35_sources.all_source_texts).forEach(function(k,i) {
@@ -3254,6 +3255,80 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             };
             try {
               switch (firstFragment) {
+                case 'show': {
+                  let remaining_spells_per_day = [0,1,2,3,4,5,6,7,8,9].map(function(level) {
+                    let raw_val = getAttrByName(character.id, "spells".concat(level)) || '0,0';
+                    if (!raw_val.match(/,/)) {
+                      raw_val = ''.concat(raw_val, ',');
+                    };
+                    raw_val = raw_val.replace(/,$/, ",0").replace(/^,/, "0,");
+                    return raw_val.split(",")
+                                  .map(s => s.split('+').map(s => isNaN(s)?0:parseInt(s)).reduce(function(memo, num){ return memo + num; }, 0));
+                  }).map(function(level) {
+                    return { 1: level[0], 2: level[1] };
+                  });
+                  let remaining_power_points = parseInt(getAttrByName(character.id, "powerpoints") || 0);
+                  let spellprep_attr_names = findObjs({
+                    _type: "attribute",
+                    _characterid: character.id})
+                  .filter(a => a.get('name').match(/^repeating_spells[0-9]*_.*_spellprep[0-9]+[1-2]$/) && (a.get('current') != '')).map(a => a.get('name'));
+                  sendChat("skepickleCharacterSuite", '/w "'+playerName+'" &{template:DnD35StdRoll} {{spellflag=true}} {{name=Usable Spells}} '
+                    +'{{subtags=*'+getAttrByName(character.id, "character_name")+'*}}'
+                    +(_.map(_.groupBy(_.sortBy(findObjs({
+                                                 _type: "attribute",
+                                                 _characterid: character.id})
+                                               .filter(a => a.get('name').match(/^repeating_spells[0-9]*_.*_spellprep[0-9]+[1-2]$/) && (a.get('current') != ''))
+                                        ,function(a) {
+                                          return getAttrByName(character.id, a.get('name').replace(/_spellprep/, "_spellname"));
+                                        })
+                              ,function(a) {
+                                let match_result = a.get('name').match(/^repeating_spells[0-9]*_(.*)_spellprep([0-9]+)([1-2])$/);
+                                return parseInt(match_result[2]);
+                              })
+                        ,function(attrs,level) {
+                          remaining_spells_per_day[level][1] = remaining_spells_per_day[level][1] - findObjs({
+                              _type: "attribute",
+                              _characterid: character.id})
+                            .filter(a => a.get('name').match(new RegExp("^repeating_spells[0-9]*_.*_spellprep"+level+"1$")))
+                            .filter(a => a.get('current') == 'K')
+                            .map(a => parseInt(getAttrByName(character.id, a.get('name').replace(/_spellprep/, "_spellused")) || 0))
+                            .reduce(function(memo, num){ return memo + num; }, 0);
+                          remaining_spells_per_day[level][2] = remaining_spells_per_day[level][2] - findObjs({
+                              _type: "attribute",
+                              _characterid: character.id})
+                            .filter(a => a.get('name').match(new RegExp("^repeating_spells[0-9]*_.*_spellprep"+level+"2$")))
+                            .filter(a => a.get('current') == 'K')
+                            .map(a => parseInt(getAttrByName(character.id, a.get('name').replace(/_spellprep/, "_spellused")) || 0))
+                            .reduce(function(memo, num){ return memo + num; }, 0);
+                          return "".concat("{{Level ",level,":=",_.map(attrs, function(a) {
+                            let match_result  = a.get('name').match(/^repeating_spells[0-9]*_.*_spellprep[0-9]+([1-2])$/);
+                            let spell_column  = match_result[1];
+                            let spell_name    = getAttrByName(character.id, a.get('name').replace(/_spellprep/, "_spellname"));
+                            let spell_prep    = getAttrByName(character.id, a.get('name'));
+                            let spell_used    = getAttrByName(character.id, a.get('name').replace(/_spellprep/, "_spellused"));
+                            let spell_macro   = "".concat("@{selected|",a.get('name').replace(/_spellprep/, "_spellmacro"),"}");
+                            switch (spell_prep) {
+                              case 'K':  if (remaining_spells_per_day[level][spell_column] <= 0) { return ""; }; break;
+                              case 'PP': if (remaining_power_points <= 0) { return ""; }; break;
+                              default: {
+                                if (isNaN(spell_prep)) { return ""; };
+                                if (isNaN(spell_used)) { return ""; };
+                                if ((parseInt(spell_prep)-parseInt(spell_used)) <= 0) { return ""; };
+                              }; break;
+                            };
+                            return createEscapedChatButton(spell_name, spell_macro);
+                          }).join("\n"),"}}");
+                        }).join(" ")));
+                  break;
+                }; break;
+                case 'use-spell': {
+                  // secondFragment required
+                  //TODO
+                }; break;
+                case 'use-power': {
+                  // secondFragment required
+                  //TODO
+                }; break;
                 case 'fill-macros':
                   let spell_names = Object.keys(dnd_35_sources.spells());
                   findObjs({
@@ -3756,6 +3831,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       state.skepickleCharacterSuiteImp.text_marker[idOfToken].text = text_marker_data.join("|");
                     };
                   };
+                }; break;
+                case 'list': {
+                  //TODO
                 }; break;
               };
             } catch(e) {
