@@ -80,6 +80,12 @@ This script actually consists of multiple files. The most important file is "ske
   * fill-macros  
     _Note: Operates on any number of selected tokens on the map._  
     This function fills in a character sheet's spell macros if the macro attribute is empty, or contains only '-','fill', or 'empty'.
+  * use-power <_rowID_> <_points_>  
+    _Note: Operates on any number of selected tokens on the map._  
+    This function will decrement the character's remaining power points.
+  * use-spell <_rowID_>  
+    _Note: Operates on any number of selected tokens on the map._  
+    This function will increment the spell's used field.
 * **text-marker**  
     This function is used to control text markers on tokens. These text markers can represent conditions, or spell effects. Each marker can also be given a duration using units of rounds, minutes, hours, days, weeks, months, or years.
   * clear  

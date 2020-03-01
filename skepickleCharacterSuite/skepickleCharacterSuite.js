@@ -3323,15 +3323,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                         }).join(" ")));
                   break;
                 }; break;
-                case 'use-spell': {
-                  // secondFragment required
-                  //TODO
-                }; break;
-                case 'use-power': {
-                  // secondFragment required
-                  //TODO
-                }; break;
-                case 'fill-macros':
+                case 'fill-macros': {
                   let spell_names = Object.keys(dnd_35_sources.spells());
                   findObjs({
                     _type: "attribute",
@@ -3474,6 +3466,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
                             spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲',('text' in spell_spec)?(spell_spec.text):(''),('component_details' in spell_spec)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
                             spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲',('text' in spell_spec)?(spell_spec.text):(''),('component_details' in spell_spec)?('↲↲'.concat(spell_spec.component_details.replace(/^( *)([A-Za-z ]+)\:/gm, "*$2*:"))):(''),'}}');
+                            spellmacro = spellmacro.concat(' {{notes=Spell use confirmation: [Confirm](!scs spell use-spell ',rowID,')}}');
                             break;
                           case 'epicspell':
                             break;
@@ -3580,6 +3573,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             spellmacro = spellmacro.concat(' {{compcheck=Concentration check: [[{1d20+[[@{concentration}]]}>?{Concentration DC (Ask GM)|0}]]↲Result: }}');
                             spellmacro = spellmacro.concat(' {{succeedcheck=**Concentration succeeds.**↲↲',('text' in spell_spec)?(spell_spec.text):(''),text_augment,'}}');
                             spellmacro = spellmacro.concat(' {{failcheck=**Concentration fails.**↲↲',('text' in spell_spec)?(spell_spec.text):(''),text_augment,'}}');
+                            spellmacro = spellmacro.concat(' {{notes=Power use confirmation: [Confirm](!scs spell use-power ',rowID,' &#63;{Enter total power points used:|0})}}');
                             if ((manifester_level_query !== null) || (power_augment_query !== null)) {
                               spellmacro = "".concat("!", (manifester_level_query !== null)?(manifester_level_query):(''), (power_augment_query !== null)?(power_augment_query):(''), "\n", spellmacro);
                             };
@@ -3632,7 +3626,62 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                       };
                     };
                   });
-                  break;
+                }; break;
+                case 'use-power': {
+                  let secondFragment = null;
+                  if (unprocessedFragments.length > 0) {
+                    secondFragment = unprocessedFragments.shift();
+                    processedFragments.push(secondFragment);
+                  };
+                  if (secondFragment === null) {
+                    respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': '!scs spell use-power requires a rowID argument'}));
+                    break;
+                  };
+                  let spellname_attrs = findObjs({
+                    _type: "attribute",
+                    _characterid: character.id})
+                  .filter(a => a.get('name').match(new RegExp("^repeating_spells[0-9]*_"+secondFragment+"_spellname[0-9]+[1-2]$")));
+                  if (spellname_attrs.length != 1) {
+                    respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': '!scs spell use-power called with invalid rowID argument'}));
+                    break;
+                  };
+                  let thirdFragment = null;
+                  if (unprocessedFragments.length > 0) {
+                    thirdFragment = unprocessedFragments.shift();
+                    processedFragments.push(thirdFragment);
+                  };
+                  if ((thirdFragment === null) || isNaN(thirdFragment)) {
+                    respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': '!scs spell use-power requires a numeric power point amount argument'}));
+                    break;
+                  };
+                  let remaining_power_points = parseInt(getAttrByName(character.id, "powerpoints") || 0) - parseInt(thirdFragment);
+                  setAttrByName(character.id, "powerpoints", remaining_power_points);
+                  sendChat("skepickleCharacterSuite", '/w "'+playerName+'" Set remaining # of power points to '+remaining_power_points);
+                }; break;
+                case 'use-spell': {
+                  let secondFragment = null;
+                  if (unprocessedFragments.length > 0) {
+                    secondFragment = unprocessedFragments.shift();
+                    processedFragments.push(secondFragment);
+                  };
+                  if (secondFragment === null) {
+                    respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': '!scs spell use-spell requires a rowID argument'}));
+                    break;
+                  };
+                  let spellname_attrs = findObjs({
+                    _type: "attribute",
+                    _characterid: character.id})
+                  .filter(a => a.get('name').match(new RegExp("^repeating_spells[0-9]*_"+secondFragment+"_spellname[0-9]+[1-2]$")));
+                  if (spellname_attrs.length != 1) {
+                    respondToChat(msg,renderDefaultTemplate("handleChatMessage()",character.id,{'Error': '!scs spell use-spell called with invalid rowID argument'}));
+                    break;
+                  };
+                  let used_attr_name = spellname_attrs[0].get('name').replace(/_spellname/, "_spellused");
+                  let value = getAttrByName(character.id, used_attr_name) || 0;
+                  value = value + 1;
+                  setAttrByName(character.id, used_attr_name, value);
+                  sendChat("skepickleCharacterSuite", '/w "'+playerName+'" Set used # for '+spellname_attrs[0].get('current')+' to '+value);
+                }; break;
               };
             } catch(e) {
               respondToChat(msg,e);
