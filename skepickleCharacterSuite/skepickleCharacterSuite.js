@@ -3577,6 +3577,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             if ((manifester_level_query !== null) || (power_augment_query !== null)) {
                               spellmacro = "".concat("!", (manifester_level_query !== null)?(manifester_level_query):(''), (power_augment_query !== null)?(power_augment_query):(''), "\n", spellmacro);
                             };
+                            if ('augment' in spell_spec) {
+                              spellmacro = "".concat("!?{AUGMENT▕⏎▏", spell_spec.augment.replace(/\n/g, '▕⏎▏'), "|N/A,0|N/A,0}\n", spellmacro);
+                            };
                             break;
                           case 'epicpower':
                             break;
