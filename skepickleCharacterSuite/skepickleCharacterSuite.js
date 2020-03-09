@@ -305,7 +305,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     if (isNaN(size)) {
       size = sizeToMod(size);
     };
-    switch (size) {
+    switch (parseInt(size)) {
       case  8: return -16;
       case  4: return -12;
       case  2: return -8;
@@ -339,7 +339,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     if (isNaN(size)) {
       size = sizeToMod(size);
     };
-    switch (size) {
+    switch (parseInt(size)) {
       case  8: return 0;
       case  4: return 0;
       case  2: return 0;
@@ -356,7 +356,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     if (isNaN(size)) {
       size = sizeToMod(size);
     };
-    switch (size) {
+    switch (parseInt(size)) {
       case  8: return 0;
       case  4: return 0;
       case  2: return 0;
@@ -1756,9 +1756,24 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         let armorworn   = parseFloat(getAttrByName(character.id, "armorworn"));
         let acitemspeed = parseFloat(getAttrByName(character.id, "acitemspeed").replace(new RegExp("[^\.0-9].*$"), ""));
         let encumbrload = parseFloat(getAttrByName(character.id, "encumbrload"));
+        let acitemtype  = getAttrByName(character.id, "acitemtype").toLowerCase();
         let real_speed;
-        if (isNaN(speed))                    { log("INVALID speed = "+speed); real_speed = 0; } else { real_speed = speed; };
+        if (isNaN(speed))                    { log("INVALID speed = "+speed); real_speed = 0; } else { real_speed = parseInt(speed); };
         if (armorworn && isNaN(acitemspeed)) { acitemspeed = 99999; };
+        if (encumbrload < 0) {
+          switch (parseInt(real_speed)) {
+            case  20: real_speed = 15; break;
+            case  30: real_speed = 20; break;
+            case  40: real_speed = 30; break;
+            case  50: real_speed = 35; break;
+            case  60: real_speed = 40; break;
+            case  70: real_speed = 50; break;
+            case  80: real_speed = 55; break;
+            case  90: real_speed = 60; break;
+            case 100: real_speed = 70; break;
+          };
+        };
+        if (armorworn && (acitemspeed < real_speed)) { real_speed = acitemspeed; };
         {
           let pc_racialabilities = getAttrByName(character.id, "racialabilities").toLowerCase();
           let pc_classabilities  = getAttrByName(character.id, "classabilities").toLowerCase();
@@ -1773,6 +1788,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           fast_movement_bonus = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(fast_movement_bonus):(Math.max(fast_movement_bonus,parseFloat(match_result[1])));
           match_result = pc_other.match(/fast movement *\+([0-9]+) *(feet|foot|ft\.*|')/);
           fast_movement_bonus = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(fast_movement_bonus):(Math.max(fast_movement_bonus,parseFloat(match_result[1])));
+          if ((encumbrload < -3) || (armorworn && (acitemtype == "heavy"))) { fast_movement_bonus = 0; };
           let longstrider = 0;
           match_result = pc_other.match(/longstrider/);
           longstrider = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(longstrider):(Math.max(longstrider,10));
@@ -1784,20 +1800,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           epic_speed = (match_result === null)?(epic_speed):(Math.max(epic_speed,30));
           real_speed = real_speed + fast_movement_bonus + longstrider + speed_of_thought + epic_speed;
         };
-        if (encumbrload < 0) {
-          switch (real_speed) {
-            case  20: real_speed = 15; break;
-            case  30: real_speed = 20; break;
-            case  40: real_speed = 30; break;
-            case  50: real_speed = 35; break;
-            case  60: real_speed = 40; break;
-            case  70: real_speed = 50; break;
-            case  80: real_speed = 55; break;
-            case  90: real_speed = 60; break;
-            case 100: real_speed = 70; break;
-          };
-        };
-        if (armorworn && (acitemspeed < real_speed)) { real_speed = acitemspeed; };
         if (isNaN(real_speed)) { log("INVALID speed"+real_speed); } else { /*log(real_speed);*/ t_obj.set("bar3_link", null); t_obj.set("bar3_value", real_speed); };
         return;
       } else {
@@ -1810,7 +1812,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         if (isNaN(npcspeed))                 { log("INVALID npcspeed = "+npcspeed); speed = 0; } else { speed = npcspeed; };
         if (armorworn && isNaN(acitemspeed)) { acitemspeed = 99999; };
         if (encumbrload < 0) {
-          switch (npcspeed) {
+          switch (parseInt(npcspeed)) {
             case  20: speed = 15; break;
             case  30: speed = 20; break;
             case  40: speed = 30; break;
