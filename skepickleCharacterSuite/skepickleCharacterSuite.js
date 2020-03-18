@@ -34,7 +34,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     campaignLoaded: false,
     encounter: {},
     cache: {
-      source_text: null
+      sourceText: null
     },
     spinInterval: false
   };
@@ -198,10 +198,10 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       if (enabled_source_texts.length == 0) {
         throwDefaultTemplate("merge_arrays()",null,{'ERROR': 'No D&D source texts loaded. Please include at least skepickleCharacterSuite_SRD.js in the game.'});
       };
-      if (temp.cache.source_text === null) {
-        temp.cache.source_text = {};
+      if (temp.cache.sourceText === null) {
+        temp.cache.sourceText = {};
         for (let k=0; k<enabled_source_texts.length; k++) {
-          temp.cache.source_text[enabled_source_texts[k]] = eval('skepickleCharacterSuite_'+enabled_source_texts[k]+'.source_text');
+          temp.cache.sourceText[enabled_source_texts[k]] = eval('skepickleCharacterSuite_'+enabled_source_texts[k]+'.SourceText');
         };
       };
     },
@@ -211,7 +211,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       let property_heirarchy = property_name.split('.');
       let enabled_source_texts = state.skepickleCharacterSuiteImp.config.SourceTexts.split(',');
       for (let k=0; k<enabled_source_texts.length; k++) {
-        let source_text = temp.cache.source_text[enabled_source_texts[k]];
+        let source_text = temp.cache.sourceText[enabled_source_texts[k]];
         if ((typeof source_text !== 'undefined') && (source_text !== null)) {
           let i = 0;
           let property_p = source_text;
@@ -232,7 +232,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       let property_heirarchy = property_name.split('.');
       let enabled_source_texts = state.skepickleCharacterSuiteImp.config.SourceTexts.split(',');
       for (let k=0; k<enabled_source_texts.length; k++) {
-        let source_text = temp.cache.source_text[enabled_source_texts[k]];
+        let source_text = temp.cache.sourceText[enabled_source_texts[k]];
         if ((typeof source_text !== 'undefined') && (source_text !== null)) {
           let i = 0;
           let property_p = source_text;
@@ -3243,7 +3243,6 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // ███████║██║     ███████╗███████╗███████╗
         // ╚══════╝╚═╝     ╚══════╝╚══════╝╚══════╝
         case 'spell': {
-          //TODONEXT
           if (firstFragment === null) {
             respondToChat(msg,processedFragments.join(" ")+" requires an argument");
             break;
@@ -4000,7 +3999,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         case '--debug-namespaces': {
           if (!playerIsGM(playerID)) { return; };
           log("skepickleCharacterSuite_SRD:");
-          let srd_source_text_data = eval('skepickleCharacterSuite_SRD.source_text');
+          let srd_source_text_data = eval('skepickleCharacterSuite_SRD.SourceText');
           log(srd_source_text_data);
         }; break;
         // COMMAND_ANCHOR
@@ -4128,7 +4127,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         for (let i=0; i<a.length; i++) {
           let p; try { p = eval('skepickleCharacterSuite_'+a[i]); } catch (e) { p = null; };
           if ((typeof p !== 'undefined') && (p !== null) &&
-              (typeof p.source_text !== 'undefined') && (p.source_text !== null)) {
+              (typeof p.SourceText !== 'undefined') && (p.SourceText !== null)) {
             b.push(a[i]);
           };
         };

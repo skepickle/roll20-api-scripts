@@ -18267,7 +18267,7 @@ var skepickleCharacterSuite_SRD = skepickleCharacterSuite_SRD || (function skepi
       for (let i=0; i<a.length; i++) {
         let p; try { p = eval('skepickleCharacterSuite_'+a[i]); } catch (e) { p = null; };
         if ((typeof p !== 'undefined') && (p !== null) &&
-            (typeof p.source_text !== 'undefined') && (p.source_text !== null)) {
+            (typeof p.SourceText !== 'undefined') && (p.SourceText !== null)) {
           b.push(a[i]);
         };
       };
@@ -18297,7 +18297,7 @@ var skepickleCharacterSuite_SRD = skepickleCharacterSuite_SRD || (function skepi
     CheckInstall: checkInstall,
     RegisterEventHandlers: registerEventHandlers,
     Initialize: initialize,
-    source_text: source_text_SRD
+    SourceText: source_text_SRD
   };
 
 }());

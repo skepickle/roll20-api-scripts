@@ -704,7 +704,7 @@ var skepickleCharacterSuite_UA = skepickleCharacterSuite_UA || (function skepick
       for (let i=0; i<a.length; i++) {
         let p; try { p = eval('skepickleCharacterSuite_'+a[i]); } catch (e) { p = null; };
         if ((typeof p !== 'undefined') && (p !== null) &&
-            (typeof p.source_text !== 'undefined') && (p.source_text !== null)) {
+            (typeof p.SourceText !== 'undefined') && (p.SourceText !== null)) {
           b.push(a[i]);
         };
       };
@@ -725,7 +725,8 @@ var skepickleCharacterSuite_UA = skepickleCharacterSuite_UA || (function skepick
     // Make the following functions available outside the local namespace
     CheckInstall: checkInstall,
     RegisterEventHandlers: registerEventHandlers,
-    Initialize: initialize
+    Initialize: initialize,
+    SourceText: source_text_UA
   };
 
 }());
