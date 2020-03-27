@@ -2288,12 +2288,12 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             controlledby: ""
           });
         };
-        if (path_obj !== null) {
+        if ((typeof path_obj !== 'undefined') && (path_obj !== null)) {
           toFront(path_obj);
           let shadow_obj = createObj("graphic", {
             pageid:     pageId,
             layer:      "map",
-            imgsrc:     s_obj.get("imgsrc"),
+            imgsrc:     s_obj.get("imgsrc").replace(/\/med\.([a-z]*)\?/, "/thumb.$1?"),
             left:       s_obj.get("left"),
             top:        s_obj.get("top"),
             width:      s_obj.get("width")*0.75,
@@ -2302,7 +2302,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             isdrawing:  true,
             tint_color: player_color
           });
-          if (shadow_obj !== null) {
+          if ((typeof shadow_obj !== 'undefined') && (shadow_obj != null)) {
             toFront(shadow_obj);
             if (s_obj.id in state.skepickleCharacterSuiteImp.moderate_movement.subject) {
               let path_id     = state.skepickleCharacterSuiteImp.moderate_movement.subject[s_obj.id].path;
