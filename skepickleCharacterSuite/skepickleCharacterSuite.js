@@ -3394,7 +3394,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                                   return;
                                 };
                               };
-                              spellmacro = spellmacro.concat(' {{Spell DC:=[[10+', spell_section, '[Spell Level]+@{', spellcastingstat, '}[Ability Mod]]]}}');
+                              let school = spell_spec.school.replace(/ .*$/, "").toLowerCase();
+                              spellmacro = spellmacro.concat(' {{Spell DC:=[[10+', spell_section, '[Spell Level]+@{', spellcastingstat, '}[Ability Mod]+@{sf-', school, '}[Spell Focus]]]}}');
                             }
                             {
                               let default_casterlevel = 'casterlevel';
