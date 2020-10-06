@@ -1750,6 +1750,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
     if (!t_obj.get("represents")) { return; }
     let character = getObj("character", t_obj.get("represents"));
     if (!character) { return; }
+    let char_name = character.get("name");
     character.get("_defaulttoken", function(defaultToken) {
       if (defaultToken !== "null") {
         let speed       = parseFloat(getAttrByName(character.id, "speed").replace(new RegExp("[^\.0-9].*$"), ""));
@@ -1791,7 +1792,7 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           if ((encumbrload < -3) || (armorworn && (acitemtype == "heavy"))) { fast_movement_bonus = 0; };
           let longstrider = 0;
           match_result = pc_other.match(/longstrider/);
-          longstrider = ((match_result === null) || (typeof match_result[1] === 'undefined'))?(longstrider):(Math.max(longstrider,10));
+          longstrider = ((match_result === null) || (typeof match_result[0] === 'undefined'))?(longstrider):(Math.max(longstrider,10));
           let speed_of_thought = 0;
           match_result = pc_feats.match(/speed of thought/);
           speed_of_thought = (match_result === null)?(speed_of_thought):(Math.max(speed_of_thought,10));
@@ -1801,6 +1802,17 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           real_speed = real_speed + fast_movement_bonus + longstrider + speed_of_thought + epic_speed;
         };
         if (isNaN(real_speed)) { log("INVALID speed"+real_speed); } else { /*log(real_speed);*/ t_obj.set("bar3_link", null); t_obj.set("bar3_value", real_speed); };
+        //TODONEXT set AC for PCs
+        //{
+        //    log("Bar2 Link: "+t_obj.get("bar2_link"));
+        //    t_obj.set("bar2_link", "");
+        //    log("=> Bar2 Link: "+t_obj.get("bar2_link"));
+        //    sendChat('GM', '[[@{'+char_name+'|armorclass}]]', function(rsp) {
+        //        log("Want to be Setting AC bubble for "+char_name+" to "+(rsp[0].inlinerolls[0]["results"]["total"]));
+        //        t_obj.set("bar2_value", rsp[0].inlinerolls[0]["results"]["total"]);
+        //        log("AC update done.")
+        //    });
+        //};
         return;
       } else {
         let npcspeed       = parseFloat(getAttrByName(character.id, "npcspeed").replace(new RegExp("[^\.0-9].*$"), ""));
@@ -2437,6 +2449,8 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
       processedFragments.push(firstFragment);
     };
 
+    let gmonly = false;
+
     try {
       switch (userCommand) {
         // COMMAND_ANCHOR
@@ -2815,6 +2829,9 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
         // ██║   ██║██╔══██╗██║   ██║██║   ██║██╔═══╝ ╚════╝╚════██║██╔═██╗ ██║██║     ██║  ╚════╝██║     ██╔══██║██╔══╝  ██║     ██╔═██╗
         // ╚██████╔╝██║  ██║╚██████╔╝╚██████╔╝██║           ███████║██║  ██╗██║███████╗███████╗   ╚██████╗██║  ██║███████╗╚██████╗██║  ██╗
         //  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝           ╚══════╝╚═╝  ╚═╝╚═╝╚══════╝╚══════╝    ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝
+        case 'gmonly-group-skill-check':
+        case '--gmonly-group-skill-check':
+          gmonly = true;
         case 'group-skill-check':
         case '--group-skill-check': {
           // --group-skill-check (Aid Another|Individual) (<Skill Name>)
@@ -2966,7 +2983,11 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                           let aid_total = 0/0;
                           let checks_total = 0;
                           let checks_num   = 0;
-                          let chat_msg = "&{template:default} {{name=Group Skill Check}} {{Skill= "+secondFragment.replace(/\(/,"\n(")+"}} {{Check Type= "+help_type+"}} ";
+                          let chat_msg = "";
+                          if (gmonly) {
+                            chat_msg += "/w GM "
+                          };
+                          chat_msg += "&{template:default} {{name=Group Skill Check}} {{Skill= "+secondFragment.replace(/\(/,"\n(")+"}} {{Check Type= "+help_type+"}} ";
                           let prints_remaining = Object.keys(roll_skill_map).length;
                           //Object.keys(roll_skill_map).forEach(function(char_name_unique) {
                           Object.keys(roll_skill_map).forEach(char_name_unique => {
@@ -3308,12 +3329,13 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
                             let spell_prep    = getAttrByName(character.id, a.get('name'));
                             let spell_used    = getAttrByName(character.id, a.get('name').replace(/_spellprep/, "_spellused"));
                             let spell_macro   = "".concat("@{selected|",a.get('name').replace(/_spellprep/, "_spellmacro"),"}");
+                            //log(spell_name+": "+spell_used+"/"+spell_prep+", "+a.get('name'));
                             switch (spell_prep) {
                               case 'K':  if (remaining_spells_per_day[level][spell_column] <= 0) { return null; }; break;
                               case 'PP': if (remaining_power_points <= 0) { return null; }; break;
                               default: {
-                                if (isNaN(spell_prep)) { return null; };
-                                if (isNaN(spell_used)) { return null; };
+                                if (isNaN(spell_prep)) { log("spell_prep isNaN"); return null; };
+                                if (isNaN(spell_used)) { log("spell_used isNaN"); return null; };
                                 if ((parseInt(spell_prep)-parseInt(spell_used)) <= 0) { return null; };
                               }; break;
                             };
@@ -3997,6 +4019,40 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
           });
         }; break;
         // COMMAND_ANCHOR
+        // case '--delete-attribute': {
+        //   if (!playerIsGM(playerID)) { return; };
+        //   log("--delete-attribute "+firstFragment);
+        //   tokenIDs.forEach(function(idOfToken) {
+        //       let obj = getObj("graphic", idOfToken);
+        //       let character = getObj("character", obj.get("represents"));
+        //       if (!character) { return; };
+        //       let attr_obj = findObjs({
+        //                          type: 'attribute',
+        //                          characterid: character.id,
+        //                          name: firstFragment
+        //                      }, {caseInsensitive: true})[0];
+        //       attr_obj.remove();
+        //   });
+        // }; break;
+        // COMMAND_ANCHOR
+        // case '--delete-attribute-regex': {
+        //   if (!playerIsGM(playerID)) { return; };
+        //   log("--delete-attribute-regex "+firstFragment);
+        //   tokenIDs.forEach(function(idOfToken) {
+        //       let token_obj = getObj("graphic", idOfToken);
+        //       let character = getObj("character", token_obj.get("represents"));
+        //       if (!character) { return; };
+        //       findObjs({
+        //         _type: "attribute",
+        //         _characterid: character.id
+        //       }).filter(attribute => attribute.get('name').match(new RegExp(firstFragment))).forEach(function(attr_obj) {
+        //         attr_obj.remove();
+        //       });
+        //       //let attrib_val = getAttrByName(character.id, firstFragment);
+        //       //log(firstFragment+' attribute for '+character.get("name")+' is = '+attrib_val);
+        //   });
+        // }; break;
+        // COMMAND_ANCHOR
         case '--debug-namespaces': {
           if (!playerIsGM(playerID)) { return; };
           log("skepickleCharacterSuite_SRD:");
@@ -4205,6 +4261,14 @@ var skepickleCharacterSuite = skepickleCharacterSuite || (function skepickleChar
             };
             delete state.skepickleCharacterSuiteImp.graphic_attachment[id];
           } else {
+            {
+              let dbg_o = getObj("graphic", id);
+              if ((typeof dbg_o !== 'undefined') && (dbg_o !== null)) {
+                let page_id = dbg_o.get("_pageid");
+                let page_o  = getObj("page", page_id);
+                log("GA: "+id+" is "+state.skepickleCharacterSuiteImp.graphic_attachment[id].role+" on page "+page_o.get("name"));
+              };
+            }
             if ((state.skepickleCharacterSuiteImp.graphic_attachment[id].role === "subject") &&
                 (typeof state.skepickleCharacterSuiteImp.graphic_attachment[id].objects !== 'undefined') &&
                 (state.skepickleCharacterSuiteImp.graphic_attachment[id].objects.length == 0)) {
